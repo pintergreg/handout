@@ -51,7 +51,8 @@ Ebben az esetben a commit üzenet törzse után 2 üres sorral elválasztva kell
 ```
 Commit message header
 
-Commit message body preceded by an empty line and followed by two empty lines and the trailer.
+Commit message body preceded by an empty line and followed by
+two empty lines and the trailer.
 
 
 Co-authored-by: name <name@example.com>
