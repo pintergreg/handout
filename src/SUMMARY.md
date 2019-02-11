@@ -1,5 +1,6 @@
 # Summary
 
+- [Tárgyleírás](./index.md)
 - [Ütemezés](./schedule.md)
 - [Felkészülést segítő anyagok](./literature.md)
 - [git](./git.md)
