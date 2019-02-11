@@ -43,7 +43,7 @@ Ezen belül is egyszerűbb esetekben a GH felajánlja a webes szerkesztőjét, d
 
 ### Webes szerkesztő
 
-A képen az  létható, hogy Hegedűs kolléga a `master` azon állapotában írta be a nevét, amikor a 64. sor volt az utolsó. Időközben egyéb PR-eket is elfogadtam így a git nem tudja, hogy a 68-73. sorokat kell megtartani vagy a 66.-at (ennek szintaktikáját látni a „kacsacsőrökkel”).
+A képen az  látható, hogy Hegedűs kolléga a `master` azon állapotában írta be a nevét, amikor a 64. sor volt az utolsó. Időközben egyéb PR-eket is elfogadtam így a git nem tudja, hogy a 68-73. sorokat kell megtartani vagy a 66.-at (ennek szintaktikáját látni a „kacsacsőrökkel”).
 
 ![GH web editor](https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/conflict_web_editor.png)
 
