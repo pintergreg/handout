@@ -1,0 +1,6 @@
+[book]
+authors = ["pintergreg"]
+multilingual = false
+src = "src"
+title = "Jegyzet"
+description = "Szoftverfejlesztés multinacionális vállalatoknál"
