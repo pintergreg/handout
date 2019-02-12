@@ -276,12 +276,12 @@
         <dia:point val="22,18"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="22,17.16;51.6325,18.215"/>
+        <dia:rectangle val="22,17.1336;53.5864,18.2677"/>
       </dia:attribute>
       <dia:attribute name="text">
         <dia:composite type="text">
           <dia:attribute name="string">
-            <dia:string>#Követési "távolság" időben (0.8/1.2/1.4s) - sebességfüggő#</dia:string>
+            <dia:string>#Követési "távolság" időben (0.8/1.0/1.2/1.4s) - sebességfüggő#</dia:string>
           </dia:attribute>
           <dia:attribute name="font">
             <dia:font family="sans" style="80" name="Helvetica-Bold"/>
