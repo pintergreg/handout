@@ -83,6 +83,8 @@ A rendszert az erre szolgáló vezérlóvel aktiválni kell, majd az irányjelz�
 1. parkolóhely keresése
     - ![](images/find_parking_place.png)
 2. Parkolóhely azonosítva
+    - Az üres hely detektálása lényegébe egy állapotátmenet az első és a hátsó ultrahang szenzor „van-e akadály” visszajelzésében. Amíg egy kocsisor mellett halad az auró mindkét szenzor „van akadály” jelzéssel tér vissza (ez valójában nem `boolean` állapot, egy objektum listát ad vissza), az üres hely kezdetén a az első „nincs akadály” állapotba megy át (a lista üres), majd ahogy az autó halad tovább a hátsó szenzor is „nincs akadály” állapotba kerül.
+    - A szabad terület végén ugyanez fordítva játszódik le.
     - ![](images/parking_place_found.png)
 3. Automatikus parkolás
     - ![](images/parking.png)
@@ -110,7 +112,7 @@ Be- és kikapcsolható (ennek kezelése már megoldott)
 
 ![](images/lka.png)
 
-Sávon belüli mozgás
+Sávon belüli mozgás: a LKA működése egy enyhe sávon belüli cikázást eredményez.
 
 ![](images/lka_wave.png)
 
