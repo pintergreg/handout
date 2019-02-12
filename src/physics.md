@@ -28,12 +28,3 @@ A [`car_2_white.png`](resources/car_2_white.png) esetében a szélesség kb. 90p
 > - r = ~165px
 
 **Figyelem, ezek lényegesen valósághűbb autó szimulálását tűzték ki célul mint ami itt minimálisan elvárt!**
-
-
-## Szenzorok (2. sprint)
-
-![](images/camera.png)
-![](images/radar.png)
-![](images/ultrasonic.png)
-
-[Driver Assistance Systems, an introduction to Adaptive Cruise Control](http://www.eetimes.com/document.asp?doc_id=1272754)
