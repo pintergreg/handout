@@ -89,6 +89,18 @@ A rendszert az erre szolgáló vezérlóvel aktiválni kell, majd az irányjelz�
 3. Automatikus parkolás
     - ![](images/parking.png)
 
+***
+
+Parkolás manőver leírása nagy vonalakban [forrás](https://www.dmv.ca.gov/portal/dmv/detail/pubs/hdbk/parking):
+
+1. Bring your car to a stop alongside the car at the front of the space.
+    - ![](https://www.dmv.ca.gov/imageserver/dmv/images/dlhdbk/perfect1.jpg)
+2. Reverse into the space with an S motion.
+    - ![](https://www.dmv.ca.gov/imageserver/dmv/images/dlhdbk/perfect2.jpg)
+3. Once the car is parallel with the curb, pull forward to center your car within the space.
+    - ![](https://www.dmv.ca.gov/imageserver/dmv/images/dlhdbk/perfect3.jpg)
+
+
 ### Kezelőszervek
 
 - aktiválás a műszerfalról (vagy billenytűzettel)
