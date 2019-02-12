@@ -17,4 +17,5 @@
     - [Sprint 3](./sprint_3.md)
 - [Virtuális világ](./virtual_world.md)
 - [Fizika](./physics.md)
-- [Bemutatóvideók a funkciókról](./videos.md)
+- [Vezetéstámogató funkciók](./functions.md)
+{{/* - [Bemutatóvideók a funkciókról](./videos.md) */}}
