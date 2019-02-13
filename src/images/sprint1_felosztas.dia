@@ -1198,13 +1198,13 @@
     </dia:object>
     <dia:object type="Flowchart - Box" version="0" id="O32">
       <dia:attribute name="obj_pos">
-        <dia:point val="49,19"/>
+        <dia:point val="49,25"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="48.95,18.95;61.05,21.05"/>
+        <dia:rectangle val="48.95,24.95;61.05,27.05"/>
       </dia:attribute>
       <dia:attribute name="elem_corner">
-        <dia:point val="49,19"/>
+        <dia:point val="49,25"/>
       </dia:attribute>
       <dia:attribute name="elem_width">
         <dia:real val="12"/>
@@ -1224,7 +1224,7 @@
       <dia:attribute name="text">
         <dia:composite type="text">
           <dia:attribute name="string">
-            <dia:string>#értékek módosítása, csomag küld.#</dia:string>
+            <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="font">
             <dia:font family="sans" style="0" name="Helvetica"/>
@@ -1233,7 +1233,7 @@
             <dia:real val="0.84666663408279419"/>
           </dia:attribute>
           <dia:attribute name="pos">
-            <dia:point val="55,20.2067"/>
+            <dia:point val="55,26.2067"/>
           </dia:attribute>
           <dia:attribute name="color">
             <dia:color val="#000000"/>
@@ -1249,12 +1249,12 @@
         <dia:point val="47,8"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="46.95,7.95;49.05,20.05"/>
+        <dia:rectangle val="46.95,7.95;49.05,26.05"/>
       </dia:attribute>
       <dia:attribute name="poly_points">
         <dia:point val="47,8"/>
-        <dia:point val="47,20"/>
-        <dia:point val="49,20"/>
+        <dia:point val="47,26"/>
+        <dia:point val="49,26"/>
       </dia:attribute>
       <dia:connections>
         <dia:connection handle="0" to="O1" connection="12"/>
@@ -1263,13 +1263,13 @@
     </dia:object>
     <dia:object type="Flowchart - Box" version="0" id="O34">
       <dia:attribute name="obj_pos">
-        <dia:point val="49,22"/>
+        <dia:point val="49,19"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="48.95,21.95;61.05,24.05"/>
+        <dia:rectangle val="48.95,18.95;61.05,21.05"/>
       </dia:attribute>
       <dia:attribute name="elem_corner">
-        <dia:point val="49,22"/>
+        <dia:point val="49,19"/>
       </dia:attribute>
       <dia:attribute name="elem_width">
         <dia:real val="12"/>
@@ -1298,7 +1298,7 @@
             <dia:real val="0.84666663408279419"/>
           </dia:attribute>
           <dia:attribute name="pos">
-            <dia:point val="55,23.2067"/>
+            <dia:point val="55,20.2067"/>
           </dia:attribute>
           <dia:attribute name="color">
             <dia:color val="#000000"/>
@@ -1314,12 +1314,12 @@
         <dia:point val="47,8"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="46.95,7.95;49.05,23.05"/>
+        <dia:rectangle val="46.95,7.95;49.05,20.05"/>
       </dia:attribute>
       <dia:attribute name="poly_points">
         <dia:point val="47,8"/>
-        <dia:point val="47,23"/>
-        <dia:point val="49,23"/>
+        <dia:point val="47,20"/>
+        <dia:point val="49,20"/>
       </dia:attribute>
       <dia:connections>
         <dia:connection handle="0" to="O1" connection="12"/>
@@ -1939,7 +1939,7 @@
       <dia:attribute name="text">
         <dia:composite type="text">
           <dia:attribute name="string">
-            <dia:string>#funkció értékek friss. buszról#</dia:string>
+            <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="font">
             <dia:font family="sans" style="0" name="Helvetica"/>
@@ -2433,13 +2433,13 @@
     </dia:object>
     <dia:object type="Flowchart - Box" version="0" id="O70">
       <dia:attribute name="obj_pos">
-        <dia:point val="49,25"/>
+        <dia:point val="49,22"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="48.95,24.95;61.05,27.05"/>
+        <dia:rectangle val="48.95,21.95;61.05,24.05"/>
       </dia:attribute>
       <dia:attribute name="elem_corner">
-        <dia:point val="49,25"/>
+        <dia:point val="49,22"/>
       </dia:attribute>
       <dia:attribute name="elem_width">
         <dia:real val="12"/>
@@ -2468,7 +2468,7 @@
             <dia:real val="0.84666663408279419"/>
           </dia:attribute>
           <dia:attribute name="pos">
-            <dia:point val="55,26.2067"/>
+            <dia:point val="55,23.2067"/>
           </dia:attribute>
           <dia:attribute name="color">
             <dia:color val="#000000"/>
@@ -2484,12 +2484,12 @@
         <dia:point val="47,8"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="46.95,7.95;49.05,26.05"/>
+        <dia:rectangle val="46.95,7.95;49.05,23.05"/>
       </dia:attribute>
       <dia:attribute name="poly_points">
         <dia:point val="47,8"/>
-        <dia:point val="47,26"/>
-        <dia:point val="49,26"/>
+        <dia:point val="47,23"/>
+        <dia:point val="49,23"/>
       </dia:attribute>
       <dia:connections>
         <dia:connection handle="0" to="O1" connection="12"/>
