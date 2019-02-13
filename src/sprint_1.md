@@ -48,7 +48,7 @@
 
 * A programablaknak az alábbi módon nézni majd ki. A kezdeti kód ezt a felosztást már támogatja, tartalmaz két JPanel-t, ebből a `CourseDisplay`re kell a világ objektumait kirajzolni. Pontosabban az a „viewport”, amit a kamera lát, mögötte ott lehet a többi objektum.
     - ha szükséges egyéb panel definiálható, de a műszerfal (dashboard) működését nem lehet megzavarni
-    - ![gui_plan](images/gui_plan.png)
+    - ![gui_plan](images/gui_plan_course_display.png)
 * A kiadott kód csak példa alap GUI készítésére, ha a feladat úgy kívánja átírható, más rajzoló metódusok vagy logika is használható, de figyelni kell arra, hogy ez esetben minden érintett csapat tudjon a módosításokról. _Mindenek előtt a műszerfalért felelős csapat!_
 * Az IntelliJ IDEA GUI Designer-e *nem* használható!
 
