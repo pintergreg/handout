@@ -2,15 +2,19 @@
 
 Az autónak egy virtuális tesztpályán kell végigmennie, amelyhez modellezni a világot. Két teszt pályát biztosítunk, egy egyszerűbbet és egy nagyobbat, bonyolultabbat. Alább látható az egyszerűbb.
 
-![](https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/test_world.png)
+![](images/test_world.png)
 
-A fenti világ elemekből épül föl, amelyek között vannak egyenes útszakaszok, kanyarok (pl. 45° és 90°), T elágazás, gyalogos átkelő, közúti táblák, parkolók és fák. Mindezt [egy XML írja le](https://github.com/SzFMV2018-Osz/handout/blob/master/docs/resources/test_world.xml).
+A fenti világ elemekből épül föl, amelyek között vannak egyenes útszakaszok, kanyarok (pl. 45° és 90°), T elágazás, gyalogos átkelő, közúti táblák, parkolók és fák. Mindezt [egy XML írja le](resources/test_world.xml).
 
 A számítógépes grafikában megszokott módon, a bal felső sarok jelenti az origót (0,0) koordinátát. Az x tengtely tehát jobbra haladva, az y tengely lefelé haladva növekszik. Így kell értelmezni az XML-t és ekképpen működik a megjelenítés is, hiszen a form bal felső sarkánál van a (0, 0) pont. Az alábbi kép [forrása](http://www.e-cartouche.ch/content_reg/cartouche/graphics/en/html/Screen_learningObject3.html).
 
 ![](http://www.e-cartouche.ch/content_reg/cartouche/graphics/en/image/coordinates.jpg)
 
-Villódzásmentes rajzolás: https://docs.oracle.com/javase/tutorial/extra/fullscreen/doublebuf.html
+## Villódzásmentes rajzolás
+
+- https://docs.oracle.com/javase/tutorial/extra/fullscreen/doublebuf.html
+
+## Objektumok leírása
 
 Egy-egy objektum leírása a következőképpen néz ki:
 
@@ -32,26 +36,26 @@ Egy-egy objektum leírása a következőképpen néz ki:
 
 ## Az út elemek viszonyítási pontjai
 
-![](https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/90right.png) ![](https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/90left.png) 
+![](images/90right.png) ![](images/90left.png)
 
-![](https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/45right.png) ![](https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/45left.png)
+![](images/45right.png) ![](images/45left.png)
 
-![](https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/6right.png) ![](https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/6left.png)
+![](images/6right.png) ![](images/6left.png)
 
-![](https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/tjunctionright.png)
-![](https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/tjunctionleft.png)
+![](images/tjunctionright.png)
+![](images/tjunctionleft.png)
 
-![](https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/straight.png)
-![](https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/rotary.png)
+![](images/straight.png)
+![](images/rotary.png)
 
-![2_crossroad_1](https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/2_crossroad_1.png)
-![2_crossroad_2](https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/2_crossroad_2.png)
+![2_crossroad_1](images/2_crossroad_1.png)
+![2_crossroad_2](images/2_crossroad_2.png)
 
 Minden itt fel nem sorolt esetben feltételezhető, hogy a bal felső sarok a viszonyítási pont.
 
 A mozgatásra szoruló elemek (vezérelt autó és NPC autók) nem képezik részét a világ leírásának, viszonyítási pontjuk nem definiált. A rendelkezésre bocsátott autó képek méretarányosak az összes többi objektummal. referenciapontnak célszerű a bal felső sarkot választani.
 
-A világhoz szükséges elemek [megtalálhatóak itt](https://github.com/SzFMV2018-Osz/handout/tree/master/docs/resources). Ezeket célszerű a `src/main/resources` mappába elhelyezni, és a [kiadott példa](https://github.com/SzFMV2018-Osz/AutomatedCar-A/blob/3d69a8ef8d51a2409ca3aaca12ca5c0871053ee7/src/main/java/hu/oe/nik/szfmv/visualization/CourseDisplay.java#L36) szerint hivatkozni.
+A világhoz szükséges elemek megtalálhatóak a project  `src/main/resources` mappájában.
 
 ## Méretarány
 
@@ -61,6 +65,6 @@ A feladat megoldás során jellemzően valóságos mértékegységekben specifik
 
 ## Sávtartó automatika tesztelése
 
-A sávtartó automatika nem tesztelhető kanyarokban, ehhez ezért egy alább látható kinézetű pályaszakasz készült. Csak 6°-os és egyenes útszakaszból áll. [Az XML elérhető itt](https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/resources/lane_keeping_test_world.xml).
+A sávtartó automatika nem tesztelhető kanyarokban, ehhez ezért egy alább látható kinézetű pályaszakasz készült. Csak 6°-os és egyenes útszakaszból áll. [Az XML elérhető itt](resources/lane_keeping_test_world.xml).
 
-![](https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/lka.png)
+![](images/lka_track.png)
