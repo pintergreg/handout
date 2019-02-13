@@ -265,7 +265,7 @@
         <dia:point val="23,14.5"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="23,13.8863;27.0012,14.6899"/>
+        <dia:rectangle val="23,13.905;26.9825,14.6525"/>
       </dia:attribute>
       <dia:attribute name="text">
         <dia:composite type="text">
@@ -298,7 +298,7 @@
         <dia:point val="15.5,5"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="15.5,4.38631;17.5287,5.18987"/>
+        <dia:rectangle val="15.5,4.405;17.51,5.1525"/>
       </dia:attribute>
       <dia:attribute name="text">
         <dia:composite type="text">

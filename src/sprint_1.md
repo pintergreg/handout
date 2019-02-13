@@ -24,6 +24,12 @@
 * Mielőbb el kell dönteni, hogy milyen koordinátarendszerben dolgozik majd a modell
     * A döntést a megjelenítésért felelős csapattal **együtt** kell meghozni!
 * Teljesen járható út, hogy a modell, az input állományban található koordináta-rendszer egy az egyeben alkalmazásra kerül, ebből adódóan minden számolás abban történik, csak a megjelenítés transzformálja át.
+* A fa esetében csupán a törzsének lehet nekimenni, nem a lombkoronának, ezért a modellt eképpen kell megalkotni! A törzsnek használható egy szabályos hasáb az egyszerűség kedvéért.
+    * ![](images/tree_collidable.png)
+* Az autó is egyszerűsíthető, nem kell a grafikai elemet teljes mértékben követni.
+    * ![](images/car_simplified_polygon_model.png)
+* A kanyarodó útelemeknél is lehet egyszerűsítést használni.
+    * ![](images/90left_polygon.png)
 
 
 # 2. Vizualizáció
