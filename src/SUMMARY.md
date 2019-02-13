@@ -19,4 +19,4 @@
 - [Fizika](./physics.md)
 - [Szenzorok](./sensors.md)
 - [Vezetéstámogató funkciók](./functions.md)
-{{/* - [Bemutatóvideók a funkciókról](./videos.md) */}}
+- [Referencia architektúra](./reference_architecture.md)
