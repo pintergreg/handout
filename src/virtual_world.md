@@ -53,7 +53,9 @@ Egy-egy objektum leírása a következőképpen néz ki:
 
 Minden itt fel nem sorolt esetben feltételezhető, hogy a bal felső sarok a viszonyítási pont.
 
-A mozgatásra szoruló elemek (vezérelt autó és NPC autók) nem képezik részét a világ leírásának, viszonyítási pontjuk nem definiált. A rendelkezésre bocsátott autó képek méretarányosak az összes többi objektummal. referenciapontnak célszerű a bal felső sarkot választani.
+Egy korábbi félév során a referenciapontokat (részben) már összegyűjtötték (@csabalint, @SiposGergo, @markkurucz), ez elérhető [XML](references/reference_points.xml) vagy [JSON](references/reference_points.json) formátumban. 
+
+A mozgatásra szoruló elemek (vezérelt autó és NPC autók) nem képezik részét a világ leírásának, viszonyítási pontjuk nem definiált. A rendelkezésre bocsátott autó képek méretarányosak az összes többi objektummal.
 
 A világhoz szükséges elemek megtalálhatóak a project  `src/main/resources` mappájában.
 
