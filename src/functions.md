@@ -103,7 +103,7 @@ Parkolás manőver leírása nagy vonalakban [forrás](https://www.dmv.ca.gov/po
 
 ### Kezelőszervek
 
-- aktiválás a műszerfalról (vagy billenytűzettel)
+- aktiválás billenytűzettel
 - az irányjelzővel jelölhető ki keresési oldal
 
 
@@ -172,3 +172,9 @@ A hátsó ultrahang szezorokat használja akadály detektálásra. Kiszámolja a
     - nagyon közel van akadály (0.4m-en belül)
 
 ![](images/reverse_radar_system.png)
+
+# „Fun” kategória
+
+* [Hyundai - The Empty Car Convoy](https://www.youtube.com/watch?v=Xbjdmw8D9-Y)
+    - LKA, ACC and AEB marketing
+* [Nissan Parking Pilot inspirálta helyére ”parkoló” papucsa](https://youtu.be/tazFfEP_NcY)
