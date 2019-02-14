@@ -9,7 +9,7 @@ Alább néhány, az interneten az ismert kulcsszavak alapján könnyen (legaláb
     - [Formatting](http://www.itiseezee.com/?p=131)
 - Verziókövetés
     - [Git könyv](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control)
-    - gyakorlati oldalról lást [Git anyagok](https://github.com/SzFMV2018-Osz/handout/Git-anyagok) szekció
+    - gyakorlati oldalról lást [Git](./git.md) fejezet
 - [Code review](https://smartbear.com/learn/code-review/what-is-code-review/)
 - [Scrum](http://www.scrumhub.com/scrum-guide/)
     - [PDF verzió](http://www.scrumguides.org/docs/scrumguide/v1/scrum-guide-us.pdf)
@@ -67,7 +67,7 @@ Ezen anyagok nem képezik részét a ZH-n számon kért ismereteknek, ám úgy g
 - [I don't need types](https://dmerej.info/blog/post/trying-mypy/)
     - blogposzt a típusosságról
 
-## Ajánlott olvasmányok 
+## Ajánlott olvasmányok
 
 1. The Software Craftsman: Professionalism, Pragmatism, Pride – Robert C. Martin
 2. The Clean Coder: A Code of Conduct for Professional Programmers – Robert C. Martin
