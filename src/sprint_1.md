@@ -129,6 +129,14 @@
 - A gyorsulás a „belső fokozatok” szerint kerül meghatározásra
 - Az autó a gázpedál felengedésével fokozatosan lassul, amjd megáll
 - Az autó R válóállásban tolat
+- Felkészíteni a modult, hogy a vészfékező, az adaptív tempomat vagy a parkoló asszisztens is küldhet inputot, melyek magasabb prioritásúak
+    - vészfékező értelemszerűen fékezés inputot
+    - az adaptív tempomat és a parkoló asszisztens gáz és fék inputot is
+
+## Megjegyzések
+
+- A 3. sprintes beavatkozásokhoz (AAC, AEB, PP) definiálni kell az kommunikációs csomagot
+- Valamint figyelni, hogy ha ilyen érkezik a buszon, akkor azt magasabb prioritású inputként elfogadni
 
 # 6. Kormányzás
 
@@ -145,3 +153,9 @@
 - A meghatározott mozgásvektor alapján az autó pozíciójának frissítése
     - az AutomatedCar osztály x,y koordinátáinak frissítése
 - Tolatás során is valósághű hanyarodás történik
+- Felkészíteni a modult, hogy a sávtartó automatika vagy a parkoló asszisztens is küldhet kormányzás inputot
+
+## Megjegyzések
+
+- A 3. sprintes beavatkozásokhoz (LKA, PP) definiálni kell az kommunikációs csomagot
+- Valamint figyelni, hogy ha ilyen érkezik a buszon, akkor azt magasabb prioritású inputként elfogadni
