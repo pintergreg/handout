@@ -97,7 +97,9 @@
 ## Megjegyzések
 
 - Az input manager és a műszerfal között az értékeket a buszon kell közölni
-- Az utoljára látott táblához szükséges biztosítani egy interfészt, amely segítségével a funkció egyetlen hívással beállíthatja a képet
+- Az utoljára látott táblához legyen definiálva egy csomag, amely ha megjelenik a buszon, akkor a csomag által kijelölt tábla megjelenik a műszerfalon
+    - később a táblafelismerő majd kiküld ilyen csomagot ha amikor szükséges
+    - talán célszerű ha van egy „nincs tábla állapot is”
 - A fordulatszám és a sebesség megjelenése „analóg óraként” történjen, de nem szükséges újra feltalálni a kereket.
 - A programlaknak az alábbi módon kell kinéznie. A kezdeti kód ezt a felosztást már támogatja, tartalmaz két JPanel-t, ebből a Dashboard-ra kell a visszajelzőket elhelyezni.
     - ![gui_plan](https://raw.githubusercontent.com/szfmv2019-tavasz/handout/master/src/images/gui_plan.png)
