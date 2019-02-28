@@ -72,6 +72,8 @@
 - fék- és gázpedál valamint a kormány sem binárisan működik, a billentyű nyomva tartás idejétől függ az input intenzitása
 - fék- és gázpedál valamint a kormány is fokozatosan áll vissza alaphelyzetbe a billentyű felengedésével
 - az automata váltó 4 állapota szabályozható
+    - szekvenciális váltóról lévén szó, sorban állíthatók a fokozatok: P(ark), R(everse), N(eutral), D(rive)
+    - alaphelyzet: P, „felváltás” után R, majd N, majd D. „Leváltás” ugyanez visszafele.
 - ACC: Állítható céltávolság (T jelű gombbal, körkörösen 0.8/1.0/1.2/1.4 másodperc)
 - ACC: Állítható célsebesség (+/- gombbal, 30-160, 10-es lépésközzel)
 - Lane Keeping bekapcsolás
