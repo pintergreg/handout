@@ -39,6 +39,9 @@ Alább néhány, az interneten az ismert kulcsszavak alapján könnyen (legaláb
         - prezentáció
 - [Code smells](https://blog.codinghorror.com/code-smells/)
 - [Continuous Integration](https://martinfowler.com/articles/continuousIntegration.html)
+- [Integration testing](https://www.guru99.com/integration-testing.html)
+    - teszt stratégiák is benne vannak
+    - innen a többi tesztes fejezet is jó!
 
 ## Javasolt (fel)készülési módszer
 
@@ -48,7 +51,7 @@ Mivel a diákat nem adjuk ki, célszerű jegyzetelni: **címszavakat**, **fogalm
 
 Címszavak (különösebb sorrend nélkül) amelyeket az elméleti több-kevésbé lefedik. Ha valakinek valami nem tiszta, akkor célszerű megkérdezni a Googlet vagy a Wikit. ;)
 
-agile, software craftmanship, extreme programming, user story, backlog, task, sprint, sprint review, sprint planning, standup, retro, clean code, version control, refactor, review (informal, wlakthrough, technical, inspection), pair programming, scrum, scrum master, product owner, developement team, cross functional team, self-organizing team, kanban, scrumban, demo, TDD, unit, unit testing (arrange, act, assert, annihilate), coding kata, code golf, legacy code, code smell, rotting code, dependency reduction, seams, continous integration, automated testing, continous deployment, nightly build, minimized context switch, DevOps, coding dojo, SOLID priciples, clean code, definition of done, milestone, deadline, mocking (dummy, stub, spy, mock, fake), requirement, requirement engineering, centralized version control, distributed version control, burndown chart, scrum of scrums, business value, traceability, finding, bug fixing, optimizing, refactoring, feature envy, code complexity
+agile, software craftmanship, extreme programming, user story, backlog, task, sprint, sprint review, sprint planning, standup, retro, clean code, version control, refactor, review (informal, wlakthrough, technical, inspection), pair programming, scrum, scrum master, product owner, developement team, cross functional team, self-organizing team, kanban, scrumban, demo, TDD, unit, unit testing (arrange, act, assert, annihilate), coding kata, code golf, legacy code, code smell, rotting code, dependency reduction, seams, continous integration, automated testing, continous deployment, nightly build, minimized context switch, DevOps, coding dojo, SOLID priciples, clean code, definition of done, milestone, deadline, mocking (dummy, stub, spy, mock, fake), requirement, requirement engineering, centralized version control, distributed version control, burndown chart, scrum of scrums, business value, traceability, finding, bug fixing, optimizing, refactoring, feature envy, code complexity, regressziós teszt, shadow deploy, tezt stratégiák (top-down, bottom-up, sandwich, big-bang, risky-hardest), harware in the loop (HIL), software in the loop (SIL), SMART objectives
 
 ## Egyéb
 
