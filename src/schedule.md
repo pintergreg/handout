@@ -1,6 +1,6 @@
 # Ütemezés
 
-Az órák csütörtökönként a BA.F.07-ban vannak, neptun szerint 08:00-10:35 között előadás és 10:45-11:30 között gyakorlat. (Ezek aránya valamint közte a szünet az aktuális előadásanyag és az igények szerint módosulhat). A „gyakorlat” nem labor, hanem sokkal inkább konzultáció!
+Az órák csütörtökönként a BA.F.07-ben vannak, neptun szerint 08:00-10:35 között előadás és 10:45-11:30 között gyakorlat. (Ezek aránya valamint közte a szünet az aktuális előadásanyag és az igények szerint módosulhat). A „gyakorlat” nem labor, hanem sokkal inkább konzultáció!
 
 |hét    |dátum        |előadás|gyakorlat|
 |------:|:-----------:|:-----:|:-------:|
