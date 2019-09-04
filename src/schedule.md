@@ -8,8 +8,8 @@ Az órák csütörtökönként a BA.F.07-ben vannak, neptun szerint 08:00-10:35 
 | 2.|09.&nbsp;19.|Agile/Scrum, [első feladat kiadás](sprint_1.md)|csapatsorsolás, Sprint Planning, Task Definition Workshop, Team commitment, Scheduling
 | 3.|09.&nbsp;26.|Napi munka, verziókezelők|Branch review, status review, standup (did, will, blocking)
 | 4.|10.&nbsp;03.|Unit Testing|Status review, standup, TDD kata
-| 5.|10.&nbsp;10.|Legacy Code, SOLID|Refactoring gyakorlat egy előre előkészített példán
-| **6.**|**10.&nbsp;17.**|**első demo**/retrospektív, [második feladat kiadás](sprint_2.md)|Sprint planning, Task Definition Workshop, Team commitment, Scheduling
+| **5.**|**10.&nbsp;10.**|**első demo**/retrospektív, [második feladat kiadás](sprint_2.md)|Sprint planning, Task Definition Workshop, Team commitment, Scheduling
+| 6.|10.&nbsp;17.|Legacy Code, SOLID|Refactoring gyakorlat egy előre előkészített példán
 | 7.|10.&nbsp;24.|Review|Random code review egy tetszőleges elfogadott pull requestből
 | 8.|10.&nbsp;31.|TBD
 | **9.**|**11. 07.**|**második demo**/retrospektív, [harmadik feladat kiadás](sprint_3.md)|Sprint planning, Task Definition Workshop, Team commitment, Scheduling
