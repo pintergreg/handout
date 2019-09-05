@@ -311,9 +311,6 @@
       <dia:attribute name="numcp">
         <dia:int val="1"/>
       </dia:attribute>
-      <dia:connections>
-        <dia:connection handle="0" to="O14" connection="15"/>
-      </dia:connections>
     </dia:object>
     <dia:object type="Flowchart - Box" version="0" id="O7">
       <dia:attribute name="obj_pos">
@@ -602,13 +599,13 @@
     </dia:object>
     <dia:object type="Flowchart - Box" version="0" id="O14">
       <dia:attribute name="obj_pos">
-        <dia:point val="33,4"/>
+        <dia:point val="23,4"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="32.95,3.95;40.05,5.05"/>
+        <dia:rectangle val="22.95,3.95;30.05,5.05"/>
       </dia:attribute>
       <dia:attribute name="elem_corner">
-        <dia:point val="33,4"/>
+        <dia:point val="23,4"/>
       </dia:attribute>
       <dia:attribute name="elem_width">
         <dia:real val="7"/>
@@ -640,7 +637,7 @@
             <dia:real val="0.80000000000000004"/>
           </dia:attribute>
           <dia:attribute name="pos">
-            <dia:point val="36.5,4.69406"/>
+            <dia:point val="26.5,4.69406"/>
           </dia:attribute>
           <dia:attribute name="color">
             <dia:color val="#000000"/>
