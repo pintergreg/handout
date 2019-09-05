@@ -20,3 +20,4 @@
 - [Szenzorok](./sensors.md)
 - [Vezetéstámogató funkciók](./functions.md)
 - [Referencia architektúra](./reference_architecture.md)
+- [Implementáció](./implementation.md)
