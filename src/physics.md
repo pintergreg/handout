@@ -6,7 +6,7 @@ Ezen jelenségeket (és még sok minden mást) egy autós játék fizikájáról
 
 Szintén hasznos lehet még [ezen írás](http://www.iforce2d.net/b2dtut/top-down-car) is, természetesen továbbra is angol nyelven, vagy tetszőleges egyéb irodalom (hint: Google, Stackoverflow, Wikipedia).
 
-Az autóhoz automata váltót kell megvaósítani, de az automata vátóban is vannak „belső” fokozatok (1, 2, 3, 4 stb. előrementben), tehát meg kell különböztetni a „külső” fokozatokat (P, R, N, D) és D állapotban a belsőket.
+Az autóhoz automata váltót kell megvalósítani, de az automata vátóban is vannak „belső” fokozatok (1, 2, 3, 4 stb. előremenetben), tehát meg kell különböztetni a „külső” fokozatokat (P, R, N, D) és D állapotban a belsőket.
 
 ## Kanyarodás
 

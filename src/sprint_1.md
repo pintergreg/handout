@@ -1,13 +1,13 @@
 # Világ(modell) kialakítása
 
 * Input: virtuális világot leíró JSON állomány(ok)
-* Output: Modellezett világ: mozgó/álló, áthajtható, ütközhető, tömeggel, mérettel rendelkező objektumok, koordináta-rendszerben, olyan interfészek (API) kialakítása, amely biztosítja a későbbiekben többi csapat számára a világmodellhoz való legkézenfekvőbb hozzáférést a későbbi sprintek feladatit is figyelembe véve
+* Output: Modellezett világ: mozgó/álló, áthajtható, ütközhető, tömeggel, mérettel rendelkező objektumok, koordináta-rendszerben, olyan interfészek (API) kialakítása, amely biztosítja a későbbiekben többi csapat számára a világmodellhez való legkézenfekvőbb hozzáférést a későbbi sprintek feladatit is figyelembe véve
 * Challenge: „mindenki erre vár”, az interfésznek mielőbb stabilnak kell lennie, akkor is, ha az implementáció még nincs meg, prioritások és „nyomás” kezelése, a megjelenítésért felelős csapat számára a lehető leggyorsabban kód szinten biztosítani a kirajzolandó objektumok alap tulajdonságait.
 
 
 ## Definition of Done
 
-- Útelemeket, fákat, táblákat egyéb statikus objektumokat líró állomány feldolgozása
+- Útelemeket, fákat, táblákat egyéb statikus objektumokat leíró állomány feldolgozása
 - Hierarchikus objektummodell implementálása világ leírására, API biztosítása ennek elérésére
 - Objektumok kiterjedését biztosító poligonok definiálása
     - ez nem azonos a kép széleivel
@@ -16,15 +16,15 @@
 - A modell legyen felkészítve az input fájlból kiolvasott „statikus” objektumokon túl mozgó („dinamikus”) objektumok kezelésére is
     - vezérelt autó, NPC (non-player-character) autó, gyalogos
 - A modell tegyen különbséget azon objektumok között amelyeknek egy jármű nekimehet és amelyeknek nem (fa vs. útelem)
-- A modell zeljen „z-index”-et, hogy a kizajzolás során biztosítható legyen, hogy mely elemet kell előtt kirajzolni a „kitakatások” végett
+- A modell kezeljen „z-index”-et, hogy a kirajzolás során biztosítható legyen, hogy mely elemet kell előtt kirajzolni a „kitakarások” végett
 
 
 ## Megjegyzések
 
-* Mielőbb el kell dönteni, hogy milyen koordinátarendszerben dolgozik majd a modell
+* Mielőbb el kell dönteni, hogy milyen koordináta-rendszerben dolgozik majd a modell
     * A döntést a megjelenítésért felelős csapattal **együtt** kell meghozni!
 * Teljesen járható út, hogy a modell, az input állományban található koordináta-rendszer egy az egyeben alkalmazásra kerül, ebből adódóan minden számolás abban történik, csak a megjelenítés transzformálja át.
-* A fa esetében csupán a törzsének lehet nekimenni, nem a lombkoronának, ezért a modellt eképpen kell megalkotni! A törzsnek használható egy szabályos hasáb az egyszerűség kedvéért.
+* A fa esetében csupán a törzsének lehet nekimenni, nem a lombkoronának, ezért a modellt ekképpen kell megalkotni! A törzsnek használható egy szabályos hasáb az egyszerűség kedvéért.
     * ![](https://raw.githubusercontent.com/szfmv2019-tavasz/handout/master/src/images/tree_collidable.png)
 * Az autó is egyszerűsíthető, nem kell a grafikai elemet teljes mértékben követni.
     * ![](https://raw.githubusercontent.com/szfmv2019-tavasz/handout/master/src/images/car_simplified_polygon_model.png)
@@ -32,31 +32,31 @@
     * ![](https://raw.githubusercontent.com/szfmv2019-tavasz/handout/master/src/images/90left_polygon.png)
 
 
-    # Vizualizáció
+# Vizualizáció
 
-    * Input: Objektummodell (modellezett világ), pontosabban annak elégséges metszete. A rajzoláshoz elegendőek az világot leíró állományban megtalálható adatok, nem kell megvárni a teljes modell elkészültét
-    * Output: Illeszkedő, résmentes megjelenítése, 24 FPS-el frissülő, folyamatos mozgás
-    * Challenge: Az objektumtranszformációk megfelelő végrehajtása, az objektummodellért felelős csapattal egyeztetés az objektumok elérését illetően
+* Input: Objektummodell (modellezett világ), pontosabban annak elégséges metszete. A rajzoláshoz elegendőek az világot leíró állományban megtalálható adatok, nem kell megvárni a teljes modell elkészültét
+* Output: Illeszkedő, résmentes megjelenítése, 24 FPS-el frissülő, folyamatos mozgás
+* Challenge: Az objektumtranszformációk megfelelő végrehajtása, az objektummodellért felelős csapattal egyeztetés az objektumok elérését illetően
 
-    ## Definition of Done
+## Definition of Done
 
-    - A kirajzolt világ egy része látható csak állandóan a programablakban, a „kamera” a vezérelt autót (egocar) követi
-        - világ széleinek kezelése
-    - statikus objektumok pozícióhelyes kirajzolása és illesztése a rendelkezésre álló építőelemekből
-    - mozgó objektumok helyes kirajzolása
-    - debug célból meg kell tudni jeleníteni az egyes objektumokhoz definiált poligonokat
-    - interfészt kell biztosítani, hogy egy megcínzett objektum poligonja eltérő színnel jelenhessen meg (ha kijelölésre kerül)
-    - interfészt kell biztosítani a szenzorok látóterét jelképező háromszögek oprionális megjelenítésére
-    - a megjelenés villódzsásmentes és folyamatos legyen
+- A kirajzolt világ egy része látható csak állandóan a programablakban, a „kamera” a vezérelt autót (egocar) követi
+    - világ széleinek kezelése
+- statikus objektumok pozícióhelyes kirajzolása és illesztése a rendelkezésre álló építőelemekből
+- mozgó objektumok helyes kirajzolása
+- debug célból meg kell tudni jeleníteni az egyes objektumokhoz definiált poligonokat
+- interfészt kell biztosítani, hogy egy megcímzett objektum poligonja eltérő színnel jelenhessen meg (ha kijelölésre kerül)
+- interfészt kell biztosítani a szenzorok látóterét jelképező háromszögek opcionális megjelenítésére
+- a megjelenés villódzásmentes és folyamatos legyen
 
 
-    ## Megjegyzések
+## Megjegyzések
 
-    * A programablaknak az alábbi módon nézni majd ki. A kezdeti kód ezt a felosztást már támogatja, tartalmaz két JPanel-t, ebből a `CourseDisplay`re kell a világ objektumait kirajzolni. Pontosabban az a „viewport”, amit a kamera lát, mögötte ott lehet a többi objektum.
-        - ha szükséges egyéb panel definiálható, de a műszerfal (dashboard) működését nem lehet megzavarni
-        - ![gui_plan](https://raw.githubusercontent.com/szfmv2019-tavasz/handout/master/src/images/gui_plan_course_display.png)
-    * A kiadott kód csak példa alap GUI készítésére, ha a feladat úgy kívánja átírható, más rajzoló metódusok vagy logika is használható, de figyelni kell arra, hogy ez esetben minden érintett csapat tudjon a módosításokról. _Mindenek előtt a műszerfalért felelős csapat!_
-    * Az IntelliJ IDEA GUI Designer-e *nem* használható!
+* A programablaknak az alábbi módon nézni majd ki. A kezdeti kód ezt a felosztást már támogatja, tartalmaz két JPanel-t, ebből a `CourseDisplay`re kell a világ objektumait kirajzolni. Pontosabban az a „viewport”, amit a kamera lát, mögötte ott lehet a többi objektum.
+    - ha szükséges egyéb panel definiálható, de a műszerfal (dashboard) működését nem lehet megzavarni
+    - ![gui_plan](https://raw.githubusercontent.com/szfmv2019-tavasz/handout/master/src/images/gui_plan_course_display.png)
+* A kiadott kód csak példa alap GUI készítésére, ha a feladat úgy kívánja átírható, más rajzoló metódusok vagy logika is használható, de figyelni kell arra, hogy ez esetben minden érintett csapat tudjon a módosításokról. _Mindenek előtt a műszerfalért felelős csapat!_
+* Az IntelliJ IDEA GUI Designer-e *nem* használható!
 
 
 # Human Machine Interface (HMI): Műszerfal, irányítás
@@ -113,7 +113,7 @@
     - Sebességváltó állásától függő mozgásállapot (vagy nem-mozgás) megvalósítása (PRND)
     - Gyorsulás/lassulás számítása gáz/fék alapján
     - fordulókör meghatározás, kanyarodás
-    - teljes elmoztulás vektor kiszámolása
+    - teljes elmozdulás vektor kiszámolása
 - Challenge:
     - irányítást implementáló csapattal egyeztetés az inputt értékekről (packet-ekről)
 
@@ -129,11 +129,11 @@
     - az adaptív tempomat és a parkoló asszisztens gáz és fék inputot is
 - Buszról érkező kormányállás felhasználása
 - Autó kanyarodásának biztosítása valóságos fordulókör szerint
-    - ehhez szükséges extra tulajdonágot meghatározása
+    - ehhez szükséges extra tulajdonságot meghatározása
 - Tényleges mozgásvektor meghatározása a motor csapat gyorsulás, lassulás értékének felhasználásával
 - A meghatározott mozgásvektor alapján az autó pozíciójának frissítése
     - az AutomatedCar osztály x,y koordinátáinak frissítése
-- Tolatás során is valósághű hanyarodás történik
+- Tolatás során is valósághű kanyarodás történik
 - Felkészíteni a modult, hogy a sávtartó automatika vagy a parkoló asszisztens is küldhet kormányzás inputot
 
 ## Megjegyzések

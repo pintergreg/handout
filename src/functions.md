@@ -50,7 +50,7 @@ A kiválasztott célobjektum (autó előtt haladó NPC) sebességéhez igazítja
 
 Nyilvánvalóan nem azt kell vizsgálni, hogy az autó ütközik-e az előtte levő objektummal hanem, hogy _ütközni fog-e vele_. A vészfékezés maximális lassulása 9 m/s^2 lehet. Ha az autó 36 m/s sebességgel halad akkor 4 másodperc kell a nullára fékezéshez (ha 50 km/h sebességgel halad, akkor 20). Az aktuális sebességből meghatározható, hogy mekkora a fékút, a maximális megengedett lassulás mellett. Az is kiszámolható, hogy ez mennyi időt vesz igénybe, így az is, hogy mikor kell elkezdeni a vészfékezést, hogy a gyalogost ne üssük el.
 
-A radar szenzor elég messzire ellát, egy nem mozgó objektum (pl. fa) esetében egyszerű meghatározni, hogy lesz-e ütközés és el kell-e kezdei vészfékezni. Mozgó objektum (gyalogos) esetében azt is figyelembe kell venni, hogy mire odaérük még az úton lesz-e.
+A radar szenzor elég messzire ellát, egy nem mozgó objektum (pl. fa) esetében egyszerű meghatározni, hogy lesz-e ütközés és el kell-e kezdeni vészfékezni. Mozgó objektum (gyalogos) esetében azt is figyelembe kell venni, hogy mire odaérünk még az úton lesz-e.
 
 - elkerülhető ütközés esetén vizuális figyelmeztetés a sofőrnek
 - 70 km/h felett figyelmeztetés, hogy az AEB nem tud minden helyzetet kezelni
@@ -64,7 +64,7 @@ A radar szenzor elég messzire ellát, egy nem mozgó objektum (pl. fa) esetébe
 
 ## Parkoló asszisztens (Parking Pilot - PP)
 
-A rendszert az erre szolgáló vezérlóvel aktiválni kell, majd az irányjelzővel kijelölni, hogy jobbra, vagy balra keressük a parkolóhelyet. Ezután ahogy az autó _vezetői irányítás mellett_ végiggurul a parkoló mellett, a rendszer detektálja az üres parkolóhelyet. Ekkor hátramenetbe kapcsolva az PP vezetői beavatkozás nélkül beáll a szabad pozícióba.
+A rendszert az erre szolgáló vezérlővel aktiválni kell, majd az irányjelzővel kijelölni, hogy jobbra, vagy balra keressük a parkolóhelyet. Ezután ahogy az autó _vezetői irányítás mellett_ végiggurul a parkoló mellett, a rendszer detektálja az üres parkolóhelyet. Ekkor hátramenetbe kapcsolva az PP vezetői beavatkozás nélkül beáll a szabad pozícióba.
 
 ### Bemutatóvideók (YouTube)
 
@@ -76,14 +76,14 @@ A rendszert az erre szolgáló vezérlóvel aktiválni kell, majd az irányjelz�
 - a parkolás megkezdése külön inputhoz kötött
 - a kormány és gáz/fék vezérlésével beparkolás a talált helyre
     - a tolatási manőver lehet egy előre definiált szekvencia, amelyet a parkolóhely (abszolút) pozíciójával lehet paraméterezni
-- ha a PP aktív és a váltó hátramentben van (és van detektált parkolóhely), akkor parkolási szekvencia végrehajtása
+- ha a PP aktív és a váltó hátramenetben van (és van detektált parkolóhely), akkor parkolási szekvencia végrehajtása
 - a párhuzamos parkolás akkor sikeres, ha ütközés nélkül megtörténik
 - a sofőr beavatkozására (fék, gáz, kormány) kikapcsolás (megszűnik az automata vezérlés)
 
 1. parkolóhely keresése
     - ![](images/find_parking_place.png)
 2. Parkolóhely azonosítva
-    - Az üres hely detektálása lényegébe egy állapotátmenet az első és a hátsó ultrahang szenzor „van-e akadály” visszajelzésében. Amíg egy kocsisor mellett halad az auró mindkét szenzor „van akadály” jelzéssel tér vissza (ez valójában nem `boolean` állapot, egy objektum listát ad vissza), az üres hely kezdetén a az első „nincs akadály” állapotba megy át (a lista üres), majd ahogy az autó halad tovább a hátsó szenzor is „nincs akadály” állapotba kerül.
+    - Az üres hely detektálása lényegébe egy állapotátmenet az első és a hátsó ultrahang szenzor „van-e akadály” visszajelzésében. Amíg egy kocsisor mellett halad az autó mindkét szenzor „van akadály” jelzéssel tér vissza (ez valójában nem `boolean` állapot, egy objektum listát ad vissza), az üres hely kezdetén a az első „nincs akadály” állapotba megy át (a lista üres), majd ahogy az autó halad tovább a hátsó szenzor is „nincs akadály” állapotba kerül.
     - A szabad terület végén ugyanez fordítva játszódik le.
     - ![](images/parking_place_found.png)
 3. Automatikus parkolás
@@ -103,7 +103,7 @@ Parkolás manőver leírása nagy vonalakban [forrás](https://www.dmv.ca.gov/po
 
 ### Kezelőszervek
 
-- aktiválás billenytűzettel
+- aktiválás billentyűzettel
 - az irányjelzővel jelölhető ki keresési oldal
 
 
@@ -115,7 +115,7 @@ Parkolás manőver leírása nagy vonalakban [forrás](https://www.dmv.ca.gov/po
 
 ### Implementálás
 
-Két jellemző megvalósítása van. Az egyik a sáv széleihez viszonytva korrigál: ha az autó elérné a sáv szélét, akkor ellenkormányoz. A másik megoldás kiszámolja a sáv közepét és azon tartja az autót.
+Két jellemző megvalósítása van. Az egyik a sáv széleihez viszonyítva korrigál: ha az autó elérné a sáv szélét, akkor ellenkormányoz. A másik megoldás kiszámolja a sáv közepét és azon tartja az autót.
 
 - 45 foknál enyhébb kanyarodású úton a kocsi a sáv szemmel látható közepén marad
 - ha el kell engednie a kontrollt (az automatika számára kezelhetetlen forgalmi szituáció következik, pl. éles kanyar, kereszteződés), vizuális figyelmeztetést ad
@@ -130,12 +130,12 @@ Sávon belüli mozgás: a LKA működése egy enyhe sávon belüli cikázást er
 
 ### Kezelőszervek
 
-- aktiválás a műszerfalról (vagy billenytűzettel)
+- aktiválás a műszerfalról (vagy billentyűzettel)
 
 
 ## Táblafelismerő (Traffic Sign Recognition - TSR)
 
-A kamera látóterébe eső és az autó számára releváns (ellentétes irányba közlekedők számára szólóakat nem) közlekedési táblákat fel kell ismerni és a legutolsó relevánsat megjeleníteni a műszerfalon. Ha ez sebességkorlátozás, akkor azt a buszra kiírni (az ACC hasznája).
+A kamera látóterébe eső és az autó számára releváns (ellentétes irányba közlekedők számára szólóakat nem) közlekedési táblákat fel kell ismerni és a legutolsó relevánsat megjeleníteni a műszerfalon. Ha ez sebességkorlátozás, akkor azt a buszra kiírni (az ACC használja).
 
 ### Bemutatóvideó (YouTube)
 
@@ -154,7 +154,7 @@ A kamera látóterébe eső és az autó számára releváns (ellentétes irány
 
 ## Tolatóradar
 
-A hátsó ultrahang szezorokat használja akadály detektálásra. Kiszámolja az akadály távolságát és annak megfelelően figyelmeztető jelzést ad a vezetőnek, megkönnyíve a manuális parkolást, tolatást.
+A hátsó ultrahang szenzorokat használja akadály detektálásra. Kiszámolja az akadály távolságát és annak megfelelően figyelmeztető jelzést ad a vezetőnek, megkönnyítve a manuális parkolást, tolatást.
 
 ### Bemutatóvideó (YouTube)
 

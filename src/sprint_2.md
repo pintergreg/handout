@@ -97,7 +97,7 @@ Sávtartó automatika és táblafelismerő alapjául szolgáló kamera szenzor i
 - A vezérelt autó - tereptárgy ütközésének detektálása és esemény kiváltása
 - A vezérelt autó - NPC-vel való ütközésének detektálása és esemény kiváltása
 - Mozgó objektumok érintkezésének pozíció és dimenzióhelyes detekciója és kommunikációja megvalósult
-- Mozgó és statikus objektumok érintkezésének pozíció és dimenzóhelyes detekciója és kommunikációja megvalósult
+- Mozgó és statikus objektumok érintkezésének pozíció és dimenzióhelyes detekciója és kommunikációja megvalósult
 - Az objektumok mozgásállapota az energiamegmaradás törvényeinek megfelelően változik (gyorsul, lassul, irányt vált, megáll)
     - Ha a vezérelt autó nekimegy egy NPC autónak akkor ez legyen rá hatással (lassuljon le)
     - Ha a vezérelt autó nekimegy egy „stabil” tereptárgynak (pl. fa), akkor álljon meg, érjen véget a játék, egy táblán azonban át tud menni (el tudja sodorni), lassuljon le
@@ -109,7 +109,7 @@ Sávtartó automatika és táblafelismerő alapjául szolgáló kamera szenzor i
 
 * Az NPC - NPC ütközés nem fontos, tehát NPC autó ha átmegy a gyalogoson nem kell, hogy kiváltson különösebb reakciót
 * Ugyanígy az NPC - tereptárgy ütközés sem túl magas prioritású, ugyanis ha az NPC jól van szkriptelve, nem fog letérni az útról és nekimenni a fának
-* jellemző medolgásként az _egocar_ szokott kapni egy sérülés/élet értéket a mozgásképtelenséghez
+* jellemző megoldásként az _egocar_ szokott kapni egy sérülés/élet értéket a mozgásképtelenséghez
 
 
 # 6. Világ populálása mozgó NPC objektumokkal
@@ -123,7 +123,7 @@ Sávtartó automatika és táblafelismerő alapjául szolgáló kamera szenzor i
 - NPC autó képes végigmenni a pályán: a kanyar előtt lelassít, sávban maradva, _valósághűen_ kanyarodik
     - legalább 1 autó képes körözni a pályán
 - Objektumok előre definiált, értelmes helyen jelennek meg (autók úton, gyalogosok út mellett/járdán)
-- Objektumok előre scriptelt útvonalat követnek
+- Objektumok előre szkriptelt útvonalat követnek
 - Autók az utat - sávot - pontosan követik
 - Új pálya esetén az NPC objektumok adaptálódnak az új környezethez
 - NPC objektumok egymás mozgásállapotát nem változtatják meg

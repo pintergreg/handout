@@ -9,7 +9,7 @@ Például a [Linux kernelkez tartozó előírások](https://01.org/linuxgraphics
 
 A Java nyelvhez is van(nak) kódformázási előírás(ok), amelyek egy része teljesen általános. Pl. a csomagnevek kisbetűsek, az osztály nevek mindig nagybetűvel kezdődnek (a fejlesztői környezetek ezt például általánosan számon kérik), a metódusnevek pedig kis betűvel kezdődnek továbbá a szóösszetételeknél nagybetűket használunk pl. `metódusNév`.
 
-Átfogó ajánlást készített még 2000 környékén a Sun, ám ez mára meglehetősen túlhaladott, vagy ilyen a Google által összeállított [Google Java Style Guide](https://google.github.io/styleguide/javaguide.html). 
+Átfogó ajánlást készített még 2000 környékén a Sun, ám ez mára meglehetősen túlhaladott, vagy ilyen a Google által összeállított [Google Java Style Guide](https://google.github.io/styleguide/javaguide.html).
 Ez viszont helyenként túl specifikus (nagyvállalati környezetre optimalizált) a tárgy kereteihez, így nem egy az egyben ezt használjuk. A [Checkstyle](http://checkstyle.sourceforge.net/) statikus kódanalizátor default értékei vagy a Jetbrains által az IntelliJ IDEA-ba beállított default szabályok is felfoghatók egy ilyen ajánlásnak.
 
 ## kódformázási előírások
@@ -56,14 +56,14 @@ try {
 A Javában a metódusok különböző módosítókkal láthatók el mint `static`, `public|private|protected`, `final` ám ezeknek előírt sorrendje is van. Nem a fordító írja elő sajnos, tehát lefordul, de konvenció, hogy ezeket milyen sorrendbe tesszük. Pl. a teljesség igénye nélkül  `public static` oké `static public` nem.
 Sajnos a _Reformat Code_ ezt nem rázza gatyába, így az automatizált megoldás sem fogja, de ettől még stílus hiba.
 
-Javítani lehet a helyzeten a File | Settings | Editor | Inspections | Java | Code style issues | Missorted modifiers inspection bepipálásával **ÉS** az Analyze | Code Cleanup _commit előtti_ alkalmazásával. Sajnálatos módon a Save Actions ezt nem tudja. :sob: 
+Javítani lehet a helyzeten a File | Settings | Editor | Inspections | Java | Code style issues | Missorted modifiers inspection bepipálásával **ÉS** az Analyze | Code Cleanup _commit előtti_ alkalmazásával. Sajnálatos módon a Save Actions ezt nem tudja. :sob:
 
 [_forrás_](https://stackoverflow.com/a/31203757/4737417)
 
 # Statikus program analízis
 
 A statikus analízis során a programkód végrehajtása nélkül, többnyire a forráskód elemzésével - automatizáltan - történik kód hibáinak feltárása.[[Wikipédia](https://en.wikipedia.org/wiki/Static_program_analysis)]
-Ilyen eszköz Java nyelvhez például a nyílt forrású [PMD](https://pmd.github.io/), vagy a [Checkstyle](http://checkstyle.sourceforge.net/). 
+Ilyen eszköz Java nyelvhez például a nyílt forrású [PMD](https://pmd.github.io/), vagy a [Checkstyle](http://checkstyle.sourceforge.net/).
 
 A kurzus során az utóbbit használjuk, amely figyeli a fentebb leírt formázási ajánlásokat ([teljes használható szabálylista](http://checkstyle.sourceforge.net/checks.html)). Ezen túlmenőleg egyéb hibafaktorokat is figyel: magic number-ek alkalmazása, string literál többszöri előfordulása, [Ciklomatikus komplexitás](https://en.wikipedia.org/wiki/Cyclomatic_complexity), túl sok paraméter a metódusban (5), túl hosszú metódus (20 utasítás), túl hosszú sor (120 karakter) valamint a kódban felejtett `TODO` és `FIXME` kommentekre is érzékeny.
 
@@ -73,7 +73,7 @@ A master repók ([A](https://github.com/SzFMV2018-Osz/AutomatedCar-A) és [B](ht
 
 Az az igazság, hogy elég unalmas az a fajta macska-egér játék, hogy visszadobok egy PR-et majd a javítás az összes hiba egy részére (jellemzően az explicit megemlítettekre) érkezik csupán, míg a checkstyle ugyanúgy tucatnyit tart nyilván...
 
-Sajnos az integrált online eszköznek (CodeFactor) megvan a maga gyökérsége és a PR esetében nem a legjobban jeleníti meg a hibákat, de ettől még listázza és a „Details” gombot használva ott kikereshető. Bármely branch kiválasztható majd fájl vagy issue szinten lehet gyönyörködni a hibákban.
+Sajnos az integrált online eszköznek (CodeFactor) megvan a maga hiányossága és a PR esetében nem a legjobban jeleníti meg a hibákat, de ettől még listázza és a „Details” gombot használva ott kikereshető. Bármely branch kiválasztható majd fájl vagy issue szinten lehet gyönyörködni a hibákban.
 
 ![codacy_pr_details](https://user-images.githubusercontent.com/3854784/37600458-aacd7d90-2b87-11e8-9c4a-9a0cdf6e53f0.png)
 
