@@ -6,7 +6,7 @@ Szintén a csapatok feladat a feladatok közötti függőségek azonosítása é
 
 A user story-k függőségi gráfja alább látható, sprintenként színezve. Az „Autó pozíció” nem user story, csupán az átláthatóság (kevesebb nyíl) érdekében lett berajzolva.
 
-![](images/dependencies.png)
+![](images/dependencies_4_team.png)
 
 ## Az egyes sprintek feladatai
 
