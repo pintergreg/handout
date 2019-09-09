@@ -30,6 +30,8 @@
     * ![](https://raw.githubusercontent.com/szfmv2019-tavasz/handout/master/src/images/car_simplified_polygon_model.png)
 * A kanyarodó útelemeknél is lehet egyszerűsítést használni.
     * ![](https://raw.githubusercontent.com/szfmv2019-tavasz/handout/master/src/images/90left_polygon.png)
+* A szűréshez használt háromszög esetében a poligonokat kell figyelembe venni, pl. fa törzse, tábla rúdja, de nem csak az „ütközhető” objektumokat kell tudni visszaadni, hanem az útelemeket is. A 2. sprintben a szenzorok majd válogatnak, hogy mire van szükségük ezekből.
+    * ![](https://raw.githubusercontent.com/szfmv2019-osz/handout/master/src/images/model_interface.png)
 
 
 # Vizualizáció
