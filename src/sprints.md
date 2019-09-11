@@ -8,8 +8,12 @@ A user story-k függőségi gráfja alább látható, sprintenként színezve. <
 
 ![](images/dependencies_4_team.png)
 
-## Az egyes sprintek feladatai
+A következő ábrán pedig a user story-k a felelős csapatok alapján van színezve.
+
+![](images/team_user_stories.png)
+
+<!--## Az egyes sprintek feladatai
 
 - [1. sprint](sprint_1.md)
 - [2. sprint](sprint_2.md)
-- [3. sprint](sprint_3.md)
+- [3. sprint](sprint_3.md)-->
