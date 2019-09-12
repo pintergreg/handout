@@ -28,20 +28,22 @@ Az órák csütörtökönként a BA.F.07-ben vannak, neptun szerint 08:00-10:35 
 
 1. GitHub fiók létrehozása
     * ha még nincs
-2. 11 JDK telepítése
+2. 11 JDK telepítése, mivel a szoftvert Java nyelven kell elkészíteni
     * ha nincs fönt
 3. Fejlesztőkörnyezet telepítése és beállítása
+    * IntelliJ IDEA az ajánlott és támogatott eszköz
 4. Git és GitHub oktatóanyagok elolvasása
     * ha vannak hiányosságok
+    * az órán nincs idő szájbarágósan git használatot oktatni, erre vannak interaktív oktatófelületek
+    * ez mindenkinek egyéni felelőssége, ám ha konkrét kérdések merülnek fel, akkor ezekre természetesen kitérünk
 5. Git repó klónozása
-6. Kód futtatása a fejlesztő környezet beállításainak tesztelése céljából
+6. Kód futtatása a futtató- és a fejlesztőkörnyezet beállításainak tesztelése céljából
 7. A jegyzet és az abban taglalt segédanyagok megismerése
-8. Az elkészítendő szoftver átgondolása
-    1. use-case diagram
-    2. rendszerszintű, absztrakt elemek
-    3. a fentiek komponens szintű kibontása
-    4. egy, az egyéni értékelés szerint legnagyobb jelentőséggel bíró komponens osztálydiagramja
-        - alternatívaként a legszimpatikusabb komponens
+8. Az elkészítendő szoftver átgondolása (lásd readme), statikus és dinamikus modell elkészítése komponens szinten
+    * Ennek terjedeleme (az órái példa alapján): egy absztrakciós szint a négyfelé bontás (kb. user story szint), és egy az ez alatti egyel, minden komponens mégegy kibontása, kb. egyenrangú komponensek létrehozására - osztály szintre nem mennék le, még ha a végén ezekből akár osztály is lesz. Szóval kettő struktúra, kettő dinamikus viselkedést leíró diagram, egy magasabb és egy alacsonyabb absztrakciós szinten. Hogy konkrétan hány building block, azt mindenkinek "érzésre" kell megállapítania, ezért szubjektív az architektúra.
+    * Ez egy egyéni feladat, hiszen még nincsenek csapatok. Az elkészíteshez javasolt eszközök: MS Visio, https://www.draw.io/.
+    * Az elkészült diagramoknak a következő órán bemutatható állapotban kell lenniük.
+
 
 
 # Demók
