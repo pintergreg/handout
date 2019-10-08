@@ -36,12 +36,11 @@ Sávtartó automatika és táblafelismerő alapjául szolgáló kamera szenzor i
 
 - 1 db, a szélvédő mögé elhelyezett kamera implementálása
 - A látószög és távolság által meghatározott területen kérje el a **releváns** objektumokat
+    * a táblafelismerő szempontjából releváns objektumok a táblák
+    * a sávtartó szempontjából releváns objektumok az utak
 - A háromszög koordinátái az autó helyzetétől függően folyamatosan frissülnek
 - debug célra bekapcsolható módon a háromszög legyen kirajzolható **kék** színnel
 - A szenzorok által relevánsnak tartott objektumok kiemelhetők egy debug kapcsolóval (billentyű vagy debug módba váltás)
-- Határozza meg a táblafelismerő szempontjából releváns objektumokat (táblákat) pozícióval és távolsággal
-- Határozza meg a sávtartó szempontjából releváns objektumokat (utak)
-- Határozza meg a sávot és számítsa ki a sáv változását (pl. kanyarodni fog, merre milyen szögben)
 
 <!-- - A kamera szenzor a látható sávok összes adatát visszaadja(hány sáv, melyikben vagyunk, azon belül milyen távolságra a szélektől)
 - A kamera szenzor a látott táblák közül a legközelebbi összes adatát visszaadja (milyen tábla, milyen messzire van) -->
