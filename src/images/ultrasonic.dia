@@ -97,7 +97,7 @@
             <dia:real val="0.80000000000000004"/>
           </dia:attribute>
           <dia:attribute name="pos">
-            <dia:point val="22.5,57.445"/>
+            <dia:point val="22.5,57.4441"/>
           </dia:attribute>
           <dia:attribute name="color">
             <dia:color val="#000000"/>
@@ -186,7 +186,7 @@
             <dia:real val="0.10000000149011612"/>
           </dia:attribute>
           <dia:attribute name="pos">
-            <dia:point val="29.75,57.275"/>
+            <dia:point val="29.75,57.2743"/>
           </dia:attribute>
           <dia:attribute name="color">
             <dia:color val="#000000"/>
@@ -237,7 +237,7 @@
             <dia:real val="0.10000000149011612"/>
           </dia:attribute>
           <dia:attribute name="pos">
-            <dia:point val="24.25,57.275"/>
+            <dia:point val="24.25,57.2743"/>
           </dia:attribute>
           <dia:attribute name="color">
             <dia:color val="#000000"/>
@@ -288,7 +288,7 @@
             <dia:real val="0.10000000149011612"/>
           </dia:attribute>
           <dia:attribute name="pos">
-            <dia:point val="29.75,53.775"/>
+            <dia:point val="29.75,53.7743"/>
           </dia:attribute>
           <dia:attribute name="color">
             <dia:color val="#000000"/>
@@ -301,13 +301,13 @@
     </dia:object>
     <dia:object type="Flowchart - Box" version="0" id="O5">
       <dia:attribute name="obj_pos">
-        <dia:point val="28.5,53"/>
+        <dia:point val="29.5,53"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="28.45,52.95;29.05,53.55"/>
+        <dia:rectangle val="29.45,52.95;30.05,53.55"/>
       </dia:attribute>
       <dia:attribute name="elem_corner">
-        <dia:point val="28.5,53"/>
+        <dia:point val="29.5,53"/>
       </dia:attribute>
       <dia:attribute name="elem_width">
         <dia:real val="0.5"/>
@@ -339,7 +339,7 @@
             <dia:real val="0.10000000149011612"/>
           </dia:attribute>
           <dia:attribute name="pos">
-            <dia:point val="28.75,53.275"/>
+            <dia:point val="29.75,53.2743"/>
           </dia:attribute>
           <dia:attribute name="color">
             <dia:color val="#000000"/>
@@ -352,13 +352,13 @@
     </dia:object>
     <dia:object type="Flowchart - Box" version="0" id="O6">
       <dia:attribute name="obj_pos">
-        <dia:point val="28.5,61"/>
+        <dia:point val="29.5,61"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="28.45,60.95;29.05,61.55"/>
+        <dia:rectangle val="29.45,60.95;30.05,61.55"/>
       </dia:attribute>
       <dia:attribute name="elem_corner">
-        <dia:point val="28.5,61"/>
+        <dia:point val="29.5,61"/>
       </dia:attribute>
       <dia:attribute name="elem_width">
         <dia:real val="0.5"/>
@@ -390,7 +390,7 @@
             <dia:real val="0.10000000149011612"/>
           </dia:attribute>
           <dia:attribute name="pos">
-            <dia:point val="28.75,61.275"/>
+            <dia:point val="29.75,61.2743"/>
           </dia:attribute>
           <dia:attribute name="color">
             <dia:color val="#000000"/>
@@ -441,7 +441,7 @@
             <dia:real val="0.10000000149011612"/>
           </dia:attribute>
           <dia:attribute name="pos">
-            <dia:point val="29.75,60.775"/>
+            <dia:point val="29.75,60.7743"/>
           </dia:attribute>
           <dia:attribute name="color">
             <dia:color val="#000000"/>
@@ -454,13 +454,13 @@
     </dia:object>
     <dia:object type="Flowchart - Box" version="0" id="O8">
       <dia:attribute name="obj_pos">
-        <dia:point val="16,53"/>
+        <dia:point val="15,53"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="15.95,52.95;16.55,53.55"/>
+        <dia:rectangle val="14.95,52.95;15.55,53.55"/>
       </dia:attribute>
       <dia:attribute name="elem_corner">
-        <dia:point val="16,53"/>
+        <dia:point val="15,53"/>
       </dia:attribute>
       <dia:attribute name="elem_width">
         <dia:real val="0.5"/>
@@ -492,7 +492,7 @@
             <dia:real val="0.10000000149011612"/>
           </dia:attribute>
           <dia:attribute name="pos">
-            <dia:point val="16.25,53.275"/>
+            <dia:point val="15.25,53.2743"/>
           </dia:attribute>
           <dia:attribute name="color">
             <dia:color val="#000000"/>
@@ -505,13 +505,13 @@
     </dia:object>
     <dia:object type="Flowchart - Box" version="0" id="O9">
       <dia:attribute name="obj_pos">
-        <dia:point val="16,61"/>
+        <dia:point val="15,61"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="15.95,60.95;16.55,61.55"/>
+        <dia:rectangle val="14.95,60.95;15.55,61.55"/>
       </dia:attribute>
       <dia:attribute name="elem_corner">
-        <dia:point val="16,61"/>
+        <dia:point val="15,61"/>
       </dia:attribute>
       <dia:attribute name="elem_width">
         <dia:real val="0.5"/>
@@ -543,7 +543,7 @@
             <dia:real val="0.10000000149011612"/>
           </dia:attribute>
           <dia:attribute name="pos">
-            <dia:point val="16.25,61.275"/>
+            <dia:point val="15.25,61.2743"/>
           </dia:attribute>
           <dia:attribute name="color">
             <dia:color val="#000000"/>
@@ -594,7 +594,7 @@
             <dia:real val="0.10000000149011612"/>
           </dia:attribute>
           <dia:attribute name="pos">
-            <dia:point val="15.25,53.775"/>
+            <dia:point val="15.25,53.7743"/>
           </dia:attribute>
           <dia:attribute name="color">
             <dia:color val="#000000"/>
@@ -645,7 +645,7 @@
             <dia:real val="0.10000000149011612"/>
           </dia:attribute>
           <dia:attribute name="pos">
-            <dia:point val="15.25,60.775"/>
+            <dia:point val="15.25,60.7743"/>
           </dia:attribute>
           <dia:attribute name="color">
             <dia:color val="#000000"/>
@@ -658,16 +658,16 @@
     </dia:object>
     <dia:object type="Standard - Polygon" version="0" id="O12">
       <dia:attribute name="obj_pos">
-        <dia:point val="29,53"/>
+        <dia:point val="30,53"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="20.3793,44.95;37.6261,53.05"/>
+        <dia:rectangle val="19.8641,44.95;40.1425,53.05"/>
       </dia:attribute>
       <dia:attribute name="poly_points">
-        <dia:point val="29,53"/>
-        <dia:point val="37.5,45"/>
-        <dia:point val="20.5,45"/>
-        <dia:point val="28.5,53"/>
+        <dia:point val="30,53"/>
+        <dia:point val="40,45"/>
+        <dia:point val="20,45"/>
+        <dia:point val="29.4,53"/>
       </dia:attribute>
       <dia:attribute name="line_width">
         <dia:real val="0.10000000149011612"/>
@@ -681,16 +681,16 @@
     </dia:object>
     <dia:object type="Standard - Polygon" version="0" id="O13">
       <dia:attribute name="obj_pos">
-        <dia:point val="16.5,53"/>
+        <dia:point val="15.5,53"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="7.37392,44.95;24.6207,53.05"/>
+        <dia:rectangle val="4.85746,44.95;25.137,53.05"/>
       </dia:attribute>
       <dia:attribute name="poly_points">
-        <dia:point val="16.5,53"/>
-        <dia:point val="24.5,45"/>
-        <dia:point val="7.5,45"/>
-        <dia:point val="16,53"/>
+        <dia:point val="15.5,53"/>
+        <dia:point val="25,45"/>
+        <dia:point val="5,45"/>
+        <dia:point val="15,53"/>
       </dia:attribute>
       <dia:attribute name="line_width">
         <dia:real val="0.10000000149011612"/>
@@ -704,16 +704,16 @@
     </dia:object>
     <dia:object type="Standard - Polygon" version="0" id="O14">
       <dia:attribute name="obj_pos">
-        <dia:point val="37.5,70"/>
+        <dia:point val="40,70"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="20.3843,61.45;37.6207,70.05"/>
+        <dia:rectangle val="19.8691,61.45;40.136,70.05"/>
       </dia:attribute>
       <dia:attribute name="poly_points">
-        <dia:point val="37.5,70"/>
-        <dia:point val="20.5,70"/>
-        <dia:point val="28.5,61.5"/>
-        <dia:point val="29,61.5"/>
+        <dia:point val="40,70"/>
+        <dia:point val="20,70"/>
+        <dia:point val="29.5,61.5"/>
+        <dia:point val="30,61.5"/>
       </dia:attribute>
       <dia:attribute name="line_width">
         <dia:real val="0.10000000149011612"/>
@@ -727,16 +727,16 @@
     </dia:object>
     <dia:object type="Standard - Polygon" version="0" id="O15">
       <dia:attribute name="obj_pos">
-        <dia:point val="24.5,70"/>
+        <dia:point val="25,70"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="7.37929,61.45;24.6157,70.05"/>
+        <dia:rectangle val="4.86397,61.45;25.1309,70.05"/>
       </dia:attribute>
       <dia:attribute name="poly_points">
-        <dia:point val="24.5,70"/>
-        <dia:point val="7.5,70"/>
-        <dia:point val="16,61.5"/>
-        <dia:point val="16.5,61.5"/>
+        <dia:point val="25,70"/>
+        <dia:point val="5,70"/>
+        <dia:point val="15,61.5"/>
+        <dia:point val="15.5,61.5"/>
       </dia:attribute>
       <dia:attribute name="line_width">
         <dia:real val="0.10000000149011612"/>
@@ -753,11 +753,11 @@
         <dia:point val="30,61"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="29.95,52.9;40.05,69.104"/>
+        <dia:rectangle val="29.95,52.9;40.05,70.1123"/>
       </dia:attribute>
       <dia:attribute name="poly_points">
         <dia:point val="30,61"/>
-        <dia:point val="40,69"/>
+        <dia:point val="40,70"/>
         <dia:point val="40,53"/>
         <dia:point val="30,60.5"/>
       </dia:attribute>
@@ -776,11 +776,11 @@
         <dia:point val="15,61"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="4.95,52.9;15.05,69.104"/>
+        <dia:rectangle val="4.95,52.9;15.05,70.1123"/>
       </dia:attribute>
       <dia:attribute name="poly_points">
         <dia:point val="15,61"/>
-        <dia:point val="5,69"/>
+        <dia:point val="5,70"/>
         <dia:point val="5,53"/>
         <dia:point val="15,60.5"/>
       </dia:attribute>
@@ -799,12 +799,12 @@
         <dia:point val="15,54"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="4.95,45.9;15.05,62.104"/>
+        <dia:rectangle val="4.95,44.8919;15.05,62.104"/>
       </dia:attribute>
       <dia:attribute name="poly_points">
         <dia:point val="15,54"/>
         <dia:point val="5,62"/>
-        <dia:point val="5,46"/>
+        <dia:point val="5,45"/>
         <dia:point val="15,53.5"/>
       </dia:attribute>
       <dia:attribute name="line_width">
@@ -842,14 +842,14 @@
     </dia:object>
     <dia:object type="Standard - Line" version="0" id="O20">
       <dia:attribute name="obj_pos">
-        <dia:point val="28.8,45"/>
+        <dia:point val="29.8,45"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="28.7015,44.9497;28.8503,53.0012"/>
+        <dia:rectangle val="29.7015,44.9497;29.8503,53.0012"/>
       </dia:attribute>
       <dia:attribute name="conn_endpoints">
-        <dia:point val="28.8,45"/>
-        <dia:point val="28.7518,52.9509"/>
+        <dia:point val="29.8,45"/>
+        <dia:point val="29.7518,52.9509"/>
       </dia:attribute>
       <dia:attribute name="numcp">
         <dia:int val="1"/>
@@ -866,7 +866,7 @@
         <dia:point val="29,50"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="29,49.055;30.6375,50.24"/>
+        <dia:rectangle val="29,49.0569;30.6375,50.2396"/>
       </dia:attribute>
       <dia:attribute name="text">
         <dia:composite type="text">
@@ -896,10 +896,10 @@
     </dia:object>
     <dia:object type="Standard - Text" version="1" id="O22">
       <dia:attribute name="obj_pos">
-        <dia:point val="28,52"/>
+        <dia:point val="29,52"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="28,51.055;30.45,52.24"/>
+        <dia:rectangle val="29,51.0569;31.45,52.2396"/>
       </dia:attribute>
       <dia:attribute name="text">
         <dia:composite type="text">
@@ -913,7 +913,7 @@
             <dia:real val="1.2699999511241913"/>
           </dia:attribute>
           <dia:attribute name="pos">
-            <dia:point val="28,52"/>
+            <dia:point val="29,52"/>
           </dia:attribute>
           <dia:attribute name="color">
             <dia:color val="#000000"/>
@@ -929,14 +929,14 @@
     </dia:object>
     <dia:object type="Standard - Arc" version="0" id="O23">
       <dia:attribute name="obj_pos">
-        <dia:point val="29.5,52.5"/>
+        <dia:point val="30.5,52.5"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="28.05,52.05;29.55,52.55"/>
+        <dia:rectangle val="29.05,52.05;30.55,52.55"/>
       </dia:attribute>
       <dia:attribute name="conn_endpoints">
-        <dia:point val="29.5,52.5"/>
-        <dia:point val="28.1,52.5"/>
+        <dia:point val="30.5,52.5"/>
+        <dia:point val="29.1,52.5"/>
       </dia:attribute>
       <dia:attribute name="curve_distance">
         <dia:real val="0.39999999999999852"/>
@@ -947,12 +947,12 @@
         <dia:point val="30,54"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="29.95,45.9;40.05,62.104"/>
+        <dia:rectangle val="29.95,44.8919;40.05,62.104"/>
       </dia:attribute>
       <dia:attribute name="poly_points">
         <dia:point val="30,54"/>
         <dia:point val="40,62"/>
-        <dia:point val="40,46"/>
+        <dia:point val="40,45"/>
         <dia:point val="30,53.5"/>
       </dia:attribute>
       <dia:attribute name="line_width">
