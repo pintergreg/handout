@@ -2,7 +2,10 @@
 
 A vezetéstámogató rendszerek 3 fő szenzorra épülnek: kamera, radar és ultrahang. A valóságban adott esetben a vezetéstámogató rendszerek több szenzor együttes használatával működnek (a szoftverben ilyet nem kell megvalósítani).
 
-További olvasmány: [Driver Assistance Systems, an introduction to Adaptive Cruise Control](http://www.eetimes.com/document.asp?doc_id=1272754)
+További olvasmány:
+
+- [Driver Assistance Systems, an introduction to Adaptive Cruise Control](http://www.eetimes.com/document.asp?doc_id=1272754)
+- [Sensor Set Design Patterns for Autonomous Vehicles](https://autonomous-driving.org/2019/01/25/positioning-sensors-for-autonomous-vehicles/)
 
 ## Kamera
 
