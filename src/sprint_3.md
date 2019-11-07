@@ -106,8 +106,6 @@ Automata vészfékező rendszer megvalósítása, maximum 9 m/s^2 lassulással
 
 ## Megjegyzések
 
-* Szabad feltételezni, hogy az NPC kezelés nem, vagy nem időben készül el, lesz elérhető (kerül be a masterba)
-* Ezért célszerű a fával való ütközés elkerülésével kezdeni, ennek akkor is működnie kell, ha nincs NPC a pályán!
 * A radar vissza kell adja az autó előtt levő legközelebbi releváns objektum adatait (táv, sebesség), ezekkel lehet számolni
 * A távolságból és az autó sebességéből meghatározható, hogy milyen lassulást kell adni az autónak, hogy még megálljon, de ne lépje túl a 9 m/s^2-et
     * a gyorsítási/fékezési input nem gyorsulásban van, hanem pedállás mértékben. Ebből elvileg egyszerűen nem nyerhető ki a gyorsulás, viszont a gyorsulás az egy másodperc alatti sebesség változás, ami viszont kiszámolható t(n) - t(n-1) módon
