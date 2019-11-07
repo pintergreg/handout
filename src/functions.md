@@ -120,7 +120,7 @@ Két jellemző megvalósítása van. Az egyik a sáv széleihez viszonyítva kor
 - 45 foknál enyhébb kanyarodású úton a kocsi a sáv szemmel látható közepén marad
 - ha el kell engednie a kontrollt (az automatika számára kezelhetetlen forgalmi szituáció következik, pl. éles kanyar, kereszteződés), vizuális figyelmeztetést ad
 Ha újra elérhető a funkció (pl. elhagytuk a kanyart) vizuális indikáció (a műszerfalon)
-Be- és kikapcsolható (ennek kezelése már megoldott)
+Be- és kikapcsolható
 
 ![](images/lka.png)
 
