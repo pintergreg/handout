@@ -47,6 +47,11 @@ Alább néhány, az interneten az ismert kulcsszavak alapján könnyen (legaláb
 
 Mivel a diákat nem adjuk ki, célszerű jegyzetelni: **címszavakat**, **fogalmakat** leírni. Nem a diát kell lekörmölni, annak nincs értelme! Óra után (az óra hetében), ezekre rákeresni (pl. Google), illetve elolvasni az fönt elhelyezett anyagokat. A ZH előtti estén nem lehet ezt feldolgozni.
 
+## Mindmap
+
+A témakörök „mindmap” formájú összefoglalása [letölthető itt](mm/szfmv.mm), megnyitáshoz a [Freemind](http://freemind.sourceforge.net/wiki/index.php/Main_Page) nevű javás eszköz szükséges.
+Vagy közvetlenül [innen megnyitható](mm/szfmv.html) a HTML-re fordított változata.
+
 ## Címszavak
 
 Címszavak (különösebb sorrend nélkül) amelyek az elméleti anyagot több-kevésbé lefedik. Ha valakinek ezeket a fogalmakat nem tudja kifejteni (nem tiszta mit jelent), akkor célszerű megkérdezni a Googlet vagy a Wikit. ;)
