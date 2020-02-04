@@ -1,0 +1,353 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Felkészülést segítő anyagok - Jegyzet</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="Szoftverfejlesztés multinacionális vállalatoknál">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div id="sidebar-scrollbox" class="sidebar-scrollbox">
+                <ol class="chapter"><li class="expanded "><a href="description.html"><strong aria-hidden="true">1.</strong> Tárgyleírás</a></li><li class="expanded "><a href="schedule.html"><strong aria-hidden="true">2.</strong> Ütemezés</a></li><li class="expanded "><a href="literature.html" class="active"><strong aria-hidden="true">3.</strong> Felkészülést segítő anyagok</a></li><li class="expanded "><a href="git.html"><strong aria-hidden="true">4.</strong> git</a></li><li class="expanded "><a href="github.html"><strong aria-hidden="true">5.</strong> GitHub</a></li><li class="expanded "><a href="developing_tools.html"><strong aria-hidden="true">6.</strong> Fejlesztői eszközök</a></li><li><ol class="section"><li class="expanded "><a href="code_formatting.html"><strong aria-hidden="true">6.1.</strong> Kódformázás</a></li><li class="expanded "><a href="test_coverage.html"><strong aria-hidden="true">6.2.</strong> Tesztlefedettség</a></li><li class="expanded "><a href="logging.html"><strong aria-hidden="true">6.3.</strong> Logolás</a></li><li class="expanded "><a href="config.html"><strong aria-hidden="true">6.4.</strong> Külső konfigurálási lehetőség</a></li></ol></li><li class="expanded "><a href="workflow.html"><strong aria-hidden="true">7.</strong> Munkafolyamat</a></li><li class="expanded "><a href="sprints.html"><strong aria-hidden="true">8.</strong> Feladatok</a></li><li><ol class="section"><li class="expanded "><a href="sprint_1.html"><strong aria-hidden="true">8.1.</strong> Sprint 1</a></li><li class="expanded "><a href="sprint_2.html"><strong aria-hidden="true">8.2.</strong> Sprint 2</a></li><li class="expanded "><a href="sprint_3.html"><strong aria-hidden="true">8.3.</strong> Sprint 3</a></li></ol></li><li class="expanded "><a href="virtual_world.html"><strong aria-hidden="true">9.</strong> Virtuális világ</a></li><li class="expanded "><a href="physics.html"><strong aria-hidden="true">10.</strong> Fizika</a></li><li class="expanded "><a href="sensors.html"><strong aria-hidden="true">11.</strong> Szenzorok</a></li><li class="expanded "><a href="functions.html"><strong aria-hidden="true">12.</strong> Vezetéstámogató funkciók</a></li><li class="expanded "><a href="reference_architecture.html"><strong aria-hidden="true">13.</strong> Referencia architektúra</a></li><li class="expanded "><a href="implementation.html"><strong aria-hidden="true">14.</strong> Implementáció</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Jegyzet</h1>
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2><a class="header" href="#online-anyagok" id="online-anyagok">Online anyagok</a></h2>
+<p>Alább néhány, az interneten az ismert kulcsszavak alapján könnyen (legalábbis közepesen nehezen) elérhető link, amiket felhasználtam pl. az előadásokra való felkészülésre, így alkalmasnak tartom őket arra, hogy segítsenek benneteket a ZH-ra készülésben. Természetesen angol nyelven. ;)</p>
+<ul>
+<li>Clean code
+<ul>
+<li><a href="https://web.archive.org/web/20160610035745/http://www.itiseezee.com/?p=64">CleanCode intro</a></li>
+<li><a href="https://web.archive.org/web/20160405060134/http://www.itiseezee.com/?p=83">Names</a></li>
+<li><a href="http://www.itiseezee.com/?p=119">Functions</a></li>
+<li><a href="http://www.itiseezee.com/?p=131">Formatting</a></li>
+</ul>
+</li>
+<li>Verziókövetés
+<ul>
+<li><a href="https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control">Git könyv</a></li>
+<li>gyakorlati oldalról lást <a href="./git.html">Git</a> fejezet</li>
+</ul>
+</li>
+<li><a href="https://smartbear.com/learn/code-review/what-is-code-review/">Code review</a></li>
+<li><a href="http://www.scrumhub.com/scrum-guide/">Scrum</a>
+<ul>
+<li><a href="http://www.scrumguides.org/docs/scrumguide/v1/scrum-guide-us.pdf">PDF verzió</a></li>
+<li><a href="https://www.youtube.com/watch?v=P6v-I9VvTq4">Scrum Master - Funny movie about The Power of Scrum</a></li>
+</ul>
+</li>
+<li><a href="https://www.scrumhub.com/kanban-fundamentals/">Kanban</a></li>
+<li><a href="http://www.extremeprogramming.org/rules.html">The Rules of Extreme Programming</a></li>
+<li><a href="http://butunclebob.com/ArticleS.UncleBob.TheThreeRulesOfTdd">TDD Laws</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Test-driven_development">TDD wikiről</a></li>
+<li><a href="http://www.vogella.com/tutorials/JUnit/article.html">Unit Testing with Junit</a></li>
+<li><a href="http://www.martinfowler.com/bliki/TestDouble.html">Test Doubles</a>
+<ul>
+<li>az úriember blogján egyébként rengeteg hasonló hosszúságú, elég releváns bejegyzés van</li>
+</ul>
+</li>
+<li><a href="https://8thlight.com/blog/uncle-bob/2013/05/27/TheTransformationPriorityPremise.html">The Transformation Priority Premise</a></li>
+<li><a href="https://vimeo.com/97516288">Advanced TDD: The Transformation Priority Premise</a>
+<ul>
+<li>videó</li>
+</ul>
+</li>
+<li>Refactoring
+<ul>
+<li><a href="https://martinfowler.com/books/refactoring.html">Refactoring by Martin Fowler</a></li>
+<li><a href="https://web.archive.org/web/20170606150219/http://www.integralist.co.uk/posts/refactoring-techniques.html">Refactoring methods</a></li>
+<li><a href="https://refactoring.com/catalog/">Refactoring methods</a></li>
+<li><a href="http://www.methodsandtools.com/archive/archive.php?id=4">Refactoring Java Code</a></li>
+<li><a href="https://www.targetprocess.com/blog/2009/11/refactoring-vs-rewrite/">Refactoring vs. Rewrite</a></li>
+</ul>
+</li>
+<li><a href="http://www.codemag.com/article/1001061">S.O.L.I.D.</a>
+<ul>
+<li><a href="https://youtu.be/llGgO74uXMI">Core Design Principles for Software Developers by Venkat Subramaniam</a>
+<ul>
+<li>Az egész előadás ajánlott, de a <a href="https://www.youtube.com/watch?v=llGgO74uXMI&amp;feature=youtu.be&amp;t=3353">Single Responsibility</a> rész különösen, ez olyan 25 perc</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Legacy Code
+<ul>
+<li><a href="http://programmers.stackexchange.com/questions/122014/what-are-the-key-points-of-working-effectively-with-legacy-code">What are the key points of Working Effectively with Legacy Code?</a></li>
+<li><a href="http://www.slideshare.net/nashjain/working-effectively-with-legacy-code-presentation">Working Effectively With Legacy Code</a>
+<ul>
+<li>prezentáció</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://blog.codinghorror.com/code-smells/">Code smells</a></li>
+<li><a href="https://martinfowler.com/articles/continuousIntegration.html">Continuous Integration</a></li>
+<li><a href="https://www.guru99.com/integration-testing.html">Integration testing</a>
+<ul>
+<li>teszt stratégiák is benne vannak</li>
+<li>innen a többi tesztes fejezet is jó!</li>
+</ul>
+</li>
+</ul>
+<h2><a class="header" href="#javasolt-felkészülési-módszer" id="javasolt-felkészülési-módszer">Javasolt (fel)készülési módszer</a></h2>
+<p>Mivel a diákat nem adjuk ki, célszerű jegyzetelni: <strong>címszavakat</strong>, <strong>fogalmakat</strong> leírni. Nem a diát kell lekörmölni, annak nincs értelme! Óra után (az óra hetében), ezekre rákeresni (pl. Google), illetve elolvasni az fönt elhelyezett anyagokat. A ZH előtti estén nem lehet ezt feldolgozni.</p>
+<h2><a class="header" href="#mindmap" id="mindmap">Mindmap</a></h2>
+<p>A témakörök „mindmap” formájú összefoglalása <a href="mm/szfmv.mm">letölthető itt</a>, megnyitáshoz a <a href="http://freemind.sourceforge.net/wiki/index.php/Main_Page">Freemind</a> nevű javás eszköz szükséges.
+Vagy közvetlenül <a href="mm/szfmv.html">innen megnyitható</a> a HTML-re fordított változata.</p>
+<h2><a class="header" href="#címszavak" id="címszavak">Címszavak</a></h2>
+<p>Címszavak (különösebb sorrend nélkül) amelyek az elméleti anyagot több-kevésbé lefedik. Ha valakinek ezeket a fogalmakat nem tudja kifejteni (nem tiszta mit jelent), akkor célszerű megkérdezni a Googlet vagy a Wikit. ;)</p>
+<p>agile, agile manifesto, software craftmanship, user story, backlog (product backlog vs. sprint backlog; ki szerkeszti?), task (hossza, elemei), sprint (hossza), sprint review, sprint planning, burn-down chart, story point, standup (hossza, mikor van, ki vesz rajta részt, 3 kérdés), blocking issue, retro, backlog grooming (aka backlog refinement), demo, business value, daily cycle, clean code, traceability (eszkaláció), version control (elosztott vs. centralizált), refactor, review (informal, walkthrough, technical, inspection), pair programming, scrum (scrum team tagjai?), scrum master, product owner, development team, cross functional team, self-organizing team, stakeholder, kanban, scrumban, waterfall, v-modell, scrum of scrums (ambassador), TDD, (software) unit, unit testing (arrange, act, assert, annihilate), test suite, test case, quality assurance, coding kata, code golf, legacy code, code smell, rotting code, dependency reduction, seams, continuous integration, automated testing, continuous deployment, nightly build, minimized context switch, DevOps, coding dojo, SOLID priciples, clean code, definition of done, milestone, deadline, mocking (dummy, stub, spy, mock, fake), requirement, requirement engineering, centralized version control, distributed version control, burndown chart, scrum of scrums, business value, traceability, finding, bug fixing, optimizing, refactoring, KISS, feature envy, code complexity, regressziós teszt, shadow deploy, teszt stratégiák (top-down, bottom-up, sandwich, big-bang, risky-hardest), nightly build, hardware in the loop (HIL), software in the loop (SIL), SMART objectives, technical debt, effort estimation</p>
+<h2><a class="header" href="#egyéb" id="egyéb">Egyéb</a></h2>
+<p>Ezen anyagok nem képezik részét a ZH-n számon kért ismereteknek, ám úgy gondolom, hogy érdemes elolvasni és elgondolkodni rajtuk mindenkinek, aki a szoftverfejlesztést komolyabban gondolja puszta kreditszerzésnél.</p>
+<ul>
+<li>Behavior Driven Development
+<ul>
+<li>Ez a TDD kiterjesztése, lényege, hogy a megrendelővel (és nem is annyira egy menedzserrel, hanem sokkal inkább egy domain szakértőjével) való egyeztetés folyamán, egy strukturált, ám természetes nyelvi szöveggel leírt „szabályok” formájában kerül leírásra az elvárt működés. Ezek alapján aztán a fejlesztő <em>több tesztet is ír</em> (szemben a TDD-vel, ahogy egyszerre szigorúan egyet), majd a tesztek összességének megfelelő kódot ír</li>
+<li><a href="https://www.toptal.com/freelance/your-boss-won-t-appreciate-tdd-try-bdd">TDD vs. BDD</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Behavior-driven_development">Wikipédia BDD cikke</a></li>
+<li><a href="https://www.agilealliance.org/glossary/bdd/">Agile alliance összefoglalója a BDD-ről</a></li>
+</ul>
+</li>
+<li><a href="http://tom.preston-werner.com/2010/08/23/readme-driven-development.html">Readme Driven Development</a>
+<ul>
+<li>Különösen ajánlom elolvasni, kb. egy oldal</li>
+</ul>
+</li>
+<li><a href="http://www.methodsandtools.com/archive/archive.php?id=72">Acceptance Test Driven Development (ATDD)</a></li>
+<li><a href="https://www.destroyallsoftware.com/talks/ideology">types vs. tests</a>
+<ul>
+<li>video ~21 min</li>
+</ul>
+</li>
+<li><a href="https://dmerej.info/blog/post/trying-mypy/">I don't need types</a>
+<ul>
+<li>blogposzt a típusosságról</li>
+</ul>
+</li>
+</ul>
+<h2><a class="header" href="#ajánlott-olvasmányok" id="ajánlott-olvasmányok">Ajánlott olvasmányok</a></h2>
+<ol>
+<li>The Software Craftsman: Professionalism, Pragmatism, Pride – Robert C. Martin</li>
+<li>The Clean Coder: A Code of Conduct for Professional Programmers – Robert C. Martin</li>
+<li>Clean Code: A Handbook of Agile Software Craftsmanship – Robert C. Martin</li>
+<li>Working Effectively with Legacy Code - Michael Feathers</li>
+<li>TDD by Example – Kent Beck</li>
+<li>XP Explained – Kent Beck</li>
+</ol>
+<h2><a class="header" href="#irónia" id="irónia">Irónia</a></h2>
+<img src="https://raw.githubusercontent.com/thepracticaldev/orly-full-res/master/blamingtheuser-big.png" alt="blamingtheuser" width="300px"/>
+<img src="https://raw.githubusercontent.com/thepracticaldev/orly-full-res/master/expertexcusesfornotwritingunittests-big.png" alt="expertexcusesfornotwritingunittests" width="300px"/>
+<img src="https://raw.githubusercontent.com/thepracticaldev/orly-full-res/master/nobodyelsecanread-big.png" alt="nobodyelsecanread" width="300px"/>
+<img src="https://raw.githubusercontent.com/thepracticaldev/orly-full-res/master/temporaryworkarounds-big.png" alt="temporaryworkarounds" width="300px"/>
+<img src="https://raw.githubusercontent.com/thepracticaldev/orly-full-res/master/googlingtheerrormessage-big.png" alt="googlingtheerrormessage" width="300px"/>
+<img src="https://raw.githubusercontent.com/thepracticaldev/orly-full-res/master/notwritingdocs-big.png" alt="notwritingdocs" width="300px"/>
+<img src="https://raw.githubusercontent.com/thepracticaldev/orly-full-res/master/uninformativegitcommit-big.png" alt="uninformativegitcommit" width="300px"/>
+<img src="https://raw.githubusercontent.com/thepracticaldev/orly-full-res/master/changinstuff-big.png" alt="changinstuff" width="300px"/>
+<img src="https://raw.githubusercontent.com/thepracticaldev/orly-full-res/master/tryingstuffuntilitworks-big.png" alt="tryingstuffuntilitworks" width="300px"/>
+<img src="https://raw.githubusercontent.com/thepracticaldev/orly-full-res/master/coffeeintocode-big.png" alt="coffeeintocode" width="300px"/>
+<img src="https://raw.githubusercontent.com/thepracticaldev/orly-full-res/master/codingontheweekend-big.png" alt="codingontheweekend" width="300px"/>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="schedule.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="git.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="schedule.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="git.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

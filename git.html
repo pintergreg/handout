@@ -1,0 +1,331 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>git - Jegyzet</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="Szoftverfejlesztés multinacionális vállalatoknál">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div id="sidebar-scrollbox" class="sidebar-scrollbox">
+                <ol class="chapter"><li class="expanded "><a href="description.html"><strong aria-hidden="true">1.</strong> Tárgyleírás</a></li><li class="expanded "><a href="schedule.html"><strong aria-hidden="true">2.</strong> Ütemezés</a></li><li class="expanded "><a href="literature.html"><strong aria-hidden="true">3.</strong> Felkészülést segítő anyagok</a></li><li class="expanded "><a href="git.html" class="active"><strong aria-hidden="true">4.</strong> git</a></li><li class="expanded "><a href="github.html"><strong aria-hidden="true">5.</strong> GitHub</a></li><li class="expanded "><a href="developing_tools.html"><strong aria-hidden="true">6.</strong> Fejlesztői eszközök</a></li><li><ol class="section"><li class="expanded "><a href="code_formatting.html"><strong aria-hidden="true">6.1.</strong> Kódformázás</a></li><li class="expanded "><a href="test_coverage.html"><strong aria-hidden="true">6.2.</strong> Tesztlefedettség</a></li><li class="expanded "><a href="logging.html"><strong aria-hidden="true">6.3.</strong> Logolás</a></li><li class="expanded "><a href="config.html"><strong aria-hidden="true">6.4.</strong> Külső konfigurálási lehetőség</a></li></ol></li><li class="expanded "><a href="workflow.html"><strong aria-hidden="true">7.</strong> Munkafolyamat</a></li><li class="expanded "><a href="sprints.html"><strong aria-hidden="true">8.</strong> Feladatok</a></li><li><ol class="section"><li class="expanded "><a href="sprint_1.html"><strong aria-hidden="true">8.1.</strong> Sprint 1</a></li><li class="expanded "><a href="sprint_2.html"><strong aria-hidden="true">8.2.</strong> Sprint 2</a></li><li class="expanded "><a href="sprint_3.html"><strong aria-hidden="true">8.3.</strong> Sprint 3</a></li></ol></li><li class="expanded "><a href="virtual_world.html"><strong aria-hidden="true">9.</strong> Virtuális világ</a></li><li class="expanded "><a href="physics.html"><strong aria-hidden="true">10.</strong> Fizika</a></li><li class="expanded "><a href="sensors.html"><strong aria-hidden="true">11.</strong> Szenzorok</a></li><li class="expanded "><a href="functions.html"><strong aria-hidden="true">12.</strong> Vezetéstámogató funkciók</a></li><li class="expanded "><a href="reference_architecture.html"><strong aria-hidden="true">13.</strong> Referencia architektúra</a></li><li class="expanded "><a href="implementation.html"><strong aria-hidden="true">14.</strong> Implementáció</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Jegyzet</h1>
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#interaktív-online-oktató-anyagok" id="interaktív-online-oktató-anyagok">Interaktív online oktató anyagok</a></h1>
+<ol>
+<li><a href="https://www.katacoda.com/courses/git">Webes interaktív oktatóanyag</a>
+<ul>
+<li>GitHub fiókkal -többek közt- a git kurzus ingyenesen végigvihető</li>
+<li>az első 6 modul mindenképpen ajánlott</li>
+</ul>
+</li>
+<li><a href="http://learngitbranching.js.org/">Learn Git Branching</a>
+<ul>
+<li>ez kifejezetten a branchelésre megy rá, szóval nem véletlenül a második!</li>
+</ul>
+</li>
+</ol>
+<h1><a class="header" href="#online-anyagok" id="online-anyagok">Online anyagok</a></h1>
+<ul>
+<li><a href="http://smutch.github.io/VersionControlTutorial/">Version Control Tutorial</a>
+<ul>
+<li>kezdőknek, az alapoktól</li>
+</ul>
+</li>
+<li><a href="http://rogerdudler.github.io/git-guide/">git - the simple guide</a>
+<ul>
+<li>inkább újrakezdőknek, ismétlés szintű</li>
+</ul>
+</li>
+<li><a href="https://www.atlassian.com/git/tutorials">Altassian Git tutoriálja</a></li>
+<li><a href="http://goalkicker.com/GitBook/">Git Notes for Professionals book</a>
+<ul>
+<li>haladókank, nem tanítja a git használatát, de <em>probléma: megoldás</em> alapon összefoglalja a használatának majd minden aspektusát (a Stackoverflow válaszok alapján)</li>
+</ul>
+</li>
+<li><a href="https://git-scm.com/book/en/v2/">Git könyv</a>
+<ul>
+<li>mindent tartalmaz a gitről, gyakorlatilag a fejlesztők által írt dokumentáció</li>
+<li><a href="https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell">&quot;git branching in a nutshell&quot;</a> fejezete viszont minimum ajánlott</li>
+</ul>
+</li>
+<li><a href="https://help.github.com/articles/syncing-a-fork/">Fork szinkronizálása</a></li>
+</ul>
+<h2><a class="header" href="#github" id="github">GitHub</a></h2>
+<ul>
+<li><a href="https://guides.github.com/activities/hello-world/">GitHub oktató anyaga</a></li>
+<li><a href="https://guides.github.com/introduction/flow/">Understanding the GitHub Flow</a></li>
+</ul>
+<h2><a class="header" href="#puskák-pdf-formátumban" id="puskák-pdf-formátumban">puskák PDF formátumban</a></h2>
+<ul>
+<li><a href="https://education.github.com/git-cheat-sheet-education.pdf">GitHubtól</a></li>
+<li><a href="https://about.gitlab.com/images/press/git-cheat-sheet.pdf">GitLabtól</a></li>
+<li><a href="https://www.atlassian.com/dms/wac/images/landing/git/atlassian_git_cheatsheet.pdf">Altassiantól (BitBucket)</a></li>
+</ul>
+<h1><a class="header" href="#commit-üzenetekről" id="commit-üzenetekről">Commit üzenetekről</a></h1>
+<p><img src="https://www.explainxkcd.com/wiki/images/d/de/git_commit.png" alt="xkcd 1296" /></p>
+<ul>
+<li><a href="https://chris.beams.io/posts/git-commit/">How to Write a Git Commit Message</a>
+<ul>
+<li>ez egy hosszabb, példákkal illusztrált írás (angol  nyelven) a jó commit üzenetekről,</li>
+<li>amely <a href="https://chris.beams.io/posts/git-commit/#seven-rules">hét szabályban</a> foglalja össze, hogy mire kell figyelni</li>
+<li>ugyanez érvényes a Pull Requestek üzenetére is, sőt még akkor sem tilos összefoglalni tömören a PR-ben összegzett funkciók lényegét, ha a commit-ok egyébként teljes mértékben betartják a fenti szabályokat!</li>
+</ul>
+</li>
+<li>Egy commit üzenet utólagos megváltoztatása <a href="https://help.github.com/articles/changing-a-commit-message/">nem egyszerű</a> (különösen ha pusholva lett, lokálisan még nem is olyan vészes), így eleve írjuk meg korrekten.</li>
+<li>Ha többen dolgoztok egy módosításon akkor a commit üzenet láblécében tüntessétek föl a <a href="https://help.github.com/articles/creating-a-commit-with-multiple-authors/"><strong>társszerzőket is</strong></a>.</li>
+</ul>
+<h2><a class="header" href="#társszerzők" id="társszerzők">Társszerzők</a></h2>
+<p>A munkafolyamat alapvetően egyéni munkára van kitalálva, de legkevésbé sem tilos a <a href="https://en.wikipedia.org/wiki/Pair_programming">pair programming</a> sem. Volt, hogy Skype-os képernyő-megosztásos módszerrel dolgoztak <em>távolról</em> párban... Ilyenkor mindig felvetődik a kérdés, hogy csak az egyik kolléga nevében történhet a commit de mi van a másikkal... A GitHub <a href="https://github.com/blog/2496-commit-together-with-co-authors">bevezetett egy új funkciót</a> ennek orvoslására. Részletek <a href="https://help.github.com/articles/creating-a-commit-with-multiple-authors/">elérhetőek itt</a>.</p>
+<p>Ebben az esetben a commit üzenet törzse után 2 üres sorral elválasztva kell a társszerzőket feltüntetni. Pl.:</p>
+<pre><code>Commit message header
+
+Commit message body preceded by an empty line and followed by
+two empty lines and the trailer.
+
+
+Co-authored-by: name &lt;name@example.com&gt;
+Co-authored-by: another-name &lt;another-name@example.com&gt;&quot;
+</code></pre>
+<p>Ahhoz, hogy a GitHub a társszerzőt össze is tudja rendelni a felhasználói fiókjával fontos, hogy az a <code>name</code> és különösen az az <code>e-mail</code> szerepeljen, amelyet egyébként git beállításként használ!</p>
+<h3><a class="header" href="#Ímélcím-védelme" id="Ímélcím-védelme">Ímélcím védelme</a></h3>
+<p>A GH minden felhasználónak biztosít egy &quot;proxy ímélcímet&quot;, hogy titokban tarthassa a címét, ez xxxxxxx+username@users.noreply.github.com szerkezetű, ahogy xxxxxxx egy hétjegyű felhasználói azonosító. Bővebben <a href="https://help.github.com/articles/about-commit-email-addresses/">itt</a>. Ezt is lehet használni, nem csak társszerzőhöz hanem saját címnek is, csak legyen konzisztens!</p>
+<h2><a class="header" href="#további-iskolák" id="további-iskolák">További „iskolák”</a></h2>
+<ul>
+<li><a href="https://github.com/angular/angular/blob/master/CONTRIBUTING.md">AngularJS Git Commit Message Conventions</a>
+<ul>
+<li>a commit üzenet fejlécét a <code>&lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;</code>  szabály szerint követeli meg, ahol <a href="https://github.com/angular/angular/blob/master/CONTRIBUTING.md#type">típus</a> lehet build, ci, docs, feat, fix, perf, refactor, style és test</li>
+</ul>
+</li>
+<li>Egy másik a <a href="http://conventionalcommits.org/">Conventional Commits</a></li>
+</ul>
+<h1><a class="header" href="#mikor-érdemes-commit-olni" id="mikor-érdemes-commit-olni">Mikor érdemes commit-olni?</a></h1>
+<ul>
+<li><a href="https://dev.to/gonedark/when-to-make-a-git-commit">When to make a Git Commit</a>
+<ul>
+<li>a poszthoz tartozó kommenteket is érdemes átfutni...</li>
+</ul>
+</li>
+</ul>
+<h1><a class="header" href="#pull-request-ek" id="pull-request-ek">Pull Request-ek</a></h1>
+<ul>
+<li>A fentiek igazak a PR üzenetére is!</li>
+<li>A PR üzenete kötelezően tartalmazza a következőket:
+<ul>
+<li>Masterbe küldés esetén melyik csapattól érkezik</li>
+<li>Mit javít, a vonatkozó issue-val pl. <code>#42</code></li>
+<li>Milyen új funkcionalitást ad a kódhoz, a vonatkozó issue-val pl. <code>#42</code></li>
+<li>Milyen viselkedést változtat/tör meg, a vonatkozó issue-val pl. <code>#42</code>
+<ul>
+<li><img src="https://www.explainxkcd.com/wiki/images/b/b5/workflow.png" alt="Workflow" /></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="literature.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="github.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="literature.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="github.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

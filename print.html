@@ -1,0 +1,1647 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Jegyzet</title>
+        
+        <meta name="robots" content="noindex" />
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="Szoftverfejlesztés multinacionális vállalatoknál">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div id="sidebar-scrollbox" class="sidebar-scrollbox">
+                <ol class="chapter"><li class="expanded "><a href="description.html"><strong aria-hidden="true">1.</strong> Tárgyleírás</a></li><li class="expanded "><a href="schedule.html"><strong aria-hidden="true">2.</strong> Ütemezés</a></li><li class="expanded "><a href="literature.html"><strong aria-hidden="true">3.</strong> Felkészülést segítő anyagok</a></li><li class="expanded "><a href="git.html"><strong aria-hidden="true">4.</strong> git</a></li><li class="expanded "><a href="github.html"><strong aria-hidden="true">5.</strong> GitHub</a></li><li class="expanded "><a href="developing_tools.html"><strong aria-hidden="true">6.</strong> Fejlesztői eszközök</a></li><li><ol class="section"><li class="expanded "><a href="code_formatting.html"><strong aria-hidden="true">6.1.</strong> Kódformázás</a></li><li class="expanded "><a href="test_coverage.html"><strong aria-hidden="true">6.2.</strong> Tesztlefedettség</a></li><li class="expanded "><a href="logging.html"><strong aria-hidden="true">6.3.</strong> Logolás</a></li><li class="expanded "><a href="config.html"><strong aria-hidden="true">6.4.</strong> Külső konfigurálási lehetőség</a></li></ol></li><li class="expanded "><a href="workflow.html"><strong aria-hidden="true">7.</strong> Munkafolyamat</a></li><li class="expanded "><a href="sprints.html"><strong aria-hidden="true">8.</strong> Feladatok</a></li><li><ol class="section"><li class="expanded "><a href="sprint_1.html"><strong aria-hidden="true">8.1.</strong> Sprint 1</a></li><li class="expanded "><a href="sprint_2.html"><strong aria-hidden="true">8.2.</strong> Sprint 2</a></li><li class="expanded "><a href="sprint_3.html"><strong aria-hidden="true">8.3.</strong> Sprint 3</a></li></ol></li><li class="expanded "><a href="virtual_world.html"><strong aria-hidden="true">9.</strong> Virtuális világ</a></li><li class="expanded "><a href="physics.html"><strong aria-hidden="true">10.</strong> Fizika</a></li><li class="expanded "><a href="sensors.html"><strong aria-hidden="true">11.</strong> Szenzorok</a></li><li class="expanded "><a href="functions.html"><strong aria-hidden="true">12.</strong> Vezetéstámogató funkciók</a></li><li class="expanded "><a href="reference_architecture.html"><strong aria-hidden="true">13.</strong> Referencia architektúra</a></li><li class="expanded "><a href="implementation.html"><strong aria-hidden="true">14.</strong> Implementáció</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Jegyzet</h1>
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#szoftverfejlesztés-multinacionális-vállalatoknál" id="szoftverfejlesztés-multinacionális-vállalatoknál">Szoftverfejlesztés multinacionális vállalatoknál</a></h1>
+<p>A tárgy keretében a hallgatók lehetőséget kapnak megtapasztalni egy multinacionális környezetben történő szoftverfejlesztés mikéntjét és kihívásait. A félév során a hallgatók egy, vezetéstámogató rendszerek működésének demonstrációjára szolgáló játék fejlesztésén keresztül  megismerhetik a  Scrum Agile metodológiát, kipróbálhatják a Test Driven Developmentet, elsajátíthatják a Clean Code írásának alapelveit, tapasztalatot szerezhetnek a jó Code Review végzésében, továbbá elméleti ismeretet szereznek a Software Craftsmanshipről, Agile-ról általában, a Continuous Integration-ről.</p>
+<p>A tárgy kettős felépítésű - minden alkalommal elméleti előadáson mutat be egy új ismeretanyagot, amit aztán a hallgatók a gyakorlatba ültethetnek a saját csapatukon belül. A félév során kis létszámú (4-7 fős) csapatokra bontva három sprintet kell teljesíteni, minden sprintben működő szoftvert szállítani, amit a hallgatók terveznek, implementálnak (Java nyelven, Git és IntelliJ IDEA segítségével), integrálnak és verifikálnak majd csapatonként mutatják be saját kontribúciójukat. Ez teljes féléves órán kívüli elköteleződést és felelősség vállalást kíván a csapat sikere iránt - az értékelés jelentős részét a gyakorlati munka adja.</p>
+<p>A tantárgy célja, hogy a hallgatók olyan tapasztalatot szerezzenek, amely egy tipikus multinacionális környezetben előfordul: párhuzamos és komponens alapú szoftverfejlesztés, megrendelő fókusz, határidős fejlesztések, proaktivitás, kommunikációs és (ön)szervező készség, függőségek és blokkoló tényezők feloldása, megoldása.</p>
+<h1><a class="header" href="#szoftver-leírása" id="szoftver-leírása">Szoftver leírása</a></h1>
+<p>The program simulates the behavior of a passenger vehicle on the public road, equipped with driver assistance functions.</p>
+<p>Equipped driver assistance functions are Parking Assist, Adaptive Cruise Control with Automated Emergency Braking and Lane Keeping Assistance with Traffic Sign Recognition, based on Ultra Sonic, Radar and Video sensors, respectively.</p>
+<p>The inputs are categorized into two separate groups: user input, and configuration.</p>
+<p>User input consists of the following elements:</p>
+<ul>
+<li>Throttle button - gradually increasing while pressed, on a 1s duration from 0-&gt;100%, if not pressed, returns to idle</li>
+<li>Brake  button - gradually increasing while pressed, on a 0.5s duration from 0-&gt;100%, if not pressed, returns to idle</li>
+<li>Gear Shift - Automated, P/R/N/D available for choosing with a rotary button</li>
+<li>Steering Buttons - left, right, gradually increasing while pressed on a 1s duration from 0-&gt;100%, in idle returns to straight</li>
+<li>Driver Assistance Function Main Switches - On/Off, flip switch, changes state on press</li>
+<li>ACC: Set/Resume/Plus/Minus/Time Gap switches, activating the function, changing the chosen reference speed, changing the chosen distance to the target vehicle, respectively</li>
+<li>PA: Indicators to activate parking spot search, confirmation button to trigger automated parking maneuver</li>
+</ul>
+<p>Configuration input consist of the following elements:</p>
+<ul>
+<li>Description of world in an XML file, in a predefined language</li>
+<li>&quot;Tiles&quot; - building blocks of the simulated world, such as roads, trees, people, vehicles, buildings, etc.</li>
+<li>Position and behavior of non-player vehicles and characters</li>
+<li>Position of the player vehicle</li>
+</ul>
+<p>The system processes the input configuration, builds a world from the provided elements after processing the content of the XML file, creating a coordinate system and defining the distances, sizes and positions of the objects in that, places the non-player vehicles and the player in the world, and cyclically updates their position, interrupting or replacing the driver input with the calculated actuation requests from the Driver Assistance systems, whenever applicable. The output consists of two parts: first, the world with all its objects, displayed through a camera view, which centers on the player, and follows its movements, second the feedback about the current state of the vehicle, including the following data:</p>
+<ul>
+<li>Current speed</li>
+<li>Current gas, brake pedal position</li>
+<li>Current steering wheel angle</li>
+<li>Current gear</li>
+<li>Indicator status</li>
+<li>ACC: Set Speed, Time Gap level, Object detected (boolean), main status(on/off/controlling)</li>
+<li>AEB: on/off status, visual warning signal (Yellow: probable collision, Red: automated braking active)</li>
+<li>Parking assist: available(yellow),searching for place(blinking yellow), spot found(green), parking (blinking green), off (no signal)</li>
+<li>LKA/TSR: On/Off, detected speed limit, detected warning sign, controlling steering(green), lane marking not available(yellow)</li>
+</ul>
+<p>The driver assistance systems apply actuation requests to the steering, drivetrain(engine, transmission) or both, of the ego vehicle. Said subsystems decide if the actuation request of the player or the driver assistance system shall be executed. The actuation request is calculated from the information detectable by the sensor the DA systems depend on. The Video, Radar and Ultrasonic sensors have specified Fields of View, and view distance, detect a different subset of objects. From the provided object list - simulating the real world hardware detection of radar wave reflection, image processing, ultrasonic reflection - the &quot;software&quot; components evaluate the control relevant subset, and if the conditions are fulfilled (i.e. function activated and driving in lane, object in ego lane in front of vehicle, relative speed negative, distance reducing as time passes by) the function requests actuation (in the above example, requests speed reduction from the drivetrain).</p>
+<p>The system decides between the concurrent drivetrain requests based on comfort and safety aspects. The system shall handle and detect collisions between the objects of the world. The simulation is approximating the real world physics, to provide a satisfying driving experience for the player, and an appropriate demonstration of the work of the driver assistance systems. On demand, the field of view of the sensors, and the detected control objects may be marked on the display for debug or demonstration.</p>
+<h1><a class="header" href="#mottó" id="mottó">Mottó</a></h1>
+<blockquote>
+<p>A designer knows he has achieved perfection not when there is nothing left to add, but when there is nothing left to take away.</p>
+<p><a href="https://en.wikiquote.org/wiki/Antoine_de_Saint_Exup%C3%A9ry">Antoine de Saint-Exupéry</a></p>
+</blockquote>
+<h1><a class="header" href="#Ütemezés" id="Ütemezés">Ütemezés</a></h1>
+<p>Az órák csütörtökönként a BA.F.07-ben vannak, neptun szerint 08:00-10:35 között előadás és 10:45-11:30 között gyakorlat. (Ezek aránya valamint közte a szünet az aktuális előadásanyag és az igények szerint módosulhat). A „gyakorlat” nem labor, hanem sokkal inkább konzultáció!</p>
+<table><thead><tr><th align="right">hét</th><th align="center">dátum</th><th align="center">előadás</th><th align="center">gyakorlat</th></tr></thead><tbody>
+<tr><td align="right">1.</td><td align="center">09. 12.</td><td align="center">Bevezető, áttekintés; aSpice alapok</td><td align="center">git, GitHub, IDEA ismertetés,</td></tr>
+<tr><td align="right">2.</td><td align="center">09. 19.</td><td align="center">Agile/Scrum, <a href="sprint_1.html">első feladat kiadás</a></td><td align="center">csapatsorsolás, Sprint Planning, Task Definition Workshop, Team commitment, Scheduling</td></tr>
+<tr><td align="right">3.</td><td align="center">09. 26.</td><td align="center">Napi munka, verziókezelők</td><td align="center">Branch review, status review, standup (did, will, blocking)</td></tr>
+<tr><td align="right">4.</td><td align="center">10. 03.</td><td align="center">Unit Testing</td><td align="center">Status review, standup, TDD kata</td></tr>
+<tr><td align="right"><strong>5.</strong></td><td align="center"><strong>10. 10.</strong></td><td align="center"><strong>első demo</strong>/retrospektív, <a href="sprint_2.html">második feladat kiadás</a></td><td align="center">Sprint planning, Task Definition Workshop, Team commitment, Scheduling</td></tr>
+<tr><td align="right">6.</td><td align="center">10. 17.</td><td align="center">Legacy Code, SOLID</td><td align="center">Refactoring gyakorlat egy előre előkészített példán</td></tr>
+<tr><td align="right">7.</td><td align="center">10. 24.</td><td align="center">Review</td><td align="center">Random code review egy tetszőleges elfogadott pull requestből</td></tr>
+<tr><td align="right">8.</td><td align="center">10. 31.</td><td align="center">TBD</td><td align="center"></td></tr>
+<tr><td align="right"><strong>9.</strong></td><td align="center"><strong>11. 07.</strong></td><td align="center"><strong>második demo</strong>/retrospektív, <a href="sprint_3.html">harmadik feladat kiadás</a></td><td align="center">Sprint planning, Task Definition Workshop, Team commitment, Scheduling</td></tr>
+<tr><td align="right">10.</td><td align="center">11. 14.</td><td align="center">Continous Integration</td><td align="center">Set up a CI script running all implemented unit tests</td></tr>
+<tr><td align="right">11.</td><td align="center">11. 21.</td><td align="center"><em>Rektori/dékáni szünet</em></td><td align="center"></td></tr>
+<tr><td align="right">12.</td><td align="center">11. 28.</td><td align="center">Összefoglalás, konzultáció, tárgy feedback</td><td align="center">Retro + Pair programming</td></tr>
+<tr><td align="right"><strong>13.</strong></td><td align="center"><strong>12. 05.</strong></td><td align="center"><strong>harmadik demo</strong>/retrospektív</td><td align="center">Coding Dojo, feedback</td></tr>
+<tr><td align="right"><strong>14.</strong></td><td align="center"><strong>12. 12.</strong></td><td align="center"><strong>Zárthelyi dolgozat</strong> ??:??-tól ??:??-ig (90 perc), 1.?? és 1.?? laborok</td><td align="center"></td></tr>
+</tbody></table>
+<h2><a class="header" href="#gantt-diagram" id="gantt-diagram">Gantt diagram</a></h2>
+<p><img src="images/gantt.png" alt="gantt" /></p>
+<h1><a class="header" href="#házi-feladat---1-hét" id="házi-feladat---1-hét">Házi feladat - 1. hét</a></h1>
+<ol>
+<li>GitHub fiók létrehozása
+<ul>
+<li>ha még nincs</li>
+</ul>
+</li>
+<li>11 JDK telepítése, mivel a szoftvert Java nyelven kell elkészíteni
+<ul>
+<li>ha nincs fönt</li>
+</ul>
+</li>
+<li>Fejlesztőkörnyezet telepítése és beállítása
+<ul>
+<li>IntelliJ IDEA az ajánlott és támogatott eszköz</li>
+</ul>
+</li>
+<li>Git és GitHub oktatóanyagok elolvasása
+<ul>
+<li>ha vannak hiányosságok</li>
+<li>az órán nincs idő szájbarágósan git használatot oktatni, erre vannak interaktív oktatófelületek</li>
+<li>ez mindenkinek egyéni felelőssége, ám ha konkrét kérdések merülnek fel, akkor ezekre természetesen kitérünk</li>
+</ul>
+</li>
+<li>Git repó klónozása</li>
+<li>Kód futtatása a futtató- és a fejlesztőkörnyezet beállításainak tesztelése céljából</li>
+<li>A jegyzet és az abban taglalt segédanyagok megismerése</li>
+<li>Az elkészítendő szoftver átgondolása (lásd readme), statikus és dinamikus modell elkészítése komponens szinten
+<ul>
+<li>Ennek terjedeleme (az órái példa alapján): egy absztrakciós szint a négyfelé bontás (kb. user story szint), és egy az ez alatti egyel, minden komponens mégegy kibontása, kb. egyenrangú komponensek létrehozására - osztály szintre nem mennék le, még ha a végén ezekből akár osztály is lesz. Szóval kettő struktúra, kettő dinamikus viselkedést leíró diagram, egy magasabb és egy alacsonyabb absztrakciós szinten. Hogy konkrétan hány building block, azt mindenkinek &quot;érzésre&quot; kell megállapítania, ezért szubjektív az architektúra.</li>
+<li>Ez egy egyéni feladat, hiszen még nincsenek csapatok. Az elkészíteshez javasolt eszközök: MS Visio, https://www.draw.io/.</li>
+<li>Az elkészült diagramoknak a következő órán bemutatható állapotban kell lenniük.</li>
+</ul>
+</li>
+</ol>
+<h1><a class="header" href="#demók" id="demók">Demók</a></h1>
+<p>A félév során a csapatok három alkalommal prezentálják az elvégzett munkát. A „demók” az <em>elkészült</em> szoftver megrendelőnek való bemutatását szimulálják. Nem a kódra vagyunk kíváncsiak, hanem működés közben szeretnénk látni, hogy a szoftver teljesíti feladatban foglalt követelményeket.
+A bemutatás során, a <code>master</code> branchre befogadott kódot vesszük figyelembe, minden egyéb <em>„nem készült el határidőre”</em>, azaz értékelhetetlen.</p>
+<h1><a class="header" href="#zárthelyi" id="zárthelyi">Zárthelyi</a></h1>
+<p>Ismert, Moodle-ös teszt, 50 kérdéssel, erre 90 perc áll majd a rendelkezésre. Minden kérdéshez 4 válaszlehetőség, amelyek közül pontosan egy a helyes. (Vannak „az alábbiak közül melyik NEM helyes” felépítésű kérdések is.) A rendelkezésre álló idő alatt kérdéseket tetszőleges alkalommal felül lehet vizsgálni, módosítani a teszt „lezárása” után azonnal kiértékelésre is kerül.</p>
+<h2><a class="header" href="#online-anyagok" id="online-anyagok">Online anyagok</a></h2>
+<p>Alább néhány, az interneten az ismert kulcsszavak alapján könnyen (legalábbis közepesen nehezen) elérhető link, amiket felhasználtam pl. az előadásokra való felkészülésre, így alkalmasnak tartom őket arra, hogy segítsenek benneteket a ZH-ra készülésben. Természetesen angol nyelven. ;)</p>
+<ul>
+<li>Clean code
+<ul>
+<li><a href="https://web.archive.org/web/20160610035745/http://www.itiseezee.com/?p=64">CleanCode intro</a></li>
+<li><a href="https://web.archive.org/web/20160405060134/http://www.itiseezee.com/?p=83">Names</a></li>
+<li><a href="http://www.itiseezee.com/?p=119">Functions</a></li>
+<li><a href="http://www.itiseezee.com/?p=131">Formatting</a></li>
+</ul>
+</li>
+<li>Verziókövetés
+<ul>
+<li><a href="https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control">Git könyv</a></li>
+<li>gyakorlati oldalról lást <a href="./git.html">Git</a> fejezet</li>
+</ul>
+</li>
+<li><a href="https://smartbear.com/learn/code-review/what-is-code-review/">Code review</a></li>
+<li><a href="http://www.scrumhub.com/scrum-guide/">Scrum</a>
+<ul>
+<li><a href="http://www.scrumguides.org/docs/scrumguide/v1/scrum-guide-us.pdf">PDF verzió</a></li>
+<li><a href="https://www.youtube.com/watch?v=P6v-I9VvTq4">Scrum Master - Funny movie about The Power of Scrum</a></li>
+</ul>
+</li>
+<li><a href="https://www.scrumhub.com/kanban-fundamentals/">Kanban</a></li>
+<li><a href="http://www.extremeprogramming.org/rules.html">The Rules of Extreme Programming</a></li>
+<li><a href="http://butunclebob.com/ArticleS.UncleBob.TheThreeRulesOfTdd">TDD Laws</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Test-driven_development">TDD wikiről</a></li>
+<li><a href="http://www.vogella.com/tutorials/JUnit/article.html">Unit Testing with Junit</a></li>
+<li><a href="http://www.martinfowler.com/bliki/TestDouble.html">Test Doubles</a>
+<ul>
+<li>az úriember blogján egyébként rengeteg hasonló hosszúságú, elég releváns bejegyzés van</li>
+</ul>
+</li>
+<li><a href="https://8thlight.com/blog/uncle-bob/2013/05/27/TheTransformationPriorityPremise.html">The Transformation Priority Premise</a></li>
+<li><a href="https://vimeo.com/97516288">Advanced TDD: The Transformation Priority Premise</a>
+<ul>
+<li>videó</li>
+</ul>
+</li>
+<li>Refactoring
+<ul>
+<li><a href="https://martinfowler.com/books/refactoring.html">Refactoring by Martin Fowler</a></li>
+<li><a href="https://web.archive.org/web/20170606150219/http://www.integralist.co.uk/posts/refactoring-techniques.html">Refactoring methods</a></li>
+<li><a href="https://refactoring.com/catalog/">Refactoring methods</a></li>
+<li><a href="http://www.methodsandtools.com/archive/archive.php?id=4">Refactoring Java Code</a></li>
+<li><a href="https://www.targetprocess.com/blog/2009/11/refactoring-vs-rewrite/">Refactoring vs. Rewrite</a></li>
+</ul>
+</li>
+<li><a href="http://www.codemag.com/article/1001061">S.O.L.I.D.</a>
+<ul>
+<li><a href="https://youtu.be/llGgO74uXMI">Core Design Principles for Software Developers by Venkat Subramaniam</a>
+<ul>
+<li>Az egész előadás ajánlott, de a <a href="https://www.youtube.com/watch?v=llGgO74uXMI&amp;feature=youtu.be&amp;t=3353">Single Responsibility</a> rész különösen, ez olyan 25 perc</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Legacy Code
+<ul>
+<li><a href="http://programmers.stackexchange.com/questions/122014/what-are-the-key-points-of-working-effectively-with-legacy-code">What are the key points of Working Effectively with Legacy Code?</a></li>
+<li><a href="http://www.slideshare.net/nashjain/working-effectively-with-legacy-code-presentation">Working Effectively With Legacy Code</a>
+<ul>
+<li>prezentáció</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://blog.codinghorror.com/code-smells/">Code smells</a></li>
+<li><a href="https://martinfowler.com/articles/continuousIntegration.html">Continuous Integration</a></li>
+<li><a href="https://www.guru99.com/integration-testing.html">Integration testing</a>
+<ul>
+<li>teszt stratégiák is benne vannak</li>
+<li>innen a többi tesztes fejezet is jó!</li>
+</ul>
+</li>
+</ul>
+<h2><a class="header" href="#javasolt-felkészülési-módszer" id="javasolt-felkészülési-módszer">Javasolt (fel)készülési módszer</a></h2>
+<p>Mivel a diákat nem adjuk ki, célszerű jegyzetelni: <strong>címszavakat</strong>, <strong>fogalmakat</strong> leírni. Nem a diát kell lekörmölni, annak nincs értelme! Óra után (az óra hetében), ezekre rákeresni (pl. Google), illetve elolvasni az fönt elhelyezett anyagokat. A ZH előtti estén nem lehet ezt feldolgozni.</p>
+<h2><a class="header" href="#mindmap" id="mindmap">Mindmap</a></h2>
+<p>A témakörök „mindmap” formájú összefoglalása <a href="mm/szfmv.mm">letölthető itt</a>, megnyitáshoz a <a href="http://freemind.sourceforge.net/wiki/index.php/Main_Page">Freemind</a> nevű javás eszköz szükséges.
+Vagy közvetlenül <a href="mm/szfmv.html">innen megnyitható</a> a HTML-re fordított változata.</p>
+<h2><a class="header" href="#címszavak" id="címszavak">Címszavak</a></h2>
+<p>Címszavak (különösebb sorrend nélkül) amelyek az elméleti anyagot több-kevésbé lefedik. Ha valakinek ezeket a fogalmakat nem tudja kifejteni (nem tiszta mit jelent), akkor célszerű megkérdezni a Googlet vagy a Wikit. ;)</p>
+<p>agile, agile manifesto, software craftmanship, user story, backlog (product backlog vs. sprint backlog; ki szerkeszti?), task (hossza, elemei), sprint (hossza), sprint review, sprint planning, burn-down chart, story point, standup (hossza, mikor van, ki vesz rajta részt, 3 kérdés), blocking issue, retro, backlog grooming (aka backlog refinement), demo, business value, daily cycle, clean code, traceability (eszkaláció), version control (elosztott vs. centralizált), refactor, review (informal, walkthrough, technical, inspection), pair programming, scrum (scrum team tagjai?), scrum master, product owner, development team, cross functional team, self-organizing team, stakeholder, kanban, scrumban, waterfall, v-modell, scrum of scrums (ambassador), TDD, (software) unit, unit testing (arrange, act, assert, annihilate), test suite, test case, quality assurance, coding kata, code golf, legacy code, code smell, rotting code, dependency reduction, seams, continuous integration, automated testing, continuous deployment, nightly build, minimized context switch, DevOps, coding dojo, SOLID priciples, clean code, definition of done, milestone, deadline, mocking (dummy, stub, spy, mock, fake), requirement, requirement engineering, centralized version control, distributed version control, burndown chart, scrum of scrums, business value, traceability, finding, bug fixing, optimizing, refactoring, KISS, feature envy, code complexity, regressziós teszt, shadow deploy, teszt stratégiák (top-down, bottom-up, sandwich, big-bang, risky-hardest), nightly build, hardware in the loop (HIL), software in the loop (SIL), SMART objectives, technical debt, effort estimation</p>
+<h2><a class="header" href="#egyéb" id="egyéb">Egyéb</a></h2>
+<p>Ezen anyagok nem képezik részét a ZH-n számon kért ismereteknek, ám úgy gondolom, hogy érdemes elolvasni és elgondolkodni rajtuk mindenkinek, aki a szoftverfejlesztést komolyabban gondolja puszta kreditszerzésnél.</p>
+<ul>
+<li>Behavior Driven Development
+<ul>
+<li>Ez a TDD kiterjesztése, lényege, hogy a megrendelővel (és nem is annyira egy menedzserrel, hanem sokkal inkább egy domain szakértőjével) való egyeztetés folyamán, egy strukturált, ám természetes nyelvi szöveggel leírt „szabályok” formájában kerül leírásra az elvárt működés. Ezek alapján aztán a fejlesztő <em>több tesztet is ír</em> (szemben a TDD-vel, ahogy egyszerre szigorúan egyet), majd a tesztek összességének megfelelő kódot ír</li>
+<li><a href="https://www.toptal.com/freelance/your-boss-won-t-appreciate-tdd-try-bdd">TDD vs. BDD</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Behavior-driven_development">Wikipédia BDD cikke</a></li>
+<li><a href="https://www.agilealliance.org/glossary/bdd/">Agile alliance összefoglalója a BDD-ről</a></li>
+</ul>
+</li>
+<li><a href="http://tom.preston-werner.com/2010/08/23/readme-driven-development.html">Readme Driven Development</a>
+<ul>
+<li>Különösen ajánlom elolvasni, kb. egy oldal</li>
+</ul>
+</li>
+<li><a href="http://www.methodsandtools.com/archive/archive.php?id=72">Acceptance Test Driven Development (ATDD)</a></li>
+<li><a href="https://www.destroyallsoftware.com/talks/ideology">types vs. tests</a>
+<ul>
+<li>video ~21 min</li>
+</ul>
+</li>
+<li><a href="https://dmerej.info/blog/post/trying-mypy/">I don't need types</a>
+<ul>
+<li>blogposzt a típusosságról</li>
+</ul>
+</li>
+</ul>
+<h2><a class="header" href="#ajánlott-olvasmányok" id="ajánlott-olvasmányok">Ajánlott olvasmányok</a></h2>
+<ol>
+<li>The Software Craftsman: Professionalism, Pragmatism, Pride – Robert C. Martin</li>
+<li>The Clean Coder: A Code of Conduct for Professional Programmers – Robert C. Martin</li>
+<li>Clean Code: A Handbook of Agile Software Craftsmanship – Robert C. Martin</li>
+<li>Working Effectively with Legacy Code - Michael Feathers</li>
+<li>TDD by Example – Kent Beck</li>
+<li>XP Explained – Kent Beck</li>
+</ol>
+<h2><a class="header" href="#irónia" id="irónia">Irónia</a></h2>
+<img src="https://raw.githubusercontent.com/thepracticaldev/orly-full-res/master/blamingtheuser-big.png" alt="blamingtheuser" width="300px"/>
+<img src="https://raw.githubusercontent.com/thepracticaldev/orly-full-res/master/expertexcusesfornotwritingunittests-big.png" alt="expertexcusesfornotwritingunittests" width="300px"/>
+<img src="https://raw.githubusercontent.com/thepracticaldev/orly-full-res/master/nobodyelsecanread-big.png" alt="nobodyelsecanread" width="300px"/>
+<img src="https://raw.githubusercontent.com/thepracticaldev/orly-full-res/master/temporaryworkarounds-big.png" alt="temporaryworkarounds" width="300px"/>
+<img src="https://raw.githubusercontent.com/thepracticaldev/orly-full-res/master/googlingtheerrormessage-big.png" alt="googlingtheerrormessage" width="300px"/>
+<img src="https://raw.githubusercontent.com/thepracticaldev/orly-full-res/master/notwritingdocs-big.png" alt="notwritingdocs" width="300px"/>
+<img src="https://raw.githubusercontent.com/thepracticaldev/orly-full-res/master/uninformativegitcommit-big.png" alt="uninformativegitcommit" width="300px"/>
+<img src="https://raw.githubusercontent.com/thepracticaldev/orly-full-res/master/changinstuff-big.png" alt="changinstuff" width="300px"/>
+<img src="https://raw.githubusercontent.com/thepracticaldev/orly-full-res/master/tryingstuffuntilitworks-big.png" alt="tryingstuffuntilitworks" width="300px"/>
+<img src="https://raw.githubusercontent.com/thepracticaldev/orly-full-res/master/coffeeintocode-big.png" alt="coffeeintocode" width="300px"/>
+<img src="https://raw.githubusercontent.com/thepracticaldev/orly-full-res/master/codingontheweekend-big.png" alt="codingontheweekend" width="300px"/>
+<h1><a class="header" href="#interaktív-online-oktató-anyagok" id="interaktív-online-oktató-anyagok">Interaktív online oktató anyagok</a></h1>
+<ol>
+<li><a href="https://www.katacoda.com/courses/git">Webes interaktív oktatóanyag</a>
+<ul>
+<li>GitHub fiókkal -többek közt- a git kurzus ingyenesen végigvihető</li>
+<li>az első 6 modul mindenképpen ajánlott</li>
+</ul>
+</li>
+<li><a href="http://learngitbranching.js.org/">Learn Git Branching</a>
+<ul>
+<li>ez kifejezetten a branchelésre megy rá, szóval nem véletlenül a második!</li>
+</ul>
+</li>
+</ol>
+<h1><a class="header" href="#online-anyagok-1" id="online-anyagok-1">Online anyagok</a></h1>
+<ul>
+<li><a href="http://smutch.github.io/VersionControlTutorial/">Version Control Tutorial</a>
+<ul>
+<li>kezdőknek, az alapoktól</li>
+</ul>
+</li>
+<li><a href="http://rogerdudler.github.io/git-guide/">git - the simple guide</a>
+<ul>
+<li>inkább újrakezdőknek, ismétlés szintű</li>
+</ul>
+</li>
+<li><a href="https://www.atlassian.com/git/tutorials">Altassian Git tutoriálja</a></li>
+<li><a href="http://goalkicker.com/GitBook/">Git Notes for Professionals book</a>
+<ul>
+<li>haladókank, nem tanítja a git használatát, de <em>probléma: megoldás</em> alapon összefoglalja a használatának majd minden aspektusát (a Stackoverflow válaszok alapján)</li>
+</ul>
+</li>
+<li><a href="https://git-scm.com/book/en/v2/">Git könyv</a>
+<ul>
+<li>mindent tartalmaz a gitről, gyakorlatilag a fejlesztők által írt dokumentáció</li>
+<li><a href="https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell">&quot;git branching in a nutshell&quot;</a> fejezete viszont minimum ajánlott</li>
+</ul>
+</li>
+<li><a href="https://help.github.com/articles/syncing-a-fork/">Fork szinkronizálása</a></li>
+</ul>
+<h2><a class="header" href="#github" id="github">GitHub</a></h2>
+<ul>
+<li><a href="https://guides.github.com/activities/hello-world/">GitHub oktató anyaga</a></li>
+<li><a href="https://guides.github.com/introduction/flow/">Understanding the GitHub Flow</a></li>
+</ul>
+<h2><a class="header" href="#puskák-pdf-formátumban" id="puskák-pdf-formátumban">puskák PDF formátumban</a></h2>
+<ul>
+<li><a href="https://education.github.com/git-cheat-sheet-education.pdf">GitHubtól</a></li>
+<li><a href="https://about.gitlab.com/images/press/git-cheat-sheet.pdf">GitLabtól</a></li>
+<li><a href="https://www.atlassian.com/dms/wac/images/landing/git/atlassian_git_cheatsheet.pdf">Altassiantól (BitBucket)</a></li>
+</ul>
+<h1><a class="header" href="#commit-üzenetekről" id="commit-üzenetekről">Commit üzenetekről</a></h1>
+<p><img src="https://www.explainxkcd.com/wiki/images/d/de/git_commit.png" alt="xkcd 1296" /></p>
+<ul>
+<li><a href="https://chris.beams.io/posts/git-commit/">How to Write a Git Commit Message</a>
+<ul>
+<li>ez egy hosszabb, példákkal illusztrált írás (angol  nyelven) a jó commit üzenetekről,</li>
+<li>amely <a href="https://chris.beams.io/posts/git-commit/#seven-rules">hét szabályban</a> foglalja össze, hogy mire kell figyelni</li>
+<li>ugyanez érvényes a Pull Requestek üzenetére is, sőt még akkor sem tilos összefoglalni tömören a PR-ben összegzett funkciók lényegét, ha a commit-ok egyébként teljes mértékben betartják a fenti szabályokat!</li>
+</ul>
+</li>
+<li>Egy commit üzenet utólagos megváltoztatása <a href="https://help.github.com/articles/changing-a-commit-message/">nem egyszerű</a> (különösen ha pusholva lett, lokálisan még nem is olyan vészes), így eleve írjuk meg korrekten.</li>
+<li>Ha többen dolgoztok egy módosításon akkor a commit üzenet láblécében tüntessétek föl a <a href="https://help.github.com/articles/creating-a-commit-with-multiple-authors/"><strong>társszerzőket is</strong></a>.</li>
+</ul>
+<h2><a class="header" href="#társszerzők" id="társszerzők">Társszerzők</a></h2>
+<p>A munkafolyamat alapvetően egyéni munkára van kitalálva, de legkevésbé sem tilos a <a href="https://en.wikipedia.org/wiki/Pair_programming">pair programming</a> sem. Volt, hogy Skype-os képernyő-megosztásos módszerrel dolgoztak <em>távolról</em> párban... Ilyenkor mindig felvetődik a kérdés, hogy csak az egyik kolléga nevében történhet a commit de mi van a másikkal... A GitHub <a href="https://github.com/blog/2496-commit-together-with-co-authors">bevezetett egy új funkciót</a> ennek orvoslására. Részletek <a href="https://help.github.com/articles/creating-a-commit-with-multiple-authors/">elérhetőek itt</a>.</p>
+<p>Ebben az esetben a commit üzenet törzse után 2 üres sorral elválasztva kell a társszerzőket feltüntetni. Pl.:</p>
+<pre><code>Commit message header
+
+Commit message body preceded by an empty line and followed by
+two empty lines and the trailer.
+
+
+Co-authored-by: name &lt;name@example.com&gt;
+Co-authored-by: another-name &lt;another-name@example.com&gt;&quot;
+</code></pre>
+<p>Ahhoz, hogy a GitHub a társszerzőt össze is tudja rendelni a felhasználói fiókjával fontos, hogy az a <code>name</code> és különösen az az <code>e-mail</code> szerepeljen, amelyet egyébként git beállításként használ!</p>
+<h3><a class="header" href="#Ímélcím-védelme" id="Ímélcím-védelme">Ímélcím védelme</a></h3>
+<p>A GH minden felhasználónak biztosít egy &quot;proxy ímélcímet&quot;, hogy titokban tarthassa a címét, ez xxxxxxx+username@users.noreply.github.com szerkezetű, ahogy xxxxxxx egy hétjegyű felhasználói azonosító. Bővebben <a href="https://help.github.com/articles/about-commit-email-addresses/">itt</a>. Ezt is lehet használni, nem csak társszerzőhöz hanem saját címnek is, csak legyen konzisztens!</p>
+<h2><a class="header" href="#további-iskolák" id="további-iskolák">További „iskolák”</a></h2>
+<ul>
+<li><a href="https://github.com/angular/angular/blob/master/CONTRIBUTING.md">AngularJS Git Commit Message Conventions</a>
+<ul>
+<li>a commit üzenet fejlécét a <code>&lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;</code>  szabály szerint követeli meg, ahol <a href="https://github.com/angular/angular/blob/master/CONTRIBUTING.md#type">típus</a> lehet build, ci, docs, feat, fix, perf, refactor, style és test</li>
+</ul>
+</li>
+<li>Egy másik a <a href="http://conventionalcommits.org/">Conventional Commits</a></li>
+</ul>
+<h1><a class="header" href="#mikor-érdemes-commit-olni" id="mikor-érdemes-commit-olni">Mikor érdemes commit-olni?</a></h1>
+<ul>
+<li><a href="https://dev.to/gonedark/when-to-make-a-git-commit">When to make a Git Commit</a>
+<ul>
+<li>a poszthoz tartozó kommenteket is érdemes átfutni...</li>
+</ul>
+</li>
+</ul>
+<h1><a class="header" href="#pull-request-ek" id="pull-request-ek">Pull Request-ek</a></h1>
+<ul>
+<li>A fentiek igazak a PR üzenetére is!</li>
+<li>A PR üzenete kötelezően tartalmazza a következőket:
+<ul>
+<li>Masterbe küldés esetén melyik csapattól érkezik</li>
+<li>Mit javít, a vonatkozó issue-val pl. <code>#42</code></li>
+<li>Milyen új funkcionalitást ad a kódhoz, a vonatkozó issue-val pl. <code>#42</code></li>
+<li>Milyen viselkedést változtat/tör meg, a vonatkozó issue-val pl. <code>#42</code>
+<ul>
+<li><img src="https://www.explainxkcd.com/wiki/images/b/b5/workflow.png" alt="Workflow" /></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1><a class="header" href="#oktatóanyagok" id="oktatóanyagok">Oktatóanyagok</a></h1>
+<p>A félév során a GitHubot használjuk a kód tárolására és a feladatok menedzselésére is.
+GitHub használatához segítség:</p>
+<ul>
+<li><a href="https://lab.github.com/"><strong>interaktív oktatófelület</strong></a></li>
+<li><a href="https://help.github.com/">GitHub Help</a></li>
+<li><a href="https://guides.github.com/">GitHub Guides</a></li>
+</ul>
+<h1><a class="header" href="#Áttekintés" id="Áttekintés">Áttekintés</a></h1>
+<p>Minden hallgató tagja lesz a <a href="https://github.com/szfmv2019-tavasz">SzFMV2019-Tavasz</a> szervezetnek (<code>Organization</code>), és egy-egy csapatnak (Team1, ..., Team4). Minden csapat külön issue board-dal rendelkezik (<code>Projects</code>), ezen kell vezetni a feladatok (<code>issue</code>) megoldását (részletében lásd <a href="workflow.html">Munkafolyamat</a>).</p>
+<p>Issue-t nem csak feladatra lehet felvenni, akár kérdésre is, probléma megvitatására is. Ez esetben célszerű megjelölni a <code>Question</code> címkével. 2017 őszétől csapat (<code>team</code>) szintű fórummal is rendelkezik a GitHub. A szervezeten belül a csapatok hierarchikus struktúrában vannak. A gyökér az <a href="https://github.com/orgs/szfmv2019-tavasz/teams/everyone">Everyone</a>, az összes többi csapat ennek tagja. Az Everyone falára (<code>discussions</code>) írt üzeneteket mindenki megkapja. Ezen keresztül fogunk a félév során kurzus szintű közleményeket kiadni, de bárki használhatja kommunikációra. Ugyanilyen üzenőfallal rendelkezik az összes többi csapat is, amelyre szintén bárki írhat. Ha például a Team2-ből szeretné elérni valaki a Team3-at, akkor mindösszesen annyi a dolga, hogy ír a Team3 üzenőfalára. A <a href="https://github.com/orgs/szfmv2019-tavasz/teams/staff">Staff</a> nevű team-en keresztül az oktatókat lehet elérni ugyanilyen módon.</p>
+<p>A comment szekciókban is élnek az @ jeles említések, ez a mi esetünkben <code>@ravaszla</code> és <code>@pintergreg</code>, ugyanígy működik csapatra is pl. <code>@szfmv2019-tavasz/teama1</code>, illetve <code>@szfmv2019-tavasz/staff </code> a mi esetünkben. Csapat esetében a csapat valamennyi tagja kap értesítést az hivatkozásról.</p>
+<p>A GitHub valamennyi elemén használhatóak formázási lehetőségek <a href="https://guides.github.com/features/mastering-markdown/">Markdown stílusban</a>, kód kiemelésre is lehetőség van, amelyet több mint célszerű használni. Ehhez csak a nyelv nevét kell csak a nyitó  ``` jelek után írni:</p>
+<pre>
+```python
+def get_random_number():
+    return 4;  # chosen by fair dice roll. guaranteed to be random.
+```
+</pre>
+<p>Eredmény:</p>
+<pre><code class="language-python">def get_random_number():
+    return 4;  # chosen by fair dice roll. guaranteed to be random.
+</code></pre>
+<h2><a class="header" href="#pull-requestek-kezelése--review-és-ütközésfeloldás" id="pull-requestek-kezelése--review-és-ütközésfeloldás">Pull requestek kezelése:  review és ütközésfeloldás</a></h2>
+<p>Előfordulhat, hogy a git nem tudja feloldani a változtatásokat és emberi beavatkozást igényel a merge-elés. Például létrehoztad a feature branchet a csapat branch adott állapotáról, ám az időközben módosult és a módosítás ugyanazon fájl ugyanazon részét érintette. A GitHubon ez az alábbihoz hasonlóan néz ki:</p>
+<p><img src="https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/conflict.png" alt="PR conflict" /></p>
+<p>Ezen belül is egyszerűbb esetekben a GH felajánlja a webes szerkesztőjét, de összetettebb esetekben ki kell checkolni az adott ágat és „kézzel” (editorral) feloldani helyzetet.</p>
+<p><strong>Fontos!</strong> A masterbe nem fogadunk el olyan PR-et, amelyben ütközés van, mivel jellemzően nem tudjuk eldönteni, hogy melyik változat fele meg „az utoljára megbeszélteknek”.</p>
+<h3><a class="header" href="#webes-szerkesztő" id="webes-szerkesztő">Webes szerkesztő</a></h3>
+<p>A képen az  látható, hogy Hegedűs kolléga a <code>master</code> azon állapotában írta be a nevét, amikor a 64. sor volt az utolsó. Időközben egyéb PR-eket is elfogadtam így a git nem tudja, hogy a 68-73. sorokat kell megtartani vagy a 66.-at (ennek szintaktikáját látni a „kacsacsőrökkel”).</p>
+<p><img src="https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/conflict_web_editor.png" alt="GH web editor" /></p>
+<p>Jelen esetben persze mindkettő kell, így kézzel átrendezem, majd ezt megjelölöm feloldottnak:</p>
+<p><img src="https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/conflict_web_editor2.png" alt="GH web editor" />
+<img src="https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/conflict_mark_resolved.png" alt="conflict resolved" /></p>
+<p><strong>További tippek a témában</strong>: https://stackoverflow.com/questions/161813/how-to-resolve-merge-conflicts-in-git</p>
+<p>Ekkor a GH azt mutatja, hogy nincs ütközés, de review szükséges (ha nem is volt ütközés, akkor innen indul a történet).</p>
+<h3><a class="header" href="#lokális-szerkesztő" id="lokális-szerkesztő">Lokális szerkesztő</a></h3>
+<p>Ha a GH webes felületén nem engedi az ütközés feloldását, akkor lokálisan kell. Az IDEA pl. az alábbi három paneles megoldást kínálja. Csak rá kell kattintgatni arra, amelyiket meg akarjuk tartani (vagy kézzel összemásolni mint a fönti példa esetében).</p>
+<p>Ha valaki parancssorból intézi, akkor a beállított editorral nyitja meg (vi, nano, stb.) és szintaktikailag ugyanazt a megoldást kapja mint a webes editor esetében.</p>
+<p><img src="http://www.tilcode.com/wp-content/uploads/2015/09/intellij_merge_conflict_tool.png" alt="" /></p>
+<h3><a class="header" href="#review" id="review">Review</a></h3>
+<p><img src="https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/review_required.png" alt="review required" /></p>
+<p>Erre az „add your review” szolgál. Fájlonként át lehet nézni minden módosítást, soronként kommentelni, illetve egy globális véleményt írni a PR-ről (+1, -1, -2). A comment opció semleges, nem elfogadás, de nem is elutasítás. A másik két opció elég egyértelmű. Ha változtatást kérsz, akkor addig amíg a PR forrásbranche nem módosul nem lehet újra próbálkozni a PR elfogadásával.</p>
+<p><img src="https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/review_approved.png" alt="review" /></p>
+<p>Ha minden rendben, akkor el lehet fogadni a PR-et:</p>
+<p><img src="https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/mergable.png" alt="" /></p>
+<p>Elfogadás után így néz ki:</p>
+<p><img src="https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/merged.png" alt="" /></p>
+<p>Ezen a ponton a feature branch nem szükséges továbbá, törölhető. Persze egy ideig még visszaállítható:</p>
+<p><img src="https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/restore_branch.png" alt="" /></p>
+<h2><a class="header" href="#branching-modell" id="branching-modell">Branching modell</a></h2>
+<p>Az „<a href="http://nvie.com/posts/a-successful-git-branching-model/">A successful Git branching model</a>” című posztban lehet olvasni egy szélesebb körben kedvelt modellről. A félév során használt többé-kevésbé ehhez hasonló.</p>
+<p><img src="https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/branching.png" alt="" /></p>
+<p>A <code>master</code> branch védett, nem lehet bele commitolni. Nem egy, hanem több (4) fejlesztői branch-ünk van (<code>team1</code>, ..., <code>team4</code>), ezek szintén védettek. Minden feladathoz létre kell hozni egy <em>feature branch-et</em>, azon lehet dolgozni. Ha a feladat elkészült, akkor a csapat branchbe lehet <em>merge-eni</em>. Ami mivel védett <a href="https://help.github.com/articles/about-pull-requests/"><em>pull request-et</em></a> (továbbiakban PR) küldeni. A PR lehetőséget biztosít ellenőrzésekre és <a href="https://help.github.com/articles/about-pull-request-reviews/">review-zásra</a>. Csak a lefordítható, teszteknek megfelelő, ütközés (conflict) mentes PR kerülhet elfogadásra!</p>
+<p><strong>Fontos</strong>: Ha egy PR <em>nem</em> fogadható el, akkor sem kell a PR-t lezárni, lehet tovább dolgozni a forrás branchen, az új commit-okkal automatikusan frissül a PR is addig míg a teszteknek meg nem felel és elfogadásra nem került.</p>
+<p>Ha a PR el lett fogadva, a feature branch-re nincs már tovább szükség. Le lehet törölni és be kell zárni azt az <em>issue-t</em> is, amihez a branch kapcsolódott. Tehát ideálisan minden (nem user-story és kérdés) issue-hoz készül(t) egy branch.</p>
+<h3><a class="header" href="#Érdekes-írások-a-témában" id="Érdekes-írások-a-témában">Érdekes írások a témában</a></h3>
+<ul>
+<li><a href="https://www.gitprime.com/the-definitive-guide-to-forks-and-branches-in-git/">A <em>fork</em> és a <em>branch</em> közötti különbségekről</a></li>
+<li><a href="https://gist.github.com/jbenet/ee6c9ac48068889b0912">a simple git branching model</a></li>
+<li><a href="https://www.atlassian.com/git/tutorials/comparing-workflows">Comparing Workflows</a></li>
+<li><a href="https://www.atlassian.com/blog/git/git-branching-and-forking-in-the-enterprise-why-fork">Git branching and forking in the enterprise: why fork?</a></li>
+<li><a href="https://blog.scottlowe.org/2015/01/27/using-fork-branch-git-workflow/">Using the Fork-and-Branch Git Workflow</a></li>
+<li><a href="https://stackoverflow.com/a/34343080/4737417">Stackoverflow / Forking vs. Branching in GitHub</a></li>
+<li><a href="https://barro.github.io/2016/02/a-succesful-git-branching-model-considered-harmful/">A succesful Git branching model considered harmful</a></li>
+</ul>
+<h1><a class="header" href="#programozási-nyelv" id="programozási-nyelv">Programozási nyelv</a></h1>
+<p>A feladat megoldásához Java nyelvet, annak is a 11-es verzióját kell használni, <a href="https://maven.apache.org/guides/getting-started/index.html">Maven</a> projekt menedzsment eszközzel. (A kiinduló projekt ezeket már teljesíti). Egyaránt használható az <a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html">Oracle JDK 11</a> vagy az <a href="http://openjdk.java.net/projects/jdk/11/">OpenJDK 11</a> is, operációs rendszer sincs megszabva.
+Az automatizált CI eszközök jogi okokból az OpenJDK-t használják, linuxon. Szóval már csak emiatt is „érdemes” platformfüggetlen kódot írni!</p>
+<p>Az ajánlott és támogatott fejlesztői környezet az <a href="https://www.jetbrains.com/idea/#chooseYourEdition">IntelliJ IDEA</a>, ez tartalmaz mindent amire szükség lehet a félév során. A Community Edition ingyenes, egyetemi e-mail címmel ingyen igényelhető Pro verzió!</p>
+<p>Nincs elvi akadálya a <a href="https://netbeans.org/">NetBeans</a>, az <a href="https://eclipse.org/downloads/">Eclipse</a> vagy tetszőleges <em>editor</em> használatának sem, de ezek beállítása az elvárásoknak megfelelően egyéni felelősség.
+NetBeanshez ajánlott plugin(-ek): <a href="http://plugins.netbeans.org/plugin/51604/git-toolbar">Git toolbar</a></p>
+<p>A fejlesztői környezetek rendelkeznek Git integrációval, de a parancssoron kívül grafikus kliensek is <a href="https://git-scm.com/downloads/guis">léteznek</a>, többek között a <a href="https://desktop.github.com/">GitHub saját asztali kliense</a>.</p>
+<h1><a class="header" href="#tesztlefedettség" id="tesztlefedettség">Tesztlefedettség</a></h1>
+<p><a href="tesztlefedettseg.html">Tesztlefedettség támogatás a fejlesztői eszközökben</a>.</p>
+<h1><a class="header" href="#kódformázás" id="kódformázás">Kódformázás</a></h1>
+<p>IDEA beállításai alapértelmezetten elvileg megfelelnek az elvárásoknak, így egy fájl befejezése után (de értelem szerűen commit előtt) célszerű egy formázást megejteni: Code &gt; Reformat Code (CTRL+ALT+L)</p>
+<ul>
+<li>A behúzás beállítása: File &gt; Settings &gt; Editor &gt; Code Style &gt; Java &gt; Tabs and Indents: nem tab, de 4 karakternyi</li>
+<li>A sorhossz beállítása: File &gt; Settings &gt; Editor &gt; Code Style &gt; Default Options &gt; Right magin (columns) 120 kell, hogy legyen eredetileg</li>
+<li>Emellett default beállításokban a vessző és kettőspont utáni szóközök, illetve az operátorokat körbevevő szóközök is szerepelnek. Továbbá a kapcsos zárójelek használata is az elvártnak megfelelően van beállítva.</li>
+</ul>
+<h2><a class="header" href="#checkstyle-plugin" id="checkstyle-plugin">Checkstyle plugin</a></h2>
+<p><a href="https://plugins.jetbrains.com/plugin/1065-checkstyle-idea">Checkstyle plugin</a> beállítása IntelliJ IDEA környezetbe. A plugin telepíthető a plugin managerből majd a következő beállításokra van szükség:</p>
+<p>File &gt; Settings &gt; Other Settings &gt; Checkstyle &gt; Configuration File panelen <em>Add</em> és a projekt gyökérben megtalálható <code>checkstyle.xml</code> fájlt kell neki megadni (és elnevezni valamiként, az alábbi képen <code>szfmv</code>). Innentől a fejlesztői környezeten belül elérhető a kódminőség-ellenőrzés <em>valós időben</em>, warning-okkal jelzi a találatokat. Bővebben <a href="kodformazas.html">itt</a>!</p>
+<p><img src="https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/idea_checkstyle_plugin_settings.png" alt="" />
+<img src="https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/idea_checkstyle_findings.png" alt="" /></p>
+<h1><a class="header" href="#logolás" id="logolás">Logolás</a></h1>
+<p><a href="logging.html">Logger használata</a></p>
+<h1><a class="header" href="#maven-és-a-proxy" id="maven-és-a-proxy">Maven és a proxy</a></h1>
+<p>Ha valaki céges gépen dolgozik előírt proxy mellett, érdemes figyelni arra, hogy <a href="https://maven.apache.org/guides/mini/guide-proxies.html">a maven-nek külön kell konfigurálni a proxy-t</a>.</p>
+<h1><a class="header" href="#függőségeket-tartalmazó-futtatható-jar-állomány-létrehozása" id="függőségeket-tartalmazó-futtatható-jar-állomány-létrehozása">Függőségeket tartalmazó futtatható <code>.jar</code> állomány létrehozása</a></h1>
+<pre><code class="language-shell">mvn clean compile assembly:single
+</code></pre>
+<p>Az eredmény a <code>target/AutomatedCar-jar-with-dependencies.jar</code></p>
+<h1><a class="header" href="#kódformázás-1" id="kódformázás-1">Kódformázás</a></h1>
+<p><img src="https://www.explainxkcd.com/wiki/images/c/c6/code_quality.png" alt="Code quality" /></p>
+<p>A kód tisztasága, olvashatósága nem csak szemantikai, de szintaktikai értelemben is fontos. Minden nyelvnek megvannak a maga „nyelvtani”, szintaktikai előírásai, amit a fordító be is tartat. Azonban ezen túl megvannak azok az (íratlan) szabályai is, amiket már nem a fordító feladata betartatni. (A Go fordítónál ez kezd egybemosódni, pl. nem fordul a kód ha van deklarált, de fel nem használt változód, a <a href="https://golang.org/cmd/gofmt/">gofmt, Go format</a> pedig kikényszeríti a kódformázási szabályokat.)</p>
+<p>Ezek olyan kódformázási szabályok, amelyek több szinten lehetnek definiálva. Egyrészt (többé-kevésbé) egyezményesen egy-egy nyelv szintjén (pl. <a href="https://www.python.org/dev/peps/pep-0008/">PEP8</a> Python esetében, gofmt), aztán lehetnek vállalati esetleg osztály és projekt szinten is.
+Például a <a href="https://01.org/linuxgraphics/gfx-docs/drm/process/coding-style.html">Linux kernelkez tartozó előírások</a> - többek között - 8 szóköznyi behúzást írnak elő és maximum 80 karakter széles sorokat. A gondolat emögött, hogy maximum három blokk mélységű szerkezet fogadható el, amikor is már a sor 30%-át teszi ki a behúzás. Ennél több behúzás esetén már nem sok hely marad a kódnak.</p>
+<p>A Java nyelvhez is van(nak) kódformázási előírás(ok), amelyek egy része teljesen általános. Pl. a csomagnevek kisbetűsek, az osztály nevek mindig nagybetűvel kezdődnek (a fejlesztői környezetek ezt például általánosan számon kérik), a metódusnevek pedig kis betűvel kezdődnek továbbá a szóösszetételeknél nagybetűket használunk pl. <code>metódusNév</code>.</p>
+<p>Átfogó ajánlást készített még 2000 környékén a Sun, ám ez mára meglehetősen túlhaladott, vagy ilyen a Google által összeállított <a href="https://google.github.io/styleguide/javaguide.html">Google Java Style Guide</a>.
+Ez viszont helyenként túl specifikus (nagyvállalati környezetre optimalizált) a tárgy kereteihez, így nem egy az egyben ezt használjuk. A <a href="http://checkstyle.sourceforge.net/">Checkstyle</a> statikus kódanalizátor default értékei vagy a Jetbrains által az IntelliJ IDEA-ba beállított default szabályok is felfoghatók egy ilyen ajánlásnak.</p>
+<h2><a class="header" href="#kódformázási-előírások" id="kódformázási-előírások">kódformázási előírások</a></h2>
+<p>Örök kérdés, hogy szóközök vagy tabok jelöljék-e a behúzást. Ma már minden normális editor beállítható úgyis, hogy a tab billentyű szóközöket szúrjon be, amelyik erre (sem) képest azt meg nem használjuk. A kérdés, legalábbis ezen tárgy keretein belül azzal zárult, hogy <em>mindenki</em> szóközöket használ, tabok nem lehetnek a fájlban. Pont.
+Egy rövid (nem túl komoly) videó a témában: <a href="https://youtu.be/SsoOG6ZeyUI">Silicon Valley - S03E06</a></p>
+<ul>
+<li>a behúzást 4 szóköz jelöli (nincs tab a fájlban)</li>
+<li>nem lehetnek üres blokkok</li>
+<li>a nyitó kapcsos zárójel a sor végén található</li>
+</ul>
+<pre><code class="language-java">if (condition) {
+    ...
+}
+</code></pre>
+<ul>
+<li>a záró kapcsos zárójel kulcsszavakkal azonos sorba helyezendő</li>
+</ul>
+<pre><code class="language-java">try {
+    ...
+} catch (Exception ex) {
+    ...
+} finally {
+    ...
+}
+</code></pre>
+<ul>
+<li>minden esetben ki kell tenni a blokkjelölő kapcsos zárójeleket</li>
+<li>osztályon belül meghatározott sorrendben szerepelnek az elemek
+<ol>
+<li>Class (static) variables. First the public class variables, then protected, then package level (no access modifier), and then private.</li>
+<li>Instance variables. First the public class variables, then protected, then package level (no access modifier), and then private.</li>
+<li>Constructors</li>
+<li>Methods</li>
+</ol>
+</li>
+<li>kerülendő az üres utasítás (<code>;</code>)</li>
+<li>mindig szükséges default ág a swith-case szerkezetben</li>
+<li>soronként egy utasítás szerepel</li>
+<li>kerülendő a <code>return</code> kulcsszavak halmozása egy metóduson belül</li>
+<li>kerülendőek a *-os importálások</li>
+<li>kerülendő a nem használt importálás</li>
+<li>az osztály neve megegyezik a fájl nevével</li>
+<li>az operátorok körül, valamint a vessző és kettőspont után szóköz kerül</li>
+</ul>
+<h3><a class="header" href="#kulcsszó-sorrend" id="kulcsszó-sorrend">Kulcsszó sorrend</a></h3>
+<p>A Javában a metódusok különböző módosítókkal láthatók el mint <code>static</code>, <code>public|private|protected</code>, <code>final</code> ám ezeknek előírt sorrendje is van. Nem a fordító írja elő sajnos, tehát lefordul, de konvenció, hogy ezeket milyen sorrendbe tesszük. Pl. a teljesség igénye nélkül  <code>public static</code> oké <code>static public</code> nem.
+Sajnos a <em>Reformat Code</em> ezt nem rázza gatyába, így az automatizált megoldás sem fogja, de ettől még stílus hiba.</p>
+<p>Javítani lehet a helyzeten a File | Settings | Editor | Inspections | Java | Code style issues | Missorted modifiers inspection bepipálásával <strong>ÉS</strong> az Analyze | Code Cleanup <em>commit előtti</em> alkalmazásával. Sajnálatos módon a Save Actions ezt nem tudja. :sob:</p>
+<p><a href="https://stackoverflow.com/a/31203757/4737417"><em>forrás</em></a></p>
+<h1><a class="header" href="#statikus-program-analízis" id="statikus-program-analízis">Statikus program analízis</a></h1>
+<p>A statikus analízis során a programkód végrehajtása nélkül, többnyire a forráskód elemzésével - automatizáltan - történik kód hibáinak feltárása.[<a href="https://en.wikipedia.org/wiki/Static_program_analysis">Wikipédia</a>]
+Ilyen eszköz Java nyelvhez például a nyílt forrású <a href="https://pmd.github.io/">PMD</a>, vagy a <a href="http://checkstyle.sourceforge.net/">Checkstyle</a>.</p>
+<p>A kurzus során az utóbbit használjuk, amely figyeli a fentebb leírt formázási ajánlásokat (<a href="http://checkstyle.sourceforge.net/checks.html">teljes használható szabálylista</a>). Ezen túlmenőleg egyéb hibafaktorokat is figyel: magic number-ek alkalmazása, string literál többszöri előfordulása, <a href="https://en.wikipedia.org/wiki/Cyclomatic_complexity">Ciklomatikus komplexitás</a>, túl sok paraméter a metódusban (5), túl hosszú metódus (20 utasítás), túl hosszú sor (120 karakter) valamint a kódban felejtett <code>TODO</code> és <code>FIXME</code> kommentekre is érzékeny.</p>
+<p>A master repók (<a href="https://github.com/SzFMV2018-Osz/AutomatedCar-A">A</a> és <a href="https://github.com/SzFMV2018-Osz/AutomatedCar-B">B</a>) össze lett drótozva a <a href="https://www.codefactor.io">CodaFactorral</a> és folyamatosan méri a kód minőségét, valamint egy A-tól F-ig tartó skálán <a href="https://support.codefactor.io/i14-glossary">osztályozza</a> is (ahol az A a legjobb).</p>
+<h1><a class="header" href="#idea-plugin" id="idea-plugin">IDEA plugin</a></h1>
+<p>Az az igazság, hogy elég unalmas az a fajta macska-egér játék, hogy visszadobok egy PR-et majd a javítás az összes hiba egy részére (jellemzően az explicit megemlítettekre) érkezik csupán, míg a checkstyle ugyanúgy tucatnyit tart nyilván...</p>
+<p>Sajnos az integrált online eszköznek (CodeFactor) megvan a maga hiányossága és a PR esetében nem a legjobban jeleníti meg a hibákat, de ettől még listázza és a „Details” gombot használva ott kikereshető. Bármely branch kiválasztható majd fájl vagy issue szinten lehet gyönyörködni a hibákban.</p>
+<p><img src="https://user-images.githubusercontent.com/3854784/37600458-aacd7d90-2b87-11e8-9c4a-9a0cdf6e53f0.png" alt="codacy_pr_details" /></p>
+<p><strong>Van kiválóan működő Checkstyle plugin IDEÁhoz</strong>, amely IDEA warningként real-time jelzi a hibákat, kérésre (IDE-n belüli futtatásra) pedig a teljes projekt-re vonatkozóan összeszedi őket.</p>
+<p>Javasoltam már, hogy commit előtt mindenki nyomjon egy Code | Reformat Code-ot ([CTRL+ALT+L]), de erre nem sikerült rászokni...</p>
+<h2><a class="header" href="#save-actions" id="save-actions">Save actions</a></h2>
+<p>Találtam nektek egy másik IDEA bővítményt a probléma automatizálására. Ez nem más mint a <a href="https://plugins.jetbrains.com/plugin/7642-save-actions">Save Actions plugin</a>, mely lehetővé teszi, hogy az amúgy is használt <strong>mentés</strong> (CTRL+S) parancshoz lehessen kötni a kódformázási műveletet.
+A <em>Save Actions</em> plugin konfigurálását az alábbiak szerint kell megejteni.
+<img src="https://user-images.githubusercontent.com/3854784/37599751-c35c06c6-2b85-11e8-8018-a8a07c1c1aa7.png" alt="idea_save_action" /></p>
+<p>Zárójeles megjegyzés, hogy ez akkor fog tisztességesen működni, ha az IDEA kódformázási előírásai megfelelően vannak beállítva, vagy legrosszabb esetben default-on lett hagyva minden (már akkor is képes megszüntetni a Checkstyle-ben rögzített problémák jelentős részét).</p>
+<p><a href="https://stackoverflow.com/a/28748557/4737417"><em>forrás</em></a></p>
+<h1><a class="header" href="#tesztlefedettség-1" id="tesztlefedettség-1">Tesztlefedettség</a></h1>
+<p>A kód „minőség” egy mérőszáma lehet, hogy mekkora része van (unit)tesztekkel lefedve. Ezt a projekt README-ben a <a href="https://coveralls.io/github/SzFMV2017-Tavasz/AutomatedCar?branch=master">Coveralls.io</a> szolgáltatás folyamatosan meg is jeleníti.</p>
+<p>Ehhez a <a href="http://www.eclemma.org/jacoco/">JaCoCo</a>-t használjuk, ami Maven-en keresztül (a <code>pom.xml</code>-ben) lett beállítva. A kód tesztekkel történő lefedettségének megjelenítéséhez a fejlesztői környezetek mindenféle okos eszközöket is rendelkezésre bocsátanak.</p>
+<p>Az IntelliJ IDEA-ban beépített megoldás is van, illetve olyan külső eszközöket is képes használni mint a JaCoCo. Képes arra, hogy színkódokkal megfesse az egyes metódusokat annak megfelelően, hogy van-e hozzá teszt.</p>
+<p>A <a href="https://www.jetbrains.com/help/idea/2016.3/code-coverage.html">beállításához</a> meg kell nyitni a <a href="https://www.jetbrains.com/help/idea/2016.3/creating-and-editing-run-debug-configurations.html">Run/debug configuration</a> ablakot, majd a <em>Code Coverage</em> fülön kiválasztani az IntelliJ IDEA-t vagy a JaCoCo-t, előbbi Tracing típusú vizsgálatot is tud (ami jelenleg mindegy). Ezután a <em>Run</em> menü <em>Run 'Main' with Coverage</em> menüpontjával a kódot úgy futtatja, hogy a számításokat el is végzi és megjeleníti az összesítő panelt.</p>
+<p>Az IDEA-n kívül más IDE-khez is megtalálhatóak hasonló funkciók: <a href="http://wiki.netbeans.org/MavenCodeCoverage">NetBeans</a>, <a href="http://www.eclemma.org/jacoco/">Eclipse</a></p>
+<h3><a class="header" href="#képernyőképek" id="képernyőképek">Képernyőképek</a></h3>
+<p><img src="https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/idea_run_debug_config_menu.png" alt="" />
+<img src="https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/idea_run_debug_config_window.png" alt="" />
+<img src="https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/idea_coverage_window.png" alt="" /></p>
+<h1><a class="header" href="#logolás-1" id="logolás-1">Logolás</a></h1>
+<p>Módfelett udvariatlan, káros és így kerülendő hibakeresési céllal a standard kimenetre (<code>System.out.println</code>) írni. Ettől még sokan megteszik mondván addig nincs baj, míg nem kerül pusholásra a közös repóba. Csakhogy a kódolás hevében könnyen ott felejthet az ember egy-két ilyet, így célszerű eleve bele sem tenni!</p>
+<p>Szerencsére több logger is létezik, amik nem csak a <code>System.out.println</code> nem rendeltetés szerű használatát tudják megakadályozni, de bónuszként még egy halom hasznos és kényelmes funkcióval is rendelkeznek. A projektben az <a href="https://logging.apache.org/log4j/2.x/">Apache log4j 2.8</a>-as verziója került bevezetésre.</p>
+<h2><a class="header" href="#konfigurálás" id="konfigurálás">Konfigurálás</a></h2>
+<p>A logolási beállítások egyrészt helyzetfüggőek, másrészt a fejlesztő magánügyét képezik, így nem kényszerítjük rá a másikra a kedvenc beállításainkat. Ebből következik, hogy a <code>log4j2.xml</code> konfigurációs állomány nincs a <em>git</em> verziókezelő felügyelete alatt. Példa a tartalmára [<a href="http://stackoverflow.com/a/21206994/4737417">forrás</a>]:</p>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;Configuration status=&quot;INFO&quot;&gt;
+    &lt;Appenders&gt;
+        &lt;Console name=&quot;Console&quot; target=&quot;SYSTEM_OUT&quot;&gt;
+            &lt;PatternLayout pattern=&quot;%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n&quot; /&gt;
+        &lt;/Console&gt;
+        &lt;!--&lt;File name=&quot;MyFile&quot; fileName=&quot;all.log&quot; immediateFlush=&quot;true&quot; append=&quot;false&quot;&gt;--&gt;
+            &lt;!--&lt;PatternLayout pattern=&quot;%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n&quot;/&gt;--&gt;
+        &lt;!--&lt;/File&gt;--&gt;
+    &lt;/Appenders&gt;
+    &lt;Loggers&gt;
+        &lt;Root level=&quot;debug&quot;&gt;
+            &lt;AppenderRef ref=&quot;Console&quot; /&gt;
+            &lt;!--&lt;AppenderRef ref=&quot;MyFile&quot;/&gt;--&gt;
+        &lt;/Root&gt;
+    &lt;/Loggers&gt;
+&lt;/Configuration&gt;
+</code></pre>
+<p>A fenti fájlt a projektmappába pl. a <code>src/main/resources/</code>-be kell elhelyezni. Jelenlegi beállításokkal <strong>DEBUG</strong> szintű, fájlba nem ment, csupán a fejlesztői környezet konzoljára ír. A fenti fájl hiányában <strong>ERROR</strong> beállításokkal fog működni.</p>
+<h2><a class="header" href="#szintek" id="szintek">Szintek</a></h2>
+<p>A logolásnak több szintje van attól függően, hogy milyen finomságú részletekre vagyunk kíváncsiak. Ezek a szintek sorban (a legbővebbtől a legszűkebbig): ALL, TRACE, DEBUG, INFO, WARN, ERROR, FATAL, OFF. Ebből következik, hogy egy <em>INFO</em> szintű log üzenet meg fog jelenni <em>DEBUG</em> beállítások mellett, de nem fog megjelenni <em>ERROR</em> beállításokkal.</p>
+<h2><a class="header" href="#használata" id="használata">Használata</a></h2>
+<pre><code class="language-java">package hu.oe.nik.automatedcar.demo;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+public class Demo {
+  private static final Logger LOGGER = LogManager.getLogger();
+
+  public void demo(){
+    LOGGER.debug(&quot;Ez egy debug szintű üzenet&quot;);
+    LOGGER.error(&quot;Ez egy error szintű üzenet&quot;);
+  }
+}
+</code></pre>
+<h2><a class="header" href="#további-leírás" id="további-leírás">További leírás</a></h2>
+<ul>
+<li><a href="http://howtodoinjava.com/log4j2/log4j-2-xml-configuration-example/">Log4j2 xml configuration example</a></li>
+</ul>
+<h1><a class="header" href="#külső-konfiguráció" id="külső-konfiguráció">Külső konfiguráció</a></h1>
+<p>Értelem szerűen nem akarunk minden opciót beledrótozni a kódba, hogy aztán csak újrafordítással lehessen ezeken módosítani. Ehhez szokás konfigurációs állományokat használni, amely tartalmazza a különböző beállítások alapértelmezett értékeit.</p>
+<p>A projekt konfigurációs állománya a <a href="https://github.com/SzFMV2018-Osz/AutomatedCar/blob/master/src/main/resources/config.toml"><code>resources/config.toml</code></a> fájl. A <a href="https://github.com/toml-lang/toml">TOML nyelv</a> meglehetősen komplex struktúrákat is megenged. Ezekre nem feltétlenül lesz ugyan szükség, viszont akár kommentezhetőek is az egyes opciók. A tárolhatóak numerikus, szöveges, logikai és dátum-idő típusú értékek is.</p>
+<p>A legnyilvánvalóbb ilyen opció, amelyet már a kezdeti kód is használnál az a debug mód kapcsolója. Ez a <code>general.debug</code> úton érhető el, alapértelmezetten <code>false</code> értéket tartalmaz. Az összes hibakeresési céllal megjelenítendő extra információt ehhez a kapcsolóhoz kell kötni.</p>
+<h1><a class="header" href="#munkafolyamat" id="munkafolyamat">Munkafolyamat</a></h1>
+<p>Definiáltunk egy munkafolyamatot, amely követése elvárás a félév során.
+A munkafolyamat alapvetően feltételezi, hogy egy adott kódrészletet egy kolléga ír, de legkevésbé sem tilos a <a href="https://en.wikipedia.org/wiki/Pair_programming">pair programming</a> sem. Ahhoz, hogy a GitHub rögzítse a mindkét kollégát, a társszerzőt meg kell jelölni. Erről <a href="git.html#t%C3%A1rsszerz%C5%91k">itt lehet olvasni</a>.</p>
+<p>A konkrét feladatmegoldáshoz az alábbi folyamat az elvárt:</p>
+<p><img src="https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/proc1.png" alt="" /></p>
+<ul>
+<li>User Story:
+<ul>
+<li>high level description of sprint goal by customer not complete! Never detailed enough!</li>
+</ul>
+</li>
+<li>Component Design:
+<ul>
+<li>what will realize the functions in the user story You have to recognize the (hidden?) functionality!</li>
+</ul>
+</li>
+<li>Requirement Specification:
+<ul>
+<li>what makes the component work as expected basically the Definition of Done for the component</li>
+</ul>
+</li>
+<li>Task Definition:
+<ul>
+<li>add milestone (there is one for every sprint) to issue</li>
+<li>add assignee to issue</li>
+<li>add Definition of Done list to issue</li>
+<li>add project (there is one for every team) to issue</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/proc2.png" alt="" /></p>
+<ul>
+<li>Dod: Definition of Done</li>
+</ul>
+<h2><a class="header" href="#code-review-in-details" id="code-review-in-details">Code Review in details</a></h2>
+<p><img src="https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/proc3.png" alt="" /></p>
+<ul>
+<li>Clean Code:
+<ul>
+<li>no magic numbers</li>
+<li>no abbreviations</li>
+<li>no extreme unit lengths</li>
+<li>talkative names</li>
+<li>unambiguous code</li>
+</ul>
+</li>
+<li>in short:
+<ul>
+<li>Easy to understand and maintain</li>
+<li>Reads like well written prose</li>
+</ul>
+</li>
+</ul>
+<h1><a class="header" href="#vállalati-példa" id="vállalati-példa">Vállalati példa</a></h1>
+<p>A munkakultúráról egy remek videót tett közzé a Spotify, <a href="https://labs.spotify.com/2014/03/27/spotify-engineering-culture-part-1/">megtekinthető itt</a>.</p>
+<h1><a class="header" href="#user-story-k" id="user-story-k">User story-k</a></h1>
+<p>A félév során minden csapat 3 sprintet teljesít, minden sprintre egy-egy user story-t kap. Hat csapat esetén így a teljes elkészítendő szoftver 12 részre van bontva. A csapatok feladata a user story-k megértése, felbontása egyhuzamban elvégezhető feladatokra (task), ezekhez felelőst és határidőt rendelve.</p>
+<p>Szintén a csapatok feladat a feladatok közötti függőségek azonosítása és az erőforrások (idő, fejlesztő) oly módon történő beosztása, hogy a határidőre minden elkészüljön. Az egyes user story-k között nem csak sprinteken átívelő függőségek lehetnek, hanem sprinten belüliek is. Ilyen esetben az érintett csapattal egyeztetve kell az egyes feladatok prioritásait meghatározni.</p>
+<p>A user story-k függőségi gráfja alább látható, sprintenként színezve. <!--Az „Autó pozíció” nem user story, csupán az átláthatóság (kevesebb nyíl) érdekében lett berajzolva.--></p>
+<p><img src="images/dependencies_4_team.png" alt="" /></p>
+<p>A következő ábrán pedig a user story-k a felelős csapatok alapján van színezve.</p>
+<p><img src="images/team_user_stories.png" alt="" /></p>
+<!--## Az egyes sprintek feladatai
+
+- [1. sprint](sprint_1.md)
+- [2. sprint](sprint_2.md)
+- [3. sprint](sprint_3.md)-->
+<h1><a class="header" href="#világmodell-kialakítása" id="világmodell-kialakítása">Világ(modell) kialakítása</a></h1>
+<ul>
+<li>Input: virtuális világot leíró JSON állomány(ok)</li>
+<li>Output: Modellezett világ: mozgó/álló, áthajtható, ütközhető, tömeggel, mérettel rendelkező objektumok, koordináta-rendszerben, olyan interfészek (API) kialakítása, amely biztosítja a későbbiekben többi csapat számára a világmodellhez való legkézenfekvőbb hozzáférést a későbbi sprintek feladatit is figyelembe véve</li>
+<li>Challenge: „mindenki erre vár”, az interfésznek mielőbb stabilnak kell lennie, akkor is, ha az implementáció még nincs meg, prioritások és „nyomás” kezelése, a megjelenítésért felelős csapat számára a lehető leggyorsabban kód szinten biztosítani a kirajzolandó objektumok alap tulajdonságait.</li>
+</ul>
+<h2><a class="header" href="#definition-of-done" id="definition-of-done">Definition of Done</a></h2>
+<ul>
+<li>Útelemeket, fákat, táblákat egyéb statikus objektumokat leíró állomány feldolgozása</li>
+<li>Hierarchikus objektummodell implementálása világ leírására, API biztosítása ennek elérésére</li>
+<li>Objektumok kiterjedését biztosító poligonok definiálása
+<ul>
+<li>ez nem azonos a kép széleivel</li>
+</ul>
+</li>
+<li>Minden feldolgozott objektum rendelkezzen pozíció, referencia, orientáció, típusadatokkal</li>
+<li>Heterogén kollekció lehetőségének biztosítása</li>
+<li>A modell legyen felkészítve az input fájlból kiolvasott „statikus” objektumokon túl mozgó („dinamikus”) objektumok kezelésére is
+<ul>
+<li>vezérelt autó, NPC (non-player-character) autó, gyalogos</li>
+</ul>
+</li>
+<li>A modell tegyen különbséget azon objektumok között amelyeknek egy jármű nekimehet és amelyeknek nem (fa vs. útelem)</li>
+<li>A modell kezeljen „z-index”-et, hogy a kirajzolás során biztosítható legyen, hogy mely elemet kell előtt kirajzolni a „kitakarások” végett</li>
+</ul>
+<h2><a class="header" href="#megjegyzések" id="megjegyzések">Megjegyzések</a></h2>
+<ul>
+<li>Mielőbb el kell dönteni, hogy milyen koordináta-rendszerben dolgozik majd a modell
+<ul>
+<li>A döntést a megjelenítésért felelős csapattal <strong>együtt</strong> kell meghozni!</li>
+</ul>
+</li>
+<li>Teljesen járható út, hogy a modell, az input állományban található koordináta-rendszer egy az egyeben alkalmazásra kerül, ebből adódóan minden számolás abban történik, csak a megjelenítés transzformálja át.</li>
+<li>A fa esetében csupán a törzsének lehet nekimenni, nem a lombkoronának, ezért a modellt ekképpen kell megalkotni! A törzsnek használható egy szabályos hasáb az egyszerűség kedvéért.
+<ul>
+<li><img src="https://raw.githubusercontent.com/szfmv2019-tavasz/handout/master/src/images/tree_collidable.png" alt="" /></li>
+</ul>
+</li>
+<li>Az autó is egyszerűsíthető, nem kell a grafikai elemet teljes mértékben követni.
+<ul>
+<li><img src="https://raw.githubusercontent.com/szfmv2019-tavasz/handout/master/src/images/car_simplified_polygon_model.png" alt="" /></li>
+</ul>
+</li>
+<li>A kanyarodó útelemeknél is lehet egyszerűsítést használni.
+<ul>
+<li><img src="https://raw.githubusercontent.com/szfmv2019-tavasz/handout/master/src/images/90left_polygon.png" alt="" /></li>
+</ul>
+</li>
+<li>A szűréshez használt háromszög esetében a poligonokat kell figyelembe venni, pl. fa törzse, tábla rúdja, de nem csak az „ütközhető” objektumokat kell tudni visszaadni, hanem az útelemeket is. A 2. sprintben a szenzorok majd válogatnak, hogy mire van szükségük ezekből.
+<ul>
+<li><img src="https://raw.githubusercontent.com/szfmv2019-osz/handout/master/src/images/model_interface.png" alt="" /></li>
+</ul>
+</li>
+</ul>
+<h1><a class="header" href="#vizualizáció" id="vizualizáció">Vizualizáció</a></h1>
+<ul>
+<li>Input: Objektummodell (modellezett világ), pontosabban annak elégséges metszete. A rajzoláshoz elegendőek az világot leíró állományban megtalálható adatok, nem kell megvárni a teljes modell elkészültét</li>
+<li>Output: Illeszkedő, résmentes megjelenítése, 24 FPS-el frissülő, folyamatos mozgás</li>
+<li>Challenge: Az objektumtranszformációk megfelelő végrehajtása, az objektummodellért felelős csapattal egyeztetés az objektumok elérését illetően</li>
+</ul>
+<h2><a class="header" href="#definition-of-done-1" id="definition-of-done-1">Definition of Done</a></h2>
+<ul>
+<li>A kirajzolt világ egy része látható csak állandóan a programablakban, a „kamera” a vezérelt autót (egocar) követi
+<ul>
+<li>világ széleinek kezelése</li>
+</ul>
+</li>
+<li>statikus objektumok pozícióhelyes kirajzolása és illesztése a rendelkezésre álló építőelemekből</li>
+<li>mozgó objektumok helyes kirajzolása</li>
+<li>debug célból meg kell tudni jeleníteni az egyes objektumokhoz definiált poligonokat</li>
+<li>interfészt kell biztosítani, hogy egy megcímzett objektum poligonja eltérő színnel jelenhessen meg (ha kijelölésre kerül)</li>
+<li>interfészt kell biztosítani a szenzorok látóterét jelképező háromszögek opcionális megjelenítésére</li>
+<li>a megjelenés villódzásmentes és folyamatos legyen</li>
+</ul>
+<h2><a class="header" href="#megjegyzések-1" id="megjegyzések-1">Megjegyzések</a></h2>
+<ul>
+<li>A programablaknak az alábbi módon nézni majd ki. A kezdeti kód ezt a felosztást már támogatja, tartalmaz két JPanel-t, ebből a <code>CourseDisplay</code>re kell a világ objektumait kirajzolni. Pontosabban az a „viewport”, amit a kamera lát, mögötte ott lehet a többi objektum.
+<ul>
+<li>ha szükséges egyéb panel definiálható, de a műszerfal (dashboard) működését nem lehet megzavarni</li>
+<li><img src="https://raw.githubusercontent.com/szfmv2019-tavasz/handout/master/src/images/gui_plan_course_display.png" alt="gui_plan" /></li>
+</ul>
+</li>
+<li>A kiadott kód csak példa alap GUI készítésére, ha a feladat úgy kívánja átírható, más rajzoló metódusok vagy logika is használható, de figyelni kell arra, hogy ez esetben minden érintett csapat tudjon a módosításokról. <em>Mindenek előtt a műszerfalért felelős csapat!</em></li>
+<li>Az IntelliJ IDEA GUI Designer-e <em>nem</em> használható!</li>
+</ul>
+<h1><a class="header" href="#human-machine-interface-hmi-műszerfal-irányítás" id="human-machine-interface-hmi-műszerfal-irányítás">Human Machine Interface (HMI): Műszerfal, irányítás</a></h1>
+<ul>
+<li>Input: a billentyűzet</li>
+<li>Output:
+<ul>
+<li>PRND váltó(fel-le), gáz és fék 0-100 skála, kormányállás tetszőlegesen választott skála index, billentyűleütés alapján</li>
+<li>Fordulatszám, sebesség, kormány, gáz, fék, sebességváltó állása, irányjelző visszajelző, kocsi pozíció megjelenítése (x, y koordináta, az autó rajzolását a vizualizáció végzi, ez egy debug funkció)</li>
+</ul>
+</li>
+</ul>
+<h2><a class="header" href="#definition-of-done-2" id="definition-of-done-2">Definition of Done</a></h2>
+<ul>
+<li>a fék- és gázpedál állapota szabályozható</li>
+<li>fék- és gázpedál valamint a kormány sem binárisan működik, a billentyű nyomva tartás idejétől függ az input intenzitása</li>
+<li>fék- és gázpedál valamint a kormány is fokozatosan áll vissza alaphelyzetbe a billentyű felengedésével</li>
+<li>az automata váltó 4 állapota szabályozható
+<ul>
+<li>szekvenciális váltóról lévén szó, sorban állíthatók a fokozatok: P(ark), R(everse), N(eutral), D(rive)</li>
+<li>alaphelyzet: P, „felváltás” után R, majd N, majd D. „Leváltás” ugyanez visszafele.</li>
+</ul>
+</li>
+<li>ACC: Állítható céltávolság (T jelű gombbal, körkörösen 0.8/1.0/1.2/1.4 másodperc)</li>
+<li>ACC: Állítható célsebesség (+/- gombbal, 30-160, 10-es lépésközzel)</li>
+<li>Lane Keeping bekapcsolás</li>
+<li>Parkig pilot bekapcsolás</li>
+<li>irányjelző (jobb, bal) kapcsolható</li>
+<li>egyszerre több billentyű is használható
+<ul>
+<li>kanyarodni és gázt adni/fékezni minimum kell tudni egyszerre</li>
+</ul>
+</li>
+<li>Megjelenik a fordulatszám mint „analóg óra”</li>
+<li>Megjelenik a sebesség mint „analóg óra”</li>
+<li>Megjelenik a kormányállás</li>
+<li>Megjelenik a gáz, fék állapota (progressbar)</li>
+<li>Megjelenik a sebességváltó állása (szövegesen)</li>
+<li>Irányjelző visszajelző (egy-egy nyíl kirajzolva)</li>
+<li>Kocsi pozíció megjelenítése (x, y koordináta debug céllal, szövegesen)</li>
+<li>Vezetéstámogató funkciók visszajelzései
+<ul>
+<li>ACC idő és sebesség limit</li>
+<li>parking pilot és a lane keeping rendszerek állapot visszajelzése</li>
+</ul>
+</li>
+<li>az utolsó látott tábla megjelenítése
+<ul>
+<li>interfész biztosítása, az utolsó látott tábla beállítására</li>
+</ul>
+</li>
+</ul>
+<h2><a class="header" href="#megjegyzések-2" id="megjegyzések-2">Megjegyzések</a></h2>
+<ul>
+<li>Az input manager és a műszerfal között az értékeket a buszon kell közölni</li>
+<li>Az utoljára látott táblához legyen definiálva egy csomag, amely ha megjelenik a buszon, akkor a csomag által kijelölt tábla megjelenik a műszerfalon
+<ul>
+<li>később a táblafelismerő majd kiküld ilyen csomagot ha amikor szükséges</li>
+<li>talán célszerű ha van egy „nincs tábla állapot is”</li>
+</ul>
+</li>
+<li>A fordulatszám és a sebesség megjelenése „analóg óraként” történjen, de nem szükséges újra feltalálni a kereket.</li>
+<li>A programlaknak az alábbi módon kell kinéznie. A kezdeti kód ezt a felosztást már támogatja, tartalmaz két JPanel-t, ebből a Dashboard-ra kell a visszajelzőket elhelyezni.
+<ul>
+<li><img src="https://raw.githubusercontent.com/szfmv2019-tavasz/handout/master/src/images/gui_plan.png" alt="gui_plan" /></li>
+</ul>
+</li>
+<li>Az IntelliJ IDEA GUI Designer-e <em>nem</em> használható!</li>
+</ul>
+<h1><a class="header" href="#hajtáslánc-és-kormányzás" id="hajtáslánc-és-kormányzás">Hajtáslánc és kormányzás</a></h1>
+<ul>
+<li>Input: VFB-ról kormányállás, sebességváltó, gáz- és fékpedál állása (ezeket az input csapat állítja be)</li>
+<li>Output:
+<ul>
+<li>Sebességváltó állásától függő mozgásállapot (vagy nem-mozgás) megvalósítása (PRND)</li>
+<li>Gyorsulás/lassulás számítása gáz/fék alapján</li>
+<li>fordulókör meghatározás, kanyarodás</li>
+<li>teljes elmozdulás vektor kiszámolása</li>
+</ul>
+</li>
+<li>Challenge:
+<ul>
+<li>irányítást implementáló csapattal egyeztetés az inputt értékekről (packet-ekről)</li>
+</ul>
+</li>
+</ul>
+<h2><a class="header" href="#definition-of-done-3" id="definition-of-done-3">Definition of Done</a></h2>
+<ul>
+<li>Az autó gázpedál állásától függően gyorsul</li>
+<li>A gyorsulás a „belső fokozatok” szerint kerül meghatározásra</li>
+<li>Az autó a gázpedál felengedésével fokozatosan lassul, amjd megáll</li>
+<li>Az autó R válóállásban tolat</li>
+<li>Felkészíteni a modult, hogy a vészfékező, az adaptív tempomat vagy a parkoló asszisztens is küldhet inputot, melyek magasabb prioritásúak
+<ul>
+<li>vészfékező értelemszerűen fékezés inputot</li>
+<li>az adaptív tempomat és a parkoló asszisztens gáz és fék inputot is</li>
+</ul>
+</li>
+<li>Buszról érkező kormányállás felhasználása</li>
+<li>Autó kanyarodásának biztosítása valóságos fordulókör szerint
+<ul>
+<li>ehhez szükséges extra tulajdonságot meghatározása</li>
+</ul>
+</li>
+<li>Tényleges mozgásvektor meghatározása a motor csapat gyorsulás, lassulás értékének felhasználásával</li>
+<li>A meghatározott mozgásvektor alapján az autó pozíciójának frissítése
+<ul>
+<li>az AutomatedCar osztály x,y koordinátáinak frissítése</li>
+</ul>
+</li>
+<li>Tolatás során is valósághű kanyarodás történik</li>
+<li>Felkészíteni a modult, hogy a sávtartó automatika vagy a parkoló asszisztens is küldhet kormányzás inputot</li>
+</ul>
+<h2><a class="header" href="#megjegyzések-3" id="megjegyzések-3">Megjegyzések</a></h2>
+<ul>
+<li>A 3. sprintes beavatkozásokhoz (LKA, AAC, AEB, PP) definiálni kell az kommunikációs csomagot</li>
+<li>Valamint figyelni, hogy ha ilyen érkezik a buszon, akkor azt magasabb prioritású inputként elfogadni</li>
+</ul>
+<h1><a class="header" href="#1-ultrahang-szenzorok" id="1-ultrahang-szenzorok">1. Ultrahang Szenzorok</a></h1>
+<p>Park pilot alapjául szolgáló Ultrasonic Sensor array szimulációjának implementálása.</p>
+<ul>
+<li>Input: világmodell</li>
+<li>Output:
+<ul>
+<li>Ultrahang szenzor által látott objektumok</li>
+</ul>
+</li>
+</ul>
+<h3><a class="header" href="#definition-of-done-4" id="definition-of-done-4">Definition of Done</a></h3>
+<ul>
+<li>8 db ultrahang szenzor, egyenként 3 méter látótávolsággal, 100° látószöggel</li>
+<li>A 8 darab háromszög koordinátái az autó helyzetétől függően folyamatosan frissülnek</li>
+<li>debug célra bekapcsolható módon ezek a háromszögek legyen kirajzolhatóak <strong>zöld</strong> színnel</li>
+<li>A látószög és távolság által meghatározott területen kérjék el a <strong>releváns</strong> objektumokat</li>
+<li>Határozzák meg a legközelebbi (ütközés szempontjából) objektum pozícióját, kiterjedését, távolságát</li>
+</ul>
+<h3><a class="header" href="#megjegyzések-4" id="megjegyzések-4">Megjegyzések</a></h3>
+<ul>
+<li>A háromszög kirajzolására már kell, hogy legyen elérhető publikus metódus, amely 3 pontot és egy rajzolási színt vár bemenetként</li>
+<li>A világ objektumainak lekérdezésére már kell, hogy legyen elérhető publikus metódus, mely 3 pontot vár bemenetként, ebből kell leválogatni a relevánsakat</li>
+<li><img src="images/ultrasonic.png" alt="" /></li>
+</ul>
+<h1><a class="header" href="#2-kamera-szenzor-implementálása-Ütközés-detekció-és-mozgásállapot-változás-szimuláció" id="2-kamera-szenzor-implementálása-Ütközés-detekció-és-mozgásállapot-változás-szimuláció">2. Kamera szenzor implementálása, Ütközés detekció és mozgásállapot-változás szimuláció</a></h1>
+<p>Sávtartó automatika és táblafelismerő alapjául szolgáló kamera szenzor implementációja. A Sávtartó automatika a nagyobb feladat, ugyanis meg kell tudni határozni a sávot. Az autó előtt levő pályaelemekből kiszámítani, hogy hol vannak a sávot meghatározó vonalak. A sávtartó automatikának arra lesz majd szüksége, hogy az autó közelít-e a sávját meghatározó felfestésekhez.</p>
+<ul>
+<li>Input: világmodell</li>
+<li>Output:
+<ul>
+<li>Kamera által látott objektumok</li>
+<li>esemény kiváltása ütközések bekövetkezésekor
+<ul>
+<li>ez írja le, hogy mik ütköztek</li>
+<li>??? új mozgásállapot minden mozgó, ütköző objektumnak</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2><a class="header" href="#definition-of-done-5" id="definition-of-done-5">Definition of Done</a></h2>
+<ul>
+<li>1 db, a szélvédő mögé elhelyezett kamera implementálása</li>
+<li>A látószög és távolság által meghatározott területen kérje el a <strong>releváns</strong> objektumokat
+<ul>
+<li>a táblafelismerő szempontjából releváns objektumok a táblák</li>
+<li>a sávtartó szempontjából releváns objektumok az utak</li>
+</ul>
+</li>
+<li>A háromszög koordinátái az autó helyzetétől függően folyamatosan frissülnek</li>
+<li>debug célra bekapcsolható módon a háromszög legyen kirajzolható <strong>kék</strong> színnel</li>
+<li>A szenzorok által relevánsnak tartott objektumok kiemelhetők egy debug kapcsolóval (billentyű vagy debug módba váltás)</li>
+</ul>
+<!-- - A kamera szenzor a látható sávok összes adatát visszaadja(hány sáv, melyikben vagyunk, azon belül milyen távolságra a szélektől)
+- A kamera szenzor a látott táblák közül a legközelebbi összes adatát visszaadja (milyen tábla, milyen messzire van) -->
+<hr />
+<ul>
+<li>A vezérelt autó - tereptárgy ütközésének detektálása és esemény kiváltása</li>
+<li>A vezérelt autó - NPC-vel való ütközésének detektálása és esemény kiváltása</li>
+<li>Mozgó és statikus objektumok érintkezésének pozíció és dimenzióhelyes detekciója és kommunikációja megvalósult</li>
+<li>Az objektumok mozgásállapota az energiamegmaradás törvényeinek megfelelően változik (gyorsul, lassul, irányt vált, megáll)
+<ul>
+<li>Ha a vezérelt autó nekimegy egy NPC autónak akkor ez legyen rá hatással (lassuljon le)</li>
+<li>Ha a vezérelt autó nekimegy egy „stabil” tereptárgynak (pl. fa), akkor álljon meg, érjen véget a játék, egy táblán azonban át tud menni (el tudja sodorni), lassuljon le</li>
+</ul>
+</li>
+<li>Az objektumok sérülnek, megsemmisülnek, amennyiben túl nagy energiával ütköznek</li>
+<li>Ha a vezérelt autó elüt egy gyalogost, akkor érjen véget a játék</li>
+<li>A játék véget ér, ha a játékos ütközés következtében mozgásképtelenné válik (megsemmisül)</li>
+</ul>
+<h2><a class="header" href="#megjegyzés" id="megjegyzés">Megjegyzés</a></h2>
+<ul>
+<li>A háromszög kirajzolására már kell, hogy legyen elérhető publikus metódus, amely 3 pontot és egy rajzolási színt vár bemenetként</li>
+<li>A világ objektumainak lekérdezésére már kell, hogy legyen elérhető publikus metódus, mely 3 pontot vár bemenetként, ebből kell leválogatni a relevánsakat</li>
+<li>A kamerának előre kell látnia, ha az út kanyarodni fog, azt is, hogy merre fog kanyarodni és erről a sávtartó automatikának használható információt kellene előállítani</li>
+<li>A valóságban kiszámolják a pálya görbét, ezt itt oly módon oldható meg, hogy a sávhatárokat és ezekhez tud majd a sávtartó automatika viszonyítani</li>
+<li>Továbbá figyelni kell, hogy az autó sebességének függvényében hol lesz a következő időpillanatban (pl. másodperc múlva). Le fog-e térni az útról ha beavatkozás nem történik, mert akkor a sávtartó automatikának közbe kell avatkoznia. Ez itt még nem feladat, de a következő sprintben az lesz, így célszerű észben tartani</li>
+<li><img src="images/camera.png" alt="" /></li>
+</ul>
+<hr />
+<ul>
+<li>Az ütközés detektálása implementáció szempontjából nagyon hasonló a világ objektumainak lekérdezéséhez. Az kell bizsgálni az <code>intersects</code> metódussal, hogy két objektum összeér-e.</li>
+<li>Az NPC - NPC ütközés nem fontos, tehát NPC autó ha átmegy a gyalogoson nem kell, hogy kiváltson különösebb reakciót</li>
+<li>jellemző megoldásként az <em>egocar</em> szokott kapni egy sérülés/élet értéket a mozgásképtelenséghez</li>
+</ul>
+<h1><a class="header" href="#3-világ-populálása-mozgó-npc-objektumokkal" id="3-világ-populálása-mozgó-npc-objektumokkal">3. Világ populálása mozgó NPC objektumokkal</a></h1>
+<ul>
+<li>Input: Világmodell</li>
+<li>Output: Mozgó NPC objektumok, gyalogosok, biciklisek, autók. szkriptelt útvonalak, mozgások megvalósítása, a megvalósított objektumok a modellbe illesztése</li>
+<li>Challenge: adaptálódás pályához</li>
+</ul>
+<h3><a class="header" href="#definition-of-done-6" id="definition-of-done-6">Definition of Done:</a></h3>
+<ul>
+<li>Objektumok előre definiált, értelmes helyen jelennek meg (autók úton, gyalogosok út mellett/járdán)</li>
+<li>Objektumok előre szkriptelt útvonalat követnek</li>
+<li>Gyalogosok az út mentén haladnak, zebrán áthaladnak</li>
+<li>Autók az utat - sávot - pontosan követik</li>
+<li>NPC objektumok egymás mozgásállapotát nem változtatják meg</li>
+<li>Legalább egy autó végigmegy a pályán</li>
+<li>Legalább egy gyalogos mozog és átkel egy zebrán</li>
+<li>Új pálya esetén az NPC objektumok adaptálódnak az új környezethez</li>
+</ul>
+<h3><a class="header" href="#megjegyzések-5" id="megjegyzések-5">Megjegyzések</a></h3>
+<ul>
+<li>NPC = <em>non player character</em> (itt akár <em>car</em> is lehet)</li>
+<li>Feltételezhető az NPC-k szabálykövető és értelemszerű viselkedése: nem hajt gyorsan, nem tér le az útról, nem ütközik fának.</li>
+<li>A gyalogoson akár átmehet, nem kell ütközésnek minősíteni.
+<ul>
+<li>Az érdekes ugyanis az, hogy az egocar (vezérelt autó) hogyan viselkedik egy mozgó objektumra, másik autó (nem megy neki), gyalogos (nem üti el), az NPC-ket nem kell túlbonyolítani</li>
+</ul>
+</li>
+<li>Szkriptelt útvonal alatt azt értjük, hogy a világ koordinátáira építve bele van égetve a kódba (esetleg egy konfigurációs fájlba), hogy az autó hogyan mozogjon. Például a parkoló mellől indul az úton megy fölfele (csökken az y koordinátája) a kanyar előtt (x,y) világkoordinátákat elérve lelassul, (x,y)' koordináták elérése esetén elkezd kanyarodni, a sávból nem tér ki, majd (x,y)&quot; koordinátáig halad a fönti egyenesen. És így tovább.</li>
+<li>a kanyarodás legyen a lehető legvalósághűbb, akár a vezérelt autó esetében.</li>
+</ul>
+<h1><a class="header" href="#4-radar-szenzor" id="4-radar-szenzor">4. Radar szenzor</a></h1>
+<p>Adaptív sebességtartó, automata vészfékező alapjául szolgáló radar szenzor implementációja</p>
+<ul>
+<li>Input: világmodell</li>
+<li>Output:
+<ul>
+<li>Radar által látott objektumok</li>
+</ul>
+</li>
+</ul>
+<h2><a class="header" href="#definition-of-done-7" id="definition-of-done-7">Definition of Done</a></h2>
+<ul>
+<li>1 db, az autó első lökhárítója mögött elhelyezett radar szenzor</li>
+<li>A látószög (60°) és távolság (200m) által meghatározott területen kérjék el a <strong>releváns</strong> objektumokat</li>
+<li>A háromszög koordinátái az autó helyzetétől függően folyamatosan frissülnek</li>
+<li>debug célra bekapcsolható módon a háromszög legyen kirajzolhatóak <strong>piros</strong> színnel</li>
+<li>Határozzák meg a legközelebbi, sávon belüli (lateral offset alapján) objektum helyzetét</li>
+<li>Az automata vészfékező számára releváns objektumok (az autó középvonala felé halad, látjuk) kiválogatása és visszaadása</li>
+</ul>
+<h2><a class="header" href="#megjegyzések-6" id="megjegyzések-6">Megjegyzések</a></h2>
+<ul>
+<li>A háromszög kirajzolására már kell, hogy legyen elérhető publikus metódus, amely 3 pontot és egy rajzolási színt vár bemenetként</li>
+<li>A világ objektumainak lekérdezésére már kell, hogy legyen elérhető publikus metódus, mely 3 pontot vár bemenetként, ebből kell leválogatni a relevánsakat</li>
+<li><img src="images/radar.png" alt="" /></li>
+<li>A vészfékezőnek majd ki kell tudnia számolni, hogy az akadály akkor is útban lesz-e még mire az autó odaér, ehhez szükséges az útban levő objektum távolsága és pozíciója (relatívan az autóhoz), ez minden ciklusban lefutva előállítja az objektum pl. gyalogos mozgásvektorát
+<ul>
+<li>ennek egy fa esetében is működnie kell, csak az nem mozog, mert nem Középföldén vagyunk</li>
+</ul>
+</li>
+<li>az ACC-hez el kell tudni dönteni, hogy pl. egy autó a vezérelt autó előtt halad-e</li>
+</ul>
+<h1><a class="header" href="#1-automata-parkolás" id="1-automata-parkolás">1. Automata parkolás</a></h1>
+<ul>
+<li>Input: Ultrahang szenzorok</li>
+<li>Output: parkolási manőver végrehajtása</li>
+</ul>
+<h3><a class="header" href="#dod" id="dod">DoD</a></h3>
+<ul>
+<li>Indexkapcsoló állása alapján parkolóhely keresés jobbra vagy balra</li>
+<li>Autó méretének megfelelő hely beazonosítása</li>
+<li>Megtalált parkoló jelzése, a hely információinak buszra írása (packet-tel)</li>
+<li>A parkolóhely megtalálásához szükséges NPC-k példányosítása</li>
+<li>A parkolás megkezdése külön inputhoz kötött (van erre vonatkozó gomb a műszerfalon, inputtól meg billentyűesemény)</li>
+<li>A kormány és gáz/fék vezérlésével beparkolás a talált helyre</li>
+<li>Párhuzamos parkolás sikeres (ütközés nélkül megtörténik)</li>
+<li>Sofőr beavatkozására (fék, gáz, kormány) kikapcsolás (megszűnik az automata vezérlés)</li>
+</ul>
+<h3><a class="header" href="#megjegyzések-7" id="megjegyzések-7">Megjegyzések</a></h3>
+<ul>
+<li>Még a sofőr vezet a parkolóig, megáll az autósor mellett aktiváltja a parkolóhely keresést (kell valami input a billentyűzetről) ekkor továbbra is &quot;emberi&quot; irányítással el kell haladni a parkolóhelyek mellett és ki kell számolni a szabad hely méretét. Amikor megvan az alkalmas hely, akkor visszajelzést kell adni és a hely dimenziót és az autóhoz viszonyított helyzetét le kell tudni írni.</li>
+<li>Az autónak elérhető a referenciapontja (továbbá ismert a szélessége és a hosszúsága), a autóhoz (referenciaponthoz) viszonyítva legyen leírva a parkolóhely.</li>
+<li>Ami a parkolóhely hosszát illeti, nem a felfestett parkolóhely hosszát kell lemérni (azt nem is lehet az ultrahang szenzorral), hanem a szabad parkolóhelyet közrefogó két parkoló autó által szabadon hagyott helyet (amely akár két felfestésnyi is lehet).</li>
+<li>A szabad hely szélessége ha egyéb akadályt - pózna (<code>bollard.png</code>) vagy fa - nem tesztek külön emiatt, támpontként a pályára, akkor a a szenzor látótávolsága, azaz 3 méter.</li>
+<li>a szabad helyhez egy referenciapontot kell (érdemes) társítani, pl. a helyet leíró téglalap bal felső pontja (ábrán így van) és az autó középpontjával és ezzel a ponttal (ebből számolható a távolság) valamint a hely dimenzióival kielégítően jellemezve van a parkoló hely.</li>
+<li>Ez tartalmazza az autó referenciapontját (középpont) és a pakolóhelyet leíró négyzet referenciapontját ezekből számítható a távolságuk.</li>
+<li>(Ha más nem próbálgatásos módszerrel) ki kell tapasztalni, hogy a szükséges &quot;párhuzamos parkolás&quot; manőver hogyan vihető végbe a vezérelt autó irányítószerveivel, majd ezt le kell automatizálni: pl. le kell írni, kormány jobbra teker 100-ra, gáz 25% 1,5s-ig, majd kormány balra 75, gáz 20% 1.25s-ig.</li>
+<li>A programozott vezérlést a buszon keresztül kapott szabad helyet leíró adatok függvényében kell elindítani</li>
+<li>ha szükséges az autóval tolatni is kell a manőver megkezdéséhez, mivel a detektálás során túlmehetünk az ideális pozíción, ahonnan a leprogramozott manőver ütközés nélkül beparkol.</li>
+</ul>
+<p><img src="images/parking_horizontal.png" alt="" />
+<img src="images/find_parking_place_horizontal.png" alt="" />
+<img src="images/parking_place_found_horizontal.png" alt="" /></p>
+<h1><a class="header" href="#2-sávtartó-automatika-és-táblafelismerés" id="2-sávtartó-automatika-és-táblafelismerés">2. Sávtartó automatika és táblafelismerés</a></h1>
+<ul>
+<li>Input: Kamera szenzor</li>
+<li>Output:
+<ul>
+<li>Sávot beavatkozás nélkül követi a vezérelt autó</li>
+<li>Az utolsó látott tábla megjelenik a HMI-n</li>
+</ul>
+</li>
+</ul>
+<h2><a class="header" href="#definition-of-done-8" id="definition-of-done-8">Definition of Done</a></h2>
+<ul>
+<li>45 foknál enyhébb kanyarodású úton a kocsi a sáv szemmel láthatóan a sáv közepén marad</li>
+<li>Ha el kell engednie a kontrollt (az automatika számára kezelhetetlen forgalmi szituáció következik, pl. éles kanyar, kereszteződés), vizuális figyelmeztetést ad</li>
+<li>Ha újra elérhető a funkció (pl. elhagytuk a kanyart) vizuális indikáció (a műszerfalon)</li>
+<li>Sávtartó automatika be- és kikapcsolható
+<ul>
+<li>emberi beavatkozásra kikapcsol</li>
+</ul>
+</li>
+<li>az utolsó látott, releváns tábla megjelenik a műszerfalon</li>
+<li>az utolsó sebességkorlátozás kiírásra kerül a buszra</li>
+</ul>
+<h2><a class="header" href="#megjegyzések-8" id="megjegyzések-8">Megjegyzések</a></h2>
+<ul>
+<li>a tábla megjelenítésére kész interfész van a műszerfaltól, csak meg kell hívni, ha a detektálás megtörtént</li>
+</ul>
+<p><img src="images/lka.png" alt="" /></p>
+<p>Sávon belüli mozgás: a LKA működése egy enyhe sávon belüli cikázást eredményez.</p>
+<p><img src="images/lka_wave.png" alt="" /></p>
+<h1><a class="header" href="#3-adaptív-tempomat" id="3-adaptív-tempomat">3. Adaptív tempomat</a></h1>
+<ul>
+<li>Input:
+<ul>
+<li>radar szenzor</li>
+<li>NPC autók</li>
+</ul>
+</li>
+</ul>
+<p>Adaptív tempomat funkció megvalósítása - a kiválasztott célobjektum (autó előtt haladó NPC) sebességéhez igazítja a gyorsabb saját sebességet, vagy tartja a sofőr által kiválasztott sebességhatárt, ha nincs cél.</p>
+<h2><a class="header" href="#definition-of-done-9" id="definition-of-done-9">Definition of Done</a></h2>
+<ul>
+<li>Bekapcsolható, reagál az állapotváltás, alapértelmezetten az aktuális sebesség, de min célsebesség 30 km/h</li>
+<li>ha nincs saját sávban autó, a játékos autó tartja a kiválasztott célsebességet</li>
+<li>ha saját sávban található autó:
+<ul>
+<li>a saját jármű felveszi a sebességét, ha lassabb</li>
+<li>tartja a kiválasztott sebességet, ha gyorsabb</li>
+</ul>
+</li>
+<li>fékezésre kikapcsol</li>
+<li>AEB beavatkozásra kikapcsol</li>
+<li>Ha speed limitet talál a buszon, azt alkalmazza új célsebességként, amíg a sofőr felül nem írja</li>
+</ul>
+<h2><a class="header" href="#megjegyzések-9" id="megjegyzések-9">Megjegyzések</a></h2>
+<ul>
+<li>Szabad feltételezni, hogy az NPC kezelés nem, vagy nem időben készül el, lesz elérhető (kerül be a masterba)</li>
+<li>Ezért célszerű a felhasználó/vezető által megadott sebességhez igazodással kezdeni, ennek akkor is működnie kell, ha nincs NPC a pályán</li>
+<li>A modul olyan triggerekkel vezérelheti az autót mint amilyenek a billentyűlenyomás kezelőtől jönnek (gáz, fék)
+<ul>
+<li>de figyelni kell, hogy a tényleges billentyűtől érkező inputok felülírják a funkciót</li>
+</ul>
+</li>
+</ul>
+<p><img src="images/acc.png" alt="" /></p>
+<ul>
+<li>Oda kell figyelni, hogy csak a sávban előttünk haladó autót vegye figyelembe, a szembejövőt ne</li>
+</ul>
+<h1><a class="header" href="#4-vészfékező" id="4-vészfékező">4. Vészfékező</a></h1>
+<p>Automata vészfékező rendszer megvalósítása, maximum 9 m/s^2 lassulással</p>
+<ul>
+<li>Input: radar szenzor</li>
+</ul>
+<h2><a class="header" href="#definition-of-done-10" id="definition-of-done-10">Definition of Done</a></h2>
+<ul>
+<li>Elkerülhető ütközés esetén vizuális figyelmeztetés a sofőrnek</li>
+<li>ha a sofőr nem avatkozik közbe, automatikus fékezés (az utolsó pillanatban, ahol az ütközés még elkerülhető)</li>
+<li>az automatikus fékezés mértéke a sebességgel arányos, de nem lehet 9 m/s^2-nél nagyobb</li>
+<li>70 km/h felett figyelmeztetés, hogy az AEB nem tud minden helyzetet kezelni</li>
+<li>Nincs nem releváns objektumokra való fékezés (fals pozitív) - pl. szembejövő autó</li>
+<li>Gyalogosra, fára megáll a kocsi</li>
+</ul>
+<h2><a class="header" href="#megjegyzések-10" id="megjegyzések-10">Megjegyzések</a></h2>
+<ul>
+<li>A radar vissza kell adja az autó előtt levő legközelebbi releváns objektum adatait (táv, sebesség), ezekkel lehet számolni</li>
+<li>A távolságból és az autó sebességéből meghatározható, hogy milyen lassulást kell adni az autónak, hogy még megálljon, de ne lépje túl a 9 m/s^2-et
+<ul>
+<li>a gyorsítási/fékezési input nem gyorsulásban van, hanem pedállás mértékben. Ebből elvileg egyszerűen nem nyerhető ki a gyorsulás, viszont a gyorsulás az egy másodperc alatti sebesség változás, ami viszont kiszámolható t(n) - t(n-1) módon</li>
+</ul>
+</li>
+<li>A modul olyan triggerekkel vezérelheti az autót mint amilyenek a billentyűlenyomás kezelőtől jönnek (gáz, fék)
+<ul>
+<li>de figyelni kell, hogy a tényleges billentyűtől érkező inputok felülírják a funkciót</li>
+</ul>
+</li>
+</ul>
+<p><img src="images/radar_aeb.png" alt="" /></p>
+<h1><a class="header" href="#virtuális-világ" id="virtuális-világ">Virtuális világ</a></h1>
+<p>Az autónak egy virtuális tesztpályán kell végigmennie, amelyhez modellezni a világot. Két teszt pályát biztosítunk, egy egyszerűbbet és egy nagyobbat, bonyolultabbat. Alább látható az egyszerűbb.</p>
+<p><img src="images/test_world.png" alt="" /></p>
+<p>A fenti világ elemekből épül föl, amelyek között vannak egyenes útszakaszok, kanyarok (pl. 45° és 90°), T elágazás, gyalogos átkelő, közúti táblák, parkolók és fák. Mindezt <a href="resources/test_world.xml">egy XML írja le</a>.</p>
+<p>A számítógépes grafikában megszokott módon, a bal felső sarok jelenti az origót (0,0) koordinátát. Az x tengely tehát jobbra haladva, az y tengely lefelé haladva növekszik. Így kell értelmezni az XML-t és ekképpen működik a megjelenítés is, hiszen a form bal felső sarkánál van a (0, 0) pont. Az alábbi kép <a href="http://www.e-cartouche.ch/content_reg/cartouche/graphics/en/html/Screen_learningObject3.html">forrása</a>.</p>
+<p><img src="http://www.e-cartouche.ch/content_reg/cartouche/graphics/en/image/coordinates.jpg" alt="" /></p>
+<h2><a class="header" href="#villódzásmentes-rajzolás" id="villódzásmentes-rajzolás">Villódzásmentes rajzolás</a></h2>
+<ul>
+<li>https://docs.oracle.com/javase/tutorial/extra/fullscreen/doublebuf.html</li>
+</ul>
+<h2><a class="header" href="#objektumok-leírása" id="objektumok-leírása">Objektumok leírása</a></h2>
+<p>Egy-egy objektum leírása a következőképpen néz ki:</p>
+<pre><code class="language-xml">&lt;Object type=&quot;road_2lane_straight&quot;&gt;
+      &lt;Position x=&quot;1700&quot; y=&quot;144&quot;/&gt;
+      &lt;Transform m11=&quot;0&quot; m12=&quot;1&quot; m21=&quot;-1&quot; m22=&quot;0&quot;/&gt;
+      &lt;Parameter name=&quot;roadpainting_1&quot; value=&quot;1&quot;/&gt;
+      &lt;Parameter name=&quot;roadpainting_2&quot; value=&quot;1&quot;/&gt;
+      &lt;Parameter name=&quot;roadpainting_3&quot; value=&quot;1&quot;/&gt;
+&lt;/Object&gt;
+</code></pre>
+<ul>
+<li>A <code>type</code> attribútum írja le, hogy milyen objektumról van szó. A példában egy 2 sávos egyenes útszakaszról.</li>
+<li>A <code>Position</code> elem megadja az elem viszonyítási pontjának koordinátáját.</li>
+<li>A <code>Transform</code> elem egy 2×2-es transzformációs mátrix, amely forgatást ír le.</li>
+<li>A <code>roadpainting</code> megadná, hogy milyen felfestések vannak vannak az úton, de ez nem releváns</li>
+<li>Egy ilyen egyenes útelem 350×350px, ekkora a kép is és ennek kell lennie az XML-ben is.</li>
+</ul>
+<h2><a class="header" href="#az-út-elemek-viszonyítási-pontjai" id="az-út-elemek-viszonyítási-pontjai">Az út elemek viszonyítási pontjai</a></h2>
+<p><img src="images/90right.png" alt="" /> <img src="images/90left.png" alt="" /></p>
+<p><img src="images/45right.png" alt="" /> <img src="images/45left.png" alt="" /></p>
+<p><img src="images/6right.png" alt="" /> <img src="images/6left.png" alt="" /></p>
+<p><img src="images/tjunctionright.png" alt="" />
+<img src="images/tjunctionleft.png" alt="" /></p>
+<p><img src="images/straight.png" alt="" />
+<img src="images/rotary.png" alt="" /></p>
+<p><img src="images/2_crossroad_1.png" alt="2_crossroad_1" />
+<img src="images/2_crossroad_2.png" alt="2_crossroad_2" /></p>
+<p>Minden itt fel nem sorolt esetben feltételezhető, hogy a bal felső sarok a viszonyítási pont.</p>
+<p>Egy korábbi félév során a referenciapontokat (részben) már összegyűjtötték (@csabalint, @SiposGergo, @markkurucz), ez elérhető <a href="references/reference_points.xml">XML</a> vagy <a href="references/reference_points.json">JSON</a> formátumban.</p>
+<p>A mozgatásra szoruló elemek (vezérelt autó és NPC autók) nem képezik részét a világ leírásának, viszonyítási pontjuk nem definiált. A rendelkezésre bocsátott autó képek méretarányosak az összes többi objektummal.</p>
+<p>A világhoz szükséges elemek megtalálhatóak a project  <code>src/main/resources</code> mappájában.</p>
+<h2><a class="header" href="#méretarány" id="méretarány">Méretarány</a></h2>
+<p>Az XML-ben leírt objektumok koordináta-rendszere nem feltétlenül egyezik meg a megjelenítő koordináta-rendszerével, ezt figyelembe véve skálázás, vagy viewport kezelés válhat szükségessé.</p>
+<p>A feladat megoldás során jellemzően valóságos mértékegységekben specifikáljuk a feladatot (pl. méter, km/h, m/s^2, stb.) míg az XML és a grafikai elemek értelem szerűen pixellel dolgoznak. Ennek feloldására, illetve az átváltásra az <strong>1m=50px</strong> szabályt célszerű használni. Ez egy hozzávetőlegesen arányos érték, amellyel számolni is könnyű.</p>
+<h2><a class="header" href="#sávtartó-automatika-tesztelése" id="sávtartó-automatika-tesztelése">Sávtartó automatika tesztelése</a></h2>
+<p>A sávtartó automatika nem tesztelhető kanyarokban, ehhez ezért egy alább látható kinézetű pályaszakasz készült. Csak 6°-os és egyenes útszakaszból áll. <a href="resources/lane_keeping_test_world.xml">Az XML elérhető itt</a>.</p>
+<p><img src="images/lka_track.png" alt="" /></p>
+<h1><a class="header" href="#az-autó-fizikája" id="az-autó-fizikája">Az autó fizikája</a></h1>
+<p>Az autónak egy leegyszerűsített modellen keresztül ugyan, de mégis valóságosan kell viselkednie, ehhez pedig megfelelő fizikát kell leprogramozni. Az haladásához nyilván <em>sebességre</em> lesz szükség, amit a <em>motorerő</em> gyorsító ereje segítségével kaphatunk, és ami a gázpedál(t helyettesítő billentyű) elengedésével <em>nem szűnik meg azonnal</em>, tehát ha úgy tetszik lendületben marad, viszont a környezet (légellenállás, súrlódás) fokozatosan <em>fékezi</em> (akár egyetlen lassító erő is elegendő). Nem kell az egész univerzumot szimulálni, de legalább egy gyorsító és egy fékező erő például biztosan szükséges lesz.</p>
+<p>Ezen jelenségeket (és még sok minden mást) egy autós játék fizikájáról Marco Monster szépen összefoglalta <a href="http://www.asawicki.info/Mirror/Car%20Physics%20for%20Games/Car%20Physics%20for%20Games.html">Car Physics for Games</a> című írásában (angol nyelven).</p>
+<p>Szintén hasznos lehet még <a href="http://www.iforce2d.net/b2dtut/top-down-car">ezen írás</a> is, természetesen továbbra is angol nyelven, vagy tetszőleges egyéb irodalom (hint: Google, Stackoverflow, Wikipedia).</p>
+<p>Az autóhoz automata váltót kell megvalósítani, de az automata vátóban is vannak „belső” fokozatok (1, 2, 3, 4 stb. előremenetben), tehát meg kell különböztetni a „külső” fokozatokat (P, R, N, D) és D állapotban a belsőket.</p>
+<h2><a class="header" href="#kanyarodás" id="kanyarodás">Kanyarodás</a></h2>
+<ul>
+<li>http://gamedev.stackexchange.com/questions/50022/typical-maximum-steering-angle-of-a-real-car</li>
+<li>http://engineeringdotnet.blogspot.hu/2010/04/simple-2d-car-physics-in-games.html</li>
+</ul>
+<p><img src="https://i.stack.imgur.com/DQsP9.png" alt="" /></p>
+<p>A fordulókör sugarának kiszámításához a fönti linkből származó képlet használható:</p>
+<blockquote>
+<p>atan(wheelbase / (turning circle - car width)) = angle</p>
+</blockquote>
+<p>A <a href="resources/car_2_white.png"><code>car_2_white.png</code></a> esetében a szélesség kb. 90px, a tengelytáv kb. 130px-nek tekinthető. Tegyük fel, hogy maximum 60°-ban kormányozható, ekkor a fordulókör sugara:</p>
+<blockquote>
+<ul>
+<li>
+<p>atan(130px / (r - 90px)) = 60°</p>
+</li>
+<li>
+<p>tan(60) = 130/(r-90)</p>
+</li>
+<li>
+<p>r = 130/tan(60) + 90</p>
+</li>
+<li>
+<p>r = ~165px</p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Figyelem, ezek lényegesen valósághűbb autó szimulálását tűzték ki célul mint ami itt minimálisan elvárt!</strong></p>
+<h1><a class="header" href="#szenzorok" id="szenzorok">Szenzorok</a></h1>
+<p>A vezetéstámogató rendszerek 3 fő szenzorra épülnek: kamera, radar és ultrahang. A valóságban adott esetben a vezetéstámogató rendszerek több szenzor együttes használatával működnek (a szoftverben ilyet nem kell megvalósítani).</p>
+<p>További olvasmány:</p>
+<ul>
+<li><a href="http://www.eetimes.com/document.asp?doc_id=1272754">Driver Assistance Systems, an introduction to Adaptive Cruise Control</a></li>
+<li><a href="https://autonomous-driving.org/2019/01/25/positioning-sensors-for-autonomous-vehicles/">Sensor Set Design Patterns for Autonomous Vehicles</a></li>
+</ul>
+<h2><a class="header" href="#kamera" id="kamera">Kamera</a></h2>
+<p>A kamera a szélvédő mögött található, 60°-os látószöggel 80 méterre lát el. A <a href="functions.html#t%C3%A1blafelismer%C5%91-traffic-sign-recognition---tsr">táblafelismerő rendszer</a> és a <a href="functions.html#s%C3%A1vtart%C3%B3-automatika-lane-keeping-assistant---lka">sávtartó automatika</a> használja.</p>
+<p><img src="images/camera.png" alt="" /></p>
+<h2><a class="header" href="#radar" id="radar">Radar</a></h2>
+<p>A radar az autó lökhárítóján helyezkedik el, 60°-os látószöggel 200 méterre lát el. Az <a href="functions.html#adapt%C3%ADv-tempomat-adaptive-cruise-control---acc">adaptív tempomat</a> és az <a href="functions.html#auton%C3%B3m-v%C3%A9szf%C3%A9kez%C5%91-rendszer-automatic-emergency-brake---aeb">autonóm vészfékező rendszer</a> épül rá.</p>
+<p><img src="images/radar.png" alt="" /></p>
+<p>A valóságban a radar több járművet is azonosít. A azonos sávban közvetlenül előtte haladót, a szomszédos sávokban haladó autókat és a képes az azonos sávban haladó előttit is azonosítani (az autó alatt átverődő jelekkel). Ennek köszönhetően az olyan potenciálisan veszélyes manőverek mint a szomszéd sávból elénk bevágó autó is felismerhető mivel folyamatosan figyeli ezek helyzetét.</p>
+<p><img src="images/radar_lanes.png" alt="" /></p>
+<h2><a class="header" href="#ultrahang" id="ultrahang">Ultrahang</a></h2>
+<p>Az ultrahang szenzorból 8 darab van az autón, látótávolsága 3 méter, látószöge 100°, a <a href="functions.html#parkol%C3%B3-asszisztens-parking-pilot---pp">parkoló asszisztens</a> és a <a href="functions.html#tolat%C3%B3radar">tolatóradar</a> épül rá.</p>
+<p><img src="images/ultrasonic.png" alt="" /></p>
+<h1><a class="header" href="#vezetéstámogató-funkciók" id="vezetéstámogató-funkciók">Vezetéstámogató funkciók</a></h1>
+<h2><a class="header" href="#adaptív-tempomat-adaptive-cruise-control---acc" id="adaptív-tempomat-adaptive-cruise-control---acc">Adaptív tempomat (Adaptive Cruise Control - ACC)</a></h2>
+<blockquote>
+<p>Az adaptív sebességtartó automatika a hagyományos tempomat továbbfejlesztett változata. Az ACC egy rendkívül precíz radarral, valamint a gázadás és a fékezés elektronikus vezérlésével tartja az előre beállított követési távolságot. Ha a két jármű között csökken a távolság, az ACC mérsékli a sebességet, sőt szükség esetén fékez is, közben pedig aktiválja a féklámpákat. Ha az elöl haladó jármű gyorsít, vagy átsorol a másik sávba, az Ön autója is fokozatosan felgyorsít, amíg el nem éri az előre beállított sebességet. Az adaptív sebességtartó automatikával a kívánt követési távolságot is beállíthatja (hosszú, közepes vagy rövid).</p>
+<p>forrás: <a href="https://www.toyota.hu/world-of-toyota/safety/adaptive-cruise-control-how-it-works.json">toyota.hu / Adaptív sebességtartó automatika</a></p>
+</blockquote>
+<h3><a class="header" href="#bemutatóvideó-youtube" id="bemutatóvideó-youtube">Bemutatóvideó (YouTube)</a></h3>
+<p><a href="https://www.youtube.com/watch?v=own_VaRZ9M8"><img src="https://img.youtube.com/vi/own_VaRZ9M8/0.jpg" alt="Bemutatóvideó" /></a></p>
+<h3><a class="header" href="#implementálás" id="implementálás">Implementálás</a></h3>
+<p>A kiválasztott célobjektum (autó előtt haladó NPC) sebességéhez igazítja a saját sebességet, vagy tartja a sofőr által kiválasztott sebességhatárt, ha nincs előtte célobjektum.</p>
+<ul>
+<li>ki- és bekapcsolható, reagál az állapotváltás, alapértelmezetten az aktuális sebesség, de min célsebesség 30 km/h</li>
+<li>ha nincs saját sávban autó, a játékos autó tartja a kiválasztott célsebességet</li>
+<li>ha saját sávban található autó:
+<ul>
+<li>felveszi a sebességét, ha lassabb</li>
+<li>tartja a kiválasztott sebességet, ha gyorsabb</li>
+</ul>
+</li>
+<li>fékezésre kikapcsol</li>
+<li>AEB beavatkozásra kikapcsol</li>
+<li>ha speed limitet talál a buszon (táblafelismerő), azt alkalmazza új célsebességként, amíg a sofőr felül nem írja</li>
+</ul>
+<p><img src="images/acc.png" alt="" /></p>
+<h3><a class="header" href="#kezelőszervek" id="kezelőszervek">Kezelőszervek</a></h3>
+<ul>
+<li>bekapcsoló gomb</li>
+<li>célsebesség kijelölése
+<ul>
+<li>léptetés 10 km/h-val</li>
+<li>30 és 160 km/h között</li>
+</ul>
+</li>
+<li>követési távolság definiálása másodpercben: 0.8, 1.0, 1.2, 1.4
+<ul>
+<li>sebességfüggő</li>
+<li>a léptetés körbe jár, tehát 1.4 után 0.8 következik és a 0.8 után az 1.4</li>
+</ul>
+</li>
+</ul>
+<h2><a class="header" href="#autonóm-vészfékező-rendszer-automatic-emergency-brake---aeb" id="autonóm-vészfékező-rendszer-automatic-emergency-brake---aeb">Autonóm vészfékező rendszer (Automatic Emergency Brake - AEB)</a></h2>
+<blockquote>
+<p>Az Autonóm Vészfékező Rendszer (AEB) lényege, hogy egy beépített technológia alkalmazásával (általában radar, kamera, vagy lézer segítségével) folyamatosan méri az elöl haladó jármű mögötti távolságot. Ha a rendszer úgy érzi, hogy a gépkocsik közötti távolság veszélyesen csökken, akkor jelzést ad a járművezetőnek, lehetőséget adva a beavatkozásra (pl. fékezésre). Amennyiben a járművezető reakciója elmarad, vagy annak mértékét a rendszer nem tartja elégségesnek, abban az esetben az AEB beavatkozik, s akár vészfékezés alkalmazásával igyekszik a balesetet elkerülni.</p>
+<p>forrás: <a href="http://www.baleset-megelozes.eu/cikk.php?id=1032">baleset-megelozes.eu / Autonóm Vészfékező Rendszer (AEB)</a></p>
+</blockquote>
+<h3><a class="header" href="#bemutatóvideó-youtube-1" id="bemutatóvideó-youtube-1">Bemutatóvideó (YouTube)</a></h3>
+<p><a href="https://www.youtube.com/watch?v=VHR8AeZrlVc"><img src="https://img.youtube.com/vi/VHR8AeZrlVc/0.jpg" alt="Bemutatóvideó" /></a></p>
+<h3><a class="header" href="#implementálás-1" id="implementálás-1">Implementálás</a></h3>
+<p>Nyilvánvalóan nem azt kell vizsgálni, hogy az autó ütközik-e az előtte levő objektummal hanem, hogy <em>ütközni fog-e vele</em>. A vészfékezés maximális lassulása 9 m/s^2 lehet. Ha az autó 36 m/s sebességgel halad akkor 4 másodperc kell a nullára fékezéshez (ha 50 km/h sebességgel halad, akkor 20). Az aktuális sebességből meghatározható, hogy mekkora a fékút, a maximális megengedett lassulás mellett. Az is kiszámolható, hogy ez mennyi időt vesz igénybe, így az is, hogy mikor kell elkezdeni a vészfékezést, hogy a gyalogost ne üssük el.</p>
+<p>A radar szenzor elég messzire ellát, egy nem mozgó objektum (pl. fa) esetében egyszerű meghatározni, hogy lesz-e ütközés és el kell-e kezdeni vészfékezni. Mozgó objektum (gyalogos) esetében azt is figyelembe kell venni, hogy mire odaérünk még az úton lesz-e.</p>
+<ul>
+<li>elkerülhető ütközés esetén vizuális figyelmeztetés a sofőrnek</li>
+<li>70 km/h felett figyelmeztetés, hogy az AEB nem tud minden helyzetet kezelni</li>
+<li>ha a sofőr nem avatkozik közbe, automatikus fékezés (az utolsó pillanatban, ahol az ütközés még elkerülhető)</li>
+<li>az automatikus fékezés mértéke a sebességgel arányos, de nem lehet 9 m/s^2-nél nagyobb</li>
+<li>gyalogos, fa esetén megáll az autó</li>
+<li>nincs nem releváns objektumokra való fékezés (fals pozitív) - pl. szembejövő autó</li>
+</ul>
+<p><img src="images/radar_aeb.png" alt="" /></p>
+<h2><a class="header" href="#parkoló-asszisztens-parking-pilot---pp" id="parkoló-asszisztens-parking-pilot---pp">Parkoló asszisztens (Parking Pilot - PP)</a></h2>
+<p>A rendszert az erre szolgáló vezérlővel aktiválni kell, majd az irányjelzővel kijelölni, hogy jobbra, vagy balra keressük a parkolóhelyet. Ezután ahogy az autó <em>vezetői irányítás mellett</em> végiggurul a parkoló mellett, a rendszer detektálja az üres parkolóhelyet. Ekkor hátramenetbe kapcsolva az PP vezetői beavatkozás nélkül beáll a szabad pozícióba.</p>
+<h3><a class="header" href="#bemutatóvideók-youtube" id="bemutatóvideók-youtube">Bemutatóvideók (YouTube)</a></h3>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=HWMzP9HYNCQ"><img src="https://img.youtube.com/vi/HWMzP9HYNCQ/0.jpg" alt="Bemutatóvideó" /></a></li>
+<li><a href="https://www.youtube.com/watch?v=rYPby2ALLnE"><img src="https://img.youtube.com/vi/rYPby2ALLnE/0.jpg" alt="Bemutatóvideó" /></a></li>
+</ul>
+<h3><a class="header" href="#implementálás-2" id="implementálás-2">Implementálás</a></h3>
+<ul>
+<li>a parkolás megkezdése külön inputhoz kötött</li>
+<li>a kormány és gáz/fék vezérlésével beparkolás a talált helyre
+<ul>
+<li>a tolatási manőver lehet egy előre definiált szekvencia, amelyet a parkolóhely (abszolút) pozíciójával lehet paraméterezni</li>
+</ul>
+</li>
+<li>ha a PP aktív és a váltó hátramenetben van (és van detektált parkolóhely), akkor parkolási szekvencia végrehajtása</li>
+<li>a párhuzamos parkolás akkor sikeres, ha ütközés nélkül megtörténik</li>
+<li>a sofőr beavatkozására (fék, gáz, kormány) kikapcsolás (megszűnik az automata vezérlés)</li>
+</ul>
+<ol>
+<li>parkolóhely keresése
+<ul>
+<li><img src="images/find_parking_place.png" alt="" /></li>
+</ul>
+</li>
+<li>Parkolóhely azonosítva
+<ul>
+<li>Az üres hely detektálása lényegébe egy állapotátmenet az első és a hátsó ultrahang szenzor „van-e akadály” visszajelzésében. Amíg egy kocsisor mellett halad az autó mindkét szenzor „van akadály” jelzéssel tér vissza (ez valójában nem <code>boolean</code> állapot, egy objektum listát ad vissza), az üres hely kezdetén a az első „nincs akadály” állapotba megy át (a lista üres), majd ahogy az autó halad tovább a hátsó szenzor is „nincs akadály” állapotba kerül.</li>
+<li>A szabad terület végén ugyanez fordítva játszódik le.</li>
+<li><img src="images/parking_place_found.png" alt="" /></li>
+</ul>
+</li>
+<li>Automatikus parkolás
+<ul>
+<li><img src="images/parking.png" alt="" /></li>
+</ul>
+</li>
+</ol>
+<hr />
+<p>Parkolás manőver leírása nagy vonalakban <a href="https://www.dmv.ca.gov/portal/dmv/detail/pubs/hdbk/parking">forrás</a>:</p>
+<ol>
+<li>Bring your car to a stop alongside the car at the front of the space.
+<ul>
+<li><img src="https://www.dmv.ca.gov/imageserver/dmv/images/dlhdbk/perfect1.jpg" alt="" /></li>
+</ul>
+</li>
+<li>Reverse into the space with an S motion.
+<ul>
+<li><img src="https://www.dmv.ca.gov/imageserver/dmv/images/dlhdbk/perfect2.jpg" alt="" /></li>
+</ul>
+</li>
+<li>Once the car is parallel with the curb, pull forward to center your car within the space.
+<ul>
+<li><img src="https://www.dmv.ca.gov/imageserver/dmv/images/dlhdbk/perfect3.jpg" alt="" /></li>
+</ul>
+</li>
+</ol>
+<h3><a class="header" href="#kezelőszervek-1" id="kezelőszervek-1">Kezelőszervek</a></h3>
+<ul>
+<li>aktiválás billentyűzettel</li>
+<li>az irányjelzővel jelölhető ki keresési oldal</li>
+</ul>
+<h2><a class="header" href="#sávtartó-automatika-lane-keeping-assistant---lka" id="sávtartó-automatika-lane-keeping-assistant---lka">Sávtartó automatika (Lane Keeping Assistant - LKA)</a></h2>
+<h3><a class="header" href="#bemutatóvideó-youtube-2" id="bemutatóvideó-youtube-2">Bemutatóvideó (YouTube)</a></h3>
+<p><a href="https://www.youtube.com/watch?v=GdtVe1Pnayg"><img src="https://img.youtube.com/vi/GdtVe1Pnayg/0.jpg" alt="Bemutatóvideó" /></a></p>
+<h3><a class="header" href="#implementálás-3" id="implementálás-3">Implementálás</a></h3>
+<p>Két jellemző megvalósítása van. Az egyik a sáv széleihez viszonyítva korrigál: ha az autó elérné a sáv szélét, akkor ellenkormányoz. A másik megoldás kiszámolja a sáv közepét és azon tartja az autót.</p>
+<ul>
+<li>45 foknál enyhébb kanyarodású úton a kocsi a sáv szemmel látható közepén marad</li>
+<li>ha el kell engednie a kontrollt (az automatika számára kezelhetetlen forgalmi szituáció következik, pl. éles kanyar, kereszteződés), vizuális figyelmeztetést ad
+Ha újra elérhető a funkció (pl. elhagytuk a kanyart) vizuális indikáció (a műszerfalon)
+Be- és kikapcsolható</li>
+</ul>
+<p><img src="images/lka.png" alt="" /></p>
+<p>Sávon belüli mozgás: a LKA működése egy enyhe sávon belüli cikázást eredményez.</p>
+<p><img src="images/lka_wave.png" alt="" /></p>
+<h3><a class="header" href="#kezelőszervek-2" id="kezelőszervek-2">Kezelőszervek</a></h3>
+<ul>
+<li>aktiválás a műszerfalról (vagy billentyűzettel)</li>
+</ul>
+<h2><a class="header" href="#táblafelismerő-traffic-sign-recognition---tsr" id="táblafelismerő-traffic-sign-recognition---tsr">Táblafelismerő (Traffic Sign Recognition - TSR)</a></h2>
+<p>A kamera látóterébe eső és az autó számára releváns (ellentétes irányba közlekedők számára szólóakat nem) közlekedési táblákat fel kell ismerni és a legutolsó relevánsat megjeleníteni a műszerfalon. Ha ez sebességkorlátozás, akkor azt a buszra kiírni (az ACC használja).</p>
+<h3><a class="header" href="#bemutatóvideó-youtube-3" id="bemutatóvideó-youtube-3">Bemutatóvideó (YouTube)</a></h3>
+<p><a href="https://www.youtube.com/watch?v=RFuUvqxbuSc"><img src="https://img.youtube.com/vi/RFuUvqxbuSc/0.jpg" alt="Bemutatóvideó" /></a></p>
+<h3><a class="header" href="#implementálás-4" id="implementálás-4">Implementálás</a></h3>
+<ul>
+<li>a táblát addig kell megjeleníteni, amíg újabb nem talál a rendszer</li>
+<li>a sebesség limit mindaddig érvényes, míg feloldásra vagy felülbírálásra nem kerül</li>
+<li>nem releváns táblák nem kerülhetnek azonosításra
+<ul>
+<li>mindenek előtt az út bal oldalán levők</li>
+</ul>
+</li>
+<li>a kamera látótere elég nagy, a kanyaroknál kialakuló helyzetet is kezelni kell</li>
+</ul>
+<p><img src="images/tsr.png" alt="" /></p>
+<h2><a class="header" href="#tolatóradar" id="tolatóradar">Tolatóradar</a></h2>
+<p>A hátsó ultrahang szenzorokat használja akadály detektálásra. Kiszámolja az akadály távolságát és annak megfelelően figyelmeztető jelzést ad a vezetőnek, megkönnyítve a manuális parkolást, tolatást.</p>
+<h3><a class="header" href="#bemutatóvideó-youtube-4" id="bemutatóvideó-youtube-4">Bemutatóvideó (YouTube)</a></h3>
+<p><a href="https://www.youtube.com/watch?v=qZkCoDChS4A"><img src="https://img.youtube.com/vi/qZkCoDChS4A/0.jpg" alt="Bemutatóvideó" /></a></p>
+<h3><a class="header" href="#implementálás-5" id="implementálás-5">Implementálás</a></h3>
+<ul>
+<li>csak hátramenetben aktív</li>
+<li>figyelmeztetés megjelenítése a műszerfalon</li>
+<li>távolság megjelenítése a műszerfalon</li>
+<li>a buszon keresztül történik a modulok (tolatóradar és műszerfal) kommunikáció</li>
+<li>a kijelzés 3 fokozatban történik
+<ul>
+<li>nincs akadály</li>
+<li>közel van akadály (0.8m-en belül)</li>
+<li>nagyon közel van akadály (0.4m-en belül)</li>
+</ul>
+</li>
+</ul>
+<p><img src="images/reverse_radar_system.png" alt="" /></p>
+<h1><a class="header" href="#fun-kategória" id="fun-kategória">„Fun” kategória</a></h1>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=Xbjdmw8D9-Y">Hyundai - The Empty Car Convoy</a>
+<ul>
+<li>LKA, ACC and AEB marketing</li>
+</ul>
+</li>
+<li><a href="https://youtu.be/tazFfEP_NcY">Nissan Parking Pilot inspirálta helyére ”parkoló” papucsa</a></li>
+</ul>
+<h1><a class="header" href="#referencia-architektúra" id="referencia-architektúra">Referencia architektúra</a></h1>
+<h2><a class="header" href="#virtual-function-bus" id="virtual-function-bus">Virtual Function Bus</a></h2>
+<p>A VirtualFunctionBus szolgál a modulok (SystemComponent) kommunikációjára. A komponensek feliratkoznak a buszra és a feliratkozás sorrendjében ciklikusan meghívásra kerülnek. Ebből következik, hogy a feliratkozást az ábrán látható sorrendben kellene megtenni, mivel az adatáramlásnak ilyen irányultsága van. Az első sprint moduljait szemlélteti az alábbi ábra. A későbbi sprintekben további modulok (szenzorok, vezetés támogató rendszerek) is csatlakoznak majd.</p>
+<p><img src="images/vfb.png" alt="vfb" /></p>
+<p>Minden adatközlő modulnak célszerű létrehoznia egy-egy csomag (packet) típust (és vele párhuzamosan egy az olvasást biztosító interfészt), amely tartalmazza azokat az információkat amelyeket továbbítania kell. Például az input csapat a pedál és kormány állásokat. A hajtáslánc a következő, ő kiolvassa a pedál és váltó állást, számol vele, majd visszaírja a <em>saját</em> csomagjába motor fordulatszámát és az autó sebességét, stb. Ezekre legközelebb a kormányzás csapatnak lesz szüksége, ők kiolvassák ugyanúgy mint az input csapat kormányállás értékét, számolnak, majd visszaírják a autó adott iterációra vonatkozó elmozdulását.
+A műszerfal csak megjelenít, kiolvas mindent amire szüksége van. A pálya megjelenítés alapvetően független lenne ettől az egésztől, de az autót is meg kell jeleníteni így a legkézenfekvőbb ha az autó aktuális koordinátáit ugyanígy a kormányzás csomagjából olvassák ki.</p>
+<p><em>Értelemszerűen a fenti példában nem említett, de a követelményekben megjelenő információkat is kommunikálni kell a buszon.</em></p>
+<h2><a class="header" href="#használata-1" id="használata-1">Használata</a></h2>
+<ol>
+<li>Create a new package (e.g. SteeringAnglePacket)</li>
+<li>Create a new interface for it (e.g. ReadonlySteeringAnglePacket)</li>
+<li>Add reference to the owner component (e.g. SteeringSystem)</li>
+<li>Add the interface reference to the VirtualFunctionBus</li>
+<li>In the loop method of the writing componenet set the payload value of the packet</li>
+<li>In the loop method of the reading compontent read the payload of the packet</li>
+</ol>
+<!-- # Komponens diagram
+
+![](https://www.plantuml.com/plantuml/img/RLF9JiCm4BtxAqQzDr-046qMrbAheHKIS1XI5mo97Na1LOX_P-mWC2cvZ5_UcyKpunFhq3ZVjOmvwLe1zTuwqS7CDC_IYSPv8nZhiNd59m6JZRGUMsdHIQqcyC60laPtlLP2ERWxMvm_05eWEwPoxOqLzwgGjczn7sLvmJwJw3FlT8TER7Cq_mIVvNdq8ZkcRkfLfCYEASuZm_b1k78-X2ldO-hgSXOficDgdYyYHNPCRIHr4bkel6f2Vs3kRTHkgeCCAzoYWLeegqtKhEgnPDqwWrOhsQIwzO6kCffCZfqm62NLGNkuVXU6eadrFT-X9VMVxfVgJLAeZZp-QNx2HkVoUZEM57k57LMxV7oXnHckNYn33gcSC3jiACi2UxZWvIdiP2icGNB1JrD1aWWAOHiZUwSDt2wkVbq8C4P-aFa-Emvh5EW1XCAA9MG13Hpj2qot-brDuoHeHrB8UOfe6L982v126deALpLCVJ-Srycvod_FFFbFfVtKHVDEuVelf166ExHYvxwlH76oBAGED7Krb7AK6Vdq71JXlR4JeRRqahy0)
+
+* ACC - Adaptive Cruise Control
+* AEB - Automatic Emergency Brake
+* BCM - Body Control Module
+* HMI - Human Machine Interface
+* LKA - Lane Keeping Assistant
+* PP - Parking Pilot
+* TSR - Traffic Sign Recognition
+
+# Kiindulási kód osztálydiagramja
+![](https://www.plantuml.com/plantuml/img/fLN1Rjim3BthAuJaacx8OTUX6Dec29PXw8fbMDkZOZ6E1baA9Bc9qUNVHqkoBTjPBpr9fXxvo4U9lh6E6LSMaX0dd0IwaCnQkXGiDwmW9FEVlmLYc5oLAdD2gxlIqbT2wIiwEv6TwVoxiEvwlQciWsAXYuDMeDmNcZLRcw8_lcZ1gO4SdS2qyDdGtxjVZJqjABuHkM9o5XPgBw2areVP5JaJ8XJIx5W6TCY0HVJ0RMePY1SOSPmRFO89lUSOcwuvRkxBOWk6SkOOXgdDERWrzq7Z6HgMU3nB0Zrg8taJvoYusyVz7aI-ToGgws4_jdyWGr6FtOVjg1vhPyyM3LzzXAuess1QglGeeZlgzf3nIFPB-pHcIJ9Krx1nYdK-IPQZYeCTwvxMXAUuLd6DEanJ7QOxgPcZHjSzrWeD6sU4ogaeM0uh8U6U5T1L_vHAyPn-l2LK847RpyZZhP6fxcTArfFsoKjtIatFtbIzkm4sIQUlGWhfftP9dAG92rqQ2qjX3v9LzVNxjiBN3dHdWeW-g532XMQ7AvVutvPE5ym1Np1JktDTRd5s7FS0ybRbiet13RwZqFxe-g2FO9nXGeMts5p-KrohkERCFW1didaRQUZ_zpWcKhUvTGZqR6kH5QziVC6ZGJ2b1zGLhoNmuMc8a1PDh__Ev-bT9iEw0c8GY0mdd0SDfnAvC6uddoRq0s8d1LFLPEH2F-EmL0xPBHcTURymiYO8B2sGqDP1qAIS95plhdYunoM8dZ0864gHGCaDpcxys_m3) -->
+<h1><a class="header" href="#hasznos-írások-az-implementációhoz" id="hasznos-írások-az-implementációhoz">Hasznos írások az implementációhoz</a></h1>
+<ul>
+<li><a href="https://gamedev.stackexchange.com/questions/56017/java-best-implementation-keylistener-for-games">Billentyű/input kezelés</a></li>
+<li><a href="https://web.archive.org/web/20190403012130/https://gafferongames.com/post/fix_your_timestep/">Időzítés</a></li>
+<li>...</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+        
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+        
+        
+
+    </body>
+</html>

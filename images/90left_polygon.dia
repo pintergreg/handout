@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dia:diagram xmlns:dia="http://www.lysator.liu.se/~alla/dia/">
+  <dia:diagramdata>
+    <dia:attribute name="background">
+      <dia:color val="#ffffff"/>
+    </dia:attribute>
+    <dia:attribute name="pagebreak">
+      <dia:color val="#000099"/>
+    </dia:attribute>
+    <dia:attribute name="paper">
+      <dia:composite type="paper">
+        <dia:attribute name="name">
+          <dia:string>#A4#</dia:string>
+        </dia:attribute>
+        <dia:attribute name="tmargin">
+          <dia:real val="2.8222000598907471"/>
+        </dia:attribute>
+        <dia:attribute name="bmargin">
+          <dia:real val="2.8222000598907471"/>
+        </dia:attribute>
+        <dia:attribute name="lmargin">
+          <dia:real val="2.8222000598907471"/>
+        </dia:attribute>
+        <dia:attribute name="rmargin">
+          <dia:real val="2.8222000598907471"/>
+        </dia:attribute>
+        <dia:attribute name="is_portrait">
+          <dia:boolean val="true"/>
+        </dia:attribute>
+        <dia:attribute name="scaling">
+          <dia:real val="1"/>
+        </dia:attribute>
+        <dia:attribute name="fitto">
+          <dia:boolean val="false"/>
+        </dia:attribute>
+      </dia:composite>
+    </dia:attribute>
+    <dia:attribute name="grid">
+      <dia:composite type="grid">
+        <dia:attribute name="width_x">
+          <dia:real val="1"/>
+        </dia:attribute>
+        <dia:attribute name="width_y">
+          <dia:real val="1"/>
+        </dia:attribute>
+        <dia:attribute name="visible_x">
+          <dia:int val="1"/>
+        </dia:attribute>
+        <dia:attribute name="visible_y">
+          <dia:int val="1"/>
+        </dia:attribute>
+        <dia:composite type="color"/>
+      </dia:composite>
+    </dia:attribute>
+    <dia:attribute name="color">
+      <dia:color val="#d8e5e5"/>
+    </dia:attribute>
+    <dia:attribute name="guides">
+      <dia:composite type="guides">
+        <dia:attribute name="hguides"/>
+        <dia:attribute name="vguides"/>
+      </dia:composite>
+    </dia:attribute>
+  </dia:diagramdata>
+  <dia:layer name="Háttér" visible="true" active="true">
+    <dia:object type="Standard - Image" version="0" id="O0">
+      <dia:attribute name="obj_pos">
+        <dia:point val="19,3"/>
+      </dia:attribute>
+      <dia:attribute name="obj_bb">
+        <dia:rectangle val="18.95,2.95;38.05,22.05"/>
+      </dia:attribute>
+      <dia:attribute name="elem_corner">
+        <dia:point val="19,3"/>
+      </dia:attribute>
+      <dia:attribute name="elem_width">
+        <dia:real val="19"/>
+      </dia:attribute>
+      <dia:attribute name="elem_height">
+        <dia:real val="19"/>
+      </dia:attribute>
+      <dia:attribute name="draw_border">
+        <dia:boolean val="false"/>
+      </dia:attribute>
+      <dia:attribute name="keep_aspect">
+        <dia:boolean val="true"/>
+      </dia:attribute>
+      <dia:attribute name="file">
+        <dia:string>#/mnt/sdb5/OE-NIK/PhD/bosch/wiki/mdbook/src/resources/road_2lane_90left.png#</dia:string>
+      </dia:attribute>
+    </dia:object>
+    <dia:object type="Standard - PolyLine" version="0" id="O1">
+      <dia:attribute name="obj_pos">
+        <dia:point val="19,15"/>
+      </dia:attribute>
+      <dia:attribute name="obj_bb">
+        <dia:rectangle val="18.9073,14.9073;26.042,22.092"/>
+      </dia:attribute>
+      <dia:attribute name="poly_points">
+        <dia:point val="19,15"/>
+        <dia:point val="22.5,16"/>
+        <dia:point val="25,18.5"/>
+        <dia:point val="25.95,22"/>
+      </dia:attribute>
+      <dia:attribute name="line_color">
+        <dia:color val="#ff4e00"/>
+      </dia:attribute>
+      <dia:attribute name="line_width">
+        <dia:real val="0.15000000596046448"/>
+      </dia:attribute>
+    </dia:object>
+    <dia:object type="Standard - PolyLine" version="0" id="O2">
+      <dia:attribute name="obj_pos">
+        <dia:point val="19,3"/>
+      </dia:attribute>
+      <dia:attribute name="obj_bb">
+        <dia:rectangle val="18.9137,2.91369;37.5849,22.0849"/>
+      </dia:attribute>
+      <dia:attribute name="poly_points">
+        <dia:point val="19,3"/>
+        <dia:point val="25,4"/>
+        <dia:point val="30.5,7"/>
+        <dia:point val="34,10.5"/>
+        <dia:point val="36.5,15"/>
+        <dia:point val="37.5,22"/>
+      </dia:attribute>
+      <dia:attribute name="line_color">
+        <dia:color val="#ff4e00"/>
+      </dia:attribute>
+      <dia:attribute name="line_width">
+        <dia:real val="0.15000000596046448"/>
+      </dia:attribute>
+      <dia:connections>
+        <dia:connection handle="0" to="O0" connection="0"/>
+      </dia:connections>
+    </dia:object>
+    <dia:object type="Standard - PolyLine" version="0" id="O3">
+      <dia:attribute name="obj_pos">
+        <dia:point val="19,9"/>
+      </dia:attribute>
+      <dia:attribute name="obj_bb">
+        <dia:rectangle val="18.9079,8.90791;31.5828,22.0828"/>
+      </dia:attribute>
+      <dia:attribute name="poly_points">
+        <dia:point val="19,9"/>
+        <dia:point val="24.5,10.5"/>
+        <dia:point val="28.5,13.5"/>
+        <dia:point val="31,17.5"/>
+        <dia:point val="31.5,22"/>
+      </dia:attribute>
+      <dia:attribute name="line_color">
+        <dia:color val="#ff4e00"/>
+      </dia:attribute>
+      <dia:attribute name="line_width">
+        <dia:real val="0.15000000596046448"/>
+      </dia:attribute>
+    </dia:object>
+  </dia:layer>
+</dia:diagram>

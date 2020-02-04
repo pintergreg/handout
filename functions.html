@@ -1,0 +1,402 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Vezetéstámogató funkciók - Jegyzet</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="Szoftverfejlesztés multinacionális vállalatoknál">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div id="sidebar-scrollbox" class="sidebar-scrollbox">
+                <ol class="chapter"><li class="expanded "><a href="description.html"><strong aria-hidden="true">1.</strong> Tárgyleírás</a></li><li class="expanded "><a href="schedule.html"><strong aria-hidden="true">2.</strong> Ütemezés</a></li><li class="expanded "><a href="literature.html"><strong aria-hidden="true">3.</strong> Felkészülést segítő anyagok</a></li><li class="expanded "><a href="git.html"><strong aria-hidden="true">4.</strong> git</a></li><li class="expanded "><a href="github.html"><strong aria-hidden="true">5.</strong> GitHub</a></li><li class="expanded "><a href="developing_tools.html"><strong aria-hidden="true">6.</strong> Fejlesztői eszközök</a></li><li><ol class="section"><li class="expanded "><a href="code_formatting.html"><strong aria-hidden="true">6.1.</strong> Kódformázás</a></li><li class="expanded "><a href="test_coverage.html"><strong aria-hidden="true">6.2.</strong> Tesztlefedettség</a></li><li class="expanded "><a href="logging.html"><strong aria-hidden="true">6.3.</strong> Logolás</a></li><li class="expanded "><a href="config.html"><strong aria-hidden="true">6.4.</strong> Külső konfigurálási lehetőség</a></li></ol></li><li class="expanded "><a href="workflow.html"><strong aria-hidden="true">7.</strong> Munkafolyamat</a></li><li class="expanded "><a href="sprints.html"><strong aria-hidden="true">8.</strong> Feladatok</a></li><li><ol class="section"><li class="expanded "><a href="sprint_1.html"><strong aria-hidden="true">8.1.</strong> Sprint 1</a></li><li class="expanded "><a href="sprint_2.html"><strong aria-hidden="true">8.2.</strong> Sprint 2</a></li><li class="expanded "><a href="sprint_3.html"><strong aria-hidden="true">8.3.</strong> Sprint 3</a></li></ol></li><li class="expanded "><a href="virtual_world.html"><strong aria-hidden="true">9.</strong> Virtuális világ</a></li><li class="expanded "><a href="physics.html"><strong aria-hidden="true">10.</strong> Fizika</a></li><li class="expanded "><a href="sensors.html"><strong aria-hidden="true">11.</strong> Szenzorok</a></li><li class="expanded "><a href="functions.html" class="active"><strong aria-hidden="true">12.</strong> Vezetéstámogató funkciók</a></li><li class="expanded "><a href="reference_architecture.html"><strong aria-hidden="true">13.</strong> Referencia architektúra</a></li><li class="expanded "><a href="implementation.html"><strong aria-hidden="true">14.</strong> Implementáció</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Jegyzet</h1>
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#vezetéstámogató-funkciók" id="vezetéstámogató-funkciók">Vezetéstámogató funkciók</a></h1>
+<h2><a class="header" href="#adaptív-tempomat-adaptive-cruise-control---acc" id="adaptív-tempomat-adaptive-cruise-control---acc">Adaptív tempomat (Adaptive Cruise Control - ACC)</a></h2>
+<blockquote>
+<p>Az adaptív sebességtartó automatika a hagyományos tempomat továbbfejlesztett változata. Az ACC egy rendkívül precíz radarral, valamint a gázadás és a fékezés elektronikus vezérlésével tartja az előre beállított követési távolságot. Ha a két jármű között csökken a távolság, az ACC mérsékli a sebességet, sőt szükség esetén fékez is, közben pedig aktiválja a féklámpákat. Ha az elöl haladó jármű gyorsít, vagy átsorol a másik sávba, az Ön autója is fokozatosan felgyorsít, amíg el nem éri az előre beállított sebességet. Az adaptív sebességtartó automatikával a kívánt követési távolságot is beállíthatja (hosszú, közepes vagy rövid).</p>
+<p>forrás: <a href="https://www.toyota.hu/world-of-toyota/safety/adaptive-cruise-control-how-it-works.json">toyota.hu / Adaptív sebességtartó automatika</a></p>
+</blockquote>
+<h3><a class="header" href="#bemutatóvideó-youtube" id="bemutatóvideó-youtube">Bemutatóvideó (YouTube)</a></h3>
+<p><a href="https://www.youtube.com/watch?v=own_VaRZ9M8"><img src="https://img.youtube.com/vi/own_VaRZ9M8/0.jpg" alt="Bemutatóvideó" /></a></p>
+<h3><a class="header" href="#implementálás" id="implementálás">Implementálás</a></h3>
+<p>A kiválasztott célobjektum (autó előtt haladó NPC) sebességéhez igazítja a saját sebességet, vagy tartja a sofőr által kiválasztott sebességhatárt, ha nincs előtte célobjektum.</p>
+<ul>
+<li>ki- és bekapcsolható, reagál az állapotváltás, alapértelmezetten az aktuális sebesség, de min célsebesség 30 km/h</li>
+<li>ha nincs saját sávban autó, a játékos autó tartja a kiválasztott célsebességet</li>
+<li>ha saját sávban található autó:
+<ul>
+<li>felveszi a sebességét, ha lassabb</li>
+<li>tartja a kiválasztott sebességet, ha gyorsabb</li>
+</ul>
+</li>
+<li>fékezésre kikapcsol</li>
+<li>AEB beavatkozásra kikapcsol</li>
+<li>ha speed limitet talál a buszon (táblafelismerő), azt alkalmazza új célsebességként, amíg a sofőr felül nem írja</li>
+</ul>
+<p><img src="images/acc.png" alt="" /></p>
+<h3><a class="header" href="#kezelőszervek" id="kezelőszervek">Kezelőszervek</a></h3>
+<ul>
+<li>bekapcsoló gomb</li>
+<li>célsebesség kijelölése
+<ul>
+<li>léptetés 10 km/h-val</li>
+<li>30 és 160 km/h között</li>
+</ul>
+</li>
+<li>követési távolság definiálása másodpercben: 0.8, 1.0, 1.2, 1.4
+<ul>
+<li>sebességfüggő</li>
+<li>a léptetés körbe jár, tehát 1.4 után 0.8 következik és a 0.8 után az 1.4</li>
+</ul>
+</li>
+</ul>
+<h2><a class="header" href="#autonóm-vészfékező-rendszer-automatic-emergency-brake---aeb" id="autonóm-vészfékező-rendszer-automatic-emergency-brake---aeb">Autonóm vészfékező rendszer (Automatic Emergency Brake - AEB)</a></h2>
+<blockquote>
+<p>Az Autonóm Vészfékező Rendszer (AEB) lényege, hogy egy beépített technológia alkalmazásával (általában radar, kamera, vagy lézer segítségével) folyamatosan méri az elöl haladó jármű mögötti távolságot. Ha a rendszer úgy érzi, hogy a gépkocsik közötti távolság veszélyesen csökken, akkor jelzést ad a járművezetőnek, lehetőséget adva a beavatkozásra (pl. fékezésre). Amennyiben a járművezető reakciója elmarad, vagy annak mértékét a rendszer nem tartja elégségesnek, abban az esetben az AEB beavatkozik, s akár vészfékezés alkalmazásával igyekszik a balesetet elkerülni.</p>
+<p>forrás: <a href="http://www.baleset-megelozes.eu/cikk.php?id=1032">baleset-megelozes.eu / Autonóm Vészfékező Rendszer (AEB)</a></p>
+</blockquote>
+<h3><a class="header" href="#bemutatóvideó-youtube-1" id="bemutatóvideó-youtube-1">Bemutatóvideó (YouTube)</a></h3>
+<p><a href="https://www.youtube.com/watch?v=VHR8AeZrlVc"><img src="https://img.youtube.com/vi/VHR8AeZrlVc/0.jpg" alt="Bemutatóvideó" /></a></p>
+<h3><a class="header" href="#implementálás-1" id="implementálás-1">Implementálás</a></h3>
+<p>Nyilvánvalóan nem azt kell vizsgálni, hogy az autó ütközik-e az előtte levő objektummal hanem, hogy <em>ütközni fog-e vele</em>. A vészfékezés maximális lassulása 9 m/s^2 lehet. Ha az autó 36 m/s sebességgel halad akkor 4 másodperc kell a nullára fékezéshez (ha 50 km/h sebességgel halad, akkor 20). Az aktuális sebességből meghatározható, hogy mekkora a fékút, a maximális megengedett lassulás mellett. Az is kiszámolható, hogy ez mennyi időt vesz igénybe, így az is, hogy mikor kell elkezdeni a vészfékezést, hogy a gyalogost ne üssük el.</p>
+<p>A radar szenzor elég messzire ellát, egy nem mozgó objektum (pl. fa) esetében egyszerű meghatározni, hogy lesz-e ütközés és el kell-e kezdeni vészfékezni. Mozgó objektum (gyalogos) esetében azt is figyelembe kell venni, hogy mire odaérünk még az úton lesz-e.</p>
+<ul>
+<li>elkerülhető ütközés esetén vizuális figyelmeztetés a sofőrnek</li>
+<li>70 km/h felett figyelmeztetés, hogy az AEB nem tud minden helyzetet kezelni</li>
+<li>ha a sofőr nem avatkozik közbe, automatikus fékezés (az utolsó pillanatban, ahol az ütközés még elkerülhető)</li>
+<li>az automatikus fékezés mértéke a sebességgel arányos, de nem lehet 9 m/s^2-nél nagyobb</li>
+<li>gyalogos, fa esetén megáll az autó</li>
+<li>nincs nem releváns objektumokra való fékezés (fals pozitív) - pl. szembejövő autó</li>
+</ul>
+<p><img src="images/radar_aeb.png" alt="" /></p>
+<h2><a class="header" href="#parkoló-asszisztens-parking-pilot---pp" id="parkoló-asszisztens-parking-pilot---pp">Parkoló asszisztens (Parking Pilot - PP)</a></h2>
+<p>A rendszert az erre szolgáló vezérlővel aktiválni kell, majd az irányjelzővel kijelölni, hogy jobbra, vagy balra keressük a parkolóhelyet. Ezután ahogy az autó <em>vezetői irányítás mellett</em> végiggurul a parkoló mellett, a rendszer detektálja az üres parkolóhelyet. Ekkor hátramenetbe kapcsolva az PP vezetői beavatkozás nélkül beáll a szabad pozícióba.</p>
+<h3><a class="header" href="#bemutatóvideók-youtube" id="bemutatóvideók-youtube">Bemutatóvideók (YouTube)</a></h3>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=HWMzP9HYNCQ"><img src="https://img.youtube.com/vi/HWMzP9HYNCQ/0.jpg" alt="Bemutatóvideó" /></a></li>
+<li><a href="https://www.youtube.com/watch?v=rYPby2ALLnE"><img src="https://img.youtube.com/vi/rYPby2ALLnE/0.jpg" alt="Bemutatóvideó" /></a></li>
+</ul>
+<h3><a class="header" href="#implementálás-2" id="implementálás-2">Implementálás</a></h3>
+<ul>
+<li>a parkolás megkezdése külön inputhoz kötött</li>
+<li>a kormány és gáz/fék vezérlésével beparkolás a talált helyre
+<ul>
+<li>a tolatási manőver lehet egy előre definiált szekvencia, amelyet a parkolóhely (abszolút) pozíciójával lehet paraméterezni</li>
+</ul>
+</li>
+<li>ha a PP aktív és a váltó hátramenetben van (és van detektált parkolóhely), akkor parkolási szekvencia végrehajtása</li>
+<li>a párhuzamos parkolás akkor sikeres, ha ütközés nélkül megtörténik</li>
+<li>a sofőr beavatkozására (fék, gáz, kormány) kikapcsolás (megszűnik az automata vezérlés)</li>
+</ul>
+<ol>
+<li>parkolóhely keresése
+<ul>
+<li><img src="images/find_parking_place.png" alt="" /></li>
+</ul>
+</li>
+<li>Parkolóhely azonosítva
+<ul>
+<li>Az üres hely detektálása lényegébe egy állapotátmenet az első és a hátsó ultrahang szenzor „van-e akadály” visszajelzésében. Amíg egy kocsisor mellett halad az autó mindkét szenzor „van akadály” jelzéssel tér vissza (ez valójában nem <code>boolean</code> állapot, egy objektum listát ad vissza), az üres hely kezdetén a az első „nincs akadály” állapotba megy át (a lista üres), majd ahogy az autó halad tovább a hátsó szenzor is „nincs akadály” állapotba kerül.</li>
+<li>A szabad terület végén ugyanez fordítva játszódik le.</li>
+<li><img src="images/parking_place_found.png" alt="" /></li>
+</ul>
+</li>
+<li>Automatikus parkolás
+<ul>
+<li><img src="images/parking.png" alt="" /></li>
+</ul>
+</li>
+</ol>
+<hr />
+<p>Parkolás manőver leírása nagy vonalakban <a href="https://www.dmv.ca.gov/portal/dmv/detail/pubs/hdbk/parking">forrás</a>:</p>
+<ol>
+<li>Bring your car to a stop alongside the car at the front of the space.
+<ul>
+<li><img src="https://www.dmv.ca.gov/imageserver/dmv/images/dlhdbk/perfect1.jpg" alt="" /></li>
+</ul>
+</li>
+<li>Reverse into the space with an S motion.
+<ul>
+<li><img src="https://www.dmv.ca.gov/imageserver/dmv/images/dlhdbk/perfect2.jpg" alt="" /></li>
+</ul>
+</li>
+<li>Once the car is parallel with the curb, pull forward to center your car within the space.
+<ul>
+<li><img src="https://www.dmv.ca.gov/imageserver/dmv/images/dlhdbk/perfect3.jpg" alt="" /></li>
+</ul>
+</li>
+</ol>
+<h3><a class="header" href="#kezelőszervek-1" id="kezelőszervek-1">Kezelőszervek</a></h3>
+<ul>
+<li>aktiválás billentyűzettel</li>
+<li>az irányjelzővel jelölhető ki keresési oldal</li>
+</ul>
+<h2><a class="header" href="#sávtartó-automatika-lane-keeping-assistant---lka" id="sávtartó-automatika-lane-keeping-assistant---lka">Sávtartó automatika (Lane Keeping Assistant - LKA)</a></h2>
+<h3><a class="header" href="#bemutatóvideó-youtube-2" id="bemutatóvideó-youtube-2">Bemutatóvideó (YouTube)</a></h3>
+<p><a href="https://www.youtube.com/watch?v=GdtVe1Pnayg"><img src="https://img.youtube.com/vi/GdtVe1Pnayg/0.jpg" alt="Bemutatóvideó" /></a></p>
+<h3><a class="header" href="#implementálás-3" id="implementálás-3">Implementálás</a></h3>
+<p>Két jellemző megvalósítása van. Az egyik a sáv széleihez viszonyítva korrigál: ha az autó elérné a sáv szélét, akkor ellenkormányoz. A másik megoldás kiszámolja a sáv közepét és azon tartja az autót.</p>
+<ul>
+<li>45 foknál enyhébb kanyarodású úton a kocsi a sáv szemmel látható közepén marad</li>
+<li>ha el kell engednie a kontrollt (az automatika számára kezelhetetlen forgalmi szituáció következik, pl. éles kanyar, kereszteződés), vizuális figyelmeztetést ad
+Ha újra elérhető a funkció (pl. elhagytuk a kanyart) vizuális indikáció (a műszerfalon)
+Be- és kikapcsolható</li>
+</ul>
+<p><img src="images/lka.png" alt="" /></p>
+<p>Sávon belüli mozgás: a LKA működése egy enyhe sávon belüli cikázást eredményez.</p>
+<p><img src="images/lka_wave.png" alt="" /></p>
+<h3><a class="header" href="#kezelőszervek-2" id="kezelőszervek-2">Kezelőszervek</a></h3>
+<ul>
+<li>aktiválás a műszerfalról (vagy billentyűzettel)</li>
+</ul>
+<h2><a class="header" href="#táblafelismerő-traffic-sign-recognition---tsr" id="táblafelismerő-traffic-sign-recognition---tsr">Táblafelismerő (Traffic Sign Recognition - TSR)</a></h2>
+<p>A kamera látóterébe eső és az autó számára releváns (ellentétes irányba közlekedők számára szólóakat nem) közlekedési táblákat fel kell ismerni és a legutolsó relevánsat megjeleníteni a műszerfalon. Ha ez sebességkorlátozás, akkor azt a buszra kiírni (az ACC használja).</p>
+<h3><a class="header" href="#bemutatóvideó-youtube-3" id="bemutatóvideó-youtube-3">Bemutatóvideó (YouTube)</a></h3>
+<p><a href="https://www.youtube.com/watch?v=RFuUvqxbuSc"><img src="https://img.youtube.com/vi/RFuUvqxbuSc/0.jpg" alt="Bemutatóvideó" /></a></p>
+<h3><a class="header" href="#implementálás-4" id="implementálás-4">Implementálás</a></h3>
+<ul>
+<li>a táblát addig kell megjeleníteni, amíg újabb nem talál a rendszer</li>
+<li>a sebesség limit mindaddig érvényes, míg feloldásra vagy felülbírálásra nem kerül</li>
+<li>nem releváns táblák nem kerülhetnek azonosításra
+<ul>
+<li>mindenek előtt az út bal oldalán levők</li>
+</ul>
+</li>
+<li>a kamera látótere elég nagy, a kanyaroknál kialakuló helyzetet is kezelni kell</li>
+</ul>
+<p><img src="images/tsr.png" alt="" /></p>
+<h2><a class="header" href="#tolatóradar" id="tolatóradar">Tolatóradar</a></h2>
+<p>A hátsó ultrahang szenzorokat használja akadály detektálásra. Kiszámolja az akadály távolságát és annak megfelelően figyelmeztető jelzést ad a vezetőnek, megkönnyítve a manuális parkolást, tolatást.</p>
+<h3><a class="header" href="#bemutatóvideó-youtube-4" id="bemutatóvideó-youtube-4">Bemutatóvideó (YouTube)</a></h3>
+<p><a href="https://www.youtube.com/watch?v=qZkCoDChS4A"><img src="https://img.youtube.com/vi/qZkCoDChS4A/0.jpg" alt="Bemutatóvideó" /></a></p>
+<h3><a class="header" href="#implementálás-5" id="implementálás-5">Implementálás</a></h3>
+<ul>
+<li>csak hátramenetben aktív</li>
+<li>figyelmeztetés megjelenítése a műszerfalon</li>
+<li>távolság megjelenítése a műszerfalon</li>
+<li>a buszon keresztül történik a modulok (tolatóradar és műszerfal) kommunikáció</li>
+<li>a kijelzés 3 fokozatban történik
+<ul>
+<li>nincs akadály</li>
+<li>közel van akadály (0.8m-en belül)</li>
+<li>nagyon közel van akadály (0.4m-en belül)</li>
+</ul>
+</li>
+</ul>
+<p><img src="images/reverse_radar_system.png" alt="" /></p>
+<h1><a class="header" href="#fun-kategória" id="fun-kategória">„Fun” kategória</a></h1>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=Xbjdmw8D9-Y">Hyundai - The Empty Car Convoy</a>
+<ul>
+<li>LKA, ACC and AEB marketing</li>
+</ul>
+</li>
+<li><a href="https://youtu.be/tazFfEP_NcY">Nissan Parking Pilot inspirálta helyére ”parkoló” papucsa</a></li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="sensors.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="reference_architecture.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="sensors.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="reference_architecture.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

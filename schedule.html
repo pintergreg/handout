@@ -1,0 +1,279 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Ütemezés - Jegyzet</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="Szoftverfejlesztés multinacionális vállalatoknál">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div id="sidebar-scrollbox" class="sidebar-scrollbox">
+                <ol class="chapter"><li class="expanded "><a href="description.html"><strong aria-hidden="true">1.</strong> Tárgyleírás</a></li><li class="expanded "><a href="schedule.html" class="active"><strong aria-hidden="true">2.</strong> Ütemezés</a></li><li class="expanded "><a href="literature.html"><strong aria-hidden="true">3.</strong> Felkészülést segítő anyagok</a></li><li class="expanded "><a href="git.html"><strong aria-hidden="true">4.</strong> git</a></li><li class="expanded "><a href="github.html"><strong aria-hidden="true">5.</strong> GitHub</a></li><li class="expanded "><a href="developing_tools.html"><strong aria-hidden="true">6.</strong> Fejlesztői eszközök</a></li><li><ol class="section"><li class="expanded "><a href="code_formatting.html"><strong aria-hidden="true">6.1.</strong> Kódformázás</a></li><li class="expanded "><a href="test_coverage.html"><strong aria-hidden="true">6.2.</strong> Tesztlefedettség</a></li><li class="expanded "><a href="logging.html"><strong aria-hidden="true">6.3.</strong> Logolás</a></li><li class="expanded "><a href="config.html"><strong aria-hidden="true">6.4.</strong> Külső konfigurálási lehetőség</a></li></ol></li><li class="expanded "><a href="workflow.html"><strong aria-hidden="true">7.</strong> Munkafolyamat</a></li><li class="expanded "><a href="sprints.html"><strong aria-hidden="true">8.</strong> Feladatok</a></li><li><ol class="section"><li class="expanded "><a href="sprint_1.html"><strong aria-hidden="true">8.1.</strong> Sprint 1</a></li><li class="expanded "><a href="sprint_2.html"><strong aria-hidden="true">8.2.</strong> Sprint 2</a></li><li class="expanded "><a href="sprint_3.html"><strong aria-hidden="true">8.3.</strong> Sprint 3</a></li></ol></li><li class="expanded "><a href="virtual_world.html"><strong aria-hidden="true">9.</strong> Virtuális világ</a></li><li class="expanded "><a href="physics.html"><strong aria-hidden="true">10.</strong> Fizika</a></li><li class="expanded "><a href="sensors.html"><strong aria-hidden="true">11.</strong> Szenzorok</a></li><li class="expanded "><a href="functions.html"><strong aria-hidden="true">12.</strong> Vezetéstámogató funkciók</a></li><li class="expanded "><a href="reference_architecture.html"><strong aria-hidden="true">13.</strong> Referencia architektúra</a></li><li class="expanded "><a href="implementation.html"><strong aria-hidden="true">14.</strong> Implementáció</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Jegyzet</h1>
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#Ütemezés" id="Ütemezés">Ütemezés</a></h1>
+<p>Az órák csütörtökönként a BA.F.07-ben vannak, neptun szerint 08:00-10:35 között előadás és 10:45-11:30 között gyakorlat. (Ezek aránya valamint közte a szünet az aktuális előadásanyag és az igények szerint módosulhat). A „gyakorlat” nem labor, hanem sokkal inkább konzultáció!</p>
+<table><thead><tr><th align="right">hét</th><th align="center">dátum</th><th align="center">előadás</th><th align="center">gyakorlat</th></tr></thead><tbody>
+<tr><td align="right">1.</td><td align="center">09. 12.</td><td align="center">Bevezető, áttekintés; aSpice alapok</td><td align="center">git, GitHub, IDEA ismertetés,</td></tr>
+<tr><td align="right">2.</td><td align="center">09. 19.</td><td align="center">Agile/Scrum, <a href="sprint_1.html">első feladat kiadás</a></td><td align="center">csapatsorsolás, Sprint Planning, Task Definition Workshop, Team commitment, Scheduling</td></tr>
+<tr><td align="right">3.</td><td align="center">09. 26.</td><td align="center">Napi munka, verziókezelők</td><td align="center">Branch review, status review, standup (did, will, blocking)</td></tr>
+<tr><td align="right">4.</td><td align="center">10. 03.</td><td align="center">Unit Testing</td><td align="center">Status review, standup, TDD kata</td></tr>
+<tr><td align="right"><strong>5.</strong></td><td align="center"><strong>10. 10.</strong></td><td align="center"><strong>első demo</strong>/retrospektív, <a href="sprint_2.html">második feladat kiadás</a></td><td align="center">Sprint planning, Task Definition Workshop, Team commitment, Scheduling</td></tr>
+<tr><td align="right">6.</td><td align="center">10. 17.</td><td align="center">Legacy Code, SOLID</td><td align="center">Refactoring gyakorlat egy előre előkészített példán</td></tr>
+<tr><td align="right">7.</td><td align="center">10. 24.</td><td align="center">Review</td><td align="center">Random code review egy tetszőleges elfogadott pull requestből</td></tr>
+<tr><td align="right">8.</td><td align="center">10. 31.</td><td align="center">TBD</td><td align="center"></td></tr>
+<tr><td align="right"><strong>9.</strong></td><td align="center"><strong>11. 07.</strong></td><td align="center"><strong>második demo</strong>/retrospektív, <a href="sprint_3.html">harmadik feladat kiadás</a></td><td align="center">Sprint planning, Task Definition Workshop, Team commitment, Scheduling</td></tr>
+<tr><td align="right">10.</td><td align="center">11. 14.</td><td align="center">Continous Integration</td><td align="center">Set up a CI script running all implemented unit tests</td></tr>
+<tr><td align="right">11.</td><td align="center">11. 21.</td><td align="center"><em>Rektori/dékáni szünet</em></td><td align="center"></td></tr>
+<tr><td align="right">12.</td><td align="center">11. 28.</td><td align="center">Összefoglalás, konzultáció, tárgy feedback</td><td align="center">Retro + Pair programming</td></tr>
+<tr><td align="right"><strong>13.</strong></td><td align="center"><strong>12. 05.</strong></td><td align="center"><strong>harmadik demo</strong>/retrospektív</td><td align="center">Coding Dojo, feedback</td></tr>
+<tr><td align="right"><strong>14.</strong></td><td align="center"><strong>12. 12.</strong></td><td align="center"><strong>Zárthelyi dolgozat</strong> ??:??-tól ??:??-ig (90 perc), 1.?? és 1.?? laborok</td><td align="center"></td></tr>
+</tbody></table>
+<h2><a class="header" href="#gantt-diagram" id="gantt-diagram">Gantt diagram</a></h2>
+<p><img src="images/gantt.png" alt="gantt" /></p>
+<h1><a class="header" href="#házi-feladat---1-hét" id="házi-feladat---1-hét">Házi feladat - 1. hét</a></h1>
+<ol>
+<li>GitHub fiók létrehozása
+<ul>
+<li>ha még nincs</li>
+</ul>
+</li>
+<li>11 JDK telepítése, mivel a szoftvert Java nyelven kell elkészíteni
+<ul>
+<li>ha nincs fönt</li>
+</ul>
+</li>
+<li>Fejlesztőkörnyezet telepítése és beállítása
+<ul>
+<li>IntelliJ IDEA az ajánlott és támogatott eszköz</li>
+</ul>
+</li>
+<li>Git és GitHub oktatóanyagok elolvasása
+<ul>
+<li>ha vannak hiányosságok</li>
+<li>az órán nincs idő szájbarágósan git használatot oktatni, erre vannak interaktív oktatófelületek</li>
+<li>ez mindenkinek egyéni felelőssége, ám ha konkrét kérdések merülnek fel, akkor ezekre természetesen kitérünk</li>
+</ul>
+</li>
+<li>Git repó klónozása</li>
+<li>Kód futtatása a futtató- és a fejlesztőkörnyezet beállításainak tesztelése céljából</li>
+<li>A jegyzet és az abban taglalt segédanyagok megismerése</li>
+<li>Az elkészítendő szoftver átgondolása (lásd readme), statikus és dinamikus modell elkészítése komponens szinten
+<ul>
+<li>Ennek terjedeleme (az órái példa alapján): egy absztrakciós szint a négyfelé bontás (kb. user story szint), és egy az ez alatti egyel, minden komponens mégegy kibontása, kb. egyenrangú komponensek létrehozására - osztály szintre nem mennék le, még ha a végén ezekből akár osztály is lesz. Szóval kettő struktúra, kettő dinamikus viselkedést leíró diagram, egy magasabb és egy alacsonyabb absztrakciós szinten. Hogy konkrétan hány building block, azt mindenkinek &quot;érzésre&quot; kell megállapítania, ezért szubjektív az architektúra.</li>
+<li>Ez egy egyéni feladat, hiszen még nincsenek csapatok. Az elkészíteshez javasolt eszközök: MS Visio, https://www.draw.io/.</li>
+<li>Az elkészült diagramoknak a következő órán bemutatható állapotban kell lenniük.</li>
+</ul>
+</li>
+</ol>
+<h1><a class="header" href="#demók" id="demók">Demók</a></h1>
+<p>A félév során a csapatok három alkalommal prezentálják az elvégzett munkát. A „demók” az <em>elkészült</em> szoftver megrendelőnek való bemutatását szimulálják. Nem a kódra vagyunk kíváncsiak, hanem működés közben szeretnénk látni, hogy a szoftver teljesíti feladatban foglalt követelményeket.
+A bemutatás során, a <code>master</code> branchre befogadott kódot vesszük figyelembe, minden egyéb <em>„nem készült el határidőre”</em>, azaz értékelhetetlen.</p>
+<h1><a class="header" href="#zárthelyi" id="zárthelyi">Zárthelyi</a></h1>
+<p>Ismert, Moodle-ös teszt, 50 kérdéssel, erre 90 perc áll majd a rendelkezésre. Minden kérdéshez 4 válaszlehetőség, amelyek közül pontosan egy a helyes. (Vannak „az alábbiak közül melyik NEM helyes” felépítésű kérdések is.) A rendelkezésre álló idő alatt kérdéseket tetszőleges alkalommal felül lehet vizsgálni, módosítani a teszt „lezárása” után azonnal kiértékelésre is kerül.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="description.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="literature.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="description.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="literature.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

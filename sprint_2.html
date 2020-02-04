@@ -1,0 +1,364 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Sprint 2 - Jegyzet</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="Szoftverfejlesztés multinacionális vállalatoknál">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div id="sidebar-scrollbox" class="sidebar-scrollbox">
+                <ol class="chapter"><li class="expanded "><a href="description.html"><strong aria-hidden="true">1.</strong> Tárgyleírás</a></li><li class="expanded "><a href="schedule.html"><strong aria-hidden="true">2.</strong> Ütemezés</a></li><li class="expanded "><a href="literature.html"><strong aria-hidden="true">3.</strong> Felkészülést segítő anyagok</a></li><li class="expanded "><a href="git.html"><strong aria-hidden="true">4.</strong> git</a></li><li class="expanded "><a href="github.html"><strong aria-hidden="true">5.</strong> GitHub</a></li><li class="expanded "><a href="developing_tools.html"><strong aria-hidden="true">6.</strong> Fejlesztői eszközök</a></li><li><ol class="section"><li class="expanded "><a href="code_formatting.html"><strong aria-hidden="true">6.1.</strong> Kódformázás</a></li><li class="expanded "><a href="test_coverage.html"><strong aria-hidden="true">6.2.</strong> Tesztlefedettség</a></li><li class="expanded "><a href="logging.html"><strong aria-hidden="true">6.3.</strong> Logolás</a></li><li class="expanded "><a href="config.html"><strong aria-hidden="true">6.4.</strong> Külső konfigurálási lehetőség</a></li></ol></li><li class="expanded "><a href="workflow.html"><strong aria-hidden="true">7.</strong> Munkafolyamat</a></li><li class="expanded "><a href="sprints.html"><strong aria-hidden="true">8.</strong> Feladatok</a></li><li><ol class="section"><li class="expanded "><a href="sprint_1.html"><strong aria-hidden="true">8.1.</strong> Sprint 1</a></li><li class="expanded "><a href="sprint_2.html" class="active"><strong aria-hidden="true">8.2.</strong> Sprint 2</a></li><li class="expanded "><a href="sprint_3.html"><strong aria-hidden="true">8.3.</strong> Sprint 3</a></li></ol></li><li class="expanded "><a href="virtual_world.html"><strong aria-hidden="true">9.</strong> Virtuális világ</a></li><li class="expanded "><a href="physics.html"><strong aria-hidden="true">10.</strong> Fizika</a></li><li class="expanded "><a href="sensors.html"><strong aria-hidden="true">11.</strong> Szenzorok</a></li><li class="expanded "><a href="functions.html"><strong aria-hidden="true">12.</strong> Vezetéstámogató funkciók</a></li><li class="expanded "><a href="reference_architecture.html"><strong aria-hidden="true">13.</strong> Referencia architektúra</a></li><li class="expanded "><a href="implementation.html"><strong aria-hidden="true">14.</strong> Implementáció</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Jegyzet</h1>
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#1-ultrahang-szenzorok" id="1-ultrahang-szenzorok">1. Ultrahang Szenzorok</a></h1>
+<p>Park pilot alapjául szolgáló Ultrasonic Sensor array szimulációjának implementálása.</p>
+<ul>
+<li>Input: világmodell</li>
+<li>Output:
+<ul>
+<li>Ultrahang szenzor által látott objektumok</li>
+</ul>
+</li>
+</ul>
+<h3><a class="header" href="#definition-of-done" id="definition-of-done">Definition of Done</a></h3>
+<ul>
+<li>8 db ultrahang szenzor, egyenként 3 méter látótávolsággal, 100° látószöggel</li>
+<li>A 8 darab háromszög koordinátái az autó helyzetétől függően folyamatosan frissülnek</li>
+<li>debug célra bekapcsolható módon ezek a háromszögek legyen kirajzolhatóak <strong>zöld</strong> színnel</li>
+<li>A látószög és távolság által meghatározott területen kérjék el a <strong>releváns</strong> objektumokat</li>
+<li>Határozzák meg a legközelebbi (ütközés szempontjából) objektum pozícióját, kiterjedését, távolságát</li>
+</ul>
+<h3><a class="header" href="#megjegyzések" id="megjegyzések">Megjegyzések</a></h3>
+<ul>
+<li>A háromszög kirajzolására már kell, hogy legyen elérhető publikus metódus, amely 3 pontot és egy rajzolási színt vár bemenetként</li>
+<li>A világ objektumainak lekérdezésére már kell, hogy legyen elérhető publikus metódus, mely 3 pontot vár bemenetként, ebből kell leválogatni a relevánsakat</li>
+<li><img src="images/ultrasonic.png" alt="" /></li>
+</ul>
+<h1><a class="header" href="#2-kamera-szenzor-implementálása-Ütközés-detekció-és-mozgásállapot-változás-szimuláció" id="2-kamera-szenzor-implementálása-Ütközés-detekció-és-mozgásállapot-változás-szimuláció">2. Kamera szenzor implementálása, Ütközés detekció és mozgásállapot-változás szimuláció</a></h1>
+<p>Sávtartó automatika és táblafelismerő alapjául szolgáló kamera szenzor implementációja. A Sávtartó automatika a nagyobb feladat, ugyanis meg kell tudni határozni a sávot. Az autó előtt levő pályaelemekből kiszámítani, hogy hol vannak a sávot meghatározó vonalak. A sávtartó automatikának arra lesz majd szüksége, hogy az autó közelít-e a sávját meghatározó felfestésekhez.</p>
+<ul>
+<li>Input: világmodell</li>
+<li>Output:
+<ul>
+<li>Kamera által látott objektumok</li>
+<li>esemény kiváltása ütközések bekövetkezésekor
+<ul>
+<li>ez írja le, hogy mik ütköztek</li>
+<li>??? új mozgásállapot minden mozgó, ütköző objektumnak</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2><a class="header" href="#definition-of-done-1" id="definition-of-done-1">Definition of Done</a></h2>
+<ul>
+<li>1 db, a szélvédő mögé elhelyezett kamera implementálása</li>
+<li>A látószög és távolság által meghatározott területen kérje el a <strong>releváns</strong> objektumokat
+<ul>
+<li>a táblafelismerő szempontjából releváns objektumok a táblák</li>
+<li>a sávtartó szempontjából releváns objektumok az utak</li>
+</ul>
+</li>
+<li>A háromszög koordinátái az autó helyzetétől függően folyamatosan frissülnek</li>
+<li>debug célra bekapcsolható módon a háromszög legyen kirajzolható <strong>kék</strong> színnel</li>
+<li>A szenzorok által relevánsnak tartott objektumok kiemelhetők egy debug kapcsolóval (billentyű vagy debug módba váltás)</li>
+</ul>
+<!-- - A kamera szenzor a látható sávok összes adatát visszaadja(hány sáv, melyikben vagyunk, azon belül milyen távolságra a szélektől)
+- A kamera szenzor a látott táblák közül a legközelebbi összes adatát visszaadja (milyen tábla, milyen messzire van) -->
+<hr />
+<ul>
+<li>A vezérelt autó - tereptárgy ütközésének detektálása és esemény kiváltása</li>
+<li>A vezérelt autó - NPC-vel való ütközésének detektálása és esemény kiváltása</li>
+<li>Mozgó és statikus objektumok érintkezésének pozíció és dimenzióhelyes detekciója és kommunikációja megvalósult</li>
+<li>Az objektumok mozgásállapota az energiamegmaradás törvényeinek megfelelően változik (gyorsul, lassul, irányt vált, megáll)
+<ul>
+<li>Ha a vezérelt autó nekimegy egy NPC autónak akkor ez legyen rá hatással (lassuljon le)</li>
+<li>Ha a vezérelt autó nekimegy egy „stabil” tereptárgynak (pl. fa), akkor álljon meg, érjen véget a játék, egy táblán azonban át tud menni (el tudja sodorni), lassuljon le</li>
+</ul>
+</li>
+<li>Az objektumok sérülnek, megsemmisülnek, amennyiben túl nagy energiával ütköznek</li>
+<li>Ha a vezérelt autó elüt egy gyalogost, akkor érjen véget a játék</li>
+<li>A játék véget ér, ha a játékos ütközés következtében mozgásképtelenné válik (megsemmisül)</li>
+</ul>
+<h2><a class="header" href="#megjegyzés" id="megjegyzés">Megjegyzés</a></h2>
+<ul>
+<li>A háromszög kirajzolására már kell, hogy legyen elérhető publikus metódus, amely 3 pontot és egy rajzolási színt vár bemenetként</li>
+<li>A világ objektumainak lekérdezésére már kell, hogy legyen elérhető publikus metódus, mely 3 pontot vár bemenetként, ebből kell leválogatni a relevánsakat</li>
+<li>A kamerának előre kell látnia, ha az út kanyarodni fog, azt is, hogy merre fog kanyarodni és erről a sávtartó automatikának használható információt kellene előállítani</li>
+<li>A valóságban kiszámolják a pálya görbét, ezt itt oly módon oldható meg, hogy a sávhatárokat és ezekhez tud majd a sávtartó automatika viszonyítani</li>
+<li>Továbbá figyelni kell, hogy az autó sebességének függvényében hol lesz a következő időpillanatban (pl. másodperc múlva). Le fog-e térni az útról ha beavatkozás nem történik, mert akkor a sávtartó automatikának közbe kell avatkoznia. Ez itt még nem feladat, de a következő sprintben az lesz, így célszerű észben tartani</li>
+<li><img src="images/camera.png" alt="" /></li>
+</ul>
+<hr />
+<ul>
+<li>Az ütközés detektálása implementáció szempontjából nagyon hasonló a világ objektumainak lekérdezéséhez. Az kell bizsgálni az <code>intersects</code> metódussal, hogy két objektum összeér-e.</li>
+<li>Az NPC - NPC ütközés nem fontos, tehát NPC autó ha átmegy a gyalogoson nem kell, hogy kiváltson különösebb reakciót</li>
+<li>jellemző megoldásként az <em>egocar</em> szokott kapni egy sérülés/élet értéket a mozgásképtelenséghez</li>
+</ul>
+<h1><a class="header" href="#3-világ-populálása-mozgó-npc-objektumokkal" id="3-világ-populálása-mozgó-npc-objektumokkal">3. Világ populálása mozgó NPC objektumokkal</a></h1>
+<ul>
+<li>Input: Világmodell</li>
+<li>Output: Mozgó NPC objektumok, gyalogosok, biciklisek, autók. szkriptelt útvonalak, mozgások megvalósítása, a megvalósított objektumok a modellbe illesztése</li>
+<li>Challenge: adaptálódás pályához</li>
+</ul>
+<h3><a class="header" href="#definition-of-done-2" id="definition-of-done-2">Definition of Done:</a></h3>
+<ul>
+<li>Objektumok előre definiált, értelmes helyen jelennek meg (autók úton, gyalogosok út mellett/járdán)</li>
+<li>Objektumok előre szkriptelt útvonalat követnek</li>
+<li>Gyalogosok az út mentén haladnak, zebrán áthaladnak</li>
+<li>Autók az utat - sávot - pontosan követik</li>
+<li>NPC objektumok egymás mozgásállapotát nem változtatják meg</li>
+<li>Legalább egy autó végigmegy a pályán</li>
+<li>Legalább egy gyalogos mozog és átkel egy zebrán</li>
+<li>Új pálya esetén az NPC objektumok adaptálódnak az új környezethez</li>
+</ul>
+<h3><a class="header" href="#megjegyzések-1" id="megjegyzések-1">Megjegyzések</a></h3>
+<ul>
+<li>NPC = <em>non player character</em> (itt akár <em>car</em> is lehet)</li>
+<li>Feltételezhető az NPC-k szabálykövető és értelemszerű viselkedése: nem hajt gyorsan, nem tér le az útról, nem ütközik fának.</li>
+<li>A gyalogoson akár átmehet, nem kell ütközésnek minősíteni.
+<ul>
+<li>Az érdekes ugyanis az, hogy az egocar (vezérelt autó) hogyan viselkedik egy mozgó objektumra, másik autó (nem megy neki), gyalogos (nem üti el), az NPC-ket nem kell túlbonyolítani</li>
+</ul>
+</li>
+<li>Szkriptelt útvonal alatt azt értjük, hogy a világ koordinátáira építve bele van égetve a kódba (esetleg egy konfigurációs fájlba), hogy az autó hogyan mozogjon. Például a parkoló mellől indul az úton megy fölfele (csökken az y koordinátája) a kanyar előtt (x,y) világkoordinátákat elérve lelassul, (x,y)' koordináták elérése esetén elkezd kanyarodni, a sávból nem tér ki, majd (x,y)&quot; koordinátáig halad a fönti egyenesen. És így tovább.</li>
+<li>a kanyarodás legyen a lehető legvalósághűbb, akár a vezérelt autó esetében.</li>
+</ul>
+<h1><a class="header" href="#4-radar-szenzor" id="4-radar-szenzor">4. Radar szenzor</a></h1>
+<p>Adaptív sebességtartó, automata vészfékező alapjául szolgáló radar szenzor implementációja</p>
+<ul>
+<li>Input: világmodell</li>
+<li>Output:
+<ul>
+<li>Radar által látott objektumok</li>
+</ul>
+</li>
+</ul>
+<h2><a class="header" href="#definition-of-done-3" id="definition-of-done-3">Definition of Done</a></h2>
+<ul>
+<li>1 db, az autó első lökhárítója mögött elhelyezett radar szenzor</li>
+<li>A látószög (60°) és távolság (200m) által meghatározott területen kérjék el a <strong>releváns</strong> objektumokat</li>
+<li>A háromszög koordinátái az autó helyzetétől függően folyamatosan frissülnek</li>
+<li>debug célra bekapcsolható módon a háromszög legyen kirajzolhatóak <strong>piros</strong> színnel</li>
+<li>Határozzák meg a legközelebbi, sávon belüli (lateral offset alapján) objektum helyzetét</li>
+<li>Az automata vészfékező számára releváns objektumok (az autó középvonala felé halad, látjuk) kiválogatása és visszaadása</li>
+</ul>
+<h2><a class="header" href="#megjegyzések-2" id="megjegyzések-2">Megjegyzések</a></h2>
+<ul>
+<li>A háromszög kirajzolására már kell, hogy legyen elérhető publikus metódus, amely 3 pontot és egy rajzolási színt vár bemenetként</li>
+<li>A világ objektumainak lekérdezésére már kell, hogy legyen elérhető publikus metódus, mely 3 pontot vár bemenetként, ebből kell leválogatni a relevánsakat</li>
+<li><img src="images/radar.png" alt="" /></li>
+<li>A vészfékezőnek majd ki kell tudnia számolni, hogy az akadály akkor is útban lesz-e még mire az autó odaér, ehhez szükséges az útban levő objektum távolsága és pozíciója (relatívan az autóhoz), ez minden ciklusban lefutva előállítja az objektum pl. gyalogos mozgásvektorát
+<ul>
+<li>ennek egy fa esetében is működnie kell, csak az nem mozog, mert nem Középföldén vagyunk</li>
+</ul>
+</li>
+<li>az ACC-hez el kell tudni dönteni, hogy pl. egy autó a vezérelt autó előtt halad-e</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="sprint_1.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="sprint_3.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="sprint_1.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="sprint_3.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

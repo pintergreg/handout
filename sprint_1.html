@@ -1,0 +1,420 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Sprint 1 - Jegyzet</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="Szoftverfejlesztés multinacionális vállalatoknál">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div id="sidebar-scrollbox" class="sidebar-scrollbox">
+                <ol class="chapter"><li class="expanded "><a href="description.html"><strong aria-hidden="true">1.</strong> Tárgyleírás</a></li><li class="expanded "><a href="schedule.html"><strong aria-hidden="true">2.</strong> Ütemezés</a></li><li class="expanded "><a href="literature.html"><strong aria-hidden="true">3.</strong> Felkészülést segítő anyagok</a></li><li class="expanded "><a href="git.html"><strong aria-hidden="true">4.</strong> git</a></li><li class="expanded "><a href="github.html"><strong aria-hidden="true">5.</strong> GitHub</a></li><li class="expanded "><a href="developing_tools.html"><strong aria-hidden="true">6.</strong> Fejlesztői eszközök</a></li><li><ol class="section"><li class="expanded "><a href="code_formatting.html"><strong aria-hidden="true">6.1.</strong> Kódformázás</a></li><li class="expanded "><a href="test_coverage.html"><strong aria-hidden="true">6.2.</strong> Tesztlefedettség</a></li><li class="expanded "><a href="logging.html"><strong aria-hidden="true">6.3.</strong> Logolás</a></li><li class="expanded "><a href="config.html"><strong aria-hidden="true">6.4.</strong> Külső konfigurálási lehetőség</a></li></ol></li><li class="expanded "><a href="workflow.html"><strong aria-hidden="true">7.</strong> Munkafolyamat</a></li><li class="expanded "><a href="sprints.html"><strong aria-hidden="true">8.</strong> Feladatok</a></li><li><ol class="section"><li class="expanded "><a href="sprint_1.html" class="active"><strong aria-hidden="true">8.1.</strong> Sprint 1</a></li><li class="expanded "><a href="sprint_2.html"><strong aria-hidden="true">8.2.</strong> Sprint 2</a></li><li class="expanded "><a href="sprint_3.html"><strong aria-hidden="true">8.3.</strong> Sprint 3</a></li></ol></li><li class="expanded "><a href="virtual_world.html"><strong aria-hidden="true">9.</strong> Virtuális világ</a></li><li class="expanded "><a href="physics.html"><strong aria-hidden="true">10.</strong> Fizika</a></li><li class="expanded "><a href="sensors.html"><strong aria-hidden="true">11.</strong> Szenzorok</a></li><li class="expanded "><a href="functions.html"><strong aria-hidden="true">12.</strong> Vezetéstámogató funkciók</a></li><li class="expanded "><a href="reference_architecture.html"><strong aria-hidden="true">13.</strong> Referencia architektúra</a></li><li class="expanded "><a href="implementation.html"><strong aria-hidden="true">14.</strong> Implementáció</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Jegyzet</h1>
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#világmodell-kialakítása" id="világmodell-kialakítása">Világ(modell) kialakítása</a></h1>
+<ul>
+<li>Input: virtuális világot leíró JSON állomány(ok)</li>
+<li>Output: Modellezett világ: mozgó/álló, áthajtható, ütközhető, tömeggel, mérettel rendelkező objektumok, koordináta-rendszerben, olyan interfészek (API) kialakítása, amely biztosítja a későbbiekben többi csapat számára a világmodellhez való legkézenfekvőbb hozzáférést a későbbi sprintek feladatit is figyelembe véve</li>
+<li>Challenge: „mindenki erre vár”, az interfésznek mielőbb stabilnak kell lennie, akkor is, ha az implementáció még nincs meg, prioritások és „nyomás” kezelése, a megjelenítésért felelős csapat számára a lehető leggyorsabban kód szinten biztosítani a kirajzolandó objektumok alap tulajdonságait.</li>
+</ul>
+<h2><a class="header" href="#definition-of-done" id="definition-of-done">Definition of Done</a></h2>
+<ul>
+<li>Útelemeket, fákat, táblákat egyéb statikus objektumokat leíró állomány feldolgozása</li>
+<li>Hierarchikus objektummodell implementálása világ leírására, API biztosítása ennek elérésére</li>
+<li>Objektumok kiterjedését biztosító poligonok definiálása
+<ul>
+<li>ez nem azonos a kép széleivel</li>
+</ul>
+</li>
+<li>Minden feldolgozott objektum rendelkezzen pozíció, referencia, orientáció, típusadatokkal</li>
+<li>Heterogén kollekció lehetőségének biztosítása</li>
+<li>A modell legyen felkészítve az input fájlból kiolvasott „statikus” objektumokon túl mozgó („dinamikus”) objektumok kezelésére is
+<ul>
+<li>vezérelt autó, NPC (non-player-character) autó, gyalogos</li>
+</ul>
+</li>
+<li>A modell tegyen különbséget azon objektumok között amelyeknek egy jármű nekimehet és amelyeknek nem (fa vs. útelem)</li>
+<li>A modell kezeljen „z-index”-et, hogy a kirajzolás során biztosítható legyen, hogy mely elemet kell előtt kirajzolni a „kitakarások” végett</li>
+</ul>
+<h2><a class="header" href="#megjegyzések" id="megjegyzések">Megjegyzések</a></h2>
+<ul>
+<li>Mielőbb el kell dönteni, hogy milyen koordináta-rendszerben dolgozik majd a modell
+<ul>
+<li>A döntést a megjelenítésért felelős csapattal <strong>együtt</strong> kell meghozni!</li>
+</ul>
+</li>
+<li>Teljesen járható út, hogy a modell, az input állományban található koordináta-rendszer egy az egyeben alkalmazásra kerül, ebből adódóan minden számolás abban történik, csak a megjelenítés transzformálja át.</li>
+<li>A fa esetében csupán a törzsének lehet nekimenni, nem a lombkoronának, ezért a modellt ekképpen kell megalkotni! A törzsnek használható egy szabályos hasáb az egyszerűség kedvéért.
+<ul>
+<li><img src="https://raw.githubusercontent.com/szfmv2019-tavasz/handout/master/src/images/tree_collidable.png" alt="" /></li>
+</ul>
+</li>
+<li>Az autó is egyszerűsíthető, nem kell a grafikai elemet teljes mértékben követni.
+<ul>
+<li><img src="https://raw.githubusercontent.com/szfmv2019-tavasz/handout/master/src/images/car_simplified_polygon_model.png" alt="" /></li>
+</ul>
+</li>
+<li>A kanyarodó útelemeknél is lehet egyszerűsítést használni.
+<ul>
+<li><img src="https://raw.githubusercontent.com/szfmv2019-tavasz/handout/master/src/images/90left_polygon.png" alt="" /></li>
+</ul>
+</li>
+<li>A szűréshez használt háromszög esetében a poligonokat kell figyelembe venni, pl. fa törzse, tábla rúdja, de nem csak az „ütközhető” objektumokat kell tudni visszaadni, hanem az útelemeket is. A 2. sprintben a szenzorok majd válogatnak, hogy mire van szükségük ezekből.
+<ul>
+<li><img src="https://raw.githubusercontent.com/szfmv2019-osz/handout/master/src/images/model_interface.png" alt="" /></li>
+</ul>
+</li>
+</ul>
+<h1><a class="header" href="#vizualizáció" id="vizualizáció">Vizualizáció</a></h1>
+<ul>
+<li>Input: Objektummodell (modellezett világ), pontosabban annak elégséges metszete. A rajzoláshoz elegendőek az világot leíró állományban megtalálható adatok, nem kell megvárni a teljes modell elkészültét</li>
+<li>Output: Illeszkedő, résmentes megjelenítése, 24 FPS-el frissülő, folyamatos mozgás</li>
+<li>Challenge: Az objektumtranszformációk megfelelő végrehajtása, az objektummodellért felelős csapattal egyeztetés az objektumok elérését illetően</li>
+</ul>
+<h2><a class="header" href="#definition-of-done-1" id="definition-of-done-1">Definition of Done</a></h2>
+<ul>
+<li>A kirajzolt világ egy része látható csak állandóan a programablakban, a „kamera” a vezérelt autót (egocar) követi
+<ul>
+<li>világ széleinek kezelése</li>
+</ul>
+</li>
+<li>statikus objektumok pozícióhelyes kirajzolása és illesztése a rendelkezésre álló építőelemekből</li>
+<li>mozgó objektumok helyes kirajzolása</li>
+<li>debug célból meg kell tudni jeleníteni az egyes objektumokhoz definiált poligonokat</li>
+<li>interfészt kell biztosítani, hogy egy megcímzett objektum poligonja eltérő színnel jelenhessen meg (ha kijelölésre kerül)</li>
+<li>interfészt kell biztosítani a szenzorok látóterét jelképező háromszögek opcionális megjelenítésére</li>
+<li>a megjelenés villódzásmentes és folyamatos legyen</li>
+</ul>
+<h2><a class="header" href="#megjegyzések-1" id="megjegyzések-1">Megjegyzések</a></h2>
+<ul>
+<li>A programablaknak az alábbi módon nézni majd ki. A kezdeti kód ezt a felosztást már támogatja, tartalmaz két JPanel-t, ebből a <code>CourseDisplay</code>re kell a világ objektumait kirajzolni. Pontosabban az a „viewport”, amit a kamera lát, mögötte ott lehet a többi objektum.
+<ul>
+<li>ha szükséges egyéb panel definiálható, de a műszerfal (dashboard) működését nem lehet megzavarni</li>
+<li><img src="https://raw.githubusercontent.com/szfmv2019-tavasz/handout/master/src/images/gui_plan_course_display.png" alt="gui_plan" /></li>
+</ul>
+</li>
+<li>A kiadott kód csak példa alap GUI készítésére, ha a feladat úgy kívánja átírható, más rajzoló metódusok vagy logika is használható, de figyelni kell arra, hogy ez esetben minden érintett csapat tudjon a módosításokról. <em>Mindenek előtt a műszerfalért felelős csapat!</em></li>
+<li>Az IntelliJ IDEA GUI Designer-e <em>nem</em> használható!</li>
+</ul>
+<h1><a class="header" href="#human-machine-interface-hmi-műszerfal-irányítás" id="human-machine-interface-hmi-műszerfal-irányítás">Human Machine Interface (HMI): Műszerfal, irányítás</a></h1>
+<ul>
+<li>Input: a billentyűzet</li>
+<li>Output:
+<ul>
+<li>PRND váltó(fel-le), gáz és fék 0-100 skála, kormányállás tetszőlegesen választott skála index, billentyűleütés alapján</li>
+<li>Fordulatszám, sebesség, kormány, gáz, fék, sebességváltó állása, irányjelző visszajelző, kocsi pozíció megjelenítése (x, y koordináta, az autó rajzolását a vizualizáció végzi, ez egy debug funkció)</li>
+</ul>
+</li>
+</ul>
+<h2><a class="header" href="#definition-of-done-2" id="definition-of-done-2">Definition of Done</a></h2>
+<ul>
+<li>a fék- és gázpedál állapota szabályozható</li>
+<li>fék- és gázpedál valamint a kormány sem binárisan működik, a billentyű nyomva tartás idejétől függ az input intenzitása</li>
+<li>fék- és gázpedál valamint a kormány is fokozatosan áll vissza alaphelyzetbe a billentyű felengedésével</li>
+<li>az automata váltó 4 állapota szabályozható
+<ul>
+<li>szekvenciális váltóról lévén szó, sorban állíthatók a fokozatok: P(ark), R(everse), N(eutral), D(rive)</li>
+<li>alaphelyzet: P, „felváltás” után R, majd N, majd D. „Leváltás” ugyanez visszafele.</li>
+</ul>
+</li>
+<li>ACC: Állítható céltávolság (T jelű gombbal, körkörösen 0.8/1.0/1.2/1.4 másodperc)</li>
+<li>ACC: Állítható célsebesség (+/- gombbal, 30-160, 10-es lépésközzel)</li>
+<li>Lane Keeping bekapcsolás</li>
+<li>Parkig pilot bekapcsolás</li>
+<li>irányjelző (jobb, bal) kapcsolható</li>
+<li>egyszerre több billentyű is használható
+<ul>
+<li>kanyarodni és gázt adni/fékezni minimum kell tudni egyszerre</li>
+</ul>
+</li>
+<li>Megjelenik a fordulatszám mint „analóg óra”</li>
+<li>Megjelenik a sebesség mint „analóg óra”</li>
+<li>Megjelenik a kormányállás</li>
+<li>Megjelenik a gáz, fék állapota (progressbar)</li>
+<li>Megjelenik a sebességváltó állása (szövegesen)</li>
+<li>Irányjelző visszajelző (egy-egy nyíl kirajzolva)</li>
+<li>Kocsi pozíció megjelenítése (x, y koordináta debug céllal, szövegesen)</li>
+<li>Vezetéstámogató funkciók visszajelzései
+<ul>
+<li>ACC idő és sebesség limit</li>
+<li>parking pilot és a lane keeping rendszerek állapot visszajelzése</li>
+</ul>
+</li>
+<li>az utolsó látott tábla megjelenítése
+<ul>
+<li>interfész biztosítása, az utolsó látott tábla beállítására</li>
+</ul>
+</li>
+</ul>
+<h2><a class="header" href="#megjegyzések-2" id="megjegyzések-2">Megjegyzések</a></h2>
+<ul>
+<li>Az input manager és a műszerfal között az értékeket a buszon kell közölni</li>
+<li>Az utoljára látott táblához legyen definiálva egy csomag, amely ha megjelenik a buszon, akkor a csomag által kijelölt tábla megjelenik a műszerfalon
+<ul>
+<li>később a táblafelismerő majd kiküld ilyen csomagot ha amikor szükséges</li>
+<li>talán célszerű ha van egy „nincs tábla állapot is”</li>
+</ul>
+</li>
+<li>A fordulatszám és a sebesség megjelenése „analóg óraként” történjen, de nem szükséges újra feltalálni a kereket.</li>
+<li>A programlaknak az alábbi módon kell kinéznie. A kezdeti kód ezt a felosztást már támogatja, tartalmaz két JPanel-t, ebből a Dashboard-ra kell a visszajelzőket elhelyezni.
+<ul>
+<li><img src="https://raw.githubusercontent.com/szfmv2019-tavasz/handout/master/src/images/gui_plan.png" alt="gui_plan" /></li>
+</ul>
+</li>
+<li>Az IntelliJ IDEA GUI Designer-e <em>nem</em> használható!</li>
+</ul>
+<h1><a class="header" href="#hajtáslánc-és-kormányzás" id="hajtáslánc-és-kormányzás">Hajtáslánc és kormányzás</a></h1>
+<ul>
+<li>Input: VFB-ról kormányállás, sebességváltó, gáz- és fékpedál állása (ezeket az input csapat állítja be)</li>
+<li>Output:
+<ul>
+<li>Sebességváltó állásától függő mozgásállapot (vagy nem-mozgás) megvalósítása (PRND)</li>
+<li>Gyorsulás/lassulás számítása gáz/fék alapján</li>
+<li>fordulókör meghatározás, kanyarodás</li>
+<li>teljes elmozdulás vektor kiszámolása</li>
+</ul>
+</li>
+<li>Challenge:
+<ul>
+<li>irányítást implementáló csapattal egyeztetés az inputt értékekről (packet-ekről)</li>
+</ul>
+</li>
+</ul>
+<h2><a class="header" href="#definition-of-done-3" id="definition-of-done-3">Definition of Done</a></h2>
+<ul>
+<li>Az autó gázpedál állásától függően gyorsul</li>
+<li>A gyorsulás a „belső fokozatok” szerint kerül meghatározásra</li>
+<li>Az autó a gázpedál felengedésével fokozatosan lassul, amjd megáll</li>
+<li>Az autó R válóállásban tolat</li>
+<li>Felkészíteni a modult, hogy a vészfékező, az adaptív tempomat vagy a parkoló asszisztens is küldhet inputot, melyek magasabb prioritásúak
+<ul>
+<li>vészfékező értelemszerűen fékezés inputot</li>
+<li>az adaptív tempomat és a parkoló asszisztens gáz és fék inputot is</li>
+</ul>
+</li>
+<li>Buszról érkező kormányállás felhasználása</li>
+<li>Autó kanyarodásának biztosítása valóságos fordulókör szerint
+<ul>
+<li>ehhez szükséges extra tulajdonságot meghatározása</li>
+</ul>
+</li>
+<li>Tényleges mozgásvektor meghatározása a motor csapat gyorsulás, lassulás értékének felhasználásával</li>
+<li>A meghatározott mozgásvektor alapján az autó pozíciójának frissítése
+<ul>
+<li>az AutomatedCar osztály x,y koordinátáinak frissítése</li>
+</ul>
+</li>
+<li>Tolatás során is valósághű kanyarodás történik</li>
+<li>Felkészíteni a modult, hogy a sávtartó automatika vagy a parkoló asszisztens is küldhet kormányzás inputot</li>
+</ul>
+<h2><a class="header" href="#megjegyzések-3" id="megjegyzések-3">Megjegyzések</a></h2>
+<ul>
+<li>A 3. sprintes beavatkozásokhoz (LKA, AAC, AEB, PP) definiálni kell az kommunikációs csomagot</li>
+<li>Valamint figyelni, hogy ha ilyen érkezik a buszon, akkor azt magasabb prioritású inputként elfogadni</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="sprints.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="sprint_2.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="sprints.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="sprint_2.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
