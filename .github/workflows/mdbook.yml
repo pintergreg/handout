@@ -22,6 +22,8 @@ jobs:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         BRANCH: gh-pages # The branch the action should deploy to.
         FOLDER: book # The folder the action should deploy.
+    - name: Reset directory
+      run: cd ~
     - name: Cache cargo registry
       uses: actions/cache@v1.1.0
       with:
