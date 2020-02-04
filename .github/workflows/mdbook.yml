@@ -15,13 +15,13 @@ jobs:
         (test -x $HOME/.cargo/bin/mdbook || cargo install --vers "^0.1" mdbook)
         cargo install-update -a
     - name: Build
-      run: cd $GITHUB_WORKSPACE && mdbook build
+      run: echo $GITHUB_WORKSPACE && cd $GITHUB_WORKSPACE && mdbook build
     - name: GitHub Pages Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         BRANCH: gh-pages # The branch the action should deploy to.
-        FOLDER: $GITHUB_WORKSPACE/book # The folder the action should deploy.
+        FOLDER: book # The folder the action should deploy.
     - name: Cache cargo registry
       uses: actions/cache@v1
       with:
