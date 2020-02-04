@@ -23,13 +23,13 @@ jobs:
         BRANCH: gh-pages # The branch the action should deploy to.
         FOLDER: book # The folder the action should deploy.
     - name: Cache cargo registry
-      uses: actions/cache@v1
+      uses: actions/cache@v1.1.0
       with:
-        path: $HOME/.cargo/registry
+        path: ~/.cargo/registry
         key: ${{ runner.os }}-cargo-registry-${{ hashFiles('**/Cargo.lock') }}
     - name: Cache cargo index
-      uses: actions/cache@v1
+      uses: actions/cache@v1.1.0
       with:
-        path: $HOME/.cargo/git
+        path: ~/.cargo/git
         key: ${{ runner.os }}-cargo-index-${{ hashFiles('**/Cargo.lock') }}
  
