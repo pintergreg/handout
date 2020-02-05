@@ -1,4 +1,4 @@
-![Rust](https://github.com/SzFMV2020-Tavasz/handout/workflows/Rust/badge.svg)
+![mdBook](https://github.com/SzFMV2020-Tavasz/handout/workflows/mdBook/badge.svg)
 
 # Jegyzet a „Szoftverfejlesztés multinacionális vállalatoknál” c. tárgyhoz
 
