@@ -19,10 +19,16 @@ jobs:
         # mdbook-version: 'latest'
 
     - run: mdbook build
-
-    - name: GitHub Pages Deploy
-      uses: JamesIves/github-pages-deploy-action@releases/v3
+    
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
       with:
-        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        BRANCH: gh-pages # The branch the action should deploy to.
-        FOLDER: book # The folder the action should deploy.
+        deploy_key: ${{ secrets.ACCESS_TOKEN }}
+        publish_dir: ./book
+
+#    - name: GitHub Pages Deploy
+#      uses: JamesIves/github-pages-deploy-action@releases/v3
+#      with:
+#        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+#        BRANCH: gh-pages # The branch the action should deploy to.
+#        FOLDER: book # The folder the action should deploy.
