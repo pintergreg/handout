@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><Scene color="#ffffff" version="3.0.0" height="47000" width="41000" measureType="0">
+<?xml version="1.0" encoding="UTF-8"?><Scene color="#ffffff" version="3.0.0" height="47000" width="41000">
   <Objects>
     <Object type="road_2lane_straight">
       <Position x="262" y="1517"/>
