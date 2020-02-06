@@ -13,6 +13,7 @@ Park pilot alapjául szolgáló Ultrasonic Sensor array szimulációjának imple
 - debug célra bekapcsolható módon ezek a háromszögek legyen kirajzolhatóak **zöld** színnel
 - A látószög és távolság által meghatározott területen kérjék el a **releváns** objektumokat
 - Határozzák meg a legközelebbi (ütközés szempontjából) objektum pozícióját, kiterjedését, távolságát
+- A legközelebbi objektum legyen vizuálisan kiemelve
 
 ### Megjegyzések
 
@@ -40,7 +41,7 @@ Sávtartó automatika és táblafelismerő alapjául szolgáló kamera szenzor i
     * a sávtartó szempontjából releváns objektumok az utak
 - A háromszög koordinátái az autó helyzetétől függően folyamatosan frissülnek
 - debug célra bekapcsolható módon a háromszög legyen kirajzolható **kék** színnel
-- A szenzorok által relevánsnak tartott objektumok kiemelhetők egy debug kapcsolóval (billentyű vagy debug módba váltás)
+- A szenzorok által relevánsnak tartott objektumok vizuálisan kiemelhetők egy debug kapcsolóval (billentyű vagy debug módba váltás)
 
 <!-- - A kamera szenzor a látható sávok összes adatát visszaadja(hány sáv, melyikben vagyunk, azon belül milyen távolságra a szélektől)
 - A kamera szenzor a látott táblák közül a legközelebbi összes adatát visszaadja (milyen tábla, milyen messzire van) -->
@@ -117,6 +118,7 @@ Adaptív sebességtartó, automata vészfékező alapjául szolgáló radar szen
 - debug célra bekapcsolható módon a háromszög legyen kirajzolhatóak **piros** színnel
 - Határozzák meg a legközelebbi, sávon belüli (lateral offset alapján) objektum helyzetét
 - Az automata vészfékező számára releváns objektumok (az autó középvonala felé halad, látjuk) kiválogatása és visszaadása
+- A legközelebbi objektum legyen vizuálisan kiemelve
 
 ## Megjegyzések
 
