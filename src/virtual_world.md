@@ -36,6 +36,8 @@ Egy-egy objektum leírása a következőképpen néz ki:
 
 ## Az út elemek viszonyítási pontjai
 
+A képfájlok amikkel a rajzoló csapat dolgozik elég sajátosan működnek. A transzformációs mátrixban leírt elforgatás pl. nem a bal felső sarokkal van értelmezve, hanem elemenként más és más ponttal. Ezek rögzítése szükséges lehet a modellben, a rajzoló csapat munkáját megkönnyítendő. Egyébként korábbi félévekben ezt már összeszedték [egzakt módon is](resources/reference_points.xml).
+
 ![](images/90right.png) ![](images/90left.png)
 
 ![](images/45right.png) ![](images/45left.png)

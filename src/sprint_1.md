@@ -23,6 +23,7 @@
 
 * Mielőbb el kell dönteni, hogy milyen koordináta-rendszerben dolgozik majd a modell
     * A döntést a megjelenítésért felelős csapattal **együtt** kell meghozni!
+* A tárolandó értékek között a _referencia_ a képfájl forgatási referenciapontjára vonatkozik, [lásd jegyzet](https://szfmv2020-tavasz.github.io/handout/virtual_world.html#az-%C3%BAt-elemek-viszony%C3%ADt%C3%A1si-pontjai).
 * Teljesen járható út, hogy a modell, az input állományban található koordináta-rendszer egy az egyeben alkalmazásra kerül, ebből adódóan minden számolás abban történik, csak a megjelenítés transzformálja át.
 * A fa esetében csupán a törzsének lehet nekimenni, nem a lombkoronának, ezért a modellt ekképpen kell megalkotni! A törzsnek használható egy szabályos hasáb az egyszerűség kedvéért.
     * ![](https://raw.githubusercontent.com/szfmv2019-tavasz/handout/master/src/images/tree_collidable.png)
