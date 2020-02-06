@@ -825,6 +825,7 @@ A munkafolyamat alapvetően feltételezi, hogy egy adott kódrészletet egy koll
 <li>A döntést a megjelenítésért felelős csapattal <strong>együtt</strong> kell meghozni!</li>
 </ul>
 </li>
+<li>A tárolandó értékek között a <em>referencia</em> a képfájl forgatási referenciapontjára vonatkozik, <a href="https://szfmv2020-tavasz.github.io/handout/virtual_world.html#az-%C3%BAt-elemek-viszony%C3%ADt%C3%A1si-pontjai">lásd jegyzet</a>.</li>
 <li>Teljesen járható út, hogy a modell, az input állományban található koordináta-rendszer egy az egyeben alkalmazásra kerül, ebből adódóan minden számolás abban történik, csak a megjelenítés transzformálja át.</li>
 <li>A fa esetében csupán a törzsének lehet nekimenni, nem a lombkoronának, ezért a modellt ekképpen kell megalkotni! A törzsnek használható egy szabályos hasáb az egyszerűség kedvéért.
 <ul>
@@ -1297,6 +1298,7 @@ A munkafolyamat alapvetően feltételezi, hogy egy adott kódrészletet egy koll
 <li>Egy ilyen egyenes útelem 350×350px, ekkora a kép is és ennek kell lennie az XML-ben is.</li>
 </ul>
 <h2><a class="header" href="#az-út-elemek-viszonyítási-pontjai" id="az-út-elemek-viszonyítási-pontjai">Az út elemek viszonyítási pontjai</a></h2>
+<p>A képfájlok amikkel a rajzoló csapat dolgozik elég sajátosan működnek. A transzformációs mátrixban leírt elforgatás pl. nem a bal felső sarokkal van értelmezve, hanem elemenként más és más ponttal. Ezek rögzítése szükséges lehet a modellben, a rajzoló csapat munkáját megkönnyítendő. Egyébként korábbi félévekben ezt már összeszedték <a href="resources/reference_points.xml">egzakt módon is</a>.</p>
 <p><img src="images/90right.png" alt="" /> <img src="images/90left.png" alt="" /></p>
 <p><img src="images/45right.png" alt="" /> <img src="images/45left.png" alt="" /></p>
 <p><img src="images/6right.png" alt="" /> <img src="images/6left.png" alt="" /></p>
