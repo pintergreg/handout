@@ -1,23 +1,23 @@
 # Ütemezés
 
-Az órák csütörtökönként a BA.F.06-ban vannak, neptun szerint 08:00-10:35 között előadás és 10:45-11:30 között gyakorlat. (Ezek aránya valamint közte a szünet az aktuális előadásanyag és az igények szerint módosulhat). A „gyakorlat” nem labor, hanem sokkal inkább konzultáció!
+Az órák csütörtökönként a BA.F.09-ban vannak, neptun szerint 08:00-10:35 között előadás és 10:45-11:30 között gyakorlat. (Ezek aránya valamint közte a szünet az aktuális előadásanyag és az igények szerint módosulhat). A „gyakorlat” nem labor, hanem sokkal inkább konzultáció!
 
 |hét    |dátum        |előadás|gyakorlat|
 |------:|:-----------:|:-----:|:-------:|
-| 1.|02.&nbsp;13.|Bevezető, áttekintés; aSpice alapok|git, GitHub, IDEA ismertetés,
-| 2.|02.&nbsp;20.|Agile/Scrum, [első feladat kiadás](sprint_1.md)|csapatsorsolás, Sprint Planning, Task Definition Workshop, Team commitment, Scheduling
-| 3.|02.&nbsp;27.|Napi munka, verziókezelők|Branch review, status review, standup (did, will, blocking)
-| 4.|03.&nbsp;05.|Unit Testing|Status review, standup, TDD kata
-| **5.**|**03.&nbsp;12.**|**első demo**/retrospektív, [második feladat kiadás](sprint_2.md)|Sprint planning, Task Definition Workshop, Team commitment, Scheduling
+| 1.|02.&nbsp;13.|Bevezető, áttekintés; aSpice alapok, [első feladat kiadás](sprint_1.md)|csapatsorsolás, Sprint Planning, Task Definition Workshop, Team commitment, Scheduling
+| 2.|02.&nbsp;20.|Agile/Scrum | git, GitHub, IDEA ismertetés
+| 3.|02.&nbsp;27!.|Napi munka, verziókezelők|Branch review, status review, standup (did, will, blocking)
+| 4.|03.&nbsp;05.|Unit Testing|TDD kata
+| 5.|03.&nbsp;12.|**első demo**/retrospektív, [második feladat kiadás](sprint_2.md)|Sprint planning, Task Definition Workshop, Team commitment, Scheduling
 | 6.|03.&nbsp;19.|Legacy Code, SOLID|Refactoring gyakorlat egy előre előkészített példán
-| 7.|03.&nbsp;26.|Review|Random code review egy tetszőleges elfogadott pull requestből
-| 8.|**04.&nbsp;02.**|**második demo**/retrospektív, [harmadik feladat kiadás](sprint_3.md)|Sprint planning, Task Definition Workshop, Team commitment, Scheduling
+| 7.|03.&nbsp;26.!|Review|Random code review egy tetszőleges elfogadott pull requestből
+| **8.**|**04.&nbsp;02.**|**második demo**/retrospektív, [harmadik feladat kiadás](sprint_3.md)|Sprint planning, Task Definition Workshop, Team commitment, Scheduling
 | 9.|04. 09.|_Rektori/dékáni szünet_
-|10.|04.&nbsp;16.|Continous Integration|Set up a CI script running all implemented unit tests
-|11.|04.&nbsp;23.|Software Architecture?
-|12.|04.&nbsp;30.|Összefoglalás, konzultáció, tárgy feedback|Retro + Pair programming
-|**13.**|**05.&nbsp;07.**|**harmadik demo**/retrospektív|Coding Dojo, feedback
-|**14.**|**05.&nbsp;14.**|**Zárthelyi dolgozat** 08:00-tól 09:30-ig (90 perc), 1.?? és 1.?? laborok
+|10.|04.&nbsp;16!.|Continous Integration|Set up a CI script running all implemented unit tests
+|11.|04.&nbsp;23.|Software Architecture
+|**12.**|**04.&nbsp;30.**|**harmadik demo**/retrospektív, Összefoglalás, konzultáció, tárgy feedback|Retro + Pair programming, Coding Dojo
+|**13.**|**05.&nbsp;07.**|**Zárthelyi dolgozat** 08:00-tól 09:30-ig (90 perc), 1.?? és 1.?? laborok
+|14.|05.&nbsp;14.|
 
 ## Gantt diagram
 
@@ -40,7 +40,7 @@ Az órák csütörtökönként a BA.F.06-ban vannak, neptun szerint 08:00-10:35 
 6. Kód futtatása a futtató- és a fejlesztőkörnyezet beállításainak tesztelése céljából
 7. A jegyzet és az abban taglalt segédanyagok megismerése
 8. Az elkészítendő szoftver átgondolása (lásd readme), statikus és dinamikus modell elkészítése komponens szinten
-    * Ennek terjedeleme (az órái példa alapján): egy absztrakciós szint a négyfelé bontás (kb. user story szint), és egy az ez alatti egyel, minden komponens még egy kibontása, kb. egyenrangú komponensek létrehozására - osztály szintre nem mennék le, még ha a végén ezekből akár osztály is lesz. Szóval kettő struktúra, kettő dinamikus viselkedést leíró diagram, egy magasabb és egy alacsonyabb absztrakciós szinten. Hogy konkrétan hány building block, azt mindenkinek "érzésre" kell megállapítania, ezért szubjektív az architektúra.
+    * Ennek terjedelme (az órái példa alapján): egy absztrakciós szint a négyfelé bontás (kb. user story szint), és egy az ez alatti egyel, minden komponens még egy kibontása, kb. egyenrangú komponensek létrehozására - osztály szintre nem mennék le, még ha a végén ezekből akár osztály is lesz. Szóval kettő struktúra, kettő dinamikus viselkedést leíró diagram, egy magasabb és egy alacsonyabb absztrakciós szinten. Hogy konkrétan hány building block, azt mindenkinek "érzésre" kell megállapítania, ezért szubjektív az architektúra.
     * Ez egy egyéni feladat, hiszen még nincsenek csapatok. Az elkészítéshez javasolt eszközök: MS Visio, https://www.draw.io/.
     * Az elkészült diagramoknak a következő órán bemutatható állapotban kell lenniük.
 
