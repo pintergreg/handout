@@ -353,7 +353,7 @@ Kormányzás#</dia:string>
         <dia:point val="48.5,-0.950806"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="48.1691,-1.00081;48.8309,3.06261"/>
+        <dia:rectangle val="48.1691,-1.00081;48.8309,3.00081"/>
       </dia:attribute>
       <dia:attribute name="conn_endpoints">
         <dia:point val="48.5,-0.950806"/>
@@ -361,6 +361,15 @@ Kormányzás#</dia:string>
       </dia:attribute>
       <dia:attribute name="numcp">
         <dia:int val="1"/>
+      </dia:attribute>
+      <dia:attribute name="start_arrow">
+        <dia:enum val="1"/>
+      </dia:attribute>
+      <dia:attribute name="start_arrow_length">
+        <dia:real val="0.5"/>
+      </dia:attribute>
+      <dia:attribute name="start_arrow_width">
+        <dia:real val="0.5"/>
       </dia:attribute>
       <dia:attribute name="end_arrow">
         <dia:enum val="1"/>
@@ -1228,7 +1237,7 @@ tempomat#</dia:string>
         <dia:point val="48.5,-7.5"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="46.9888,-8.23349;50.0113,-7.31364"/>
+        <dia:rectangle val="46.9888,-8.2335;50.0113,-7.31364"/>
       </dia:attribute>
       <dia:attribute name="text">
         <dia:composite type="text">
@@ -1261,7 +1270,7 @@ tempomat#</dia:string>
         <dia:point val="63.5,-7.5"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="61.9888,-8.25649;65.0342,-7.26765"/>
+        <dia:rectangle val="61.9888,-8.2335;65.0113,-7.31364"/>
       </dia:attribute>
       <dia:attribute name="text">
         <dia:composite type="text">
@@ -1294,7 +1303,7 @@ tempomat#</dia:string>
         <dia:point val="78.5,-7.5"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="76.9887,-8.25649;80.0342,-7.26765"/>
+        <dia:rectangle val="76.9887,-8.2335;80.0112,-7.31364"/>
       </dia:attribute>
       <dia:attribute name="text">
         <dia:composite type="text">
