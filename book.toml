@@ -4,3 +4,7 @@ multilingual = false
 src = "src"
 title = "Jegyzet"
 description = "Szoftverfejlesztés multinacionális vállalatoknál"
+
+[output.html]
+mathjax-support = true
+additional-js = ["context-cards.js"]

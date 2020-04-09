@@ -43,39 +43,91 @@ Alább néhány, az interneten az ismert kulcsszavak alapján könnyen (legaláb
     - teszt stratégiák is benne vannak
     - innen a többi tesztes fejezet is jó!
 
+
 ## Javasolt (fel)készülési módszer
 
-Mivel a diákat nem adjuk ki, célszerű jegyzetelni: **címszavakat**, **fogalmakat** leírni. Nem a diát kell lekörmölni, annak nincs értelme! Óra után (az óra hetében), ezekre rákeresni (pl. Google), illetve elolvasni az fönt elhelyezett anyagokat. A ZH előtti estén nem lehet ezt feldolgozni.
+Mivel a diákat nem adjuk ki, célszerű jegyzetelni: **címszavakat**, **fogalmakat** leírni, gondolatmenetet rögzíteni (bár ehhez is kaptok kész anyagot az alábbi mindmap tekintetében). Nem a diát kell lekörmölni (annak ellenére sem, hogy azokat nem kaphatjátok meg), annak nincs értelme! Óra után (az óra hetében), ezekre rákeresni (pl. Google), valamint elolvasni az itteni anyagokat. A hivatkozott linkek mögötti tartalom olyan anyagmennyiséget jelent, amelyet a ZH előtti estén nem lehet feldolgozni.
+
 
 ## Mindmap
 
 A témakörök „mindmap” formájú összefoglalása [letölthető itt](mm/szfmv.mm), megnyitáshoz a [Freemind](http://freemind.sourceforge.net/wiki/index.php/Main_Page) nevű javás eszköz szükséges.
 Vagy közvetlenül [innen megnyitható](mm/szfmv.html) a HTML-re fordított változata.
 
+
 ## Címszavak
 
 Címszavak (különösebb sorrend nélkül) amelyek az elméleti anyagot több-kevésbé lefedik. Ha valakinek ezeket a fogalmakat nem tudja kifejteni (nem tiszta mit jelent), akkor célszerű megkérdezni a Googlet vagy a Wikit. ;)
 
-agile, agile manifesto, software craftmanship, user story, backlog (product backlog vs. sprint backlog; ki szerkeszti?), task (hossza, elemei), sprint (hossza), sprint review, sprint planning, burn-down chart, story point, standup (hossza, mikor van, ki vesz rajta részt, 3 kérdés), blocking issue, retro, backlog grooming (aka backlog refinement), demo, business value, daily cycle, clean code, traceability (eszkaláció), version control (elosztott vs. centralizált), refactor, review (informal, walkthrough, technical, inspection), pair programming, scrum (scrum team tagjai?), scrum master, product owner, development team, cross functional team, self-organizing team, stakeholder, kanban, scrumban, waterfall, v-modell, scrum of scrums (ambassador), TDD, (software) unit, unit testing (arrange, act, assert, annihilate), test suite, test case, quality assurance, coding kata, code golf, legacy code, code smell, rotting code, dependency reduction, seams, continuous integration, automated testing, continuous deployment, nightly build, minimized context switch, DevOps, coding dojo, SOLID priciples, clean code, definition of done, milestone, deadline, mocking (dummy, stub, spy, mock, fake), requirement, requirement engineering, centralized version control, distributed version control, burndown chart, scrum of scrums, business value, traceability, finding, bug fixing, optimizing, refactoring, KISS, feature envy, code complexity, regressziós teszt, shadow deploy, teszt stratégiák (top-down, bottom-up, sandwich, big-bang, risky-hardest), nightly build, hardware in the loop (HIL), software in the loop (SIL), SMART objectives, technical debt, effort estimation
+<a href="https://en.wikipedia.org/wiki/Agile_software_development" data-wiki-lang="en" data-wiki-title="Agile software development">agile</a>,
+[agile manifesto](https://en.wikipedia.org/wiki/Agile_software_development#The_Agile_Manifesto),
+<a href="https://en.wikipedia.org/wiki/Software_craftsmanship" data-wiki-lang="en" data-wiki-title="Software craftsmanship">software craftmanship</a>,
+<a href="https://en.wikipedia.org/wiki/Scrum_(software_development)" data-wiki-lang="en" data-wiki-title="Scrum (software development)">SCRUM</a>,
+<a href="https://en.wikipedia.org/wiki/User_story" data-wiki-lang="en" data-wiki-title="User story">user story</a>,
+backlog ([product backlog](https://en.wikipedia.org/wiki/Scrum_(software_development)#Product_backlog) vs. [sprint backlog](https://en.wikipedia.org/wiki/Scrum_(software_development)#Sprint_backlog); ki szerkeszti?),
+task (hossza, elemei),
+[sprint](https://en.wikipedia.org/wiki/Scrum_(software_development)#Sprint) (hossza),
+[sprint review](https://en.wikipedia.org/wiki/Scrum_(software_development)#Sprint_review),
+[sprint planning](https://en.wikipedia.org/wiki/Scrum_(software_development)#Sprint_planning),
+<a href="https://en.wikipedia.org/wiki/Burn_down_chart" data-wiki-lang="en" data-wiki-title="Burn down chart">burndown chart</a>,
+[scrum of scrums](https://en.wikipedia.org/wiki/Scrum_(software_development)#Scrum_of_scrums),
+<a href="https://en.wikipedia.org/wiki/Business_value" data-wiki-lang="en" data-wiki-title="Business value">business value</a>,
+story point,
+<a href="https://en.wikipedia.org/wiki/Stand-up_meeting" data-wiki-lang="en" data-wiki-title="Stand-up meeting">standup</a> (hossza, mikor van, ki vesz rajta részt, 3 kérdés),
+blocking issue,
+[retro(spective)](https://en.wikipedia.org/wiki/Scrum_(software_development)#Sprint_retrospective),
+[backlog refinement](https://en.wikipedia.org/wiki/Scrum_(software_development)#Backlog_refinement) (aka backlog grooming),
+demo, daily cycle, clean code, traceability (eszkaláció), version control (elosztott vs. centralizált),
+<a href="https://en.wikipedia.org/wiki/Code_refactoring" data-wiki-lang="en" data-wiki-title="Code refactoring">refactoring</a>,
+review (informal, walkthrough, technical, inspection),
+<a href="https://en.wikipedia.org/wiki/Pair_programming" data-wiki-lang="en" data-wiki-title="Pair programming">pair programming</a>,
+scrum team tagjai: [scrum master](https://en.wikipedia.org/wiki/Scrum_(software_development)#Scrum_master), [product owner](https://en.wikipedia.org/wiki/Scrum_(software_development)#Product_owner), [development team](https://en.wikipedia.org/wiki/Scrum_(software_development)#Development_team),
+cross functional team,
+self-organizing team,
+stakeholder,
+<a href="https://en.wikipedia.org/wiki/Kanban_(development)" data-wiki-lang="en" data-wiki-title="Kanban (development)">kanban</a>,
+scrumban,
+<a href="https://en.wikipedia.org/wiki/Waterfall_model" data-wiki-lang="en" data-wiki-title="Waterfall model">waterfall</a>,
+<a href="https://en.wikipedia.org/wiki/V-Model_(software_development)" data-wiki-lang="en" data-wiki-title="V-Model (software development)">v-model</a>,
+scrum of scrums (ambassador), TDD, (software) unit, unit testing (arrange, act, assert, annihilate), test suite, test case, quality assurance,
+[coding kata](http://vinaikopp.com/2016/02/09/about_code_katas/),
+<a href="https://en.wikipedia.org/wiki/Code_golf" data-wiki-lang="en" data-wiki-title="Code golf">code golf</a>,
+legacy code,
+<a href="https://en.wikipedia.org/wiki/Code_smell" data-wiki-lang="en" data-wiki-title="Code smell">code smell</a>,
+rotting code,
+dependency reduction,
+seams,
+continuous integration,
+automated testing,
+continuous deployment,
+minimized context switch,
+<a href="https://en.wikipedia.org/wiki/DevOps" data-wiki-lang="en" data-wiki-title="DevOps">DevOps</a>,
+coding dojo,
+<a href="https://en.wikipedia.org/wiki/SOLID" data-wiki-lang="en" data-wiki-title="SOLID">SOLID priciples</a>,
+clean code,
+[definition of done](https://en.wikipedia.org/wiki/Scrum_(software_development)#Definition_of_done_(DoD)),
+milestone,
+deadline,
+mocking (dummy, stub, spy, mock, fake),
+requirement,
+<a href="https://en.wikipedia.org/wiki/Requirements_engineering" data-wiki-lang="en" data-wiki-title="Requirements engineering">requirement engineering</a>,
+centralized version control, distributed version control,
+traceability, finding, bug fixing, optimizing, feature envy,
+<a href="https://en.wikipedia.org/wiki/KISS_principle" data-wiki-lang="en" data-wiki-title="KISS principle">KISS</a>,
+<a href="https://en.wikipedia.org/wiki/Programming_complexity" data-wiki-lang="en" data-wiki-title="Programming complexity">code complexity</a>,
+<a href="https://en.wikipedia.org/wiki/Cyclomatic_complexity" data-wiki-lang="en" data-wiki-title="Cyclomatic complexity">cyclomatic complexity</a>,
+<a href="https://en.wikipedia.org/wiki/Regression_testing" data-wiki-lang="en" data-wiki-title="Regression testing">regression test</a>,
+[deployment strategies/shadow deploy](https://thenewstack.io/deployment-strategies),
+teszt stratégiák (top-down, bottom-up, sandwich, big-bang, risky-hardest),
+<a href="https://en.wikipedia.org/wiki/Daily_build" data-wiki-lang="en" data-wiki-title="Nightly build">nightly build</a>,
+<a href="https://en.wikipedia.org/wiki/Hardware-in-the-loop_simulation" data-wiki-lang="en" data-wiki-title="Hardware-in-the-loop simulation">hardware in the loop (HIL)</a>,
+[software in the loop (SIL)](http://redpine.com.tr/software-in-the-loop-sil.html),
+<a href="https://en.wikipedia.org/wiki/SMART_criteria" data-wiki-lang="en" data-wiki-title="SMART criteria">SMART objectives</a>,
+<a href="https://en.wikipedia.org/wiki/Technical_debt" data-wiki-lang="en" data-wiki-title="Technical debt">technical debt</a>,
+<a href="https://en.wikipedia.org/wiki/Cost_estimation_in_software_engineering" data-wiki-lang="en" data-wiki-title="Effort estimation">effort estimation</a>
 
-## Egyéb
 
-Ezen anyagok nem képezik részét a ZH-n számon kért ismereteknek, ám úgy gondolom, hogy érdemes elolvasni és elgondolkodni rajtuk mindenkinek, aki a szoftverfejlesztést komolyabban gondolja puszta kreditszerzésnél.
-
-- Behavior Driven Development
-    - Ez a TDD kiterjesztése, lényege, hogy a megrendelővel (és nem is annyira egy menedzserrel, hanem sokkal inkább egy domain szakértőjével) való egyeztetés folyamán, egy strukturált, ám természetes nyelvi szöveggel leírt „szabályok” formájában kerül leírásra az elvárt működés. Ezek alapján aztán a fejlesztő _több tesztet is ír_ (szemben a TDD-vel, ahogy egyszerre szigorúan egyet), majd a tesztek összességének megfelelő kódot ír
-    - [TDD vs. BDD](https://www.toptal.com/freelance/your-boss-won-t-appreciate-tdd-try-bdd)
-    - [Wikipédia BDD cikke](https://en.wikipedia.org/wiki/Behavior-driven_development)
-    - [Agile alliance összefoglalója a BDD-ről](https://www.agilealliance.org/glossary/bdd/)
-- [Readme Driven Development](http://tom.preston-werner.com/2010/08/23/readme-driven-development.html)
-    - Különösen ajánlom elolvasni, kb. egy oldal
-- [Acceptance Test Driven Development (ATDD)](http://www.methodsandtools.com/archive/archive.php?id=72)
-- [types vs. tests](https://www.destroyallsoftware.com/talks/ideology)
-    - video ~21 min
-- [I don't need types](https://dmerej.info/blog/post/trying-mypy/)
-    - blogposzt a típusosságról
-
-## Ajánlott olvasmányok
+## Ajánlott irodalom
 
 1. The Software Craftsman: Professionalism, Pragmatism, Pride – Robert C. Martin
 2. The Clean Coder: A Code of Conduct for Professional Programmers – Robert C. Martin
@@ -83,6 +135,7 @@ Ezen anyagok nem képezik részét a ZH-n számon kért ismereteknek, ám úgy g
 4. Working Effectively with Legacy Code - Michael Feathers
 5. TDD by Example – Kent Beck
 6. XP Explained – Kent Beck
+
 
 ## Irónia
 
