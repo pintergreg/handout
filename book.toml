@@ -7,4 +7,4 @@ description = "Szoftverfejlesztés multinacionális vállalatoknál"
 
 [output.html]
 mathjax-support = true
-additional-js = ["context-cards.js"]
+additional-js = ["context-cards.js", "mermaid.min.js"]
