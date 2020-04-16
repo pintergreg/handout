@@ -24,7 +24,27 @@ Az órák csütörtökönként a BA.F.09-ban vannak, neptun szerint 08:00-10:35 
 
 ## Gantt diagram
 
-![gantt](images/gantt.png)
+
+<div class="mermaid">
+    gantt
+    dateFormat  YYYY-MM-DD
+    axisFormat  %m-%d
+    title GANTT diagram
+    section Sprint 1
+        Sprint 1 :active, sprint1, 2020-02-13, 4w
+    section COVID-19 break
+        NO LECTURES :crit, break, after sprint1, 2w
+    section Sprint 1 (continued)
+        Sprint 1 :active, sprint1_cont, after break, 1w
+    section Sprint 2
+        Sprint 2 :active, sprint2, after sprint1_cont, 3w
+    section Sprint 3
+        Sprint 3 :active, sprint3, after sprint2, 4w
+    click sprint1 href "./sprint_1.html"
+    click sprint1_cont href "./sprint_1.html"
+    click sprint2 href "./sprint_2.html"
+    click sprint3 href "./sprint_3.html"
+</div>
 
 
 # Házi feladat - 1. hét
