@@ -29,7 +29,7 @@ Az órák csütörtökönként a BA.F.09-ban vannak, neptun szerint 08:00-10:35 
     gantt
     dateFormat  YYYY-MM-DD
     axisFormat  %m-%d
-    title GANTT diagram
+    title 2019/20 tanév II.félév 
     section Sprint 1
         Sprint 1 :active, sprint1, 2020-02-13, 4w
     section COVID-19 break
