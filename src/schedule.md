@@ -8,16 +8,19 @@ Az órák csütörtökönként a BA.F.09-ban vannak, neptun szerint 08:00-10:35 
 | 2.|02.&nbsp;20.|Agile/Scrum | git, GitHub, IDEA ismertetés
 | 3.|02.&nbsp;27!.|Napi munka, verziókezelők|Branch review, status review, standup (did, will, blocking)
 | 4.|03.&nbsp;05.|Unit Testing|TDD kata
-| 5.|03.&nbsp;12.|**első demo**/retrospektív, [második feladat kiadás](sprint_2.md)|Sprint planning, Task Definition Workshop, Team commitment, Scheduling
-| 6.|03.&nbsp;19.|Legacy Code, SOLID|Refactoring gyakorlat egy előre előkészített példán
-| 7.|03.&nbsp;26.!|Review|Random code review egy tetszőleges elfogadott pull requestből
-| **8.**|**04.&nbsp;02.**|**második demo**/retrospektív, [harmadik feladat kiadás](sprint_3.md)|Sprint planning, Task Definition Workshop, Team commitment, Scheduling
-| 9.|04. 09.|_Rektori/dékáni szünet_
-|10.|04.&nbsp;16!.|Continous Integration|Set up a CI script running all implemented unit tests
-|11.|04.&nbsp;23.|Software Architecture
-|**12.**|**04.&nbsp;30.**|**harmadik demo**/retrospektív, Összefoglalás, konzultáció, tárgy feedback|Retro + Pair programming, Coding Dojo
-|**13.**|**05.&nbsp;07.**|**Zárthelyi dolgozat** 08:00-tól 09:30-ig (90 perc), 1.?? és 1.?? laborok
-|14.|05.&nbsp;14.|
+| <s>5.</s>|<s>03.&nbsp;12.</s>| Koronavírus szünet
+| <s>6.</s>|<s>03.&nbsp;19.</s>| Koronavírus szünet
+| 5.|03.&nbsp;26.| **első demo**/retrospektív, [második feladat kiadás](sprint_2.md)|Sprint planning, Task Definition Workshop, Team commitment, Scheduling
+| 6.|04.&nbsp;02.| Legacy Code, SOLID|Refactoring gyakorlat egy előre előkészített példán
+| 7.|04.&nbsp;09.| Review|Random code review egy tetszőleges elfogadott pull requestből
+| 8.|04.&nbsp;16.| Continous Integration, **második demo**/retrospektív, [harmadik feladat kiadás](sprint_3.md)|Set up a CI script running all implemented unit tests, Sprint planning, Task Definition Workshop, Team commitment, Scheduling
+| 9.|04.&nbsp;23.| Software Architecture
+|10.|04.&nbsp;30.| Konzultáció
+|11.|05.&nbsp;07.| Konzultáció
+|12.|05.&nbsp;14.| Konzultáció
+|13.|**05.&nbsp;21.**|**harmadik demo**/retrospektív, Összefoglalás, konzultáció, tárgy feedback|Retro + Pair programming, Coding Dojo
+|14.|**05.&nbsp;28.**|**Zárthelyi dolgozat** 08:00-tól 09:30-ig (90 perc), 1.?? és 1.?? laborok
+
 
 ## Gantt diagram
 
