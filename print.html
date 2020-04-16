@@ -218,7 +218,26 @@
 <tr><td align="right">14.</td><td align="center"><strong>05. 28.</strong></td><td align="center"><strong>Zárthelyi dolgozat</strong> 08:00-tól 09:30-ig (90 perc), 1.?? és 1.?? laborok</td><td align="center"></td></tr>
 </tbody></table>
 <h2><a class="header" href="#gantt-diagram" id="gantt-diagram">Gantt diagram</a></h2>
-<p><img src="images/gantt.png" alt="gantt" /></p>
+<div class="mermaid">
+    gantt
+    dateFormat  YYYY-MM-DD
+    axisFormat  %m-%d
+    title GANTT diagram
+    section Sprint 1
+        Sprint 1 :active, sprint1, 2020-02-13, 4w
+    section COVID-19 break
+        NO LECTURES :crit, break, after sprint1, 2w
+    section Sprint 1 (continued)
+        Sprint 1 :active, sprint1_cont, after break, 1w
+    section Sprint 2
+        Sprint 2 :active, sprint2, after sprint1_cont, 3w
+    section Sprint 3
+        Sprint 3 :active, sprint3, after sprint2, 4w
+    click sprint1 href "./sprint_1.html"
+    click sprint1_cont href "./sprint_1.html"
+    click sprint2 href "./sprint_2.html"
+    click sprint3 href "./sprint_3.html"
+</div>
 <h1><a class="header" href="#házi-feladat---1-hét" id="házi-feladat---1-hét">Házi feladat - 1. hét</a></h1>
 <ol>
 <li>GitHub fiók létrehozása
