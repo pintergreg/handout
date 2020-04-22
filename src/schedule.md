@@ -6,21 +6,21 @@ Az órák csütörtökönként a BA.F.09-ban vannak, neptun szerint 08:00-10:35 
 |------:|:-----------:|:-----:|:-------:|
 | 1.|02.&nbsp;13.|Bevezető, áttekintés; aSpice alapok, [első feladat kiadás](sprint_1.md)|csapatsorsolás, Sprint Planning, Task Definition Workshop, Team commitment, Scheduling
 | 2.|02.&nbsp;20.|Agile/Scrum | git, GitHub, IDEA ismertetés
-| 3.|02.&nbsp;27!.|Napi munka, verziókezelők|Branch review, status review, standup (did, will, blocking)
+| 3.|02.&nbsp;27.|Napi munka, verziókezelők|Branch review, status review, standup (did, will, blocking)
 | 4.|03.&nbsp;05.|Unit Testing|TDD kata
 | <s>5.</s>|<s>03.&nbsp;12.</s>| Koronavírus szünet
 | <s>6.</s>|<s>03.&nbsp;19.</s>| Koronavírus szünet
-| 5.|03.&nbsp;26.| **első demo**/retrospektív, [második feladat kiadás](sprint_2.md)|Sprint planning, Task Definition Workshop, Team commitment, Scheduling
-| 6.|04.&nbsp;02.| Legacy Code, SOLID|Refactoring gyakorlat egy előre előkészített példán
-| 7.|04.&nbsp;09.| Review|Random code review egy tetszőleges elfogadott pull requestből
-| 8.|04.&nbsp;16.| Continous Integration, **második demo**/retrospektív, [harmadik feladat kiadás](sprint_3.md)|Set up a CI script running all implemented unit tests, Sprint planning, Task Definition Workshop, Team commitment, Scheduling
-| 9.|04.&nbsp;23.| Software Architecture
-|10.|04.&nbsp;30.| Konzultáció
-|11.|05.&nbsp;07.| Konzultáció
-|12.|05.&nbsp;14.| Konzultáció
-|13.|**05.&nbsp;21.**|**harmadik demo**/retrospektív, Összefoglalás, konzultáció, tárgy feedback|Retro + Pair programming, Coding Dojo
-|14.|**05.&nbsp;28.**|**Zárthelyi dolgozat** 08:00-tól 09:30-ig (90 perc), 1.?? és 1.?? laborok
+| 6.|03.&nbsp;26.| **első demo**/retrospektív, [második feladat kiadás](sprint_2.md)|Sprint planning, Task Definition Workshop, Team commitment, Scheduling
+| 7.|04.&nbsp;02.| Legacy Code, SOLID|Refactoring gyakorlat egy előre előkészített példán
+| 8.|04.&nbsp;09.| Review|Random code review egy tetszőleges elfogadott pull requestből
+| 9.|04.&nbsp;16.| Continous Integration, **második demo**/retrospektív, [harmadik feladat kiadás](sprint_3.md)|Set up a CI script running all implemented unit tests, Sprint planning, Task Definition Workshop, Team commitment, Scheduling
+|10.|04.&nbsp;23.| Software Architecture
+|11.|04.&nbsp;30.| Konzultáció
+|12.|05.&nbsp;07.| Konzultáció
+|13.|**05.&nbsp;14.**|**harmadik demo**/retrospektív, Összefoglalás, konzultáció, tárgy feedback|Retro + Pair programming, Coding Dojo
+|14.|**05.&nbsp;21.**|**Zárthelyi dolgozat** 08:00-tól 09:30-ig (90 perc), 1.?? és 1.?? laborok
 
+[Rektori utasítás a félév zárásáról](http://uni-obuda.hu/files/private/order/24468/3-2020-3_2020_rektori-utasitas-20200422.pdf)
 
 ## Gantt diagram
 
@@ -29,7 +29,7 @@ Az órák csütörtökönként a BA.F.09-ban vannak, neptun szerint 08:00-10:35 
     gantt
     dateFormat  YYYY-MM-DD
     axisFormat  %m-%d
-    title 2019/20 tanév II.félév 
+    title 2019/20 tanév II.félév
     section Sprint 1
         Sprint 1 :active, sprint1, 2020-02-13, 4w
     section COVID-19 break
@@ -39,7 +39,7 @@ Az órák csütörtökönként a BA.F.09-ban vannak, neptun szerint 08:00-10:35 
     section Sprint 2
         Sprint 2 :active, sprint2, after sprint1_cont, 3w
     section Sprint 3
-        Sprint 3 :active, sprint3, after sprint2, 4w
+        Sprint 3 :active, sprint3, after sprint2, 3w
     click sprint1 href "./sprint_1.html"
     click sprint1_cont href "./sprint_1.html"
     click sprint2 href "./sprint_2.html"
