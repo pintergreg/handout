@@ -14,9 +14,11 @@ Ennek alapja a verziókövetés, a fejlesztő pusholja a módosításait a szerv
 
 Az automatizálás csökkenti az interruptokat, a költségeket és azonnali visszajelzést ad!
 
-<!--## Automating roles
+## Automation
 
-how does it work
+- [Automating Software Development Processes](https://www.developerdotstar.com/mag/articles/automate_software_process.html)
+
+<!--how does it work
 
 version control
 build automation
