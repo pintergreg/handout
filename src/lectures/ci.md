@@ -40,6 +40,12 @@ Az egész CI/CD lelke egy adag script, amelyben le vannak írva az automatizált
     - triggerelt: valamilyen esemény hatására fusson le. Pl. egy commit-ra, így minden pusholt commit-ra lefuthatnak a különböző szintű tesztek, statikus kódellenőrzés, stb.
 
 
+## Software Testing
+
+- [What is Software Testing? Introduction, Definition, Basics & Types ](https://www.guru99.com/software-testing-introduction-importance.html)
+  - Végig lehet lépkedni az egyes fejezeteken, igen jól kimeríti a témát, olyan fejezetei is vannak, amire az előadás nem tért ki.
+  - Több fejezetére specifikusan másutt is hivatkozok
+
 ## Test Strategies
 
 ![](https://artoftesters.files.wordpress.com/2014/02/gbt11.jpg)
@@ -89,6 +95,9 @@ forrás: [autonóm autofejlesztés tesztelése](https://www.intellias.com/three-
 # Continuous Deployment
 
 - [Six Strategies for Application Deployment](https://thenewstack.io/deployment-strategies/)
+- [Feature Flag Driven Development](https://featureflags.io/2015/11/03/feature-flag-driven-development-by-justin-launchdarkly/)
+  - > This article provides a broad and comprehensive overview of feature flag driven development, from gradual rollouts to A/B testing.
+
 
 # DevOps
 
