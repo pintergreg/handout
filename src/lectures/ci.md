@@ -1,6 +1,7 @@
 # Continuous Integration
 
 - [What is Continuous Integration](https://www.atlassian.com/continuous-delivery/continuous-integration)
+- [Continuous Integration](https://martinfowler.com/articles/continuousIntegration.html)
 
 ![](https://pepgotesting.com/wp-content/uploads/2015/02/CI.png)
 
