@@ -162,6 +162,7 @@ Az „[A successful Git branching model](http://nvie.com/posts/a-successful-git-
 * [Using the Fork-and-Branch Git Workflow](https://blog.scottlowe.org/2015/01/27/using-fork-branch-git-workflow/)
 * [Stackoverflow / Forking vs. Branching in GitHub](https://stackoverflow.com/a/34343080/4737417)
 * [A succesful Git branching model considered harmful](https://barro.github.io/2016/02/a-succesful-git-branching-model-considered-harmful/)
+* [Escape from Merge Hell: Why I Prefer Trunk-Based Development Over Feature Branching and GitFlow](https://stxnext.com/blog/2018/02/28/escape-merge-hell-why-i-prefer-trunk-based-development-over-feature-branching-and-gitflow/)
 
 
 ### Commit üzenetek
