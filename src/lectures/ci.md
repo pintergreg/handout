@@ -99,6 +99,9 @@ forrás: [autonóm autofejlesztés tesztelése](https://www.intellias.com/three-
 - [Feature Flag Driven Development](https://featureflags.io/2015/11/03/feature-flag-driven-development-by-justin-launchdarkly/)
   - > This article provides a broad and comprehensive overview of feature flag driven development, from gradual rollouts to A/B testing.
 
+# Continuous Delivery
+
+- [Continuous delivery VS traditional release model](https://www.linkedin.com/pulse/continuous-delivery-vs-traditional-release-model-szczepan-faber)
 
 # DevOps
 
