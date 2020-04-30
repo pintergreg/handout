@@ -197,12 +197,6 @@ A [When to make a Git Commit](https://dev.to/gonedark/when-to-make-a-git-commit)
 
 ## Review
 
-- [What is Code Review?](https://smartbear.com/learn/code-review/what-is-code-review/)
-- [Best Practices for Code Review](https://smartbear.com/learn/code-review/best-practices-for-peer-code-review/)
-- [Code Review Guidelines for Humans](https://phauer.com/2018/code-review-guidelines/)
-- [Code Review Checklist – To Perform Effective Code Reviews ](https://www.evoketechnologies.com/blog/code-review-checklist-perform-effective-code-reviews/)
-- [What are the types of review?](http://tryqa.com/what-are-the-types-of-review/)
-    - Nem említi az informálist
 - [Review fejezet](./review.md)
 
 ### A tárgy során
