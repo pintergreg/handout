@@ -1,6 +1,16 @@
 # Felkészülést segítő anyagaok
 
 
+## Ajánlott irodalom
+
+1. The Software Craftsman: Professionalism, Pragmatism, Pride – Robert C. Martin
+2. The Clean Coder: A Code of Conduct for Professional Programmers – Robert C. Martin
+3. Clean Code: A Handbook of Agile Software Craftsmanship – Robert C. Martin
+4. Working Effectively with Legacy Code - Michael Feathers
+5. TDD by Example – Kent Beck
+6. XP Explained – Kent Beck
+
+
 ## Online anyagok fejezetenként
 
 - [Agile, SCRUM, Kanban](./lectures/agile_scrum_kanban.md)
@@ -96,16 +106,6 @@ teszt stratégiák (top-down, bottom-up, sandwich, big-bang, risky-hardest),
 <a href="https://en.wikipedia.org/wiki/SMART_criteria" data-wiki-lang="en" data-wiki-title="SMART criteria">SMART objectives</a>,
 <a href="https://en.wikipedia.org/wiki/Technical_debt" data-wiki-lang="en" data-wiki-title="Technical debt">technical debt</a>,
 <a href="https://en.wikipedia.org/wiki/Cost_estimation_in_software_engineering" data-wiki-lang="en" data-wiki-title="Effort estimation">effort estimation</a>
-
-
-## Ajánlott irodalom
-
-1. The Software Craftsman: Professionalism, Pragmatism, Pride – Robert C. Martin
-2. The Clean Coder: A Code of Conduct for Professional Programmers – Robert C. Martin
-3. Clean Code: A Handbook of Agile Software Craftsmanship – Robert C. Martin
-4. Working Effectively with Legacy Code - Michael Feathers
-5. TDD by Example – Kent Beck
-6. XP Explained – Kent Beck
 
 
 ## Irónia
