@@ -13,6 +13,7 @@ De még midnig jobb ha pl. sprinten belül egy automatizált integrációs teszt
 ![](https://miro.medium.com/max/988/0*rxhD9QmJ6dBghRj1.)
 
 - [What is Test Driven Development?](https://www.guru99.com/test-driven-development.html)
+- [Introduction to Test Driven Development (TDD)](http://agiledata.org/essays/tdd.html)
 - [TDD](https://www.agilealliance.org/glossary/tdd)
 - [TDD Laws](http://butunclebob.com/ArticleS.UncleBob.TheThreeRulesOfTdd)
     - Az eredeti egy refaktorált verziója [innen](http://www.javiersaldana.com/articles/tech/refactoring-the-three-laws-of-tdd):
