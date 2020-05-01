@@ -9,6 +9,7 @@
     - [Legacy Code, SOLID](./lectures/legacy_code.md)
     - [Review](./lectures/review.md)
     - [Continuous Integration](./lectures/ci.md)
+    - [Irónia](./irony.md)
     <!--- [Software Architecture](./lectures/software_architecture.md)-->
 - [git](./git.md)
 - [GitHub](./github.md)
