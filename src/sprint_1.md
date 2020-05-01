@@ -34,6 +34,7 @@
 * A szűréshez használt háromszög esetében a poligonokat kell figyelembe venni, pl. fa törzse, tábla rúdja, de nem csak az „ütközhető” objektumokat kell tudni visszaadni, hanem az útelemeket is. A 2. sprintben a szenzorok majd válogatnak, hogy mire van szükségük ezekből.
     * ![](https://raw.githubusercontent.com/szfmv2019-osz/handout/master/src/images/model_interface.png)
 * A poligonok definiálásához célszerű a [java.awt.geom](https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/java/awt/geom/package-summary.html) névteret használni. Ezek `intersects` könnyedén eldönthető, hogy egy objektum a szenzor látóterében van-e (amennyiben a szenzor is egy ilyen poligon).
+* A poligonok megrajzolásához használható a [VGG Image Annotator](https://www.robots.ox.ac.uk/~vgg/software/via/), amely [böngészőből is működik](https://www.robots.ox.ac.uk/~vgg/software/via/via.html) és a megrajzolt polygont JSON-ben le lehet menteni.
 
 
 # Vizualizáció
