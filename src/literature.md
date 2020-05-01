@@ -1,47 +1,5 @@
 ## Online anyagok
 
-Alább néhány, az interneten az ismert kulcsszavak alapján könnyen (legalábbis közepesen nehezen) elérhető link, amiket felhasználtam pl. az előadásokra való felkészülésre, így alkalmasnak tartom őket arra, hogy segítsenek benneteket a ZH-ra készülésben. Természetesen angol nyelven. ;)
-
-- Clean code
-    - [CleanCode intro](https://web.archive.org/web/20160610035745/http://www.itiseezee.com/?p=64)
-    - [Names](https://web.archive.org/web/20160405060134/http://www.itiseezee.com/?p=83)
-    - [Functions](http://www.itiseezee.com/?p=119)
-    - [Formatting](http://www.itiseezee.com/?p=131)
-- Verziókövetés
-    - [Git könyv](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control)
-    - gyakorlati oldalról lást [Git](./git.md) fejezet
-- [Code review](https://smartbear.com/learn/code-review/what-is-code-review/)
-- [Scrum](http://www.scrumhub.com/scrum-guide/)
-    - [PDF verzió](http://www.scrumguides.org/docs/scrumguide/v1/scrum-guide-us.pdf)
-    - [Scrum Master - Funny movie about The Power of Scrum](https://www.youtube.com/watch?v=P6v-I9VvTq4)
-- [Kanban](https://www.scrumhub.com/kanban-fundamentals/)
-- [The Rules of Extreme Programming](http://www.extremeprogramming.org/rules.html)
-- [TDD Laws](http://butunclebob.com/ArticleS.UncleBob.TheThreeRulesOfTdd)
-- [TDD wikiről](https://en.wikipedia.org/wiki/Test-driven_development)
-- [Unit Testing with Junit](http://www.vogella.com/tutorials/JUnit/article.html)
-- [Test Doubles](http://www.martinfowler.com/bliki/TestDouble.html)
-    - az úriember blogján egyébként rengeteg hasonló hosszúságú, elég releváns bejegyzés van
-- [The Transformation Priority Premise](https://8thlight.com/blog/uncle-bob/2013/05/27/TheTransformationPriorityPremise.html)
-- [Advanced TDD: The Transformation Priority Premise](https://vimeo.com/97516288)
-    - videó
-- Refactoring
-    - [Refactoring by Martin Fowler](https://martinfowler.com/books/refactoring.html)
-    - [Refactoring methods](https://web.archive.org/web/20170606150219/http://www.integralist.co.uk/posts/refactoring-techniques.html)
-    - [Refactoring methods](https://refactoring.com/catalog/)
-    - [Refactoring Java Code](http://www.methodsandtools.com/archive/archive.php?id=4)
-    - [Refactoring vs. Rewrite](https://www.targetprocess.com/blog/2009/11/refactoring-vs-rewrite/)
-- [S.O.L.I.D.](http://www.codemag.com/article/1001061)
-    - [Core Design Principles for Software Developers by Venkat Subramaniam](https://youtu.be/llGgO74uXMI)
-        - Az egész előadás ajánlott, de a [Single Responsibility](https://www.youtube.com/watch?v=llGgO74uXMI&feature=youtu.be&t=3353) rész különösen, ez olyan 25 perc
-- Legacy Code
-    - [What are the key points of Working Effectively with Legacy Code?](http://programmers.stackexchange.com/questions/122014/what-are-the-key-points-of-working-effectively-with-legacy-code)
-    - [Working Effectively With Legacy Code](http://www.slideshare.net/nashjain/working-effectively-with-legacy-code-presentation)
-        - prezentáció
-- [Code smells](https://blog.codinghorror.com/code-smells/)
-- [Continuous Integration](https://martinfowler.com/articles/continuousIntegration.html)
-- [Integration testing](https://www.guru99.com/integration-testing.html)
-    - teszt stratégiák is benne vannak
-    - innen a többi tesztes fejezet is jó!
 
 
 ## Javasolt (fel)készülési módszer
