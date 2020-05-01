@@ -1,5 +1,15 @@
-## Online anyagok
+# Felkészülést segítő anyagaok
 
+
+## Online anyagok fejezetenként
+
+- [Agile, SCRUM, Kanban](./lectures/agile_scrum_kanban.md)
+- [Daily Work, Clean Code, Version Control](./lectures/daily_work.md)
+- [TDD, Unit Testing](./lectures/tdd.md)
+- [Legacy Code, SOLID](./lectures/legacy_code.md)
+- [Review](./lectures/review.md)
+- [Continuous Integration](./lectures/ci.md)
+- Software Architecture - WIP
 
 
 ## Javasolt (fel)készülési módszer

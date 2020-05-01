@@ -3,6 +3,13 @@
 - [Tárgyleírás](./description.md)
 - [Ütemezés](./schedule.md)
 - [Felkészülést segítő anyagok](./literature.md)
+    - [Agile, SCRUM, Kanban](./lectures/agile_scrum_kanban.md)
+    - [Daily Work, Clean Code, Version Control](./lectures/daily_work.md)
+    - [TDD, Unit Testing](./lectures/tdd.md)
+    - [Legacy Code, SOLID](./lectures/legacy_code.md)
+    - [Review](./lectures/review.md)
+    - [Continuous Integration](./lectures/ci.md)
+    <!--- [Software Architecture](./lectures/software_architecture.md)-->
 - [git](./git.md)
 - [GitHub](./github.md)
 - [Fejlesztői eszközök](./developing_tools.md)
