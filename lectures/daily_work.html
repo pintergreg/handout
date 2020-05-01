@@ -1,0 +1,499 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Daily Work, Clean Code, Version Control - Jegyzet</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="Szoftverfejlesztés multinacionális vállalatoknál">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div id="sidebar-scrollbox" class="sidebar-scrollbox">
+                <ol class="chapter"><li class="expanded "><a href="../description.html"><strong aria-hidden="true">1.</strong> Tárgyleírás</a></li><li class="expanded "><a href="../schedule.html"><strong aria-hidden="true">2.</strong> Ütemezés</a></li><li class="expanded "><a href="../literature.html"><strong aria-hidden="true">3.</strong> Felkészülést segítő anyagok</a></li><li><ol class="section"><li class="expanded "><a href="../lectures/agile_scrum_kanban.html"><strong aria-hidden="true">3.1.</strong> Agile, SCRUM, Kanban</a></li><li class="expanded "><a href="../lectures/daily_work.html" class="active"><strong aria-hidden="true">3.2.</strong> Daily Work, Clean Code, Version Control</a></li><li class="expanded "><a href="../lectures/tdd.html"><strong aria-hidden="true">3.3.</strong> TDD, Unit Testing</a></li><li class="expanded "><a href="../lectures/legacy_code.html"><strong aria-hidden="true">3.4.</strong> Legacy Code, SOLID</a></li><li class="expanded "><a href="../lectures/review.html"><strong aria-hidden="true">3.5.</strong> Review</a></li><li class="expanded "><a href="../lectures/ci.html"><strong aria-hidden="true">3.6.</strong> Continuous Integration</a></li><li class="expanded "><a href="../irony.html"><strong aria-hidden="true">3.7.</strong> Irónia</a></li></ol></li><li class="expanded "><a href="../git.html"><strong aria-hidden="true">4.</strong> git</a></li><li class="expanded "><a href="../github.html"><strong aria-hidden="true">5.</strong> GitHub</a></li><li class="expanded "><a href="../developing_tools.html"><strong aria-hidden="true">6.</strong> Fejlesztői eszközök</a></li><li><ol class="section"><li class="expanded "><a href="../code_formatting.html"><strong aria-hidden="true">6.1.</strong> Kódformázás</a></li><li class="expanded "><a href="../test_coverage.html"><strong aria-hidden="true">6.2.</strong> Tesztlefedettség</a></li><li class="expanded "><a href="../logging.html"><strong aria-hidden="true">6.3.</strong> Logolás</a></li><li class="expanded "><a href="../config.html"><strong aria-hidden="true">6.4.</strong> Külső konfigurálási lehetőség</a></li></ol></li><li class="expanded "><a href="../workflow.html"><strong aria-hidden="true">7.</strong> Munkafolyamat</a></li><li class="expanded "><a href="../sprints.html"><strong aria-hidden="true">8.</strong> Feladatok</a></li><li><ol class="section"><li class="expanded "><a href="../sprint_1.html"><strong aria-hidden="true">8.1.</strong> Sprint 1</a></li><li class="expanded "><a href="../sprint_2.html"><strong aria-hidden="true">8.2.</strong> Sprint 2</a></li><li class="expanded "><a href="../sprint_3.html"><strong aria-hidden="true">8.3.</strong> Sprint 3</a></li></ol></li><li class="expanded "><a href="../virtual_world.html"><strong aria-hidden="true">9.</strong> Virtuális világ</a></li><li class="expanded "><a href="../physics.html"><strong aria-hidden="true">10.</strong> Fizika</a></li><li class="expanded "><a href="../sensors.html"><strong aria-hidden="true">11.</strong> Szenzorok</a></li><li class="expanded "><a href="../functions.html"><strong aria-hidden="true">12.</strong> Vezetéstámogató funkciók</a></li><li class="expanded "><a href="../reference_architecture.html"><strong aria-hidden="true">13.</strong> Referencia architektúra</a></li><li class="expanded "><a href="../implementation.html"><strong aria-hidden="true">14.</strong> Implementáció</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Jegyzet</h1>
+
+                        <div class="right-buttons">
+                            <a href="../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#daily-work" id="daily-work">Daily Work</a></h1>
+<h2><a class="header" href="#communication" id="communication">Communication</a></h2>
+<ul>
+<li>A Remote communication strategies kifejezetten hasznos a <a href="https://learn.gitlab.com/all-remote/remote-playbook">GitLab távmunka kézikönyvéből</a>
+<ul>
+<li>18-26. oldal</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>I am only responsible for what I said, not for what you understood</p>
+</blockquote>
+<p>Igaz ez? Miért nem?</p>
+<p>Számítsd bele, hogy a másik nem ugyanazzokkal az előismeretekkel rendelkezik, nem ugyanazzal a fogalomkészlettel, terminológiával, esetleg anyanyalvvel.</p>
+<ul>
+<li><a href="https://www.lullabot.com/articles/effective-communication-part-1-greasing-the-wheels">A Software Developer’s Guide to Project Communication: Part 1</a>
+<ul>
+<li>a 2. rész is ajánlott</li>
+</ul>
+</li>
+<li><a href="http://www.agilemodeling.com/essays/communication.htm">Communication on Agile Software Teams</a></li>
+</ul>
+<h2><a class="header" href="#requirement-engineering" id="requirement-engineering">Requirement Engineering</a></h2>
+<ul>
+<li><a href="https://www.inflectra.com/Ideas/Whitepaper/Principles-of-Requirements-Engineering.aspx">Principles of Requirements Engineering</a></li>
+<li>Egy több részes cikk sorozat a Requirements Engineering-ről:
+<ul>
+<li><a href="https://medium.com/omarelgabrys-blog/requirements-engineering-introduction-part-1-6d49001526d3">Introduction (Part 1)</a></li>
+<li><a href="https://medium.com/omarelgabrys-blog/requirements-engineering-elicitation-analysis-part-2-a02db801f135">Elicitation &amp; Analysis (Part 2)</a></li>
+<li><a href="https://medium.com/omarelgabrys-blog/requirements-engineering-elicitation-analysis-part-5-2dd9cffafae8">Requirements Specification (Part 3)</a></li>
+<li><a href="https://medium.com/omarelgabrys-blog/requirements-engineering-requirements-validation-part-6-29778d7bde24">Requirements Validation (Part 4)</a></li>
+</ul>
+</li>
+<li><a href="https://enfocussolutions.com/requirements-engineering-vs-business-analysis/">Requirements Engineering vs. Business Analysis</a></li>
+</ul>
+<hr />
+<ul>
+<li><a href="http://agileforall.com/wp-content/uploads/2018/02/Story-Splitting-Flowchart.pdf">HOW TO SPLIT A USER STORY</a>
+<ul>
+<li>PDF, 1 oldal, flowchart</li>
+</ul>
+</li>
+</ul>
+<h2><a class="header" href="#coding" id="coding">Coding</a></h2>
+<p><img src="https://miro.medium.com/max/978/1*jFw7ZZMoVcsEYM_fS33DBA.gif" alt="" /></p>
+<p>A TDD-ről részletesen a <a href="tdd.html">TDD fejezetben</a>.</p>
+<h3><a class="header" href="#cserkész-szabály" id="cserkész-szabály">Cserkész szabály</a></h3>
+<blockquote>
+<p>Always leave the campground cleaner than you found it</p>
+<p>-- Robert C. Martin (Uncle Bob)</p>
+</blockquote>
+<ul>
+<li><a href="https://codeburst.io/leave-the-code-cleaner-than-the-way-you-have-found-it-58c8e4ab3e83">Leave the code cleaner than the way you have found it!</a></li>
+</ul>
+<h2><a class="header" href="#clean-code" id="clean-code">Clean Code</a></h2>
+<blockquote>
+<p>Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live. Code for readability. <a href="https://groups.google.com/forum/#!msg/comp.lang.c++/rYCO5yn4lXw/oITtSkZOtoUJ">source</a></p>
+</blockquote>
+<p>A viccet félretéve az egész lényege az érthetőség és a karbantarthatóság. Két hét múlva is meg kell értened a saját kódod és nem csak neked.</p>
+<!--Elég vázlatos [összefoglalása](https://github.com/lastRoot/notes/wiki/Clean-Code-Rules-in-Java)-->
+<h3><a class="header" href="#meaningful-names" id="meaningful-names">Meaningful Names</a></h3>
+<p>Az alábbiak Robert C. Martin Clean Code című könyvénből a 2. fejezet (Meaningful Names) alfejezet címei, az idézetek is onnan valók.</p>
+<ul>
+<li>Use Intention-Revealing Names
+<ul>
+<li>
+<blockquote>
+<p><code>int d; // elapsed time in days</code></p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p><code>int elapsedTimeInDays;</code></p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>Avoid Disinformation</li>
+<li>Make Meaningful Distinctions
+<ul>
+<li>
+<blockquote>
+<p>It is not sufficient to add number series or noise words, even though the compiler is satisfied. If names must be different, then they should also mean something different.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>Use Pronounceable Names
+<ul>
+<li>
+<blockquote>
+<p>If you can’t pronounce it, you can’t discuss it without sounding like an idiot. “Well, over here on the bee cee arr three cee enn tee we have a pee ess zee kyew int, see?”</p>
+</blockquote>
+</li>
+<li>Külön szempont ez nem angol anyanelyvűeknél, némely szavakat bonyolultabb kiejtenünk</li>
+</ul>
+</li>
+<li>Use Searchable Names
+<ul>
+<li>
+<blockquote>
+<p>Single-letter names can ONLY be used as local variables inside short methods. <em>The length of a name should correspond to the size of its scope.</em></p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>Avoid Mental Mapping
+<ul>
+<li>
+<blockquote>
+<p>Readers shouldn’t have to mentally translate your names into other names they already know.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>clarity is king</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>Avoid Encodings
+<ul>
+<li>a modern IDE-k esetében már teljesen fölösleges típus vagy szerepjelöléseket tenni a nevekbe</li>
+</ul>
+</li>
+<li>Pick One Word per Concept</li>
+<li>Don’t Pun or use humor</li>
+<li>Add Meaningful Context
+<ul>
+<li>
+<blockquote>
+<p>Imagine that you have variables named firstName, lastName, street, houseNumber, city, state, and zipcode. Taken together it’s pretty clear that they form an address. But what if you just saw the state variable being used alone in a method?</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<hr />
+<p>Nincs megjelölve forrás, de <a href="http://bensmith.io/20-tips-for-better-naming">ez az összefogleló</a> is ezen a fejezeten alapszik.</p>
+<h3><a class="header" href="#functions" id="functions">Functions</a></h3>
+<p>Az alábbiak Robert C. Martin Clean Code című könyvénből a 3. fejezetén alapulnak.</p>
+<ul>
+<li>A hossza legyen a lehető legrövidebb (akár 2-4 sor, bár személy szerint azt néha túlzásnak tartom)</li>
+<li>Do One Thing</li>
+<li>Use Descriptive Names
+<ul>
+<li>egy metódus valamit <em>csinál</em>, tehát kezdődjön igével, pl. <code>increaseSpeed</code></li>
+<li>a nevéből legyen egyértelmű, hogy mit csinál</li>
+<li>
+<blockquote>
+<p>Robert C. Martin <a href="https://www.informit.com/articles/article.aspx?p=1323426">The Inverse Scope Law of Function Names</a>: The longer the scope of a function, the shorter its name should be. Functions that are called locally from a few nearby places should have long descriptive names, and the longest function names should be given to those functions that are called from just one place.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>Function Arguments
+<ul>
+<li>Lehetőleg ne használj 3-nál több paramétert</li>
+<li>
+<blockquote>
+<p>Flag arguments are ugly [...] loudly proclaiming that this function does more than one thing.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>Have No Side Effects
+<ul>
+<li>
+<blockquote>
+<p><a href="https://en.wikipedia.org/wiki/Side_effect_(computer_science)">Wikipédiából</a>: an operation, function or expression is said to have a side effect if it modifies some state variable value(s) outside its local environment, that is to say has an observable effect besides returning a value (the main effect) to the invoker of the operation.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Side effects are lies. Your function promises to do one thing, but it also does other hidden things.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>Prefer Exceptions to Returning Error Codes
+<ul>
+<li>a korábbiakból már adódik, hogy miért jobb egy FileNotFoundException mint egy ERRCODE_26375</li>
+</ul>
+</li>
+</ul>
+<h3><a class="header" href="#comments" id="comments">Comments</a></h3>
+<blockquote>
+<p>One of the more common motivations for writing comments is bad code. We write a module and we know it is confusing and disorganized. We know it’s a mess. So we say to ourselves, “Ooh, I’d better comment that!” No! You’d better clean it!</p>
+<p>-- Robert C. Martin: Clean Code, pp 55.</p>
+</blockquote>
+<ul>
+<li>Gyakori a kód strukturálása kommentekkel, ilyenkor célszerű függvényeket használni inkább</li>
+<li>Kerülendő a TODO és a FIXME a kommentekben, ez azt jelenti, hogy nem vagy készen</li>
+<li>Kommentezni ajánlott viszont -szerintem- a domain specifikus részeket, amelyek megértését nem feltétlenül lehet elvárni egy fejlesztőtől. Pl. egy fizikai számítás.</li>
+<li>Továbbá nem haszontalan a dokumentációs kommentezés pl. Javadoc, kivéve ha egy <code>increaseSpeed</code> metódus kommentje annyi, hogy <em>&quot;this method increases the speed&quot;</em>, sokkal többet mondana az, hogy mennyivel, milyen korlátok között stb. amelyek révén aztán hasznos lesz a generált API dokumentáció anélkül, hogy a kódba kellene nézni.</li>
+</ul>
+<!--
+- https://www.freecodecamp.org/news/code-comments-the-good-the-bad-and-the-ugly-be9cc65fbf83/
+- [When Good Comments Go Bad](https://blog.codinghorror.com/when-good-comments-go-bad/)
+-->
+<hr />
+<img src="http://cdn.ttgtmedia.com/ITKE/uploads/blogs.dir/8/files/2008/07/goodcomments.jpg" width="320px" />
+<hr />
+<p><img src="https://miro.medium.com/max/1400/0*g6BXiTlE5fsgAFyI.png" alt="" /></p>
+<h2><a class="header" href="#verziókezelők" id="verziókezelők">Verziókezelők</a></h2>
+<p><img src="http://smutch.github.io/VersionControlTutorial/_images/vc-xkcd.jpg" alt="" /></p>
+<ul>
+<li><a href="https://tortoisesvn.net/docs/nightly/TortoiseSVN_en/tsvn-basics-versioning.html">Ez az írás</a> összefoglalja a verziókezelési modelleket (Lock-Modify-Unlock, Copy-Modify-Merge), <a href="https://homes.cs.washington.edu/%7Emernst/advice/version-control.html">emez pedig</a> összehasonlítja a centralizált és az elolszott verziókezelőket.</li>
+<li><a href="https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control">About Version Control</a>
+<ul>
+<li>a Git könyv első fejezete, rövid összefoglaló</li>
+</ul>
+</li>
+<li>gyakorlati oldalról lást <a href="./git.html">Git</a> fejezet</li>
+</ul>
+<h3><a class="header" href="#centralizált-verziókezelő" id="centralizált-verziókezelő">Centralizált verziókezelő</a></h3>
+<p><img src="https://homes.cs.washington.edu/%7Emernst/advice/version-control-fig2.png" alt="centralized_version_control" /></p>
+<h3><a class="header" href="#elosztott-verziókezelő" id="elosztott-verziókezelő">Elosztott verziókezelő</a></h3>
+<p><img src="https://homes.cs.washington.edu/%7Emernst/advice/version-control-fig3.png" alt="distributed_version_control" /></p>
+<h3><a class="header" href="#branching" id="branching">Branching</a></h3>
+<ul>
+<li><a href="https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging">Git Branching - Basic Branching and Merging</a></li>
+<li><a href="../git.html#interakt%C3%ADv-online-oktat%C3%B3-anyagok">Gyakorlati oktatóanyagok</a></li>
+</ul>
+<p>Az „<a href="http://nvie.com/posts/a-successful-git-branching-model/">A successful Git branching model</a>” című posztban lehet olvasni egy szélesebb körben kedvelt modellről. A félév során használt többé-kevésbé ehhez hasonló.</p>
+<p><img src="https://www.rittmanmead.com/blog/content/images/2017/01/gitflow.png" alt="" /></p>
+<h4><a class="header" href="#egyéb-érdekes-írások-a-témában" id="egyéb-érdekes-írások-a-témában">Egyéb érdekes írások a témában</a></h4>
+<ul>
+<li><a href="https://www.gitprime.com/the-definitive-guide-to-forks-and-branches-in-git/">A <em>fork</em> és a <em>branch</em> közötti különbségekről</a></li>
+<li><a href="https://gist.github.com/jbenet/ee6c9ac48068889b0912">a simple git branching model</a></li>
+<li><a href="https://www.atlassian.com/git/tutorials/comparing-workflows">Comparing Workflows</a></li>
+<li><a href="https://www.atlassian.com/blog/git/git-branching-and-forking-in-the-enterprise-why-fork">Git branching and forking in the enterprise: why fork?</a></li>
+<li><a href="https://blog.scottlowe.org/2015/01/27/using-fork-branch-git-workflow/">Using the Fork-and-Branch Git Workflow</a></li>
+<li><a href="https://stackoverflow.com/a/34343080/4737417">Stackoverflow / Forking vs. Branching in GitHub</a></li>
+<li><a href="https://barro.github.io/2016/02/a-succesful-git-branching-model-considered-harmful/">A succesful Git branching model considered harmful</a></li>
+<li><a href="https://stxnext.com/blog/2018/02/28/escape-merge-hell-why-i-prefer-trunk-based-development-over-feature-branching-and-gitflow/">Escape from Merge Hell: Why I Prefer Trunk-Based Development Over Feature Branching and GitFlow</a></li>
+</ul>
+<h3><a class="header" href="#commit-üzenetek" id="commit-üzenetek">Commit üzenetek</a></h3>
+<p><img src="https://www.explainxkcd.com/wiki/images/d/de/git_commit.png" alt="xkcd 1296" /></p>
+<p>A <a href="https://chris.beams.io/posts/git-commit/">How to Write a Git Commit Message</a> egy hosszabb, példákkal illusztrált írás a jó commit üzenetekről, amely <a href="https://chris.beams.io/posts/git-commit/#seven-rules">hét szabályban</a> foglalja össze, hogy mire kell figyelni. Ezt egészíteném ki egy nyolcadikkal.</p>
+<ol>
+<li><a href="https://chris.beams.io/posts/git-commit/#separate">Separate subject from body with a blank line</a></li>
+<li><a href="https://chris.beams.io/posts/git-commit/#limit-50">Limit the subject line to 50 characters</a></li>
+<li><a href="https://chris.beams.io/posts/git-commit/#capitalize">Capitalize the subject line</a></li>
+<li><a href="https://chris.beams.io/posts/git-commit/#end">Do not end the subject line with a period</a></li>
+<li><a href="https://chris.beams.io/posts/git-commit/#imperative">Use the imperative mood in the subject line</a></li>
+<li><a href="https://chris.beams.io/posts/git-commit/#wrap-72">Wrap the body at 72 characters</a></li>
+<li><a href="https://chris.beams.io/posts/git-commit/#why-not-how">Use the body to explain what and why vs. how</a></li>
+<li>Reference the issue</li>
+</ol>
+<h4><a class="header" href="#további-iskolák" id="további-iskolák">További „iskolák”</a></h4>
+<ul>
+<li><a href="https://github.com/angular/angular/blob/master/CONTRIBUTING.md">AngularJS Git Commit Message Conventions</a>
+<ul>
+<li>a commit üzenet fejlécét a <code>&lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;</code>  szabály szerint követeli meg, ahol <a href="https://github.com/angular/angular/blob/master/CONTRIBUTING.md#type">típus</a> lehet build, ci, docs, feat, fix, perf, refactor, style és test</li>
+<li>nálunk nincs erre beállított tool</li>
+</ul>
+</li>
+<li>Egy másik a <a href="http://conventionalcommits.org/">Conventional Commits</a></li>
+</ul>
+<h3><a class="header" href="#mikor-commit-oljunk" id="mikor-commit-oljunk">Mikor commit-oljunk?</a></h3>
+<p>A <a href="https://dev.to/gonedark/when-to-make-a-git-commit">When to make a Git Commit</a> poszthoz tartozó kommenteket is érdemes átfutni...</p>
+<ol>
+<li>I complete a unit of work.</li>
+<li>I have changes I may want to undo.</li>
+</ol>
+<h2><a class="header" href="#review" id="review">Review</a></h2>
+<ul>
+<li><a href="./review.html">Review fejezet</a></li>
+</ul>
+<h3><a class="header" href="#a-tárgy-során" id="a-tárgy-során">A tárgy során</a></h3>
+<p><img src="../images/proc3.png" alt="review process" /></p>
+<!--## Java kódformázás-->
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../lectures/agile_scrum_kanban.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../lectures/tdd.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../lectures/agile_scrum_kanban.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="../lectures/tdd.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+        <script type="text/javascript" src="../context-cards.js"></script>
+        
+        <script type="text/javascript" src="../mermaid.min.js"></script>
+        
+
+        
+
+    </body>
+</html>
