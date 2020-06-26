@@ -1,5 +1,6 @@
 # Daily Work
 
+
 ## Communication
 
 - A Remote communication strategies kifejezetten hasznos a [GitLab távmunka kézikönyvéből](https://learn.gitlab.com/all-remote/remote-playbook)
@@ -177,22 +178,69 @@ A [How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/) 
 4. [Do not end the subject line with a period](https://chris.beams.io/posts/git-commit/#end)
 5. [Use the imperative mood in the subject line](https://chris.beams.io/posts/git-commit/#imperative)
 6. [Wrap the body at 72 characters](https://chris.beams.io/posts/git-commit/#wrap-72)
+    - ez talán a legkevésbé fontos
 7. [Use the body to explain what and why vs. how](https://chris.beams.io/posts/git-commit/#why-not-how)
-8. Reference the issue
+8. **Reference the issue!**
+
+
+#### Miért fontos a 8. pont?
+
+Valójában (bizonyos szempontból) az issue behivatkozása a legfontosabb, méghozzá a **visszakövethetőség** (traceability) miatt.
+
+![](../images/traceability_via_commit.png)
+
+Minden módosítás (a verziókövető rendszerben) rendelkezik egy azonosítóval, amelyhez társul, hogy ki és mikor végezte el a módosítást. Valamit egy üzenet, amely -- jó esetben -- leírja, hogy mi volt ez a módosítás. A visszakövethetőség egy adott szintig tehát szerves része a verziókövető rendszereknek.
+
+A módosítások azonban nem csak úgy ötletszerűen történnek, hanem valamilyen feladat által meghatározott célból. Pl. jelenítsd meg a műszerfalon az autó pillanatnyi sebességét (feature), vagy javítsd ki pixel/s -> km/h átváltást, mert kerekítési hiba miatt értelmetlen éték jelenik meg (bugfix).
+
+Ugyanakkor a feladatok (task) sem csak úgy lógnak a levegőben, jellemzően kapcsolódnak egy user story-hoz (különösen a feature-ök), de biztosan kapcsolódnak egy sprinthez (hiszen beütemezték a megoldását valamikorra), van felelősük, határidejük, stb. Úgy általában van véve egy kontextusuk. Az issue (más néven task) tartalmazza az adott feladat pontos részleteit, az issue/task trackerben akár a megoldás teljes vitafolyamata megtalálható. Pl. ki hogyan akarta implementálni, milyen érvek és ellenérvek merültek fel az egyes implementációs lehetőségek mellett/ellen, hogyan jutott a fejlesztőcsapat konszenzusra, vagy ki hagyta jóvá az adott módosítást, ki döntött arról, hogy melyik sprintbe kerüljön be, stb.
+
+A visszakövetkezőség nem csak addig a pontig érdekes és fontos, hogy ki írta át a változó típusát (pl.), hanem a teljes terveszési/döntés folyamatig visszamenőleg.
+
+Mi van akkor ha a döntés egy face-to-face meetingen (pl. standup), skype konferenciahíváson vagy egyéb nem írásos formában történt?
+(A szó elszáll, írás megmarad...)
+
+Ebben az esetben, az issue kiváló hely arra, hogy írásban is rögzítve legyenek az elhangzottak. Pl. YYYY-MM-DD-ei megbeszélés alapján az XY library segítségével fogom implementálni az analóg fordulatszámkijelzőt. Akár explicit írásos jóváhagyást is lehet kérni...
+
 
 #### További „iskolák”
 
-- [AngularJS Git Commit Message Conventions](https://github.com/angular/angular/blob/master/CONTRIBUTING.md)
-    - a commit üzenet fejlécét a `<type>(<scope>): <subject>`  szabály szerint követeli meg, ahol [típus](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#type) lehet build, ci, docs, feat, fix, perf, refactor, style és test
-    - nálunk nincs erre beállított tool
-- Egy másik a [Conventional Commits](http://conventionalcommits.org/)
+- Az [AngularJS Git Commit Message Conventions](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit) a commit üzenet fejlécét a `<type>(<scope>): <subject>` szabály szerint követeli meg.
+  - ahol [típus](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#type) lehet build, ci, docs, feat, fix, perf, refactor, style vagy test
+  - valójában a 1., 4. és 5. pontot ez is megköveteli; a 3.-al pont szembemegy, aminek oka, hogy a tárgy típusmegjelöléssel kezdődik, nem a tárgy szövegével
+  - a tárgy és törzs sorhosszára 100 karakteres limitet ad, szemben a fenti hagyományos (akár úgy is lehet érteni, hogy elavult) terminálméretekre szabott korlátaival
+- Egy másik, az Angularéhoz nagyon hasonló a [Conventional Commits](http://conventionalcommits.org/)
+- Ezek előnye lehet -megfelelő tooling mellett- pl. az automatizált changlelog generálás
+  - nálunk nincs ilyesmire beállított eszköz
+
+
+#### Mire jó még a commit üzenet?
+
+Például arra is alkalmas, hogy [lezárjunk vele egy issue-t](https://help.github.com/en/github/managing-your-work-on-github/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword). Ha a commit üzenet törzse tartalmazza a _close_, _closes_, _closed_, _fix_, _fixes_, _fixed_, _resolve_, _resolves_ vagy _resolved_ ütesítások egyikét, akkor a GH automatikusan zárja az issue-t amint az a fő ágba (master) került. Pl.
+
+```
+Fix px/s -> km/h conversion #28
+
+Fixes #28
+```
+
 
 ### Mikor commit-oljunk?
 
-A [When to make a Git Commit](https://dev.to/gonedark/when-to-make-a-git-commit) poszthoz tartozó kommenteket is érdemes átfutni...
+A fentiekből már látszik, hogy az egésznek akkor van értelme, ha egy-egy commit egy jól megválasztott mértékű módosítást rögzít. Az a megközelítés, hogy a munkanap végén nyomok egy commitot valami olyasféle üzenettel, hogy `Changes on YYYY-MM-DD` nem nagyon szolgálja a visszakövethetőséget.
+
+Egy taszk hossza 1-4 óra (főállású fejlesztőre értelmezve), de fontos, hogy egy megszakítás nélkül elvégezhető feladat legyen. Ez azt jelenti, hogy egy taszk egyenlő egy committal? Nem. Egy taszk megoldása természetesen több commitból is állhat.
+
+A [When to make a Git Commit](https://dev.to/gonedark/when-to-make-a-git-commit) poszt[^1] alapján (is), azt mondanám, hogy akkor érdemes commitolni, ha:
 
 1. I complete a unit of work.
 2. I have changes I may want to undo.
+
+Az egységnyi munka módosításott sorok és fájlok tekintetében rendkívül változó lehet. Egy bugfix pl. állhat egyetlen karakter módosításából, de egy refactorálás során egy metódus átnevezése járhat tucatnyi fájl módosításával (ahol az adott metódus hasznáva volt). Ugyanakkor a metódusátnevezés után biztosan érdemes lehet commitolni, egyéb módosítást már nem csapnék hozzá.
+
+Ha a commit üzenetbe azt írnád, hogy `Rename foobar method and fix typo in the comment #42` már biztosan két külön commitra lenne szükséged.
+
+[^1]: a hozzá tartozó kommenteket is érdemes átfutni
 
 
 ## Review
