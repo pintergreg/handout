@@ -1,5 +1,7 @@
 # Daily Work
 
+<!-- toc -->
+
 
 ## Communication
 

@@ -7,4 +7,9 @@ description = "Szoftverfejlesztés multinacionális vállalatoknál"
 
 [output.html]
 mathjax-support = true
-additional-js = ["context-cards.js", "mermaid.min.js"]
+additional-js = ["context-cards.js", "mermaid.min.js", "jsmind.js"]
+additional-css = ["jsmind.css"]
+
+[preprocessor.toc]
+command = "./mdbook-toc"
+renderer = ["html"]

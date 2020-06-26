@@ -1,2 +1,5 @@
 book
 *.dia~
+
+# toc generator
+mdbook-toc
