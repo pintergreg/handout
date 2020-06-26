@@ -132,7 +132,7 @@ Az alábbiak Robert C. Martin Clean Code című könyvénből a 3. fejezetén al
 
 ![](http://smutch.github.io/VersionControlTutorial/_images/vc-xkcd.jpg)
 
-- [Ez az írás](https://tortoisesvn.net/docs/nightly/TortoiseSVN_en/tsvn-basics-versioning.html) összefoglalja a verziókezelési modelleket (Lock-Modify-Unlock, Copy-Modify-Merge), [emez pedig](https://homes.cs.washington.edu/~mernst/advice/version-control.html) összehasonlítja a centralizált és az elolszott verziókezelőket.
+- [Ez az írás](https://tortoisesvn.net/docs/nightly/TortoiseSVN_en/tsvn-basics-versioning.html) összefoglalja a verziókezelési modelleket (Lock-Modify-Unlock, Copy-Modify-Merge), [emez pedig](https://homes.cs.washington.edu/~mernst/advice/version-control.html) összehasonlítja a centralizált és az elosztott verziókezelőket.
 - [About Version Control](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control)
   - a Git könyv első fejezete, rövid összefoglaló
 - gyakorlati oldalról lást [Git](./git.md) fejezet
@@ -180,7 +180,7 @@ A [How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/) 
 4. [Do not end the subject line with a period](https://chris.beams.io/posts/git-commit/#end)
 5. [Use the imperative mood in the subject line](https://chris.beams.io/posts/git-commit/#imperative)
 6. [Wrap the body at 72 characters](https://chris.beams.io/posts/git-commit/#wrap-72)
-    - ez talán a legkevésbé fontos
+    - ez a legkevésbé fontos
 7. [Use the body to explain what and why vs. how](https://chris.beams.io/posts/git-commit/#why-not-how)
 8. **Reference the issue!**
 
@@ -193,11 +193,11 @@ Valójában (bizonyos szempontból) az issue behivatkozása a legfontosabb, még
 
 Minden módosítás (a verziókövető rendszerben) rendelkezik egy azonosítóval, amelyhez társul, hogy ki és mikor végezte el a módosítást. Valamit egy üzenet, amely -- jó esetben -- leírja, hogy mi volt ez a módosítás. A visszakövethetőség egy adott szintig tehát szerves része a verziókövető rendszereknek.
 
-A módosítások azonban nem csak úgy ötletszerűen történnek, hanem valamilyen feladat által meghatározott célból. Pl. jelenítsd meg a műszerfalon az autó pillanatnyi sebességét (feature), vagy javítsd ki pixel/s -> km/h átváltást, mert kerekítési hiba miatt értelmetlen éték jelenik meg (bugfix).
+A módosítások azonban nem csak úgy ötletszerűen történnek, hanem valamilyen feladat által meghatározott célból. Pl. jelenítsd meg a műszerfalon az autó pillanatnyi sebességét (feature), vagy javítsd ki pixel/s -> km/h átváltást, mert kerekítési hiba miatt értelmetlen érték jelenik meg (bugfix).
 
 Ugyanakkor a feladatok (task) sem csak úgy lógnak a levegőben, jellemzően kapcsolódnak egy user story-hoz (különösen a feature-ök), de biztosan kapcsolódnak egy sprinthez (hiszen beütemezték a megoldását valamikorra), van felelősük, határidejük, stb. Úgy általában van véve egy kontextusuk. Az issue (más néven task) tartalmazza az adott feladat pontos részleteit, az issue/task trackerben akár a megoldás teljes vitafolyamata megtalálható. Pl. ki hogyan akarta implementálni, milyen érvek és ellenérvek merültek fel az egyes implementációs lehetőségek mellett/ellen, hogyan jutott a fejlesztőcsapat konszenzusra, vagy ki hagyta jóvá az adott módosítást, ki döntött arról, hogy melyik sprintbe kerüljön be, stb.
 
-A visszakövetkezőség nem csak addig a pontig érdekes és fontos, hogy ki írta át a változó típusát (pl.), hanem a teljes terveszési/döntés folyamatig visszamenőleg.
+A visszakövethetőség nem csak addig a pontig érdekes és fontos, hogy ki írta át a változó típusát (pl.), hanem a teljes tervezési/döntés folyamatig visszamenőleg.
 
 Mi van akkor ha a döntés egy face-to-face meetingen (pl. standup), skype konferenciahíváson vagy egyéb nem írásos formában történt?
 (A szó elszáll, írás megmarad...)
@@ -218,7 +218,7 @@ Ebben az esetben, az issue kiváló hely arra, hogy írásban is rögzítve legy
 
 #### Mire jó még a commit üzenet?
 
-Például arra is alkalmas, hogy [lezárjunk vele egy issue-t](https://help.github.com/en/github/managing-your-work-on-github/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword). Ha a commit üzenet törzse tartalmazza a _close_, _closes_, _closed_, _fix_, _fixes_, _fixed_, _resolve_, _resolves_ vagy _resolved_ ütesítások egyikét, akkor a GH automatikusan zárja az issue-t amint az a fő ágba (master) került. Pl.
+Például arra is alkalmas, hogy [lezárjunk vele egy issue-t](https://help.github.com/en/github/managing-your-work-on-github/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword). Ha a commit üzenet törzse tartalmazza a _close_, _closes_, _closed_, _fix_, _fixes_, _fixed_, _resolve_, _resolves_ vagy _resolved_ utasítások egyikét, akkor a GH automatikusan zárja az issue-t amint az a fő ágba (master) került. Pl.
 
 ```
 Fix px/s -> km/h conversion #28
@@ -235,10 +235,10 @@ Egy taszk hossza 1-4 óra (főállású fejlesztőre értelmezve), de fontos, ho
 
 A [When to make a Git Commit](https://dev.to/gonedark/when-to-make-a-git-commit) poszt[^1] alapján (is), azt mondanám, hogy akkor érdemes commitolni, ha:
 
-1. I complete a unit of work.
-2. I have changes I may want to undo.
+1. Befejeztem egy egységnyi munkát.
+2. Olyan módosítást végeztem, amit esetleg visszavonnék.
 
-Az egységnyi munka módosításott sorok és fájlok tekintetében rendkívül változó lehet. Egy bugfix pl. állhat egyetlen karakter módosításából, de egy refactorálás során egy metódus átnevezése járhat tucatnyi fájl módosításával (ahol az adott metódus hasznáva volt). Ugyanakkor a metódusátnevezés után biztosan érdemes lehet commitolni, egyéb módosítást már nem csapnék hozzá.
+Az egységnyi munka módosított sorok és fájlok tekintetében rendkívül változó lehet. Egy bugfix pl. állhat egyetlen karakter módosításából, de egy refaktorálás során egy metódus átnevezése járhat tucatnyi fájl módosításával (ahol az adott metódus használva volt). Ugyanakkor a metódusátnevezés után biztosan érdemes lehet commitolni, egyéb módosítást már nem csapnék hozzá.
 
 Ha a commit üzenetbe azt írnád, hogy `Rename foobar method and fix typo in the comment #42` már biztosan két külön commitra lenne szükséged.
 
