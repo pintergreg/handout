@@ -118,9 +118,12 @@ Az alábbiak Robert C. Martin Clean Code című könyvénből a 3. fejezetén al
 - https://www.freecodecamp.org/news/code-comments-the-good-the-bad-and-the-ugly-be9cc65fbf83/
 - [When Good Comments Go Bad](https://blog.codinghorror.com/when-good-comments-go-bad/)
 -->
+
 ---
 
-<img src="http://cdn.ttgtmedia.com/ITKE/uploads/blogs.dir/8/files/2008/07/goodcomments.jpg" width="320px" />
+<center>
+    <img src="http://cdn.ttgtmedia.com/ITKE/uploads/blogs.dir/8/files/2008/07/goodcomments.jpg" width="320px" />
+</center>
 
 ---
 
@@ -132,10 +135,47 @@ Az alábbiak Robert C. Martin Clean Code című könyvénből a 3. fejezetén al
 
 ![](http://smutch.github.io/VersionControlTutorial/_images/vc-xkcd.jpg)
 
+### Mi a verziókezelő?
+
+> Version control, a.k.a. revision control / source code management, is basically a system for recording and managing changes made to files and folders. It is commonly used to manage source code, however, it is also well suited to tracking changes to any kind of file which contains mostly text.
+>
+> -- [forrás](http://smutch.github.io/VersionControlTutorial/pages/0-intro.html#what-is-version-control)
+
+Az ember hajlamos ad-hoc módon is verziózni a munkáját, pl.[^1]:
+
+![](http://smutch.github.io/VersionControlTutorial/_images/intro1.png)
+
+Több szolgáltatás és szoftver alapból tartalmaz verziókövetést, pl. a Dropbox, Google Drive, stb. is verziózza a feltöltött állományokat; az MS Word még [merge-elni is tudja az egyes verziókat](https://support.microsoft.com/en-us/office/combine-document-revisions-f8f07f09-4461-4376-b041-89ad67412cfe?ui=en-us&rs=en-us&ad=us).
+
+Michael Ernst [összefoglalója alapján](https://homes.cs.washington.edu/~mernst/advice/version-control.html):
+
+- **Version control enables multiple people to simultaneously work on a single project.** Each person edits his or her own copy of the files and chooses when to share those changes with the rest of the team. Thus, temporary or partial edits by one person do not interfere with another person's work.
+- Version control also enables one person you to use multiple computers to work on a project, so it is valuable even if you are working by yourself.
+- **Version control integrates work done simultaneously by different team members.** In most cases, edits to different files or even the same file can be combined without losing any work. In rare cases, when two people make conflicting edits to the same line of a file, then the version control system requests human assistance in deciding what to do.
+- **Version control gives access to historical versions of your project.** This is insurance against computer crashes or data lossage. If you make a mistake, you can roll back to a previous version. You can reproduce and understand a bug report on a past version of your software. You can also undo specific edits without losing all the work that was done in the meanwhile. For any part of a file, you can determine when, why, and by whom it was ever edited.
+
+
+### Mit érdemes verziókezelni
+
+> "In practice, everything that has been created manually should be put in version control, including programs, original field observations, and the source files for papers."
+>
+> -- Best Practices for Scientific Computing; Wilson et al. 2012 ([arXiv:1210.0530](https://arxiv.org/abs/1210.0530))
+
+Az ehhez a jegyzethez készített ábrák és azok forrása is verziókezelés alatt van, ezek a `.png` és `.dia` állományok a `/src/images/` mappában, utóbbiak valójában egy [diagramszerkesztő alkalmazás](https://wiki.gnome.org/Apps/Dia) XML alapú forrásfájljai.
+
+<!--
+### Verziókezelési modellek
+
+- Lock-Modify-Unlock
+- Copy-Modify-Merge
+-->
+
 - [Ez az írás](https://tortoisesvn.net/docs/nightly/TortoiseSVN_en/tsvn-basics-versioning.html) összefoglalja a verziókezelési modelleket (Lock-Modify-Unlock, Copy-Modify-Merge), [emez pedig](https://homes.cs.washington.edu/~mernst/advice/version-control.html) összehasonlítja a centralizált és az elosztott verziókezelőket.
 - [About Version Control](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control)
   - a Git könyv első fejezete, rövid összefoglaló
 - gyakorlati oldalról lást [Git](./git.md) fejezet
+
+[^1]: http://smutch.github.io/VersionControlTutorial/pages/0-intro.html#what-is-version-control
 
 
 ### Centralizált verziókezelő
@@ -156,10 +196,11 @@ Az „[A successful Git branching model](http://nvie.com/posts/a-successful-git-
 ![](https://www.rittmanmead.com/blog/content/images/2017/01/gitflow.png)
 
 
-#### Egyéb érdekes írások a témában
+#### További írások a témában
 
 * [A _fork_ és a _branch_ közötti különbségekről](https://www.gitprime.com/the-definitive-guide-to-forks-and-branches-in-git/)
 * [a simple git branching model](https://gist.github.com/jbenet/ee6c9ac48068889b0912)
+* [OneFlow – a Git branching model and workflow](https://www.endoflineblog.com/oneflow-a-git-branching-model-and-workflow#oneflow-advantages)
 * [Comparing Workflows](https://www.atlassian.com/git/tutorials/comparing-workflows)
 * [Git branching and forking in the enterprise: why fork?](https://www.atlassian.com/blog/git/git-branching-and-forking-in-the-enterprise-why-fork)
 * [Using the Fork-and-Branch Git Workflow](https://blog.scottlowe.org/2015/01/27/using-fork-branch-git-workflow/)
