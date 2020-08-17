@@ -1,15 +1,3 @@
-# Programozási nyelv
-
-A feladat megoldásához Java nyelvet, annak is a 11-es verzióját kell használni, [Maven](https://maven.apache.org/guides/getting-started/index.html) projekt menedzsment eszközzel. (A kiinduló projekt ezeket már teljesíti). Egyaránt használható az [Oracle JDK 11](https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html) vagy az [OpenJDK 11](http://openjdk.java.net/projects/jdk/11/) is, operációs rendszer sincs megszabva.
-Az automatizált CI eszközök jogi okokból az OpenJDK-t használják, linuxon. Szóval már csak emiatt is „érdemes” platformfüggetlen kódot írni!
-
-Az ajánlott és támogatott fejlesztői környezet az [IntelliJ IDEA](https://www.jetbrains.com/idea/#chooseYourEdition), ez tartalmaz mindent amire szükség lehet a félév során. A Community Edition ingyenes, egyetemi e-mail címmel ingyen igényelhető Pro verzió!
-
-Nincs elvi akadálya a [NetBeans](https://netbeans.org/), az [Eclipse](https://eclipse.org/downloads/) vagy tetszőleges _editor_ használatának sem, de ezek beállítása az elvárásoknak megfelelően egyéni felelősség.
-NetBeanshez ajánlott plugin(-ek): [Git toolbar](http://plugins.netbeans.org/plugin/51604/git-toolbar)
-
-A fejlesztői környezetek rendelkeznek Git integrációval, de a parancssoron kívül grafikus kliensek is [léteznek](https://git-scm.com/downloads/guis), többek között a [GitHub saját asztali kliense](https://desktop.github.com/).
-
 # Tesztlefedettség
 
 [Tesztlefedettség támogatás a fejlesztői eszközökben](tesztlefedettseg.md).
