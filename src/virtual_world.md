@@ -13,7 +13,7 @@ A számítógépes grafikában megszokott módon, a bal felső sarok jelenti az 
 
 ## Objektumok leírása
 
-Egy-egy objektum leírása a következőképpen néz ki:
+Egy-egy objektum leírása a következőképpen néz ki (XML-ben):
 
 ``` xml
 <Object type="road_2lane_straight">
@@ -64,8 +64,9 @@ Az XML-ben leírt objektumok koordináta-rendszere nem feltétlenül egyezik meg
 
 A feladat megoldás során jellemzően valóságos mértékegységekben specifikáljuk a feladatot (pl. méter, km/h, m/s^2, stb.) míg az XML és a grafikai elemek értelem szerűen pixellel dolgoznak. Ennek feloldására, illetve az átváltásra az **1m=50px** szabályt célszerű használni. Ez egy hozzávetőlegesen arányos érték, amellyel számolni is könnyű.
 
-## Sávtartó automatika tesztelése
+<!--## Sávtartó automatika tesztelése
 
 A sávtartó automatika nem tesztelhető kanyarokban, ehhez ezért egy alább látható kinézetű pályaszakasz készült. Csak 6°-os és egyenes útszakaszból áll. [Az XML elérhető itt](resources/lane_keeping_test_world.xml).
 
 ![](images/lka_track.png)
+-->
