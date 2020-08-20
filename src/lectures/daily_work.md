@@ -15,7 +15,7 @@ Igaz ez? Miért nem?
 Számítsd bele, hogy a másik nem ugyanazzokkal az előismeretekkel rendelkezik, nem ugyanazzal a fogalomkészlettel, terminológiával, esetleg anyanyalvvel.
 
 - [A Software Developer’s Guide to Project Communication: Part 1](https://www.lullabot.com/articles/effective-communication-part-1-greasing-the-wheels)
-    - a 2. rész is ajánlott
+    - a [2. rész](https://www.lullabot.com/articles/effective-communication-part-2-crossing-the-streams) is ajánlott
 - [Communication on Agile Software Teams](http://www.agilemodeling.com/essays/communication.htm)
 
 ## Requirement Engineering
