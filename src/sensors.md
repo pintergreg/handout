@@ -4,6 +4,8 @@
 
 A vezetéstámogató rendszerek 3 fő szenzorra épülnek: kamera, radar és ultrahang. A valóságban adott esetben a vezetéstámogató rendszerek több szenzor együttes használatával működnek (a szoftverben ilyet nem kell megvalósítani).
 
+A jegyzetben szereplő ábrák a szenzorok látóterét nem méretarányosan mutatják mivel a radar és a kamera látótere túl nagy, így az igazán lényeges részletek elvesznének.
+
 További olvasmány:
 
 - [Driver Assistance Systems, an introduction to Adaptive Cruise Control](http://www.eetimes.com/document.asp?doc_id=1272754)
