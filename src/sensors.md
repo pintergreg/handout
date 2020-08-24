@@ -1,5 +1,7 @@
 # Szenzorok
 
+<!-- toc -->
+
 A vezetéstámogató rendszerek 3 fő szenzorra épülnek: kamera, radar és ultrahang. A valóságban adott esetben a vezetéstámogató rendszerek több szenzor együttes használatával működnek (a szoftverben ilyet nem kell megvalósítani).
 
 További olvasmány:
