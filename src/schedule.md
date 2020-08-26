@@ -31,7 +31,7 @@ Az órák csütörtökönként a BA.F.07-ben vannak (?online, MS Teams-en), nept
     section Sprint 1
         Sprint 1 :active, sprint1, 2020-09-10, 4w
     section Sprint 2
-        Sprint 2 :active, sprint2, after sprint1, 3w
+        Sprint 2 :active, sprint2, after sprint1, 4w
     section Sprint 3
         Sprint 3 :active, sprint3, after sprint2, 4w
     click sprint1 href "./sprint_1.html"
