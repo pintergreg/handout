@@ -1,5 +1,6 @@
 # MindMap
 
+Összefoglaláshoz, gyors áttekintéshez használható, az előadásanyagot többé-kevésbé lefedő *mindmap*. Egérgörgővel nagyítható/távolítható és canvas-on belül szabadon mozgatható.
 
 <svg id="markmap-target" style="width: 100%; height: 75vh;"></svg>
 <div id="markmap-source" hidden>
