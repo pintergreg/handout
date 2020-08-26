@@ -5,7 +5,7 @@
 
 ![](https://pepgotesting.com/wp-content/uploads/2015/02/CI.png)
 
-Ennek alapja a verziókövetés, a fejlesztő pusholja a módosításait a szerverre, amely lefurdítja a kódot, lefuttatja a tesztekek (és egyéb elemzéseket), ezek sikerességéről visszajelzést ad. Kicsit bővebben [itt](#ci-k%C3%B6rnyzet).
+Ennek alapja a verziókövetés, a fejlesztő pusholja a módosításait a szerverre, amely lefordítja a kódot, lefuttatja a teszteket (és egyéb elemzéseket), ezek sikerességéről visszajelzést ad. Kicsit bővebben [itt](#ci-k%C3%B6rnyzet).
 
 ## Interrupts
 
@@ -31,7 +31,7 @@ Az egész CI/CD lelke egy adag script, amelyben le vannak írva az automatizált
 
 - kód fordítása (make, maven, stb.)
 - bináris előállítása
-- statikus kódemelzés futtatása, pl. MISRA, Checkstyle
+- statikus kódelemzés futtatása, pl. MISRA, Checkstyle
 - tesztlefedettség kiszámolását végző szoftver futtatása
 - riport generálás a feedbackhez a fejlesztőnek, menedzsmentnek, megrendelőnek
 - stb.
@@ -118,11 +118,11 @@ A tárgyhoz használt tényleges eszközök, mondhatjuk, hogy a fentiek (egy ré
 
 Korábban [Travis CI](https://travis-ci.org/), újabban (mióta van) [GitHub Actions](https://help.github.com/en/actions/getting-started-with-github-actions/about-github-actions).
 
-A commit(ok) pusholása esemény hatására elindul a build környezet, ez egy Ubuntu linux, amely tartalmazza a Java fejlesztői környezetet (JDK) és a fordítást menedzselő eszközt (Maven). Leklónozza a repót, kiválasztja a kérdéses branch-et, lefordítja a kódot, lefuttatja a teszteket, meghívja a statikus kódelemzőt és a tesztlefedettség elemzőt, az előállt riportokat elküldi az ezt nyilváltartó szolgáltatásoknak. Ha valamenyni teszt sikeres, akkor zöld jelzést ad. (A Jenkins időjárásikonokat használ historikusságot is figyelembe véve: sok egymást követő bukó teszt (viharfelhők) után egy sikeres még nem jelent azonnal napocskát...)
+A commit(ok) pusholása esemény hatására elindul a build környezet, ez egy Ubuntu linux, amely tartalmazza a Java fejlesztői környezetet (JDK) és a fordítást menedzselő eszközt (Maven). Leklónozza a repót, kiválasztja a kérdéses branch-et, lefordítja a kódot, lefuttatja a teszteket, meghívja a statikus kódelemzőt és a tesztlefedettség elemzőt, az előállt riportokat elküldi az ezt nyilvántartó szolgáltatásoknak. Ha valamennyi teszt sikeres, akkor zöld jelzést ad. (A Jenkins időjárásikonokat használ historikusságot is figyelembe véve: sok egymást követő bukó teszt (viharfelhők) után egy sikeres még nem jelent azonnal napocskát...)
 
 ![CI környezet](../images/ci.png)
 
-A Pull Request-ek elfogadásásnak feltétele a fordítható kód és a sikeres tesztek, de a statikus kódelemző és a tesztlefedezzség elemző visszajelzése is megjelenik (automatizált review formájában). Ugyaniylen automatizált review-nak tekinthető az is, hogy van-e kódütközés.
+A Pull Request-ek elfogadásának feltétele a fordítható kód és a sikeres tesztek, de a statikus kódelemző és a tesztlefedettség elemző visszajelzése is megjelenik (automatizált review formájában). Ugyanilyen automatizált review-nak tekinthető az is, hogy van-e kódütközés.
 
 Ezeken kívül a kollégák manuális review-ja is szükséges (2 approve), lásd review protokol.
 
@@ -138,7 +138,7 @@ A statikus kódelemzést a Checkstyle végzi, ez [lokálisan](TODO) is működik
 
 ## Tesztlefedettség
 
-A Java kódunk tesztekkel való lefedettségét a JaCoCo (Java Code Coverage) nevű szoftver számolja ki. Szintán működik [lokálisan is](TODO), a CodeFactorhoz hasonló online riportgeneráló amit a repónkhoz beállítottam az a [CodCov](https://codecov.io/). Az előbbivel analóg módon működik.
+A Java kódunk tesztekkel való lefedettségét a JaCoCo (Java Code Coverage) nevű szoftver számolja ki. Szintén működik [lokálisan is](TODO), a CodeFactorhoz hasonló online riportgeneráló amit a repónkhoz beállítottam az a [CodeCov](https://codecov.io/). Az előbbivel analóg módon működik.
 
 ## Stale bot
 
