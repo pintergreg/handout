@@ -1,13 +1,14 @@
-# Oktatóanyagok
+# GitHub
 
-A félév során a GitHubot használjuk a kód tárolására és a feladatok menedzselésére is.
-GitHub használatához segítség:
+A félév során a GitHubot használjuk a kód tárolására, a feladatok menedzselésére is és kommunikációra is.
+
+## Oktatóanyagok
 
 - [**interaktív oktatófelület**](https://lab.github.com/)
-- [GitHub Help](https://help.github.com/)
 - [GitHub Guides](https://guides.github.com/)
 
-# Áttekintés
+
+## Áttekintés
 
 Minden hallgató tagja lesz a [SzFMV2019-Tavasz](https://github.com/szfmv2019-tavasz) szervezetnek (`Organization`), és egy-egy csapatnak (Team1, ..., Team4). Minden csapat külön issue board-dal rendelkezik (`Projects`), ezen kell vezetni a feladatok (`issue`) megoldását (részletében lásd [Munkafolyamat](workflow.md)).
 
@@ -107,3 +108,26 @@ Ha a PR el lett fogadva, a feature branch-re nincs már tovább szükség. Le le
 * [Using the Fork-and-Branch Git Workflow](https://blog.scottlowe.org/2015/01/27/using-fork-branch-git-workflow/)
 * [Stackoverflow / Forking vs. Branching in GitHub](https://stackoverflow.com/a/34343080/4737417)
 * [A succesful Git branching model considered harmful](https://barro.github.io/2016/02/a-succesful-git-branching-model-considered-harmful/)
+
+## Társszerzők
+
+A munkafolyamat alapvetően egyéni munkára van kitalálva, de legkevésbé sem tilos a [pair programming](https://en.wikipedia.org/wiki/Pair_programming) sem. Volt, hogy Skype-os képernyő-megosztásos módszerrel dolgoztak _távolról_ párban... Ilyenkor mindig felvetődik a kérdés, hogy csak az egyik kolléga nevében történhet a commit de mi van a másikkal... A GitHub [bevezetett egy új funkciót](https://github.com/blog/2496-commit-together-with-co-authors) ennek orvoslására. Részletek [elérhetőek itt](https://help.github.com/articles/creating-a-commit-with-multiple-authors/).
+
+Ebben az esetben a commit üzenet törzse után 2 üres sorral elválasztva kell a társszerzőket feltüntetni. Pl.:
+
+```
+Commit message header
+
+Commit message body preceded by an empty line and followed by
+two empty lines and the trailer.
+
+
+Co-authored-by: name <name@example.com>
+Co-authored-by: another-name <another-name@example.com>"
+```
+
+Ahhoz, hogy a GitHub a társszerzőt össze is tudja rendelni a felhasználói fiókjával fontos, hogy az a `name` és különösen az az `e-mail` szerepeljen, amelyet egyébként git beállításként használ!
+
+### Ímélcím védelme
+
+A GH minden felhasználónak biztosít egy "proxy ímélcímet", hogy titokban tarthassa a címét, ez xxxxxxx+username@users.noreply.github.com szerkezetű, ahogy xxxxxxx egy hétjegyű felhasználói azonosító. Bővebben [itt](https://help.github.com/articles/about-commit-email-addresses/). Ezt is lehet használni, nem csak társszerzőhöz hanem saját címnek is, csak legyen konzisztens!
