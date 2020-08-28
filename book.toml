@@ -5,6 +5,9 @@ src = "src"
 title = "Jegyzet"
 description = "Szoftverfejlesztés multinacionális vállalatoknál"
 
+[rust]
+edition = "2018"
+
 [output.html]
 mathjax-support = true
 additional-js = ["context-cards.js", "mermaid-init.js", "mermaid.min.js", "d3.5.16.0.js", "markmap-lib.transform.min.js", "markmap-lib.view.min.js", "markmap-init.js"]
