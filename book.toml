@@ -14,6 +14,10 @@ additional-js = ["context-cards.js", "mermaid-init.js", "mermaid.min.js", "d3.5.
 # additional-css = ["jsmind.css"]
 # git-repository-url = "https://github.com/SzFMV2020-Tavasz/handout"
 
+[output.html.fold]
+enable = true
+level = 1
+
 [preprocessor.toc]
 command = "./mdbook-toc"
 renderer = ["html"]
