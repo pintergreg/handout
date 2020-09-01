@@ -1,0 +1,4 @@
+# https://akikoskinen.info/image-diffs-with-git/
+*.gif diff=image
+*.jpg diff=image
+*.png diff=image
