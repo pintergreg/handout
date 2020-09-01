@@ -12,7 +12,7 @@ A Java nyelvhez is van(nak) kódformázási előírás(ok), amelyek egy része t
 Átfogó ajánlást készített még 2000 környékén a Sun, ám ez mára meglehetősen túlhaladott, vagy ilyen a Google által összeállított [Google Java Style Guide](https://google.github.io/styleguide/javaguide.html).
 Ez viszont helyenként túl specifikus (nagyvállalati környezetre optimalizált) a tárgy kereteihez, így nem egy az egyben ezt használjuk. A [Checkstyle](http://checkstyle.sourceforge.net/) statikus kódanalizátor default értékei vagy a Jetbrains által az IntelliJ IDEA-ba beállított default szabályok is felfoghatók egy ilyen ajánlásnak.
 
-A C# TODO
+A C#-hoz a Microsoft definiálta a [kódformázási szabályokat](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/inside-a-program/coding-conventions), ezeket kell követni a tárgy során is.
 
 
 # Statikus program analízis
