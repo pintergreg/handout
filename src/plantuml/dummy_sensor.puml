@@ -1,4 +1,15 @@
 @startuml
+abstract class GameBase {
+    + int TicksPerSecond
+    + long CurrentTick
+    - DispatcherTimer _timer
+
+    void DoTick()
+    # {abstract} void Tick()
+    + void Start()
+    + void Stop()
+}
+
 class VirtualFunctionBus {
     - SystemComponent[] components
     - IReadOnlyDummyPacket DummyPacket
@@ -34,6 +45,8 @@ interface IReadOnlyDummyPacket {
 DummySensor <|-- SystemComponent
 DummySensor *-- DummyPacket
 DummyPacket <-- IReadOnlyDummyPacket
+
+VirtualFunctionBus <|-- GameBase
 VirtualFunctionBus *-- "many" SystemComponent
 VirtualFunctionBus *-- "1" IReadOnlyDummyPacket
 
