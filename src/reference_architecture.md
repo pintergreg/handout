@@ -39,12 +39,6 @@ Minden adatközlő modulnak létre kell hoznia egy-egy csomag (packet) típust (
 5. In the loop method of the writing componenet set the payload value of the packet
 6. In the loop method of the reading compontent read the payload of the packet
 
-<!--
-```mermaid
-{{#include mermaid/class.mmd}}
-```
--->
-
 
 ### Konkrét példán keresztül: DummySensor
 
