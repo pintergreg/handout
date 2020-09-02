@@ -15,6 +15,10 @@ A repó található kezdeti kódot (skeleton) egységes alapot képez a félév 
 - szenzor objektum létrehozása
 - adatcsomag küldése és fogadása a *Virtual Function Bus*-on keresztül
 
+A fejezet további felépítse:
+
+<!-- toc -->
+
 ## Virtual Function Bus
 
 A VirtualFunctionBus (VFB) egy kommunikációs megoldás az AutomatedCar komponensei (SystemComponent) számára. A komponensek feliratkoznak a buszra és **a feliratkozás sorrendjében** ciklikusan meghívásra kerül a `Process()` metódusok.
@@ -67,7 +71,9 @@ Miután a `DummyPacket` megvalósítja az `IReadOnlyDummyPacket` interfészt, a 
 Ez lejátszódik minden iterációban, így a kör és a vezérelt autó mindenkori helyzete szerinti távolságot fogja tartalmazni a *DummyPacket*.
 
 
-Az alábbi ábra a *DummySensor* szenpontjából fontos osztályok kapcsolatát mutatja.
+<!-- Az alábbi ábra a *DummySensor* szenpontjából fontos osztályok kapcsolatát mutatja. -->
+
+### Osztálydiagramok
 
 ```plantuml
 {{#include plantuml/dummy_sensor.puml}}
@@ -79,3 +85,65 @@ Az alábbi ábra a *DummySensor* szenpontjából fontos osztályok kapcsolatát 
 
 
 ## Megjelenítés
+
+Az elkészítendő szoftver felhasználói felületének az alábbi vázlat felépítését kell követnie.
+
+![gui plan](images/gui_plan.png)
+
+A programablak bal oldalán a virtuális világ egy szeletét látjuk ezért felel a vizualizációs modul. A megjelenítés középpontja az mindenkor vezérelt autó (egocar). A világ minden eleméhez tartozik egy képfájl, ezen elemek megfelelő transzformációk (forgatás, skálázás) végrehajtása után kirajzolásra kerülne a CourseDisplayre.
+
+Továbbá erre a részre kerülnek kirajzilásra a debuggoláshoz és teszteléshez használandó segédobjektumok opionálisan bekapcsolható megjelenítése. Ide tartozik a szenzorok látómezeje, a világobjektumok „poligon váza”, valamint utóbbiak eseményre történő kiemelésének lehetősége.
+
+
+A jobb oldalon a műszerfal található. A műszerfalon nincsenek vezérlőelemek, csak megjelenítés. Az összes kapcsoló a billentyűzettel állítható, a grafikus elemeknek nem kell pl. egérrel kapcsolhatónak lenniük.
+
+A fordulatszám és a sebesség legyen egy analóg órával reprezentálva; a kormány elforgazás, a gáz- és fékpedál állása progressbar-okkal szemléltethető. Az irányjelző visszajelzője és a vezetéstámogató funkciók visszajelzői lámpaszerűek, a sebességváltó állása, és a debug értékek pl. kocsi pozíciója (x, y koordináta) lehet szöveges.
+A buszon közölt „utoljára látott tábla” képét ki kell tudni rajzolni (a képek rendelkezésre állnak). Legyen elkülönítve a nincs tábla eset is.
+
+Az [*Avalonia* keretrendszer](http://avaloniaui.net/) által is használt [MVVM modell](http://avaloniaui.net/docs/quickstart/mvvm)ben az objektumokhoz tartozik egy definiált a megjelenítés.
+
+![](http://avaloniaui.net/docs/quickstart/images/mvvm.png)
+
+Jelen esetben például a műszerfal egy *AutomatedCar* objektum megjelenítése. Egészen pontosana *World*-ben tárolt `controlledCar` objektumé. A *DashboardView* a *DashboardViewModel*-en keresztül a `controlledCar`-hoz van kötve.
+
+```xml
+<ContentControl Name="Dashboard" Content="{Binding World.ControlledCar, Mode=OneWay}" >
+    <ContentControl.ContentTemplate>
+        <DataTemplate DataType="{x:Type models:AutomatedCar}">
+            <StackPanel>
+                ...
+            </StackPanel>
+        </DataTemplate>
+    </ContentControl.ContentTemplate>
+</ContentControl>
+```
+
+A példakód ezt biztosítja, a feladat a konkrét visszajelzőkhöz megfelelő felületi elemek definiálása.
+
+### CourseDisplay
+
+A teljes CourseDisplay léynegében egy *ItemsControl*, amely a világ `WorldObjects` tulajdonságához van kötve. Ezen belül található egy *Canvas*, amire a rajzolás történik, valamint egy *DataTemplate*, amely azt írja le, hogy egy *WorldObject* típusú objektumok hogyan kell kezelni. A világelemhez tartozó képet kell kirajzolni, így tartalmaz egy *Image*-et, amelynek forrása a *WorldObject* `Filename` tulajdonsága. A *Converter* attribútumon keresztül meg lehet hívni egy függvényt, amellyel befolyásolni lehet a rajzolást (transzformálás).
+
+```xml
+<ItemsControl Name="CourseDisplay"
+    DataContext="{Binding World, Mode=OneWay}"
+    Items="{Binding WorldObjects, Mode=OneWay}"
+    Width="{Binding Width, Mode=OneWay}"
+    Height="{Binding Height, Mode=OneWay}"
+    HorizontalAlignment="Left" VerticalAlignment="Top"
+    >
+    
+    <ItemsControl.ItemsPanel>
+        <ItemsPanelTemplate>
+            <Canvas/>
+        </ItemsPanelTemplate>
+    </ItemsControl.ItemsPanel>
+
+    <ItemsControl.DataTemplates>
+        <DataTemplate DataType="{x:Type models:WorldObject}">
+            <Image Width="{Binding Width}" Height="{Binding Height}"
+                Source="{Binding Filename, Converter={x:Static visualization:WorldObjectTransformer.Instance}}"/>
+        </DataTemplate>
+    </ItemsControl.DataTemplates>
+</ItemsControl>
+```
