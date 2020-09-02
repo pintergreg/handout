@@ -1,0 +1,55 @@
+@startuml
+    interface ReactiveObject {
+    }
+    note right: This is required to update the View in the MVVM model.\nRaiseAndSetIfChanged() method must be used in the setters.
+
+    class World << (S, #FF7700) Singleton >> {
+        - int width
+        - int height
+        - WorldObject[] worldObjects
+        - AutomatedCar controlledCar
+        + int getWidth()
+        + void setWidth()
+        + int getHeight()
+        + void setHeight()
+        + void addObject()
+        + AutomatedCar getControlledCar()
+        + void setControlledCar()
+    }
+
+    abstract class WorldObject {
+        - int x
+        - int y
+        - int zIndex
+        - string filename
+        + int getX()
+        + void setX()
+        + int getY()
+        + void setY()
+        + string getFilename()
+        + void setFilename()
+    }
+
+    class Car {
+        - int speed
+        + int getSpeed()
+        + void setSpeed()
+    }
+
+    class AutomatedCar {
+        - VirtualFunctionBus virtualFunctionBus
+        - DummySensor dummySensor
+        + VirtualFunctionBus getVirtualFunctionBus()
+        + void Start()
+        + void Stop()
+    }
+
+    AutomatedCar <|-- Car
+    Car <|-- WorldObject
+    WorldObject <|-- ReactiveObject
+    World *-- "many" WorldObject
+
+header
+AutomatedCar class diagram
+endheader
+@enduml

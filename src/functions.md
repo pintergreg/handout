@@ -81,13 +81,16 @@ A rendszert az erre szolgáló vezérlővel aktiválni kell, majd az irányjelz�
 - a sofőr beavatkozására (fék, gáz, kormány) kikapcsolás (megszűnik az automata vezérlés)
 
 1. parkolóhely keresése
-    - ![](images/find_parking_place.png)
-2. Parkolóhely azonosítva
+    - ![](images/find_parking_place_horizontal.png)
     - Az üres hely detektálása lényegébe egy állapotátmenet az első és a hátsó ultrahang szenzor „van-e akadály” visszajelzésében. Amíg egy kocsisor mellett halad az autó mindkét szenzor „van akadály” jelzéssel tér vissza (ez valójában nem `boolean` állapot, egy objektum listát ad vissza), az üres hely kezdetén a az első „nincs akadály” állapotba megy át (a lista üres), majd ahogy az autó halad tovább a hátsó szenzor is „nincs akadály” állapotba kerül.
     - A szabad terület végén ugyanez fordítva játszódik le.
-    - ![](images/parking_place_found.png)
+    - Azonban a parkoló autó objektumot adja vissza a szenzor,a melynek ismert a kiterjedése és a referencia pontja, így a játékszoftverben pontosan „látszik” a foglalt terület. Ahogy az egocar elhalad a parkoló autók mellett mindkét autó által lefoglalt terület pontosan ismert így kiszámítható a közöttük meglevő szabad terület.
+2. Parkolóhely azonosítva
+    - ![](images/parking_place_found_horizontal.png)
+    - Miután sikerült meghatározni a szabad parkolóhely méretét, ezt valamiylen formában le kell írni. Célszerűen az egocar referenciapontjáthoz viszonyítva, hogy milyen távol vagyunk tőle, valamint a méretét/hosszát. Lehet egy téglalappal is reprezentálni ahogy az ábrán is látszik.
 3. Automatikus parkolás
-    - ![](images/parking.png)
+    - ![](images/parking_horizontal.png)
+    - A parkolási manőver tökéletes megoldása, hogy a _Parking Pilot_ az autó kezelőszerveire hat. Eltekeri a kormányt, gázt ad, fékez, nem csak úgy módosítgatja az autó koordinátáit és elforgatását. (Mindez precízen szabályozható hajtáslánc és kormánymechanika implementációt igényel.)
 
 ***
 
@@ -122,7 +125,13 @@ Két jellemző megvalósítása van. Az egyik a sáv széleihez viszonyítva kor
 Ha újra elérhető a funkció (pl. elhagytuk a kanyart) vizuális indikáció (a műszerfalon)
 Be- és kikapcsolható
 
-![](images/lka.png)
+#### 1. Sáv széleinek használata
+
+![](images/lka_a.png)
+
+#### 2. Sávközép használata
+
+![](images/lka_b.png)
 
 Sávon belüli mozgás: a LKA működése egy enyhe sávon belüli cikázást eredményez.
 
@@ -171,7 +180,7 @@ A hátsó ultrahang szenzorokat használja akadály detektálásra. Kiszámolja 
     - közel van akadály (0.8m-en belül)
     - nagyon közel van akadály (0.4m-en belül)
 
-![](images/reverse_radar_system.png)
+![](images/reverse_radar_system_horizontal.png)
 
 # „Fun” kategória
 

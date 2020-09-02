@@ -1,5 +1,8 @@
 # Daily Work
 
+<!-- toc -->
+
+
 ## Communication
 
 - A Remote communication strategies kifejezetten hasznos a [GitLab távmunka kézikönyvéből](https://learn.gitlab.com/all-remote/remote-playbook)
@@ -12,7 +15,7 @@ Igaz ez? Miért nem?
 Számítsd bele, hogy a másik nem ugyanazzokkal az előismeretekkel rendelkezik, nem ugyanazzal a fogalomkészlettel, terminológiával, esetleg anyanyalvvel.
 
 - [A Software Developer’s Guide to Project Communication: Part 1](https://www.lullabot.com/articles/effective-communication-part-1-greasing-the-wheels)
-    - a 2. rész is ajánlott
+    - a [2. rész](https://www.lullabot.com/articles/effective-communication-part-2-crossing-the-streams) is ajánlott
 - [Communication on Agile Software Teams](http://www.agilemodeling.com/essays/communication.htm)
 
 ## Requirement Engineering
@@ -115,9 +118,12 @@ Az alábbiak Robert C. Martin Clean Code című könyvénből a 3. fejezetén al
 - https://www.freecodecamp.org/news/code-comments-the-good-the-bad-and-the-ugly-be9cc65fbf83/
 - [When Good Comments Go Bad](https://blog.codinghorror.com/when-good-comments-go-bad/)
 -->
+
 ---
 
-<img src="http://cdn.ttgtmedia.com/ITKE/uploads/blogs.dir/8/files/2008/07/goodcomments.jpg" width="320px" />
+<center>
+    <img src="http://cdn.ttgtmedia.com/ITKE/uploads/blogs.dir/8/files/2008/07/goodcomments.jpg" width="320px" />
+</center>
 
 ---
 
@@ -129,10 +135,47 @@ Az alábbiak Robert C. Martin Clean Code című könyvénből a 3. fejezetén al
 
 ![](http://smutch.github.io/VersionControlTutorial/_images/vc-xkcd.jpg)
 
-- [Ez az írás](https://tortoisesvn.net/docs/nightly/TortoiseSVN_en/tsvn-basics-versioning.html) összefoglalja a verziókezelési modelleket (Lock-Modify-Unlock, Copy-Modify-Merge), [emez pedig](https://homes.cs.washington.edu/~mernst/advice/version-control.html) összehasonlítja a centralizált és az elolszott verziókezelőket.
+### Mi a verziókezelő?
+
+> Version control, a.k.a. revision control / source code management, is basically a system for recording and managing changes made to files and folders. It is commonly used to manage source code, however, it is also well suited to tracking changes to any kind of file which contains mostly text.
+>
+> -- [forrás](http://smutch.github.io/VersionControlTutorial/pages/0-intro.html#what-is-version-control)
+
+Az ember hajlamos ad-hoc módon is verziózni a munkáját, pl.[^1]:
+
+![](http://smutch.github.io/VersionControlTutorial/_images/intro1.png)
+
+Több szolgáltatás és szoftver alapból tartalmaz verziókövetést, pl. a Dropbox, Google Drive, stb. is verziózza a feltöltött állományokat; az MS Word még [merge-elni is tudja az egyes verziókat](https://support.microsoft.com/en-us/office/combine-document-revisions-f8f07f09-4461-4376-b041-89ad67412cfe?ui=en-us&rs=en-us&ad=us).
+
+Michael Ernst [összefoglalója alapján](https://homes.cs.washington.edu/~mernst/advice/version-control.html):
+
+- **Version control enables multiple people to simultaneously work on a single project.** Each person edits his or her own copy of the files and chooses when to share those changes with the rest of the team. Thus, temporary or partial edits by one person do not interfere with another person's work.
+- Version control also enables one person you to use multiple computers to work on a project, so it is valuable even if you are working by yourself.
+- **Version control integrates work done simultaneously by different team members.** In most cases, edits to different files or even the same file can be combined without losing any work. In rare cases, when two people make conflicting edits to the same line of a file, then the version control system requests human assistance in deciding what to do.
+- **Version control gives access to historical versions of your project.** This is insurance against computer crashes or data lossage. If you make a mistake, you can roll back to a previous version. You can reproduce and understand a bug report on a past version of your software. You can also undo specific edits without losing all the work that was done in the meanwhile. For any part of a file, you can determine when, why, and by whom it was ever edited.
+
+
+### Mit érdemes verziókezelni
+
+> "In practice, everything that has been created manually should be put in version control, including programs, original field observations, and the source files for papers."
+>
+> -- Best Practices for Scientific Computing; Wilson et al. 2012 ([arXiv:1210.0530](https://arxiv.org/abs/1210.0530))
+
+Az ehhez a jegyzethez készített ábrák és azok forrása is verziókezelés alatt van, ezek a `.png` és `.dia` állományok a `/src/images/` mappában, utóbbiak valójában egy [diagramszerkesztő alkalmazás](https://wiki.gnome.org/Apps/Dia) XML alapú forrásfájljai.
+
+<!--
+### Verziókezelési modellek
+
+- Lock-Modify-Unlock
+- Copy-Modify-Merge
+-->
+
+- [Ez az írás](https://tortoisesvn.net/docs/nightly/TortoiseSVN_en/tsvn-basics-versioning.html) összefoglalja a verziókezelési modelleket (Lock-Modify-Unlock, Copy-Modify-Merge), [emez pedig](https://homes.cs.washington.edu/~mernst/advice/version-control.html) összehasonlítja a centralizált és az elosztott verziókezelőket.
 - [About Version Control](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control)
   - a Git könyv első fejezete, rövid összefoglaló
 - gyakorlati oldalról lást [Git](./git.md) fejezet
+
+[^1]: http://smutch.github.io/VersionControlTutorial/pages/0-intro.html#what-is-version-control
 
 
 ### Centralizált verziókezelő
@@ -153,10 +196,11 @@ Az „[A successful Git branching model](http://nvie.com/posts/a-successful-git-
 ![](https://www.rittmanmead.com/blog/content/images/2017/01/gitflow.png)
 
 
-#### Egyéb érdekes írások a témában
+#### További írások a témában
 
 * [A _fork_ és a _branch_ közötti különbségekről](https://www.gitprime.com/the-definitive-guide-to-forks-and-branches-in-git/)
 * [a simple git branching model](https://gist.github.com/jbenet/ee6c9ac48068889b0912)
+* [OneFlow – a Git branching model and workflow](https://www.endoflineblog.com/oneflow-a-git-branching-model-and-workflow#oneflow-advantages)
 * [Comparing Workflows](https://www.atlassian.com/git/tutorials/comparing-workflows)
 * [Git branching and forking in the enterprise: why fork?](https://www.atlassian.com/blog/git/git-branching-and-forking-in-the-enterprise-why-fork)
 * [Using the Fork-and-Branch Git Workflow](https://blog.scottlowe.org/2015/01/27/using-fork-branch-git-workflow/)
@@ -177,22 +221,69 @@ A [How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/) 
 4. [Do not end the subject line with a period](https://chris.beams.io/posts/git-commit/#end)
 5. [Use the imperative mood in the subject line](https://chris.beams.io/posts/git-commit/#imperative)
 6. [Wrap the body at 72 characters](https://chris.beams.io/posts/git-commit/#wrap-72)
+    - ez a legkevésbé fontos
 7. [Use the body to explain what and why vs. how](https://chris.beams.io/posts/git-commit/#why-not-how)
-8. Reference the issue
+8. **Reference the issue!**
+
+
+#### Miért fontos a 8. pont?
+
+Valójában (bizonyos szempontból) az issue behivatkozása a legfontosabb, méghozzá a **visszakövethetőség** (traceability) miatt.
+
+![](../images/traceability_via_commit.png)
+
+Minden módosítás (a verziókövető rendszerben) rendelkezik egy azonosítóval, amelyhez társul, hogy ki és mikor végezte el a módosítást. Valamit egy üzenet, amely -- jó esetben -- leírja, hogy mi volt ez a módosítás. A visszakövethetőség egy adott szintig tehát szerves része a verziókövető rendszereknek.
+
+A módosítások azonban nem csak úgy ötletszerűen történnek, hanem valamilyen feladat által meghatározott célból. Pl. jelenítsd meg a műszerfalon az autó pillanatnyi sebességét (feature), vagy javítsd ki pixel/s -> km/h átváltást, mert kerekítési hiba miatt értelmetlen érték jelenik meg (bugfix).
+
+Ugyanakkor a feladatok (task) sem csak úgy lógnak a levegőben, jellemzően kapcsolódnak egy user story-hoz (különösen a feature-ök), de biztosan kapcsolódnak egy sprinthez (hiszen beütemezték a megoldását valamikorra), van felelősük, határidejük, stb. Úgy általában van véve egy kontextusuk. Az issue (más néven task) tartalmazza az adott feladat pontos részleteit, az issue/task trackerben akár a megoldás teljes vitafolyamata megtalálható. Pl. ki hogyan akarta implementálni, milyen érvek és ellenérvek merültek fel az egyes implementációs lehetőségek mellett/ellen, hogyan jutott a fejlesztőcsapat konszenzusra, vagy ki hagyta jóvá az adott módosítást, ki döntött arról, hogy melyik sprintbe kerüljön be, stb.
+
+A visszakövethetőség nem csak addig a pontig érdekes és fontos, hogy ki írta át a változó típusát (pl.), hanem a teljes tervezési/döntés folyamatig visszamenőleg.
+
+Mi van akkor ha a döntés egy face-to-face meetingen (pl. standup), skype konferenciahíváson vagy egyéb nem írásos formában történt?
+(A szó elszáll, írás megmarad...)
+
+Ebben az esetben, az issue kiváló hely arra, hogy írásban is rögzítve legyenek az elhangzottak. Pl. YYYY-MM-DD-ei megbeszélés alapján az XY library segítségével fogom implementálni az analóg fordulatszámkijelzőt. Akár explicit írásos jóváhagyást is lehet kérni...
+
 
 #### További „iskolák”
 
-- [AngularJS Git Commit Message Conventions](https://github.com/angular/angular/blob/master/CONTRIBUTING.md)
-    - a commit üzenet fejlécét a `<type>(<scope>): <subject>`  szabály szerint követeli meg, ahol [típus](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#type) lehet build, ci, docs, feat, fix, perf, refactor, style és test
-    - nálunk nincs erre beállított tool
-- Egy másik a [Conventional Commits](http://conventionalcommits.org/)
+- Az [AngularJS Git Commit Message Conventions](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit) a commit üzenet fejlécét a `<type>(<scope>): <subject>` szabály szerint követeli meg.
+  - ahol [típus](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#type) lehet build, ci, docs, feat, fix, perf, refactor, style vagy test
+  - valójában a 1., 4. és 5. pontot ez is megköveteli; a 3.-al pont szembemegy, aminek oka, hogy a tárgy típusmegjelöléssel kezdődik, nem a tárgy szövegével
+  - a tárgy és törzs sorhosszára 100 karakteres limitet ad, szemben a fenti hagyományos (akár úgy is lehet érteni, hogy elavult) terminálméretekre szabott korlátaival
+- Egy másik, az Angularéhoz nagyon hasonló a [Conventional Commits](http://conventionalcommits.org/)
+- Ezek előnye lehet -megfelelő tooling mellett- pl. az automatizált changlelog generálás
+  - nálunk nincs ilyesmire beállított eszköz
+
+
+#### Mire jó még a commit üzenet?
+
+Például arra is alkalmas, hogy [lezárjunk vele egy issue-t](https://help.github.com/en/github/managing-your-work-on-github/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword). Ha a commit üzenet törzse tartalmazza a _close_, _closes_, _closed_, _fix_, _fixes_, _fixed_, _resolve_, _resolves_ vagy _resolved_ utasítások egyikét, akkor a GH automatikusan zárja az issue-t amint az a fő ágba (master) került. Pl.
+
+```
+Fix px/s -> km/h conversion #28
+
+Fixes #28
+```
+
 
 ### Mikor commit-oljunk?
 
-A [When to make a Git Commit](https://dev.to/gonedark/when-to-make-a-git-commit) poszthoz tartozó kommenteket is érdemes átfutni...
+A fentiekből már látszik, hogy az egésznek akkor van értelme, ha egy-egy commit egy jól megválasztott mértékű módosítást rögzít. Az a megközelítés, hogy a munkanap végén nyomok egy commitot valami olyasféle üzenettel, hogy `Changes on YYYY-MM-DD` nem nagyon szolgálja a visszakövethetőséget.
 
-1. I complete a unit of work.
-2. I have changes I may want to undo.
+Egy taszk hossza 1-4 óra (főállású fejlesztőre értelmezve), de fontos, hogy egy megszakítás nélkül elvégezhető feladat legyen. Ez azt jelenti, hogy egy taszk egyenlő egy committal? Nem. Egy taszk megoldása természetesen több commitból is állhat.
+
+A [When to make a Git Commit](https://dev.to/gonedark/when-to-make-a-git-commit) poszt[^1] alapján (is), azt mondanám, hogy akkor érdemes commitolni, ha:
+
+1. Befejeztem egy egységnyi munkát.
+2. Olyan módosítást végeztem, amit esetleg visszavonnék.
+
+Az egységnyi munka módosított sorok és fájlok tekintetében rendkívül változó lehet. Egy bugfix pl. állhat egyetlen karakter módosításából, de egy refaktorálás során egy metódus átnevezése járhat tucatnyi fájl módosításával (ahol az adott metódus használva volt). Ugyanakkor a metódusátnevezés után biztosan érdemes lehet commitolni, egyéb módosítást már nem csapnék hozzá.
+
+Ha a commit üzenetbe azt írnád, hogy `Rename foobar method and fix typo in the comment #42` már biztosan két külön commitra lenne szükséged.
+
+[^1]: a hozzá tartozó kommenteket is érdemes átfutni
 
 
 ## Review

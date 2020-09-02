@@ -1,0 +1,23 @@
+@startuml
+component [World] as world {
+
+  component [AutomatedCar] as egocar {
+    component [DummySensor] as ds
+    component [VirtualFunctionBus] as vfb
+
+    interface register as rc
+  }
+
+  component [Circle] {
+  }
+  
+  ds -left-( rc
+  vfb -right- rc
+ 
+}
+
+header
+DummySensor component diagram
+endheader
+
+@enduml

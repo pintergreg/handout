@@ -82,8 +82,8 @@
       <dia:attribute name="border_width">
         <dia:real val="0.10000000149011612"/>
       </dia:attribute>
-      <dia:attribute name="border_color">
-        <dia:color val="#bfbfbf"/>
+      <dia:attribute name="inner_color">
+        <dia:color val="#7f7f7f"/>
       </dia:attribute>
       <dia:attribute name="show_background">
         <dia:boolean val="true"/>
@@ -103,7 +103,7 @@
             <dia:real val="0.80000000000000004"/>
           </dia:attribute>
           <dia:attribute name="pos">
-            <dia:point val="37.5,15.195"/>
+            <dia:point val="37.5,15.1941"/>
           </dia:attribute>
           <dia:attribute name="color">
             <dia:color val="#000000"/>
@@ -119,7 +119,7 @@
         <dia:point val="20,15"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="19.95,14.95;55.05,15.05"/>
+        <dia:rectangle val="19.9,14.9;55.1,15.1"/>
       </dia:attribute>
       <dia:attribute name="conn_endpoints">
         <dia:point val="20,15"/>
@@ -127,6 +127,12 @@
       </dia:attribute>
       <dia:attribute name="numcp">
         <dia:int val="1"/>
+      </dia:attribute>
+      <dia:attribute name="line_color">
+        <dia:color val="#ffffff"/>
+      </dia:attribute>
+      <dia:attribute name="line_width">
+        <dia:real val="0.20000000298023224"/>
       </dia:attribute>
       <dia:attribute name="line_style">
         <dia:enum val="1"/>
@@ -176,7 +182,7 @@
             <dia:real val="0.80000000000000004"/>
           </dia:attribute>
           <dia:attribute name="pos">
-            <dia:point val="24,12.695"/>
+            <dia:point val="24,12.6941"/>
           </dia:attribute>
           <dia:attribute name="color">
             <dia:color val="#000000"/>
@@ -227,7 +233,7 @@
             <dia:real val="0.80000000000000004"/>
           </dia:attribute>
           <dia:attribute name="pos">
-            <dia:point val="45,12.695"/>
+            <dia:point val="45,12.6941"/>
           </dia:attribute>
           <dia:attribute name="color">
             <dia:color val="#000000"/>
@@ -276,7 +282,7 @@
         <dia:point val="22,18"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="22,17.1336;53.5864,18.2677"/>
+        <dia:rectangle val="22,17.1617;53.56,18.213"/>
       </dia:attribute>
       <dia:attribute name="text">
         <dia:composite type="text">
@@ -344,7 +350,7 @@
             <dia:real val="1.411111056804657"/>
           </dia:attribute>
           <dia:attribute name="pos">
-            <dia:point val="20.5,7.84444"/>
+            <dia:point val="20.5,7.8423"/>
           </dia:attribute>
           <dia:attribute name="color">
             <dia:color val="#000000"/>
@@ -404,7 +410,7 @@
         <dia:point val="23,6"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="23,5.16;54.9075,9.60167"/>
+        <dia:rectangle val="23,5.13543;55.2488,9.65222"/>
       </dia:attribute>
       <dia:attribute name="text">
         <dia:composite type="text">
@@ -412,7 +418,7 @@
             <dia:string>#A táblának magasabb prioritása van
 
 
-és a felhasználó sebesség limitet is kezelni kell (30 - 160km/h)#</dia:string>
+és a felhasználói sebesség limitet is kezelni kell (30 - 160km/h)#</dia:string>
           </dia:attribute>
           <dia:attribute name="font">
             <dia:font family="sans" style="80" name="Helvetica-Bold"/>

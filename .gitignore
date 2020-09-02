@@ -1,2 +1,9 @@
 book
 *.dia~
+
+# toc generator
+mdbook-toc
+
+# plantuml
+mdbook-plantuml
+src/mdbook-plantuml-img/

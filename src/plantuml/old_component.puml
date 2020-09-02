@@ -1,0 +1,50 @@
+@startuml
+title System Architecture
+
+package "Visualisation" {
+    component [HMI] as HMI
+    component [Course\nDisplay] as CD
+}
+
+package "AutomatedCar" {
+    component [ACC] as ACC
+    component [TSR] as TSR
+    component [PP] as PP
+    component [AEB] as AEB
+    component [LKA] as LKA
+    component [BCM] as BCM
+    component [Virtual Function Bus] as VFB
+    component [Radar Sensor] as RS
+    component [Ultrasonic Sensor] as US
+    component [Front Camera] as FC
+    component [Powertrain System] as PS
+}
+
+package "Environment" {
+    component [Environment] as ENV
+    component [Dynamic Objects] as DO
+}
+
+interface "Map JPEG file" as JPG
+interface "Environment Descriptor XML file" as XML
+
+JPG .up.> CD
+XML .up.> ENV
+DO ..up..> CD
+ACC -down- VFB
+TSR -down- VFB
+PP -down- VFB
+AEB -down- VFB
+LKA -down- VFB
+BCM -down- VFB
+RS -up- VFB
+US -up- VFB
+FC -up- VFB
+PS -up- VFB
+ENV ..up..> RS
+ENV ..up..> US
+ENV ..up..> FC
+DO .left.> ENV
+PS ..down..> DO
+BCM <.right.> HMI
+@enduml

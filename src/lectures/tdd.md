@@ -1,5 +1,8 @@
 # Test Driven Development
 
+<!-- toc -->
+
+
 ## Tesztelés
 
 Az alábbi ábra mutatja a tesztelések eloszlását hagyományos és agilis fejlesztéseknél. Az egész lényege, hogy minél előbb és a fejlesztőhöz a lehető legközelebb derüljön ki a hiba, mert annál gyorsabb és olcsóbb annak javítása. Könnyen belátható, hogy egy leszállított terméket kell visszahívni az körülményesebb mintha a fejlesző a _run tests_ gombra nyomva azonnal, helyben az adott kód részlet írása közben (amikor még az a kontextus van a fejében) kap egy képet arról, hogy mi nem jó.

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <svg id="mindmap" width="700" height="500"></svg>
+        <script src="https://cdn.jsdelivr.net/npm/d3@5"></script>
+        <script src="https://cdn.jsdelivr.net/npm/markmap-lib@0.7.11/dist/browser/view.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/markmap-lib@0.7.11/dist/browser/transform.min.js"></script>
+
+            <pre id="mm" hidden>
+# foobar
+
+## foo
+
+- f
+- o
+- o
+
+## bar
+
+- b
+- a
+- r
+        </pre>
+        <script>
+            function rec(data) {
+                data.p = {f: true};
+                for (var i in data.c) {
+                    rec(data.c[i]);
+                }
+            }
+            markdown =  document.getElementById("mm").innerHTML;
+            const data = markmap.transform(markdown);
+
+            rec(data);
+            markmap.Markmap.create("#mindmap", null, data);
+        </script>
+    </body>
+</html>

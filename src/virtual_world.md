@@ -4,19 +4,16 @@ Az autónak egy virtuális tesztpályán kell végigmennie, amelyhez modellezni 
 
 ![](images/test_world.png)
 
-A fenti világ elemekből épül föl, amelyek között vannak egyenes útszakaszok, kanyarok (pl. 45° és 90°), T elágazás, gyalogos átkelő, közúti táblák, parkolók és fák. Mindezt [egy XML írja le](resources/test_world.xml).
+A fenti világ elemekből épül föl, amelyek között vannak egyenes útszakaszok, kanyarok (pl. 45° és 90°), T elágazás, gyalogos átkelő, közúti táblák, parkolók és fák. Mindezt [egy XML](resources/test_world.xml), vagy [egy JSON](resources/test_world.json) írja le. A feladat megoldásához bármelyik formátum használható.
 
 A számítógépes grafikában megszokott módon, a bal felső sarok jelenti az origót (0,0) koordinátát. Az x tengely tehát jobbra haladva, az y tengely lefelé haladva növekszik. Így kell értelmezni az XML-t és ekképpen működik a megjelenítés is, hiszen a form bal felső sarkánál van a (0, 0) pont. Az alábbi kép [forrása](http://www.e-cartouche.ch/content_reg/cartouche/graphics/en/html/Screen_learningObject3.html).
 
 ![](http://www.e-cartouche.ch/content_reg/cartouche/graphics/en/image/coordinates.jpg)
 
-## Villódzásmentes rajzolás
-
-- https://docs.oracle.com/javase/tutorial/extra/fullscreen/doublebuf.html
 
 ## Objektumok leírása
 
-Egy-egy objektum leírása a következőképpen néz ki:
+Egy-egy objektum leírása a következőképpen néz ki (XML-ben):
 
 ``` xml
 <Object type="road_2lane_straight">
@@ -59,7 +56,7 @@ Egy korábbi félév során a referenciapontokat (részben) már összegyűjtöt
 
 A mozgatásra szoruló elemek (vezérelt autó és NPC autók) nem képezik részét a világ leírásának, viszonyítási pontjuk nem definiált. A rendelkezésre bocsátott autó képek méretarányosak az összes többi objektummal.
 
-A világhoz szükséges elemek megtalálhatóak a project  `src/main/resources` mappájában.
+A világhoz szükséges elemek megtalálhatóak a project `src/main/resources` (Java) vagy `Assets/WorldObjects` (C#) mappájában.
 
 ## Méretarány
 
@@ -67,8 +64,9 @@ Az XML-ben leírt objektumok koordináta-rendszere nem feltétlenül egyezik meg
 
 A feladat megoldás során jellemzően valóságos mértékegységekben specifikáljuk a feladatot (pl. méter, km/h, m/s^2, stb.) míg az XML és a grafikai elemek értelem szerűen pixellel dolgoznak. Ennek feloldására, illetve az átváltásra az **1m=50px** szabályt célszerű használni. Ez egy hozzávetőlegesen arányos érték, amellyel számolni is könnyű.
 
-## Sávtartó automatika tesztelése
+<!--## Sávtartó automatika tesztelése
 
 A sávtartó automatika nem tesztelhető kanyarokban, ehhez ezért egy alább látható kinézetű pályaszakasz készült. Csak 6°-os és egyenes útszakaszból áll. [Az XML elérhető itt](resources/lane_keeping_test_world.xml).
 
 ![](images/lka_track.png)
+-->

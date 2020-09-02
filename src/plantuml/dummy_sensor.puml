@@ -1,0 +1,56 @@
+@startuml
+abstract class GameBase {
+    + int TicksPerSecond
+    + long CurrentTick
+    - DispatcherTimer _timer
+
+    void DoTick()
+    # {abstract} void Tick()
+    + void Start()
+    + void Stop()
+}
+
+class VirtualFunctionBus {
+    - SystemComponent[] components
+    - IReadOnlyDummyPacket DummyPacket
+    + int getIReadOnlyDummyPacket()
+    + void setIReadOnlyDummyPacket()
+    + void registerComponent(SystemComponent component)
+}
+
+abstract class SystemComponent {
+    # VirtualFunctionBus virtualFunctionBus
+    # SystemComponent(VirtualFunctionBus virtualFunctionBus)
+    + {abstract} void Process()
+}
+
+class DummySensor {
+   - DummyPacket dummyPacket
+}
+
+class DummyPacket {
+    - int distanceX
+    - int distanceY
+    + void setDistanceX()
+    + int getDistanceX()
+    + void setDistanceY()
+    + int getDistanceY()
+}
+
+interface IReadOnlyDummyPacket {
+    + int getDistanceX()
+    + int getDistanceY()
+}
+
+DummySensor <|-- SystemComponent
+DummySensor *-- DummyPacket
+DummyPacket <-- IReadOnlyDummyPacket
+
+VirtualFunctionBus <|-- GameBase
+VirtualFunctionBus *-- "many" SystemComponent
+VirtualFunctionBus *-- "1" IReadOnlyDummyPacket
+
+header
+DummySensor class diagram
+endheader
+@enduml
