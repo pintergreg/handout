@@ -1,0 +1,47 @@
+classDiagram
+    World "1" *-- "n" WorldObject
+    WorldObject <|-- Car
+    Car <|-- AutomatedCar
+    ReactiveObject <|-- World
+    ReactiveObject <|-- WorldObject
+
+    class ReactiveObject {
+    <<Interface>>
+    }
+    class World {
+    <<singleton>>
+        -int width
+        -int height
+        -List<WorldObject> worldObjects
+        -AutomatedCar controlledCar
+        +getWidth()
+        +setWidth(int width)
+        +getHeight()
+        +setHeight(int height)
+        +addObject(WorldObject worldObject)
+        +getControlledCar()
+        +setControlledCar(AutomatedCar controlledCar)
+    }
+
+    class WorldObject {
+    <<abstract>>
+        -int x
+        -int y
+        -int zIndex
+        -string filename
+        +getX()
+        +setX(int x)
+        +getY()
+        +setY(int y)
+    }
+
+    class Car {
+        -int speed
+        +getSpeed()
+        +setSpeed(int speed)
+    }
+
+    class AutomatedCar {
+    }
+
+
