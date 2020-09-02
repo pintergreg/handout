@@ -12,7 +12,7 @@ A szimulált autó automata váltóval rendelkezik, így a váltó *P*, *R*, *N*
 
 A műszerfalnak az alábbi vázlathoz hasonlóan kell felépülnie. A programablak bal oldalán a virtuális világ egy szeletét látjuk ezért felel, a vizualizációs modul. A jobb oldalon a műszerfal található. A műszerfalon nincsenek vezérlőelemek, csak megjelenítés. Az összes kapcsoló a billentyűzettel állítható, a grafikus elemeknek nem kell pl. egérrel kapcsolhatónak lenniük.
 
-![gui_plan](images/gui_plan.png)
+![gui_plan](images/gui_plan_dashboard.png)
 
 A fordulatszám és a sebesség legyen egy analóg órával reprezentálva; a kormány elforgazás, a gáz- és fékpedál állása progressbar-okkal szemléltethető. Az irányjelző visszajelzője és a vezetéstámogató funkciók visszajelzői lámpaszerűek, a sebességváltó állása, és a debug értékek pl. kocsi pozíciója (x, y koordináta) lehet szöveges.
 
