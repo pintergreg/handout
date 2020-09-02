@@ -19,8 +19,8 @@ enable = true
 level = 1
 
 [preprocessor.toc]
-command = "./mdbook-toc"
+command = "mdbook-toc"
 renderer = ["html"]
 
-# [preprocessor.plantuml]
-# command = "./mdbook-plantuml -l"
+[preprocessor.plantuml]
+command = "mdbook-plantuml -l"
