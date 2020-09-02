@@ -40,6 +40,7 @@ Az órák csütörtökönként a BA.F.07-ben vannak (?online, MS Teams-en), nept
 </div>
 
 
+<!--
 # Házi feladat - 1. hét
 
 1. GitHub fiók létrehozása
@@ -59,6 +60,7 @@ Az órák csütörtökönként a BA.F.07-ben vannak (?online, MS Teams-en), nept
     * Ennek terjedelme (az órái példa alapján): egy absztrakciós szint a négyfelé bontás (kb. user story szint), és egy az ez alatti egyel, minden komponens még egy kibontása, kb. egyenrangú komponensek létrehozására - osztály szintre nem mennék le, még ha a végén ezekből akár osztály is lesz. Szóval kettő struktúra, kettő dinamikus viselkedést leíró diagram, egy magasabb és egy alacsonyabb absztrakciós szinten. Hogy konkrétan hány building block, azt mindenkinek "érzésre" kell megállapítania, ezért szubjektív az architektúra.
     * Ez egy egyéni feladat, hiszen még nincsenek csapatok. Az elkészítéshez javasolt eszközök: MS Visio, https://www.draw.io/.
     * Az elkészült diagramoknak a következő órán bemutatható állapotban kell lenniük.
+-->
 
 
 
