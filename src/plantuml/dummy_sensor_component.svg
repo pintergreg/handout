@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="201px" preserveAspectRatio="none" style="width:595px;height:201px;" version="1.1" viewBox="0 0 595 201" width="595px" zoomAndPan="magnify"><defs><filter height="300%" id="f1mdv2q796v2n5" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><text fill="#888888" font-family="sans-serif" font-size="10" lengthAdjust="spacingAndGlyphs" textLength="175" x="402" y="9.2822">DummySensor component diagram</text><!--MD5=[38fe1c859229b9f23ba24ebfd54228a3]
+cluster world--><rect fill="#FFFFFF" filter="url(#f1mdv2q796v2n5)" height="164" style="stroke: #000000; stroke-width: 1.5;" width="569" x="7" y="18.6406"/><rect fill="#FFFFFF" height="10" style="stroke: #000000; stroke-width: 1.5;" width="15" x="556" y="23.6406"/><rect fill="#FFFFFF" height="2" style="stroke: #000000; stroke-width: 1.5;" width="4" x="554" y="25.6406"/><rect fill="#FFFFFF" height="2" style="stroke: #000000; stroke-width: 1.5;" width="4" x="554" y="29.6406"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="46" x="268.5" y="44.6357">World</text><!--MD5=[9e42cec410d17da6794b66c9997beeab]
+cluster egocar--><rect fill="#FFFFFF" filter="url(#f1mdv2q796v2n5)" height="97" style="stroke: #000000; stroke-width: 1.5;" width="431" x="121" y="61.6406"/><rect fill="#FFFFFF" height="10" style="stroke: #000000; stroke-width: 1.5;" width="15" x="532" y="66.6406"/><rect fill="#FFFFFF" height="2" style="stroke: #000000; stroke-width: 1.5;" width="4" x="530" y="68.6406"/><rect fill="#FFFFFF" height="2" style="stroke: #000000; stroke-width: 1.5;" width="4" x="530" y="72.6406"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="113" x="280" y="87.6357">AutomatedCar</text><!--MD5=[727c1040af9be188ab17d19c49f9ac10]
+entity ds--><rect fill="#FEFECE" filter="url(#f1mdv2q796v2n5)" height="46.2969" style="stroke: #A80036; stroke-width: 1.5;" width="142" x="394" y="96.6406"/><rect fill="#FEFECE" height="10" style="stroke: #A80036; stroke-width: 1.5;" width="15" x="516" y="101.6406"/><rect fill="#FEFECE" height="2" style="stroke: #A80036; stroke-width: 1.5;" width="4" x="514" y="103.6406"/><rect fill="#FEFECE" height="2" style="stroke: #A80036; stroke-width: 1.5;" width="4" x="514" y="107.6406"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="102" x="409" y="129.6357">DummySensor</text><!--MD5=[69f9769d89403b9a0d4f930ab860b1e0]
+entity vfb--><rect fill="#FEFECE" filter="url(#f1mdv2q796v2n5)" height="46.2969" style="stroke: #A80036; stroke-width: 1.5;" width="169" x="136.5" y="96.6406"/><rect fill="#FEFECE" height="10" style="stroke: #A80036; stroke-width: 1.5;" width="15" x="285.5" y="101.6406"/><rect fill="#FEFECE" height="2" style="stroke: #A80036; stroke-width: 1.5;" width="4" x="283.5" y="103.6406"/><rect fill="#FEFECE" height="2" style="stroke: #A80036; stroke-width: 1.5;" width="4" x="283.5" y="107.6406"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="129" x="151.5" y="129.6357">VirtualFunctionBus</text><!--MD5=[619de47f7aa1106b4a43be6225b576c0]
+entity rc--><ellipse cx="350" cy="119.6406" fill="#FEFECE" filter="url(#f1mdv2q796v2n5)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="53" x="323.5" y="149.6357">register</text><!--MD5=[2228604ea0da6e70e93541bc316af2a4]
+entity Circle--><rect fill="#FFFFFF" filter="url(#f1mdv2q796v2n5)" height="46.2969" style="stroke: #A80036; stroke-width: 1.5;" width="78" x="23" y="96.6406"/><rect fill="#FFFFFF" height="10" style="stroke: #A80036; stroke-width: 1.5;" width="15" x="81" y="101.6406"/><rect fill="#FFFFFF" height="2" style="stroke: #A80036; stroke-width: 1.5;" width="4" x="79" y="103.6406"/><rect fill="#FFFFFF" height="2" style="stroke: #A80036; stroke-width: 1.5;" width="4" x="79" y="107.6406"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="38" x="38" y="129.6357">Circle</text><!--MD5=[a436fafe170d223fd06404113ef1af14]
+reverse link rc to ds--><path d="M369.59,119.6406 C377.62,119.6406 385.64,119.6406 393.66,119.6406 " fill="none" id="rc&lt;-ds" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M362.5082,128.0979 A9,9 0 0 0 362.5082 111.1834" fill="none" style="stroke: #A80036; stroke-width: 1.5;"/><!--MD5=[8050d0b1eae112d26a8dbc6974e0d93d]
+link vfb to rc--><path d="M305.66,119.6406 C317.44,119.6406 329.21,119.6406 340.99,119.6406 " fill="none" id="vfb-rc" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[9e1090170533d9dd2f11a5c98290289a]
+@startuml
+component [World] as world {
+
+  component [AutomatedCar] as egocar {
+    component [DummySensor] as ds
+    component [VirtualFunctionBus] as vfb
+
+    interface register as rc
+  }
+
+  component [Circle] {
+  }
+  
+  ds -left-( rc
+  vfb -right- rc
+ 
+}
+
+header
+DummySensor component diagram
+endheader
+
+@enduml
+
+PlantUML version 1.2020.15(Sun Jun 28 13:39:45 CEST 2020)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: hu
+Country: HU
+--></g></svg>

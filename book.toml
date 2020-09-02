@@ -22,5 +22,5 @@ level = 1
 command = "./mdbook-toc"
 renderer = ["html"]
 
-[preprocessor.plantuml]
-command = "./mdbook-plantuml -l"
+# [preprocessor.plantuml]
+# command = "./mdbook-plantuml -l"
