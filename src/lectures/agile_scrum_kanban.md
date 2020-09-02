@@ -77,14 +77,18 @@
 - [How to Succeed at a Sprint Demo](https://reqtest.com/development/how-to-succeed-at-a-sprint-demo/)
 - [Scrum Master - Funny movie about The Power of Scrum](https://www.youtube.com/watch?v=P6v-I9VvTq4)
 
----
-
 ### Az Egyetem más tárgyhoz fejlesztett e-tananyaga SCRUM-hoz
 
 - Elérhető [innen](http://innovacio.uni-obuda.hu/p/elearning/)
 - Ebből az első két blokk (a „[Product owner](http://innovacio.uni-obuda.hu/p/elearning/course/77)” és a „[Scrum Master](http://innovacio.uni-obuda.hu/p/elearning/course/89)”) releváns, mindkettő 5-5 modul, modulonként egy ~50 oldalas prezentációval.
 - Teljes más a sztuktúrája mint az SzFMV tárgynak, de kifejezetten hasznos részeket is tartalmaz mint pl. a Product owner / 4. modul: user story szétbontása
 - A modulokhoz ellenőrző kérdések is vannak, ezek bár független a ZH kérdéseinkről, de a releváns fejezetek önellenőrzésére jók lehetnek
+
+### Cross-functional team
+
+![](../images/cross_functional.png)
+
+Akkor tud egy csapat „cross-functional” lenni, ha minden tagja kellőképpen érti a csapat feladatát, így a tagok képesek egymást helyettesíteni. A fenti ábra a csapattagok tudását szemlélteti. Az első esetben csupán elenyésző általános tudással rendelkező emberekről van szó, akik egy nagyon szűk területet ismernek. A *cross-functional team* esetében is megvan az egyes tagok specifikus tudása ám az kevésbé nyúlik túl a csapat általános ismeretein és kevésbé specifikusabb is.
 
 
 ## Kanban
