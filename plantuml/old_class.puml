@@ -1,0 +1,89 @@
+@startuml
+title Class Diagram
+
+class VirtualFunctionBus {
+  {static} -List<ISystemComponent> components
+  {static} +void registerComponent(ISystemComponent comp)
+  {static} +void sendSignal(Signal s)
+  {static} +void loop()
+}
+
+interface ISystemComponent{
+ +void loop()
+ +void receiveSignal(Signal s)
+}
+
+class Signal{
+ -int Id
+ -Number data
+ +int getId()
+ +Number getData()
+}
+
+class World{
+ -int width
+ -int height
+ -List<WorldObject> worldObjects
+ +int getWidth()
+ +int getHeight()
+ +void setWidth(int width)
+ +void setHeight(int height)
+ +void addObjectToWorld(WorldObject o)
+ +List<WorldObject> getWorldObjects()
+}
+
+class WorldObject{
+ #int x
+ #int y
+ #int width
+ #int height
+ #float rotation
+ #String imageFileName
+ +int getX()
+ +int getY()
+ +int getWidth()
+ +int getHeight()
+ +float getRotation()
+ +String getImageFileName()
+ +void setX(int x)
+ +void setY(int y)
+ +void setWidth(int width)
+ +void setHeight(int height)
+ +void setRotation(float rotation)
+ +void setImageFileName(String imageFileName)
+}
+
+class CourseDisplay{
+ -JFrame frame
+ +void init(World world)
+}
+
+class AutomatedCar{
+ -double wheelAngle
+ +void drive()
+}
+
+
+class PowertrainSystem{
+ -int x
+ -int y
+ -int gasPedal
+ -int wheelAngle
+ +int getX()
+ +int getY()
+ +double getWheelAngle()
+}
+
+abstract class SystemComponent{
+ # protected SystemComponent()
+}
+
+AutomatedCar <|-- WorldObject
+PowertrainSystem <|-- SystemComponent
+SystemComponent <|-- ISystemComponent
+VirtualFunctionBus "1" *-- "many" ISystemComponent : contains
+ISystemComponent *-- "Signal" : use
+World "1" *-- "many" WorldObject: contains
+CourseDisplay *-- World: contains
+AutomatedCar *--PowertrainSystem: contains
+@enduml

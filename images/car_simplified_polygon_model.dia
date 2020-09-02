@@ -175,6 +175,12 @@
         <dia:enum val="0"/>
         <dia:enum val="0"/>
       </dia:attribute>
+      <dia:attribute name="line_width">
+        <dia:real val="0.10000000149011612"/>
+      </dia:attribute>
+      <dia:attribute name="inner_color">
+        <dia:color val="#74b1ef"/>
+      </dia:attribute>
       <dia:attribute name="show_background">
         <dia:boolean val="true"/>
       </dia:attribute>
@@ -206,6 +212,12 @@
         <dia:enum val="0"/>
         <dia:enum val="0"/>
         <dia:enum val="0"/>
+      </dia:attribute>
+      <dia:attribute name="line_width">
+        <dia:real val="0.10000000149011612"/>
+      </dia:attribute>
+      <dia:attribute name="inner_color">
+        <dia:color val="#74b1ef"/>
       </dia:attribute>
       <dia:attribute name="show_background">
         <dia:boolean val="true"/>
@@ -251,7 +263,7 @@
             <dia:real val="0.80000000000000004"/>
           </dia:attribute>
           <dia:attribute name="pos">
-            <dia:point val="25.3,12.695"/>
+            <dia:point val="25.3,12.6941"/>
           </dia:attribute>
           <dia:attribute name="color">
             <dia:color val="#000000"/>

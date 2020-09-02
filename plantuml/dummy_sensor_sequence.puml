@@ -1,0 +1,16 @@
+@startuml
+DummySensor -> VirtualFunctionBus: registerComponent
+loop
+    VirtualFunctionBus -> DummySensor: Process
+    activate DummySensor
+    DummySensor -> World: Get Circle
+
+    DummySensor -> DummySensor: Calculate distance from Circle
+    DummySensor -> DummyPacket: Store distance
+    deactivate DummySensor
+end
+
+header
+DummySensor sequence diagram
+endheader
+@enduml

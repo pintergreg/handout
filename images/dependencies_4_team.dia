@@ -103,7 +103,7 @@
             <dia:real val="0.84666663408279419"/>
           </dia:attribute>
           <dia:attribute name="pos">
-            <dia:point val="33.5,18.7067"/>
+            <dia:point val="33.5,18.7054"/>
           </dia:attribute>
           <dia:attribute name="color">
             <dia:color val="#000000"/>
@@ -154,7 +154,7 @@
             <dia:real val="0.84666663408279419"/>
           </dia:attribute>
           <dia:attribute name="pos">
-            <dia:point val="48.5,11.7067"/>
+            <dia:point val="48.5,11.7054"/>
           </dia:attribute>
           <dia:attribute name="color">
             <dia:color val="#000000"/>
@@ -179,6 +179,9 @@
       <dia:attribute name="numcp">
         <dia:int val="1"/>
       </dia:attribute>
+      <dia:attribute name="line_color">
+        <dia:color val="#a52a2a"/>
+      </dia:attribute>
       <dia:attribute name="end_arrow">
         <dia:enum val="1"/>
       </dia:attribute>
@@ -195,13 +198,13 @@
     </dia:object>
     <dia:object type="Flowchart - Box" version="0" id="O3">
       <dia:attribute name="obj_pos">
-        <dia:point val="30,27"/>
+        <dia:point val="30,28"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="29.95,26.95;37.05,30.05"/>
+        <dia:rectangle val="29.95,27.95;37.05,31.05"/>
       </dia:attribute>
       <dia:attribute name="elem_corner">
-        <dia:point val="30,27"/>
+        <dia:point val="30,28"/>
       </dia:attribute>
       <dia:attribute name="elem_width">
         <dia:real val="7"/>
@@ -234,7 +237,7 @@ Műszerfal#</dia:string>
             <dia:real val="0.84666663408279419"/>
           </dia:attribute>
           <dia:attribute name="pos">
-            <dia:point val="33.5,28.2833"/>
+            <dia:point val="33.5,29.282"/>
           </dia:attribute>
           <dia:attribute name="color">
             <dia:color val="#000000"/>
@@ -247,13 +250,13 @@ Műszerfal#</dia:string>
     </dia:object>
     <dia:object type="Flowchart - Box" version="0" id="O4">
       <dia:attribute name="obj_pos">
-        <dia:point val="45,27"/>
+        <dia:point val="45,28"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="44.95,26.95;52.05,30.05"/>
+        <dia:rectangle val="44.95,27.95;52.05,31.05"/>
       </dia:attribute>
       <dia:attribute name="elem_corner">
-        <dia:point val="45,27"/>
+        <dia:point val="45,28"/>
       </dia:attribute>
       <dia:attribute name="elem_width">
         <dia:real val="7"/>
@@ -286,7 +289,7 @@ Kormányzás#</dia:string>
             <dia:real val="0.84666663408279419"/>
           </dia:attribute>
           <dia:attribute name="pos">
-            <dia:point val="48.5,28.2833"/>
+            <dia:point val="48.5,29.282"/>
           </dia:attribute>
           <dia:attribute name="color">
             <dia:color val="#000000"/>
@@ -337,7 +340,7 @@ Kormányzás#</dia:string>
             <dia:real val="0.84666663408279419"/>
           </dia:attribute>
           <dia:attribute name="pos">
-            <dia:point val="63.5,32.7067"/>
+            <dia:point val="63.5,32.7054"/>
           </dia:attribute>
           <dia:attribute name="color">
             <dia:color val="#000000"/>
@@ -350,17 +353,20 @@ Kormányzás#</dia:string>
     </dia:object>
     <dia:object type="Standard - Line" version="0" id="O6">
       <dia:attribute name="obj_pos">
-        <dia:point val="37,28.5"/>
+        <dia:point val="37,29.5"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="36.95,28.1691;45.1118,28.8309"/>
+        <dia:rectangle val="36.95,29.1691;45.1118,29.8309"/>
       </dia:attribute>
       <dia:attribute name="conn_endpoints">
-        <dia:point val="37,28.5"/>
-        <dia:point val="45,28.5"/>
+        <dia:point val="37,29.5"/>
+        <dia:point val="45,29.5"/>
       </dia:attribute>
       <dia:attribute name="numcp">
         <dia:int val="1"/>
+      </dia:attribute>
+      <dia:attribute name="line_color">
+        <dia:color val="#a52a2a"/>
       </dia:attribute>
       <dia:attribute name="end_arrow">
         <dia:enum val="1"/>
@@ -416,7 +422,7 @@ Kormányzás#</dia:string>
             <dia:real val="0.84666663408279419"/>
           </dia:attribute>
           <dia:attribute name="pos">
-            <dia:point val="63.5,18.7067"/>
+            <dia:point val="63.5,18.7054"/>
           </dia:attribute>
           <dia:attribute name="color">
             <dia:color val="#000000"/>
@@ -467,7 +473,7 @@ Kormányzás#</dia:string>
             <dia:real val="0.84666663408279419"/>
           </dia:attribute>
           <dia:attribute name="pos">
-            <dia:point val="63.5,25.7067"/>
+            <dia:point val="63.5,25.7054"/>
           </dia:attribute>
           <dia:attribute name="color">
             <dia:color val="#000000"/>
@@ -491,6 +497,9 @@ Kormányzás#</dia:string>
       </dia:attribute>
       <dia:attribute name="numcp">
         <dia:int val="1"/>
+      </dia:attribute>
+      <dia:attribute name="line_color">
+        <dia:color val="#a52a2a"/>
       </dia:attribute>
       <dia:attribute name="end_arrow">
         <dia:enum val="1"/>
@@ -546,7 +555,7 @@ parkolás#</dia:string>
             <dia:real val="0.84666663408279419"/>
           </dia:attribute>
           <dia:attribute name="pos">
-            <dia:point val="78.5,18.2833"/>
+            <dia:point val="78.5,18.282"/>
           </dia:attribute>
           <dia:attribute name="color">
             <dia:color val="#000000"/>
@@ -599,7 +608,7 @@ Táblafelismerés#</dia:string>
             <dia:real val="0.84666663408279419"/>
           </dia:attribute>
           <dia:attribute name="pos">
-            <dia:point val="78.5,10.88"/>
+            <dia:point val="78.5,10.8787"/>
           </dia:attribute>
           <dia:attribute name="color">
             <dia:color val="#000000"/>
@@ -651,7 +660,7 @@ tempomat#</dia:string>
             <dia:real val="0.84666663408279419"/>
           </dia:attribute>
           <dia:attribute name="pos">
-            <dia:point val="78.5,25.2833"/>
+            <dia:point val="78.5,25.282"/>
           </dia:attribute>
           <dia:attribute name="color">
             <dia:color val="#000000"/>
@@ -702,7 +711,7 @@ tempomat#</dia:string>
             <dia:real val="0.84666663408279419"/>
           </dia:attribute>
           <dia:attribute name="pos">
-            <dia:point val="78.5,32.7067"/>
+            <dia:point val="78.5,32.7054"/>
           </dia:attribute>
           <dia:attribute name="color">
             <dia:color val="#000000"/>
@@ -726,6 +735,9 @@ tempomat#</dia:string>
       </dia:attribute>
       <dia:attribute name="numcp">
         <dia:int val="1"/>
+      </dia:attribute>
+      <dia:attribute name="line_color">
+        <dia:color val="#a52a2a"/>
       </dia:attribute>
       <dia:attribute name="end_arrow">
         <dia:enum val="1"/>
@@ -755,6 +767,9 @@ tempomat#</dia:string>
       <dia:attribute name="numcp">
         <dia:int val="1"/>
       </dia:attribute>
+      <dia:attribute name="line_color">
+        <dia:color val="#a52a2a"/>
+      </dia:attribute>
       <dia:attribute name="end_arrow">
         <dia:enum val="1"/>
       </dia:attribute>
@@ -782,6 +797,9 @@ tempomat#</dia:string>
       </dia:attribute>
       <dia:attribute name="numcp">
         <dia:int val="1"/>
+      </dia:attribute>
+      <dia:attribute name="line_color">
+        <dia:color val="#a52a2a"/>
       </dia:attribute>
       <dia:attribute name="end_arrow">
         <dia:enum val="1"/>
@@ -811,6 +829,9 @@ tempomat#</dia:string>
       <dia:attribute name="numcp">
         <dia:int val="1"/>
       </dia:attribute>
+      <dia:attribute name="line_color">
+        <dia:color val="#a52a2a"/>
+      </dia:attribute>
       <dia:attribute name="end_arrow">
         <dia:enum val="1"/>
       </dia:attribute>
@@ -838,6 +859,9 @@ tempomat#</dia:string>
       </dia:attribute>
       <dia:attribute name="numcp">
         <dia:int val="1"/>
+      </dia:attribute>
+      <dia:attribute name="line_color">
+        <dia:color val="#a52a2a"/>
       </dia:attribute>
       <dia:attribute name="end_arrow">
         <dia:enum val="1"/>
@@ -867,6 +891,9 @@ tempomat#</dia:string>
       <dia:attribute name="numcp">
         <dia:int val="1"/>
       </dia:attribute>
+      <dia:attribute name="line_color">
+        <dia:color val="#a52a2a"/>
+      </dia:attribute>
       <dia:attribute name="end_arrow">
         <dia:enum val="1"/>
       </dia:attribute>
@@ -883,17 +910,20 @@ tempomat#</dia:string>
     </dia:object>
     <dia:object type="Standard - Line" version="0" id="O20">
       <dia:attribute name="obj_pos">
-        <dia:point val="52,28.5"/>
+        <dia:point val="52,29.5"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="51.939,26.2446;60.0587,28.561"/>
+        <dia:rectangle val="51.9363,26.5991;60.0561,29.5637"/>
       </dia:attribute>
       <dia:attribute name="conn_endpoints">
-        <dia:point val="52,28.5"/>
-        <dia:point val="59.9505,26.426"/>
+        <dia:point val="52,29.5"/>
+        <dia:point val="59.9505,26.7346"/>
       </dia:attribute>
       <dia:attribute name="numcp">
         <dia:int val="1"/>
+      </dia:attribute>
+      <dia:attribute name="line_color">
+        <dia:color val="#a52a2a"/>
       </dia:attribute>
       <dia:attribute name="end_arrow">
         <dia:enum val="1"/>
@@ -911,17 +941,20 @@ tempomat#</dia:string>
     </dia:object>
     <dia:object type="Standard - Line" version="0" id="O21">
       <dia:attribute name="obj_pos">
-        <dia:point val="52,28.5"/>
+        <dia:point val="52,29.5"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="51.9326,12.9006;60.0699,28.5674"/>
+        <dia:rectangle val="51.9332,12.8994;60.0736,29.5668"/>
       </dia:attribute>
       <dia:attribute name="conn_endpoints">
-        <dia:point val="52,28.5"/>
+        <dia:point val="52,29.5"/>
         <dia:point val="60,13"/>
       </dia:attribute>
       <dia:attribute name="numcp">
         <dia:int val="1"/>
+      </dia:attribute>
+      <dia:attribute name="line_color">
+        <dia:color val="#a52a2a"/>
       </dia:attribute>
       <dia:attribute name="end_arrow">
         <dia:enum val="1"/>
@@ -939,17 +972,20 @@ tempomat#</dia:string>
     </dia:object>
     <dia:object type="Standard - Line" version="0" id="O22">
       <dia:attribute name="obj_pos">
-        <dia:point val="52,28.5"/>
+        <dia:point val="52,29.5"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="51.9295,19.9757;61.8029,28.5705"/>
+        <dia:rectangle val="51.9293,19.973;61.9601,29.5707"/>
       </dia:attribute>
       <dia:attribute name="conn_endpoints">
-        <dia:point val="52,28.5"/>
-        <dia:point val="61.7186,20.0491"/>
+        <dia:point val="52,29.5"/>
+        <dia:point val="61.8793,20.0502"/>
       </dia:attribute>
       <dia:attribute name="numcp">
         <dia:int val="1"/>
+      </dia:attribute>
+      <dia:attribute name="line_color">
+        <dia:color val="#a52a2a"/>
       </dia:attribute>
       <dia:attribute name="end_arrow">
         <dia:enum val="1"/>
@@ -979,6 +1015,9 @@ tempomat#</dia:string>
       <dia:attribute name="numcp">
         <dia:int val="1"/>
       </dia:attribute>
+      <dia:attribute name="line_color">
+        <dia:color val="#a52a2a"/>
+      </dia:attribute>
       <dia:attribute name="end_arrow">
         <dia:enum val="1"/>
       </dia:attribute>
@@ -1007,6 +1046,9 @@ tempomat#</dia:string>
       <dia:attribute name="numcp">
         <dia:int val="1"/>
       </dia:attribute>
+      <dia:attribute name="line_color">
+        <dia:color val="#a52a2a"/>
+      </dia:attribute>
       <dia:attribute name="end_arrow">
         <dia:enum val="1"/>
       </dia:attribute>
@@ -1034,6 +1076,9 @@ tempomat#</dia:string>
       </dia:attribute>
       <dia:attribute name="numcp">
         <dia:int val="1"/>
+      </dia:attribute>
+      <dia:attribute name="line_color">
+        <dia:color val="#a52a2a"/>
       </dia:attribute>
       <dia:attribute name="end_arrow">
         <dia:enum val="1"/>
@@ -1089,7 +1134,7 @@ tempomat#</dia:string>
             <dia:real val="0.84666663408279419"/>
           </dia:attribute>
           <dia:attribute name="pos">
-            <dia:point val="63.5,10.9567"/>
+            <dia:point val="63.5,10.9554"/>
           </dia:attribute>
           <dia:attribute name="color">
             <dia:color val="#000000"/>
@@ -1140,7 +1185,7 @@ tempomat#</dia:string>
             <dia:real val="0.84666663408279419"/>
           </dia:attribute>
           <dia:attribute name="pos">
-            <dia:point val="63.5,12.4567"/>
+            <dia:point val="63.5,12.4554"/>
           </dia:attribute>
           <dia:attribute name="color">
             <dia:color val="#000000"/>
@@ -1165,6 +1210,9 @@ tempomat#</dia:string>
       <dia:attribute name="numcp">
         <dia:int val="1"/>
       </dia:attribute>
+      <dia:attribute name="line_color">
+        <dia:color val="#a52a2a"/>
+      </dia:attribute>
       <dia:attribute name="end_arrow">
         <dia:enum val="1"/>
       </dia:attribute>
@@ -1177,6 +1225,37 @@ tempomat#</dia:string>
       <dia:connections>
         <dia:connection handle="0" to="O27" connection="8"/>
         <dia:connection handle="1" to="O13" connection="0"/>
+      </dia:connections>
+    </dia:object>
+    <dia:object type="Standard - Line" version="0" id="O29">
+      <dia:attribute name="obj_pos">
+        <dia:point val="36.8197,20.0492"/>
+      </dia:attribute>
+      <dia:attribute name="obj_bb">
+        <dia:rectangle val="36.7532,19.9827;60.2816,31.0324"/>
+      </dia:attribute>
+      <dia:attribute name="conn_endpoints">
+        <dia:point val="36.8197,20.0492"/>
+        <dia:point val="60.1803,30.9508"/>
+      </dia:attribute>
+      <dia:attribute name="numcp">
+        <dia:int val="1"/>
+      </dia:attribute>
+      <dia:attribute name="line_color">
+        <dia:color val="#a52a2a"/>
+      </dia:attribute>
+      <dia:attribute name="end_arrow">
+        <dia:enum val="1"/>
+      </dia:attribute>
+      <dia:attribute name="end_arrow_length">
+        <dia:real val="0.5"/>
+      </dia:attribute>
+      <dia:attribute name="end_arrow_width">
+        <dia:real val="0.5"/>
+      </dia:attribute>
+      <dia:connections>
+        <dia:connection handle="0" to="O0" connection="16"/>
+        <dia:connection handle="1" to="O5" connection="16"/>
       </dia:connections>
     </dia:object>
   </dia:layer>
