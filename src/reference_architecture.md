@@ -27,12 +27,6 @@ Ebből következik, hogy a feliratkozást az ábrán látható sorrendben kell m
 
 ![](plantuml/dummy_sensor_vfb.svg)
 
-<!--
-```plantuml
-{{#include plantuml/dummy_sensor_vfb.puml}}
-```
--->
-
 Minden adatközlő modulnak létre kell hoznia egy-egy csomag (packet) típust (és vele párhuzamosan egy az olvasást biztosító interfészt), amely tartalmazza azokat az információkat amelyeket továbbítania kell. Például az input modul a pedál és kormány állásokat. A hajtáslánc a következő, kiolvassa a pedál és váltó állást, számol vele, majd visszaírja a _saját_ csomagjába motor fordulatszámát és az autó sebességét, stb. Ezekre legközelebb a kormányzás modulnak lesz szüksége, az kiolvassa ugyanúgy mint az input modul kormányállás értékét, számol vele, majd visszaírja a autó adott iterációra vonatkozó elmozdulását.
 
 
