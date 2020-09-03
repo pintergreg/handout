@@ -2664,7 +2664,8 @@ Be- és kikapcsolható</li>
 <p>A VirtualFunctionBus (VFB) egy kommunikációs megoldás az AutomatedCar komponensei (SystemComponent) számára. A komponensek feliratkoznak a buszra és <strong>a feliratkozás sorrendjében</strong> ciklikusan meghívásra kerül a <code>Process()</code> metódusok.</p>
 <p>Ebből következik, hogy a feliratkozást az ábrán látható sorrendben kell megtenni, mivel az adatáramlásnak ilyen irányultsága van. Az ábra a kód kezdeti állapotát szemlélteti, a munka során további modulok (szenzorok, vezetés támogató rendszerek) is csatlakoznak majd. Valamint a hajtáslánc és a kormányzás modult nem kötelező ennyire élesen szétválasztani.</p>
 <p><img src="plantuml/dummy_sensor_vfb.svg" alt="" /></p>
-<!-- ```plantuml
+<!--
+```plantuml
 @startditaa
                         calling order
       -------------------------------------------------->
@@ -2681,7 +2682,8 @@ v             |    v            |   v           |   v
 |                       VirtualFunctionBus                     |
 +--------------------------------------------------------------+
 @endditaa</p>
-<pre><code class="language---&gt;">
+<pre><code>--&gt;
+
 Minden adatközlő modulnak létre kell hoznia egy-egy csomag (packet) típust (és vele párhuzamosan egy az olvasást biztosító interfészt), amely tartalmazza azokat az információkat amelyeket továbbítania kell. Például az input modul a pedál és kormány állásokat. A hajtáslánc a következő, kiolvassa a pedál és váltó állást, számol vele, majd visszaírja a _saját_ csomagjába motor fordulatszámát és az autó sebességét, stb. Ezekre legközelebb a kormányzás modulnak lesz szüksége, az kiolvassa ugyanúgy mint az input modul kormányállás értékét, számol vele, majd visszaírja a autó adott iterációra vonatkozó elmozdulását.
 
 
@@ -2703,7 +2705,8 @@ A példa szempontjából releváns komponensek viszonyát alábbi ábra szemlél
 
 ![](plantuml/dummy_sensor_component.svg)
 
-&lt;!-- ```plantuml
+&lt;!--
+```plantuml
 @startuml
 component [World] as world {
 
@@ -2727,28 +2730,24 @@ DummySensor component diagram
 endheader
 
 @enduml
-``` --&gt;
-
-A *World* singleton osztály tartalmaz minden *WorldObject*-et és tartalmaz referenciát a vezérelt autóra, amely közvetetten szintén *WorldObject*, csakúgy mint a *Circle*. Az *AutomatedCar* tartalmazza a *VirtualFunctionBus*-t, mivel ez az autó komponenseinek kommunikációs csatornáját valósítja meg. Szintén az *AutomatedCar* tartalmazza a szenzorokat, jelen esetben a *DummySensor*-t.
-
-Ahhoz, hogy a szenzorok (vagy egyéb komponensek mint a hajtáslánc például) adatot cserélhessenek fel kell iratkozniuk a VFB-ra. Miután a feliratkozás megtörtént, a VFB minden ciklusában meghívja a `Porcess()` metódusát. A *DummySensor* esetében ez a metódus elkéri a világtól a *kör* objektumot, kiszámolja a vezérelt autó és a kör távolságát, majd ezt a távolságot eltárolja a *DummyPacket* objektumban (amely egy IReadOnlyDummyPacket típuson keresztül a VFB-ban van tárolva).
-
-&lt;!-- A szenzor része az *AutomatedCar*-nak, közvetlenül hozzáférhet a világhoz (*World*) mivel az singleton. Lekéri a világobjektumok közül a kört (*Circle*), majd kiszámolja a koordináták különbségét a `process()` metódusban és az eredményt eltárolja az `dummyPacket` változóban. --&gt;
-
-A `dummyPacket` referenciája eltárolásra került a *VirtualFunctionBus*ban, amely referenciáját a a szenzor konstruktorának biztosítani kell. Ehhez előzetesen létre kell hozni egy `IReadOnlyDummyPacket` típusú változót a VFB-ban.
-
-Miután a `DummyPacket` megvalósítja az `IReadOnlyDummyPacket` interfészt, a VFB-ban az utóbbi típus tárolására szolgáló változó kerül deklarálásra. Ezzel biztosítható, hogy az adott értéket csak a csomag tulajdonosa (jelen esetben a *DummySensor*) tudja majd írni, de minden más komponens olvashatja a VFB-on keresztül.
-
+</code></pre>
+<p>--&gt;</p>
+<p>A <em>World</em> singleton osztály tartalmaz minden <em>WorldObject</em>-et és tartalmaz referenciát a vezérelt autóra, amely közvetetten szintén <em>WorldObject</em>, csakúgy mint a <em>Circle</em>. Az <em>AutomatedCar</em> tartalmazza a <em>VirtualFunctionBus</em>-t, mivel ez az autó komponenseinek kommunikációs csatornáját valósítja meg. Szintén az <em>AutomatedCar</em> tartalmazza a szenzorokat, jelen esetben a <em>DummySensor</em>-t.</p>
+<p>Ahhoz, hogy a szenzorok (vagy egyéb komponensek mint a hajtáslánc például) adatot cserélhessenek fel kell iratkozniuk a VFB-ra. Miután a feliratkozás megtörtént, a VFB minden ciklusában meghívja a <code>Porcess()</code> metódusát. A <em>DummySensor</em> esetében ez a metódus elkéri a világtól a <em>kör</em> objektumot, kiszámolja a vezérelt autó és a kör távolságát, majd ezt a távolságot eltárolja a <em>DummyPacket</em> objektumban (amely egy IReadOnlyDummyPacket típuson keresztül a VFB-ban van tárolva).</p>
+<!-- A szenzor része az *AutomatedCar*-nak, közvetlenül hozzáférhet a világhoz (*World*) mivel az singleton. Lekéri a világobjektumok közül a kört (*Circle*), majd kiszámolja a koordináták különbségét a `process()` metódusban és az eredményt eltárolja az `dummyPacket` változóban. -->
+<p>A <code>dummyPacket</code> referenciája eltárolásra került a <em>VirtualFunctionBus</em>ban, amely referenciáját a a szenzor konstruktorának biztosítani kell. Ehhez előzetesen létre kell hozni egy <code>IReadOnlyDummyPacket</code> típusú változót a VFB-ban.</p>
+<p>Miután a <code>DummyPacket</code> megvalósítja az <code>IReadOnlyDummyPacket</code> interfészt, a VFB-ban az utóbbi típus tárolására szolgáló változó kerül deklarálásra. Ezzel biztosítható, hogy az adott értéket csak a csomag tulajdonosa (jelen esetben a <em>DummySensor</em>) tudja majd írni, de minden más komponens olvashatja a VFB-on keresztül.</p>
+<!--
 ```plantuml
 @startuml
-DummySensor -&gt; VirtualFunctionBus: registerComponent
+DummySensor -> VirtualFunctionBus: registerComponent
 loop
-    VirtualFunctionBus -&gt; DummySensor: Process
+    VirtualFunctionBus -> DummySensor: Process
     activate DummySensor
-    DummySensor -&gt; World: Get Circle
+    DummySensor -> World: Get Circle
 
-    DummySensor -&gt; DummySensor: Calculate distance from Circle
-    DummySensor -&gt; DummyPacket: Store distance
+    DummySensor -> DummySensor: Calculate distance from Circle
+    DummySensor -> DummyPacket: Store distance
     deactivate DummySensor
 end
 
@@ -2756,11 +2755,14 @@ header
 DummySensor sequence diagram
 endheader
 @enduml
-</code></pre>
+```
+-->
+<p><img src="plantuml/dummy_sensor_sequence.svg" alt="" /></p>
 <p>Ez lejátszódik minden iterációban, így a kör és a vezérelt autó mindenkori helyzete szerinti távolságot fogja tartalmazni a <em>DummyPacket</em>.</p>
 <!-- Az alábbi ábra a *DummySensor* szenpontjából fontos osztályok kapcsolatát mutatja. -->
 <h3><a class="header" href="#osztálydiagramok" id="osztálydiagramok">Osztálydiagramok</a></h3>
-<!-- ```plantuml
+<!--
+```plantuml
 @startuml
 abstract class GameBase {
     + int TicksPerSecond
@@ -2817,9 +2819,11 @@ header
 DummySensor class diagram
 endheader
 @enduml
-``` -->
+```
+-->
 <p><img src="plantuml/dummy_sensor_class.svg" alt="" /></p>
-<!-- ```plantuml
+<!--
+```plantuml
 @startuml
     interface ReactiveObject {
     }
@@ -2875,7 +2879,8 @@ header
 AutomatedCar class diagram
 endheader
 @enduml
-``` -->
+```
+-->
 <p><img src="plantuml/automatedcar_class.svg" alt="" /></p>
 <h2><a class="header" href="#megjelenítés" id="megjelenítés">Megjelenítés</a></h2>
 <p>Az elkészítendő szoftver felhasználói felületének az alábbi vázlat felépítését kell követnie.</p>
