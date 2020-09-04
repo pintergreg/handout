@@ -35,7 +35,9 @@ Számítsd bele, hogy a másik nem ugyanazzokkal az előismeretekkel rendelkezik
 
 ## Coding
 
-![](https://miro.medium.com/max/978/1*jFw7ZZMoVcsEYM_fS33DBA.gif)
+<!-- ![](https://miro.medium.com/max/978/1*jFw7ZZMoVcsEYM_fS33DBA.gif) -->
+
+![](../images/tdd.png "TDD mantra: "red, green, refactor")
 
 A TDD-ről részletesen a [TDD fejezetben](tdd.md).
 
