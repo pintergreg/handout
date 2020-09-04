@@ -86,7 +86,7 @@
         <dia:color val="#282828"/>
       </dia:attribute>
       <dia:attribute name="inner_color">
-        <dia:color val="#fafafa"/>
+        <dia:color val="#e5e5e5"/>
       </dia:attribute>
       <dia:attribute name="show_background">
         <dia:boolean val="true"/>
@@ -100,13 +100,13 @@
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="font">
-            <dia:font family="sans" style="0" name="Helvetica"/>
+            <dia:font family="sans" style="80" name="Helvetica-Bold"/>
           </dia:attribute>
           <dia:attribute name="height">
-            <dia:real val="0.80000000000000004"/>
+            <dia:real val="0.84666663408279419"/>
           </dia:attribute>
           <dia:attribute name="pos">
-            <dia:point val="18,9.19406"/>
+            <dia:point val="18,9.20538"/>
           </dia:attribute>
           <dia:attribute name="color">
             <dia:color val="#000000"/>
@@ -131,7 +131,7 @@
 #</dia:string>
           </dia:attribute>
           <dia:attribute name="font">
-            <dia:font family="monospace" style="0" name="Courier"/>
+            <dia:font family="monospace" style="80" name="Courier-Bold"/>
           </dia:attribute>
           <dia:attribute name="height">
             <dia:real val="0.84666663408279419"/>
@@ -205,10 +205,10 @@
         <dia:real val="0.10000000149011612"/>
       </dia:attribute>
       <dia:attribute name="border_color">
-        <dia:color val="#48c774"/>
+        <dia:color val="#005400"/>
       </dia:attribute>
       <dia:attribute name="inner_color">
-        <dia:color val="#effaf3"/>
+        <dia:color val="#b2df8a"/>
       </dia:attribute>
       <dia:attribute name="show_background">
         <dia:boolean val="true"/>
@@ -222,7 +222,7 @@
             <dia:string>#author#</dia:string>
           </dia:attribute>
           <dia:attribute name="font">
-            <dia:font family="sans" style="0" name="Helvetica"/>
+            <dia:font family="sans" style="80" name="Helvetica-Bold"/>
           </dia:attribute>
           <dia:attribute name="height">
             <dia:real val="0.84666663408279419"/>
@@ -259,10 +259,10 @@
         <dia:real val="0.10000000149011612"/>
       </dia:attribute>
       <dia:attribute name="border_color">
-        <dia:color val="#3273dc"/>
+        <dia:color val="#1e90ff"/>
       </dia:attribute>
       <dia:attribute name="inner_color">
-        <dia:color val="#eef6fc"/>
+        <dia:color val="#bbe9fa"/>
       </dia:attribute>
       <dia:attribute name="show_background">
         <dia:boolean val="true"/>
@@ -276,7 +276,7 @@
             <dia:string>#timestamp#</dia:string>
           </dia:attribute>
           <dia:attribute name="font">
-            <dia:font family="sans" style="0" name="Helvetica"/>
+            <dia:font family="sans" style="80" name="Helvetica-Bold"/>
           </dia:attribute>
           <dia:attribute name="height">
             <dia:real val="0.84666663408279419"/>
@@ -316,7 +316,7 @@
         <dia:color val="#282828"/>
       </dia:attribute>
       <dia:attribute name="inner_color">
-        <dia:color val="#fafafa"/>
+        <dia:color val="#e5e5e5"/>
       </dia:attribute>
       <dia:attribute name="show_background">
         <dia:boolean val="true"/>
@@ -330,7 +330,7 @@
             <dia:string>#commit ID#</dia:string>
           </dia:attribute>
           <dia:attribute name="font">
-            <dia:font family="sans" style="0" name="Helvetica"/>
+            <dia:font family="sans" style="80" name="Helvetica-Bold"/>
           </dia:attribute>
           <dia:attribute name="height">
             <dia:real val="0.84666663408279419"/>
@@ -367,10 +367,10 @@
         <dia:real val="0.10000000149011612"/>
       </dia:attribute>
       <dia:attribute name="border_color">
-        <dia:color val="#ffdd57"/>
+        <dia:color val="#ffa500"/>
       </dia:attribute>
       <dia:attribute name="inner_color">
-        <dia:color val="#fffbeb"/>
+        <dia:color val="#ffc864"/>
       </dia:attribute>
       <dia:attribute name="show_background">
         <dia:boolean val="true"/>
@@ -384,7 +384,7 @@
             <dia:string>#message#</dia:string>
           </dia:attribute>
           <dia:attribute name="font">
-            <dia:font family="sans" style="0" name="Helvetica"/>
+            <dia:font family="sans" style="80" name="Helvetica-Bold"/>
           </dia:attribute>
           <dia:attribute name="height">
             <dia:real val="0.84666663408279419"/>
@@ -533,10 +533,10 @@
         <dia:real val="0.10000000149011612"/>
       </dia:attribute>
       <dia:attribute name="border_color">
-        <dia:color val="#ffdd57"/>
+        <dia:color val="#ffa500"/>
       </dia:attribute>
       <dia:attribute name="inner_color">
-        <dia:color val="#fffbeb"/>
+        <dia:color val="#ffc864"/>
       </dia:attribute>
       <dia:attribute name="show_background">
         <dia:boolean val="true"/>
@@ -550,7 +550,7 @@
             <dia:string>#subject#</dia:string>
           </dia:attribute>
           <dia:attribute name="font">
-            <dia:font family="sans" style="0" name="Helvetica"/>
+            <dia:font family="sans" style="80" name="Helvetica-Bold"/>
           </dia:attribute>
           <dia:attribute name="height">
             <dia:real val="0.84666663408279419"/>
@@ -587,10 +587,10 @@
         <dia:real val="0.10000000149011612"/>
       </dia:attribute>
       <dia:attribute name="border_color">
-        <dia:color val="#ffdd57"/>
+        <dia:color val="#ffa500"/>
       </dia:attribute>
       <dia:attribute name="inner_color">
-        <dia:color val="#fffbeb"/>
+        <dia:color val="#ffc864"/>
       </dia:attribute>
       <dia:attribute name="show_background">
         <dia:boolean val="true"/>
@@ -604,7 +604,7 @@
             <dia:string>#body#</dia:string>
           </dia:attribute>
           <dia:attribute name="font">
-            <dia:font family="sans" style="0" name="Helvetica"/>
+            <dia:font family="sans" style="80" name="Helvetica-Bold"/>
           </dia:attribute>
           <dia:attribute name="height">
             <dia:real val="0.84666663408279419"/>
@@ -641,10 +641,10 @@
         <dia:real val="0.10000000149011612"/>
       </dia:attribute>
       <dia:attribute name="border_color">
-        <dia:color val="#ffdd57"/>
+        <dia:color val="#ffa500"/>
       </dia:attribute>
       <dia:attribute name="inner_color">
-        <dia:color val="#fffbeb"/>
+        <dia:color val="#ffc864"/>
       </dia:attribute>
       <dia:attribute name="show_background">
         <dia:boolean val="true"/>
@@ -658,7 +658,7 @@
             <dia:string>#footer#</dia:string>
           </dia:attribute>
           <dia:attribute name="font">
-            <dia:font family="sans" style="0" name="Helvetica"/>
+            <dia:font family="sans" style="80" name="Helvetica-Bold"/>
           </dia:attribute>
           <dia:attribute name="height">
             <dia:real val="0.84666663408279419"/>
@@ -788,7 +788,7 @@
         <dia:color val="#800080"/>
       </dia:attribute>
       <dia:attribute name="inner_color">
-        <dia:color val="#f0e1f0"/>
+        <dia:color val="#e19bff"/>
       </dia:attribute>
       <dia:attribute name="show_background">
         <dia:boolean val="true"/>
@@ -802,7 +802,7 @@
             <dia:string>#issue#</dia:string>
           </dia:attribute>
           <dia:attribute name="font">
-            <dia:font family="sans" style="0" name="Helvetica"/>
+            <dia:font family="sans" style="80" name="Helvetica-Bold"/>
           </dia:attribute>
           <dia:attribute name="height">
             <dia:real val="0.84666663408279419"/>
@@ -873,7 +873,7 @@
         <dia:color val="#aa0000"/>
       </dia:attribute>
       <dia:attribute name="inner_color">
-        <dia:color val="#feecf0"/>
+        <dia:color val="#fb9a99"/>
       </dia:attribute>
       <dia:attribute name="show_background">
         <dia:boolean val="true"/>
@@ -882,7 +882,7 @@
         <dia:real val="0.20000000000000001"/>
       </dia:attribute>
       <dia:attribute name="padding">
-        <dia:real val="0.40000000000000002"/>
+        <dia:real val="0.20000000000000001"/>
       </dia:attribute>
       <dia:attribute name="text">
         <dia:composite type="text">
@@ -891,7 +891,7 @@
 provided (e.g. #42)#</dia:string>
           </dia:attribute>
           <dia:attribute name="font">
-            <dia:font family="sans" style="8" name="Helvetica-Oblique"/>
+            <dia:font family="sans" style="88" name="Helvetica-BoldOblique"/>
           </dia:attribute>
           <dia:attribute name="height">
             <dia:real val="0.84666663408279419"/>
