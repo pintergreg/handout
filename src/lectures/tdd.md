@@ -30,7 +30,7 @@ De még midnig jobb ha pl. sprinten belül egy automatizált integrációs teszt
 
 <!-- ![](https://miro.medium.com/max/978/1*jFw7ZZMoVcsEYM_fS33DBA.gif) -->
 
-![](../images/tdd.png "TDD mantra: "red, green, refactor")
+![](../images/tdd.png "TDD mantra: red, green, refactor")
 
 > As the tests get more specific, the code gets more generic.
 >
