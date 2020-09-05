@@ -104,7 +104,7 @@ Az elkészítendő szoftver felhasználói felületének az alábbi vázlat fel�
 
 A programablak bal oldalán a virtuális világ egy szeletét látjuk ezért felel a vizualizációs modul. A megjelenítés középpontja az mindenkor vezérelt autó (egocar). A világ minden eleméhez tartozik egy képfájl, ezen elemek megfelelő transzformációk (forgatás, skálázás) végrehajtása után kirajzolásra kerülne a CourseDisplayre.
 
-Továbbá erre a részre kerülnek kirajzilásra a debuggoláshoz és teszteléshez használandó segédobjektumok opionálisan bekapcsolható megjelenítése. Ide tartozik a szenzorok látómezeje, a világobjektumok „poligon váza”, valamint utóbbiak eseményre történő kiemelésének lehetősége.
+Továbbá erre a részre kerülnek kirajzolásra a debuggoláshoz és teszteléshez használandó segédobjektumok opionálisan bekapcsolható megjelenítése. Ide tartozik a szenzorok látómezeje, a világobjektumok „poligon váza”, valamint utóbbiak eseményre történő kiemelésének lehetősége.
 
 
 A jobb oldalon a műszerfal található. A műszerfalon nincsenek vezérlőelemek, csak megjelenítés. Az összes kapcsoló a billentyűzettel állítható, a grafikus elemeknek nem kell pl. egérrel kapcsolhatónak lenniük.
@@ -134,7 +134,7 @@ A példakód ezt biztosítja, a feladat a konkrét visszajelzőkhöz megfelelő 
 
 ### CourseDisplay
 
-A teljes CourseDisplay léynegében egy *ItemsControl*, amely a világ `WorldObjects` tulajdonságához van kötve. Ezen belül található egy *Canvas*, amire a rajzolás történik, valamint egy *DataTemplate*, amely azt írja le, hogy egy *WorldObject* típusú objektumok hogyan kell kezelni. A világelemhez tartozó képet kell kirajzolni, így tartalmaz egy *Image*-et, amelynek forrása a *WorldObject* `Filename` tulajdonsága. A *Converter* attribútumon keresztül meg lehet hívni egy függvényt, amellyel befolyásolni lehet a rajzolást (transzformálás).
+A teljes CourseDisplay lényegében egy *ItemsControl*, amely a világ `WorldObjects` tulajdonságához van kötve. Ezen belül található egy *Canvas*, amire a rajzolás történik, valamint egy *DataTemplate*, amely azt írja le, hogy egy *WorldObject* típusú objektumok hogyan kell kezelni. A világelemhez tartozó képet kell kirajzolni, így tartalmaz egy *Image*-et, amelynek forrása a *WorldObject* `Filename` tulajdonsága. A *Converter* attribútumon keresztül meg lehet hívni egy függvényt, amellyel befolyásolni lehet a rajzolást (transzformálás).
 
 ```xml
 <ItemsControl Name="CourseDisplay"
@@ -144,7 +144,7 @@ A teljes CourseDisplay léynegében egy *ItemsControl*, amely a világ `WorldObj
     Height="{Binding Height, Mode=OneWay}"
     HorizontalAlignment="Left" VerticalAlignment="Top"
     >
-    
+
     <ItemsControl.ItemsPanel>
         <ItemsPanelTemplate>
             <Canvas/>
@@ -160,7 +160,7 @@ A teljes CourseDisplay léynegében egy *ItemsControl*, amely a világ `WorldObj
 </ItemsControl>
 ```
 
-A *WorldObject* -az alkalmazás szempontjából- a világ minden elemének őse, de ennél specializáltabban is lehet definiálni *template*-eket. Az alábbi kódrészlet szétbontja *Circle* és *AutomatedCar* típusokra, előbbithez nem is képet tölt be, hanem közvetlenül rajzol a *Canvas*-re. Az utóbbie esetben egyrészt a fentivel megegyező módon betölt egy képet, valamit arra kirajzol egy poligont (ez a debug funkcióknál kell majd).
+A *WorldObject* -az alkalmazás szempontjából- a világ minden elemének őse, de ennél specializáltabban is lehet definiálni *template*-eket. Az alábbi kódrészlet szétbontja *Circle* és *AutomatedCar* típusokra, előbbihez nem is képet tölt be, hanem közvetlenül rajzol a *Canvas*-re. Az utóbbi esetben egyrészt a fentivel megegyező módon betölt egy képet, valamit arra kirajzol egy poligont (ez a debug funkcióknál kell majd).
 
 ```xml
 <ItemsControl.DataTemplates>
@@ -179,7 +179,7 @@ A *WorldObject* -az alkalmazás szempontjából- a világ minden elemének őse,
 </ItemsControl.DataTemplates>
 ```
 
-#### Pozícionálás
+#### Pozicionálás
 
 Megfigyelhető, hogy  a fenti példák nem rendelkeznek az objektumok pozíciójáról. Ezt CSS-szerűen működő stílusokkal lehet megadni. Az alábbi példa beszínezi zöldre a *CourseDisplay*-t, valamint a *WorldObject*-ek *Left* és *Top* értékeit beállítja a *WorldObject* X és Y értének megfelelően.
 
@@ -197,7 +197,6 @@ Megfigyelhető, hogy  a fenti példák nem rendelkeznek az objektumok pozíciój
 ```
 
 
-Az utóbbi verziót használva az alábbi ábrán látható a futó alkalmazás: bal oldalt a kezdetleges CourseDisplay, jobb oldalt a kezdetleges Dashboard. Az autó az `(50, 50)` pozícióba van kirajzolva, a kör a `(400, 200)` koordinátákra (bal felső sarokkal értendő) ezek különségét pedig kiszámolta a *DummySensor* és leolvasható a műszerfalról.
+Az utóbbi verziót használva az alábbi ábrán látható a futó alkalmazás: bal oldalt a kezdetleges CourseDisplay, jobb oldalt a kezdetleges Dashboard. Az autó az `(50, 50)` pozícióba van kirajzolva, a kör a `(400, 200)` koordinátákra (bal felső sarokkal értendő) ezek különbségét pedig kiszámolta a *DummySensor* és leolvasható a műszerfalról.
 
 ![](images/avalonai_skeleton.png)
-
