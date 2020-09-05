@@ -199,4 +199,4 @@ Megfigyelhető, hogy  a fenti példák nem rendelkeznek az objektumok pozíciój
 
 Az utóbbi verziót használva az alábbi ábrán látható a futó alkalmazás: bal oldalt a kezdetleges CourseDisplay, jobb oldalt a kezdetleges Dashboard. Az autó az `(50, 50)` pozícióba van kirajzolva, a kör a `(400, 200)` koordinátákra (bal felső sarokkal értendő) ezek különbségét pedig kiszámolta a *DummySensor* és leolvasható a műszerfalról.
 
-![](images/avalonai_skeleton.png)
+![](images/avalonia_skeleton.png)
