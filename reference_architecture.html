@@ -382,7 +382,7 @@ endheader
 <p>Az elkészítendő szoftver felhasználói felületének az alábbi vázlat felépítését kell követnie.</p>
 <p><img src="images/gui_plan.png" alt="gui plan" /></p>
 <p>A programablak bal oldalán a virtuális világ egy szeletét látjuk ezért felel a vizualizációs modul. A megjelenítés középpontja az mindenkor vezérelt autó (egocar). A világ minden eleméhez tartozik egy képfájl, ezen elemek megfelelő transzformációk (forgatás, skálázás) végrehajtása után kirajzolásra kerülne a CourseDisplayre.</p>
-<p>Továbbá erre a részre kerülnek kirajzilásra a debuggoláshoz és teszteléshez használandó segédobjektumok opionálisan bekapcsolható megjelenítése. Ide tartozik a szenzorok látómezeje, a világobjektumok „poligon váza”, valamint utóbbiak eseményre történő kiemelésének lehetősége.</p>
+<p>Továbbá erre a részre kerülnek kirajzolásra a debuggoláshoz és teszteléshez használandó segédobjektumok opionálisan bekapcsolható megjelenítése. Ide tartozik a szenzorok látómezeje, a világobjektumok „poligon váza”, valamint utóbbiak eseményre történő kiemelésének lehetősége.</p>
 <p>A jobb oldalon a műszerfal található. A műszerfalon nincsenek vezérlőelemek, csak megjelenítés. Az összes kapcsoló a billentyűzettel állítható, a grafikus elemeknek nem kell pl. egérrel kapcsolhatónak lenniük.</p>
 <p>A fordulatszám és a sebesség legyen egy analóg órával reprezentálva; a kormány elforgazás, a gáz- és fékpedál állása progressbar-okkal szemléltethető. Az irányjelző visszajelzője és a vezetéstámogató funkciók visszajelzői lámpaszerűek, a sebességváltó állása, és a debug értékek pl. kocsi pozíciója (x, y koordináta) lehet szöveges.
 A buszon közölt „utoljára látott tábla” képét ki kell tudni rajzolni (a képek rendelkezésre állnak). Legyen elkülönítve a nincs tábla eset is.</p>
@@ -401,7 +401,7 @@ A buszon közölt „utoljára látott tábla” képét ki kell tudni rajzolni 
 </code></pre>
 <p>A példakód ezt biztosítja, a feladat a konkrét visszajelzőkhöz megfelelő felületi elemek definiálása.</p>
 <h3><a class="header" href="#coursedisplay" id="coursedisplay">CourseDisplay</a></h3>
-<p>A teljes CourseDisplay léynegében egy <em>ItemsControl</em>, amely a világ <code>WorldObjects</code> tulajdonságához van kötve. Ezen belül található egy <em>Canvas</em>, amire a rajzolás történik, valamint egy <em>DataTemplate</em>, amely azt írja le, hogy egy <em>WorldObject</em> típusú objektumok hogyan kell kezelni. A világelemhez tartozó képet kell kirajzolni, így tartalmaz egy <em>Image</em>-et, amelynek forrása a <em>WorldObject</em> <code>Filename</code> tulajdonsága. A <em>Converter</em> attribútumon keresztül meg lehet hívni egy függvényt, amellyel befolyásolni lehet a rajzolást (transzformálás).</p>
+<p>A teljes CourseDisplay lényegében egy <em>ItemsControl</em>, amely a világ <code>WorldObjects</code> tulajdonságához van kötve. Ezen belül található egy <em>Canvas</em>, amire a rajzolás történik, valamint egy <em>DataTemplate</em>, amely azt írja le, hogy egy <em>WorldObject</em> típusú objektumok hogyan kell kezelni. A világelemhez tartozó képet kell kirajzolni, így tartalmaz egy <em>Image</em>-et, amelynek forrása a <em>WorldObject</em> <code>Filename</code> tulajdonsága. A <em>Converter</em> attribútumon keresztül meg lehet hívni egy függvényt, amellyel befolyásolni lehet a rajzolást (transzformálás).</p>
 <pre><code class="language-xml">&lt;ItemsControl Name=&quot;CourseDisplay&quot;
     DataContext=&quot;{Binding World, Mode=OneWay}&quot;
     Items=&quot;{Binding WorldObjects, Mode=OneWay}&quot;
@@ -409,7 +409,7 @@ A buszon közölt „utoljára látott tábla” képét ki kell tudni rajzolni 
     Height=&quot;{Binding Height, Mode=OneWay}&quot;
     HorizontalAlignment=&quot;Left&quot; VerticalAlignment=&quot;Top&quot;
     &gt;
-    
+
     &lt;ItemsControl.ItemsPanel&gt;
         &lt;ItemsPanelTemplate&gt;
             &lt;Canvas/&gt;
@@ -424,7 +424,7 @@ A buszon közölt „utoljára látott tábla” képét ki kell tudni rajzolni 
     &lt;/ItemsControl.DataTemplates&gt;
 &lt;/ItemsControl&gt;
 </code></pre>
-<p>A <em>WorldObject</em> -az alkalmazás szempontjából- a világ minden elemének őse, de ennél specializáltabban is lehet definiálni <em>template</em>-eket. Az alábbi kódrészlet szétbontja <em>Circle</em> és <em>AutomatedCar</em> típusokra, előbbithez nem is képet tölt be, hanem közvetlenül rajzol a <em>Canvas</em>-re. Az utóbbie esetben egyrészt a fentivel megegyező módon betölt egy képet, valamit arra kirajzol egy poligont (ez a debug funkcióknál kell majd).</p>
+<p>A <em>WorldObject</em> -az alkalmazás szempontjából- a világ minden elemének őse, de ennél specializáltabban is lehet definiálni <em>template</em>-eket. Az alábbi kódrészlet szétbontja <em>Circle</em> és <em>AutomatedCar</em> típusokra, előbbihez nem is képet tölt be, hanem közvetlenül rajzol a <em>Canvas</em>-re. Az utóbbi esetben egyrészt a fentivel megegyező módon betölt egy képet, valamit arra kirajzol egy poligont (ez a debug funkcióknál kell majd).</p>
 <pre><code class="language-xml">&lt;ItemsControl.DataTemplates&gt;
     &lt;DataTemplate DataType=&quot;{x:Type models:Circle}&quot;&gt;
         &lt;Canvas&gt;
@@ -440,7 +440,7 @@ A buszon közölt „utoljára látott tábla” képét ki kell tudni rajzolni 
     &lt;/DataTemplate&gt;
 &lt;/ItemsControl.DataTemplates&gt;
 </code></pre>
-<h4><a class="header" href="#pozícionálás" id="pozícionálás">Pozícionálás</a></h4>
+<h4><a class="header" href="#pozicionálás" id="pozicionálás">Pozicionálás</a></h4>
 <p>Megfigyelhető, hogy  a fenti példák nem rendelkeznek az objektumok pozíciójáról. Ezt CSS-szerűen működő stílusokkal lehet megadni. Az alábbi példa beszínezi zöldre a <em>CourseDisplay</em>-t, valamint a <em>WorldObject</em>-ek <em>Left</em> és <em>Top</em> értékeit beállítja a <em>WorldObject</em> X és Y értének megfelelően.</p>
 <pre><code class="language-xml">&lt;UserControl.Styles&gt;
     &lt;Style Selector=&quot;ItemsControl#CourseDisplay&quot;&gt;
@@ -453,7 +453,7 @@ A buszon közölt „utoljára látott tábla” képét ki kell tudni rajzolni 
     &lt;/Style&gt;
 &lt;/UserControl.Styles&gt;
 </code></pre>
-<p>Az utóbbi verziót használva az alábbi ábrán látható a futó alkalmazás: bal oldalt a kezdetleges CourseDisplay, jobb oldalt a kezdetleges Dashboard. Az autó az <code>(50, 50)</code> pozícióba van kirajzolva, a kör a <code>(400, 200)</code> koordinátákra (bal felső sarokkal értendő) ezek különségét pedig kiszámolta a <em>DummySensor</em> és leolvasható a műszerfalról.</p>
+<p>Az utóbbi verziót használva az alábbi ábrán látható a futó alkalmazás: bal oldalt a kezdetleges CourseDisplay, jobb oldalt a kezdetleges Dashboard. Az autó az <code>(50, 50)</code> pozícióba van kirajzolva, a kör a <code>(400, 200)</code> koordinátákra (bal felső sarokkal értendő) ezek különbségét pedig kiszámolta a <em>DummySensor</em> és leolvasható a műszerfalról.</p>
 <p><img src="images/avalonai_skeleton.png" alt="" /></p>
 
                     </main>
