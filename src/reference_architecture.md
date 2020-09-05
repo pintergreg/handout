@@ -42,7 +42,7 @@ Minden adatközlő modulnak létre kell hoznia egy-egy csomag (packet) típust (
 
 ### Konkrét példán keresztül: DummySensor
 
-A *DummySensor* egy rendkívül primitív „szenzor”: egyetlen feladata, hogy kiszámolja az egocar ás a *Circle* objektum közötti távolságot. Pontosabban az egocar és a kör referenciapont X, Y koordinátáinak különbségét. Azonban ez is teljes mérteékben képes bemutatni a szenzorok működését és a buszon keresztüli adatcserét.
+A *DummySensor* egy rendkívül primitív „szenzor”: egyetlen feladata, hogy kiszámolja az egocar ás a *Circle* objektum közötti távolságot. Pontosabban az egocar és a kör referenciapont X, Y koordinátáinak különbségét. Azonban ez is teljes mértékben képes bemutatni a szenzorok működését és a buszon keresztüli adatcserét.
 
 A példa szempontjából releváns komponensek viszonyát alábbi ábra szemlélteti.
 
