@@ -2903,6 +2903,37 @@ A buszon közölt „utoljára látott tábla” képét ki kell tudni rajzolni 
     &lt;/ItemsControl.DataTemplates&gt;
 &lt;/ItemsControl&gt;
 </code></pre>
+<p>A <em>WorldObject</em> -az alkalmazás szempontjából- a világ minden elemének őse, de ennél specializáltabban is lehet definiálni <em>template</em>-eket. Az alábbi kódrészlet szétbontja <em>Circle</em> és <em>AutomatedCar</em> típusokra, előbbithez nem is képet tölt be, hanem közvetlenül rajzol a <em>Canvas</em>-re. Az utóbbie esetben egyrészt a fentivel megegyező módon betölt egy képet, valamit arra kirajzol egy poligont (ez a debug funkcióknál kell majd).</p>
+<pre><code class="language-xml">&lt;ItemsControl.DataTemplates&gt;
+    &lt;DataTemplate DataType=&quot;{x:Type models:Circle}&quot;&gt;
+        &lt;Canvas&gt;
+            &lt;Ellipse Fill=&quot;black&quot; Width=&quot;{Binding Width}&quot; Height=&quot;{Binding Height}&quot; ZIndex=&quot;10&quot;/&gt;
+        &lt;/Canvas&gt;
+    &lt;/DataTemplate&gt;
+    &lt;DataTemplate DataType=&quot;{x:Type models:AutomatedCar}&quot;&gt;
+        &lt;Canvas&gt;
+            &lt;Image Width=&quot;{Binding Width}&quot; Height=&quot;{Binding Height}&quot;
+                Source=&quot;{Binding Filename, Converter={x:Static visualization:WorldObjectTransformer.Instance}}&quot;/&gt;
+            &lt;Polyline Stroke=&quot;{Binding Brush, Mode=OneWay}&quot; Points=&quot;{Binding Geometry.Points, Mode=OneWay}&quot; /&gt;
+        &lt;/Canvas&gt;
+    &lt;/DataTemplate&gt;
+&lt;/ItemsControl.DataTemplates&gt;
+</code></pre>
+<h4><a class="header" href="#pozícionálás" id="pozícionálás">Pozícionálás</a></h4>
+<p>Megfigyelhető, hogy  a fenti példák nem rendelkeznek az objektumok pozíciójáról. Ezt CSS-szerűen működő stílusokkal lehet megadni. Az alábbi példa beszínezi zöldre a <em>CourseDisplay</em>-t, valamint a <em>WorldObject</em>-ek <em>Left</em> és <em>Top</em> értékeit beállítja a <em>WorldObject</em> X és Y értének megfelelően.</p>
+<pre><code class="language-xml">&lt;UserControl.Styles&gt;
+    &lt;Style Selector=&quot;ItemsControl#CourseDisplay&quot;&gt;
+        &lt;Setter Property=&quot;Background&quot; Value=&quot;#97D1A2&quot;/&gt;
+    &lt;/Style&gt;
+    &lt;Style Selector=&quot;ItemsControl#CourseDisplay &gt; ContentPresenter&quot;&gt;
+        &lt;Setter Property=&quot;Canvas.Left&quot; Value=&quot;{Binding X, Mode=OneWay}&quot;/&gt;
+        &lt;Setter Property=&quot;Canvas.Top&quot; Value=&quot;{Binding Y, Mode=OneWay}&quot;/&gt;
+        &lt;Setter Property=&quot;ZIndex&quot; Value=&quot;{Binding ZIndex, Mode=OneWay}&quot;/&gt;
+    &lt;/Style&gt;
+&lt;/UserControl.Styles&gt;
+</code></pre>
+<p>Az utóbbi verziót használva az alábbi ábrán látható a futó alkalmazás: bal oldalt a kezdetleges CourseDisplay, jobb oldalt a kezdetleges Dashboard. Az autó az <code>(50, 50)</code> pozícióba van kirajzolva, a kör a <code>(400, 200)</code> koordinátákra (bal felső sarokkal értendő) ezek különségét pedig kiszámolta a <em>DummySensor</em> és leolvasható a műszerfalról.</p>
+<p><img src="images/avalonai_skeleton.png" alt="" /></p>
 
                     </main>
 
