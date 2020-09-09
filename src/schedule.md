@@ -1,10 +1,10 @@
 # Ütemezés
 
-Az órák csütörtökönként a BA.F.07-ben vannak (?online, MS Teams-en), neptun szerint 08:00-10:35 között előadás és 10:45-11:30 között gyakorlat. (Ezek aránya valamint közte a szünet az aktuális előadásanyag és az igények szerint módosulhat). A „gyakorlat” nem labor, hanem sokkal inkább konzultáció!
+Az órák csütörtökönként a BA.F.07-ben vannak ([online, MS Teams-en](https://teams.microsoft.com/l/team/19%3ac7cf754b3c92495bb1799aa81597d88a%40thread.tacv2/conversations?groupId=a56552c3-1b48-44d8-af21-7ac594aa9009&tenantId=1d6a56fa-705a-4bbc-8004-67a21d5e9b97)), neptun szerint 08:00-10:35 között előadás és 10:45-11:30 között gyakorlat. (Ezek aránya valamint közte a szünet az aktuális előadásanyag és az igények szerint módosulhat). A „gyakorlat” nem labor, hanem sokkal inkább konzultáció!
 
 |hét    |dátum        |előadás|gyakorlat|
 |------:|:-----------:|:-----:|:-------:|
-| 1.|09.&nbsp;10.| Bevezető, áttekintés, aSpice&nbsp;alapok|csapatsorsolás, [első feladat kiadás](sprint_1.md), Sprint Planning, Task Definition Workshop, Team commitment, Scheduling
+| 1.|09.&nbsp;10.| Bevezető, áttekintés, [aSpice&nbsp;alapok](https://teams.microsoft.com/l/team/19%3ac7cf754b3c92495bb1799aa81597d88a%40thread.tacv2/conversations?groupId=a56552c3-1b48-44d8-af21-7ac594aa9009&tenantId=1d6a56fa-705a-4bbc-8004-67a21d5e9b97)|csapatsorsolás, [első feladat kiadás](sprint_1.md), Sprint Planning, Task Definition Workshop, Team commitment, Scheduling
 | 2.|09.&nbsp;17.| [Agile, SCRUM, Kanban](lectures/agile_scrum_kanban.md) | git, GitHub, IDEA ismertetés
 | 3.|09.&nbsp;24.| [Napi munka, verziókezelők](lectures/daily_work.md)|Branch review, status review, standup (did, will, blocking)
 | 4.|10.&nbsp;01.| [TDD, Unit Testing](lectures/tdd.md)|TDD kata
