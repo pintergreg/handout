@@ -13,6 +13,12 @@
     <!-- - [Software Architecture](./lectures/software_architecture.md) -->
     <!-- - [Irónia](./irony.md) -->
 
+- [A feladat](./software.md)
+    - [Sprintek](./sprints.md)
+        - [Sprint 1](./sprint_1.md)
+        - [Sprint 2](./sprint_2.md)
+        - [Sprint 3](./sprint_3.md)
+
 - [Munkakörnyezet](working_environment.md)
     - [Git](./git.md)
     - [GitHub](./github.md)
@@ -22,12 +28,6 @@
             - [C#](./csharp_style_guide.md)
             - [Java](./java_style_guide.md)
     - [Munkafolyamat](./workflow.md)
-
-- [A feladat](./software.md)
-    - [Sprintek](./sprints.md)
-        - [Sprint 1](./sprint_1.md)
-        - [Sprint 2](./sprint_2.md)
-        - [Sprint 3](./sprint_3.md)
 
 - [Implementáció](./implementation.md)
     - [Virtuális világ](./virtual_world.md)
