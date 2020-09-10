@@ -54,7 +54,7 @@ A *világmodell* modul felelőssége a játék virtuális terének felépítése
 
 A modul bemenete a világ statikus elemeit tartalmazó állomány, amely XML és JSON formátumban is rendelkezésre áll. Ez a leíró fájl azonban csupán az objektumok síkbeli helyzetét, elforgatását és típusát tartalmazza. A modul felelőssége a többi modul igényeivel összhangban az objektumok további tulajdonságokkal történő felruházása. Például a rajzolást megkönnyíző *Z index* vagy az objektum térbeli kiterjedését szolgáló poligon definiálása.
 
-A modullal kapcsolatos legfontosabb kihívás, hogy más csapatoktől érkező igényeket is teljesíteni kell, és „mindenki ezekre vár”. Így különöseb fontos kezelni a sprinten belüli határidőket és prioritásokat. Például a deszerializált világobjektumok az első pillanattól kezdve szükségesen a megjelenítést felelős csapat számára.
+A modullal kapcsolatos legfontosabb kihívás, hogy más csapatoktól érkező igényeket is teljesíteni kell, és „mindenki ezekre vár”. Így különösen fontos kezelni a sprinten belüli határidőket és prioritásokat. Például a deszerializált világobjektumok az első pillanattól kezdve szükségesek a megjelenítésért felelős csapat számára.
 Valamint, hogy minden tervezési döntés érinti a többi csapatot is, még ha ők ennek nincsenek is mindig tudatában.
 
 - Mielőbb el kell dönteni, hogy milyen koordináta-rendszerben dolgozik majd a modell.
