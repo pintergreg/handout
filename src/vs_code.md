@@ -1,5 +1,7 @@
 # Visual Studio Code
 
+Csak a hivatalos Microsoft féle build hajlandó együttműködni a .NET debuggerrel!
+
 ## EditorConfig for VS Code
 
 > This plugin attempts to override user/workspace settings with settings found in .editorconfig files.
