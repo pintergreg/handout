@@ -23,6 +23,7 @@
     - [Git](./git.md)
     - [GitHub](./github.md)
     - [Fejlesztői eszközök](./developing_tools.md)
+        - [Visual Studio Code](./vs_code.md)
         - [IntelliJ IDEA](./intellij_idea.md)
         - [Kódformázás](./code_formatting.md)
             - [C#](./csharp_style_guide.md)
