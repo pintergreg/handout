@@ -2410,9 +2410,9 @@ Viszont az IntelliJ IDEA GUI Designer-e <em>nem</em> használható, esetleges ko
 <p><img src="images/2_crossroad_1.png" alt="2_crossroad_1" />
 <img src="images/2_crossroad_2.png" alt="2_crossroad_2" /></p>
 <p>Minden itt fel nem sorolt esetben feltételezhető, hogy a bal felső sarok a viszonyítási pont.</p>
-<p>Egy korábbi félév során a referenciapontokat (részben) már összegyűjtötték (@csabalint, @SiposGergo, @markkurucz), ez elérhető <a href="references/reference_points.xml">XML</a> vagy <a href="references/reference_points.json">JSON</a> formátumban.</p>
+<p>Egy korábbi félév során a referenciapontokat (részben) már összegyűjtötték (@csabalint, @SiposGergo, @markkurucz), ez elérhető <a href="resources/reference_points.xml">XML</a> vagy <a href="resources/reference_points.json">JSON</a> formátumban.</p>
 <p>A mozgatásra szoruló elemek (vezérelt autó és NPC autók) nem képezik részét a világ leírásának, viszonyítási pontjuk nem definiált. A rendelkezésre bocsátott autó képek méretarányosak az összes többi objektummal.</p>
-<p>A világhoz szükséges elemek megtalálhatóak a project <code>src/main/resources</code> (Java) vagy <code>Assets/WorldObjects</code> (C#) mappájában.</p>
+<p>A világhoz szükséges elemek megtalálhatóak a kiinduló project <code>src/main/resources</code> (Java) vagy <code>Assets/WorldObjects</code> (C#) mappájában.</p>
 <h2><a class="header" href="#méretarány" id="méretarány">Méretarány</a></h2>
 <p>Az XML-ben leírt objektumok koordináta-rendszere nem feltétlenül egyezik meg a megjelenítő koordináta-rendszerével, ezt figyelembe véve skálázás, vagy viewport kezelés válhat szükségessé.</p>
 <p>A feladat megoldás során jellemzően valóságos mértékegységekben specifikáljuk a feladatot (pl. méter, km/h, m/s^2, stb.) míg az XML és a grafikai elemek értelem szerűen pixellel dolgoznak. Ennek feloldására, illetve az átváltásra az <strong>1m=50px</strong> szabályt célszerű használni. Ez egy hozzávetőlegesen arányos érték, amellyel számolni is könnyű.</p>
