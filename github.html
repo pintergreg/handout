@@ -170,9 +170,9 @@
 <li><a href="https://guides.github.com/">GitHub Guides</a></li>
 </ul>
 <h2><a class="header" href="#Áttekintés" id="Áttekintés">Áttekintés</a></h2>
-<p>Minden hallgató tagja lesz a <a href="https://github.com/szfmv2019-tavasz">SzFMV2019-Tavasz</a> szervezetnek (<code>Organization</code>), és egy-egy csapatnak (Team1, ..., Team4). Minden csapat külön issue board-dal rendelkezik (<code>Projects</code>), ezen kell vezetni a feladatok (<code>issue</code>) megoldását (részletében lásd <a href="workflow.html">Munkafolyamat</a>).</p>
-<p>Issue-t nem csak feladatra lehet felvenni, akár kérdésre is, probléma megvitatására is. Ez esetben célszerű megjelölni a <code>Question</code> címkével. 2017 őszétől csapat (<code>team</code>) szintű fórummal is rendelkezik a GitHub. A szervezeten belül a csapatok hierarchikus struktúrában vannak. A gyökér az <a href="https://github.com/orgs/szfmv2019-tavasz/teams/everyone">Everyone</a>, az összes többi csapat ennek tagja. Az Everyone falára (<code>discussions</code>) írt üzeneteket mindenki megkapja. Ezen keresztül fogunk a félév során kurzus szintű közleményeket kiadni, de bárki használhatja kommunikációra. Ugyanilyen üzenőfallal rendelkezik az összes többi csapat is, amelyre szintén bárki írhat. Ha például a Team2-ből szeretné elérni valaki a Team3-at, akkor mindösszesen annyi a dolga, hogy ír a Team3 üzenőfalára. A <a href="https://github.com/orgs/szfmv2019-tavasz/teams/staff">Staff</a> nevű team-en keresztül az oktatókat lehet elérni ugyanilyen módon.</p>
-<p>A comment szekciókban is élnek az @ jeles említések, ez a mi esetünkben <code>@ravaszla</code> és <code>@pintergreg</code>, ugyanígy működik csapatra is pl. <code>@szfmv2019-tavasz/teama1</code>, illetve <code>@szfmv2019-tavasz/staff </code> a mi esetünkben. Csapat esetében a csapat valamennyi tagja kap értesítést az hivatkozásról.</p>
+<p>Minden hallgató tagja lesz a <a href="https://github.com/SzFMV2020-Osz/">SzFMV2020-Osz</a> szervezetnek (<code>Organization</code>), és egy-egy csapatnak (Team A[1-4], Team B[1-4]). Minden csapat külön issue board-dal rendelkezik (<code>Projects</code>), ezen kell vezetni a feladatok (<code>issue</code>) megoldását (részletében lásd <a href="workflow.html">Munkafolyamat</a>).</p>
+<p>Issue-t nem csak feladatra lehet felvenni, akár kérdésre is (felénk vagy más csapatok felé is), probléma megvitatására is. Ez esetben célszerű megjelölni a <code>type: question</code> címkével. 2017 őszétől csapat (<code>team</code>) szintű fórummal (<code>Discussions</code>) is rendelkezik a GitHub. A szervezeten belül a csapatok hierarchikus struktúrában vannak. A gyökér az <a href="https://github.com/orgs/szfmv2020-osz/teams/everyone">Everyone</a>, az összes többi csapat ennek tagja (Group A, Group B csapatokon keresztül). Az Everyone falára írt üzeneteket mindenki megkapja. Ezen keresztül fogunk a félév során kurzus szintű közleményeket kiadni, de bárki használhatja kommunikációra. Ugyanilyen üzenőfallal rendelkezik az összes többi csapat is, amelyre szintén bárki írhat. Ha például a Team2-ből szeretné elérni valaki a Team3-at, akkor mindösszesen annyi a dolga, hogy ír a Team3 üzenőfalára. A <a href="https://github.com/orgs/SzFMV2020-Osz/teams/instructors">Instructors</a> nevű team-en keresztül az oktatókat lehet elérni ugyanilyen módon.</p>
+<p>A comment szekciókban is élnek az @ jeles említések, ez a mi esetünkben <code>@ravaszla</code> és <code>@pintergreg</code>, ugyanígy működik csapatra is pl. <code>@szfmv2020-osz/team-a1</code>, illetve <code>@szfmv2020-osz/instructors </code> a mi esetünkben. Csapat esetében a csapat valamennyi tagja kap értesítést az hivatkozásról.</p>
 <p>A GitHub valamennyi elemén használhatóak formázási lehetőségek <a href="https://guides.github.com/features/mastering-markdown/">Markdown stílusban</a>, kód kiemelésre is lehetőség van, amelyet több mint célszerű használni. Ehhez csak a nyelv nevét kell csak a nyitó  ``` jelek után írni:</p>
 <pre>
 ```python
@@ -184,25 +184,117 @@ def get_random_number():
 <pre><code class="language-python">def get_random_number():
     return 4;  # chosen by fair dice roll. guaranteed to be random.
 </code></pre>
-<h2><a class="header" href="#pull-requestek-kezelése--review-és-ütközésfeloldás" id="pull-requestek-kezelése--review-és-ütközésfeloldás">Pull requestek kezelése:  review és ütközésfeloldás</a></h2>
-<p>Előfordulhat, hogy a git nem tudja feloldani a változtatásokat és emberi beavatkozást igényel a merge-elés. Például létrehoztad a feature branchet a csapat branch adott állapotáról, ám az időközben módosult és a módosítás ugyanazon fájl ugyanazon részét érintette. A GitHubon ez az alábbihoz hasonlóan néz ki:</p>
-<p><img src="https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/conflict.png" alt="PR conflict" /></p>
-<p>Ezen belül is egyszerűbb esetekben a GH felajánlja a webes szerkesztőjét, de összetettebb esetekben ki kell checkolni az adott ágat és „kézzel” (editorral) feloldani helyzetet.</p>
-<p><strong>Fontos!</strong> A masterbe nem fogadunk el olyan PR-et, amelyben ütközés van, mivel jellemzően nem tudjuk eldönteni, hogy melyik változat fele meg „az utoljára megbeszélteknek”.</p>
-<h3><a class="header" href="#webes-szerkesztő" id="webes-szerkesztő">Webes szerkesztő</a></h3>
-<p>A képen az  látható, hogy Hegedűs kolléga a <code>master</code> azon állapotában írta be a nevét, amikor a 64. sor volt az utolsó. Időközben egyéb PR-eket is elfogadtam így a git nem tudja, hogy a 68-73. sorokat kell megtartani vagy a 66.-at (ennek szintaktikáját látni a „kacsacsőrökkel”).</p>
-<p><img src="https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/conflict_web_editor.png" alt="GH web editor" /></p>
-<p>Jelen esetben persze mindkettő kell, így kézzel átrendezem, majd ezt megjelölöm feloldottnak:</p>
-<p><img src="https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/conflict_web_editor2.png" alt="GH web editor" />
-<img src="https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/conflict_mark_resolved.png" alt="conflict resolved" /></p>
-<p><strong>További tippek a témában</strong>: https://stackoverflow.com/questions/161813/how-to-resolve-merge-conflicts-in-git</p>
-<p>Ekkor a GH azt mutatja, hogy nincs ütközés, de review szükséges (ha nem is volt ütközés, akkor innen indul a történet).</p>
-<h3><a class="header" href="#lokális-szerkesztő" id="lokális-szerkesztő">Lokális szerkesztő</a></h3>
-<p>Ha a GH webes felületén nem engedi az ütközés feloldását, akkor lokálisan kell. Az IDEA pl. az alábbi három paneles megoldást kínálja. Csak rá kell kattintgatni arra, amelyiket meg akarjuk tartani (vagy kézzel összemásolni mint a fönti példa esetében).</p>
-<p>Ha valaki parancssorból intézi, akkor a beállított editorral nyitja meg (vi, nano, stb.) és szintaktikailag ugyanazt a megoldást kapja mint a webes editor esetében.</p>
-<p><img src="http://www.tilcode.com/wp-content/uploads/2015/09/intellij_merge_conflict_tool.png" alt="" /></p>
-<h3><a class="header" href="#review" id="review">Review</a></h3>
-<p><img src="https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/review_required.png" alt="review required" /></p>
+<h2><a class="header" href="#címkék" id="címkék">Címkék</a></h2>
+<p>Létrehozásra kerültek címkék (<code>Labels</code>) négy „dimenzióban” (vagy kategóriában), amelyek használata elvárás a létrehozott issue-khoz a munka áttekinthetőségének javítása miatt. Kell, hogy legyen az issue-nak típusa, állapota, prioritása és legyen megjelölve a feladat nehézsége is.</p>
+<p><img src="images/labels.png" alt="" /></p>
+<h3><a class="header" href="#típus-type" id="típus-type">Típus (type)</a></h3>
+<ul>
+<li>bug</li>
+<li>design</li>
+<li>documentation</li>
+<li>enhancement</li>
+<li>integration</li>
+<li>question</li>
+<li>user story</li>
+</ul>
+<h3><a class="header" href="#Állapot-status" id="Állapot-status">Állapot (status)</a></h3>
+<ul>
+<li>completed</li>
+<li>duplicate</li>
+<li>help wanted</li>
+<li>invalid</li>
+<li>pending</li>
+<li>review needed</li>
+</ul>
+<h3><a class="header" href="#prioritás-priority" id="prioritás-priority">Prioritás (priority)</a></h3>
+<ul>
+<li>critical</li>
+<li>high</li>
+<li>moderate</li>
+<li>low</li>
+</ul>
+<h3><a class="header" href="#nehézség-effort" id="nehézség-effort">Nehézség (effort)</a></h3>
+<ul>
+<li>high</li>
+<li>moderate</li>
+<li>low</li>
+</ul>
+<!--
+## Pull requestek kezelése:  review és ütközésfeloldás
+
+Előfordulhat, hogy a git nem tudja feloldani a változtatásokat és emberi beavatkozást igényel a merge-elés. Például létrehoztad a feature branchet a csapat branch adott állapotáról, ám az időközben módosult és a módosítás ugyanazon fájl ugyanazon részét érintette. A GitHubon ez az alábbihoz hasonlóan néz ki:
+
+![PR conflict](https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/conflict.png)
+
+Ezen belül is egyszerűbb esetekben a GH felajánlja a webes szerkesztőjét, de összetettebb esetekben ki kell checkolni az adott ágat és „kézzel” (editorral) feloldani helyzetet.
+
+**Fontos!** A masterbe nem fogadunk el olyan PR-et, amelyben ütközés van, mivel jellemzően nem tudjuk eldönteni, hogy melyik változat fele meg „az utoljára megbeszélteknek”.
+
+### Webes szerkesztő
+
+A képen az  látható, hogy Hegedűs kolléga a `master` azon állapotában írta be a nevét, amikor a 64. sor volt az utolsó. Időközben egyéb PR-eket is elfogadtam így a git nem tudja, hogy a 68-73. sorokat kell megtartani vagy a 66.-at (ennek szintaktikáját látni a „kacsacsőrökkel”).
+
+![GH web editor](https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/conflict_web_editor.png)
+
+ Jelen esetben persze mindkettő kell, így kézzel átrendezem, majd ezt megjelölöm feloldottnak:
+
+![GH web editor](https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/conflict_web_editor2.png)
+![conflict resolved](https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/conflict_mark_resolved.png)
+
+**További tippek a témában**: https://stackoverflow.com/questions/161813/how-to-resolve-merge-conflicts-in-git
+
+Ekkor a GH azt mutatja, hogy nincs ütközés, de review szükséges (ha nem is volt ütközés, akkor innen indul a történet).
+
+### Lokális szerkesztő
+
+Ha a GH webes felületén nem engedi az ütközés feloldását, akkor lokálisan kell. Az IDEA pl. az alábbi három paneles megoldást kínálja. Csak rá kell kattintgatni arra, amelyiket meg akarjuk tartani (vagy kézzel összemásolni mint a fönti példa esetében).
+
+Ha valaki parancssorból intézi, akkor a beállított editorral nyitja meg (vi, nano, stb.) és szintaktikailag ugyanazt a megoldást kapja mint a webes editor esetében.
+
+![](http://www.tilcode.com/wp-content/uploads/2015/09/intellij_merge_conflict_tool.png)
+-->
+<h2><a class="header" href="#branching-modell" id="branching-modell">Branching modell</a></h2>
+<p>Csoportos munka során fontos tisztázandó kérdés, hogy milyen stratégiával kezeljük a branch-eket. Az egyik legismertebb talán a GitFlow (<a href="http://nvie.com/posts/a-successful-git-branching-model/">A successful Git branching model</a>), amelyet mára több kritika is ért.</p>
+<p>A legelterjedtebbek tőbb tulajdonságait Scott Shipp <a href="https://dev.to/scottshipp/war-of-the-git-flows-3ec2">War of the Git Flows</a> című cikke nyomán a következő táblázatban foglaltam össze:</p>
+<table><thead><tr><th></th><th>GitFlow</th><th>GitHub Flow</th><th>OneFlow</th><th>GitLab Flow</th><th>Trunk-Based Development</th><th>Rebasing Flow</th></tr></thead><tbody>
+<tr><td>Uses feature branches</td><td>yes</td><td>yes</td><td>yes</td><td>yes</td><td>optionally, if short lived</td><td>no</td></tr>
+<tr><td>Uses release branches</td><td>yes</td><td>no</td><td>yes</td><td>yes</td><td>yes</td><td>optional</td></tr>
+<tr><td>Uses rebasing</td><td>no</td><td>no</td><td>optional</td><td>optional</td><td>optional</td><td>yes</td></tr>
+<tr><td>Merges</td><td>no fast forward merges</td><td>unclear</td><td>up to you</td><td>up to you</td><td>optional</td><td>no</td></tr>
+</tbody></table>
+<ul>
+<li><a href="http://nvie.com/posts/a-successful-git-branching-model/">A successful Git branching model</a></li>
+<li><a href="https://barro.github.io/2016/02/a-succesful-git-branching-model-considered-harmful/">A succesful Git branching model considered harmful</a></li>
+<li><a href="https://trunkbaseddevelopment.com/">Trunk-Based Development</a></li>
+<li><a href="https://guides.github.com/introduction/flow/">GitHubFlow</a></li>
+<li><a href="https://docs.gitlab.com/ee/topics/gitlab_flow.html">GitLabFlow</a></li>
+<li><a href="https://www.endoflineblog.com/oneflow-a-git-branching-model-and-workflow#oneflow-advantages">OneFlow</a></li>
+<li><a href="https://gist.github.com/jbenet/ee6c9ac48068889b0912">a simple git branching model</a></li>
+<li><a href="https://www.atlassian.com/git/tutorials/comparing-workflows">Comparing Workflows</a></li>
+</ul>
+<p>A korábbi félévekben a GitFlow szerű megoldást használtuk megbonyolítva azzal, hogy minden csapatnak saját fejlesztői branche-e volt. Ezt jelentősen leegyszerűsítendő a <a href="https://guides.github.com/introduction/flow/">GitHubFlow</a>-ra váltunk.</p>
+<p>A <code>master</code> branch <a href="https://docs.github.com/en/github/administering-a-repository/about-protected-branches">védett</a>, nem lehet bele commitolni. Minden feladatohoz tartoznia kell egy issue-nak, és a megoldásához létre kell hozni egy (feature) branchet az aktuális masterről. A feladatot azon kell megoldani, majd PR-et nyitni a masterbe.</p>
+<p>Ahhoz, hogy a masterbe kerülhessen a módosítás több követelménynek is teljesülnie kell:</p>
+<ul>
+<li>a kód fordul</li>
+<li>az összes teszt sikeres</li>
+<li>két csapattárs és egy oktató jóvá hagyta (review)</li>
+<li>nincs ütközés (conflict)</li>
+</ul>
+<!-- ![](https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/branching.png) -->
+<!-- A `master` branch védett, nem lehet bele commitolni. Nem egy, hanem több (4) fejlesztői branch-ünk van (`team1`, ..., `team4`), ezek szintén védettek. Minden feladathoz létre kell hozni egy *feature branch-et*, azon lehet dolgozni. Ha a feladat elkészült, akkor a csapat branchbe lehet *merge-eni*. Ami mivel védett [*pull request-et*](https://help.github.com/articles/about-pull-requests/) (továbbiakban PR) küldeni. A PR lehetőséget biztosít ellenőrzésekre és [review-zásra](https://help.github.com/articles/about-pull-request-reviews/). Csak a lefordítható, teszteknek megfelelő, ütközés (conflict) mentes PR kerülhet elfogadásra! -->
+<p><strong>Fontos</strong>: Ha egy Pull Request <em>nem</em> fogadható el, akkor sem kell a PR-t lezárni, lehet tovább dolgozni a forrás branchen, az új commit-okkal automatikusan frissül a PR is addig míg a teszteknek meg nem felel és elfogadásra nem került. Sőt, kifejezetten lehet <em><em>Draft</em> PR</em>* is létrehozni, jelezve, hogy a munka már tartalmaz véleményezhető elemeket, de még nincs kész. </p>
+<p>Ha a PR el lett fogadva, a feature branch-re nincs már tovább szükség. Le lehet törölni és be kell zárni azt az <em>issue-t</em> is, amihez a branch kapcsolódott. Tehát ideálisan minden (nem user-story és kérdés) issue-hoz készül(t) egy branch.</p>
+<h3><a class="header" href="#forking" id="forking">Forking</a></h3>
+<p>A tárgyhoz nem lesz szükség forkok használatára, de a GitHub workflow szerves részét képezi (különösen nyílt forrású projekteknél) így érdemes lehet ismerni.</p>
+<ul>
+<li><a href="https://www.gitprime.com/the-definitive-guide-to-forks-and-branches-in-git/">A <em>fork</em> és a <em>branch</em> közötti különbségekről</a></li>
+<li><a href="https://www.atlassian.com/blog/git/git-branching-and-forking-in-the-enterprise-why-fork">Git branching and forking in the enterprise: why fork?</a></li>
+<li><a href="https://blog.scottlowe.org/2015/01/27/using-fork-branch-git-workflow/">Using the Fork-and-Branch Git Workflow</a></li>
+<li><a href="https://stackoverflow.com/a/34343080/4737417">Stackoverflow / Forking vs. Branching in GitHub</a></li>
+</ul>
+<h2><a class="header" href="#review" id="review">Review</a></h2>
+<p><img src="images/review_required.png" alt="review required" /></p>
 <p>Erre az „add your review” szolgál. Fájlonként át lehet nézni minden módosítást, soronként kommentelni, illetve egy globális véleményt írni a PR-ről (+1, -1, -2). A comment opció semleges, nem elfogadás, de nem is elutasítás. A másik két opció elég egyértelmű. Ha változtatást kérsz, akkor addig amíg a PR forrásbranche nem módosul nem lehet újra próbálkozni a PR elfogadásával.</p>
 <p><img src="https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/review_approved.png" alt="review" /></p>
 <p>Ha minden rendben, akkor el lehet fogadni a PR-et:</p>
@@ -211,22 +303,6 @@ def get_random_number():
 <p><img src="https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/merged.png" alt="" /></p>
 <p>Ezen a ponton a feature branch nem szükséges továbbá, törölhető. Persze egy ideig még visszaállítható:</p>
 <p><img src="https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/restore_branch.png" alt="" /></p>
-<h2><a class="header" href="#branching-modell" id="branching-modell">Branching modell</a></h2>
-<p>Az „<a href="http://nvie.com/posts/a-successful-git-branching-model/">A successful Git branching model</a>” című posztban lehet olvasni egy szélesebb körben kedvelt modellről. A félév során használt többé-kevésbé ehhez hasonló.</p>
-<p><img src="https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/branching.png" alt="" /></p>
-<p>A <code>master</code> branch védett, nem lehet bele commitolni. Nem egy, hanem több (4) fejlesztői branch-ünk van (<code>team1</code>, ..., <code>team4</code>), ezek szintén védettek. Minden feladathoz létre kell hozni egy <em>feature branch-et</em>, azon lehet dolgozni. Ha a feladat elkészült, akkor a csapat branchbe lehet <em>merge-eni</em>. Ami mivel védett <a href="https://help.github.com/articles/about-pull-requests/"><em>pull request-et</em></a> (továbbiakban PR) küldeni. A PR lehetőséget biztosít ellenőrzésekre és <a href="https://help.github.com/articles/about-pull-request-reviews/">review-zásra</a>. Csak a lefordítható, teszteknek megfelelő, ütközés (conflict) mentes PR kerülhet elfogadásra!</p>
-<p><strong>Fontos</strong>: Ha egy PR <em>nem</em> fogadható el, akkor sem kell a PR-t lezárni, lehet tovább dolgozni a forrás branchen, az új commit-okkal automatikusan frissül a PR is addig míg a teszteknek meg nem felel és elfogadásra nem került.</p>
-<p>Ha a PR el lett fogadva, a feature branch-re nincs már tovább szükség. Le lehet törölni és be kell zárni azt az <em>issue-t</em> is, amihez a branch kapcsolódott. Tehát ideálisan minden (nem user-story és kérdés) issue-hoz készül(t) egy branch.</p>
-<h3><a class="header" href="#Érdekes-írások-a-témában" id="Érdekes-írások-a-témában">Érdekes írások a témában</a></h3>
-<ul>
-<li><a href="https://www.gitprime.com/the-definitive-guide-to-forks-and-branches-in-git/">A <em>fork</em> és a <em>branch</em> közötti különbségekről</a></li>
-<li><a href="https://gist.github.com/jbenet/ee6c9ac48068889b0912">a simple git branching model</a></li>
-<li><a href="https://www.atlassian.com/git/tutorials/comparing-workflows">Comparing Workflows</a></li>
-<li><a href="https://www.atlassian.com/blog/git/git-branching-and-forking-in-the-enterprise-why-fork">Git branching and forking in the enterprise: why fork?</a></li>
-<li><a href="https://blog.scottlowe.org/2015/01/27/using-fork-branch-git-workflow/">Using the Fork-and-Branch Git Workflow</a></li>
-<li><a href="https://stackoverflow.com/a/34343080/4737417">Stackoverflow / Forking vs. Branching in GitHub</a></li>
-<li><a href="https://barro.github.io/2016/02/a-succesful-git-branching-model-considered-harmful/">A succesful Git branching model considered harmful</a></li>
-</ul>
 <h2><a class="header" href="#társszerzők" id="társszerzők">Társszerzők</a></h2>
 <p>A munkafolyamat alapvetően egyéni munkára van kitalálva, de legkevésbé sem tilos a <a href="https://en.wikipedia.org/wiki/Pair_programming">pair programming</a> sem. Volt, hogy Skype-os képernyő-megosztásos módszerrel dolgoztak <em>távolról</em> párban... Ilyenkor mindig felvetődik a kérdés, hogy csak az egyik kolléga nevében történhet a commit de mi van a másikkal... A GitHub <a href="https://github.com/blog/2496-commit-together-with-co-authors">bevezetett egy új funkciót</a> ennek orvoslására. Részletek <a href="https://help.github.com/articles/creating-a-commit-with-multiple-authors/">elérhetőek itt</a>.</p>
 <p>Ebben az esetben a commit üzenet törzse után 2 üres sorral elválasztva kell a társszerzőket feltüntetni. Pl.:</p>
