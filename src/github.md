@@ -32,6 +32,45 @@ def get_random_number():
     return 4;  # chosen by fair dice roll. guaranteed to be random.
 ```
 
+## Címkék
+
+Létrehozásra kerültek címkék (`Labels`) négy „dimenzióban” (vagy kategóriában), amelyek használata elvárás a létrehozott issue-khoz a munka áttekinthetőségének javítása miatt. Kell, hogy legyen az issue-nak típusa, állapota, prioritása és legyen megjelölve a feladat nehézsége is.
+
+![](images/labels.png)
+
+### Típus (type)
+
+- bug
+- design
+- documentation
+- enhancement
+- integration
+- question
+- user story
+
+### Állapot (status)
+
+- completed
+- duplicate
+- help wanted
+- invalid
+- pending
+- review needed
+
+### Prioritás (priority)
+
+- critical
+- high
+- moderate
+- low
+
+### Nehézség (effort)
+
+- high
+- moderate
+- low
+
+
 ## Pull requestek kezelése:  review és ütközésfeloldás
 
 Előfordulhat, hogy a git nem tudja feloldani a változtatásokat és emberi beavatkozást igényel a merge-elés. Például létrehoztad a feature branchet a csapat branch adott állapotáról, ám az időközben módosult és a módosítás ugyanazon fájl ugyanazon részét érintette. A GitHubon ez az alábbihoz hasonlóan néz ki:
