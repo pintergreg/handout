@@ -56,7 +56,7 @@ Egy korábbi félév során a referenciapontokat (részben) már összegyűjtöt
 
 A mozgatásra szoruló elemek (vezérelt autó és NPC autók) nem képezik részét a világ leírásának, viszonyítási pontjuk nem definiált. A rendelkezésre bocsátott autó képek méretarányosak az összes többi objektummal.
 
-A világhoz szükséges elemek megtalálhatóak a kiinduló project `src/main/resources` (Java) vagy `Assets/WorldObjects` (C#) mappájában.
+A világhoz szükséges elemek megtalálhatóak a kiinduló project `src/main/resources` (Java) vagy `src/AutomatedCat/Assets` (C#) mappájában.
 
 ## Méretarány
 
