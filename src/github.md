@@ -10,11 +10,11 @@ A félév során a GitHubot használjuk a kód tárolására, a feladatok menedz
 
 ## Áttekintés
 
-Minden hallgató tagja lesz a [SzFMV2019-Tavasz](https://github.com/szfmv2019-tavasz) szervezetnek (`Organization`), és egy-egy csapatnak (Team1, ..., Team4). Minden csapat külön issue board-dal rendelkezik (`Projects`), ezen kell vezetni a feladatok (`issue`) megoldását (részletében lásd [Munkafolyamat](workflow.md)).
+Minden hallgató tagja lesz a [SzFMV2020-Osz](https://github.com/SzFMV2020-Osz/) szervezetnek (`Organization`), és egy-egy csapatnak (Team A[1-4], Team B[1-4]). Minden csapat külön issue board-dal rendelkezik (`Projects`), ezen kell vezetni a feladatok (`issue`) megoldását (részletében lásd [Munkafolyamat](workflow.md)).
 
-Issue-t nem csak feladatra lehet felvenni, akár kérdésre is, probléma megvitatására is. Ez esetben célszerű megjelölni a `Question` címkével. 2017 őszétől csapat (`team`) szintű fórummal is rendelkezik a GitHub. A szervezeten belül a csapatok hierarchikus struktúrában vannak. A gyökér az [Everyone](https://github.com/orgs/szfmv2019-tavasz/teams/everyone), az összes többi csapat ennek tagja. Az Everyone falára (`discussions`) írt üzeneteket mindenki megkapja. Ezen keresztül fogunk a félév során kurzus szintű közleményeket kiadni, de bárki használhatja kommunikációra. Ugyanilyen üzenőfallal rendelkezik az összes többi csapat is, amelyre szintén bárki írhat. Ha például a Team2-ből szeretné elérni valaki a Team3-at, akkor mindösszesen annyi a dolga, hogy ír a Team3 üzenőfalára. A [Staff](https://github.com/orgs/szfmv2019-tavasz/teams/staff) nevű team-en keresztül az oktatókat lehet elérni ugyanilyen módon.
+Issue-t nem csak feladatra lehet felvenni, akár kérdésre is (felénk vagy más csapatok felé is), probléma megvitatására is. Ez esetben célszerű megjelölni a ``type: question`` címkével. 2017 őszétől csapat (`team`) szintű fórummal (`Discussions`) is rendelkezik a GitHub. A szervezeten belül a csapatok hierarchikus struktúrában vannak. A gyökér az [Everyone](https://github.com/orgs/szfmv2020-osz/teams/everyone), az összes többi csapat ennek tagja (Group A, Group B csapatokon keresztül). Az Everyone falára írt üzeneteket mindenki megkapja. Ezen keresztül fogunk a félév során kurzus szintű közleményeket kiadni, de bárki használhatja kommunikációra. Ugyanilyen üzenőfallal rendelkezik az összes többi csapat is, amelyre szintén bárki írhat. Ha például a Team2-ből szeretné elérni valaki a Team3-at, akkor mindösszesen annyi a dolga, hogy ír a Team3 üzenőfalára. A [Instructors](https://github.com/orgs/SzFMV2020-Osz/teams/instructors) nevű team-en keresztül az oktatókat lehet elérni ugyanilyen módon.
 
-A comment szekciókban is élnek az @ jeles említések, ez a mi esetünkben `@ravaszla` és `@pintergreg`, ugyanígy működik csapatra is pl. `@szfmv2019-tavasz/teama1`, illetve `@szfmv2019-tavasz/staff ` a mi esetünkben. Csapat esetében a csapat valamennyi tagja kap értesítést az hivatkozásról.
+A comment szekciókban is élnek az @ jeles említések, ez a mi esetünkben `@ravaszla` és `@pintergreg`, ugyanígy működik csapatra is pl. `@szfmv2020-osz/team-a1`, illetve `@szfmv2020-osz/instructors ` a mi esetünkben. Csapat esetében a csapat valamennyi tagja kap értesítést az hivatkozásról.
 
 A GitHub valamennyi elemén használhatóak formázási lehetőségek [Markdown stílusban](https://guides.github.com/features/mastering-markdown/), kód kiemelésre is lehetőség van, amelyet több mint célszerű használni. Ehhez csak a nyelv nevét kell csak a nyitó  ``` jelek után írni:
 
@@ -88,6 +88,13 @@ Ezen a ponton a feature branch nem szükséges továbbá, törölhető. Persze e
 
 
 ## Branching modell
+
+[War of the Git Flows](https://dev.to/scottshipp/war-of-the-git-flows-3ec2)
+
+https://trunkbaseddevelopment.com/
+https://www.endoflineblog.com/oneflow-a-git-branching-model-and-workflow#oneflow-advantages
+https://docs.gitlab.com/ee/topics/gitlab_flow.html
+https://guides.github.com/introduction/flow/
 
 Az „[A successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model/)” című posztban lehet olvasni egy szélesebb körben kedvelt modellről. A félév során használt többé-kevésbé ehhez hasonló.
 
