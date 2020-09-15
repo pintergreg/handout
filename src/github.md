@@ -71,6 +71,7 @@ Létrehozásra kerültek címkék (`Labels`) négy „dimenzióban” (vagy kate
 - low
 
 
+<!--
 ## Pull requestek kezelése:  review és ütközésfeloldás
 
 Előfordulhat, hogy a git nem tudja feloldani a változtatásokat és emberi beavatkozást igényel a merge-elés. Például létrehoztad a feature branchet a csapat branch adott állapotáról, ám az időközben módosult és a módosítás ugyanazon fájl ugyanazon részét érintette. A GitHubon ez az alábbihoz hasonlóan néz ki:
@@ -103,10 +104,64 @@ Ha a GH webes felületén nem engedi az ütközés feloldását, akkor lokálisa
 Ha valaki parancssorból intézi, akkor a beállított editorral nyitja meg (vi, nano, stb.) és szintaktikailag ugyanazt a megoldást kapja mint a webes editor esetében.
 
 ![](http://www.tilcode.com/wp-content/uploads/2015/09/intellij_merge_conflict_tool.png)
+-->
 
-### Review
 
-![review required](https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/review_required.png)
+## Branching modell
+
+Csoportos munka során fontos tisztázandó kérdés, hogy milyen stratégiával kezeljük a branch-eket. Az egyik legismertebb talán a GitFlow ([A successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model/)), amelyet mára több kritika is ért.
+
+A legelterjedtebbek tőbb tulajdonságait Scott Shipp [War of the Git Flows](https://dev.to/scottshipp/war-of-the-git-flows-3ec2) című cikke nyomán a következő táblázatban foglaltam össze:
+
+|                       | GitFlow                | GitHub Flow | OneFlow                | GitLab Flow | Trunk-Based Development    | Rebasing Flow |
+|-----------------------|------------------------|-------------|------------------------|-------------|----------------------------|---------------|
+| Uses feature branches | yes                    | yes         | yes                    | yes         | optionally, if short lived | no            |
+| Uses release branches | yes                    | no          | yes                    | yes         | yes                        | optional      |
+| Uses rebasing         | no                     | no          | optional               | optional    | optional                   | yes           |
+| Merges                | no fast forward merges | unclear     | up to you              | up to you   | optional                   | no            |
+
+
+- [A successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model/)
+- [A succesful Git branching model considered harmful](https://barro.github.io/2016/02/a-succesful-git-branching-model-considered-harmful/)
+- [Trunk-Based Development](https://trunkbaseddevelopment.com/)
+- [GitHubFlow](https://guides.github.com/introduction/flow/)
+- [GitLabFlow](https://docs.gitlab.com/ee/topics/gitlab_flow.html)
+- [OneFlow](https://www.endoflineblog.com/oneflow-a-git-branching-model-and-workflow#oneflow-advantages)
+- [a simple git branching model](https://gist.github.com/jbenet/ee6c9ac48068889b0912)
+- [Comparing Workflows](https://www.atlassian.com/git/tutorials/comparing-workflows)
+
+
+ A korábbi félévekben a GitFlow szerű megoldást használtuk megbonyolítva azzal, hogy minden csapatnak saját fejlesztői branche-e volt. Ezt jelentősen leegyszerűsítendő a [GitHubFlow](https://guides.github.com/introduction/flow/)-ra váltunk.
+
+A `master` branch [védett](https://docs.github.com/en/github/administering-a-repository/about-protected-branches), nem lehet bele commitolni. Minden feladatohoz tartoznia kell egy issue-nak, és a megoldásához létre kell hozni egy (feature) branchet az aktuális masterről. A feladatot azon kell megoldani, majd PR-et nyitni a masterbe.
+
+Ahhoz, hogy a masterbe kerülhessen a módosítás több követelménynek is teljesülnie kell:
+
+- a kód fordul
+- az összes teszt sikeres
+- két csapattárs és egy oktató jóvá hagyta (review)
+- nincs ütközés (conflict)
+
+<!-- ![](https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/branching.png) -->
+
+<!-- A `master` branch védett, nem lehet bele commitolni. Nem egy, hanem több (4) fejlesztői branch-ünk van (`team1`, ..., `team4`), ezek szintén védettek. Minden feladathoz létre kell hozni egy *feature branch-et*, azon lehet dolgozni. Ha a feladat elkészült, akkor a csapat branchbe lehet *merge-eni*. Ami mivel védett [*pull request-et*](https://help.github.com/articles/about-pull-requests/) (továbbiakban PR) küldeni. A PR lehetőséget biztosít ellenőrzésekre és [review-zásra](https://help.github.com/articles/about-pull-request-reviews/). Csak a lefordítható, teszteknek megfelelő, ütközés (conflict) mentes PR kerülhet elfogadásra! -->
+
+**Fontos**: Ha egy Pull Request *nem* fogadható el, akkor sem kell a PR-t lezárni, lehet tovább dolgozni a forrás branchen, az új commit-okkal automatikusan frissül a PR is addig míg a teszteknek meg nem felel és elfogadásra nem került. Sőt, kifejezetten lehet **Draft* PR** is létrehozni, jelezve, hogy a munka már tartalmaz véleményezhető elemeket, de még nincs kész. 
+
+Ha a PR el lett fogadva, a feature branch-re nincs már tovább szükség. Le lehet törölni és be kell zárni azt az *issue-t* is, amihez a branch kapcsolódott. Tehát ideálisan minden (nem user-story és kérdés) issue-hoz készül(t) egy branch.
+
+### Forking
+
+ A tárgyhoz nem lesz szükség forkok használatára, de a GitHub workflow szerves részét képezi (különösen nyílt forrású projekteknél) így érdemes lehet ismerni.
+
+* [A _fork_ és a _branch_ közötti különbségekről](https://www.gitprime.com/the-definitive-guide-to-forks-and-branches-in-git/)
+* [Git branching and forking in the enterprise: why fork?](https://www.atlassian.com/blog/git/git-branching-and-forking-in-the-enterprise-why-fork)
+* [Using the Fork-and-Branch Git Workflow](https://blog.scottlowe.org/2015/01/27/using-fork-branch-git-workflow/)
+* [Stackoverflow / Forking vs. Branching in GitHub](https://stackoverflow.com/a/34343080/4737417)
+
+## Review
+
+![review required](images/review_required.png)
 
 Erre az „add your review” szolgál. Fájlonként át lehet nézni minden módosítást, soronként kommentelni, illetve egy globális véleményt írni a PR-ről (+1, -1, -2). A comment opció semleges, nem elfogadás, de nem is elutasítás. A másik két opció elég egyértelmű. Ha változtatást kérsz, akkor addig amíg a PR forrásbranche nem módosul nem lehet újra próbálkozni a PR elfogadásával.
 
@@ -123,37 +178,6 @@ Elfogadás után így néz ki:
 Ezen a ponton a feature branch nem szükséges továbbá, törölhető. Persze egy ideig még visszaállítható:
 
 ![](https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/restore_branch.png)
-
-
-
-## Branching modell
-
-[War of the Git Flows](https://dev.to/scottshipp/war-of-the-git-flows-3ec2)
-
-https://trunkbaseddevelopment.com/
-https://www.endoflineblog.com/oneflow-a-git-branching-model-and-workflow#oneflow-advantages
-https://docs.gitlab.com/ee/topics/gitlab_flow.html
-https://guides.github.com/introduction/flow/
-
-Az „[A successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model/)” című posztban lehet olvasni egy szélesebb körben kedvelt modellről. A félév során használt többé-kevésbé ehhez hasonló.
-
-![](https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/branching.png)
-
-A `master` branch védett, nem lehet bele commitolni. Nem egy, hanem több (4) fejlesztői branch-ünk van (`team1`, ..., `team4`), ezek szintén védettek. Minden feladathoz létre kell hozni egy *feature branch-et*, azon lehet dolgozni. Ha a feladat elkészült, akkor a csapat branchbe lehet *merge-eni*. Ami mivel védett [*pull request-et*](https://help.github.com/articles/about-pull-requests/) (továbbiakban PR) küldeni. A PR lehetőséget biztosít ellenőrzésekre és [review-zásra](https://help.github.com/articles/about-pull-request-reviews/). Csak a lefordítható, teszteknek megfelelő, ütközés (conflict) mentes PR kerülhet elfogadásra!
-
-**Fontos**: Ha egy PR *nem* fogadható el, akkor sem kell a PR-t lezárni, lehet tovább dolgozni a forrás branchen, az új commit-okkal automatikusan frissül a PR is addig míg a teszteknek meg nem felel és elfogadásra nem került.
-
-Ha a PR el lett fogadva, a feature branch-re nincs már tovább szükség. Le lehet törölni és be kell zárni azt az *issue-t* is, amihez a branch kapcsolódott. Tehát ideálisan minden (nem user-story és kérdés) issue-hoz készül(t) egy branch.
-
-### Érdekes írások a témában
-
-* [A _fork_ és a _branch_ közötti különbségekről](https://www.gitprime.com/the-definitive-guide-to-forks-and-branches-in-git/)
-* [a simple git branching model](https://gist.github.com/jbenet/ee6c9ac48068889b0912)
-* [Comparing Workflows](https://www.atlassian.com/git/tutorials/comparing-workflows)
-* [Git branching and forking in the enterprise: why fork?](https://www.atlassian.com/blog/git/git-branching-and-forking-in-the-enterprise-why-fork)
-* [Using the Fork-and-Branch Git Workflow](https://blog.scottlowe.org/2015/01/27/using-fork-branch-git-workflow/)
-* [Stackoverflow / Forking vs. Branching in GitHub](https://stackoverflow.com/a/34343080/4737417)
-* [A succesful Git branching model considered harmful](https://barro.github.io/2016/02/a-succesful-git-branching-model-considered-harmful/)
 
 ## Társszerzők
 
