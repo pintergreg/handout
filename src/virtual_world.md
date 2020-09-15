@@ -52,11 +52,11 @@ A képfájlok amikkel a rajzoló csapat dolgozik elég sajátosan működnek. A 
 
 Minden itt fel nem sorolt esetben feltételezhető, hogy a bal felső sarok a viszonyítási pont.
 
-Egy korábbi félév során a referenciapontokat (részben) már összegyűjtötték (@csabalint, @SiposGergo, @markkurucz), ez elérhető [XML](references/reference_points.xml) vagy [JSON](references/reference_points.json) formátumban.
+Egy korábbi félév során a referenciapontokat (részben) már összegyűjtötték (@csabalint, @SiposGergo, @markkurucz), ez elérhető [XML](resources/reference_points.xml) vagy [JSON](resources/reference_points.json) formátumban.
 
 A mozgatásra szoruló elemek (vezérelt autó és NPC autók) nem képezik részét a világ leírásának, viszonyítási pontjuk nem definiált. A rendelkezésre bocsátott autó képek méretarányosak az összes többi objektummal.
 
-A világhoz szükséges elemek megtalálhatóak a project `src/main/resources` (Java) vagy `Assets/WorldObjects` (C#) mappájában.
+A világhoz szükséges elemek megtalálhatóak a kiinduló project `src/main/resources` (Java) vagy `Assets/WorldObjects` (C#) mappájában.
 
 ## Méretarány
 
