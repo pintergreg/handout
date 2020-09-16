@@ -180,7 +180,7 @@
         <dia:int val="1"/>
       </dia:attribute>
       <dia:attribute name="line_color">
-        <dia:color val="#a52a2a"/>
+        <dia:color val="#4d4d4d"/>
       </dia:attribute>
       <dia:attribute name="end_arrow">
         <dia:enum val="1"/>
@@ -366,7 +366,7 @@ Kormányzás#</dia:string>
         <dia:int val="1"/>
       </dia:attribute>
       <dia:attribute name="line_color">
-        <dia:color val="#a52a2a"/>
+        <dia:color val="#4d4d4d"/>
       </dia:attribute>
       <dia:attribute name="end_arrow">
         <dia:enum val="1"/>
@@ -499,7 +499,7 @@ Kormányzás#</dia:string>
         <dia:int val="1"/>
       </dia:attribute>
       <dia:attribute name="line_color">
-        <dia:color val="#a52a2a"/>
+        <dia:color val="#4d4d4d"/>
       </dia:attribute>
       <dia:attribute name="end_arrow">
         <dia:enum val="1"/>
@@ -737,7 +737,7 @@ tempomat#</dia:string>
         <dia:int val="1"/>
       </dia:attribute>
       <dia:attribute name="line_color">
-        <dia:color val="#a52a2a"/>
+        <dia:color val="#4d4d4d"/>
       </dia:attribute>
       <dia:attribute name="end_arrow">
         <dia:enum val="1"/>
@@ -768,7 +768,7 @@ tempomat#</dia:string>
         <dia:int val="1"/>
       </dia:attribute>
       <dia:attribute name="line_color">
-        <dia:color val="#a52a2a"/>
+        <dia:color val="#4d4d4d"/>
       </dia:attribute>
       <dia:attribute name="end_arrow">
         <dia:enum val="1"/>
@@ -799,7 +799,7 @@ tempomat#</dia:string>
         <dia:int val="1"/>
       </dia:attribute>
       <dia:attribute name="line_color">
-        <dia:color val="#a52a2a"/>
+        <dia:color val="#4d4d4d"/>
       </dia:attribute>
       <dia:attribute name="end_arrow">
         <dia:enum val="1"/>
@@ -830,7 +830,7 @@ tempomat#</dia:string>
         <dia:int val="1"/>
       </dia:attribute>
       <dia:attribute name="line_color">
-        <dia:color val="#a52a2a"/>
+        <dia:color val="#4d4d4d"/>
       </dia:attribute>
       <dia:attribute name="end_arrow">
         <dia:enum val="1"/>
@@ -861,7 +861,7 @@ tempomat#</dia:string>
         <dia:int val="1"/>
       </dia:attribute>
       <dia:attribute name="line_color">
-        <dia:color val="#a52a2a"/>
+        <dia:color val="#4d4d4d"/>
       </dia:attribute>
       <dia:attribute name="end_arrow">
         <dia:enum val="1"/>
@@ -892,7 +892,7 @@ tempomat#</dia:string>
         <dia:int val="1"/>
       </dia:attribute>
       <dia:attribute name="line_color">
-        <dia:color val="#a52a2a"/>
+        <dia:color val="#4d4d4d"/>
       </dia:attribute>
       <dia:attribute name="end_arrow">
         <dia:enum val="1"/>
@@ -923,7 +923,7 @@ tempomat#</dia:string>
         <dia:int val="1"/>
       </dia:attribute>
       <dia:attribute name="line_color">
-        <dia:color val="#a52a2a"/>
+        <dia:color val="#4d4d4d"/>
       </dia:attribute>
       <dia:attribute name="end_arrow">
         <dia:enum val="1"/>
@@ -954,7 +954,7 @@ tempomat#</dia:string>
         <dia:int val="1"/>
       </dia:attribute>
       <dia:attribute name="line_color">
-        <dia:color val="#a52a2a"/>
+        <dia:color val="#4d4d4d"/>
       </dia:attribute>
       <dia:attribute name="end_arrow">
         <dia:enum val="1"/>
@@ -985,7 +985,7 @@ tempomat#</dia:string>
         <dia:int val="1"/>
       </dia:attribute>
       <dia:attribute name="line_color">
-        <dia:color val="#a52a2a"/>
+        <dia:color val="#4d4d4d"/>
       </dia:attribute>
       <dia:attribute name="end_arrow">
         <dia:enum val="1"/>
@@ -1016,7 +1016,7 @@ tempomat#</dia:string>
         <dia:int val="1"/>
       </dia:attribute>
       <dia:attribute name="line_color">
-        <dia:color val="#a52a2a"/>
+        <dia:color val="#4d4d4d"/>
       </dia:attribute>
       <dia:attribute name="end_arrow">
         <dia:enum val="1"/>
@@ -1047,7 +1047,7 @@ tempomat#</dia:string>
         <dia:int val="1"/>
       </dia:attribute>
       <dia:attribute name="line_color">
-        <dia:color val="#a52a2a"/>
+        <dia:color val="#4d4d4d"/>
       </dia:attribute>
       <dia:attribute name="end_arrow">
         <dia:enum val="1"/>
@@ -1078,7 +1078,7 @@ tempomat#</dia:string>
         <dia:int val="1"/>
       </dia:attribute>
       <dia:attribute name="line_color">
-        <dia:color val="#a52a2a"/>
+        <dia:color val="#4d4d4d"/>
       </dia:attribute>
       <dia:attribute name="end_arrow">
         <dia:enum val="1"/>
@@ -1211,7 +1211,7 @@ tempomat#</dia:string>
         <dia:int val="1"/>
       </dia:attribute>
       <dia:attribute name="line_color">
-        <dia:color val="#a52a2a"/>
+        <dia:color val="#4d4d4d"/>
       </dia:attribute>
       <dia:attribute name="end_arrow">
         <dia:enum val="1"/>
@@ -1242,7 +1242,7 @@ tempomat#</dia:string>
         <dia:int val="1"/>
       </dia:attribute>
       <dia:attribute name="line_color">
-        <dia:color val="#a52a2a"/>
+        <dia:color val="#4d4d4d"/>
       </dia:attribute>
       <dia:attribute name="end_arrow">
         <dia:enum val="1"/>
@@ -1257,6 +1257,213 @@ tempomat#</dia:string>
         <dia:connection handle="0" to="O0" connection="16"/>
         <dia:connection handle="1" to="O5" connection="16"/>
       </dia:connections>
+    </dia:object>
+    <dia:object type="Standard - Line" version="0" id="O30">
+      <dia:attribute name="obj_pos">
+        <dia:point val="29,5"/>
+      </dia:attribute>
+      <dia:attribute name="obj_bb">
+        <dia:rectangle val="28.8882,4.4191;53.1118,5.5809"/>
+      </dia:attribute>
+      <dia:attribute name="conn_endpoints">
+        <dia:point val="29,5"/>
+        <dia:point val="53,5"/>
+      </dia:attribute>
+      <dia:attribute name="numcp">
+        <dia:int val="1"/>
+      </dia:attribute>
+      <dia:attribute name="line_color">
+        <dia:color val="#4d4d4d"/>
+      </dia:attribute>
+      <dia:attribute name="start_arrow">
+        <dia:enum val="21"/>
+      </dia:attribute>
+      <dia:attribute name="start_arrow_length">
+        <dia:real val="0.99999999999999989"/>
+      </dia:attribute>
+      <dia:attribute name="start_arrow_width">
+        <dia:real val="0.99999999999999989"/>
+      </dia:attribute>
+      <dia:attribute name="end_arrow">
+        <dia:enum val="21"/>
+      </dia:attribute>
+      <dia:attribute name="end_arrow_length">
+        <dia:real val="0.99999999999999989"/>
+      </dia:attribute>
+      <dia:attribute name="end_arrow_width">
+        <dia:real val="0.99999999999999989"/>
+      </dia:attribute>
+    </dia:object>
+    <dia:object type="Standard - Line" version="0" id="O31">
+      <dia:attribute name="obj_pos">
+        <dia:point val="74,5"/>
+      </dia:attribute>
+      <dia:attribute name="obj_bb">
+        <dia:rectangle val="73.8882,4.4191;83.1118,5.5809"/>
+      </dia:attribute>
+      <dia:attribute name="conn_endpoints">
+        <dia:point val="74,5"/>
+        <dia:point val="83,5"/>
+      </dia:attribute>
+      <dia:attribute name="numcp">
+        <dia:int val="1"/>
+      </dia:attribute>
+      <dia:attribute name="line_color">
+        <dia:color val="#4d4d4d"/>
+      </dia:attribute>
+      <dia:attribute name="start_arrow">
+        <dia:enum val="21"/>
+      </dia:attribute>
+      <dia:attribute name="start_arrow_length">
+        <dia:real val="0.99999999999999989"/>
+      </dia:attribute>
+      <dia:attribute name="start_arrow_width">
+        <dia:real val="0.99999999999999989"/>
+      </dia:attribute>
+      <dia:attribute name="end_arrow">
+        <dia:enum val="21"/>
+      </dia:attribute>
+      <dia:attribute name="end_arrow_length">
+        <dia:real val="0.99999999999999989"/>
+      </dia:attribute>
+      <dia:attribute name="end_arrow_width">
+        <dia:real val="0.99999999999999989"/>
+      </dia:attribute>
+    </dia:object>
+    <dia:object type="Standard - Line" version="0" id="O32">
+      <dia:attribute name="obj_pos">
+        <dia:point val="59,5"/>
+      </dia:attribute>
+      <dia:attribute name="obj_bb">
+        <dia:rectangle val="58.8882,4.4191;68.1118,5.5809"/>
+      </dia:attribute>
+      <dia:attribute name="conn_endpoints">
+        <dia:point val="59,5"/>
+        <dia:point val="68,5"/>
+      </dia:attribute>
+      <dia:attribute name="numcp">
+        <dia:int val="1"/>
+      </dia:attribute>
+      <dia:attribute name="line_color">
+        <dia:color val="#4d4d4d"/>
+      </dia:attribute>
+      <dia:attribute name="start_arrow">
+        <dia:enum val="21"/>
+      </dia:attribute>
+      <dia:attribute name="start_arrow_length">
+        <dia:real val="0.99999999999999989"/>
+      </dia:attribute>
+      <dia:attribute name="start_arrow_width">
+        <dia:real val="0.99999999999999989"/>
+      </dia:attribute>
+      <dia:attribute name="end_arrow">
+        <dia:enum val="21"/>
+      </dia:attribute>
+      <dia:attribute name="end_arrow_length">
+        <dia:real val="0.99999999999999989"/>
+      </dia:attribute>
+      <dia:attribute name="end_arrow_width">
+        <dia:real val="0.99999999999999989"/>
+      </dia:attribute>
+    </dia:object>
+    <dia:object type="Standard - Text" version="1" id="O33">
+      <dia:attribute name="obj_pos">
+        <dia:point val="41,4"/>
+      </dia:attribute>
+      <dia:attribute name="obj_bb">
+        <dia:rectangle val="39.27,3.2665;42.73,4.18636"/>
+      </dia:attribute>
+      <dia:attribute name="text">
+        <dia:composite type="text">
+          <dia:attribute name="string">
+            <dia:string>#sprint 1#</dia:string>
+          </dia:attribute>
+          <dia:attribute name="font">
+            <dia:font family="sans" style="80" name="Helvetica-Bold"/>
+          </dia:attribute>
+          <dia:attribute name="height">
+            <dia:real val="0.98777773976325989"/>
+          </dia:attribute>
+          <dia:attribute name="pos">
+            <dia:point val="41,4"/>
+          </dia:attribute>
+          <dia:attribute name="color">
+            <dia:color val="#4d4d4d"/>
+          </dia:attribute>
+          <dia:attribute name="alignment">
+            <dia:enum val="1"/>
+          </dia:attribute>
+        </dia:composite>
+      </dia:attribute>
+      <dia:attribute name="valign">
+        <dia:enum val="3"/>
+      </dia:attribute>
+    </dia:object>
+    <dia:object type="Standard - Text" version="1" id="O34">
+      <dia:attribute name="obj_pos">
+        <dia:point val="63.5,4"/>
+      </dia:attribute>
+      <dia:attribute name="obj_bb">
+        <dia:rectangle val="61.77,3.2665;65.23,4.18636"/>
+      </dia:attribute>
+      <dia:attribute name="text">
+        <dia:composite type="text">
+          <dia:attribute name="string">
+            <dia:string>#sprint 2#</dia:string>
+          </dia:attribute>
+          <dia:attribute name="font">
+            <dia:font family="sans" style="80" name="Helvetica-Bold"/>
+          </dia:attribute>
+          <dia:attribute name="height">
+            <dia:real val="0.98777773976325989"/>
+          </dia:attribute>
+          <dia:attribute name="pos">
+            <dia:point val="63.5,4"/>
+          </dia:attribute>
+          <dia:attribute name="color">
+            <dia:color val="#4d4d4d"/>
+          </dia:attribute>
+          <dia:attribute name="alignment">
+            <dia:enum val="1"/>
+          </dia:attribute>
+        </dia:composite>
+      </dia:attribute>
+      <dia:attribute name="valign">
+        <dia:enum val="3"/>
+      </dia:attribute>
+    </dia:object>
+    <dia:object type="Standard - Text" version="1" id="O35">
+      <dia:attribute name="obj_pos">
+        <dia:point val="78.5,4"/>
+      </dia:attribute>
+      <dia:attribute name="obj_bb">
+        <dia:rectangle val="76.77,3.2665;80.23,4.18636"/>
+      </dia:attribute>
+      <dia:attribute name="text">
+        <dia:composite type="text">
+          <dia:attribute name="string">
+            <dia:string>#sprint 3#</dia:string>
+          </dia:attribute>
+          <dia:attribute name="font">
+            <dia:font family="sans" style="80" name="Helvetica-Bold"/>
+          </dia:attribute>
+          <dia:attribute name="height">
+            <dia:real val="0.98777773976325989"/>
+          </dia:attribute>
+          <dia:attribute name="pos">
+            <dia:point val="78.5,4"/>
+          </dia:attribute>
+          <dia:attribute name="color">
+            <dia:color val="#4d4d4d"/>
+          </dia:attribute>
+          <dia:attribute name="alignment">
+            <dia:enum val="1"/>
+          </dia:attribute>
+        </dia:composite>
+      </dia:attribute>
+      <dia:attribute name="valign">
+        <dia:enum val="3"/>
+      </dia:attribute>
     </dia:object>
   </dia:layer>
 </dia:diagram>
