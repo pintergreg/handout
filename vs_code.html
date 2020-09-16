@@ -197,6 +197,25 @@
 }
 </code></pre>
 <!-- C# FixFormat -->
+<h2><a class="header" href="#code-coverage" id="code-coverage">Code Coverage</a></h2>
+<p>A tesztlefedettség számítását a <a href="https://www.nuget.org/packages/coverlet.collector/">Coverlet</a> végzi, amit a teszt projekthez adtam hozzá. Ennek riportját használja a Codecov is. 
+A riportot cobertura, lcov fomátumban is legeneráltatom, előbbi a Codcov-nak, utóbbi a <a href="https://marketplace.visualstudio.com/items?itemName=ryanluker.vscode-coverage-gutters">Coverage Gutters</a>-nak kell, amely a VS Code-on belül ad visszajelzéseket. Utóbbi beállításaiban meg kell adni, hogy a report <code>coverage.info</code> néven áll elő, ezt keresse. Illetve be kell kapcsolni a <em>statusbar</em> „Watch” gombjábal.</p>
+<p>Formátumbeállítás <code>runsettings.xml</code> állományon keresztül [<a href="https://github.com/coverlet-coverage/coverlet/blob/master/Documentation/VSTestIntegration.md">forrás</a>]:</p>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
+&lt;RunSettings&gt;
+  &lt;DataCollectionRunSettings&gt;
+    &lt;DataCollectors&gt;
+      &lt;DataCollector friendlyName=&quot;XPlat code coverage&quot;&gt;
+        &lt;Configuration&gt;
+          &lt;Format&gt;lcov,cobertura&lt;/Format&gt;
+        &lt;/Configuration&gt;
+      &lt;/DataCollector&gt;
+    &lt;/DataCollectors&gt;
+  &lt;/DataCollectionRunSettings&gt;
+&lt;/RunSettings&gt;
+</code></pre>
+<p><img src="images/coverage_gutters.png" alt="" /></p>
+<!-- ## Code Style -->
 
                     </main>
 
