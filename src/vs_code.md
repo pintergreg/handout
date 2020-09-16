@@ -39,4 +39,28 @@ Ajánlott beállítások, amiket a `.vscode/settings.json` fájlban kell elhelye
 
 <!-- C# FixFormat -->
 
+## Code Coverage
 
+A tesztlefedettség számítását a [Coverlet](https://www.nuget.org/packages/coverlet.collector/) végzi, amit a teszt projekthez adtam hozzá. Ennek riportját használja a Codecov is. 
+A riportot cobertura, lcov fomátumban is legeneráltatom, előbbi a Codcov-nak, utóbbi a [Coverage Gutters](https://marketplace.visualstudio.com/items?itemName=ryanluker.vscode-coverage-gutters)-nak kell, amely a VS Code-on belül ad visszajelzéseket. Utóbbi beállításaiban meg kell adni, hogy a report `coverage.info` néven áll elő, ezt keresse. Illetve be kell kapcsolni a *statusbar* „Watch” gombjábal.
+
+Formátumbeállítás `runsettings.xml` állományon keresztül [[forrás](https://github.com/coverlet-coverage/coverlet/blob/master/Documentation/VSTestIntegration.md)]:
+
+```xml
+<?xml version="1.0" encoding="utf-8" ?>
+<RunSettings>
+  <DataCollectionRunSettings>
+    <DataCollectors>
+      <DataCollector friendlyName="XPlat code coverage">
+        <Configuration>
+          <Format>lcov,cobertura</Format>
+        </Configuration>
+      </DataCollector>
+    </DataCollectors>
+  </DataCollectionRunSettings>
+</RunSettings>
+```
+
+![](images/coverage_gutters.png)
+
+<!-- ## Code Style -->
