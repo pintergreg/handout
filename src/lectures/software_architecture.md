@@ -37,8 +37,8 @@ Linux kernel - number of lines of code
 
 ![](https://miro.medium.com/max/1248/0*hZLEb6SYbTH8n3l8.png)
 
-- https://www.simplethread.com/software-complexity-killing-us/
-- https://carlalexander.ca/what-is-software-complexity/
+- [Software Complexity Is Killing Us](https://www.simplethread.com/software-complexity-killing-us/)
+- [What is software complexity and how can you manage it?](https://carlalexander.ca/what-is-software-complexity/)
 
 ### How to measure? - Cyclomatic complexity
 
@@ -96,8 +96,11 @@ public int compare(a, b) {
 ``` -->
 
 - [Reducing Cyclomatic Complexity with Python](https://audiolion.github.io/python/2016/10/17/reducing-cyclomatic-complexity.html)
+- [NPath complexity and cyclomatic complexity explained](https://modess.io/npath-complexity-cyclomatic-complexity-explained/)
 
 ### Complex vs. complicated
+
+Michael Bykovski: [Simple vs. Complicated vs. Complex vs. Chaotic](https://medium.com/better-programming/simple-vs-complicated-vs-complex-vs-chaos-737b5964849d)
 
 ### Complexity: Accidental vs. Essential
 
@@ -116,22 +119,60 @@ public int compare(a, b) {
 >
 > Grady Booch
 
-- https://www.developerfusion.com/article/84899/what-is-software-architecture/
+- [What is Software Architecture?](https://www.developerfusion.com/article/84899/what-is-software-architecture/)
+- [The goals of Software Architecture](https://medium.com/docplanner-tech/the-goals-of-software-architecture-a3b0a0edeb0b)
 
-## miért kell ez?
+## Miért kell ez?
 
-## hogyan lesz egy ilyenünk?
+> Architecture is the decisions that you wish you could get right early in a project 
+>
+> -- Ralph Johnson
 
-goals requiremets contstraint
-
-- https://github.blog/2020-08-13-why-write-adrs/
+- https://gbksoft.com/blog/why-you-need-a-software-architect-for-your-project/
 - https://www.martinfowler.com/articles/designDead.html#SoIsDesignDead
-- https://www.ibm.com/developerworks/rational/library/feb06/eeles/index.html
 - https://www.codeproject.com/Articles/1064240/Introduction-to-Software-Architecture
 
 
+## Hogyan lesz egy ilyenünk?
 
------
+<!-- goals requiremets contstraint -->
+
+- [Practical Tips on Software Architecture Design, Part One](https://medium.com/@mbue/practical-tips-on-software-architecture-design-part-one-1c6bb0167157)
+- [Practical Tips on Software Architecture Design, Part Two](https://medium.com/@mbue/practical-tips-on-software-architecture-design-part-two-37c2b61d7b6d)
+
+### Architecture decision records
+
+- [Why Write ADRs](https://github.blog/2020-08-13-why-write-adrs/)
+- [néhány ADR sablon](https://github.com/joelparkerhenderson/architecture_decision_record)
+
+Alább látható a Michael Nygard féle sablon: [Documenting Architecture Decisions](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions)
+
+```markdown
+# ADR template by Michael Nygard
+
+This is the template in [Documenting architecture decisions - Michael Nygard](http://thinkrelevance.com/blog/2011/11/15/documenting-architecture-decisions).
+You can use [adr-tools](https://github.com/npryce/adr-tools) for managing the ADR files.
+
+In each ADR file, write these sections:
+
+# Title
+
+## Status
+
+What is the status, such as proposed, accepted, rejected, deprecated, superseded, etc.?
+
+## Context
+
+What is the issue that we're seeing that is motivating this decision or change?
+
+## Decision
+
+What is the change that we're proposing and/or doing?
+
+## Consequences
+
+What becomes easier or more difficult to do because of this change?
+```
 
 
 ## Design Principles
@@ -148,10 +189,12 @@ goals requiremets contstraint
        > Ron Jeffries 
     - TDD
 
-complex software 4C:
-clear concise
-https://www.govwebworks.com/2017/05/01/four-cs-for-flawless-agile-business-requirements/
-https://www.mojotech.com/blog/the-4cs-a-code-review-mnemonic/
+### 4C: Complete, Compliant, Clear, Concise
+
+- [Four Cs for Flawless Agile Business Requirements](https://www.govwebworks.com/2017/05/01/four-cs-for-flawless-agile-business-requirements/)
+- https://www.mojotech.com/blog/the-4cs-a-code-review-mnemonic/
+
+<!-- ###
 
 if two developer should think of the same answer for theri separete question, independently, it belongs in architecture
 
@@ -163,13 +206,7 @@ risk management: elemezzük a kockázatokat, kitaláljuk, hogy hogyan kezelnénk
 min 2 alternatíve leírva és átgondolva, hogy miért nem azokat választottuk
 miért kérdésre a válaszra
 
-architectural aspect
-
-https://medium.com/docplanner-tech/the-goals-of-software-architecture-a3b0a0edeb0b
-
-https://sceweb.uhcl.edu/helm/RationalUnifiedProcess/process/modguide/md_sad.htm#Architectural%20Goals%20and%20Constraints
-
-https://modess.io/npath-complexity-cyclomatic-complexity-explained/
+https://sceweb.uhcl.edu/helm/RationalUnifiedProcess/process/modguide/md_sad.htm#Architectural%20Goals%20and%20Constraints -->
 
 
 ### <a href="https://en.wikipedia.org/wiki/Rob_Pike" data-wiki-lang="en" data-wiki-title="Rob Pike">Rob Pike</a>'s 5 Rules of Programming
@@ -235,7 +272,7 @@ Pike's rules 1 and 2 restate Tony Hoare's famous maxim "Premature optimization i
 
 ### Topologies
 
-https://www.codeproject.com/Articles/1064240/Introduction-to-Software-Architecture
+[Introduction to Software Architecture](https://www.codeproject.com/Articles/1064240/Introduction-to-Software-Architecture)
 
 #### Layered Architechture
 

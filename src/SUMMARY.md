@@ -9,8 +9,8 @@
     - [Legacy Code, SOLID](./lectures/legacy_code.md)
     - [Review](./lectures/review.md)
     - [Continuous Integration](./lectures/ci.md)
+    - [Software Architecture](./lectures/software_architecture.md)
     - [MindMap](./mindmap.md)
-    <!-- - [Software Architecture](./lectures/software_architecture.md) -->
     <!-- - [Irónia](./irony.md) -->
 
 - [A feladat](./software.md)

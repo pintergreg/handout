@@ -19,7 +19,7 @@
 - [Legacy Code, SOLID](./lectures/legacy_code.md)
 - [Review](./lectures/review.md)
 - [Continuous Integration](./lectures/ci.md)
-- Software Architecture - WIP
+- [Software Architecture](./lectures/software_architecture.md)
 
 
 ## Javasolt (fel)készülési módszer
@@ -99,7 +99,8 @@ deadline,
 mocking (dummy, stub, spy, mock, fake),
 requirement,
 <a href="https://en.wikipedia.org/wiki/Requirements_engineering" data-wiki-lang="en" data-wiki-title="Requirements engineering">requirement engineering</a>,
-centralized version control, distributed version control,
+centralized version control,
+<a href="https://en.wikipedia.org/wiki/Distributed_version_control" data-wiki-lang="en" data-wiki-title="Distributed version control">distributed version control</a>,
 traceability, finding, bug fixing, optimizing, feature envy,
 <a href="https://en.wikipedia.org/wiki/KISS_principle" data-wiki-lang="en" data-wiki-title="KISS principle">KISS</a>,
 <a href="https://en.wikipedia.org/wiki/Programming_complexity" data-wiki-lang="en" data-wiki-title="Programming complexity">code complexity</a>,
