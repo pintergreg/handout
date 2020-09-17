@@ -16,7 +16,7 @@
 [![forum](https://img.shields.io/badge/forum-Team%20A4-E589C1.svg)](https://github.com/orgs/szfmv2020-Osz/teams/team-a4)
 [![sprint1](https://img.shields.io/badge/sprint1-Visualization-BBE9FA.svg)](https://github.com/SzFMV2020-Osz/AutomatedCar-A/issues/4)
 [![sprint2](https://img.shields.io/badge/sprint2-Radar-FFC0CB.svg)](https://github.com/SzFMV2020-Osz/AutomatedCar-A/issues/8)
-[![sprint3](https://img.shields.io/badge/sprint3-Reverse%20Radar-FFC864.svg)](https://github.com/SzFMV2020-Osz/AutomatedCar-A/issues/12)
+[![sprint3](https://img.shields.io/badge/sprint3-Automatic%20Emergency%20Braking-FFC864.svg)](https://github.com/SzFMV2020-Osz/AutomatedCar-A/issues/12)
 
 
 [![forum](https://img.shields.io/badge/forum-Team%20B1-A6D751.svg)](https://github.com/orgs/szfmv2020-Osz/teams/team-b1)
@@ -37,4 +37,13 @@
 [![forum](https://img.shields.io/badge/forum-Team%20B4-B3B3B3.svg)](https://github.com/orgs/szfmv2020-Osz/teams/team-b4)
 [![sprint1](https://img.shields.io/badge/sprint1-Visualization-BBE9FA.svg)](https://github.com/SzFMV2020-Osz/AutomatedCar-B/issues/4)
 [![sprint2](https://img.shields.io/badge/sprint2-Radar-FFC0CB.svg)](https://github.com/SzFMV2020-Osz/AutomatedCar-B/issues/8)
-[![sprint3](https://img.shields.io/badge/sprint3-Reverse%20Radar-FFC864.svg)](https://github.com/SzFMV2020-Osz/AutomatedCar-B/issues/12)
+[![sprint3](https://img.shields.io/badge/sprint3-Automatic%20Emergency%20Braking-FFC864.svg)](https://github.com/SzFMV2020-Osz/AutomatedCar-B/issues/12)
+
+
+HMI, Ultrasonic, Parking Pilot
+
+Model, Camera & Collosion, LKA
+
+Powertrain, NPC, ACC
+
+Visualization, Radar, AEB
