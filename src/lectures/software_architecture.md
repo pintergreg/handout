@@ -5,9 +5,9 @@
 
 ## Growing software
 
-Linux kernel - number of lines of code
+Linux kernel - number of lines of code (forrás: [Wikipedia](https://en.wikipedia.org/wiki/Linux_kernel))
 
-![](https://en.wikipedia.org/api/rest_v1/page/graph/png/Linux_kernel/0/c10e87b88fd03b43ca09bdc70918fa17250ff4a4.png "Linux kernel - number of lines of code")
+![](../images/linux_kernel_loc.png "Linux kernel - number of lines of code")
 
 - [Why Linux’s biggest ever kernel release is really no big deal](https://www.linux.com/news/why-linuxs-biggest-ever-kernel-release-is-really-no-big-deal/)
     - Linux 5.8 features over 14,000 non-merge commits, some 800,000 new lines of code, and added around a hundred new contributors.
