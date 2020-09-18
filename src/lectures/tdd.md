@@ -42,7 +42,7 @@ De még midnig jobb ha pl. sprinten belül egy automatizált integrációs teszt
 - tesztelj egyszerre egy dolgot
 - a teszt legyen nagyon egyszerű
 - folyamatosan növeld teszt(esetek) komplexitását
-- [mockold a függőségeket](legacy_code.md/#Mocking)
+- [mockold a függőségeket](./legacy_code.html#mocking)
 
 
 ### Writing Unit Tests

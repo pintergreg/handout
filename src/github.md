@@ -198,6 +198,6 @@ Co-authored-by: another-name <another-name@example.com>"
 
 Ahhoz, hogy a GitHub a társszerzőt össze is tudja rendelni a felhasználói fiókjával fontos, hogy az a `name` és különösen az az `e-mail` szerepeljen, amelyet egyébként git beállításként használ!
 
-### Ímélcím védelme
+### E-mail cím védelme
 
-A GH minden felhasználónak biztosít egy "proxy ímélcímet", hogy titokban tarthassa a címét, ez xxxxxxx+username@users.noreply.github.com szerkezetű, ahogy xxxxxxx egy hétjegyű felhasználói azonosító. Bővebben [itt](https://help.github.com/articles/about-commit-email-addresses/). Ezt is lehet használni, nem csak társszerzőhöz hanem saját címnek is, csak legyen konzisztens!
+A GH minden felhasználónak biztosít egy "proxy ímélcímet", hogy titokban tarthassa a címét, ez xxxxxxx+username@users.noreply.github.com szerkezetű, ahogy xxxxxxx egy hétjegyű felhasználói azonosító. Bővebben [itt](https://docs.github.com/en/github/setting-up-and-managing-your-github-user-account/setting-your-commit-email-address#about-commit-email-addresses). Ezt is lehet használni, nem csak társszerzőhöz hanem saját címnek is, csak legyen konzisztens!

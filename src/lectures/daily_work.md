@@ -175,7 +175,7 @@ Az ehhez a jegyzethez készített ábrák és azok forrása is verziókezelés a
 - [Ez az írás](https://tortoisesvn.net/docs/nightly/TortoiseSVN_en/tsvn-basics-versioning.html) összefoglalja a verziókezelési modelleket (Lock-Modify-Unlock, Copy-Modify-Merge), [emez pedig](https://homes.cs.washington.edu/~mernst/advice/version-control.html) összehasonlítja a centralizált és az elosztott verziókezelőket.
 - [About Version Control](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control)
   - a Git könyv első fejezete, rövid összefoglaló
-- gyakorlati oldalról lást [Git](./git.md) fejezet
+- gyakorlati oldalról lást [Git](../git.md) fejezet
 
 [^1]: http://smutch.github.io/VersionControlTutorial/pages/0-intro.html#what-is-version-control
 

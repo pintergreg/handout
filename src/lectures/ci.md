@@ -134,11 +134,11 @@ Ezeken kívül a kollégák manuális review-ja is szükséges (2 approve), lás
 
 ## Statikus kódelemzés
 
-A statikus kódelemzést a Checkstyle végzi, ez [lokálisan](TODO) is működik, a változások követéséhez és mindenféle riport generálásához (első sorban a Pull Requestekhez) a [CoceFactor.io](https://www.codefactor.io/) van bekötve. Ez össze van linkelve a GitHubbal repóval, a commit triggerre saját környezetben kicsekkolja az aktuális branchet, lefuttatja a Checkstyle-t (és adott esetben más elemzőket is), majd elkészíti a riportokat.
+A statikus kódelemzést Java nyelvhez a Checkstyle végzetre, C#-hoz a StyleCop, ez lokálisan (lásd fejlesztőeszközök fejezet) is működik, a változások követéséhez és mindenféle riport generálásához (első sorban a Pull Requestekhez) a [CoceFactor.io](https://www.codefactor.io/) van bekötve. Ez össze van linkelve a GitHubbal repóval, a commit triggerre saját környezetben kicsekkolja az aktuális branchet, lefuttatja a Checkstyle-t (és adott esetben más elemzőket is), majd elkészíti a riportokat.
 
 ## Tesztlefedettség
 
-A Java kódunk tesztekkel való lefedettségét a JaCoCo (Java Code Coverage) nevű szoftver számolja ki. Szintén működik [lokálisan is](TODO), a CodeFactorhoz hasonló online riportgeneráló amit a repónkhoz beállítottam az a [CodeCov](https://codecov.io/). Az előbbivel analóg módon működik.
+A Java kódunk tesztekkel való lefedettségét Java nyelvhez a JaCoCo (Java Code Coverage) nevű szoftver számolta ki, C#-hoz a Coverlet. Szintén működik lokálisan is (lásd fejlesztőeszközök fejezet), a CodeFactorhoz hasonló online riportgeneráló amit a repónkhoz beállítottam az a [CodeCov](https://codecov.io/). Az előbbivel analóg módon működik.
 
 ## Stale bot
 
