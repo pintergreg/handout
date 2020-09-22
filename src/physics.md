@@ -8,6 +8,9 @@ Szintén hasznos lehet még [ezen írás](http://www.iforce2d.net/b2dtut/top-dow
 
 Az autóhoz [automata váltót](https://auto.howstuffworks.com/automatic-transmission.htm) kell megvalósítani, de az automata vátóban is vannak „belső” fokozatok (1, 2, 3, 4 stb. előremenetben), tehát meg kell különböztetni a „külső” fokozatokat (P, R, N, D) és D állapotban a belsőket.
 
+- [2D Car Physics Tutorial ](https://www.gamedev.net/forums/topic/470497-2d-car-physics-tutorial/)
+- [Simple 2D car steering physics in games](https://engineeringdotnet.blogspot.com/2010/04/simple-2d-car-physics-in-games.html)
+
 ## Kanyarodás
 
 * http://gamedev.stackexchange.com/questions/50022/typical-maximum-steering-angle-of-a-real-car
