@@ -2411,7 +2411,7 @@ def get_random_number():
 
 Előfordulhat, hogy a git nem tudja feloldani a változtatásokat és emberi beavatkozást igényel a merge-elés. Például létrehoztad a feature branchet a csapat branch adott állapotáról, ám az időközben módosult és a módosítás ugyanazon fájl ugyanazon részét érintette. A GitHubon ez az alábbihoz hasonlóan néz ki:
 
-![PR conflict](https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/conflict.png)
+![PR conflict](images/conflict.png)
 
 Ezen belül is egyszerűbb esetekben a GH felajánlja a webes szerkesztőjét, de összetettebb esetekben ki kell checkolni az adott ágat és „kézzel” (editorral) feloldani helyzetet.
 
@@ -2421,12 +2421,12 @@ Ezen belül is egyszerűbb esetekben a GH felajánlja a webes szerkesztőjét, d
 
 A képen az  látható, hogy Hegedűs kolléga a `master` azon állapotában írta be a nevét, amikor a 64. sor volt az utolsó. Időközben egyéb PR-eket is elfogadtam így a git nem tudja, hogy a 68-73. sorokat kell megtartani vagy a 66.-at (ennek szintaktikáját látni a „kacsacsőrökkel”).
 
-![GH web editor](https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/conflict_web_editor.png)
+![GH web editor](images/conflict_web_editor.png)
 
  Jelen esetben persze mindkettő kell, így kézzel átrendezem, majd ezt megjelölöm feloldottnak:
 
-![GH web editor](https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/conflict_web_editor2.png)
-![conflict resolved](https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/conflict_mark_resolved.png)
+![GH web editor](images/conflict_web_editor2.png)
+![conflict resolved](images/conflict_mark_resolved.png)
 
 **További tippek a témában**: https://stackoverflow.com/questions/161813/how-to-resolve-merge-conflicts-in-git
 
@@ -2468,7 +2468,7 @@ Ha valaki parancssorból intézi, akkor a beállított editorral nyitja meg (vi,
 <li>két csapattárs és egy oktató jóvá hagyta (review)</li>
 <li>nincs ütközés (conflict)</li>
 </ul>
-<!-- ![](https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/branching.png) -->
+<!-- ![](images/branching.png) -->
 <!-- A `master` branch védett, nem lehet bele commitolni. Nem egy, hanem több (4) fejlesztői branch-ünk van (`team1`, ..., `team4`), ezek szintén védettek. Minden feladathoz létre kell hozni egy *feature branch-et*, azon lehet dolgozni. Ha a feladat elkészült, akkor a csapat branchbe lehet *merge-eni*. Ami mivel védett [*pull request-et*](https://help.github.com/articles/about-pull-requests/) (továbbiakban PR) küldeni. A PR lehetőséget biztosít ellenőrzésekre és [review-zásra](https://help.github.com/articles/about-pull-request-reviews/). Csak a lefordítható, teszteknek megfelelő, ütközés (conflict) mentes PR kerülhet elfogadásra! -->
 <p><strong>Fontos</strong>: Ha egy Pull Request <em>nem</em> fogadható el, akkor sem kell a PR-t lezárni, lehet tovább dolgozni a forrás branchen, az új commit-okkal automatikusan frissül a PR is addig míg a teszteknek meg nem felel és elfogadásra nem került. Sőt, kifejezetten lehet <em><em>Draft</em> PR</em>* is létrehozni, jelezve, hogy a munka már tartalmaz véleményezhető elemeket, de még nincs kész. </p>
 <p>Ha a PR el lett fogadva, a feature branch-re nincs már tovább szükség. Le lehet törölni és be kell zárni azt az <em>issue-t</em> is, amihez a branch kapcsolódott. Tehát ideálisan minden (nem user-story és kérdés) issue-hoz készül(t) egy branch.</p>
@@ -2483,13 +2483,13 @@ Ha valaki parancssorból intézi, akkor a beállított editorral nyitja meg (vi,
 <h2><a class="header" href="#review-2" id="review-2">Review</a></h2>
 <p><img src="images/review_required.png" alt="review required" /></p>
 <p>Erre az „add your review” szolgál. Fájlonként át lehet nézni minden módosítást, soronként kommentelni, illetve egy globális véleményt írni a PR-ről (+1, -1, -2). A comment opció semleges, nem elfogadás, de nem is elutasítás. A másik két opció elég egyértelmű. Ha változtatást kérsz, akkor addig amíg a PR forrásbranche nem módosul nem lehet újra próbálkozni a PR elfogadásával.</p>
-<p><img src="https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/review_approved.png" alt="review" /></p>
+<p><img src="images/review_approved.png" alt="review" /></p>
 <p>Ha minden rendben, akkor el lehet fogadni a PR-et:</p>
-<p><img src="https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/mergable.png" alt="" /></p>
+<p><img src="images/mergable.png" alt="" /></p>
 <p>Elfogadás után így néz ki:</p>
-<p><img src="https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/merged.png" alt="" /></p>
+<p><img src="images/merged.png" alt="" /></p>
 <p>Ezen a ponton a feature branch nem szükséges továbbá, törölhető. Persze egy ideig még visszaállítható:</p>
-<p><img src="https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/restore_branch.png" alt="" /></p>
+<p><img src="images/restore_branch.png" alt="" /></p>
 <h2><a class="header" href="#társszerzők" id="társszerzők">Társszerzők</a></h2>
 <p>A munkafolyamat alapvetően egyéni munkára van kitalálva, de legkevésbé sem tilos a <a href="https://en.wikipedia.org/wiki/Pair_programming">pair programming</a> sem. Volt, hogy Skype-os képernyő-megosztásos módszerrel dolgoztak <em>távolról</em> párban... Ilyenkor mindig felvetődik a kérdés, hogy csak az egyik kolléga nevében történhet a commit de mi van a másikkal... A GitHub <a href="https://github.com/blog/2496-commit-together-with-co-authors">bevezetett egy új funkciót</a> ennek orvoslására. Részletek <a href="https://help.github.com/articles/creating-a-commit-with-multiple-authors/">elérhetőek itt</a>.</p>
 <p>Ebben az esetben a commit üzenet törzse után 2 üres sorral elválasztva kell a társszerzőket feltüntetni. Pl.:</p>
@@ -2594,8 +2594,8 @@ A <em>Save Actions</em> plugin konfigurálását az alábbiak szerint kell megej
 <p>A Checkstyle egy statikus kódelemző szoftver Java nyelvhez, amely egyrészt a kódformázási előírások betartását, másrészt egyéb programozástechnikai előírások betartását is ellenőrzi.</p>
 <p><a href="https://plugins.jetbrains.com/plugin/1065-checkstyle-idea">Checkstyle plugin</a> beállítása IntelliJ IDEA környezetbe. A plugin telepíthető a plugin managerből majd a következő beállításokra van szükség:</p>
 <p>File &gt; Settings &gt; Other Settings &gt; Checkstyle &gt; Configuration File panelen <em>Add</em> és a projekt gyökérben megtalálható <code>checkstyle.xml</code> fájlt kell neki megadni (és elnevezni valamiként, az alábbi képen <code>szfmv</code>). Innentől a fejlesztői környezeten belül elérhető a kódminőség-ellenőrzés <em>valós időben</em>, warning-okkal jelzi a találatokat.</p>
-<p><img src="https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/idea_checkstyle_plugin_settings.png" alt="" />
-<img src="https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/idea_checkstyle_findings.png" alt="" /></p>
+<p><img src="images/idea_checkstyle_plugin_settings.png" alt="" />
+<img src="images/idea_checkstyle_findings.png" alt="" /></p>
 <h2><a class="header" href="#tesztlefedettség-1" id="tesztlefedettség-1">Tesztlefedettség</a></h2>
 <p>A kód „minőség” egy mérőszáma lehet, hogy mekkora része van (unit)tesztekkel lefedve. Ezt a projekt README-ben a <a href="https://coveralls.io/github/SzFMV2017-Tavasz/AutomatedCar?branch=master">Coveralls.io</a> szolgáltatás folyamatosan meg is jeleníti.</p>
 <p>Ehhez a <a href="http://www.eclemma.org/jacoco/">JaCoCo</a>-t használjuk, ami Maven-en keresztül (a <code>pom.xml</code>-ben) lett beállítva. A kód tesztekkel történő lefedettségének megjelenítéséhez a fejlesztői környezetek mindenféle okos eszközöket is rendelkezésre bocsátanak.</p>
@@ -2603,9 +2603,9 @@ A <em>Save Actions</em> plugin konfigurálását az alábbiak szerint kell megej
 <p>A <a href="https://www.jetbrains.com/help/idea/2016.3/code-coverage.html">beállításához</a> meg kell nyitni a <a href="https://www.jetbrains.com/help/idea/2016.3/creating-and-editing-run-debug-configurations.html">Run/debug configuration</a> ablakot, majd a <em>Code Coverage</em> fülön kiválasztani az IntelliJ IDEA-t vagy a JaCoCo-t, előbbi Tracing típusú vizsgálatot is tud (ami jelenleg mindegy). Ezután a <em>Run</em> menü <em>Run 'Main' with Coverage</em> menüpontjával a kódot úgy futtatja, hogy a számításokat el is végzi és megjeleníti az összesítő panelt.</p>
 <p>Az IDEA-n kívül más IDE-khez is megtalálhatóak hasonló funkciók: <a href="http://wiki.netbeans.org/MavenCodeCoverage">NetBeans</a>, <a href="http://www.eclemma.org/jacoco/">Eclipse</a></p>
 <h3><a class="header" href="#képernyőképek" id="képernyőképek">Képernyőképek</a></h3>
-<p><img src="https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/idea_run_debug_config_menu.png" alt="" />
-<img src="https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/idea_run_debug_config_window.png" alt="" />
-<img src="https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/idea_coverage_window.png" alt="" /></p>
+<p><img src="images/idea_run_debug_config_menu.png" alt="" />
+<img src="images/idea_run_debug_config_window.png" alt="" />
+<img src="images/idea_coverage_window.png" alt="" /></p>
 <h2><a class="header" href="#logolás---log4j" id="logolás---log4j">Logolás - Log4J</a></h2>
 <p>Módfelett udvariatlan, káros és így kerülendő hibakeresési céllal a standard kimenetre (<code>System.out.println</code>) írni. Ettől még sokan megteszik mondván addig nincs baj, míg nem kerül pusholásra a közös repóba. Csakhogy a kódolás hevében könnyen ott felejthet az ember egy-két ilyet, így célszerű eleve bele sem tenni!</p>
 <p>Szerencsére több logger is létezik, amik nem csak a <code>System.out.println</code> nem rendeltetés szerű használatát tudják megakadályozni, de bónuszként még egy halom hasznos és kényelmes funkcióval is rendelkeznek. A projektben az <a href="https://logging.apache.org/log4j/2.x/">Apache log4j 2.8</a>-as verziója került bevezetésre.</p>

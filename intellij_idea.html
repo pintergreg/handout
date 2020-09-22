@@ -183,8 +183,8 @@ A <em>Save Actions</em> plugin konfigurálását az alábbiak szerint kell megej
 <p>A Checkstyle egy statikus kódelemző szoftver Java nyelvhez, amely egyrészt a kódformázási előírások betartását, másrészt egyéb programozástechnikai előírások betartását is ellenőrzi.</p>
 <p><a href="https://plugins.jetbrains.com/plugin/1065-checkstyle-idea">Checkstyle plugin</a> beállítása IntelliJ IDEA környezetbe. A plugin telepíthető a plugin managerből majd a következő beállításokra van szükség:</p>
 <p>File &gt; Settings &gt; Other Settings &gt; Checkstyle &gt; Configuration File panelen <em>Add</em> és a projekt gyökérben megtalálható <code>checkstyle.xml</code> fájlt kell neki megadni (és elnevezni valamiként, az alábbi képen <code>szfmv</code>). Innentől a fejlesztői környezeten belül elérhető a kódminőség-ellenőrzés <em>valós időben</em>, warning-okkal jelzi a találatokat.</p>
-<p><img src="https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/idea_checkstyle_plugin_settings.png" alt="" />
-<img src="https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/idea_checkstyle_findings.png" alt="" /></p>
+<p><img src="images/idea_checkstyle_plugin_settings.png" alt="" />
+<img src="images/idea_checkstyle_findings.png" alt="" /></p>
 <h2><a class="header" href="#tesztlefedettség" id="tesztlefedettség">Tesztlefedettség</a></h2>
 <p>A kód „minőség” egy mérőszáma lehet, hogy mekkora része van (unit)tesztekkel lefedve. Ezt a projekt README-ben a <a href="https://coveralls.io/github/SzFMV2017-Tavasz/AutomatedCar?branch=master">Coveralls.io</a> szolgáltatás folyamatosan meg is jeleníti.</p>
 <p>Ehhez a <a href="http://www.eclemma.org/jacoco/">JaCoCo</a>-t használjuk, ami Maven-en keresztül (a <code>pom.xml</code>-ben) lett beállítva. A kód tesztekkel történő lefedettségének megjelenítéséhez a fejlesztői környezetek mindenféle okos eszközöket is rendelkezésre bocsátanak.</p>
@@ -192,9 +192,9 @@ A <em>Save Actions</em> plugin konfigurálását az alábbiak szerint kell megej
 <p>A <a href="https://www.jetbrains.com/help/idea/2016.3/code-coverage.html">beállításához</a> meg kell nyitni a <a href="https://www.jetbrains.com/help/idea/2016.3/creating-and-editing-run-debug-configurations.html">Run/debug configuration</a> ablakot, majd a <em>Code Coverage</em> fülön kiválasztani az IntelliJ IDEA-t vagy a JaCoCo-t, előbbi Tracing típusú vizsgálatot is tud (ami jelenleg mindegy). Ezután a <em>Run</em> menü <em>Run 'Main' with Coverage</em> menüpontjával a kódot úgy futtatja, hogy a számításokat el is végzi és megjeleníti az összesítő panelt.</p>
 <p>Az IDEA-n kívül más IDE-khez is megtalálhatóak hasonló funkciók: <a href="http://wiki.netbeans.org/MavenCodeCoverage">NetBeans</a>, <a href="http://www.eclemma.org/jacoco/">Eclipse</a></p>
 <h3><a class="header" href="#képernyőképek" id="képernyőképek">Képernyőképek</a></h3>
-<p><img src="https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/idea_run_debug_config_menu.png" alt="" />
-<img src="https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/idea_run_debug_config_window.png" alt="" />
-<img src="https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/idea_coverage_window.png" alt="" /></p>
+<p><img src="images/idea_run_debug_config_menu.png" alt="" />
+<img src="images/idea_run_debug_config_window.png" alt="" />
+<img src="images/idea_coverage_window.png" alt="" /></p>
 <h2><a class="header" href="#logolás---log4j" id="logolás---log4j">Logolás - Log4J</a></h2>
 <p>Módfelett udvariatlan, káros és így kerülendő hibakeresési céllal a standard kimenetre (<code>System.out.println</code>) írni. Ettől még sokan megteszik mondván addig nincs baj, míg nem kerül pusholásra a közös repóba. Csakhogy a kódolás hevében könnyen ott felejthet az ember egy-két ilyet, így célszerű eleve bele sem tenni!</p>
 <p>Szerencsére több logger is létezik, amik nem csak a <code>System.out.println</code> nem rendeltetés szerű használatát tudják megakadályozni, de bónuszként még egy halom hasznos és kényelmes funkcióval is rendelkeznek. A projektben az <a href="https://logging.apache.org/log4j/2.x/">Apache log4j 2.8</a>-as verziója került bevezetésre.</p>
