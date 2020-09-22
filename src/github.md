@@ -76,7 +76,7 @@ Létrehozásra kerültek címkék (`Labels`) négy „dimenzióban” (vagy kate
 
 Előfordulhat, hogy a git nem tudja feloldani a változtatásokat és emberi beavatkozást igényel a merge-elés. Például létrehoztad a feature branchet a csapat branch adott állapotáról, ám az időközben módosult és a módosítás ugyanazon fájl ugyanazon részét érintette. A GitHubon ez az alábbihoz hasonlóan néz ki:
 
-![PR conflict](https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/conflict.png)
+![PR conflict](images/conflict.png)
 
 Ezen belül is egyszerűbb esetekben a GH felajánlja a webes szerkesztőjét, de összetettebb esetekben ki kell checkolni az adott ágat és „kézzel” (editorral) feloldani helyzetet.
 
@@ -86,12 +86,12 @@ Ezen belül is egyszerűbb esetekben a GH felajánlja a webes szerkesztőjét, d
 
 A képen az  látható, hogy Hegedűs kolléga a `master` azon állapotában írta be a nevét, amikor a 64. sor volt az utolsó. Időközben egyéb PR-eket is elfogadtam így a git nem tudja, hogy a 68-73. sorokat kell megtartani vagy a 66.-at (ennek szintaktikáját látni a „kacsacsőrökkel”).
 
-![GH web editor](https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/conflict_web_editor.png)
+![GH web editor](images/conflict_web_editor.png)
 
  Jelen esetben persze mindkettő kell, így kézzel átrendezem, majd ezt megjelölöm feloldottnak:
 
-![GH web editor](https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/conflict_web_editor2.png)
-![conflict resolved](https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/conflict_mark_resolved.png)
+![GH web editor](images/conflict_web_editor2.png)
+![conflict resolved](images/conflict_mark_resolved.png)
 
 **További tippek a témában**: https://stackoverflow.com/questions/161813/how-to-resolve-merge-conflicts-in-git
 
@@ -142,7 +142,7 @@ Ahhoz, hogy a masterbe kerülhessen a módosítás több követelménynek is tel
 - két csapattárs és egy oktató jóvá hagyta (review)
 - nincs ütközés (conflict)
 
-<!-- ![](https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/branching.png) -->
+<!-- ![](images/branching.png) -->
 
 <!-- A `master` branch védett, nem lehet bele commitolni. Nem egy, hanem több (4) fejlesztői branch-ünk van (`team1`, ..., `team4`), ezek szintén védettek. Minden feladathoz létre kell hozni egy *feature branch-et*, azon lehet dolgozni. Ha a feladat elkészült, akkor a csapat branchbe lehet *merge-eni*. Ami mivel védett [*pull request-et*](https://help.github.com/articles/about-pull-requests/) (továbbiakban PR) küldeni. A PR lehetőséget biztosít ellenőrzésekre és [review-zásra](https://help.github.com/articles/about-pull-request-reviews/). Csak a lefordítható, teszteknek megfelelő, ütközés (conflict) mentes PR kerülhet elfogadásra! -->
 
@@ -165,19 +165,19 @@ Ha a PR el lett fogadva, a feature branch-re nincs már tovább szükség. Le le
 
 Erre az „add your review” szolgál. Fájlonként át lehet nézni minden módosítást, soronként kommentelni, illetve egy globális véleményt írni a PR-ről (+1, -1, -2). A comment opció semleges, nem elfogadás, de nem is elutasítás. A másik két opció elég egyértelmű. Ha változtatást kérsz, akkor addig amíg a PR forrásbranche nem módosul nem lehet újra próbálkozni a PR elfogadásával.
 
-![review](https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/review_approved.png)
+![review](images/review_approved.png)
 
 Ha minden rendben, akkor el lehet fogadni a PR-et:
 
-![](https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/mergable.png)
+![](images/mergable.png)
 
 Elfogadás után így néz ki:
 
-![](https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/merged.png)
+![](images/merged.png)
 
 Ezen a ponton a feature branch nem szükséges továbbá, törölhető. Persze egy ideig még visszaállítható:
 
-![](https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/restore_branch.png)
+![](images/restore_branch.png)
 
 ## Társszerzők
 

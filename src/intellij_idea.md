@@ -34,8 +34,8 @@ A Checkstyle egy statikus kódelemző szoftver Java nyelvhez, amely egyrészt a 
 
 File > Settings > Other Settings > Checkstyle > Configuration File panelen _Add_ és a projekt gyökérben megtalálható `checkstyle.xml` fájlt kell neki megadni (és elnevezni valamiként, az alábbi képen `szfmv`). Innentől a fejlesztői környezeten belül elérhető a kódminőség-ellenőrzés *valós időben*, warning-okkal jelzi a találatokat.
 
-![](https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/idea_checkstyle_plugin_settings.png)
-![](https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/idea_checkstyle_findings.png)
+![](images/idea_checkstyle_plugin_settings.png)
+![](images/idea_checkstyle_findings.png)
 
 
 ## Tesztlefedettség
@@ -52,9 +52,9 @@ Az IDEA-n kívül más IDE-khez is megtalálhatóak hasonló funkciók: [NetBean
 
 ### Képernyőképek
 
-![](https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/idea_run_debug_config_menu.png)
-![](https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/idea_run_debug_config_window.png)
-![](https://raw.githubusercontent.com/SzFMV2018-Osz/handout/master/docs/images/idea_coverage_window.png)
+![](images/idea_run_debug_config_menu.png)
+![](images/idea_run_debug_config_window.png)
+![](images/idea_coverage_window.png)
 
 
 ## Logolás - Log4J
