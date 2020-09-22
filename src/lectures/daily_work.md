@@ -200,7 +200,7 @@ Az „[A successful Git branching model](http://nvie.com/posts/a-successful-git-
 
 #### További írások a témában
 
-* [A _fork_ és a _branch_ közötti különbségekről](https://www.gitprime.com/the-definitive-guide-to-forks-and-branches-in-git/)
+* [The Definitive Guide to Forks and Branches in Git](https://www.pluralsight.com/blog/software-development/the-definitive-guide-to-forks-and-branches-in-git)
 * [a simple git branching model](https://gist.github.com/jbenet/ee6c9ac48068889b0912)
 * [OneFlow – a Git branching model and workflow](https://www.endoflineblog.com/oneflow-a-git-branching-model-and-workflow#oneflow-advantages)
 * [Comparing Workflows](https://www.atlassian.com/git/tutorials/comparing-workflows)
