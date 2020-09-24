@@ -74,13 +74,13 @@ Az egész CI/CD lelke egy adag script, amelyben le vannak írva az automatizált
 
 ### Software-in-the-loop (SIL)
 
-![](https://s3-eu-west-1.amazonaws.com/elasticbeanstalk-eu-west-1-981246043789/wp-content/uploads/2018/09/21142911/Software-in-the-loop.png)
+![](https://d3e3a9wpte0df0.cloudfront.net/wp-content/uploads/2018/09/Software-in-the-loop.png)
 
 forrás: [autonóm autofejlesztés tesztelése](https://www.intellias.com/three-ways-of-testing-adas-in-autonomous-cars-beyond-a-test-drive/)
 
 ### Hardware-in-the-loop (HIL)
 
-![](https://s3-eu-west-1.amazonaws.com/elasticbeanstalk-eu-west-1-981246043789/wp-content/uploads/2018/09/21142901/Hardware-in-the-loop.png)
+![](https://d3e3a9wpte0df0.cloudfront.net/wp-content/uploads/2018/09/Hardware-in-the-loop.png)
 
 forrás: [autonóm autofejlesztés tesztelése](https://www.intellias.com/three-ways-of-testing-adas-in-autonomous-cars-beyond-a-test-drive/)
 
