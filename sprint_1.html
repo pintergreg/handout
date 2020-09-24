@@ -272,7 +272,7 @@ Teljesen járható út, hogy a modell, az input állományban található koordi
 </ul>
 <h2><a class="header" href="#mozgatás-hajtáslánc-és-kormányzás" id="mozgatás-hajtáslánc-és-kormányzás">Mozgatás: hajtáslánc és kormányzás</a></h2>
 <p>A <em>mozgatás</em> modul felelőssége a vezérelt autó (egocar) mozgatása, mozgásának számítása. Ez magába foglalja a hajtáslánc és a kormányzás megvalósítását.</p>
-<p>A modul a HMI-től kap bemenetet, mindenek előtt váltóálás, gáz- és fékpedálállás valamint kormányelfordulás. A váltó automata, ami azzal jár, hogy a HMI a négy állapot (P, R, N, D) egyikét közli. </p>
+<p>A modul a HMI-től kap bemenetet, mindenek előtt váltóálás, gáz- és fékpedálállás valamint kormányelfordulás. A váltó automata, ami azzal jár, hogy a HMI a négy állapot (P, R, N, D) egyikét közli.</p>
 <ul>
 <li><strong>P</strong>ark: Ez az egyik olyan állapot amiben a motor beindítható (a másik az N), ez a váltó alapállása, mechanikusn megszűnteti az erőátvitelt. A valóságban nem helyettesíti kéziféket, de mivel azt nem kell implementálni a feladat során, lehet úgy tekinteni, hogy P-ben a kézifék is be van húzva. Az autó nem mozdul ebben az állásban.</li>
 <li><strong>R</strong>everse: hátramenet</li>
