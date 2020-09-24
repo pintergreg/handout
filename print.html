@@ -2841,6 +2841,51 @@ Viszont az IntelliJ IDEA GUI Designer-e <em>nem</em> használható, esetleges ko
 <p>Egy korábbi félév során a referenciapontokat (részben) már összegyűjtötték (@csabalint, @SiposGergo, @markkurucz), ez elérhető <a href="resources/reference_points.xml">XML</a> vagy <a href="resources/reference_points.json">JSON</a> formátumban.</p>
 <p>A mozgatásra szoruló elemek (vezérelt autó és NPC autók) nem képezik részét a világ leírásának, viszonyítási pontjuk nem definiált. A rendelkezésre bocsátott autó képek méretarányosak az összes többi objektummal.</p>
 <p>A világhoz szükséges elemek megtalálhatóak a kiinduló project <code>src/main/resources</code> (Java) vagy <code>src/AutomatedCat/Assets</code> (C#) mappájában.</p>
+<h2><a class="header" href="#objektum-poligonok" id="objektum-poligonok">Objektum poligonok</a></h2>
+<p>Minden objektumnak kell, hogy legyen egy poligon váza, amely többek között az ütközéshez vagy a kijelüléshez is használható. Különböző objektumoknak azonban kicsit mást jelent ez a poligon „váz”.</p>
+<p>Az autó esetében (pl.) a legfontosabb felhasználása az, hogy nekiment-e valaminek, tehát az autó körvonalát kell megjelölni. Ez leegyszerűsíthető, nem kell a grafikai elemet teljes mértékben követni.</p>
+<p><img src="images/car_simplified_polygon_model.png" alt="" /></p>
+<p>Egyes elemek (fa, tábla) a felülnézet miatt nem azt mutatják, ami az ütközéshez szükséges. Értelem szerűen nem a lombkoronának, hanem a törzsnek lehet nekiütközni. Tehát egy törzset kell ábrázolni a poligonnal.</p>
+<p><img src="images/tree_polygon.png" alt="" /></p>
+<p>Az útelemek esetében nem az ütközés a probléma, hanem a sávokat kell kijelölni, amit a a sávtartó automatika fog felhasználni. Ezeket is lehet egyszerűsíteni.</p>
+<p><img src="images/90left_polygon.png" alt="" /></p>
+<p>A poligonok megrajzolásához használható a <a href="https://www.robots.ox.ac.uk/%7Evgg/software/via/">VGG Image Annotator</a>, amely <a href="https://www.robots.ox.ac.uk/%7Evgg/software/via/via.html">böngészőből is működik</a> és a megrajzolt polygont JSON-ben le lehet menteni.</p>
+<p>Korábbi félév során @ArchiCat és @konyarilaszlo ezt már megtette, elérhető a <a href="resources/worldobject_polygons.json">worldobject_polygons.json</a> állományban.</p>
+<p>Ennek struktúrája:</p>
+<pre><code class="language-json">{
+    &quot;objects&quot;: [
+        {
+            &quot;typename&quot;: &quot;car_1_white&quot;,
+            &quot;polys&quot;: [
+            {
+                &quot;type&quot;: &quot;standalone&quot;,
+                &quot;points&quot;: [
+                [51, 239],
+                [40, 238],
+                [26, 236],
+                ...
+                [51, 239]
+                ]
+            }
+            ]
+        },
+        ...
+    ]
+}
+</code></pre>
+<p>Van benne egy objects tömb, minden objektum esetében a <code>typename</code> a képfájl neve (kiterjesztés nélkül), majd egy polygon tömb (mivel a <a href="https://www.robots.ox.ac.uk/%7Evgg/software/via/">VGG Image Annotator</a> multipoligonokat is elő tud állítani). Azon belül egy <code>points</code> tömb ahol a koordináták a képfájlon koordinátarendszerében értendők.</p>
+<p><img src="images/polygon_relative_coordinates.png" alt="" /></p>
+<p>A fenti példa esetében a képfájl (50, 20) koordinátára van rajzolva, a hatszög benne a képen belüli relatív koordinátákkal van megadva.</p>
+<pre><code class="language-json">&quot;points&quot;: [
+    [10, 10],
+    [15, 8],
+    [20, 10],
+    [20, 20],
+    [15, 22],
+    [10, 20],
+    [10, 10]
+]
+</code></pre>
 <h2><a class="header" href="#méretarány" id="méretarány">Méretarány</a></h2>
 <p>Az XML-ben leírt objektumok koordináta-rendszere nem feltétlenül egyezik meg a megjelenítő koordináta-rendszerével, ezt figyelembe véve skálázás, vagy viewport kezelés válhat szükségessé.</p>
 <p>A feladat megoldás során jellemzően valóságos mértékegységekben specifikáljuk a feladatot (pl. méter, km/h, m/s^2, stb.) míg az XML és a grafikai elemek értelem szerűen pixellel dolgoznak. Ennek feloldására, illetve az átváltásra az <strong>1m=50px</strong> szabályt célszerű használni. Ez egy hozzávetőlegesen arányos érték, amellyel számolni is könnyű.</p>
