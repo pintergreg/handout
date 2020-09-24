@@ -58,6 +58,70 @@ A mozgatásra szoruló elemek (vezérelt autó és NPC autók) nem képezik rés
 
 A világhoz szükséges elemek megtalálhatóak a kiinduló project `src/main/resources` (Java) vagy `src/AutomatedCat/Assets` (C#) mappájában.
 
+## Objektum poligonok
+
+Minden objektumnak kell, hogy legyen egy poligon váza, amely többek között az ütközéshez vagy a kijelüléshez is használható. Különböző objektumoknak azonban kicsit mást jelent ez a poligon „váz”.
+
+Az autó esetében (pl.) a legfontosabb felhasználása az, hogy nekiment-e valaminek, tehát az autó körvonalát kell megjelölni. Ez leegyszerűsíthető, nem kell a grafikai elemet teljes mértékben követni.
+
+![](images/car_simplified_polygon_model.png)
+
+Egyes elemek (fa, tábla) a felülnézet miatt nem azt mutatják, ami az ütközéshez szükséges. Értelem szerűen nem a lombkoronának, hanem a törzsnek lehet nekiütközni. Tehát egy törzset kell ábrázolni a poligonnal.
+
+![](images/tree_polygon.png)
+
+Az útelemek esetében nem az ütközés a probléma, hanem a sávokat kell kijelölni, amit a a sávtartó automatika fog felhasználni. Ezeket is lehet egyszerűsíteni.
+
+![](images/90left_polygon.png)
+
+A poligonok megrajzolásához használható a [VGG Image Annotator](https://www.robots.ox.ac.uk/~vgg/software/via/), amely [böngészőből is működik](https://www.robots.ox.ac.uk/~vgg/software/via/via.html) és a megrajzolt polygont JSON-ben le lehet menteni.
+
+Korábbi félév során @ArchiCat és @konyarilaszlo ezt már megtette, elérhető a [worldobject_polygons.json](resources/worldobject_polygons.json) állományban.
+
+Ennek struktúrája:
+
+```json
+{
+    "objects": [
+        {
+            "typename": "car_1_white",
+            "polys": [
+            {
+                "type": "standalone",
+                "points": [
+                [51, 239],
+                [40, 238],
+                [26, 236],
+                ...
+                [51, 239]
+                ]
+            }
+            ]
+        },
+        ...
+    ]
+}
+```
+
+Van benne egy objects tömb, minden objektum esetében a `typename` a képfájl neve (kiterjesztés nélkül), majd egy polygon tömb (mivel a [VGG Image Annotator](https://www.robots.ox.ac.uk/~vgg/software/via/) multipoligonokat is elő tud állítani). Azon belül egy `points` tömb ahol a koordináták a képfájlon koordinátarendszerében értendők.
+
+![](images/polygon_relative_coordinates.png)
+
+A fenti példa esetében a képfájl (50, 20) koordinátára van rajzolva, a hatszög benne a képen belüli relatív koordinátákkal van megadva.
+
+```json
+"points": [
+    [10, 10],
+    [15, 8],
+    [20, 10],
+    [20, 20],
+    [15, 22],
+    [10, 20],
+    [10, 10]
+]
+```
+
+
 ## Méretarány
 
 Az XML-ben leírt objektumok koordináta-rendszere nem feltétlenül egyezik meg a megjelenítő koordináta-rendszerével, ezt figyelembe véve skálázás, vagy viewport kezelés válhat szükségessé.
