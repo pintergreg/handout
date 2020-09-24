@@ -10,7 +10,7 @@ A félév során a GitHubot használjuk a kód tárolására, a feladatok menedz
 
 ## Áttekintés
 
-Minden hallgató tagja lesz a [SzFMV2020-Osz](https://github.com/SzFMV2020-Osz/) szervezetnek (`Organization`), és egy-egy csapatnak (Team A[1-4], Team B[1-4]). Minden csapat külön issue board-dal rendelkezik (`Projects`), ezen kell vezetni a feladatok (`issue`) megoldását (részletében lásd [Munkafolyamat](workflow.md)).
+Minden hallgató tagja lesz a [SzFMV2020-Osz](https://github.com/SzFMV2020-Osz/) szervezetnek (`Organization`), és egy-egy csapatnak (Team A\[1-4\], Team B\[1-4\]). Minden csapat külön issue board-dal rendelkezik (`Projects`), ezen kell vezetni a feladatok (`issue`) megoldását (részletében lásd [Munkafolyamat](workflow.md)).
 
 Issue-t nem csak feladatra lehet felvenni, akár kérdésre is (felénk vagy más csapatok felé is), probléma megvitatására is. Ez esetben célszerű megjelölni a ``type: question`` címkével. 2017 őszétől csapat (`team`) szintű fórummal (`Discussions`) is rendelkezik a GitHub. A szervezeten belül a csapatok hierarchikus struktúrában vannak. A gyökér az [Everyone](https://github.com/orgs/szfmv2020-osz/teams/everyone), az összes többi csapat ennek tagja (Group A, Group B csapatokon keresztül). Az Everyone falára írt üzeneteket mindenki megkapja. Ezen keresztül fogunk a félév során kurzus szintű közleményeket kiadni, de bárki használhatja kommunikációra. Ugyanilyen üzenőfallal rendelkezik az összes többi csapat is, amelyre szintén bárki írhat. Ha például a Team2-ből szeretné elérni valaki a Team3-at, akkor mindösszesen annyi a dolga, hogy ír a Team3 üzenőfalára. A [Instructors](https://github.com/orgs/SzFMV2020-Osz/teams/instructors) nevű team-en keresztül az oktatókat lehet elérni ugyanilyen módon.
 
@@ -146,7 +146,7 @@ Ahhoz, hogy a masterbe kerülhessen a módosítás több követelménynek is tel
 
 <!-- A `master` branch védett, nem lehet bele commitolni. Nem egy, hanem több (4) fejlesztői branch-ünk van (`team1`, ..., `team4`), ezek szintén védettek. Minden feladathoz létre kell hozni egy *feature branch-et*, azon lehet dolgozni. Ha a feladat elkészült, akkor a csapat branchbe lehet *merge-eni*. Ami mivel védett [*pull request-et*](https://help.github.com/articles/about-pull-requests/) (továbbiakban PR) küldeni. A PR lehetőséget biztosít ellenőrzésekre és [review-zásra](https://help.github.com/articles/about-pull-request-reviews/). Csak a lefordítható, teszteknek megfelelő, ütközés (conflict) mentes PR kerülhet elfogadásra! -->
 
-**Fontos**: Ha egy Pull Request *nem* fogadható el, akkor sem kell a PR-t lezárni, lehet tovább dolgozni a forrás branchen, az új commit-okkal automatikusan frissül a PR is addig míg a teszteknek meg nem felel és elfogadásra nem került. Sőt, kifejezetten lehet **Draft* PR** is létrehozni, jelezve, hogy a munka már tartalmaz véleményezhető elemeket, de még nincs kész. 
+**Fontos**: Ha egy Pull Request *nem* fogadható el, akkor sem kell a PR-t lezárni, lehet tovább dolgozni a forrás branchen, az új commit-okkal automatikusan frissül a PR is addig míg a teszteknek meg nem felel és elfogadásra nem került. Sőt, kifejezetten lehet **Draft* PR** is létrehozni, jelezve, hogy a munka már tartalmaz véleményezhető elemeket, de még nincs kész.
 
 Ha a PR el lett fogadva, a feature branch-re nincs már tovább szükség. Le lehet törölni és be kell zárni azt az *issue-t* is, amihez a branch kapcsolódott. Tehát ideálisan minden (nem user-story és kérdés) issue-hoz készül(t) egy branch.
 

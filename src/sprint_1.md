@@ -95,14 +95,14 @@ A tervezés során nem elegendő csupán az első sprint (meglehetősen szűk) k
 
 A *mozgatás* modul felelőssége a vezérelt autó (egocar) mozgatása, mozgásának számítása. Ez magába foglalja a hajtáslánc és a kormányzás megvalósítását.
 
-A modul a HMI-től kap bemenetet, mindenek előtt váltóálás, gáz- és fékpedálállás valamint kormányelfordulás. A váltó automata, ami azzal jár, hogy a HMI a négy állapot (P, R, N, D) egyikét közli. 
+A modul a HMI-től kap bemenetet, mindenek előtt váltóálás, gáz- és fékpedálállás valamint kormányelfordulás. A váltó automata, ami azzal jár, hogy a HMI a négy állapot (P, R, N, D) egyikét közli.
 
 - **P**ark: Ez az egyik olyan állapot amiben a motor beindítható (a másik az N), ez a váltó alapállása, mechanikusn megszűnteti az erőátvitelt. A valóságban nem helyettesíti kéziféket, de mivel azt nem kell implementálni a feladat során, lehet úgy tekinteni, hogy P-ben a kézifék is be van húzva. Az autó nem mozdul ebben az állásban.
 - **R**everse: hátramenet
 - **N**eutral: üres, ebben az állásban sem jut a motorerő tengelyekre, a motor nem gyorsíthatja az autót. Ha üresben gázt adunk, a motor felpörög, méghozzá jelentősen, mivel nincs ami ellene dolgozna. Ha az autónak volt lendülete, az még hajtja tovább.
 - **D**rive: előremenet. A D-m belül definiálni kell 4-5 belső fogokatot (mint ahogy manuális váltónál is lenne), le kell progrramozni, hogy valamilyen fordulatszám értékeknél a váltó váltson. Ezen értékek mehatározásához lehet találni motorkarakterisztikákat (lehetőség szerint utcai autó kerüljön kiválasztásra, ne valami sportautó). A belső fokozatok a felhasználó interfész szempontjából transzparensek.
 
-A pedál állások [0-100] skálán érkeznek. 0: nincs lenyomva, 1: 1%-ig van lenyomva, 100: tövig (100%-ig) le van nyomva. Minél jobban le van nyomva a gázpedál, annál több teljesítményt kell a motornak kiadnia. A motor belső működését nem kell részletekbe menően implementálni, pláne nem egy belső égésű motorét, egy elektromos hajtáslánc egyszerűbb.
+A pedál állások \[0-100\] skálán érkeznek. 0: nincs lenyomva, 1: 1%-ig van lenyomva, 100: tövig (100%-ig) le van nyomva. Minél jobban le van nyomva a gázpedál, annál több teljesítményt kell a motornak kiadnia. A motor belső működését nem kell részletekbe menően implementálni, pláne nem egy belső égésű motorét, egy elektromos hajtáslánc egyszerűbb.
 A szoftverben üzemenyagfogyasztást (vagy akkumulátor töltöttséget) és hatótávokat nem kell kezelni.
 
 A kormány jellemzően valamilyen áttétel segítségévél befolyásolja a korányzott kerekek helyzetét. Ez ebben a szoftverben sokkal egyszerűbb is lehet. Ha 60°-ot tengelyelfordulást feltételezünk és a kormány „nulla” állásból +/- 60-at mozdulhat el, akkor lényegében 1:1-es Íáttételünk” van.
@@ -142,7 +142,7 @@ A *vizualizációs* modul felelőssége a játék virtuális terének, pontosabb
 Továbbá, a modul felelőssége a debuggoláshoz és teszteléshez használandó segédobjektumok opionálisan bekapcsolható megjelenítése. Ide tartozik a szenzorok látómezeje, a világobjektumok „poligon váza”, valamint utóbbiak eseményre történő kiemelésének lehetősége.
 
  A programablaknak az alábbi módon nézni majd ki. Két jól el különörő részre oszlik, a nagyobb baloldali a *viewport*, amemylen keresztük a világ éppen megjelenített része látható. A jobb oldali a műszerfal, amely *nem* tartozik e modul felelősségi körébe.
- 
+
  ![gui_plan](images/gui_plan_course_display.png)
 
 A modullal kapcsolatos kihívása a rajzoláshoz használt keretrendszer megismerése, az objektumtranszformációk megfelelő végrehajtása és az objektummodellért felelős csapattal egyeztetés az objektumok elérését illetően.

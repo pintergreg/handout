@@ -98,7 +98,7 @@ Az alábbiak Robert C. Martin Clean Code című könyvénből a 3. fejezetén al
     - > Robert C. Martin [The Inverse Scope Law of Function Names](https://www.informit.com/articles/article.aspx?p=1323426): The longer the scope of a function, the shorter its name should be. Functions that are called locally from a few nearby places should have long descriptive names, and the longest function names should be given to those functions that are called from just one place.
 - Function Arguments
     - Lehetőleg ne használj 3-nál több paramétert
-    - > Flag arguments are ugly [...] loudly proclaiming that this function does more than one thing.
+    - > Flag arguments are ugly \[...\] loudly proclaiming that this function does more than one thing.
 - Have No Side Effects
     - >  [Wikipédiából](https://en.wikipedia.org/wiki/Side_effect_(computer_science)): an operation, function or expression is said to have a side effect if it modifies some state variable value(s) outside its local environment, that is to say has an observable effect besides returning a value (the main effect) to the invoker of the operation.
     - > Side effects are lies. Your function promises to do one thing, but it also does other hidden things.
