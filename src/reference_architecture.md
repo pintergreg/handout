@@ -19,6 +19,17 @@ A fejezet további felépítse:
 
 <!-- toc -->
 
+
+## Átfogó kép
+
+A teljes szoftver moduljai [12 user story](sprints.md)-ra vannak bontva. Az egyes modulok a teljes szoftver egy-egy komponensét valósítják meg. A legtöbb ilyen komponens a vezérelt autón belül kap majd helyet. Azonban vannak olyan komponensek (irányítás és megjelenítés), amelyek  nem csak az autón belül, de azon kívül, a keretszoftverben működnek.
+
+![](images/full_software.png)
+
+A billentyűzet események kezelése értelemszerűen a szoftverban történik, amelyet aztán a szimulált autó kezelőszerveire (gáz- és fékpedál, kormány) kell leképzni.
+A megelenítésnek pedig értelemszerűen a teljes világot, de legalábbis az autó egy környezetét kell, hogy kirajzolnia.
+
+
 ## Virtual Function Bus
 
 A VirtualFunctionBus (VFB) egy kommunikációs megoldás az AutomatedCar komponensei (SystemComponent) számára. A komponensek feliratkoznak a buszra és **a feliratkozás sorrendjében** ciklikusan meghívásra kerül a `Process()` metódusok.
