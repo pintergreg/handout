@@ -200,3 +200,25 @@ Megfigyelhető, hogy  a fenti példák nem rendelkeznek az objektumok pozíciój
 Az utóbbi verziót használva az alábbi ábrán látható a futó alkalmazás: bal oldalt a kezdetleges CourseDisplay, jobb oldalt a kezdetleges Dashboard. Az autó az `(50, 50)` pozícióba van kirajzolva, a kör a `(400, 200)` koordinátákra (bal felső sarokkal értendő) ezek különbségét pedig kiszámolta a *DummySensor* és leolvasható a műszerfalról.
 
 ![](images/avalonia_skeleton.png)
+
+#### Forgatás
+
+Az autó forgatása is a pozicionáláshoz hasonló elven történik. Az alábbi példában közvetlenül az egyes elem Canvas-ához csatoljuk a transzformációs utasításokat. Ez azzal is jár, hogy egszerre lehet transzformálni a képet és a poligont is. Több transzformáció esetén fontos a `TransformGroup` használata. Például forgatás (szögben) az elem egy változójához kötve. Valamint egy X,Y eltolás az elábbi példában.
+
+```xml
+<DataTemplate DataType="{x:Type models:AutomatedCar}">
+    <Canvas>
+        <Canvas.RenderTransform>
+            <TransformGroup>
+                <RotateTransform Angle="{Binding Angle}" />
+                <TranslateTransform  X="54" />
+                <TranslateTransform  Y="120" />
+            </TransformGroup>
+        </Canvas.RenderTransform>
+        <Image Source="{Binding Filename, Converter={x:Static visualization:WorldObjectTransformer.Instance}}"/>
+        <Polyline Stroke="{Binding Brush, Mode=OneWay}" Points="{Binding Geometry.Points, Mode=OneWay}" />
+    </Canvas>
+</DataTemplate>
+```
+
+![](images/rotate.png)
