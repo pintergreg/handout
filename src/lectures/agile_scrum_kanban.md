@@ -21,7 +21,7 @@
 
 ### Waterfall Vs. Agile
 
-![](https://productivehut.com/wp-content/uploads/2018/06/Classic-Waterfall-Development-Model.png)
+![](../images/waterfall.png)
 
 - [Waterfall Vs. Agile: Must Know Differences](https://www.guru99.com/waterfall-vs-agile.html)
     - A többi fejezet is ajánlott
