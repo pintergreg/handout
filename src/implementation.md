@@ -14,6 +14,11 @@ Addig is szükség volt egy áthidaló megoldásra miután a WPF nem használhat
 
 Használható fejlesztői környezetek: Visual Studio, VS Code (kizárólag a hivatalos, MS változattal működik együtt a .NET debugger), IntelliJ Rider, stb.
 
+Hasznos írások az implementációhoz:
+
+- Útvonalkövetés: [A* algoritmus](https://en.wikipedia.org/wiki/A*_search_algorithm)
+    - implementáció: LINQ to A* [GitHub](https://github.com/rvhuang/linq-to-astar), [NuGet](https://www.nuget.org/packages/linq-to-astar/)
+
 
 ## Java
 
