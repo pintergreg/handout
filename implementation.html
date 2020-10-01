@@ -170,6 +170,14 @@
 <p>Addig is szükség volt egy áthidaló megoldásra miután a WPF nem használható Windows-on kívül, erre a <em>3rd party</em> <a href="http://avaloniaui.net/">Avalonia</a> keretrendszert fogjuk használni. Az Avalonia a WPF-hez hasonlóan egy XAML alapú Model-View-ViewModel (MVVM) rendszer.</p>
 <p><img src="images/dotnet_stack.png" alt=".NET stack" /></p>
 <p>Használható fejlesztői környezetek: Visual Studio, VS Code (kizárólag a hivatalos, MS változattal működik együtt a .NET debugger), IntelliJ Rider, stb.</p>
+<p>Hasznos írások az implementációhoz:</p>
+<ul>
+<li>Útvonalkövetés: <a href="https://en.wikipedia.org/wiki/A*_search_algorithm">A* algoritmus</a>
+<ul>
+<li>implementáció: LINQ to A* <a href="https://github.com/rvhuang/linq-to-astar">GitHub</a>, <a href="https://www.nuget.org/packages/linq-to-astar/">NuGet</a></li>
+</ul>
+</li>
+</ul>
 <h2><a class="header" href="#java" id="java">Java</a></h2>
 <p>A feladat megoldásához Java nyelvet, annak is a 11-es verzióját kell használni (LTS), <a href="https://maven.apache.org/guides/getting-started/index.html">Maven</a> projekt menedzsment eszközzel. (A kiinduló projekt ezeket már teljesíti). Egyaránt használható az <a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html">Oracle JDK 11</a> vagy az <a href="http://openjdk.java.net/projects/jdk/11/">OpenJDK 11</a> is, operációs rendszer sincs megszabva.
 Az automatizált CI eszközök jogi okokból az OpenJDK-t használják, linuxon. Szóval már csak emiatt is „érdemes” platformfüggetlen kódot írni!</p>
