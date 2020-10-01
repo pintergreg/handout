@@ -162,14 +162,28 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#1-ultrahang-szenzorok" id="1-ultrahang-szenzorok">1. Ultrahang Szenzorok</a></h1>
-<p>Park pilot alapjául szolgáló Ultrasonic Sensor array szimulációjának implementálása.</p>
+                        <h1><a class="header" href="#sprint-2" id="sprint-2">Sprint 2.</a></h1>
+<!-- toc -->
+<h2><a class="header" href="#ultrahang-szenzor-implementálása" id="ultrahang-szenzor-implementálása">Ultrahang Szenzor implementálása</a></h2>
+<p>Az <em>ultrasonic sensor</em> modul felelőssége a parkoló automata alapjául szolgáló ultrahang szenzorcsomag szimulációjának implementálása. Mint minden szenzor, az ultrahang is érzékeli a világ egy szeletét és eléri a látóterében található objektumokat.</p>
 <ul>
-<li>Input: világmodell</li>
-<li>Output:
+<li>
+<p>Input: világmodell</p>
+</li>
+<li>
+<p>Output:</p>
 <ul>
 <li>Ultrahang szenzor által látott objektumok</li>
 </ul>
+</li>
+<li>
+<p>A háromszög kirajzolására már kell, hogy legyen elérhető publikus metódus, amely 3 pontot és egy rajzolási színt vár bemenetként</p>
+</li>
+<li>
+<p>A világ objektumainak lekérdezésére már kell, hogy legyen elérhető publikus metódus, mely 3 pontot vár bemenetként, ebből kell leválogatni a relevánsakat</p>
+</li>
+<li>
+<p><img src="images/ultrasonic.png" alt="" /></p>
 </li>
 </ul>
 <h3><a class="header" href="#definition-of-done" id="definition-of-done">Definition of Done</a></h3>
@@ -181,13 +195,7 @@
 <li>Határozzák meg a legközelebbi (ütközés szempontjából) objektum pozícióját, kiterjedését, távolságát</li>
 <li>A legközelebbi objektum legyen vizuálisan kiemelve</li>
 </ul>
-<h3><a class="header" href="#megjegyzések" id="megjegyzések">Megjegyzések</a></h3>
-<ul>
-<li>A háromszög kirajzolására már kell, hogy legyen elérhető publikus metódus, amely 3 pontot és egy rajzolási színt vár bemenetként</li>
-<li>A világ objektumainak lekérdezésére már kell, hogy legyen elérhető publikus metódus, mely 3 pontot vár bemenetként, ebből kell leválogatni a relevánsakat</li>
-<li><img src="images/ultrasonic.png" alt="" /></li>
-</ul>
-<h1><a class="header" href="#2-kamera-szenzor-implementálása-Ütközés-detekció-és-mozgásállapot-változás-szimuláció" id="2-kamera-szenzor-implementálása-Ütközés-detekció-és-mozgásállapot-változás-szimuláció">2. Kamera szenzor implementálása, Ütközés detekció és mozgásállapot-változás szimuláció</a></h1>
+<h2><a class="header" href="#kamera-szenzor-implementálása-Ütközés-detekció-és-mozgásállapot-változás-szimuláció" id="kamera-szenzor-implementálása-Ütközés-detekció-és-mozgásállapot-változás-szimuláció">Kamera szenzor implementálása, Ütközés detekció és mozgásállapot-változás szimuláció</a></h2>
 <p>Sávtartó automatika és táblafelismerő alapjául szolgáló kamera szenzor implementációja. A Sávtartó automatika a nagyobb feladat, ugyanis meg kell tudni határozni a sávot. Az autó előtt levő pályaelemekből kiszámítani, hogy hol vannak a sávot meghatározó vonalak. A sávtartó automatikának arra lesz majd szüksége, hogy az autó közelít-e a sávját meghatározó felfestésekhez.</p>
 <ul>
 <li>Input: világmodell</li>
@@ -203,7 +211,7 @@
 </ul>
 </li>
 </ul>
-<h2><a class="header" href="#definition-of-done-1" id="definition-of-done-1">Definition of Done</a></h2>
+<h3><a class="header" href="#definition-of-done-1" id="definition-of-done-1">Definition of Done</a></h3>
 <ul>
 <li>1 db, a szélvédő mögé elhelyezett kamera implementálása</li>
 <li>A látószög és távolság által meghatározott területen kérje el a <strong>releváns</strong> objektumokat
@@ -233,7 +241,7 @@
 <li>Ha a vezérelt autó elüt egy gyalogost, akkor érjen véget a játék</li>
 <li>A játék véget ér, ha a játékos ütközés következtében mozgásképtelenné válik (megsemmisül)</li>
 </ul>
-<h2><a class="header" href="#megjegyzés" id="megjegyzés">Megjegyzés</a></h2>
+<h3><a class="header" href="#megjegyzés" id="megjegyzés">Megjegyzés</a></h3>
 <ul>
 <li>A háromszög kirajzolására már kell, hogy legyen elérhető publikus metódus, amely 3 pontot és egy rajzolási színt vár bemenetként</li>
 <li>A világ objektumainak lekérdezésére már kell, hogy legyen elérhető publikus metódus, mely 3 pontot vár bemenetként, ebből kell leválogatni a relevánsakat</li>
@@ -248,36 +256,31 @@
 <li>Az NPC - NPC ütközés nem fontos, tehát NPC autó ha átmegy a gyalogoson nem kell, hogy kiváltson különösebb reakciót</li>
 <li>jellemző megoldásként az <em>egocar</em> szokott kapni egy sérülés/élet értéket a mozgásképtelenséghez</li>
 </ul>
-<h1><a class="header" href="#3-világ-populálása-mozgó-npc-objektumokkal" id="3-világ-populálása-mozgó-npc-objektumokkal">3. Világ populálása mozgó NPC objektumokkal</a></h1>
-<ul>
-<li>Input: Világmodell</li>
-<li>Output: Mozgó NPC objektumok, gyalogosok, biciklisek, autók. szkriptelt útvonalak, mozgások megvalósítása, a megvalósított objektumok a modellbe illesztése</li>
-<li>Challenge: adaptálódás pályához</li>
-</ul>
+<h2><a class="header" href="#világ-populálása-mozgó-npc-objektumokkal" id="világ-populálása-mozgó-npc-objektumokkal">Világ populálása mozgó NPC objektumokkal</a></h2>
+<p>A modul felelőssége, hogy az előző sprintben felépített világot, amelyben már megjelennek a statikus objektumok és van egy működő, vezethető autó, további dinamikus objektumokkal kell kiegészíteni. Ezek a nem játszható karakterek (NPC, <em>non player character</em>), amelyekre azért van szükség, hogy a 3. sprintes modulok tesztelhetők legyenek. Például a vészfékező rendszer nem üti el a gyalogost, vagy az adaptív tempomat igazítja az autó sebességét az előtte haladó autóéhoz.</p>
+<p>A modul bemenete a világmodell, amely egyrészt elősegíti az implementálást azáltal, hogy a előre definiáll helyett az osztályhierarchiában az NPC objektumok számára, másrészt a statikus objektumok, egészen pontosan az út elemek definiálják a pályát amelyen az NPC autónak haladnia kell a KRESZ szabályai szerint: nem tér át az út másik oldalára, nem hajt gyorsan.</p>
+<!-- Alapvetően két megközelítés lehetséges az útvonalak definiálásához. Az egyik, hogy a pályaelemeket (amelyek nem a világban elfoglalt helyzetük alapján sorbarendezve kerülnek eltárolásra) sorba rendezzük, kijelölünk egy  -->
+<p>A legkézenfekvőbb megoldás, hogy a világban, a világ koordinátáira építve felveszünk vezérpontokat, amelyek kijelölnek egy utat. Ezeket célszerű nem a kódban, hanem valamilyen fájlban tárolni. Az NPC objektum pedig ezt az utat követni. Például a parkoló mellől indul az úton megy fölfele (csökken az y koordinátája) a kanyar előtt (x,y) világkoordinátákat elérve lelassul, (x,y)' koordináták elérése esetén elkezd kanyarodni, a sávból nem tér ki, majd (x,y)&quot; koordinátáig halad a fönti egyenesen. És így tovább.</p>
+<p><img src="npc_route.png" alt="" /></p>
+<p><img src="npc_route_pedestrian.png" alt="" /></p>
+<p>A feladatban az igazi kihívás, hogy az NPC objektumok adaptálódjanak pályához. Az adaptálódást úgy lehet megkerülni, hogy mindkét pályához készül egy-egy útvonal.</p>
+<p>Az NPC autónak nincs hajtáslánc modulja, nem szükséges olyan részletes mozgatás sem mint az vezérelt autónál, de azért a kanyarpontoknál legyen több lépésben megoldva, hogy fokozatosan legyen az autó elforgatva a kanyarodás valósághű leképezése céljából.</p>
 <h3><a class="header" href="#definition-of-done-2" id="definition-of-done-2">Definition of Done:</a></h3>
 <ul>
-<li>Objektumok előre definiált, értelmes helyen jelennek meg (autók úton, gyalogosok út mellett/járdán)</li>
+<li>Objektumok előre definiált, értelmes helyen jelennek meg (autók úton, gyalogosok út mellett, a járda környékén)</li>
 <li>Objektumok előre szkriptelt útvonalat követnek</li>
-<li>Gyalogosok az út mentén haladnak, zebrán áthaladnak</li>
+<li>Gyalogosok az út mentén haladnak, zebrán áthaladnak, megfordulnak majd újra átkelnek az úton</li>
 <li>Autók az utat - sávot - pontosan követik</li>
-<li>NPC objektumok egymás mozgásállapotát nem változtatják meg</li>
-<li>Legalább egy autó végigmegy a pályán</li>
-<li>Legalább egy gyalogos mozog és átkel egy zebrán</li>
-<li>Új pálya esetén az NPC objektumok adaptálódnak az új környezethez</li>
-</ul>
-<h3><a class="header" href="#megjegyzések-1" id="megjegyzések-1">Megjegyzések</a></h3>
+<li>NPC objektumok egymás mozgásállapotát nem változtatják meg
 <ul>
-<li>NPC = <em>non player character</em> (itt akár <em>car</em> is lehet)</li>
-<li>Feltételezhető az NPC-k szabálykövető és értelemszerű viselkedése: nem hajt gyorsan, nem tér le az útról, nem ütközik fának.</li>
-<li>A gyalogoson akár átmehet, nem kell ütközésnek minősíteni.
-<ul>
-<li>Az érdekes ugyanis az, hogy az egocar (vezérelt autó) hogyan viselkedik egy mozgó objektumra, másik autó (nem megy neki), gyalogos (nem üti el), az NPC-ket nem kell túlbonyolítani</li>
+<li>Egy NPC autó gyalogoson akár átmehet, nem kell ütközésnek minősíteni</li>
 </ul>
 </li>
-<li>Szkriptelt útvonal alatt azt értjük, hogy a világ koordinátáira építve bele van égetve a kódba (esetleg egy konfigurációs fájlba), hogy az autó hogyan mozogjon. Például a parkoló mellől indul az úton megy fölfele (csökken az y koordinátája) a kanyar előtt (x,y) világkoordinátákat elérve lelassul, (x,y)' koordináták elérése esetén elkezd kanyarodni, a sávból nem tér ki, majd (x,y)&quot; koordinátáig halad a fönti egyenesen. És így tovább.</li>
-<li>a kanyarodás legyen a lehető legvalósághűbb, akár a vezérelt autó esetében.</li>
+<li>Legalább egy autó végigmegy a pályán</li>
+<li>Legalább egy gyalogos mozog és átkel egy zebrán</li>
+<li>Új (a másik) pálya esetén az NPC objektumok adaptálódnak az új környezethez</li>
 </ul>
-<h1><a class="header" href="#4-radar-szenzor" id="4-radar-szenzor">4. Radar szenzor</a></h1>
+<h2><a class="header" href="#radar-szenzor" id="radar-szenzor">Radar szenzor</a></h2>
 <p>Adaptív sebességtartó, automata vészfékező alapjául szolgáló radar szenzor implementációja</p>
 <ul>
 <li>Input: világmodell</li>
@@ -287,7 +290,7 @@
 </ul>
 </li>
 </ul>
-<h2><a class="header" href="#definition-of-done-3" id="definition-of-done-3">Definition of Done</a></h2>
+<h3><a class="header" href="#definition-of-done-3" id="definition-of-done-3">Definition of Done</a></h3>
 <ul>
 <li>1 db, az autó első lökhárítója mögött elhelyezett radar szenzor</li>
 <li>A látószög (60°) és távolság (200m) által meghatározott területen kérjék el a <strong>releváns</strong> objektumokat</li>
@@ -297,7 +300,7 @@
 <li>Az automata vészfékező számára releváns objektumok (az autó középvonala felé halad, látjuk) kiválogatása és visszaadása</li>
 <li>A legközelebbi objektum legyen vizuálisan kiemelve</li>
 </ul>
-<h2><a class="header" href="#megjegyzések-2" id="megjegyzések-2">Megjegyzések</a></h2>
+<h3><a class="header" href="#megjegyzések" id="megjegyzések">Megjegyzések</a></h3>
 <ul>
 <li>A háromszög kirajzolására már kell, hogy legyen elérhető publikus metódus, amely 3 pontot és egy rajzolási színt vár bemenetként</li>
 <li>A világ objektumainak lekérdezésére már kell, hogy legyen elérhető publikus metódus, mely 3 pontot vár bemenetként, ebből kell leválogatni a relevánsakat</li>
