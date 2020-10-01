@@ -455,6 +455,23 @@ A buszon közölt „utoljára látott tábla” képét ki kell tudni rajzolni 
 </code></pre>
 <p>Az utóbbi verziót használva az alábbi ábrán látható a futó alkalmazás: bal oldalt a kezdetleges CourseDisplay, jobb oldalt a kezdetleges Dashboard. Az autó az <code>(50, 50)</code> pozícióba van kirajzolva, a kör a <code>(400, 200)</code> koordinátákra (bal felső sarokkal értendő) ezek különbségét pedig kiszámolta a <em>DummySensor</em> és leolvasható a műszerfalról.</p>
 <p><img src="images/avalonia_skeleton.png" alt="" /></p>
+<h4><a class="header" href="#forgatás" id="forgatás">Forgatás</a></h4>
+<p>Az autó forgatása is a pozicionáláshoz hasonló elven történik. Az alábbi példában közvetlenül az egyes elem Canvas-ához csatoljuk a transzformációs utasításokat. Ez azzal is jár, hogy egszerre lehet transzformálni a képet és a poligont is. Több transzformáció esetén fontos a <code>TransformGroup</code> használata. Például forgatás (szögben) az elem egy változójához kötve. Valamint egy X,Y eltolás az elábbi példában.</p>
+<pre><code class="language-xml">&lt;DataTemplate DataType=&quot;{x:Type models:AutomatedCar}&quot;&gt;
+    &lt;Canvas&gt;
+        &lt;Canvas.RenderTransform&gt;
+            &lt;TransformGroup&gt;
+                &lt;RotateTransform Angle=&quot;{Binding Angle}&quot; /&gt;
+                &lt;TranslateTransform  X=&quot;54&quot; /&gt;
+                &lt;TranslateTransform  Y=&quot;120&quot; /&gt;
+            &lt;/TransformGroup&gt;
+        &lt;/Canvas.RenderTransform&gt;
+        &lt;Image Source=&quot;{Binding Filename, Converter={x:Static visualization:WorldObjectTransformer.Instance}}&quot;/&gt;
+        &lt;Polyline Stroke=&quot;{Binding Brush, Mode=OneWay}&quot; Points=&quot;{Binding Geometry.Points, Mode=OneWay}&quot; /&gt;
+    &lt;/Canvas&gt;
+&lt;/DataTemplate&gt;
+</code></pre>
+<p><img src="images/rotate.png" alt="" /></p>
 
                     </main>
 
