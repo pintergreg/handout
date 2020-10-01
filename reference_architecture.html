@@ -183,6 +183,11 @@
 </ul>
 <p>A fejezet további felépítse:</p>
 <!-- toc -->
+<h2><a class="header" href="#Átfogó-kép" id="Átfogó-kép">Átfogó kép</a></h2>
+<p>A teljes szoftver moduljai <a href="sprints.html">12 user story</a>-ra vannak bontva. Az egyes modulok a teljes szoftver egy-egy komponensét valósítják meg. A legtöbb ilyen komponens a vezérelt autón belül kap majd helyet. Azonban vannak olyan komponensek (irányítás és megjelenítés), amelyek  nem csak az autón belül, de azon kívül, a keretszoftverben működnek.</p>
+<p><img src="images/full_software.png" alt="" /></p>
+<p>A billentyűzet események kezelése értelemszerűen a szoftverban történik, amelyet aztán a szimulált autó kezelőszerveire (gáz- és fékpedál, kormány) kell leképzni.
+A megelenítésnek pedig értelemszerűen a teljes világot, de legalábbis az autó egy környezetét kell, hogy kirajzolnia.</p>
 <h2><a class="header" href="#virtual-function-bus" id="virtual-function-bus">Virtual Function Bus</a></h2>
 <p>A VirtualFunctionBus (VFB) egy kommunikációs megoldás az AutomatedCar komponensei (SystemComponent) számára. A komponensek feliratkoznak a buszra és <strong>a feliratkozás sorrendjében</strong> ciklikusan meghívásra kerül a <code>Process()</code> metódusok.</p>
 <p>Ebből következik, hogy a feliratkozást az ábrán látható sorrendben kell megtenni, mivel az adatáramlásnak ilyen irányultsága van. Az ábra a kód kezdeti állapotát szemlélteti, a munka során további modulok (szenzorok, vezetés támogató rendszerek) is csatlakoznak majd. Valamint a hajtáslánc és a kormányzás modult nem kötelező ennyire élesen szétválasztani.</p>
