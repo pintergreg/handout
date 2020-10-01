@@ -6,22 +6,28 @@
 
 Az *ultrasonic sensor* modul felelőssége a parkoló automata alapjául szolgáló ultrahang szenzorcsomag szimulációjának implementálása. Mint minden szenzor, az ultrahang is érzékeli a világ egy szeletét és eléri a látóterében található objektumokat.
 
-* Input: világmodell
-* Output:
-    * Ultrahang szenzor által látott objektumok
+A valóságos és szimulált szenzorok működését részletesebben a [*Szenzorok*](sensors.md) fejezet mutatja be.
 
-* A háromszög kirajzolására már kell, hogy legyen elérhető publikus metódus, amely 3 pontot és egy rajzolási színt vár bemenetként
-* A világ objektumainak lekérdezésére már kell, hogy legyen elérhető publikus metódus, mely 3 pontot vár bemenetként, ebből kell leválogatni a relevánsakat
-* ![](images/ultrasonic.png)
+A modul bemenete tehát a világmodell, kimenete olyan ütközhető világ objektumok gyűjteménye képezi, amelyek beleesnek a szenzor látóterébe. A világ objektumainak lekérdezésére már léteznie kell egy publikus metódusnak, mely 3 pontot vár bemenetként és visszaadja a bele eső objektumokat. Ezekből kell még leválogatni a relevánsakat.
+A szenzor látóterét 3 ponttal kel definiálni.
+
+A kamera és a radar szenzorhoz képest a legfőbb különbség, hogy ultreahang szenzorból 8 példány kerül az autóra.
+Minden példány látómezejének 3 pontját folyamatosan frissíteni kell az autó pozíciójának függvényében. Vagyis az autó egyébként folyamatosan frissülő referenciapontjához képest kell definiálni.
+A megjelenítés is felhasználja ezeket a pontokat a háromszög kirajzolására a debuggoláshoz.
+
+![Ultrahang szenzorok elhelyezése](images/ultrasonic.png)
 
 ### Definition of Done
 
 - 8 db ultrahang szenzor, egyenként 3 méter látótávolsággal, 100° látószöggel
 - A 8 darab háromszög koordinátái az autó helyzetétől függően folyamatosan frissülnek
-- debug célra bekapcsolható módon ezek a háromszögek legyen kirajzolhatóak **zöld** színnel
 - A látószög és távolság által meghatározott területen kérjék el a **releváns** objektumokat
 - Határozzák meg a legközelebbi (ütközés szempontjából) objektum pozícióját, kiterjedését, távolságát
+    - külön-külön minden egyes szenzor, majd a rá épülő funkcionalitás fog ezekkel tovább dolgozni, tehát célszerű biztosítani a példányonként legközelebbi objektum továbbadását
 - A legközelebbi objektum legyen vizuálisan kiemelve
+    - a kiemelést a megjelenítés intézi az objektum tulajdonsága (kijelöltség) alapján, de azt, hogy éppen ki van-e jelölve a szenzornak kell az objektumon beállítani
+
+<!-- - debug célra bekapcsolható módon ezek a háromszögek legyen kirajzolhatóak **zöld** színnel -->
 
 
 ## Kamera szenzor implementálása, Ütközés detekció és mozgásállapot-változás szimuláció
