@@ -2015,7 +2015,7 @@ Bár a modul függ a világmodelltől, a munka értelemszerűen nem akkor kezdő
 </ul>
 </li>
 </ul>
-<h1><a class="header" href="#sprint-2" id="sprint-2">Sprint 2.</a></h1>
+<h1><a class="header" href="#2-sprint" id="2-sprint">2. Sprint</a></h1>
 <!-- toc -->
 <h2><a class="header" href="#ultrahang-szenzor-implementálása" id="ultrahang-szenzor-implementálása">Ultrahang Szenzor implementálása</a></h2>
 <p>Az <em>ultrasonic sensor</em> modul felelőssége a parkoló automata alapjául szolgáló ultrahang szenzorcsomag szimulációjának implementálása. Mint minden szenzor, az ultrahang is érzékeli a világ egy szeletét és eléri a látóterében található objektumokat.</p>
@@ -2167,7 +2167,9 @@ Nem a radar, hanem majd a ráépülő funkció fogja ezekből meghatázorni, hog
 </li>
 </ul>
 <!-- - debug célra bekapcsolható módon a háromszög legyen kirajzolhatóak **piros** színnel -->
-<h1><a class="header" href="#1-automata-parkolás" id="1-automata-parkolás">1. Automata parkolás</a></h1>
+<h1><a class="header" href="#3-sprint" id="3-sprint">3. Sprint</a></h1>
+<!-- toc -->
+<h2><a class="header" href="#parkoló-automatika" id="parkoló-automatika">Parkoló automatika</a></h2>
 <ul>
 <li>Input: Ultrahang szenzorok</li>
 <li>Output: parkolási manőver végrehajtása</li>
@@ -2198,7 +2200,7 @@ Nem a radar, hanem majd a ráépülő funkció fogja ezekből meghatázorni, hog
 <p><img src="images/parking_horizontal.png" alt="" />
 <img src="images/find_parking_place_horizontal.png" alt="" />
 <img src="images/parking_place_found_horizontal.png" alt="" /></p>
-<h1><a class="header" href="#2-sávtartó-automatika-és-táblafelismerés" id="2-sávtartó-automatika-és-táblafelismerés">2. Sávtartó automatika és táblafelismerés</a></h1>
+<h2><a class="header" href="#sávtartó-automatika-és-táblafelismerés" id="sávtartó-automatika-és-táblafelismerés">Sávtartó automatika és táblafelismerés</a></h2>
 <ul>
 <li>Input: Kamera szenzor</li>
 <li>Output:
@@ -2208,7 +2210,7 @@ Nem a radar, hanem majd a ráépülő funkció fogja ezekből meghatázorni, hog
 </ul>
 </li>
 </ul>
-<h2><a class="header" href="#definition-of-done-8" id="definition-of-done-8">Definition of Done</a></h2>
+<h3><a class="header" href="#definition-of-done-8" id="definition-of-done-8">Definition of Done</a></h3>
 <ul>
 <li>45 foknál enyhébb kanyarodású úton a kocsi a sáv szemmel láthatóan a sáv közepén marad</li>
 <li>Ha el kell engednie a kontrollt (az automatika számára kezelhetetlen forgalmi szituáció következik, pl. éles kanyar, kereszteződés), vizuális figyelmeztetést ad</li>
@@ -2221,14 +2223,14 @@ Nem a radar, hanem majd a ráépülő funkció fogja ezekből meghatázorni, hog
 <li>az utolsó látott, releváns tábla megjelenik a műszerfalon</li>
 <li>az utolsó sebességkorlátozás kiírásra kerül a buszra</li>
 </ul>
-<h2><a class="header" href="#megjegyzések-1" id="megjegyzések-1">Megjegyzések</a></h2>
+<h3><a class="header" href="#megjegyzések-1" id="megjegyzések-1">Megjegyzések</a></h3>
 <ul>
 <li>a tábla megjelenítésére kész interfész van a műszerfaltól, csak meg kell hívni, ha a detektálás megtörtént</li>
 </ul>
 <p><img src="images/lka.png" alt="" /></p>
 <p>Sávon belüli mozgás: a LKA működése egy enyhe sávon belüli cikázást eredményez.</p>
 <p><img src="images/lka_wave.png" alt="" /></p>
-<h1><a class="header" href="#3-adaptív-tempomat" id="3-adaptív-tempomat">3. Adaptív tempomat</a></h1>
+<h2><a class="header" href="#adaptív-tempomat" id="adaptív-tempomat">Adaptív tempomat</a></h2>
 <ul>
 <li>Input:
 <ul>
@@ -2238,7 +2240,7 @@ Nem a radar, hanem majd a ráépülő funkció fogja ezekből meghatázorni, hog
 </li>
 </ul>
 <p>Adaptív tempomat funkció megvalósítása - a kiválasztott célobjektum (autó előtt haladó NPC) sebességéhez igazítja a gyorsabb saját sebességet, vagy tartja a sofőr által kiválasztott sebességhatárt, ha nincs cél.</p>
-<h2><a class="header" href="#definition-of-done-9" id="definition-of-done-9">Definition of Done</a></h2>
+<h3><a class="header" href="#definition-of-done-9" id="definition-of-done-9">Definition of Done</a></h3>
 <ul>
 <li>Bekapcsolható, reagál az állapotváltás, alapértelmezetten az aktuális sebesség, de min célsebesség 30 km/h</li>
 <li>ha nincs saját sávban autó, a játékos autó tartja a kiválasztott célsebességet</li>
@@ -2252,7 +2254,7 @@ Nem a radar, hanem majd a ráépülő funkció fogja ezekből meghatázorni, hog
 <li>AEB beavatkozásra kikapcsol</li>
 <li>Ha speed limitet talál a buszon, azt alkalmazza új célsebességként, amíg a sofőr felül nem írja</li>
 </ul>
-<h2><a class="header" href="#megjegyzések-2" id="megjegyzések-2">Megjegyzések</a></h2>
+<h3><a class="header" href="#megjegyzések-2" id="megjegyzések-2">Megjegyzések</a></h3>
 <ul>
 <li>Szabad feltételezni, hogy az NPC kezelés nem, vagy nem időben készül el, lesz elérhető (kerül be a masterba)</li>
 <li>Ezért célszerű a felhasználó/vezető által megadott sebességhez igazodással kezdeni, ennek akkor is működnie kell, ha nincs NPC a pályán</li>
@@ -2266,12 +2268,12 @@ Nem a radar, hanem majd a ráépülő funkció fogja ezekből meghatázorni, hog
 <ul>
 <li>Oda kell figyelni, hogy csak a sávban előttünk haladó autót vegye figyelembe, a szembejövőt ne</li>
 </ul>
-<h1><a class="header" href="#4-vészfékező" id="4-vészfékező">4. Vészfékező</a></h1>
+<h2><a class="header" href="#vészfékező" id="vészfékező">Vészfékező</a></h2>
 <p>Automata vészfékező rendszer megvalósítása, maximum 9 m/s^2 lassulással</p>
 <ul>
 <li>Input: radar szenzor</li>
 </ul>
-<h2><a class="header" href="#definition-of-done-10" id="definition-of-done-10">Definition of Done</a></h2>
+<h3><a class="header" href="#definition-of-done-10" id="definition-of-done-10">Definition of Done</a></h3>
 <ul>
 <li>Elkerülhető ütközés esetén vizuális figyelmeztetés a sofőrnek</li>
 <li>ha a sofőr nem avatkozik közbe, automatikus fékezés (az utolsó pillanatban, ahol az ütközés még elkerülhető)</li>
@@ -2280,7 +2282,7 @@ Nem a radar, hanem majd a ráépülő funkció fogja ezekből meghatázorni, hog
 <li>Nincs nem releváns objektumokra való fékezés (fals pozitív) - pl. szembejövő autó</li>
 <li>Gyalogosra, fára megáll a kocsi</li>
 </ul>
-<h2><a class="header" href="#megjegyzések-3" id="megjegyzések-3">Megjegyzések</a></h2>
+<h3><a class="header" href="#megjegyzések-3" id="megjegyzések-3">Megjegyzések</a></h3>
 <ul>
 <li>A radar vissza kell adja az autó előtt levő legközelebbi releváns objektum adatait (táv, sebesség), ezekkel lehet számolni</li>
 <li>A távolságból és az autó sebességéből meghatározható, hogy milyen lassulást kell adni az autónak, hogy még megálljon, de ne lépje túl a 9 m/s^2-et
