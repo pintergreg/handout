@@ -139,7 +139,7 @@ Külön feladat észben tartatni és célszerűen előre felkészülni arra, hog
 
 A *vizualizációs* modul felelőssége a játék virtuális terének, pontosabban a képernyőn megjeleníthető részének kirajzolása miután a világ lényegesen nagyobb mint ami a programablakba egyszerre belefér. A modul csak megjelenít, a modellt a világmodellért felelős csapat állítja össze. Ebbe nem csak a pálya statikus elemei tartoznak, hanem értelemszerűen a dinamikus objektumok is. A megjelenítés középpontja az mindenkor vezérelt autó (egocar).
 
-Továbbá, a modul felelőssége a debuggoláshoz és teszteléshez használandó segédobjektumok opionálisan bekapcsolható megjelenítése. Ide tartozik a szenzorok látómezeje, a világobjektumok „poligon váza”, valamint utóbbiak eseményre történő kiemelésének lehetősége.
+Továbbá, a modul felelőssége a debuggoláshoz és teszteléshez használandó segédobjektumok opionálisan bekapcsolható megjelenítése. Ide tartozik a szenzorok látómezeje, a világobjektumok „poligon váza”, valamint utóbbiak eseményre történő kiemelésének lehetősége. Ez utóbbi akkor történik, amikor majd a 2. sprintben létrehozandó szenzor látómezejébe kerül pl. egy fa, akkor a szenzor a fa kiemelés tulajdonságát bebillenti és ekkor a megjelenítésnek valami más színt kell tudnia használni (a poligon kirajzolására, esetleg kitöltésére).
 
  A programablaknak az alábbi módon nézni majd ki. Két jól el különörő részre oszlik, a nagyobb baloldali a *viewport*, amemylen keresztük a világ éppen megjelenített része látható. A jobb oldali a műszerfal, amely *nem* tartozik e modul felelősségi körébe.
 
