@@ -30,57 +30,52 @@ A megjelenítés is felhasználja ezeket a pontokat a háromszög kirajzolásár
 <!-- - debug célra bekapcsolható módon ezek a háromszögek legyen kirajzolhatóak **zöld** színnel -->
 
 
-## Kamera szenzor implementálása, Ütközés detekció és mozgásállapot-változás szimuláció
+## Kamera szenzor implementálása, Ütközés detekció (és mozgásállapot-változás szimuláció)
 
-Sávtartó automatika és táblafelismerő alapjául szolgáló kamera szenzor implementációja. A Sávtartó automatika a nagyobb feladat, ugyanis meg kell tudni határozni a sávot. Az autó előtt levő pályaelemekből kiszámítani, hogy hol vannak a sávot meghatározó vonalak. A sávtartó automatikának arra lesz majd szüksége, hogy az autó közelít-e a sávját meghatározó felfestésekhez.
+A kamera modul felelőssége a ávtartó automatika és táblafelismerő alapjául szolgáló kamera szenzor implementációja. A sávtartó automatika az összetettebb feladat, ugyanis meg kell tudni határozni a sávot (ebben segítenek az útelemk részét képező sávokat reprezentáló geometria objektumok). Tehát a világmodell már jól deiniált módon rendelkezésre bocsátja a sávinformációkat, de ezeket olyan adatstruktúrába kell rendezni, amely megkönnyíti a sávtartó automata implementálását: a sávtartó automatikának arra lesz majd szüksége, hogy az autó közelít-e a sávját meghatározó felfestésekhez, a sáv határait.
 
-* Input: világmodell
-* Output:
-    * Kamera által látott objektumok
-    * esemény kiváltása ütközések bekövetkezésekor
-       * ez írja le, hogy mik ütköztek
-       * ??? új mozgásállapot minden mozgó, ütköző objektumnak
+A modul bemenete tehát a világmodell, kimenetét olyan világ objektumok gyűjteménye képezi, amelyek beleesnek a szenzor látóterébe. A világ objektumainak lekérdezésére már léteznie kell egy publikus metódusnak, mely 3 pontot vár bemenetként és visszaadja a bele eső objektumokat. Ezekből kell még leválogatni a relevánsakat.
+A szenzor látóterét 3 ponttal kel definiálni. Miután a szenzor kimenetét két küönböző típusú világobjektumokat igénylő funkció használja, a kimenete legyen ennek megfelően szétválasztva. Így a kimenet valójában két gyűjtemény, az egyik csupán táblákat, a másik útelemeket tartalmaz.
+
+A szenzor látómezejének 3 pontját folyamatosan frissíteni kell az autó pozíciójának függvényében. Vagyis az autó egyébként folyamatosan frissülő referenciapontjához képest kell definiálni.
+A megjelenítés is felhasználja ezeket a pontokat a háromszög kirajzolására a debuggoláshoz.
+
+![](images/camera.png)
+
 
 ### Definition of Done
 
 - 1 db, a szélvédő mögé elhelyezett kamera implementálása
 - A látószög és távolság által meghatározott területen kérje el a **releváns** objektumokat
-    * a táblafelismerő szempontjából releváns objektumok a táblák
-    * a sávtartó szempontjából releváns objektumok az utak
+    - külön, a táblafelismerő szempontjából releváns objektumok, a táblák
+    - külön, a sávtartó szempontjából releváns objektumok, az utak
 - A háromszög koordinátái az autó helyzetétől függően folyamatosan frissülnek
-- debug célra bekapcsolható módon a háromszög legyen kirajzolható **kék** színnel
-- A szenzorok által relevánsnak tartott objektumok vizuálisan kiemelhetők egy debug kapcsolóval (billentyű vagy debug módba váltás)
+
+<!-- - A szenzorok által relevánsnak tartott objektumok vizuálisan kiemelhetők egy debug kapcsolóval (billentyű vagy debug módba váltás) -->
 
 <!-- - A kamera szenzor a látható sávok összes adatát visszaadja(hány sáv, melyikben vagyunk, azon belül milyen távolságra a szélektől)
 - A kamera szenzor a látott táblák közül a legközelebbi összes adatát visszaadja (milyen tábla, milyen messzire van) -->
 
-***
+### Ütközés-detektálás
+
+Folyamatosan vizsgálni kell, hogy a vezérelt autó nekiütközött-e egy ütközhető objektumnak. Ennek vizsgálatához használható a világobjektumok poligon váza. Később majd az automatikus vészfékező modul feladat lesz, hogy ez ne következhessen be.
 
 - A vezérelt autó - tereptárgy ütközésének detektálása és esemény kiváltása
 - A vezérelt autó - NPC-vel való ütközésének detektálása és esemény kiváltása
-- Mozgó és statikus objektumok érintkezésének pozíció és dimenzióhelyes detekciója és kommunikációja megvalósult
+- Két objektum akkor ütközött amikor a poligon reprezántációjük összeért, nem amikor a képfájlok fedik egymást
+    - pl. autó a fa lombkoronája alatt, de még nem érte el a törzset
+
+### Mozgásállapot-változás szimuláció
+
 - Az objektumok mozgásállapota az energiamegmaradás törvényeinek megfelelően változik (gyorsul, lassul, irányt vált, megáll)
     - Ha a vezérelt autó nekimegy egy NPC autónak akkor ez legyen rá hatással (lassuljon le)
-    - Ha a vezérelt autó nekimegy egy „stabil” tereptárgynak (pl. fa), akkor álljon meg, érjen véget a játék, egy táblán azonban át tud menni (el tudja sodorni), lassuljon le
-- Az objektumok sérülnek, megsemmisülnek, amennyiben túl nagy energiával ütköznek
+    - Ha a vezérelt autó nagyobb sebességgel nekimegy egy „stabil” tereptárgynak (pl. fa), akkor álljon meg, érjen véget a játék, tekintsük úgy, hogy totálkáros.
+         - egy táblán azonban át tud menni (el tudja sodorni), csak lassuljon le és sérüljön egy kicsit
+- Az objektumok sérülnek, akár megsemmisülnek amennyiben túl nagy energiával ütköznek
 - Ha a vezérelt autó elüt egy gyalogost, akkor érjen véget a játék
-- A játék véget ér, ha a játékos ütközés következtében mozgásképtelenné válik (megsemmisül)
-
-
-### Megjegyzés
-
-* A háromszög kirajzolására már kell, hogy legyen elérhető publikus metódus, amely 3 pontot és egy rajzolási színt vár bemenetként
-* A világ objektumainak lekérdezésére már kell, hogy legyen elérhető publikus metódus, mely 3 pontot vár bemenetként, ebből kell leválogatni a relevánsakat
-* A kamerának előre kell látnia, ha az út kanyarodni fog, azt is, hogy merre fog kanyarodni és erről a sávtartó automatikának használható információt kellene előállítani
-* A valóságban kiszámolják a pálya görbét, ezt itt oly módon oldható meg, hogy a sávhatárokat és ezekhez tud majd a sávtartó automatika viszonyítani
-* Továbbá figyelni kell, hogy az autó sebességének függvényében hol lesz a következő időpillanatban (pl. másodperc múlva). Le fog-e térni az útról ha beavatkozás nem történik, mert akkor a sávtartó automatikának közbe kell avatkoznia. Ez itt még nem feladat, de a következő sprintben az lesz, így célszerű észben tartani
-* ![](images/camera.png)
-
-***
-
-* Az ütközés detektálása implementáció szempontjából nagyon hasonló a világ objektumainak lekérdezéséhez. Az kell bizsgálni az `intersects` metódussal, hogy két objektum összeér-e.
-* Az NPC - NPC ütközés nem fontos, tehát NPC autó ha átmegy a gyalogoson nem kell, hogy kiváltson különösebb reakciót
-* jellemző megoldásként az _egocar_ szokott kapni egy sérülés/élet értéket a mozgásképtelenséghez
+- A játék véget ér, ha a játékos ütközés(ek) következtében mozgásképtelenné válik (megsemmisül)
+- Az NPC - NPC ütközés nem releváns
+    - tehát NPC autó ha elüti a gyalogost, akkor nem kell, hogy végetérjen a játék
 
 
 ## Világ populálása mozgó NPC objektumokkal
@@ -117,29 +112,44 @@ Az NPC autónak nincs hajtáslánc modulja, nem szükséges olyan részletes moz
 
 ## Radar szenzor
 
-Adaptív sebességtartó, automata vészfékező alapjául szolgáló radar szenzor implementációja
+Az *radar sensor* modul felelőssége az adaptív tempomat és az automata vészfékező alapjául szolgáló radar szenzor szimulációjának implementálása. Mint minden szenzor, az ultrahang is érzékeli a világ egy szeletét és eléri a látóterében található objektumokat.
 
-* Input: világmodell
-* Output:
-    * Radar által látott objektumok
+A valóságos és szimulált szenzorok működését részletesebben a [*Szenzorok*](sensors.md) fejezet mutatja be.
 
+A modul bemenete tehát a világmodell, kimenetét olyan ütközhető világ objektumok gyűjteménye képezi, amelyek beleesnek a szenzor látóterébe. A világ objektumainak lekérdezésére már léteznie kell egy publikus metódusnak, mely 3 pontot vár bemenetként és visszaadja a bele eső objektumokat. Ezekből kell még leválogatni a relevánsakat.
+A szenzor látóterét 3 ponttal kel definiálni.
+
+A szenzor látómezejének 3 pontját folyamatosan frissíteni kell az autó pozíciójának függvényében. Vagyis az autó egyébként folyamatosan frissülő referenciapontjához képest kell definiálni.
+A megjelenítés is felhasználja ezeket a pontokat a háromszög kirajzolására a debuggoláshoz.
+
+![Radar szenzor elhelyezése](images/radar.png)
+
+A kihívás a komponenssel kapcsolatban, hogy nem elég egyszerűen csak visszadni a látótérben található releváns objektumokat, hanem el kell tudni dönteni, hogy a jelenlegi haladási irányunkat tartva veszélyesek-e. Pl. pontosan előttünk halad (a sávban), vagy oldalról érkezik és keresztezi az utunkat. A legközelebbi releváns objektum az alábbi ábrán az 1-es, a 2-es nem.
+
+![Azonos sávban haladó jármű](images/radar_lanes_simple.png)
+
+Itt arról van szó, hogy a a szenzor egy iterációjában megkapjuk a látótérbe került ütközhető objektumokat. Egy fa pl. jellegénél fogva statikus, tehát túlzottan sok figyelmet nem igényel, de ugyanúgy továbbítani kell mint egy autót. Az NPC autó esetében az adott iterációban ismert az autó helyzete, majd ezt össze kell vetni az előző iterációban ismert helyzetével. A kettőből meghatározható egy irányvektor és el lehet dönteni, hogy merre halad (ha halad egyáltalán), előttünk halad, vagy mellettünk (pl. másik sávban), stb. Az ACC az azonos sávban előttünk haladó autó sebességét veszi fel, ezért az autó haladási iránya fontos szempont.
+
+<!-- nyomon kell követni őket és azonosítani az útvonalukat, ebből pedig meghatározni azt, hogy keresztezik-e a vezérelt autóét. -->
+
+<!-- A vészfékezőnek reagálnia kell majd az akadályra, ha akkor is útban lesz-e még mire az autó odaér, ehhez szükséges az útban levő objektum távolsága és pozíciója (relatívan az autóhoz) -->
+<!-- , ez minden ciklusban lefutva előállítja az objektum pl. gyalogos mozgásvektorát. 
+Nem a radar, hanem majd a ráépülő funkció fogja ezekből meghatázorni, hogy pl. oldalról a vezérelt autó útjába tart-e egy objektum és ez veszélyt jelent-e rá. -->
+
+<!-- ![Oldalirányból érkező jármű](images/radar_aeb_sideward.png) -->
+
+Mindez értelemszerűen egy statikus objektum pl. fa esetében is működik, csak az nem mozog (mert nem Középföldén vagyunk).
+
+<!-- Az ACC-hez a radarnak el kell tudni dönteni, hogy pl. egy autó a vezérelt autó előtt halad-e. -->
 
 ### Definition of Done
 
-- 1 db, az autó első lökhárítója mögött elhelyezett radar szenzor
+- Elkészült 1 db, az autó első lökhárítója mögött elhelyezett radar szenzor
 - A látószög (60°) és távolság (200m) által meghatározott területen kérjék el a **releváns** objektumokat
 - A háromszög koordinátái az autó helyzetétől függően folyamatosan frissülnek
-- debug célra bekapcsolható módon a háromszög legyen kirajzolhatóak **piros** színnel
 - Határozzák meg a legközelebbi, sávon belüli (lateral offset alapján) objektum helyzetét
 - Az automata vészfékező számára releváns objektumok (az autó középvonala felé halad, látjuk) kiválogatása és visszaadása
 - A legközelebbi objektum legyen vizuálisan kiemelve
+    - a kiemelést a megjelenítés intézi az objektum tulajdonsága (kijelöltség) alapján, de azt, hogy éppen ki van-e jelölve a szenzornak kell az objektumon beállítani
 
-### Megjegyzések
-
-* A háromszög kirajzolására már kell, hogy legyen elérhető publikus metódus, amely 3 pontot és egy rajzolási színt vár bemenetként
-* A világ objektumainak lekérdezésére már kell, hogy legyen elérhető publikus metódus, mely 3 pontot vár bemenetként, ebből kell leválogatni a relevánsakat
-* ![](images/radar.png)
-* A vészfékezőnek majd ki kell tudnia számolni, hogy az akadály akkor is útban lesz-e még mire az autó odaér, ehhez szükséges az útban levő objektum távolsága és pozíciója (relatívan az autóhoz), ez minden ciklusban lefutva előállítja az objektum pl. gyalogos mozgásvektorát
-    * ennek egy fa esetében is működnie kell, csak az nem mozog, mert nem Középföldén vagyunk
-* az ACC-hez el kell tudni dönteni, hogy pl. egy autó a vezérelt autó előtt halad-e
-
+<!-- - debug célra bekapcsolható módon a háromszög legyen kirajzolhatóak **piros** színnel -->
