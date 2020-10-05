@@ -1,4 +1,8 @@
-# 1. Automata parkolás
+# 3. Sprint
+
+<!-- toc -->
+
+## Parkoló automatika
 
 * Input: Ultrahang szenzorok
 * Output: parkolási manőver végrehajtása
@@ -30,14 +34,15 @@
 ![](images/find_parking_place_horizontal.png)
 ![](images/parking_place_found_horizontal.png)
 
-# 2. Sávtartó automatika és táblafelismerés
+
+## Sávtartó automatika és táblafelismerés
 
 * Input: Kamera szenzor
 * Output:
     - Sávot beavatkozás nélkül követi a vezérelt autó
     - Az utolsó látott tábla megjelenik a HMI-n
 
-## Definition of Done
+### Definition of Done
 
 - 45 foknál enyhébb kanyarodású úton a kocsi a sáv szemmel láthatóan a sáv közepén marad
 - Ha el kell engednie a kontrollt (az automatika számára kezelhetetlen forgalmi szituáció következik, pl. éles kanyar, kereszteződés), vizuális figyelmeztetést ad
@@ -47,7 +52,7 @@
 - az utolsó látott, releváns tábla megjelenik a műszerfalon
 - az utolsó sebességkorlátozás kiírásra kerül a buszra
 
-## Megjegyzések
+### Megjegyzések
 
 * a tábla megjelenítésére kész interfész van a műszerfaltól, csak meg kell hívni, ha a detektálás megtörtént
 
@@ -58,7 +63,7 @@ Sávon belüli mozgás: a LKA működése egy enyhe sávon belüli cikázást er
 ![](images/lka_wave.png)
 
 
-# 3. Adaptív tempomat
+## Adaptív tempomat
 
 * Input:
     - radar szenzor
@@ -66,7 +71,7 @@ Sávon belüli mozgás: a LKA működése egy enyhe sávon belüli cikázást er
 
 Adaptív tempomat funkció megvalósítása - a kiválasztott célobjektum (autó előtt haladó NPC) sebességéhez igazítja a gyorsabb saját sebességet, vagy tartja a sofőr által kiválasztott sebességhatárt, ha nincs cél.
 
-## Definition of Done
+### Definition of Done
 
 - Bekapcsolható, reagál az állapotváltás, alapértelmezetten az aktuális sebesség, de min célsebesség 30 km/h
 - ha nincs saját sávban autó, a játékos autó tartja a kiválasztott célsebességet
@@ -77,7 +82,7 @@ Adaptív tempomat funkció megvalósítása - a kiválasztott célobjektum (aut�
 - AEB beavatkozásra kikapcsol
 - Ha speed limitet talál a buszon, azt alkalmazza új célsebességként, amíg a sofőr felül nem írja
 
-## Megjegyzések
+### Megjegyzések
 
 * Szabad feltételezni, hogy az NPC kezelés nem, vagy nem időben készül el, lesz elérhető (kerül be a masterba)
 * Ezért célszerű a felhasználó/vezető által megadott sebességhez igazodással kezdeni, ennek akkor is működnie kell, ha nincs NPC a pályán
@@ -89,13 +94,13 @@ Adaptív tempomat funkció megvalósítása - a kiválasztott célobjektum (aut�
 * Oda kell figyelni, hogy csak a sávban előttünk haladó autót vegye figyelembe, a szembejövőt ne
 
 
-# 4. Vészfékező
+## Vészfékező
 
 Automata vészfékező rendszer megvalósítása, maximum 9 m/s^2 lassulással
 
 * Input: radar szenzor
 
-## Definition of Done
+### Definition of Done
 
 - Elkerülhető ütközés esetén vizuális figyelmeztetés a sofőrnek
 - ha a sofőr nem avatkozik közbe, automatikus fékezés (az utolsó pillanatban, ahol az ütközés még elkerülhető)
@@ -104,7 +109,7 @@ Automata vészfékező rendszer megvalósítása, maximum 9 m/s^2 lassulással
 - Nincs nem releváns objektumokra való fékezés (fals pozitív) - pl. szembejövő autó
 - Gyalogosra, fára megáll a kocsi
 
-## Megjegyzések
+### Megjegyzések
 
 * A radar vissza kell adja az autó előtt levő legközelebbi releváns objektum adatait (táv, sebesség), ezekkel lehet számolni
 * A távolságból és az autó sebességéből meghatározható, hogy milyen lassulást kell adni az autónak, hogy még megálljon, de ne lépje túl a 9 m/s^2-et
