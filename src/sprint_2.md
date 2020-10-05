@@ -92,6 +92,24 @@ A legkézenfekvőbb megoldás, hogy a világban, a világ koordinátáira épít
 
 ![](images/npc_route_pedestrian.png)
 
+A mozgáshoz sebességet is kell társítani. Két vezérlőpont közötti egyenesen adott idő alatt kell az NPC-nek végighaladnia. Továbbá az egyes vezérlőpontokhoz forgatási műveletet is társítani kell. Ehhez egy mozgás leíró struktúra lesz szükséges, pl. az alábbi elnagyolt példa [TOML](https://toml.io/en/) nyelven, de bármilyen megoldás választható (JSON, XML, YAML vagy teljesen egyedi formátum):
+
+```toml
+[points]
+
+[points.1]
+x = 100
+y = 200
+rotation = 0
+speed = 50 # px/s
+
+[points.2]
+x = 100
+y = 100
+rotation = 15
+speed = 30 # px/s
+```
+
 A feladatban az igazi kihívás, hogy az NPC objektumok adaptálódjanak pályához. Az adaptálódást úgy lehet megkerülni, hogy mindkét pályához készül egy-egy útvonal.
 
 Az NPC autónak nincs hajtáslánc modulja, nem szükséges olyan részletes mozgatás sem mint az vezérelt autónál, de azért a kanyarpontoknál legyen több lépésben megoldva, hogy fokozatosan legyen az autó elforgatva a kanyarodás valósághű leképezése céljából.
