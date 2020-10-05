@@ -1,4 +1,4 @@
-# Sprint 2.
+# 2. Sprint 
 
 <!-- toc -->
 
