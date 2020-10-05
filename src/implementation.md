@@ -4,7 +4,7 @@
 
 ## C#
 
-A korábbi félévek visszajelzései visszetérő eleme volt, hogy C#-ban is meg lehessen oldani a feladatot. A cross-plastform fejleszés ugyan feltétel, így „csak” a [.NET Core](https://dotnet.microsoft.com/download/dotnet-core) jöhet szóba, ennek is a 3.1-es verziója (LTS).
+A korábbi félévek visszajelzései visszetérő eleme volt, hogy C#-ban is meg lehessen oldani a feladatot. A cross-plastform fejleszés ugyanúgy feltétel, így „csak” a [.NET Core](https://dotnet.microsoft.com/download/dotnet-core) jöhet szóba, ennek is a 3.1-es verziója (LTS).
 
 A .NET 5 egyesíti majd a .NET Framework-öt és a .NET Core továbbá bevezeti a MAUI-t mint multiplatform keretrendszert grafikus felületek készítéséhez, ez azonban ma még [nem elérhető](https://devblogs.microsoft.com/dotnet/introducing-net-multi-platform-app-ui/).
 
