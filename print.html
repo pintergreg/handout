@@ -2103,6 +2103,21 @@ A megjelenítés is felhasználja ezeket a pontokat a háromszög kirajzolásár
 <p>A legkézenfekvőbb megoldás, hogy a világban, a világ koordinátáira építve felveszünk vezérpontokat, amelyek kijelölnek egy utat. Ezeket célszerű nem a kódban, hanem valamilyen fájlban tárolni. Az NPC objektum pedig ezt az utat követni. Például a parkoló mellől indul az úton megy fölfele (csökken az y koordinátája) a kanyar előtt (x,y) világkoordinátákat elérve lelassul, (x,y)' koordináták elérése esetén elkezd kanyarodni, a sávból nem tér ki, majd (x,y)&quot; koordinátáig halad a fönti egyenesen. És így tovább.</p>
 <p><img src="images/npc_route.png" alt="" /></p>
 <p><img src="images/npc_route_pedestrian.png" alt="" /></p>
+<p>A mozgáshoz sebességet is kell társítani. Két vezérlőpont közötti egyenesen adott idő alatt kell az NPC-nek végighaladnia. Továbbá az egyes vezérlőpontokhoz forgatási műveletet is társítani kell. Ehhez egy mozgás leíró struktúra lesz szükséges, pl. az alábbi elnagyolt példa <a href="https://toml.io/en/">TOML</a> nyelven, de bármilyen megoldás választható (JSON, XML, YAML vagy teljesen egyedi formátum):</p>
+<pre><code class="language-toml">[points]
+
+[points.1]
+x = 100
+y = 200
+rotation = 0
+speed = 50 # px/s
+
+[points.2]
+x = 100
+y = 100
+rotation = 15
+speed = 30 # px/s
+</code></pre>
 <p>A feladatban az igazi kihívás, hogy az NPC objektumok adaptálódjanak pályához. Az adaptálódást úgy lehet megkerülni, hogy mindkét pályához készül egy-egy útvonal.</p>
 <p>Az NPC autónak nincs hajtáslánc modulja, nem szükséges olyan részletes mozgatás sem mint az vezérelt autónál, de azért a kanyarpontoknál legyen több lépésben megoldva, hogy fokozatosan legyen az autó elforgatva a kanyarodás valósághű leképezése céljából.</p>
 <h3><a class="header" href="#definition-of-done-6" id="definition-of-done-6">Definition of Done:</a></h3>
