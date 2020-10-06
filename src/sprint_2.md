@@ -81,7 +81,9 @@ Folyamatosan vizsgálni kell, hogy a vezérelt autó nekiütközött-e egy ütk�
 - Ha a vezérelt autó elüt egy gyalogost, akkor érjen véget a játék
 - A játék véget ér, ha a játékos ütközés(ek) következtében mozgásképtelenné válik (megsemmisül)
 - Az NPC - NPC ütközés nem releváns
-    - tehát NPC autó ha elüti a gyalogost, akkor nem kell, hogy végetérjen a játék
+    - tehát ha NPC autó üti el a gyalogost, akkor nem kell, hogy végetérjen a játék
+- Kisebb sérüléseknél a játékot ne kelljen újraindítani, valami inputra lehessen resetelni akár
+    - sérülés visszaálítása nullára, vagy autó pozíciójának módosítása, hogy az ütközés már ne álljon fönt
 
 
 ## Világ populálása mozgó NPC objektumokkal
