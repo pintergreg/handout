@@ -32,7 +32,13 @@ A megjelenítés is felhasználja ezeket a pontokat a háromszög kirajzolásár
 
 ## Kamera szenzor implementálása, Ütközés detekció (és mozgásállapot-változás szimuláció)
 
-A kamera modul felelőssége a ávtartó automatika és táblafelismerő alapjául szolgáló kamera szenzor implementációja. A sávtartó automatika az összetettebb feladat, ugyanis meg kell tudni határozni a sávot (ebben segítenek az útelemk részét képező sávokat reprezentáló geometria objektumok). Tehát a világmodell már jól deiniált módon rendelkezésre bocsátja a sávinformációkat, de ezeket olyan adatstruktúrába kell rendezni, amely megkönnyíti a sávtartó automata implementálását: a sávtartó automatikának arra lesz majd szüksége, hogy az autó közelít-e a sávját meghatározó felfestésekhez, a sáv határait.
+A kamera modul felelőssége a ávtartó automatika és táblafelismerő alapjául szolgáló kamera szenzor implementációja. Mint minden szenzor, a kamera is érzékeli a világ egy szeletét és eléri a látóterében található objektumokat.
+
+A valóságos és szimulált szenzorok működését részletesebben a [*Szenzorok*](sensors.md) fejezet mutatja be.
+
+A táblafelismerőnek csak továbbítani kell minden látott táblát, az majd eldönti, hogy melyik miképp releváns a vezérelt autóra nézve.
+
+ A sávtartó automatika az összetettebb feladat, ugyanis meg kell tudni határozni a sávot (ebben segítenek az útelemk részét képező sávokat reprezentáló geometria objektumok). Tehát a világmodell már jól deiniált módon rendelkezésre bocsátja a sávinformációkat, de ezeket olyan adatstruktúrába kell rendezni, amely megkönnyíti a sávtartó automata implementálását: a sávtartó automatikának arra lesz majd szüksége, hogy az autó közelít-e a sávját meghatározó felfestésekhez, a sáv határait.
 
 A modul bemenete tehát a világmodell, kimenetét olyan világ objektumok gyűjteménye képezi, amelyek beleesnek a szenzor látóterébe. A világ objektumainak lekérdezésére már léteznie kell egy publikus metódusnak, mely 3 pontot vár bemenetként és visszaadja a bele eső objektumokat. Ezekből kell még leválogatni a relevánsakat.
 A szenzor látóterét 3 ponttal kel definiálni. Miután a szenzor kimenetét két küönböző típusú világobjektumokat igénylő funkció használja, a kimenete legyen ennek megfelően szétválasztva. Így a kimenet valójában két gyűjtemény, az egyik csupán táblákat, a másik útelemeket tartalmaz.
