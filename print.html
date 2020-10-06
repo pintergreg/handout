@@ -2044,7 +2044,10 @@ A megjelenítés is felhasználja ezeket a pontokat a háromszög kirajzolásár
 </ul>
 <!-- - debug célra bekapcsolható módon ezek a háromszögek legyen kirajzolhatóak **zöld** színnel -->
 <h2><a class="header" href="#kamera-szenzor-implementálása-Ütközés-detekció-és-mozgásállapot-változás-szimuláció" id="kamera-szenzor-implementálása-Ütközés-detekció-és-mozgásállapot-változás-szimuláció">Kamera szenzor implementálása, Ütközés detekció (és mozgásállapot-változás szimuláció)</a></h2>
-<p>A kamera modul felelőssége a ávtartó automatika és táblafelismerő alapjául szolgáló kamera szenzor implementációja. A sávtartó automatika az összetettebb feladat, ugyanis meg kell tudni határozni a sávot (ebben segítenek az útelemk részét képező sávokat reprezentáló geometria objektumok). Tehát a világmodell már jól deiniált módon rendelkezésre bocsátja a sávinformációkat, de ezeket olyan adatstruktúrába kell rendezni, amely megkönnyíti a sávtartó automata implementálását: a sávtartó automatikának arra lesz majd szüksége, hogy az autó közelít-e a sávját meghatározó felfestésekhez, a sáv határait.</p>
+<p>A kamera modul felelőssége a ávtartó automatika és táblafelismerő alapjául szolgáló kamera szenzor implementációja. Mint minden szenzor, a kamera is érzékeli a világ egy szeletét és eléri a látóterében található objektumokat.</p>
+<p>A valóságos és szimulált szenzorok működését részletesebben a <a href="sensors.html"><em>Szenzorok</em></a> fejezet mutatja be.</p>
+<p>A táblafelismerőnek csak továbbítani kell minden látott táblát, az majd eldönti, hogy melyik miképp releváns a vezérelt autóra nézve.</p>
+<p>A sávtartó automatika az összetettebb feladat, ugyanis meg kell tudni határozni a sávot (ebben segítenek az útelemk részét képező sávokat reprezentáló geometria objektumok). Tehát a világmodell már jól deiniált módon rendelkezésre bocsátja a sávinformációkat, de ezeket olyan adatstruktúrába kell rendezni, amely megkönnyíti a sávtartó automata implementálását: a sávtartó automatikának arra lesz majd szüksége, hogy az autó közelít-e a sávját meghatározó felfestésekhez, a sáv határait.</p>
 <p>A modul bemenete tehát a világmodell, kimenetét olyan világ objektumok gyűjteménye képezi, amelyek beleesnek a szenzor látóterébe. A világ objektumainak lekérdezésére már léteznie kell egy publikus metódusnak, mely 3 pontot vár bemenetként és visszaadja a bele eső objektumokat. Ezekből kell még leválogatni a relevánsakat.
 A szenzor látóterét 3 ponttal kel definiálni. Miután a szenzor kimenetét két küönböző típusú világobjektumokat igénylő funkció használja, a kimenete legyen ennek megfelően szétválasztva. Így a kimenet valójában két gyűjtemény, az egyik csupán táblákat, a másik útelemeket tartalmaz.</p>
 <p>A szenzor látómezejének 3 pontját folyamatosan frissíteni kell az autó pozíciójának függvényében. Vagyis az autó egyébként folyamatosan frissülő referenciapontjához képest kell definiálni.
@@ -2136,7 +2139,7 @@ speed = 30 # px/s
 <li>Új (a másik) pálya esetén az NPC objektumok adaptálódnak az új környezethez</li>
 </ul>
 <h2><a class="header" href="#radar-szenzor" id="radar-szenzor">Radar szenzor</a></h2>
-<p>Az <em>radar sensor</em> modul felelőssége az adaptív tempomat és az automata vészfékező alapjául szolgáló radar szenzor szimulációjának implementálása. Mint minden szenzor, az ultrahang is érzékeli a világ egy szeletét és eléri a látóterében található objektumokat.</p>
+<p>Az <em>radar sensor</em> modul felelőssége az adaptív tempomat és az automata vészfékező alapjául szolgáló radar szenzor szimulációjának implementálása. Mint minden szenzor, az radar is érzékeli a világ egy szeletét és eléri a látóterében található objektumokat.</p>
 <p>A valóságos és szimulált szenzorok működését részletesebben a <a href="sensors.html"><em>Szenzorok</em></a> fejezet mutatja be.</p>
 <p>A modul bemenete tehát a világmodell, kimenetét olyan ütközhető világ objektumok gyűjteménye képezi, amelyek beleesnek a szenzor látóterébe. A világ objektumainak lekérdezésére már léteznie kell egy publikus metódusnak, mely 3 pontot vár bemenetként és visszaadja a bele eső objektumokat. Ezekből kell még leválogatni a relevánsakat.
 A szenzor látóterét 3 ponttal kel definiálni.</p>
@@ -2794,7 +2797,7 @@ A munkafolyamat alapvetően feltételezi, hogy egy adott kódrészletet egy koll
 <h1><a class="header" href="#implementáció" id="implementáció">Implementáció</a></h1>
 <!-- toc -->
 <h2><a class="header" href="#c-2" id="c-2">C#</a></h2>
-<p>A korábbi félévek visszajelzései visszetérő eleme volt, hogy C#-ban is meg lehessen oldani a feladatot. A cross-plastform fejleszés ugyan feltétel, így „csak” a <a href="https://dotnet.microsoft.com/download/dotnet-core">.NET Core</a> jöhet szóba, ennek is a 3.1-es verziója (LTS).</p>
+<p>A korábbi félévek visszajelzései visszetérő eleme volt, hogy C#-ban is meg lehessen oldani a feladatot. A cross-plastform fejleszés ugyanúgy feltétel, így „csak” a <a href="https://dotnet.microsoft.com/download/dotnet-core">.NET Core</a> jöhet szóba, ennek is a 3.1-es verziója (LTS).</p>
 <p>A .NET 5 egyesíti majd a .NET Framework-öt és a .NET Core továbbá bevezeti a MAUI-t mint multiplatform keretrendszert grafikus felületek készítéséhez, ez azonban ma még <a href="https://devblogs.microsoft.com/dotnet/introducing-net-multi-platform-app-ui/">nem elérhető</a>.</p>
 <p>Addig is szükség volt egy áthidaló megoldásra miután a WPF nem használható Windows-on kívül, erre a <em>3rd party</em> <a href="http://avaloniaui.net/">Avalonia</a> keretrendszert fogjuk használni. Az Avalonia a WPF-hez hasonlóan egy XAML alapú Model-View-ViewModel (MVVM) rendszer.</p>
 <p><img src="images/dotnet_stack.png" alt=".NET stack" /></p>
