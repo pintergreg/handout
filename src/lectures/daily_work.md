@@ -193,10 +193,10 @@ Az ehhez a jegyzethez készített ábrák és azok forrása is verziókezelés a
 - [Git Branching - Basic Branching and Merging](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging)
 - [Gyakorlati oktatóanyagok](../git.md#interaktív-online-oktató-anyagok)
 
-Az „[A successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model/)” című posztban lehet olvasni egy szélesebb körben kedvelt modellről. A félév során használt többé-kevésbé ehhez hasonló.
+A félév során a [GitHubFlow](https://guides.github.com/introduction/flow/)-t használjuk, részletek a [GitHub fejezetben](../github.html#branching-model).
 
-![](https://www.rittmanmead.com/blog/content/images/2017/01/gitflow.png)
-
+<!-- ![](https://www.rittmanmead.com/blog/content/images/2017/01/gitflow.png) -->
+<!-- 
 
 #### További írások a témában
 
@@ -208,7 +208,7 @@ Az „[A successful Git branching model](http://nvie.com/posts/a-successful-git-
 * [Using the Fork-and-Branch Git Workflow](https://blog.scottlowe.org/2015/01/27/using-fork-branch-git-workflow/)
 * [Stackoverflow / Forking vs. Branching in GitHub](https://stackoverflow.com/a/34343080/4737417)
 * [A succesful Git branching model considered harmful](https://barro.github.io/2016/02/a-succesful-git-branching-model-considered-harmful/)
-* [Escape from Merge Hell: Why I Prefer Trunk-Based Development Over Feature Branching and GitFlow](https://stxnext.com/blog/2018/02/28/escape-merge-hell-why-i-prefer-trunk-based-development-over-feature-branching-and-gitflow/)
+* [Escape from Merge Hell: Why I Prefer Trunk-Based Development Over Feature Branching and GitFlow](https://stxnext.com/blog/2018/02/28/escape-merge-hell-why-i-prefer-trunk-based-development-over-feature-branching-and-gitflow/) -->
 
 
 ### Commit üzenetek
