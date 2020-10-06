@@ -215,6 +215,32 @@ A munkafolyamat alapvetően feltételezi, hogy egy adott kódrészletet egy koll
 </ul>
 </li>
 </ul>
+<h2><a class="header" href="#commit-üzenetek" id="commit-üzenetek">Commit üzenetek</a></h2>
+<p>A <a href="https://chris.beams.io/posts/git-commit/">How to Write a Git Commit Message</a> egy hosszabb, példákkal illusztrált írás a jó commit üzenetekről, amely <a href="https://chris.beams.io/posts/git-commit/#seven-rules">hét szabályban</a> foglalja össze, hogy mire kell figyelni. Ezt egészíteném ki egy nyolcadikkal.</p>
+<ol>
+<li><a href="https://chris.beams.io/posts/git-commit/#separate">Separate subject from body with a blank line</a></li>
+<li><a href="https://chris.beams.io/posts/git-commit/#limit-50">Limit the subject line to 50 characters</a></li>
+<li><a href="https://chris.beams.io/posts/git-commit/#capitalize">Capitalize the subject line</a></li>
+<li><a href="https://chris.beams.io/posts/git-commit/#end">Do not end the subject line with a period</a></li>
+<li><a href="https://chris.beams.io/posts/git-commit/#imperative">Use the imperative mood in the subject line</a></li>
+<li><a href="https://chris.beams.io/posts/git-commit/#wrap-72">Wrap the body at 72 characters</a>
+<ul>
+<li>ez a legkevésbé fontos</li>
+</ul>
+</li>
+<li><a href="https://chris.beams.io/posts/git-commit/#why-not-how">Use the body to explain what and why vs. how</a></li>
+<li><strong>Reference the issue!</strong></li>
+</ol>
+<h3><a class="header" href="#miért-fontos-a-8-pont" id="miért-fontos-a-8-pont">Miért fontos a 8. pont?</a></h3>
+<p>Valójában (bizonyos szempontból) az issue behivatkozása a legfontosabb, méghozzá a <strong>visszakövethetőség</strong> (traceability) miatt.</p>
+<p><img src="../images/traceability_via_commit.png" alt="" /></p>
+<p>Minden módosítás (a verziókövető rendszerben) rendelkezik egy azonosítóval, amelyhez társul, hogy ki és mikor végezte el a módosítást. Valamit egy üzenet, amely -- jó esetben -- leírja, hogy mi volt ez a módosítás. A visszakövethetőség egy adott szintig tehát szerves része a verziókövető rendszereknek.</p>
+<p>A módosítások azonban nem csak úgy ötletszerűen történnek, hanem valamilyen feladat által meghatározott célból. Pl. jelenítsd meg a műszerfalon az autó pillanatnyi sebességét (feature), vagy javítsd ki pixel/s -&gt; km/h átváltást, mert kerekítési hiba miatt értelmetlen érték jelenik meg (bugfix).</p>
+<p>Ugyanakkor a feladatok (task) sem csak úgy lógnak a levegőben, jellemzően kapcsolódnak egy user story-hoz (különösen a feature-ök), de biztosan kapcsolódnak egy sprinthez (hiszen beütemezték a megoldását valamikorra), van felelősük, határidejük, stb. Úgy általában van véve egy kontextusuk. Az issue (más néven task) tartalmazza az adott feladat pontos részleteit, az issue/task trackerben akár a megoldás teljes vitafolyamata megtalálható. Pl. ki hogyan akarta implementálni, milyen érvek és ellenérvek merültek fel az egyes implementációs lehetőségek mellett/ellen, hogyan jutott a fejlesztőcsapat konszenzusra, vagy ki hagyta jóvá az adott módosítást, ki döntött arról, hogy melyik sprintbe kerüljön be, stb.</p>
+<p>A visszakövethetőség nem csak addig a pontig érdekes és fontos, hogy ki írta át a változó típusát (pl.), hanem a teljes tervezési/döntés folyamatig visszamenőleg.</p>
+<p>Mi van akkor ha a döntés egy face-to-face meetingen (pl. standup), skype konferenciahíváson vagy egyéb nem írásos formában történt?
+(A szó elszáll, írás megmarad...)</p>
+<p>Ebben az esetben, az issue kiváló hely arra, hogy írásban is rögzítve legyenek az elhangzottak. Pl. YYYY-MM-DD-ei megbeszélés alapján az XY library segítségével fogom implementálni az analóg fordulatszámkijelzőt. Akár explicit írásos jóváhagyást is lehet kérni...</p>
 <h1><a class="header" href="#vállalati-példa" id="vállalati-példa">Vállalati példa</a></h1>
 <p>A munkakultúráról egy remek videót tett közzé a Spotify, <a href="https://labs.spotify.com/2014/03/27/spotify-engineering-culture-part-1/">megtekinthető itt</a>.</p>
 
