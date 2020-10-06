@@ -136,7 +136,7 @@ Az NPC autónak nincs hajtáslánc modulja, nem szükséges olyan részletes moz
 
 ## Radar szenzor
 
-Az *radar sensor* modul felelőssége az adaptív tempomat és az automata vészfékező alapjául szolgáló radar szenzor szimulációjának implementálása. Mint minden szenzor, az ultrahang is érzékeli a világ egy szeletét és eléri a látóterében található objektumokat.
+Az *radar sensor* modul felelőssége az adaptív tempomat és az automata vészfékező alapjául szolgáló radar szenzor szimulációjának implementálása. Mint minden szenzor, az radar is érzékeli a világ egy szeletét és eléri a látóterében található objektumokat.
 
 A valóságos és szimulált szenzorok működését részletesebben a [*Szenzorok*](sensors.md) fejezet mutatja be.
 
