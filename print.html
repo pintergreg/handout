@@ -2023,7 +2023,7 @@ Bár a modul függ a világmodelltől, a munka értelemszerűen nem akkor kezdő
 <p>A valóságos és szimulált szenzorok működését részletesebben a <a href="sensors.html"><em>Szenzorok</em></a> fejezet mutatja be.</p>
 <p>A modul bemenete tehát a világmodell, kimenete olyan ütközhető világ objektumok gyűjteménye képezi, amelyek beleesnek a szenzor látóterébe. A világ objektumainak lekérdezésére már léteznie kell egy publikus metódusnak, mely 3 pontot vár bemenetként és visszaadja a bele eső objektumokat. Ezekből kell még leválogatni a relevánsakat.
 A szenzor látóterét 3 ponttal kel definiálni.</p>
-<p>A kamera és a radar szenzorhoz képest a legfőbb különbség, hogy ultreahang szenzorból 8 példány kerül az autóra.
+<p>A kamera és a radar szenzorhoz képest a legfőbb különbség, hogy ultrahang szenzorból 8 példány kerül az autóra.
 Minden példány látómezejének 3 pontját folyamatosan frissíteni kell az autó pozíciójának függvényében. Vagyis az autó egyébként folyamatosan frissülő referenciapontjához képest kell definiálni.
 A megjelenítés is felhasználja ezeket a pontokat a háromszög kirajzolására a debuggoláshoz.</p>
 <p><img src="images/ultrasonic.png" alt="Ultrahang szenzorok elhelyezése" /></p>
@@ -2045,12 +2045,12 @@ A megjelenítés is felhasználja ezeket a pontokat a háromszög kirajzolásár
 </ul>
 <!-- - debug célra bekapcsolható módon ezek a háromszögek legyen kirajzolhatóak **zöld** színnel -->
 <h2><a class="header" href="#kamera-szenzor-implementálása-Ütközés-detekció-és-mozgásállapot-változás-szimuláció" id="kamera-szenzor-implementálása-Ütközés-detekció-és-mozgásállapot-változás-szimuláció">Kamera szenzor implementálása, Ütközés detekció (és mozgásállapot-változás szimuláció)</a></h2>
-<p>A kamera modul felelőssége a ávtartó automatika és táblafelismerő alapjául szolgáló kamera szenzor implementációja. Mint minden szenzor, a kamera is érzékeli a világ egy szeletét és eléri a látóterében található objektumokat.</p>
+<p>A kamera modul felelőssége a sávtartó automatika és táblafelismerő alapjául szolgáló kamera szenzor implementációja. Mint minden szenzor, a kamera is érzékeli a világ egy szeletét és eléri a látóterében található objektumokat.</p>
 <p>A valóságos és szimulált szenzorok működését részletesebben a <a href="sensors.html"><em>Szenzorok</em></a> fejezet mutatja be.</p>
 <p>A táblafelismerőnek csak továbbítani kell minden látott táblát, az majd eldönti, hogy melyik miképp releváns a vezérelt autóra nézve.</p>
-<p>A sávtartó automatika az összetettebb feladat, ugyanis meg kell tudni határozni a sávot (ebben segítenek az útelemk részét képező sávokat reprezentáló geometria objektumok). Tehát a világmodell már jól deiniált módon rendelkezésre bocsátja a sávinformációkat, de ezeket olyan adatstruktúrába kell rendezni, amely megkönnyíti a sávtartó automata implementálását: a sávtartó automatikának arra lesz majd szüksége, hogy az autó közelít-e a sávját meghatározó felfestésekhez, a sáv határait.</p>
+<p>A sávtartó automatika az összetettebb feladat, ugyanis meg kell tudni határozni a sávot (ebben segítenek az útelemek részét képező sávokat reprezentáló geometria objektumok). Tehát a világmodell már jól definiált módon rendelkezésre bocsátja a sávinformációkat, de ezeket olyan adatstruktúrába kell rendezni, amely megkönnyíti a sávtartó automata implementálását: a sávtartó automatikának arra lesz majd szüksége, hogy az autó közelít-e a sávját meghatározó felfestésekhez, a sáv határait.</p>
 <p>A modul bemenete tehát a világmodell, kimenetét olyan világ objektumok gyűjteménye képezi, amelyek beleesnek a szenzor látóterébe. A világ objektumainak lekérdezésére már léteznie kell egy publikus metódusnak, mely 3 pontot vár bemenetként és visszaadja a bele eső objektumokat. Ezekből kell még leválogatni a relevánsakat.
-A szenzor látóterét 3 ponttal kel definiálni. Miután a szenzor kimenetét két küönböző típusú világobjektumokat igénylő funkció használja, a kimenete legyen ennek megfelően szétválasztva. Így a kimenet valójában két gyűjtemény, az egyik csupán táblákat, a másik útelemeket tartalmaz.</p>
+A szenzor látóterét 3 ponttal kel definiálni. Miután a szenzor kimenetét két különböző típusú világobjektumokat igénylő funkció használja, a kimenete legyen ennek megfelelően szétválasztva. Így a kimenet valójában két gyűjtemény, az egyik csupán táblákat, a másik útelemeket tartalmaz.</p>
 <p>A szenzor látómezejének 3 pontját folyamatosan frissíteni kell az autó pozíciójának függvényében. Vagyis az autó egyébként folyamatosan frissülő referenciapontjához képest kell definiálni.
 A megjelenítés is felhasználja ezeket a pontokat a háromszög kirajzolására a debuggoláshoz.</p>
 <p><img src="images/camera.png" alt="" /></p>
@@ -2073,13 +2073,14 @@ A megjelenítés is felhasználja ezeket a pontokat a háromszög kirajzolásár
 <ul>
 <li>A vezérelt autó - tereptárgy ütközésének detektálása és esemény kiváltása</li>
 <li>A vezérelt autó - NPC-vel való ütközésének detektálása és esemény kiváltása</li>
-<li>Két objektum akkor ütközött amikor a poligon reprezántációjük összeért, nem amikor a képfájlok fedik egymást
+<li>Két objektum akkor ütközött amikor a poligon reprezentációjuk összeért, nem amikor a képfájlok fedik egymást
 <ul>
 <li>pl. autó a fa lombkoronája alatt, de még nem érte el a törzset</li>
 </ul>
 </li>
 </ul>
 <h3><a class="header" href="#mozgásállapot-változás-szimuláció" id="mozgásállapot-változás-szimuláció">Mozgásállapot-változás szimuláció</a></h3>
+<p>A modul felelőssége, hogy az ütközésben részt vevő objektumok mozgásállapota az ütközés ereje függvényében megváltozzon. Ehhez egyrészt szükséges az objektumok sebessége, irányvektora és tömege is. Tömeg értékekkel a modell még nem rendelkezik ezek hozzáadása szintén a feladat része. Az autó, gyalogos, biciklis objektumokhoz keresni kell egy átlagos értéket. A statikus objektumok esetében azt is figyelembe kell venni vagy a tömeg értéken keresztül vagy ennél realisztikusabban, hogy rögzítettek. Pl. egy épület tömegét meg lehet választani kvázi végtelen nagyra így az nem tud elmozdulni az ütközés hatására. Egy ha esetében is hasonlóan lehet eljárni, egy táblát viszont könnyen elsodorhat egy autó.</p>
 <ul>
 <li>Az objektumok mozgásállapota az energiamegmaradás törvényeinek megfelelően változik (gyorsul, lassul, irányt vált, megáll)
 <ul>
@@ -2096,19 +2097,19 @@ A megjelenítés is felhasználja ezeket a pontokat a háromszög kirajzolásár
 <li>A játék véget ér, ha a játékos ütközés(ek) következtében mozgásképtelenné válik (megsemmisül)</li>
 <li>Az NPC - NPC ütközés nem releváns
 <ul>
-<li>tehát ha NPC autó üti el a gyalogost, akkor nem kell, hogy végetérjen a játék</li>
+<li>tehát ha NPC autó üti el a gyalogost, akkor nem kell, hogy véget érjen a játék</li>
 </ul>
 </li>
 <li>Kisebb sérüléseknél a játékot ne kelljen újraindítani, valami inputra lehessen resetelni akár
 <ul>
-<li>sérülés visszaálítása nullára, vagy autó pozíciójának módosítása, hogy az ütközés már ne álljon fönt</li>
+<li>sérülés visszaállítása nullára, vagy autó pozíciójának módosítása, hogy az ütközés már ne álljon fönt</li>
 </ul>
 </li>
 </ul>
 <h2><a class="header" href="#világ-populálása-mozgó-npc-objektumokkal" id="világ-populálása-mozgó-npc-objektumokkal">Világ populálása mozgó NPC objektumokkal</a></h2>
 <p>A modul felelőssége, hogy az előző sprintben felépített világot, amelyben már megjelennek a statikus objektumok és van egy működő, vezethető autó, további dinamikus objektumokkal kell kiegészíteni. Ezek a nem játszható karakterek (NPC, <em>non player character</em>), amelyekre azért van szükség, hogy a 3. sprintes modulok tesztelhetők legyenek. Például a vészfékező rendszer nem üti el a gyalogost, vagy az adaptív tempomat igazítja az autó sebességét az előtte haladó autóéhoz.</p>
-<p>A modul bemenete a világmodell, amely egyrészt elősegíti az implementálást azáltal, hogy a előre definiáll helyett az osztályhierarchiában az NPC objektumok számára, másrészt a statikus objektumok, egészen pontosan az út elemek definiálják a pályát amelyen az NPC autónak haladnia kell a KRESZ szabályai szerint: nem tér át az út másik oldalára, nem hajt gyorsan.</p>
-<!-- Alapvetően két megközelítés lehetséges az útvonalak definiálásához. Az egyik, hogy a pályaelemeket (amelyek nem a világban elfoglalt helyzetük alapján sorbarendezve kerülnek eltárolásra) sorba rendezzük, kijelölünk egy  -->
+<p>A modul bemenete a világmodell, amely egyrészt elősegíti az implementálást azáltal, hogy a előre definiált helyett az osztályhierarchiában az NPC objektumok számára, másrészt a statikus objektumok, egészen pontosan az út elemek definiálják a pályát amelyen az NPC autónak haladnia kell a KRESZ szabályai szerint: nem tér át az út másik oldalára, nem hajt gyorsan.</p>
+<!-- Alapvetően két megközelítés lehetséges az útvonalak definiálásához. Az egyik, hogy a pályaelemeket (amelyek nem a világban elfoglalt helyzetük alapján sorba rendezve kerülnek eltárolásra) sorba rendezzük, kijelölünk egy  -->
 <p>A legkézenfekvőbb megoldás, hogy a világban, a világ koordinátáira építve felveszünk vezérpontokat, amelyek kijelölnek egy utat. Ezeket célszerű nem a kódban, hanem valamilyen fájlban tárolni. Az NPC objektum pedig ezt az utat követni. Például a parkoló mellől indul az úton megy fölfele (csökken az y koordinátája) a kanyar előtt (x,y) világkoordinátákat elérve lelassul, (x,y)' koordináták elérése esetén elkezd kanyarodni, a sávból nem tér ki, majd (x,y)&quot; koordinátáig halad a fönti egyenesen. És így tovább.</p>
 <p><img src="images/npc_route.png" alt="" /></p>
 <p><img src="images/npc_route_pedestrian.png" alt="" /></p>
@@ -2145,14 +2146,14 @@ speed = 30 # px/s
 <li>Új (a másik) pálya esetén az NPC objektumok adaptálódnak az új környezethez</li>
 </ul>
 <h2><a class="header" href="#radar-szenzor" id="radar-szenzor">Radar szenzor</a></h2>
-<p>Az <em>radar sensor</em> modul felelőssége az adaptív tempomat és az automata vészfékező alapjául szolgáló radar szenzor szimulációjának implementálása. Mint minden szenzor, az radar is érzékeli a világ egy szeletét és eléri a látóterében található objektumokat.</p>
+<p>A <em>radar sensor</em> modul felelőssége az adaptív tempomat és az automata vészfékező alapjául szolgáló radar szenzor szimulációjának implementálása. Mint minden szenzor, az radar is érzékeli a világ egy szeletét és eléri a látóterében található objektumokat.</p>
 <p>A valóságos és szimulált szenzorok működését részletesebben a <a href="sensors.html"><em>Szenzorok</em></a> fejezet mutatja be.</p>
 <p>A modul bemenete tehát a világmodell, kimenetét olyan ütközhető világ objektumok gyűjteménye képezi, amelyek beleesnek a szenzor látóterébe. A világ objektumainak lekérdezésére már léteznie kell egy publikus metódusnak, mely 3 pontot vár bemenetként és visszaadja a bele eső objektumokat. Ezekből kell még leválogatni a relevánsakat.
 A szenzor látóterét 3 ponttal kel definiálni.</p>
 <p>A szenzor látómezejének 3 pontját folyamatosan frissíteni kell az autó pozíciójának függvényében. Vagyis az autó egyébként folyamatosan frissülő referenciapontjához képest kell definiálni.
 A megjelenítés is felhasználja ezeket a pontokat a háromszög kirajzolására a debuggoláshoz.</p>
 <p><img src="images/radar.png" alt="Radar szenzor elhelyezése" /></p>
-<p>A kihívás a komponenssel kapcsolatban, hogy nem elég egyszerűen csak visszadni a látótérben található releváns objektumokat, hanem el kell tudni dönteni, hogy a jelenlegi haladási irányunkat tartva veszélyesek-e. Pl. pontosan előttünk halad (a sávban), vagy oldalról érkezik és keresztezi az utunkat. A legközelebbi releváns objektum az alábbi ábrán az 1-es, a 2-es nem.</p>
+<p>A kihívás a komponenssel kapcsolatban, hogy nem elég egyszerűen csak visszaadni a látótérben található releváns objektumokat, hanem el kell tudni dönteni, hogy a jelenlegi haladási irányunkat tartva veszélyesek-e. Pl. pontosan előttünk halad (a sávban), vagy oldalról érkezik és keresztezi az utunkat. A legközelebbi releváns objektum az alábbi ábrán az 1-es, a 2-es nem.</p>
 <p><img src="images/radar_lanes_simple.png" alt="Azonos sávban haladó jármű" /></p>
 <p>Itt arról van szó, hogy a a szenzor egy iterációjában megkapjuk a látótérbe került ütközhető objektumokat. Egy fa pl. jellegénél fogva statikus, tehát túlzottan sok figyelmet nem igényel, de ugyanúgy továbbítani kell mint egy autót. Az NPC autó esetében az adott iterációban ismert az autó helyzete, majd ezt össze kell vetni az előző iterációban ismert helyzetével. A kettőből meghatározható egy irányvektor és el lehet dönteni, hogy merre halad (ha halad egyáltalán), előttünk halad, vagy mellettünk (pl. másik sávban), stb. Az ACC az azonos sávban előttünk haladó autó sebességét veszi fel, ezért az autó haladási iránya fontos szempont.</p>
 <!-- nyomon kell követni őket és azonosítani az útvonalukat, ebből pedig meghatározni azt, hogy keresztezik-e a vezérelt autóét. -->
