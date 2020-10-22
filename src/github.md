@@ -7,16 +7,15 @@ A félév során a GitHubot használjuk a kód tárolására, a feladatok menedz
 - [**interaktív oktatófelület**](https://lab.github.com/)
 - [GitHub Guides](https://guides.github.com/)
 
-
 ## Áttekintés
 
 Minden hallgató tagja lesz a [SzFMV2020-Osz](https://github.com/SzFMV2020-Osz/) szervezetnek (`Organization`), és egy-egy csapatnak (Team A\[1-4\], Team B\[1-4\]). Minden csapat külön issue board-dal rendelkezik (`Projects`), ezen kell vezetni a feladatok (`issue`) megoldását (részletében lásd [Munkafolyamat](workflow.md)).
 
-Issue-t nem csak feladatra lehet felvenni, akár kérdésre is (felénk vagy más csapatok felé is), probléma megvitatására is. Ez esetben célszerű megjelölni a ``type: question`` címkével. 2017 őszétől csapat (`team`) szintű fórummal (`Discussions`) is rendelkezik a GitHub. A szervezeten belül a csapatok hierarchikus struktúrában vannak. A gyökér az [Everyone](https://github.com/orgs/szfmv2020-osz/teams/everyone), az összes többi csapat ennek tagja (Group A, Group B csapatokon keresztül). Az Everyone falára írt üzeneteket mindenki megkapja. Ezen keresztül fogunk a félév során kurzus szintű közleményeket kiadni, de bárki használhatja kommunikációra. Ugyanilyen üzenőfallal rendelkezik az összes többi csapat is, amelyre szintén bárki írhat. Ha például a Team2-ből szeretné elérni valaki a Team3-at, akkor mindösszesen annyi a dolga, hogy ír a Team3 üzenőfalára. A [Instructors](https://github.com/orgs/SzFMV2020-Osz/teams/instructors) nevű team-en keresztül az oktatókat lehet elérni ugyanilyen módon.
+Issue-t nem csak feladatra lehet felvenni, akár kérdésre is (felénk vagy más csapatok felé is), probléma megvitatására is. Ez esetben célszerű megjelölni a `type: question` címkével. 2017 őszétől csapat (`team`) szintű fórummal (`Discussions`) is rendelkezik a GitHub. A szervezeten belül a csapatok hierarchikus struktúrában vannak. A gyökér az [Everyone](https://github.com/orgs/szfmv2020-osz/teams/everyone), az összes többi csapat ennek tagja (Group A, Group B csapatokon keresztül). Az Everyone falára írt üzeneteket mindenki megkapja. Ezen keresztül fogunk a félév során kurzus szintű közleményeket kiadni, de bárki használhatja kommunikációra. Ugyanilyen üzenőfallal rendelkezik az összes többi csapat is, amelyre szintén bárki írhat. Ha például a Team2-ből szeretné elérni valaki a Team3-at, akkor mindösszesen annyi a dolga, hogy ír a Team3 üzenőfalára. A [Instructors](https://github.com/orgs/SzFMV2020-Osz/teams/instructors) nevű team-en keresztül az oktatókat lehet elérni ugyanilyen módon.
 
 A comment szekciókban is élnek az @ jeles említések, ez a mi esetünkben `@ravaszla` és `@pintergreg`, ugyanígy működik csapatra is pl. `@szfmv2020-osz/team-a1`, illetve `@szfmv2020-osz/instructors ` a mi esetünkben. Csapat esetében a csapat valamennyi tagja kap értesítést az hivatkozásról.
 
-A GitHub valamennyi elemén használhatóak formázási lehetőségek [Markdown stílusban](https://guides.github.com/features/mastering-markdown/), kód kiemelésre is lehetőség van, amelyet több mint célszerű használni. Ehhez csak a nyelv nevét kell csak a nyitó  ``` jelek után írni:
+A GitHub valamennyi elemén használhatóak formázási lehetőségek [Markdown stílusban](https://guides.github.com/features/mastering-markdown/), kód kiemelésre is lehetőség van, amelyet több mint célszerű használni. Ehhez csak a nyelv nevét kell csak a nyitó ``` jelek után írni:
 
 <pre>
 ```python
@@ -70,7 +69,6 @@ Létrehozásra kerültek címkék (`Labels`) négy „dimenzióban” (vagy kate
 - moderate
 - low
 
-
 <!--
 ## Pull requestek kezelése:  review és ütközésfeloldás
 
@@ -106,20 +104,18 @@ Ha valaki parancssorból intézi, akkor a beállított editorral nyitja meg (vi,
 ![](http://www.tilcode.com/wp-content/uploads/2015/09/intellij_merge_conflict_tool.png)
 -->
 
-
 ## Branching modell
 
 Csoportos munka során fontos tisztázandó kérdés, hogy milyen stratégiával kezeljük a branch-eket. Az egyik legismertebb talán a GitFlow ([A successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model/)), amelyet mára több kritika is ért.
 
 A legelterjedtebbek tőbb tulajdonságait Scott Shipp [War of the Git Flows](https://dev.to/scottshipp/war-of-the-git-flows-3ec2) című cikke nyomán a következő táblázatban foglaltam össze:
 
-|                       | GitFlow                | GitHub Flow | OneFlow                | GitLab Flow | Trunk-Based Development    | Rebasing Flow |
-|-----------------------|------------------------|-------------|------------------------|-------------|----------------------------|---------------|
-| Uses feature branches | yes                    | yes         | yes                    | yes         | optionally, if short lived | no            |
-| Uses release branches | yes                    | no          | yes                    | yes         | yes                        | optional      |
-| Uses rebasing         | no                     | no          | optional               | optional    | optional                   | yes           |
-| Merges                | no fast forward merges | unclear     | up to you              | up to you   | optional                   | no            |
-
+|                       | GitFlow                | GitHub Flow | OneFlow   | GitLab Flow | Trunk-Based Development    | Rebasing Flow |
+| --------------------- | ---------------------- | ----------- | --------- | ----------- | -------------------------- | ------------- |
+| Uses feature branches | yes                    | yes         | yes       | yes         | optionally, if short lived | no            |
+| Uses release branches | yes                    | no          | yes       | yes         | yes                        | optional      |
+| Uses rebasing         | no                     | no          | optional  | optional    | optional                   | yes           |
+| Merges                | no fast forward merges | unclear     | up to you | up to you   | optional                   | no            |
 
 - [A successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model/)
 - [A succesful Git branching model considered harmful](https://barro.github.io/2016/02/a-succesful-git-branching-model-considered-harmful/)
@@ -130,8 +126,7 @@ A legelterjedtebbek tőbb tulajdonságait Scott Shipp [War of the Git Flows](htt
 - [a simple git branching model](https://gist.github.com/jbenet/ee6c9ac48068889b0912)
 - [Comparing Workflows](https://www.atlassian.com/git/tutorials/comparing-workflows)
 
-
- A korábbi félévekben a GitFlow szerű megoldást használtuk megbonyolítva azzal, hogy minden csapatnak saját fejlesztői branche-e volt. Ezt jelentősen leegyszerűsítendő a [GitHubFlow](https://guides.github.com/introduction/flow/)-ra váltunk.
+A korábbi félévekben a GitFlow szerű megoldást használtuk megbonyolítva azzal, hogy minden csapatnak saját fejlesztői branche-e volt. Ezt jelentősen leegyszerűsítendő a [GitHubFlow](https://guides.github.com/introduction/flow/)-ra váltunk.
 
 A `master` branch [védett](https://docs.github.com/en/github/administering-a-repository/about-protected-branches), nem lehet bele commitolni. Minden feladatohoz tartoznia kell egy issue-nak, és a megoldásához létre kell hozni egy (feature) branchet az aktuális masterről. A feladatot azon kell megoldani, majd PR-et nyitni a masterbe.
 
@@ -146,18 +141,18 @@ Ahhoz, hogy a masterbe kerülhessen a módosítás több követelménynek is tel
 
 <!-- A `master` branch védett, nem lehet bele commitolni. Nem egy, hanem több (4) fejlesztői branch-ünk van (`team1`, ..., `team4`), ezek szintén védettek. Minden feladathoz létre kell hozni egy *feature branch-et*, azon lehet dolgozni. Ha a feladat elkészült, akkor a csapat branchbe lehet *merge-eni*. Ami mivel védett [*pull request-et*](https://help.github.com/articles/about-pull-requests/) (továbbiakban PR) küldeni. A PR lehetőséget biztosít ellenőrzésekre és [review-zásra](https://help.github.com/articles/about-pull-request-reviews/). Csak a lefordítható, teszteknek megfelelő, ütközés (conflict) mentes PR kerülhet elfogadásra! -->
 
-**Fontos**: Ha egy Pull Request *nem* fogadható el, akkor sem kell a PR-t lezárni, lehet tovább dolgozni a forrás branchen, az új commit-okkal automatikusan frissül a PR is addig míg a teszteknek meg nem felel és elfogadásra nem került. Sőt, kifejezetten lehet [**Draft* Pull Request**](https://github.blog/2019-02-14-introducing-draft-pull-requests/) is létrehozni, jelezve, hogy a munka már tartalmaz véleményezhető elemeket, de még nincs kész.
+**Fontos**: Ha egy Pull Request _nem_ fogadható el, akkor sem kell a PR-t lezárni, lehet tovább dolgozni a forrás branchen, az új commit-okkal automatikusan frissül a PR is addig míg a teszteknek meg nem felel és elfogadásra nem került. Sőt, kifejezetten lehet [**Draft\* Pull Request**](https://github.blog/2019-02-14-introducing-draft-pull-requests/) is létrehozni, jelezve, hogy a munka már tartalmaz véleményezhető elemeket, de még nincs kész.
 
-Ha a PR el lett fogadva, a feature branch-re nincs már tovább szükség. Le lehet törölni és be kell zárni azt az *issue-t* is, amihez a branch kapcsolódott. Tehát ideálisan minden (nem user-story és kérdés) issue-hoz készül(t) egy branch.
+Ha a PR el lett fogadva<!--, a feature branch-re nincs már tovább szükség. Le lehet törölni és--> be kell zárni azt az _issue-t_ is, amihez a branch kapcsolódott. Tehát ideálisan minden (nem user-story és kérdés) issue-hoz készül(t) egy branch.
 
 ### Forking
 
- A tárgyhoz nem lesz szükség forkok használatára, de a GitHub workflow szerves részét képezi (különösen nyílt forrású projekteknél) így érdemes lehet ismerni.
+A tárgyhoz nem lesz szükség forkok használatára, de a GitHub workflow szerves részét képezi (különösen nyílt forrású projekteknél) így érdemes lehet ismerni.
 
-* [The Definitive Guide to Forks and Branches in Git](https://www.pluralsight.com/blog/software-development/the-definitive-guide-to-forks-and-branches-in-git)
-* [Git branching and forking in the enterprise: why fork?](https://www.atlassian.com/blog/git/git-branching-and-forking-in-the-enterprise-why-fork)
-* [Using the Fork-and-Branch Git Workflow](https://blog.scottlowe.org/2015/01/27/using-fork-branch-git-workflow/)
-* [Stackoverflow / Forking vs. Branching in GitHub](https://stackoverflow.com/a/34343080/4737417)
+- [The Definitive Guide to Forks and Branches in Git](https://www.pluralsight.com/blog/software-development/the-definitive-guide-to-forks-and-branches-in-git)
+- [Git branching and forking in the enterprise: why fork?](https://www.atlassian.com/blog/git/git-branching-and-forking-in-the-enterprise-why-fork)
+- [Using the Fork-and-Branch Git Workflow](https://blog.scottlowe.org/2015/01/27/using-fork-branch-git-workflow/)
+- [Stackoverflow / Forking vs. Branching in GitHub](https://stackoverflow.com/a/34343080/4737417)
 
 ## Review
 
@@ -175,13 +170,15 @@ Elfogadás után így néz ki:
 
 ![](images/merged.png)
 
+<!--
 Ezen a ponton a feature branch nem szükséges továbbá, törölhető. Persze egy ideig még visszaállítható:
 
 ![](images/restore_branch.png)
+-->
 
 ## Társszerzők
 
-A munkafolyamat alapvetően egyéni munkára van kitalálva, de legkevésbé sem tilos a [pair programming](https://en.wikipedia.org/wiki/Pair_programming) sem. Volt, hogy Skype-os képernyő-megosztásos módszerrel dolgoztak _távolról_ párban... Ilyenkor mindig felvetődik a kérdés, hogy csak az egyik kolléga nevében történhet a commit de mi van a másikkal... A GitHub [bevezetett egy új funkciót](https://github.com/blog/2496-commit-together-with-co-authors) ennek orvoslására. Részletek [elérhetőek itt](https://help.github.com/articles/creating-a-commit-with-multiple-authors/).
+A munkafolyamat alapvetően egyéni munkára van kitalálva, de legkevésbé sem tilos a [pair programming](https://en.wikipedia.org/wiki/Pair_programming) sem. Volt, hogy Skype-os képernyő-megosztásos módszerrel dolgoztak _távolról_ párban... Ilyenkor mindig felvetődik a kérdés, hogy csak az egyik kolléga nevében történhet a commit de mi van a másikkal... A GitHub-nak [van egy funkciója](https://github.com/blog/2496-commit-together-with-co-authors) ennek orvoslására. Részletek [elérhetőek itt](https://help.github.com/articles/creating-a-commit-with-multiple-authors/).
 
 Ebben az esetben a commit üzenet törzse után 2 üres sorral elválasztva kell a társszerzőket feltüntetni. Pl.:
 
