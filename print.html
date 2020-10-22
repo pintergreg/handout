@@ -2311,6 +2311,34 @@ Nem a radar, hanem majd a ráépülő funkció fogja ezekből meghatázorni, hog
 </li>
 </ul>
 <p><img src="images/radar_aeb.png" alt="" /></p>
+<h2><a class="header" href="#tolatóradar--tolatókamera" id="tolatóradar--tolatókamera">Tolatóradar / Tolatókamera</a></h2>
+<p>A modul felelőssége a hátsó két ultrahang szenzorra épülő tolatóradar (és kamera) implementálása, amely visszajelzést ad a vezetőnek, arról, hogy tolatás közben veszélyesen közelre került-e valamilyen objektumhoz.
+A távolság számoláshoz itt is lehet használni az objektum referenciákat, az objektum koordinátái közvetlenül elérhetőek, de ne az objektum közepéhez, hanem értelem szerűen annak széléhez képest legyen kiszámolva a távolság.</p>
+<p><img src="images/reverse_radar_system_horizontal.png" alt="" /></p>
+<p>Hozzá tartozó GUI, Valami ehhez hasonlóként lehet elképzelni: <a href="https://www.youtube.com/watch?v=qZkCoDChS4A">YouTube videó</a>. A bal- és jobboldali szenzor legközelebbi objektumának értéke külön-külön kerüljön megjelenítésre.</p>
+<p><img src="images/gui_plan_dashboard_with_rr.png" alt="" /></p>
+<p>A tolató radar mellé legyen a tolatókaerák távolságkijelzése is megvaólsítva a pályamegjelenítőjén, három lépcsóban 0.5m piros, utána 1m sárga majd az autó hosszáig zöld. Ez hátramenetben kerüljön megjelenítésre, nem debug-funkcióként.</p>
+<p><img src="images/reversing_camera.png" alt="" /></p>
+<h3><a class="header" href="#definition-of-done-11" id="definition-of-done-11">Definition of Done</a></h3>
+<ul>
+<li>a tolatóradar csak hátramenetben aktív</li>
+<li>figyelmeztetés megjelenítése a műszerfalon 3 fokozatban
+<ul>
+<li>nincs akadály (zöld)</li>
+<li>közel van akadály: 0.8m-en belül (sárga)</li>
+<li>nagyon közel van akadály 0.4m-en belül (piros)</li>
+</ul>
+</li>
+<li>távolság megjelenítése a műszerfalon</li>
+<li>távolságok kirajzolása a képernyőre
+<ul>
+<li>az autó pozíciójához képest folyamatosan frissül</li>
+<li>hátramenetben mindig látszik (nem debug funkció)</li>
+</ul>
+</li>
+</ul>
+<p>Korábbi implementáció (ekkor csak a műszerfalas visszajelzés volt feladat):</p>
+<p><img src="images/reverse_radar_2020spring.png" alt="" /></p>
 <h1><a class="header" href="#munkakörnyezet" id="munkakörnyezet">Munkakörnyezet</a></h1>
 <h1><a class="header" href="#git" id="git">Git</a></h1>
 <!-- toc -->
