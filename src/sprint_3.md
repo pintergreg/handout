@@ -4,8 +4,8 @@
 
 ## Parkoló automatika
 
-* Input: Ultrahang szenzorok
-* Output: parkolási manőver végrehajtása
+- Input: Ultrahang szenzorok
+- Output: parkolási manőver végrehajtása
 
 ### DoD
 
@@ -20,27 +20,26 @@
 
 ### Megjegyzések
 
-* Még a sofőr vezet a parkolóig, megáll az autósor mellett aktiváltja a parkolóhely keresést (kell valami input a billentyűzetről) ekkor továbbra is "emberi" irányítással el kell haladni a parkolóhelyek mellett és ki kell számolni a szabad hely méretét. Amikor megvan az alkalmas hely, akkor visszajelzést kell adni és a hely dimenziót és az autóhoz viszonyított helyzetét le kell tudni írni.
-* Az autónak elérhető a referenciapontja (továbbá ismert a szélessége és a hosszúsága), a autóhoz (referenciaponthoz) viszonyítva legyen leírva a parkolóhely.
-* Ami a parkolóhely hosszát illeti, nem a felfestett parkolóhely hosszát kell lemérni (azt nem is lehet az ultrahang szenzorral), hanem a szabad parkolóhelyet közrefogó két parkoló autó által szabadon hagyott helyet (amely akár két felfestésnyi is lehet).
-* A szabad hely szélessége ha egyéb akadályt - pózna (`bollard.png`) vagy fa - nem tesztek külön emiatt, támpontként a pályára, akkor a a szenzor látótávolsága, azaz 3 méter.
-* a szabad helyhez egy referenciapontot kell (érdemes) társítani, pl. a helyet leíró téglalap bal felső pontja (ábrán így van) és az autó középpontjával és ezzel a ponttal (ebből számolható a távolság) valamint a hely dimenzióival kielégítően jellemezve van a parkoló hely.
-* Ez tartalmazza az autó referenciapontját (középpont) és a pakolóhelyet leíró négyzet referenciapontját ezekből számítható a távolságuk.
-* (Ha más nem próbálgatásos módszerrel) ki kell tapasztalni, hogy a szükséges "párhuzamos parkolás" manőver hogyan vihető végbe a vezérelt autó irányítószerveivel, majd ezt le kell automatizálni: pl. le kell írni, kormány jobbra teker 100-ra, gáz 25% 1,5s-ig, majd kormány balra 75, gáz 20% 1.25s-ig.
-* A programozott vezérlést a buszon keresztül kapott szabad helyet leíró adatok függvényében kell elindítani
-* ha szükséges az autóval tolatni is kell a manőver megkezdéséhez, mivel a detektálás során túlmehetünk az ideális pozíción, ahonnan a leprogramozott manőver ütközés nélkül beparkol.
+- Még a sofőr vezet a parkolóig, megáll az autósor mellett aktiváltja a parkolóhely keresést (kell valami input a billentyűzetről) ekkor továbbra is "emberi" irányítással el kell haladni a parkolóhelyek mellett és ki kell számolni a szabad hely méretét. Amikor megvan az alkalmas hely, akkor visszajelzést kell adni és a hely dimenziót és az autóhoz viszonyított helyzetét le kell tudni írni.
+- Az autónak elérhető a referenciapontja (továbbá ismert a szélessége és a hosszúsága), a autóhoz (referenciaponthoz) viszonyítva legyen leírva a parkolóhely.
+- Ami a parkolóhely hosszát illeti, nem a felfestett parkolóhely hosszát kell lemérni (azt nem is lehet az ultrahang szenzorral), hanem a szabad parkolóhelyet közrefogó két parkoló autó által szabadon hagyott helyet (amely akár két felfestésnyi is lehet).
+- A szabad hely szélessége ha egyéb akadályt - pózna (`bollard.png`) vagy fa - nem tesztek külön emiatt, támpontként a pályára, akkor a a szenzor látótávolsága, azaz 3 méter.
+- a szabad helyhez egy referenciapontot kell (érdemes) társítani, pl. a helyet leíró téglalap bal felső pontja (ábrán így van) és az autó középpontjával és ezzel a ponttal (ebből számolható a távolság) valamint a hely dimenzióival kielégítően jellemezve van a parkoló hely.
+- Ez tartalmazza az autó referenciapontját (középpont) és a pakolóhelyet leíró négyzet referenciapontját ezekből számítható a távolságuk.
+- (Ha más nem próbálgatásos módszerrel) ki kell tapasztalni, hogy a szükséges "párhuzamos parkolás" manőver hogyan vihető végbe a vezérelt autó irányítószerveivel, majd ezt le kell automatizálni: pl. le kell írni, kormány jobbra teker 100-ra, gáz 25% 1,5s-ig, majd kormány balra 75, gáz 20% 1.25s-ig.
+- A programozott vezérlést a buszon keresztül kapott szabad helyet leíró adatok függvényében kell elindítani
+- ha szükséges az autóval tolatni is kell a manőver megkezdéséhez, mivel a detektálás során túlmehetünk az ideális pozíción, ahonnan a leprogramozott manőver ütközés nélkül beparkol.
 
 ![](images/parking_horizontal.png)
 ![](images/find_parking_place_horizontal.png)
 ![](images/parking_place_found_horizontal.png)
 
-
 ## Sávtartó automatika és táblafelismerés
 
-* Input: Kamera szenzor
-* Output:
-    - Sávot beavatkozás nélkül követi a vezérelt autó
-    - Az utolsó látott tábla megjelenik a HMI-n
+- Input: Kamera szenzor
+- Output:
+  - Sávot beavatkozás nélkül követi a vezérelt autó
+  - Az utolsó látott tábla megjelenik a HMI-n
 
 ### Definition of Done
 
@@ -48,13 +47,13 @@
 - Ha el kell engednie a kontrollt (az automatika számára kezelhetetlen forgalmi szituáció következik, pl. éles kanyar, kereszteződés), vizuális figyelmeztetést ad
 - Ha újra elérhető a funkció (pl. elhagytuk a kanyart) vizuális indikáció (a műszerfalon)
 - Sávtartó automatika be- és kikapcsolható
-    - emberi beavatkozásra kikapcsol
+  - emberi beavatkozásra kikapcsol
 - az utolsó látott, releváns tábla megjelenik a műszerfalon
 - az utolsó sebességkorlátozás kiírásra kerül a buszra
 
 ### Megjegyzések
 
-* a tábla megjelenítésére kész interfész van a műszerfaltól, csak meg kell hívni, ha a detektálás megtörtént
+- a tábla megjelenítésére kész interfész van a műszerfaltól, csak meg kell hívni, ha a detektálás megtörtént
 
 ![](images/lka.png)
 
@@ -62,12 +61,11 @@ Sávon belüli mozgás: a LKA működése egy enyhe sávon belüli cikázást er
 
 ![](images/lka_wave.png)
 
-
 ## Adaptív tempomat
 
-* Input:
-    - radar szenzor
-    - NPC autók
+- Input:
+  - radar szenzor
+  - NPC autók
 
 Adaptív tempomat funkció megvalósítása - a kiválasztott célobjektum (autó előtt haladó NPC) sebességéhez igazítja a gyorsabb saját sebességet, vagy tartja a sofőr által kiválasztott sebességhatárt, ha nincs cél.
 
@@ -76,29 +74,28 @@ Adaptív tempomat funkció megvalósítása - a kiválasztott célobjektum (aut�
 - Bekapcsolható, reagál az állapotváltás, alapértelmezetten az aktuális sebesség, de min célsebesség 30 km/h
 - ha nincs saját sávban autó, a játékos autó tartja a kiválasztott célsebességet
 - ha saját sávban található autó:
-    - a saját jármű felveszi a sebességét, ha lassabb
-    - tartja a kiválasztott sebességet, ha gyorsabb
+  - a saját jármű felveszi a sebességét, ha lassabb
+  - tartja a kiválasztott sebességet, ha gyorsabb
 - fékezésre kikapcsol
 - AEB beavatkozásra kikapcsol
 - Ha speed limitet talál a buszon, azt alkalmazza új célsebességként, amíg a sofőr felül nem írja
 
 ### Megjegyzések
 
-* Szabad feltételezni, hogy az NPC kezelés nem, vagy nem időben készül el, lesz elérhető (kerül be a masterba)
-* Ezért célszerű a felhasználó/vezető által megadott sebességhez igazodással kezdeni, ennek akkor is működnie kell, ha nincs NPC a pályán
-* A modul olyan triggerekkel vezérelheti az autót mint amilyenek a billentyűlenyomás kezelőtől jönnek (gáz, fék)
-    * de figyelni kell, hogy a tényleges billentyűtől érkező inputok felülírják a funkciót
+- Szabad feltételezni, hogy az NPC kezelés nem, vagy nem időben készül el, lesz elérhető (kerül be a masterba)
+- Ezért célszerű a felhasználó/vezető által megadott sebességhez igazodással kezdeni, ennek akkor is működnie kell, ha nincs NPC a pályán
+- A modul olyan triggerekkel vezérelheti az autót mint amilyenek a billentyűlenyomás kezelőtől jönnek (gáz, fék)
+  - de figyelni kell, hogy a tényleges billentyűtől érkező inputok felülírják a funkciót
 
 ![](images/acc.png)
 
-* Oda kell figyelni, hogy csak a sávban előttünk haladó autót vegye figyelembe, a szembejövőt ne
-
+- Oda kell figyelni, hogy csak a sávban előttünk haladó autót vegye figyelembe, a szembejövőt ne
 
 ## Vészfékező
 
 Automata vészfékező rendszer megvalósítása, maximum 9 m/s^2 lassulással
 
-* Input: radar szenzor
+- Input: radar szenzor
 
 ### Definition of Done
 
@@ -111,11 +108,41 @@ Automata vészfékező rendszer megvalósítása, maximum 9 m/s^2 lassulással
 
 ### Megjegyzések
 
-* A radar vissza kell adja az autó előtt levő legközelebbi releváns objektum adatait (táv, sebesség), ezekkel lehet számolni
-* A távolságból és az autó sebességéből meghatározható, hogy milyen lassulást kell adni az autónak, hogy még megálljon, de ne lépje túl a 9 m/s^2-et
-    * a gyorsítási/fékezési input nem gyorsulásban van, hanem pedállás mértékben. Ebből elvileg egyszerűen nem nyerhető ki a gyorsulás, viszont a gyorsulás az egy másodperc alatti sebesség változás, ami viszont kiszámolható t(n) - t(n-1) módon
-* A modul olyan triggerekkel vezérelheti az autót mint amilyenek a billentyűlenyomás kezelőtől jönnek (gáz, fék)
-    * de figyelni kell, hogy a tényleges billentyűtől érkező inputok felülírják a funkciót
+- A radar vissza kell adja az autó előtt levő legközelebbi releváns objektum adatait (táv, sebesség), ezekkel lehet számolni
+- A távolságból és az autó sebességéből meghatározható, hogy milyen lassulást kell adni az autónak, hogy még megálljon, de ne lépje túl a 9 m/s^2-et
+  - a gyorsítási/fékezési input nem gyorsulásban van, hanem pedállás mértékben. Ebből elvileg egyszerűen nem nyerhető ki a gyorsulás, viszont a gyorsulás az egy másodperc alatti sebesség változás, ami viszont kiszámolható t(n) - t(n-1) módon
+- A modul olyan triggerekkel vezérelheti az autót mint amilyenek a billentyűlenyomás kezelőtől jönnek (gáz, fék)
+  - de figyelni kell, hogy a tényleges billentyűtől érkező inputok felülírják a funkciót
 
 ![](images/radar_aeb.png)
 
+## Tolatóradar / Tolatókamera
+
+A modul felelőssége a hátsó két ultrahang szenzorra épülő tolatóradar (és kamera) implementálása, amely visszajelzést ad a vezetőnek, arról, hogy tolatás közben veszélyesen közelre került-e valamilyen objektumhoz.
+A távolság számoláshoz itt is lehet használni az objektum referenciákat, az objektum koordinátái közvetlenül elérhetőek, de ne az objektum közepéhez, hanem értelem szerűen annak széléhez képest legyen kiszámolva a távolság.
+
+![](images/reverse_radar_system_horizontal.png)
+
+Hozzá tartozó GUI, Valami ehhez hasonlóként lehet elképzelni: [YouTube videó](https://www.youtube.com/watch?v=qZkCoDChS4A). A bal- és jobboldali szenzor legközelebbi objektumának értéke külön-külön kerüljön megjelenítésre.
+
+![](images/gui_plan_dashboard_with_rr.png)
+
+A tolató radar mellé legyen a tolatókaerák távolságkijelzése is megvaólsítva a pályamegjelenítőjén, három lépcsóban 0.5m piros, utána 1m sárga majd az autó hosszáig zöld. Ez hátramenetben kerüljön megjelenítésre, nem debug-funkcióként.
+
+![](images/reversing_camera.png)
+
+### Definition of Done
+
+- a tolatóradar csak hátramenetben aktív
+- figyelmeztetés megjelenítése a műszerfalon 3 fokozatban
+  - nincs akadály (zöld)
+  - közel van akadály: 0.8m-en belül (sárga)
+  - nagyon közel van akadály 0.4m-en belül (piros)
+- távolság megjelenítése a műszerfalon
+- távolságok kirajzolása a képernyőre
+  - az autó pozíciójához képest folyamatosan frissül
+  - hátramenetben mindig látszik (nem debug funkció)
+
+Korábbi implementáció (ekkor csak a műszerfalas visszajelzés volt feladat):
+
+![](images/reverse_radar_2020spring.png)
