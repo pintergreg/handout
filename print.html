@@ -28,7 +28,9 @@
         <link rel="stylesheet" href="css/variables.css">
         <link rel="stylesheet" href="css/general.css">
         <link rel="stylesheet" href="css/chrome.css">
+        
         <link rel="stylesheet" href="css/print.css" media="print">
+        
 
         <!-- Fonts -->
         <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
@@ -133,9 +135,11 @@
                     <h1 class="menu-title">Jegyzet</h1>
 
                     <div class="right-buttons">
+                        
                         <a href="print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
+                        
                         
                     </div>
                 </div>
@@ -185,7 +189,7 @@
 <tr><td align="right">7.</td><td align="center">10. 22.</td><td align="center"><a href="lectures/review.html">Review</a></td><td align="center">Random code review egy tetszőleges elfogadott pull requestből</td></tr>
 <tr><td align="right">8.</td><td align="center">10. 29.</td><td align="center"><a href="lectures/ci.html">Continous Integration</a></td><td align="center">Set up a CI script running all implemented unit tests</td></tr>
 <tr><td align="right">9.</td><td align="center"><strong>11. 05.</strong></td><td align="center"><strong>második demo</strong>, retrospektív</td><td align="center"><a href="sprint_3.html">harmadik feladat kiadás</a>, Sprint planning, Task Definition Workshop, Team commitment, Scheduling</td></tr>
-<tr><td align="right">10.</td><td align="center">11. 12.</td><td align="center">Software Architecture</td><td align="center"></td></tr>
+<tr><td align="right">10.</td><td align="center">11. 12.</td><td align="center"><a href="lectures/software_architecture.html">Software Architecture</a></td><td align="center"></td></tr>
 <tr><td align="right">11.</td><td align="center">11. 19.</td><td align="center">Konzultáció</td><td align="center"></td></tr>
 <tr><td align="right">12.</td><td align="center">11. 26.</td><td align="center">Összefoglalás, konzultáció</td><td align="center"></td></tr>
 <tr><td align="right">13.</td><td align="center"><strong>12. 03.</strong></td><td align="center"><strong>harmadik demo</strong>, retrospektív, tárgy feedback</td><td align="center">Pair programming, Coding Dojo</td></tr>
@@ -2377,7 +2381,7 @@ Nem a radar, hanem majd a ráépülő funkció fogja ezekből meghatázorni, hog
 <p>Minden hallgató tagja lesz a <a href="https://github.com/SzFMV2020-Osz/">SzFMV2020-Osz</a> szervezetnek (<code>Organization</code>), és egy-egy csapatnak (Team A[1-4], Team B[1-4]). Minden csapat külön issue board-dal rendelkezik (<code>Projects</code>), ezen kell vezetni a feladatok (<code>issue</code>) megoldását (részletében lásd <a href="workflow.html">Munkafolyamat</a>).</p>
 <p>Issue-t nem csak feladatra lehet felvenni, akár kérdésre is (felénk vagy más csapatok felé is), probléma megvitatására is. Ez esetben célszerű megjelölni a <code>type: question</code> címkével. 2017 őszétől csapat (<code>team</code>) szintű fórummal (<code>Discussions</code>) is rendelkezik a GitHub. A szervezeten belül a csapatok hierarchikus struktúrában vannak. A gyökér az <a href="https://github.com/orgs/szfmv2020-osz/teams/everyone">Everyone</a>, az összes többi csapat ennek tagja (Group A, Group B csapatokon keresztül). Az Everyone falára írt üzeneteket mindenki megkapja. Ezen keresztül fogunk a félév során kurzus szintű közleményeket kiadni, de bárki használhatja kommunikációra. Ugyanilyen üzenőfallal rendelkezik az összes többi csapat is, amelyre szintén bárki írhat. Ha például a Team2-ből szeretné elérni valaki a Team3-at, akkor mindösszesen annyi a dolga, hogy ír a Team3 üzenőfalára. A <a href="https://github.com/orgs/SzFMV2020-Osz/teams/instructors">Instructors</a> nevű team-en keresztül az oktatókat lehet elérni ugyanilyen módon.</p>
 <p>A comment szekciókban is élnek az @ jeles említések, ez a mi esetünkben <code>@ravaszla</code> és <code>@pintergreg</code>, ugyanígy működik csapatra is pl. <code>@szfmv2020-osz/team-a1</code>, illetve <code>@szfmv2020-osz/instructors </code> a mi esetünkben. Csapat esetében a csapat valamennyi tagja kap értesítést az hivatkozásról.</p>
-<p>A GitHub valamennyi elemén használhatóak formázási lehetőségek <a href="https://guides.github.com/features/mastering-markdown/">Markdown stílusban</a>, kód kiemelésre is lehetőség van, amelyet több mint célszerű használni. Ehhez csak a nyelv nevét kell csak a nyitó  ``` jelek után írni:</p>
+<p>A GitHub valamennyi elemén használhatóak formázási lehetőségek <a href="https://guides.github.com/features/mastering-markdown/">Markdown stílusban</a>, kód kiemelésre is lehetőség van, amelyet több mint célszerű használni. Ehhez csak a nyelv nevét kell csak a nyitó ``` jelek után írni:</p>
 <pre>
 ```python
 def get_random_number():
@@ -2487,8 +2491,8 @@ Ha valaki parancssorból intézi, akkor a beállított editorral nyitja meg (vi,
 </ul>
 <!-- ![](images/branching.png) -->
 <!-- A `master` branch védett, nem lehet bele commitolni. Nem egy, hanem több (4) fejlesztői branch-ünk van (`team1`, ..., `team4`), ezek szintén védettek. Minden feladathoz létre kell hozni egy *feature branch-et*, azon lehet dolgozni. Ha a feladat elkészült, akkor a csapat branchbe lehet *merge-eni*. Ami mivel védett [*pull request-et*](https://help.github.com/articles/about-pull-requests/) (továbbiakban PR) küldeni. A PR lehetőséget biztosít ellenőrzésekre és [review-zásra](https://help.github.com/articles/about-pull-request-reviews/). Csak a lefordítható, teszteknek megfelelő, ütközés (conflict) mentes PR kerülhet elfogadásra! -->
-<p><strong>Fontos</strong>: Ha egy Pull Request <em>nem</em> fogadható el, akkor sem kell a PR-t lezárni, lehet tovább dolgozni a forrás branchen, az új commit-okkal automatikusan frissül a PR is addig míg a teszteknek meg nem felel és elfogadásra nem került. Sőt, kifejezetten lehet <a href="https://github.blog/2019-02-14-introducing-draft-pull-requests/"><em><em>Draft</em> Pull Request</em>*</a> is létrehozni, jelezve, hogy a munka már tartalmaz véleményezhető elemeket, de még nincs kész.</p>
-<p>Ha a PR el lett fogadva, a feature branch-re nincs már tovább szükség. Le lehet törölni és be kell zárni azt az <em>issue-t</em> is, amihez a branch kapcsolódott. Tehát ideálisan minden (nem user-story és kérdés) issue-hoz készül(t) egy branch.</p>
+<p><strong>Fontos</strong>: Ha egy Pull Request <em>nem</em> fogadható el, akkor sem kell a PR-t lezárni, lehet tovább dolgozni a forrás branchen, az új commit-okkal automatikusan frissül a PR is addig míg a teszteknek meg nem felel és elfogadásra nem került. Sőt, kifejezetten lehet <a href="https://github.blog/2019-02-14-introducing-draft-pull-requests/"><strong>Draft* Pull Request</strong></a> is létrehozni, jelezve, hogy a munka már tartalmaz véleményezhető elemeket, de még nincs kész.</p>
+<p>Ha a PR el lett fogadva<!--, a feature branch-re nincs már tovább szükség. Le lehet törölni és--> be kell zárni azt az <em>issue-t</em> is, amihez a branch kapcsolódott. Tehát ideálisan minden (nem user-story és kérdés) issue-hoz készül(t) egy branch.</p>
 <h3><a class="header" href="#forking" id="forking">Forking</a></h3>
 <p>A tárgyhoz nem lesz szükség forkok használatára, de a GitHub workflow szerves részét képezi (különösen nyílt forrású projekteknél) így érdemes lehet ismerni.</p>
 <ul>
@@ -2505,10 +2509,13 @@ Ha valaki parancssorból intézi, akkor a beállított editorral nyitja meg (vi,
 <p><img src="images/mergable.png" alt="" /></p>
 <p>Elfogadás után így néz ki:</p>
 <p><img src="images/merged.png" alt="" /></p>
-<p>Ezen a ponton a feature branch nem szükséges továbbá, törölhető. Persze egy ideig még visszaállítható:</p>
-<p><img src="images/restore_branch.png" alt="" /></p>
+<!--
+Ezen a ponton a feature branch nem szükséges továbbá, törölhető. Persze egy ideig még visszaállítható:
+
+![](images/restore_branch.png)
+-->
 <h2><a class="header" href="#társszerzők" id="társszerzők">Társszerzők</a></h2>
-<p>A munkafolyamat alapvetően egyéni munkára van kitalálva, de legkevésbé sem tilos a <a href="https://en.wikipedia.org/wiki/Pair_programming">pair programming</a> sem. Volt, hogy Skype-os képernyő-megosztásos módszerrel dolgoztak <em>távolról</em> párban... Ilyenkor mindig felvetődik a kérdés, hogy csak az egyik kolléga nevében történhet a commit de mi van a másikkal... A GitHub <a href="https://github.com/blog/2496-commit-together-with-co-authors">bevezetett egy új funkciót</a> ennek orvoslására. Részletek <a href="https://help.github.com/articles/creating-a-commit-with-multiple-authors/">elérhetőek itt</a>.</p>
+<p>A munkafolyamat alapvetően egyéni munkára van kitalálva, de legkevésbé sem tilos a <a href="https://en.wikipedia.org/wiki/Pair_programming">pair programming</a> sem. Volt, hogy Skype-os képernyő-megosztásos módszerrel dolgoztak <em>távolról</em> párban... Ilyenkor mindig felvetődik a kérdés, hogy csak az egyik kolléga nevében történhet a commit de mi van a másikkal... A GitHub-nak <a href="https://github.com/blog/2496-commit-together-with-co-authors">van egy funkciója</a> ennek orvoslására. Részletek <a href="https://help.github.com/articles/creating-a-commit-with-multiple-authors/">elérhetőek itt</a>.</p>
 <p>Ebben az esetben a commit üzenet törzse után 2 üres sorral elválasztva kell a társszerzőket feltüntetni. Pl.:</p>
 <pre><code>Commit message header
 
