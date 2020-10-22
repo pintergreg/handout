@@ -13,7 +13,7 @@ Az órák csütörtökönként a BA.F.07-ben vannak ([online, MS Teams-en](https
 | 7.|10.&nbsp;22.| [Review](lectures/review.md) |Random code review egy tetszőleges elfogadott pull requestből
 | 8.|10.&nbsp;29.| [Continous Integration](lectures/ci.md) | Set up a CI script running all implemented unit tests
 | 9.|**11.&nbsp;05.**| **második demo**, retrospektív | [harmadik feladat kiadás](sprint_3.md), Sprint planning, Task Definition Workshop, Team commitment, Scheduling
-|10.|11.&nbsp;12.| Software Architecture
+|10.|11.&nbsp;12.| [Software Architecture](lectures/software_architecture.md)
 |11.|11.&nbsp;19.| Konzultáció
 |12.|11.&nbsp;26.| Összefoglalás, konzultáció |
 |13.|**12.&nbsp;03.**|**harmadik demo**, retrospektív, tárgy feedback | Pair programming, Coding Dojo
