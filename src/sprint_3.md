@@ -65,33 +65,35 @@ Sávon belüli mozgás: a LKA működése egy enyhe sávon belüli cikázást er
 
 ## Adaptív tempomat
 
-- Input:
-  - radar szenzor
-  - NPC autók
+A modul felelőssége a radar szenzorra épülő [_adaptív tempomat_](functions.html#adaptív-tempomat-adaptive-cruise-control---acc) vezetéstámogató funkció elkészítése. Ennek a funkciónak három felhasználói esetet kell lefedie.
 
-Adaptív tempomat funkció megvalósítása - a kiválasztott célobjektum (autó előtt haladó NPC) sebességéhez igazítja a gyorsabb saját sebességet, vagy tartja a sofőr által kiválasztott sebességhatárt, ha nincs cél.
+1. Felhasználó által beállított sebesség tartása
+2. A táblafelismerő által közölt sebességkorlátozás betarzása
+3. Az előttünk haladó (NPC) autó sebességének felvétele és egy (időben definiálist) beállított követési távolság tartása
+   - Valójában ettől lesz adaptív
 
-### Definition of Done
+Az egyes ponthoz szükséges kezelőszervek már elkészültek az első sprintben és a funkcióhoz szükséges bemeneti értékek már a buszon keresztül elérhetőek. A modulnak szabáályoznia kell a hajtásláncot, hogy ne léphesse túl a beállított sebességet. Ehhez olyan inputot kel biztosítania mintha az a billantyűzetről érkezne, de a tényleges vezeői input felülírja őket.
 
-- Bekapcsolható, reagál az állapotváltás, alapértelmezetten az aktuális sebesség, de min célsebesség 30 km/h
-- ha nincs saját sávban autó, a játékos autó tartja a kiválasztott célsebességet
-- ha saját sávban található autó:
-  - a saját jármű felveszi a sebességét, ha lassabb
-  - tartja a kiválasztott sebességet, ha gyorsabb
-- fékezésre kikapcsol
-- AEB beavatkozásra kikapcsol
-- Ha speed limitet talál a buszon, azt alkalmazza új célsebességként, amíg a sofőr felül nem írja
+A kettes pont egy harmadik sprintes (tehát aktuálisan készülő funkciótól függ), azonban könynen visszavezethető az első pontra. A közúti szabályozást magasabb prioritásúnak kell minősíteni. Tehát a felhasználó pl. beállít egy 70 km/h-ás célsebességet, majd érkezik egy kérés a táblafelismerőtől, hogy 50km/h a megengedett, akkor azt kell figyelembe venni.
 
-### Megjegyzések
+A hármas pont egy második sprintes modultól, az NPC autók meglététől függ. Az előttünk haladó sebességéhez való igazodás a legmagasabb prioritású, hiszen hiába szeretne a vezető 70-el haladni, mikor a tábla szerint 50-nel lehet, de ha az előttünk haladó mindössze 40-el halad, akkor ahhoz kell igazodni, különben nekiütközünk.
+Oda kell figyelni, hogy csak a sávban előttünk haladó autót vegye figyelembe, a szembejövőt ne.
 
-- Szabad feltételezni, hogy az NPC kezelés nem, vagy nem időben készül el, lesz elérhető (kerül be a masterba)
-- Ezért célszerű a felhasználó/vezető által megadott sebességhez igazodással kezdeni, ennek akkor is működnie kell, ha nincs NPC a pályán
-- A modul olyan triggerekkel vezérelheti az autót mint amilyenek a billentyűlenyomás kezelőtől jönnek (gáz, fék)
-  - de figyelni kell, hogy a tényleges billentyűtől érkező inputok felülírják a funkciót
+A követési _távolság_ időben törtéánő megadása azt jelenti, hogy a beállított (pl.) 1 másodperces követés esetén akkora távolságot kell hagyni, hogy **az aktuális sebességgel** haladva 1 másodperc alatt megtett út legyen a távolság: 10 m/s (36 km/h) esetében 10 méter. Ezen érték beállítására már az első sprintben készült vezérlő.
 
 ![](images/acc.png)
 
-- Oda kell figyelni, hogy csak a sávban előttünk haladó autót vegye figyelembe, a szembejövőt ne
+### Definition of Done
+
+- Ki- és bekapcsolható
+- Bekapcsoláskor a célsebessége az aktuális sebesség, de a minimum célsebesség 30 km/h
+- Ha nincs saját sávban előttünk autó, akkor a vezérelt autó tartja a kiválasztott célsebességet
+- Ha a saját sávban található autó:
+  - Ha az előttünk levő autó lassabb, akkor fel kell venni a sebességét
+  - Ha gyorsabb, akkor tartja a kiválasztott sebességet
+- Fékezésre kikapcsol
+- AEB beavatkozásra kikapcsol
+- Ha speed limitet talál a buszon, azt alkalmazza új célsebességként, amíg a sofőr felül nem írja
 
 ## Vészfékező
 
