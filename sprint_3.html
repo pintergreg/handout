@@ -222,42 +222,36 @@ Ennek feladata, hogy a megtalálja a parkolóban a megfelelő nagyságú szabad 
 <p>Sávon belüli mozgás: a LKA működése egy enyhe sávon belüli cikázást eredményez.</p>
 <p><img src="images/lka_wave.png" alt="" /></p>
 <h2><a class="header" href="#adaptív-tempomat" id="adaptív-tempomat">Adaptív tempomat</a></h2>
+<p>A modul felelőssége a radar szenzorra épülő <a href="functions.html#adapt%C3%ADv-tempomat-adaptive-cruise-control---acc"><em>adaptív tempomat</em></a> vezetéstámogató funkció elkészítése. Ennek a funkciónak három felhasználói esetet kell lefedie.</p>
+<ol>
+<li>Felhasználó által beállított sebesség tartása</li>
+<li>A táblafelismerő által közölt sebességkorlátozás betarzása</li>
+<li>Az előttünk haladó (NPC) autó sebességének felvétele és egy (időben definiálist) beállított követési távolság tartása
 <ul>
-<li>Input:
-<ul>
-<li>radar szenzor</li>
-<li>NPC autók</li>
+<li>Valójában ettől lesz adaptív</li>
 </ul>
 </li>
-</ul>
-<p>Adaptív tempomat funkció megvalósítása - a kiválasztott célobjektum (autó előtt haladó NPC) sebességéhez igazítja a gyorsabb saját sebességet, vagy tartja a sofőr által kiválasztott sebességhatárt, ha nincs cél.</p>
+</ol>
+<p>Az egyes ponthoz szükséges kezelőszervek már elkészültek az első sprintben és a funkcióhoz szükséges bemeneti értékek már a buszon keresztül elérhetőek. A modulnak szabáályoznia kell a hajtásláncot, hogy ne léphesse túl a beállított sebességet. Ehhez olyan inputot kel biztosítania mintha az a billantyűzetről érkezne, de a tényleges vezeői input felülírja őket.</p>
+<p>A kettes pont egy harmadik sprintes (tehát aktuálisan készülő funkciótól függ), azonban könynen visszavezethető az első pontra. A közúti szabályozást magasabb prioritásúnak kell minősíteni. Tehát a felhasználó pl. beállít egy 70 km/h-ás célsebességet, majd érkezik egy kérés a táblafelismerőtől, hogy 50km/h a megengedett, akkor azt kell figyelembe venni.</p>
+<p>A hármas pont egy második sprintes modultól, az NPC autók meglététől függ. Az előttünk haladó sebességéhez való igazodás a legmagasabb prioritású, hiszen hiába szeretne a vezető 70-el haladni, mikor a tábla szerint 50-nel lehet, de ha az előttünk haladó mindössze 40-el halad, akkor ahhoz kell igazodni, különben nekiütközünk.
+Oda kell figyelni, hogy csak a sávban előttünk haladó autót vegye figyelembe, a szembejövőt ne.</p>
+<p>A követési <em>távolság</em> időben törtéánő megadása azt jelenti, hogy a beállított (pl.) 1 másodperces követés esetén akkora távolságot kell hagyni, hogy <strong>az aktuális sebességgel</strong> haladva 1 másodperc alatt megtett út legyen a távolság: 10 m/s (36 km/h) esetében 10 méter. Ezen érték beállítására már az első sprintben készült vezérlő.</p>
+<p><img src="images/acc.png" alt="" /></p>
 <h3><a class="header" href="#definition-of-done-2" id="definition-of-done-2">Definition of Done</a></h3>
 <ul>
-<li>Bekapcsolható, reagál az állapotváltás, alapértelmezetten az aktuális sebesség, de min célsebesség 30 km/h</li>
-<li>ha nincs saját sávban autó, a játékos autó tartja a kiválasztott célsebességet</li>
-<li>ha saját sávban található autó:
+<li>Ki- és bekapcsolható</li>
+<li>Bekapcsoláskor a célsebessége az aktuális sebesség, de a minimum célsebesség 30 km/h</li>
+<li>Ha nincs saját sávban előttünk autó, akkor a vezérelt autó tartja a kiválasztott célsebességet</li>
+<li>Ha a saját sávban található autó:
 <ul>
-<li>a saját jármű felveszi a sebességét, ha lassabb</li>
-<li>tartja a kiválasztott sebességet, ha gyorsabb</li>
+<li>Ha az előttünk levő autó lassabb, akkor fel kell venni a sebességét</li>
+<li>Ha gyorsabb, akkor tartja a kiválasztott sebességet</li>
 </ul>
 </li>
-<li>fékezésre kikapcsol</li>
+<li>Fékezésre kikapcsol</li>
 <li>AEB beavatkozásra kikapcsol</li>
 <li>Ha speed limitet talál a buszon, azt alkalmazza új célsebességként, amíg a sofőr felül nem írja</li>
-</ul>
-<h3><a class="header" href="#megjegyzések-1" id="megjegyzések-1">Megjegyzések</a></h3>
-<ul>
-<li>Szabad feltételezni, hogy az NPC kezelés nem, vagy nem időben készül el, lesz elérhető (kerül be a masterba)</li>
-<li>Ezért célszerű a felhasználó/vezető által megadott sebességhez igazodással kezdeni, ennek akkor is működnie kell, ha nincs NPC a pályán</li>
-<li>A modul olyan triggerekkel vezérelheti az autót mint amilyenek a billentyűlenyomás kezelőtől jönnek (gáz, fék)
-<ul>
-<li>de figyelni kell, hogy a tényleges billentyűtől érkező inputok felülírják a funkciót</li>
-</ul>
-</li>
-</ul>
-<p><img src="images/acc.png" alt="" /></p>
-<ul>
-<li>Oda kell figyelni, hogy csak a sávban előttünk haladó autót vegye figyelembe, a szembejövőt ne</li>
 </ul>
 <h2><a class="header" href="#vészfékező" id="vészfékező">Vészfékező</a></h2>
 <p>Automata vészfékező rendszer megvalósítása, maximum 9 m/s^2 lassulással</p>
@@ -273,7 +267,7 @@ Ennek feladata, hogy a megtalálja a parkolóban a megfelelő nagyságú szabad 
 <li>Nincs nem releváns objektumokra való fékezés (fals pozitív) - pl. szembejövő autó</li>
 <li>Gyalogosra, fára megáll a kocsi</li>
 </ul>
-<h3><a class="header" href="#megjegyzések-2" id="megjegyzések-2">Megjegyzések</a></h3>
+<h3><a class="header" href="#megjegyzések-1" id="megjegyzések-1">Megjegyzések</a></h3>
 <ul>
 <li>A radar vissza kell adja az autó előtt levő legközelebbi releváns objektum adatait (táv, sebesség), ezekkel lehet számolni</li>
 <li>A távolságból és az autó sebességéből meghatározható, hogy milyen lassulást kell adni az autónak, hogy még megálljon, de ne lépje túl a 9 m/s^2-et
