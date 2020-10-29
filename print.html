@@ -2207,35 +2207,40 @@ Ennek feladata, hogy a megtalálja a parkolóban a megfelelő nagyságú szabad 
 <li>Sofőr beavatkozására (fék, gáz, kormány) kikapcsolás (megszűnik az automata vezérlés)</li>
 </ul>
 <h2><a class="header" href="#sávtartó-automatika-és-táblafelismerés" id="sávtartó-automatika-és-táblafelismerés">Sávtartó automatika és táblafelismerés</a></h2>
-<ul>
-<li>Input: Kamera szenzor</li>
-<li>Output:
-<ul>
-<li>Sávot beavatkozás nélkül követi a vezérelt autó</li>
-<li>Az utolsó látott tábla megjelenik a HMI-n</li>
-</ul>
-</li>
-</ul>
+<p>A sávtartó automatika modul felelőssége a kamera szenzorra épülő <a href="functions.html#s%C3%A1vtart%C3%B3-automatika-lane-keeping-assistant---lka"><em>Lane Keeping Assistant</em></a> funkció megvalósítása.</p>
+<p>Ezt két alapvetően kétféleképpen lehet megoldani. Az egyik a sáv széleihez viszonyítva korrigál: ha az autó elérné a sáv szélét, akkor ellenkormányoz. A másik megoldás kiszámolja a sáv közepét és azon tartja az autót.</p>
+<h3><a class="header" href="#1-sáv-széleinek-használata" id="1-sáv-széleinek-használata">1. Sáv széleinek használata</a></h3>
+<p>Itt azt lehet vizsgálni, hogy a vezérelt autó jövőbeli helyzetében metszi-e a sávot.</p>
+<p><img src="images/lka_a.png" alt="" /></p>
+<h3><a class="header" href="#2-sávközép-használata" id="2-sávközép-használata">2. Sávközép használata</a></h3>
+<p>Itt a vezérelt autó középpontját lehet a sávközéphez igazítani.</p>
+<p><img src="images/lka_b.png" alt="" /></p>
+<p>Csak a 45 foknál enyhébb kanyarodású úton kell működnie, ilyenkor a kocsi a sáv szemmel látható közepét követi. Az LKA működése egy enyhe sávon belüli cikázást eredményez.</p>
+<p><img src="images/lka_wave.png" alt="" /></p>
+<p>Az automatika számára kezelhetetlen forgalmi szituációkban (pl. éles kanyar, kereszteződés) el kell engednie a vezérlést és ezt a vezető tudtára kell hoznia. Legyen hozzá vizuális figyelmeztetés a műszerfalon (pl. LKA visszajelző sárga). Ha újra olyan útszakasz következik, ahol a funkció használható, akkor arról szintén legyen tájékoztatás.
+Eze kívül természetese a funkció ki- és bekapcsolható.</p>
+<p>A <strong>Táblafelismerő</strong> modul felelőssége a kamera szenzor látómezejébe kerülő körlekedési táblák közül kiválogatja a relevánsakat (csak az adott irányra/sávra vonatkozó) és a műszerfalnak átadja megjelenítésre az utolsó látott releváns táblát, továbbá beállítja a buszon az aktuális sebességkorlátozást, amelyet az adaptív tempomat modul használ majd. Ez debug információként jelenjen is meg a műszerfalon (szövegesen mint az X,Y koordináták).</p>
+<p><img src="images/tsr.png" alt="" /></p>
 <h3><a class="header" href="#definition-of-done-9" id="definition-of-done-9">Definition of Done</a></h3>
 <ul>
-<li>45 foknál enyhébb kanyarodású úton a kocsi a sáv szemmel láthatóan a sáv közepén marad</li>
-<li>Ha el kell engednie a kontrollt (az automatika számára kezelhetetlen forgalmi szituáció következik, pl. éles kanyar, kereszteződés), vizuális figyelmeztetést ad</li>
-<li>Ha újra elérhető a funkció (pl. elhagytuk a kanyart) vizuális indikáció (a műszerfalon)</li>
-<li>Sávtartó automatika be- és kikapcsolható
+<li>A sávtartó automatika ki- és bekapcsolható
 <ul>
 <li>emberi beavatkozásra kikapcsol</li>
 </ul>
 </li>
-<li>az utolsó látott, releváns tábla megjelenik a műszerfalon</li>
-<li>az utolsó sebességkorlátozás kiírásra kerül a buszra</li>
+<li>45 foknál enyhébb kanyarodású úton a kocsi a sáv szemmel láthatóan a sáv közepén marad</li>
+<li>Ha el kell engednie a kontrollt (az automatika számára kezelhetetlen forgalmi szituáció következik, pl. éles kanyar, kereszteződés), vizuális figyelmeztetést ad</li>
+<li>Ha újra elérhető a funkció (pl. elhagytuk a kanyart) vizuális indikáció (a műszerfalon)</li>
 </ul>
-<h3><a class="header" href="#megjegyzések" id="megjegyzések">Megjegyzések</a></h3>
+<p>Táblafelismerő:</p>
 <ul>
-<li>a tábla megjelenítésére kész interfész van a műszerfaltól, csak meg kell hívni, ha a detektálás megtörtént</li>
+<li>az utolsó látott, releváns tábla megjelenik a műszerfalon</li>
+<li>az utolsó sebességkorlátozás kiírásra kerül a buszra
+<ul>
+<li>és megelenik debug információként a műszerfalon</li>
 </ul>
-<p><img src="images/lka.png" alt="" /></p>
-<p>Sávon belüli mozgás: a LKA működése egy enyhe sávon belüli cikázást eredményez.</p>
-<p><img src="images/lka_wave.png" alt="" /></p>
+</li>
+</ul>
 <h2><a class="header" href="#adaptív-tempomat" id="adaptív-tempomat">Adaptív tempomat</a></h2>
 <p>A modul felelőssége a radar szenzorra épülő <a href="functions.html#adapt%C3%ADv-tempomat-adaptive-cruise-control---acc"><em>adaptív tempomat</em></a> vezetéstámogató funkció elkészítése. Ennek a funkciónak három felhasználói esetet kell lefedie.</p>
 <ol>
@@ -2282,7 +2287,7 @@ Oda kell figyelni, hogy csak a sávban előttünk haladó autót vegye figyelemb
 <li>Nincs nem releváns objektumokra való fékezés (fals pozitív) - pl. szembejövő autó</li>
 <li>Gyalogosra, fára megáll a kocsi</li>
 </ul>
-<h3><a class="header" href="#megjegyzések-1" id="megjegyzések-1">Megjegyzések</a></h3>
+<h3><a class="header" href="#megjegyzések" id="megjegyzések">Megjegyzések</a></h3>
 <ul>
 <li>A radar vissza kell adja az autó előtt levő legközelebbi releváns objektum adatait (táv, sebesség), ezekkel lehet számolni</li>
 <li>A távolságból és az autó sebességéből meghatározható, hogy milyen lassulást kell adni az autónak, hogy még megálljon, de ne lépje túl a 9 m/s^2-et
@@ -3171,9 +3176,9 @@ A sávtartó automatika nem tesztelhető kanyarokban, ehhez ezért egy alább l�
 Ha újra elérhető a funkció (pl. elhagytuk a kanyart) vizuális indikáció (a műszerfalon)
 Be- és kikapcsolható</li>
 </ul>
-<h4><a class="header" href="#1-sáv-széleinek-használata" id="1-sáv-széleinek-használata">1. Sáv széleinek használata</a></h4>
+<h4><a class="header" href="#1-sáv-széleinek-használata-1" id="1-sáv-széleinek-használata-1">1. Sáv széleinek használata</a></h4>
 <p><img src="images/lka_a.png" alt="" /></p>
-<h4><a class="header" href="#2-sávközép-használata" id="2-sávközép-használata">2. Sávközép használata</a></h4>
+<h4><a class="header" href="#2-sávközép-használata-1" id="2-sávközép-használata-1">2. Sávközép használata</a></h4>
 <p><img src="images/lka_b.png" alt="" /></p>
 <p>Sávon belüli mozgás: a LKA működése egy enyhe sávon belüli cikázást eredményez.</p>
 <p><img src="images/lka_wave.png" alt="" /></p>
