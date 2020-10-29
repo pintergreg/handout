@@ -38,30 +38,46 @@ A programozott vezérlést a buszon keresztül kapott szabad helyet leíró adat
 
 ## Sávtartó automatika és táblafelismerés
 
-- Input: Kamera szenzor
-- Output:
-  - Sávot beavatkozás nélkül követi a vezérelt autó
-  - Az utolsó látott tábla megjelenik a HMI-n
+A sávtartó automatika modul felelőssége a kamera szenzorra épülő [_Lane Keeping Assistant_](functions.html#sávtartó-automatika-lane-keeping-assistant---lka) funkció megvalósítása.
+
+Ezt két alapvetően kétféleképpen lehet megoldani. Az egyik a sáv széleihez viszonyítva korrigál: ha az autó elérné a sáv szélét, akkor ellenkormányoz. A másik megoldás kiszámolja a sáv közepét és azon tartja az autót.
+
+### 1. Sáv széleinek használata
+
+Itt azt lehet vizsgálni, hogy a vezérelt autó jövőbeli helyzetében metszi-e a sávot.
+
+![](images/lka_a.png)
+
+### 2. Sávközép használata
+
+Itt a vezérelt autó középpontját lehet a sávközéphez igazítani.
+
+![](images/lka_b.png)
+
+Csak a 45 foknál enyhébb kanyarodású úton kell működnie, ilyenkor a kocsi a sáv szemmel látható közepét követi. Az LKA működése egy enyhe sávon belüli cikázást eredményez.
+
+![](images/lka_wave.png)
+
+Az automatika számára kezelhetetlen forgalmi szituációkban (pl. éles kanyar, kereszteződés) el kell engednie a vezérlést és ezt a vezető tudtára kell hoznia. Legyen hozzá vizuális figyelmeztetés a műszerfalon (pl. LKA visszajelző sárga). Ha újra olyan útszakasz következik, ahol a funkció használható, akkor arról szintén legyen tájékoztatás.
+Eze kívül természetese a funkció ki- és bekapcsolható.
+
+A **Táblafelismerő** modul felelőssége a kamera szenzor látómezejébe kerülő körlekedési táblák közül kiválogatja a relevánsakat (csak az adott irányra/sávra vonatkozó) és a műszerfalnak átadja megjelenítésre az utolsó látott releváns táblát, továbbá beállítja a buszon az aktuális sebességkorlátozást, amelyet az adaptív tempomat modul használ majd. Ez debug információként jelenjen is meg a műszerfalon (szövegesen mint az X,Y koordináták).
+
+![](images/tsr.png)
 
 ### Definition of Done
 
+- A sávtartó automatika ki- és bekapcsolható
+  - emberi beavatkozásra kikapcsol
 - 45 foknál enyhébb kanyarodású úton a kocsi a sáv szemmel láthatóan a sáv közepén marad
 - Ha el kell engednie a kontrollt (az automatika számára kezelhetetlen forgalmi szituáció következik, pl. éles kanyar, kereszteződés), vizuális figyelmeztetést ad
 - Ha újra elérhető a funkció (pl. elhagytuk a kanyart) vizuális indikáció (a műszerfalon)
-- Sávtartó automatika be- és kikapcsolható
-  - emberi beavatkozásra kikapcsol
+
+Táblafelismerő:
+
 - az utolsó látott, releváns tábla megjelenik a műszerfalon
 - az utolsó sebességkorlátozás kiírásra kerül a buszra
-
-### Megjegyzések
-
-- a tábla megjelenítésére kész interfész van a műszerfaltól, csak meg kell hívni, ha a detektálás megtörtént
-
-![](images/lka.png)
-
-Sávon belüli mozgás: a LKA működése egy enyhe sávon belüli cikázást eredményez.
-
-![](images/lka_wave.png)
+  - és megelenik debug információként a műszerfalon
 
 ## Adaptív tempomat
 
