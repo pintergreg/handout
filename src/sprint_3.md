@@ -113,28 +113,37 @@ A követési _távolság_ időben törtéánő megadása azt jelenti, hogy a be�
 
 ## Vészfékező
 
-Automata vészfékező rendszer megvalósítása, maximum 9 m/s^2 lassulással
+A modul felelőssége a radar szenzorra épülő [automata vészfékező rendszer](functions.html#autonóm-vészfékező-rendszer-automatic-emergency-brake---aeb) megvalósítása. A vészfékező kritikus biztonsági funkció, így nem kapcsolható ki manuálisan, de maximum 70 km/h sebességig működik. A működése két esetre bontható: ütközés statikus vagy dinamikus objektummal.
 
-- Input: radar szenzor
+Az előbbi az egyszerűbb eset, mivel a veszélyt jelentő objektum pozíciója változatlan.
+
+![](images/aeb_radar_static.png)
+
+El kell döntani, hogy az autó az aktuális irányvektort figyelembe véve ütközni fog-e az objektumal. Ha igen, az autó ismert sebességét figyelembe véve kiszámolható, hogy ehhez mennyi időre van szükség és, hogy mekkora mértékű lassulás kell ehhez.
+
+A radar visszaadja az autó előtt levő legközelebbi releváns objektum adatait (táv, sebesség), ezekkel lehet számolni. A távolságból és az autó sebességéből meghatározható, hogy milyen lassulást kell adni az autónak, hogy még megálljon, de ne lépje túl a \\( 9 m/s^2 \\)-et.
+
+Ha az ütközés elkerülhető, vizuális figyelmeztetést kell elhelyezni a vezetőnek, hogy fékezzen. Ha nem reagál, azaz továbbra is ütközési pályán vagyunk és már csak vészfékezéssel kerülhető el az ütkzés, akkor a hajtásláncnak vészfékezési inputot kell adni. Ez a maximálisan megengedett, \\( 9 m/s^2 \\)-es lassulást (ennél nagyobb lassulás veszélyes az utasokra), akkor
+
+Ha más nem próbálgatással meg kell határozni, hogy adott sebességről egy maximális fékezési input (100% pedál állás) mennyi idő alatt fékezi állóra az autót.
+A modul olyan triggerekkel vezérli az autót mint amilyenek a billentyűlenyomás kezelőtől jönnek (fékpedál állás).
+
+Dinamikus objektumok esetében a vészfékezés elve azonos, de az ütközési pálya meghatározása összetettebb.
+
+![](images/aeb_radar_pedestrian.png)
+
+Másik sávban szembe jövő autóra nem kell vészékezni, tehát el kell tudni dönteni, hogy abban az esetben nincs ütközési pálya.
+
+![](images/radar_lanes_simple.png)
 
 ### Definition of Done
 
 - Elkerülhető ütközés esetén vizuális figyelmeztetés a sofőrnek
-- ha a sofőr nem avatkozik közbe, automatikus fékezés (az utolsó pillanatban, ahol az ütközés még elkerülhető)
-- az automatikus fékezés mértéke a sebességgel arányos, de nem lehet 9 m/s^2-nél nagyobb
+- Ha a sofőr nem avatkozik közbe, automatikus fékezés (az utolsó pillanatban, ahol az ütközés még elkerülhető)
+- Az automatikus fékezés mértéke a sebességgel arányos, de nem lehet \\( 9 m/s^2 \\)-nél nagyobb
 - 70 km/h felett figyelmeztetés, hogy az AEB nem tud minden helyzetet kezelni
-- Nincs nem releváns objektumokra való fékezés (fals pozitív) - pl. szembejövő autó
-- Gyalogosra, fára megáll a kocsi
-
-### Megjegyzések
-
-- A radar vissza kell adja az autó előtt levő legközelebbi releváns objektum adatait (táv, sebesség), ezekkel lehet számolni
-- A távolságból és az autó sebességéből meghatározható, hogy milyen lassulást kell adni az autónak, hogy még megálljon, de ne lépje túl a 9 m/s^2-et
-  - a gyorsítási/fékezési input nem gyorsulásban van, hanem pedállás mértékben. Ebből elvileg egyszerűen nem nyerhető ki a gyorsulás, viszont a gyorsulás az egy másodperc alatti sebesség változás, ami viszont kiszámolható t(n) - t(n-1) módon
-- A modul olyan triggerekkel vezérelheti az autót mint amilyenek a billentyűlenyomás kezelőtől jönnek (gáz, fék)
-  - de figyelni kell, hogy a tényleges billentyűtől érkező inputok felülírják a funkciót
-
-![](images/radar_aeb.png)
+- A vezérelt autó nem üt el gyalogost, nem megy neki fának
+- Nem releváns objektumok esetében (fals pozitív) mint a szembejövő autó nem történik vészfékezés
 
 ## Tolatóradar / Tolatókamera
 
