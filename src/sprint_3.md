@@ -4,10 +4,28 @@
 
 ## Parkoló automatika
 
-- Input: Ultrahang szenzorok
-- Output: parkolási manőver végrehajtása
+A modul felelőssége az ultrahang szenzorokra épülő [_Parking Pilot_](functions.html#parkoló-asszisztens-parking-pilot---pp) vezetéstámogató funkció elkészítése.
+Ennek feladata, hogy a megtalálja a parkolóban a megfelelő nagyságú szabad helyet, majd oda -- vezetői beavatkozás nélkül -- beparkolja az autót.
 
-### DoD
+A parkolóig még a sofőr vezet, megáll az autósor mellett aktiváltja a parkolóhely keresést (bekapcsolja a PP-ot és kiteszi az irányjelzőt abba az irányba ahol a parkolót keresni kell), majd továbbra is "emberi" irányítással el kell haladni a parkolóhelyek mellett. Eközben a funkció kiszámolja a szabad hely méretét. Amikor megvan az alkalmas hely, akkor visszajelzést kell adni a sofőrnek és a hely dimenzióját és az autóhoz viszonyított helyzetét le kell tudni írni (és átadni a buszon, ha a manőver végrehajtását végző komponens el van választva a kereső komponenstől).
+
+![](images/find_parking_place_horizontal.png)
+
+A parkolóhely a vezérelt autó (ennek ismert a szélessége és a hosszúsága) referenciapontjához viszonyítva legyen leírva. A parkolóhely hossza nem a felfestett parkolóhely hosszát jelenti. Egyrészt nem garantéált, hogy mindenki szabályosan parkol, másrészt azt nem is lehet az ultrahang szenzorral lemérni. Ehelyett két parkoló autó által szabadon hagyott helyet (amely akár két felfestésnyi is lehet) kell detektálni.
+
+A szabad hely szélessége ha egyéb akadályt -- pózna (`bollard.png`) vagy fa -- nem tesztek külön emiatt, támpontként a pályára, akkor a szenzor látótávolsága, azaz 3 méter. A szabad helyhez egy referenciapontot kell (érdemes) társítani, pl. a helyet leíró téglalap bal felső pontja (ábrán így van) és az autó középpontjával és ezzel a ponttal (ebből számolható a távolság) valamint a hely dimenzióival kielégítően jellemezhető a parkoló hely.
+
+![](images/parking_place_found_horizontal.png)
+
+Miután a hely keresése során még a sofőr vezet, a „van szabad parkoló” jelzésre vélhetően nem egy előre definiált pozícióban állítja meg az autót. Ezért fontos, hogy a szaba hely mindig a vezérel autó pozíciójához képest legyen definiálva, mert a parkolási manőver kezdetéig esetleg valamennyit hátra hell majd tolatni.
+
+Ezután, (ha más nem próbálgatásos módszerrel) ki kell tapasztalni, hogy a szükséges "párhuzamos parkolás" manőver hogyan vihető végbe a vezérelt autó irányítószerveivel, majd ezt le kell automatizálni: pl. le kell írni, kormány jobbra teker 100-ra, gáz 25% 1,5s-ig, majd kormány balra 75, gáz 20% 1.25s-ig. Ez hasonló az NPC objektumok szkripteléséhez.
+
+A programozott vezérlést a buszon keresztül kapott szabad helyet leíró adatok függvényében kell elindítani (amelyhez szükséges lehet tehát egy előzetes tolatás is.
+
+![](images/parking_horizontal.png)
+
+### Definition of Done
 
 - Indexkapcsoló állása alapján parkolóhely keresés jobbra vagy balra
 - Autó méretének megfelelő hely beazonosítása
@@ -17,22 +35,6 @@
 - A kormány és gáz/fék vezérlésével beparkolás a talált helyre
 - Párhuzamos parkolás sikeres (ütközés nélkül megtörténik)
 - Sofőr beavatkozására (fék, gáz, kormány) kikapcsolás (megszűnik az automata vezérlés)
-
-### Megjegyzések
-
-- Még a sofőr vezet a parkolóig, megáll az autósor mellett aktiváltja a parkolóhely keresést (kell valami input a billentyűzetről) ekkor továbbra is "emberi" irányítással el kell haladni a parkolóhelyek mellett és ki kell számolni a szabad hely méretét. Amikor megvan az alkalmas hely, akkor visszajelzést kell adni és a hely dimenziót és az autóhoz viszonyított helyzetét le kell tudni írni.
-- Az autónak elérhető a referenciapontja (továbbá ismert a szélessége és a hosszúsága), a autóhoz (referenciaponthoz) viszonyítva legyen leírva a parkolóhely.
-- Ami a parkolóhely hosszát illeti, nem a felfestett parkolóhely hosszát kell lemérni (azt nem is lehet az ultrahang szenzorral), hanem a szabad parkolóhelyet közrefogó két parkoló autó által szabadon hagyott helyet (amely akár két felfestésnyi is lehet).
-- A szabad hely szélessége ha egyéb akadályt - pózna (`bollard.png`) vagy fa - nem tesztek külön emiatt, támpontként a pályára, akkor a a szenzor látótávolsága, azaz 3 méter.
-- a szabad helyhez egy referenciapontot kell (érdemes) társítani, pl. a helyet leíró téglalap bal felső pontja (ábrán így van) és az autó középpontjával és ezzel a ponttal (ebből számolható a távolság) valamint a hely dimenzióival kielégítően jellemezve van a parkoló hely.
-- Ez tartalmazza az autó referenciapontját (középpont) és a pakolóhelyet leíró négyzet referenciapontját ezekből számítható a távolságuk.
-- (Ha más nem próbálgatásos módszerrel) ki kell tapasztalni, hogy a szükséges "párhuzamos parkolás" manőver hogyan vihető végbe a vezérelt autó irányítószerveivel, majd ezt le kell automatizálni: pl. le kell írni, kormány jobbra teker 100-ra, gáz 25% 1,5s-ig, majd kormány balra 75, gáz 20% 1.25s-ig.
-- A programozott vezérlést a buszon keresztül kapott szabad helyet leíró adatok függvényében kell elindítani
-- ha szükséges az autóval tolatni is kell a manőver megkezdéséhez, mivel a detektálás során túlmehetünk az ideális pozíción, ahonnan a leprogramozott manőver ütközés nélkül beparkol.
-
-![](images/parking_horizontal.png)
-![](images/find_parking_place_horizontal.png)
-![](images/parking_place_found_horizontal.png)
 
 ## Sávtartó automatika és táblafelismerés
 
