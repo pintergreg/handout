@@ -11,13 +11,13 @@ A parkolóig még a sofőr vezet, megáll az autósor mellett aktiváltja a park
 
 ![](images/find_parking_place_horizontal.png)
 
-A parkolóhely a vezérelt autó (ennek ismert a szélessége és a hosszúsága) referenciapontjához viszonyítva legyen leírva. A parkolóhely hossza nem a felfestett parkolóhely hosszát jelenti. Egyrészt nem garantéált, hogy mindenki szabályosan parkol, másrészt azt nem is lehet az ultrahang szenzorral lemérni. Ehelyett két parkoló autó által szabadon hagyott helyet (amely akár két felfestésnyi is lehet) kell detektálni.
+A parkolóhely a vezérelt autó (ennek ismert a szélessége és a hosszúsága) referenciapontjához viszonyítva legyen leírva. A parkolóhely hossza nem a felfestett parkolóhely hosszát jelenti. Egyrészt nem garantált, hogy mindenki szabályosan parkol, másrészt azt nem is lehet az ultrahang szenzorral lemérni. Ehelyett két parkoló autó által szabadon hagyott helyet (amely akár két felfestésnyi is lehet) kell detektálni.
 
 A szabad hely szélessége ha egyéb akadályt -- pózna (`bollard.png`) vagy fa -- nem tesztek külön emiatt, támpontként a pályára, akkor a szenzor látótávolsága, azaz 3 méter. A szabad helyhez egy referenciapontot kell (érdemes) társítani, pl. a helyet leíró téglalap bal felső pontja (ábrán így van) és az autó középpontjával és ezzel a ponttal (ebből számolható a távolság) valamint a hely dimenzióival kielégítően jellemezhető a parkoló hely.
 
 ![](images/parking_place_found_horizontal.png)
 
-Miután a hely keresése során még a sofőr vezet, a „van szabad parkoló” jelzésre vélhetően nem egy előre definiált pozícióban állítja meg az autót. Ezért fontos, hogy a szaba hely mindig a vezérel autó pozíciójához képest legyen definiálva, mert a parkolási manőver kezdetéig esetleg valamennyit hátra hell majd tolatni.
+Miután a hely keresése során még a sofőr vezet, a „van szabad parkoló” jelzésre vélhetően nem egy előre definiált pozícióban állítja meg az autót. Ezért fontos, hogy a szabad hely mindig a vezérel autó pozíciójához képest legyen definiálva, mert a parkolási manőver kezdetéig esetleg valamennyit hátra kell majd tolatni.
 
 Ezután, (ha más nem próbálgatásos módszerrel) ki kell tapasztalni, hogy a szükséges "párhuzamos parkolás" manőver hogyan vihető végbe a vezérelt autó irányítószerveivel, majd ezt le kell automatizálni: pl. le kell írni, kormány jobbra teker 100-ra, gáz 25% 1,5s-ig, majd kormány balra 75, gáz 20% 1.25s-ig. Ez hasonló az NPC objektumok szkripteléséhez.
 
@@ -59,9 +59,9 @@ Csak a 45 foknál enyhébb kanyarodású úton kell működnie, ilyenkor a kocsi
 ![](images/lka_wave.png)
 
 Az automatika számára kezelhetetlen forgalmi szituációkban (pl. éles kanyar, kereszteződés) el kell engednie a vezérlést és ezt a vezető tudtára kell hoznia. Legyen hozzá vizuális figyelmeztetés a műszerfalon (pl. LKA visszajelző sárga). Ha újra olyan útszakasz következik, ahol a funkció használható, akkor arról szintén legyen tájékoztatás.
-Eze kívül természetese a funkció ki- és bekapcsolható.
+Ezen kívül természetesen a funkció ki- és bekapcsolható.
 
-A **Táblafelismerő** modul felelőssége a kamera szenzor látómezejébe kerülő körlekedési táblák közül kiválogatja a relevánsakat (csak az adott irányra/sávra vonatkozó) és a műszerfalnak átadja megjelenítésre az utolsó látott releváns táblát, továbbá beállítja a buszon az aktuális sebességkorlátozást, amelyet az adaptív tempomat modul használ majd. Ez debug információként jelenjen is meg a műszerfalon (szövegesen mint az X,Y koordináták).
+A **Táblafelismerő** modul felelőssége a kamera szenzor látómezejébe kerülő közlekedési táblák közül kiválogatja a relevánsakat (csak az adott irányra/sávra vonatkozó) és a műszerfalnak átadja megjelenítésre az utolsó látott releváns táblát, továbbá beállítja a buszon az aktuális sebességkorlátozást, amelyet az adaptív tempómat modul használ majd. Ez debug információként jelenjen is meg a műszerfalon (szövegesen mint az X,Y koordináták).
 
 ![](images/tsr.png)
 
@@ -77,25 +77,25 @@ Táblafelismerő:
 
 - az utolsó látott, releváns tábla megjelenik a műszerfalon
 - az utolsó sebességkorlátozás kiírásra kerül a buszra
-  - és megelenik debug információként a műszerfalon
+  - és megjelenik debug információként a műszerfalon
 
 ## Adaptív tempomat
 
-A modul felelőssége a radar szenzorra épülő [_adaptív tempomat_](functions.html#adaptív-tempomat-adaptive-cruise-control---acc) vezetéstámogató funkció elkészítése. Ennek a funkciónak három felhasználói esetet kell lefedie.
+A modul felelőssége a radar szenzorra épülő [_adaptív tempomat_](functions.html#adaptív-tempomat-adaptive-cruise-control---acc) vezetéstámogató funkció elkészítése. Ennek a funkciónak három felhasználói esetet kell lefednie.
 
 1. Felhasználó által beállított sebesség tartása
-2. A táblafelismerő által közölt sebességkorlátozás betarzása
-3. Az előttünk haladó (NPC) autó sebességének felvétele és egy (időben definiálist) beállított követési távolság tartása
+2. A táblafelismerő által közölt sebességkorlátozás betartása
+3. Az előttünk haladó (NPC) autó sebességének felvétele és egy (időben definiált) beállított követési távolság tartása
    - Valójában ettől lesz adaptív
 
-Az egyes ponthoz szükséges kezelőszervek már elkészültek az első sprintben és a funkcióhoz szükséges bemeneti értékek már a buszon keresztül elérhetőek. A modulnak szabáályoznia kell a hajtásláncot, hogy ne léphesse túl a beállított sebességet. Ehhez olyan inputot kel biztosítania mintha az a billantyűzetről érkezne, de a tényleges vezeői input felülírja őket.
+Az egyes ponthoz szükséges kezelőszervek már elkészültek az első sprintben és a funkcióhoz szükséges bemeneti értékek már a buszon keresztül elérhetőek. A modulnak szabályoznia kell a hajtásláncot, hogy ne léphesse túl a beállított sebességet. Ehhez olyan inputot kel biztosítania mintha az a billentyűzetről érkezne, de a tényleges vezetői input felülírja őket.
 
-A kettes pont egy harmadik sprintes (tehát aktuálisan készülő funkciótól függ), azonban könynen visszavezethető az első pontra. A közúti szabályozást magasabb prioritásúnak kell minősíteni. Tehát a felhasználó pl. beállít egy 70 km/h-ás célsebességet, majd érkezik egy kérés a táblafelismerőtől, hogy 50km/h a megengedett, akkor azt kell figyelembe venni.
+A kettes pont egy harmadik sprintes (tehát aktuálisan készülő funkciótól függ), azonban könnyen visszavezethető az első pontra. A közúti szabályozást magasabb prioritásúnak kell minősíteni. Tehát a felhasználó pl. beállít egy 70 km/h-ás célsebességet, majd érkezik egy kérés a táblafelismerőtől, hogy 50km/h a megengedett, akkor azt kell figyelembe venni.
 
 A hármas pont egy második sprintes modultól, az NPC autók meglététől függ. Az előttünk haladó sebességéhez való igazodás a legmagasabb prioritású, hiszen hiába szeretne a vezető 70-el haladni, mikor a tábla szerint 50-nel lehet, de ha az előttünk haladó mindössze 40-el halad, akkor ahhoz kell igazodni, különben nekiütközünk.
 Oda kell figyelni, hogy csak a sávban előttünk haladó autót vegye figyelembe, a szembejövőt ne.
 
-A követési _távolság_ időben törtéánő megadása azt jelenti, hogy a beállított (pl.) 1 másodperces követés esetén akkora távolságot kell hagyni, hogy **az aktuális sebességgel** haladva 1 másodperc alatt megtett út legyen a távolság: 10 m/s (36 km/h) esetében 10 méter. Ezen érték beállítására már az első sprintben készült vezérlő.
+A követési _távolság_ időben történő megadása azt jelenti, hogy a beállított (pl.) 1 másodperces követés esetén akkora távolságot kell hagyni, hogy **az aktuális sebességgel** haladva 1 másodperc alatt megtett út legyen a távolság: 10 m/s (36 km/h) esetében 10 méter. Ezen érték beállítására már az első sprintben készült vezérlő.
 
 ![](images/acc.png)
 
@@ -109,7 +109,7 @@ A követési _távolság_ időben törtéánő megadása azt jelenti, hogy a be�
   - Ha gyorsabb, akkor tartja a kiválasztott sebességet
 - Fékezésre kikapcsol
 - AEB beavatkozásra kikapcsol
-- Ha speed limitet talál a buszon, azt alkalmazza új célsebességként, amíg a sofőr felül nem írja
+- Ha sebesség korlétozást talál a buszon, azt alkalmazza új célsebességként, amíg a sofőr felül nem írja
 
 ## Vészfékező
 
@@ -119,11 +119,11 @@ Az előbbi az egyszerűbb eset, mivel a veszélyt jelentő objektum pozíciója 
 
 ![](images/aeb_radar_static.png)
 
-El kell döntani, hogy az autó az aktuális irányvektort figyelembe véve ütközni fog-e az objektumal. Ha igen, az autó ismert sebességét figyelembe véve kiszámolható, hogy ehhez mennyi időre van szükség és, hogy mekkora mértékű lassulás kell ehhez.
+El kell dönteni, hogy az autó az aktuális irányvektort figyelembe véve ütközni fog-e az objektummal. Ha igen, az autó ismert sebességét figyelembe véve kiszámolható, hogy ehhez mennyi időre van szükség és, hogy mekkora mértékű lassulás kell ehhez.
 
 A radar visszaadja az autó előtt levő legközelebbi releváns objektum adatait (táv, sebesség), ezekkel lehet számolni. A távolságból és az autó sebességéből meghatározható, hogy milyen lassulást kell adni az autónak, hogy még megálljon, de ne lépje túl a \\( 9 m/s^2 \\)-et.
 
-Ha az ütközés elkerülhető, vizuális figyelmeztetést kell elhelyezni a vezetőnek, hogy fékezzen. Ha nem reagál, azaz továbbra is ütközési pályán vagyunk és már csak vészfékezéssel kerülhető el az ütkzés, akkor a hajtásláncnak vészfékezési inputot kell adni. Ez a maximálisan megengedett, \\( 9 m/s^2 \\)-es lassulást (ennél nagyobb lassulás veszélyes az utasokra), akkor
+Ha az ütközés elkerülhető, vizuális figyelmeztetést kell elhelyezni a vezetőnek, hogy fékezzen. Ha nem reagál, azaz továbbra is ütközési pályán vagyunk és már csak vészfékezéssel kerülhető el az ütközés, akkor a hajtásláncnak vészfékezési inputot kell adni. Ez a maximálisan megengedett, \\( 9 m/s^2 \\)-es lassulást (ennél nagyobb lassulás veszélyes az utasokra), akkor
 
 Ha más nem próbálgatással meg kell határozni, hogy adott sebességről egy maximális fékezési input (100% pedál állás) mennyi idő alatt fékezi állóra az autót.
 A modul olyan triggerekkel vezérli az autót mint amilyenek a billentyűlenyomás kezelőtől jönnek (fékpedál állás).
@@ -132,7 +132,7 @@ Dinamikus objektumok esetében a vészfékezés elve azonos, de az ütközési p
 
 ![](images/aeb_radar_pedestrian.png)
 
-Másik sávban szembe jövő autóra nem kell vészékezni, tehát el kell tudni dönteni, hogy abban az esetben nincs ütközési pálya.
+Másik sávban szembe jövő autóra nem kell vészfékezni, tehát el kell tudni dönteni, hogy abban az esetben nincs ütközési pálya.
 
 ![](images/radar_lanes_simple.png)
 
@@ -156,7 +156,7 @@ Hozzá tartozó GUI, Valami ehhez hasonlóként lehet elképzelni: [YouTube vide
 
 ![](images/gui_plan_dashboard_with_rr.png)
 
-A tolató radar mellé legyen a tolatókaerák távolságkijelzése is megvaólsítva a pályamegjelenítőjén, három lépcsóban 0.5m piros, utána 1m sárga majd az autó hosszáig zöld. Ez hátramenetben kerüljön megjelenítésre, nem debug-funkcióként.
+A tolató radar mellé legyen a tolatókamerák távolságkijelzése is megvalósítva a pályamegjelenítőjén, három lépcsőben 0.5m piros, utána 1m sárga majd az autó hosszáig zöld. Ez hátramenetben kerüljön megjelenítésre, nem debug-funkcióként.
 
 ![](images/reversing_camera.png)
 
