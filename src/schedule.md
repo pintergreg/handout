@@ -17,7 +17,7 @@ Az órák csütörtökönként a BA.F.07-ben vannak ([online, MS Teams-en](https
 |11.|11.&nbsp;19.| Rektori/dékáni szünet
 |12.|11.&nbsp;26.| Összefoglalás, konzultáció |
 |13.|**12.&nbsp;03.**|**harmadik demo**, retrospektív, tárgy feedback | Pair programming, Coding Dojo
-|14.|**12.&nbsp;10.**|**Zárthelyi dolgozat** 08:00-tól 09:30-ig (90 perc), 1.?? és 1.?? laborok
+|14.|**12.&nbsp;10.**|**Zárthelyi dolgozat** Moodle, a teszt 08:00-tól 12:00-ig indítható, 70 perc van a kitöltésre
 
 
 ## Gantt diagram
