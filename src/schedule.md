@@ -14,8 +14,8 @@ Az órák csütörtökönként a ~~BA.F.07-ben vannak~~ ([online, MS Teams-en](h
 | 8.|04.&nbsp;01.| Rektori/dékáni szünet
 | 9.|**04.&nbsp;08.**| [Continous Integration](lectures/ci.md), **második demo**, retrospektív | [harmadik feladat kiadás](sprint_3.md), Sprint planning, Task Definition Workshop, Team commitment, Scheduling; Set up a CI script running all implemented unit tests
 |10.|04.&nbsp;15.| [Software Architecture](lectures/software_architecture.md)
-|11.|04.&nbsp;22.| Rektori/dékáni szünet: TDK
-|12.|04.&nbsp;29.| konzultáció
+|11.|04.&nbsp;22.| Rektori/dékáni szünet
+|12.|04.&nbsp;29.| konzultáció (előtte nap TDK)
 |13.|**05.&nbsp;06.**| Összefoglalás, **harmadik demo**, retrospektív, tárgy feedback | Pair programming, Coding Dojo
 |14.|**05.&nbsp;13.**| **Zárthelyi dolgozat** Moodle, a teszt 08:00-tól 12:00-ig indítható, 70 perc van a kitöltésre
 
