@@ -1,51 +1,88 @@
 # How to set up the infrastructure
 
-1. Create new GitHub Organization
-2. Create Teams
-    - Everyone
-        - Group A
-            - Team A1
-            - Team A2
-            - Team A3
-            - Team A4
-        - Group B
-            - Team B1
-            - Team B2
-            - Team B3
-            - Team B4
-        - Staff
-3. Create new repos for the project
-    - AutomatedCar-A
-    - AutomatedCar-B
-    - handout
-4. Add repositories to Teams and set permissions
-    - Match `AutomatedCar-A` to `Group A` with `write` permissions
-    - Match `AutomatedCar-B` to `Group B` with `write` permissions
-    - Set admin persmissions to team `Staff`
-5. Add labels
-    - user story
-    - stale
-    - 1 to 5 stars for difficulty
-        - as GitHub does not hav a difficulty property for issues
-    - design
-6. Add milestones
-    - Planning, Release Candidate and Final for every sprints
-7. Add projects (kanban boards) from `Automated kanban with review` template
-    - one project for every teams for both repositories
-9. Add first user stories
-10. Add link to team forums (discussion boards) and user stories in the project descriptions
-11. Integrate CI
+- [x] Create new GitHub Organization
+- Create Teams
+    - [x] Everyone
+        - [x] Company-A
+            - [x] Team-A1
+            - [x] Team-A2
+            - [x] Team-A3
+            - [x] Team-A4
+        - [ ] Company-B
+            - [ ] Team-B1
+            - [ ] Team-B2
+            - [ ] Team-B3
+            - [ ] Team-B4
+        - [x] Instructors
+- [x] Transfer handout repo from the previous organization
+- [x] Add labels as repository defaults in organization
+    - effort: high
+    - effort: low
+    - effort: moderate
+    - priority: critical
+    - priority: high
+    - priority: low
+    - priority: normal
+    - status: completed
+    - status: duplicate
+    - status: help wanted
+    - status: in progress
+    - status: invalid
+    - status: pending
+    - status: review needed
+    - status: stalled
+    - status: wontfix
+    - type: bug
+    - type: design
+    - type: documentation
+    - type: enhancement
+    - type: integration
+    - type: question
+    - type: user story
+- Create new repos for the project
+    - [x] AutomatedCar-A
+    - [ ] AutomatedCar-B
+- Add repositories to Teams and set permissions
+    - [x] Match `AutomatedCar-A` to `Company-A` with `write` permissions
+    - [ ] Match `AutomatedCar-B` to `Company-B` with `write` permissions
+    - [x] Set admin persmissions to team `Instructors`
+- Add milestones per sprint
+    - [x] repo A
+    - [ ] repo B
+- Add projects (kanban boards) from `Automated kanban with review` template
+    - one project for every teams
+    - [x] repo A
+    - [ ] repo B
+- Add user stories
+    - [x] repo A
+    - [ ] repo B
+- [x] Add link to team forums (discussion boards) and user stories in the project descriptions
+- Integrate CI
     - GitHub Actions
-12. Integrate static code analyzer
+    - [ ] repo A
+    - [ ] repo B
+- Integrate static code analyzer
     - CodeFactor.io
-13. Integrate code coverage tracker
+    - [ ] repo A
+    - [ ] repo B
+- Integrate code coverage tracker
     - CodeCov.io
-14. Enable stale bot to mark issues as staled if there is no activity for a while
-15. Update badges in the README
-16. Create a tag from the skeleton
+    - [ ] repo A
+    - [ ] repo B
+- Enable stale bot to mark issues as staled if there is no activity for a while
+    - [ ] repo A
+    - [ ] repo B
+- Update badges in the README
+    - [ ] repo A
+    - [ ] repo B
+- [ ] Create a tag from the skeleton
     - `git tag -a skeleton -m 'Tag skeleton'`
     -  and push it: `git push origin --tags`
-17. Create team branches
+- Create team branches
     - `git checkout -b TeamA1`
     - `git push origin TeamA1`
-18. Protect branches
+    - [ ] repo A
+    - [ ] repo B
+- Protect branches
+    - [ ] repo A
+    - [ ] repo B
