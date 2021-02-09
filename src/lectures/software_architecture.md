@@ -49,7 +49,7 @@ Linux kernel - number of lines of code (forrás: [Wikipedia](https://en.wikipedi
 > where a node represents a logic branch point and an edge represents a line between nodes.
 >
 > The rule reports a violation when the cyclomatic complexity is more than 25.
-> 
+>
 > [CA1502: Avoid excessive complexity](https://docs.microsoft.com/hu-hu/visualstudio/code-quality/ca1502-avoid-excessive-complexity?view=vs-2015&redirectedfrom=MSDN)
 
 
@@ -97,6 +97,7 @@ public int compare(a, b) {
 
 - [Reducing Cyclomatic Complexity with Python](https://audiolion.github.io/python/2016/10/17/reducing-cyclomatic-complexity.html)
 - [NPath complexity and cyclomatic complexity explained](https://modess.io/npath-complexity-cyclomatic-complexity-explained/)
+<!-- - [Simplify your Python Code: Automating Code Complexity Analysis with Wily](https://towardsdatascience.com/simplify-your-python-code-automating-code-complexity-analysis-with-wily-5c1e90c9a485) -->
 
 ### Complex vs. complicated
 
@@ -119,12 +120,16 @@ Michael Bykovski: [Simple vs. Complicated vs. Complex vs. Chaotic](https://mediu
 >
 > Grady Booch
 
+> In most successful software projects, the expert developers working on that project have a shared understanding of the system design. This shared understanding is called ‘architecture.’ This understanding includes how the system is divided into components and how the components interact through interfaces. These components are usually composed of smaller componnets, but the architecture only includes the components and interfaces that are understood by all the developers.
+>
+> Ralph Johnson, XP mailing list
+
 - [What is Software Architecture?](https://www.developerfusion.com/article/84899/what-is-software-architecture/)
 - [The goals of Software Architecture](https://medium.com/docplanner-tech/the-goals-of-software-architecture-a3b0a0edeb0b)
 
 ## Miért kell ez?
 
-> Architecture is the decisions that you wish you could get right early in a project 
+> Architecture is the decisions that you wish you could get right early in a project
 >
 > -- Ralph Johnson
 
@@ -185,8 +190,8 @@ What becomes easier or more difficult to do because of this change?
 - [YAGNI](https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it)
     - "You aren't gonna need it"
     - > Always implement things when you actually need them, never when you just foresee that you need them.
-       >
-       > Ron Jeffries 
+      >
+      > Ron Jeffries
     - TDD
 
 ### 4C: Complete, Compliant, Clear, Concise
