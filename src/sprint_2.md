@@ -1,8 +1,8 @@
-# 2. Sprint 
+# 2. Sprint
 
 <!-- toc -->
 
-## Ultrahang Szenzor implementálása
+## Ultrahang szenzor implementálása
 
 Az *ultrasonic sensor* modul felelőssége a parkoló automata alapjául szolgáló ultrahang szenzorcsomag szimulációjának implementálása. Mint minden szenzor, az ultrahang is érzékeli a világ egy szeletét és eléri a látóterében található objektumokat.
 
@@ -25,7 +25,7 @@ A megjelenítés is felhasználja ezeket a pontokat a háromszög kirajzolásár
 - Határozzák meg a legközelebbi (ütközés szempontjából) objektum pozícióját, kiterjedését, távolságát
     - külön-külön minden egyes szenzor, majd a rá épülő funkcionalitás fog ezekkel tovább dolgozni, tehát célszerű biztosítani a példányonként legközelebbi objektum továbbadását
 - A legközelebbi objektum legyen vizuálisan kiemelve
-    - a kiemelést a megjelenítés intézi az objektum tulajdonsága (kijelöltség) alapján, de azt, hogy éppen ki van-e jelölve a szenzornak kell az objektumon beállítani
+    - a kiemelés megjelenítését a vizualizáció intézi az objektum tulajdonsága (kijelöltség) alapján, de azt, hogy éppen ki van-e jelölve a szenzornak kell az objektumon beállítani
 
 <!-- - debug célra bekapcsolható módon ezek a háromszögek legyen kirajzolhatóak **zöld** színnel -->
 
@@ -161,7 +161,7 @@ Itt arról van szó, hogy a a szenzor egy iterációjában megkapjuk a látóté
 <!-- nyomon kell követni őket és azonosítani az útvonalukat, ebből pedig meghatározni azt, hogy keresztezik-e a vezérelt autóét. -->
 
 <!-- A vészfékezőnek reagálnia kell majd az akadályra, ha akkor is útban lesz-e még mire az autó odaér, ehhez szükséges az útban levő objektum távolsága és pozíciója (relatívan az autóhoz) -->
-<!-- , ez minden ciklusban lefutva előállítja az objektum pl. gyalogos mozgásvektorát. 
+<!-- , ez minden ciklusban lefutva előállítja az objektum pl. gyalogos mozgásvektorát.
 Nem a radar, hanem majd a ráépülő funkció fogja ezekből meghatázorni, hogy pl. oldalról a vezérelt autó útjába tart-e egy objektum és ez veszélyt jelent-e rá. -->
 
 <!-- ![Oldalirányból érkező jármű](images/radar_aeb_sideward.png) -->
