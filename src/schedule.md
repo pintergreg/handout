@@ -7,7 +7,7 @@ Az órák csütörtökönként a ~~BA.F.07-ben vannak~~ ([online, MS Teams-en](h
 | 1.|02.&nbsp;11.| Bevezető, áttekintés, [aSpice&nbsp;alapok](https://www.lhpes.com/blog/what-is-aspice-in-automotive); [Software Architecture](lectures/software_architecture.md) | csapatsorsolás, [első feladat kiadás](sprint_1.md), Sprint Planning, Task Definition Workshop, Team commitment, Scheduling
 | 2.|02.&nbsp;18.| [Napi munka, verziókezelők](lectures/daily_work.md)|Branch review, status review, standup (did, will, blocking)
 | 3.|02.&nbsp;25.| [Agile, SCRUM, Kanban](lectures/agile_scrum_kanban.md) | git, GitHub, IDEA ismertetés
-| 4.|03.&nbsp;01.| [TDD, Unit Testing](lectures/tdd.md) | TDD kata
+| 4.|03.&nbsp;04.| [TDD, Unit Testing](lectures/tdd.md) | TDD kata
 | 5.|**03.&nbsp;11.**| **első demo**, retrospektív|[második feladat kiadás](sprint_2.md), Sprint planning, Task Definition Workshop, Team commitment, Scheduling
 | 6.|03.&nbsp;18.| [Legacy Code, SOLID](lectures/legacy_code.md) |Refactoring gyakorlat egy előre előkészített példán
 | 7.|03.&nbsp;25.| [Review](lectures/review.md) |Random code review egy tetszőleges elfogadott pull requestből
