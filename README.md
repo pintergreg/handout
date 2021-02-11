@@ -2,9 +2,9 @@
 
 # Jegyzet a „Szoftverfejlesztés multinacionális vállalatoknál” c. tárgyhoz
 
-- Félév: 2020-2021/1
+- Félév: 2020-2021/II
 
-A repó markdown fájlokat tartalmaz, amelyekből az [mdbook](https://github.com/rust-lang-nursery/mdBook) nevű statikus oldalgenerátor állítja elő a [weboldalt](https://szfmv2020-osz.github.io/handout/). 
+A repó markdown fájlokat tartalmaz, amelyekből az [mdbook](https://github.com/rust-lang-nursery/mdBook) nevű statikus oldalgenerátor állítja elő a [weboldalt](https://szfmv2021-tavasz.github.io/handout/).
 
 További felhasználd modulok:
 
