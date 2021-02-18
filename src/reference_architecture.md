@@ -4,6 +4,7 @@ A repó található kezdeti kódot (skeleton) egységes alapot képez a félév 
 
 - projekt struktúra
 - grafikus felület létrehozása
+    - WPF keretrendszerrel
     - Avalonia keretrendszerrel
 - világmodell benépesítése
 - vezérelt autó példányosítása és kiválasztása
@@ -123,11 +124,120 @@ A jobb oldalon a műszerfal található. A műszerfalon nincsenek vezérlőeleme
 A fordulatszám és a sebesség legyen egy analóg órával reprezentálva; a kormány elforgatás, a gáz- és fékpedál állása progressbar-okkal szemléltethető. Az irányjelző visszajelzője és a vezetéstámogató funkciók visszajelzői lámpaszerűek, a sebességváltó állása, és a debug értékek pl. kocsi pozíciója (x, y koordináta) lehet szöveges.
 A buszon közölt „utoljára látott tábla” képét ki kell tudni rajzolni (a képek rendelkezésre állnak). Legyen elkülönítve a nincs tábla eset is.
 
+A megjelenítéshez tetszőleges grafikus keretrendszer választható, alább a skeleton két változatban kerül bemutatásra.
+
+## WPF alapú megjelenítés
+
+Az ismert WPF alapú implementáció, amely egyenértékű a később taglalt Avalonia alapú megoldással. Mindkettő XAML alapú, MVVM modellű keretrendszer, előbbi Windows-os, utóbbi platform független.
+
+A főablak két UserControlt tartalmaz, az egyik a CourseDisplay, a másik a Dashboard, azért lettek szétválasztva, hogy a két komponensen dolgozó csapatoknak ne kelljen egymás munkájába nyúlkálniuk.
+
+Például, alább látható a műszerfal, amely egy *AutomatedCar* objektum megjelenítését végzi. Egészen pontosan a *World*-ben tárolt `controlledCar` objektumét. A `ControlledCar` tulajdonság egy referencia az éppen vezérelt autóra (elvben lehetne a világban több `AutomatedCar` példány és ezek között váltogathatnánk is. Ilyen esetben a `ControlledCar` mindeg az aktuálisra mutat, amelyet meg akarunk jeleníteni). A *DashboardView* a *DashboardViewModel*-en keresztül a `controlledCar`-hoz van kötve.
+
+```xml
+<ContentControl Name="Dashboard" Content="{Binding World.ControlledCar, Mode=OneWay}" >
+    <ContentControl.ContentTemplate>
+        <DataTemplate DataType="{x:Type models:AutomatedCar}">
+            <StackPanel>
+                ...
+            </StackPanel>
+        </DataTemplate>
+    </ContentControl.ContentTemplate>
+</ContentControl>
+```
+
+A példakód ezt biztosítja, a feladat a konkrét visszajelzőkhöz megfelelő felületi elemek definiálása.
+
+### CourseDisplay
+
+A teljes CourseDisplay lényegében egy *ItemsControl*, amely a világ `WorldObjects` tulajdonságához van kötve. Ezen belül található egy *Canvas*, amire a rajzolás történik, valamint egy *DataTemplate*, amely azt írja le, hogy egy *WorldObject* típusú objektumok hogyan kell kezelni. A világelemhez tartozó képet kell kirajzolni, így tartalmaz egy *Image*-et, amelynek forrása a *WorldObject* `Filename` tulajdonsága. A *Converter* attribútumon keresztül meg lehet hívni egy függvényt, amellyel akár befolyásolni lehet a rajzolást (transzformálás).
+
+A *WorldObject* -az alkalmazás szempontjából- a világ minden elemének őse, de ennél specializáltabban is lehet definiálni *template*-eket. Az alábbi kódrészlet szétbontja *Circle* és *AutomatedCar* típusokra, előbbihez nem is képet tölt be, hanem közvetlenül rajzol a *Canvas*-re. Az utóbbi esetben egyrészt a fentivel megegyező módon betölt egy képet, valamit arra kirajzol egy poligont (ez a debug funkcióknál kell majd).
+
+```xml
+<ItemsControl Name="CourseDisplay"
+    ItemsSource="{Binding WorldObjects, Mode=OneWay}"
+    Width="{Binding Width, Mode=OneWay}"
+    Height="{Binding Height, Mode=OneWay}"
+    HorizontalAlignment="Left" VerticalAlignment="Top"
+    >
+
+     <ItemsControl.ItemContainerStyle>
+        <Style TargetType="ContentPresenter">
+            <Setter Property="Canvas.Left" Value="{Binding X}"/>
+            <Setter Property="Canvas.Top" Value="{Binding Y}"/>
+            <Setter Property="Canvas.ZIndex" Value="{Binding ZIndex}"/>
+        </Style>
+    </ItemsControl.ItemContainerStyle>
+
+    <ItemsControl.ItemsPanel>
+        <ItemsPanelTemplate>
+            <Canvas />
+        </ItemsPanelTemplate>
+    </ItemsControl.ItemsPanel>
+
+    <ItemsControl.Resources>
+        <DataTemplate DataType="{x:Type models:Circle}">
+            <Canvas>
+                <Ellipse Fill="black" Width="{Binding Width}" Height="{Binding Height}" Panel.ZIndex="10"/>
+            </Canvas>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type models:AutomatedCar}">
+            <Canvas>
+                <Image Width="{Binding Width}" Height="{Binding Height}"
+                    Source="{Binding Filename, Converter={x:Static visualization:WorldObjectTransformer.Instance}}"/>
+                <Polyline Stroke="red" Points="{Binding Geometry.Points, Mode=OneWay}" />
+            </Canvas>
+        </DataTemplate>
+    </ItemsControl.Resources>
+</ItemsControl>
+```
+
+A skeletonban esetben az objektum nem a képet tárolja, hanem a képfájl nevét (`Filename`, ez van a Source-hoz kötve), a fájlnévből pedig egy konverter segítségével kap a megjelenítés képet.
+
+Ráadásul nem is tölti be minden esetben a képfájlokat, hanem gyorsító-tárazza azokat fájlnév alapján egy `Dictionary` segítségével. A `WorldObjectTransformer` singleton, hogy ez a mechanizmus megfelelően működhessen.
+
+```csharp
+public class WorldObjectTransformer : IValueConverter
+{
+    private static Dictionary<string, BitmapImage> cache = new Dictionary<string, BitmapImage>();
+
+    public static WorldObjectTransformer Instance { get; } = new WorldObjectTransformer();
+
+    static BitmapImage GetCachedImage(string filename)
+    {
+        if (!cache.ContainsKey(filename))
+        {
+            var image = new BitmapImage(new Uri($"src/AutomatedCar/Assets/WorldObjects/{filename}", UriKind.Relative));
+            image.Freeze();
+            cache.Add(filename, image);
+        }
+        return cache[filename];
+    }
+
+    public object Convert(object value, Type targetType, object parameter, CultureInfo culture) =>
+        GetCachedImage((string)value);
+}
+```
+
+Megfigyelhető továbbá, hogy az AutomatedCar template esetében nem csak a kép van kirajzolva, hanem egy poligon ez, ez az objektum poligon váza, amelyet pl. ütközésekhez kell majd felhasználni. Előbb a kép, majd rá a polyline kerül kirajzolásra. Az ilyen poligonok megjelenítése debug funkciókét a megjelenítés feladata. A rajzolás pedig egy logikai értékhez kapcsolható...  
+
+#### Pozicionálás
+
+Megfigyelhető, hogy  a fenti példán, hogy a `ItemsControl.ItemContainerStyle` rendelkezik az objektumok pozíciójáról. Ezt CSS-szerűen működő stílusokkal lehet megadni. Az ItemsControl elemei (a WorldObject-ek) *X*, *Y* és *ZIndex* tulajdonságához van kötve a `ContentPresenter` _Canvas_ *Left*, *Top* és *ZIndex* attribútuma.
+
+Az alábbi ábrán látható a futó alkalmazás: bal oldalt a kezdetleges CourseDisplay, jobb oldalt a kezdetleges Dashboard. Az autó az `(50, 50)` pozícióba van kirajzolva, a kör a `(400, 200)` koordinátákra (bal felső sarokkal értendő) ezek különbségét pedig kiszámolta a *DummySensor* és leolvasható a műszerfalról.
+
+![](images/avalonia_skeleton.png)
+
+
+## Avalonia alapú megjelenítés
+
 Az [*Avalonia* keretrendszer](http://avaloniaui.net/) által is használt [MVVM modell](http://avaloniaui.net/docs/quickstart/mvvm)ben az objektumokhoz tartozik egy definiált a megjelenítés.
 
 ![](http://avaloniaui.net/docs/quickstart/images/mvvm.png)
 
-Jelen esetben például a műszerfal egy *AutomatedCar* objektum megjelenítése. Egészen pontosana *World*-ben tárolt `controlledCar` objektumé. A *DashboardView* a *DashboardViewModel*-en keresztül a `controlledCar`-hoz van kötve.
+Jelen esetben például a műszerfal egy *AutomatedCar* objektum megjelenítése. Egészen pontosan a *World*-ben tárolt `controlledCar` objektumé. A *DashboardView* a *DashboardViewModel*-en keresztül a `controlledCar`-hoz van kötve.
 
 ```xml
 <ContentControl Name="Dashboard" Content="{Binding World.ControlledCar, Mode=OneWay}" >
