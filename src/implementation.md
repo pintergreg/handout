@@ -4,11 +4,12 @@
 
 ## C#
 
-A korábbi félévek visszajelzései visszetérő eleme volt, hogy C#-ban is meg lehessen oldani a feladatot. A cross-plastform fejleszés ugyanúgy feltétel, így „csak” a [.NET Core](https://dotnet.microsoft.com/download/dotnet-core) jöhet szóba, ennek is a 3.1-es verziója (LTS).
+A korábbi félévek visszajelzései visszatérő eleme volt, hogy C#-ban is meg lehessen oldani a feladatot. A cross-plastform fejlesztés ugyanúgy feltétel, így „csak” a [.NET Core](https://dotnet.microsoft.com/download/dotnet-core) jöhet szóba, ennek is a 3.1-es verziója (LTS).
 
-A .NET 5 egyesíti majd a .NET Framework-öt és a .NET Core továbbá bevezeti a MAUI-t mint multiplatform keretrendszert grafikus felületek készítéséhez, ez azonban ma még [nem elérhető](https://devblogs.microsoft.com/dotnet/introducing-net-multi-platform-app-ui/).
+A .NET 5 egyesíti majd a .NET Framework-öt és a .NET Core-t, majd a .NET 6 be fogja vezetni a MAUI-t mint multiplatform keretrendszert grafikus felületek készítéséhez, ez azonban ma még [nem elérhető](https://devblogs.microsoft.com/dotnet/introducing-net-multi-platform-app-ui/).
 
-Addig is szükség volt egy áthidaló megoldásra miután a WPF nem használható Windows-on kívül, erre a _3rd party_ [Avalonia](http://avaloniaui.net/) keretrendszert fogjuk használni. Az Avalonia a WPF-hez hasonlóan egy XAML alapú Model-View-ViewModel (MVVM) rendszer.
+Mivel a CI környezet Linux alapon futott, szükség volt egy áthidaló megoldásra miután a WPF nem használható Windows-on kívül, erre a _3rd party_ [Avalonia](http://avaloniaui.net/) keretrendszert használtuk. Az Avalonia a WPF-hez hasonlóan egy XAML alapú Model-View-ViewModel (MVVM) rendszer.
+Viszont miután már a GitHub Actions ingyenes opció mellett is lehetővé teszi a Windows alapú CI környezetek használatát, a WPF is használható lett.
 
 ![.NET stack](images/dotnet_stack.png)
 
