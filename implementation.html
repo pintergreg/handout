@@ -169,9 +169,10 @@
                         <h1><a class="header" href="#implementáció" id="implementáció">Implementáció</a></h1>
 <!-- toc -->
 <h2><a class="header" href="#c" id="c">C#</a></h2>
-<p>A korábbi félévek visszajelzései visszetérő eleme volt, hogy C#-ban is meg lehessen oldani a feladatot. A cross-plastform fejleszés ugyanúgy feltétel, így „csak” a <a href="https://dotnet.microsoft.com/download/dotnet-core">.NET Core</a> jöhet szóba, ennek is a 3.1-es verziója (LTS).</p>
-<p>A .NET 5 egyesíti majd a .NET Framework-öt és a .NET Core továbbá bevezeti a MAUI-t mint multiplatform keretrendszert grafikus felületek készítéséhez, ez azonban ma még <a href="https://devblogs.microsoft.com/dotnet/introducing-net-multi-platform-app-ui/">nem elérhető</a>.</p>
-<p>Addig is szükség volt egy áthidaló megoldásra miután a WPF nem használható Windows-on kívül, erre a <em>3rd party</em> <a href="http://avaloniaui.net/">Avalonia</a> keretrendszert fogjuk használni. Az Avalonia a WPF-hez hasonlóan egy XAML alapú Model-View-ViewModel (MVVM) rendszer.</p>
+<p>A korábbi félévek visszajelzései visszatérő eleme volt, hogy C#-ban is meg lehessen oldani a feladatot. A cross-plastform fejlesztés ugyanúgy feltétel, így „csak” a <a href="https://dotnet.microsoft.com/download/dotnet-core">.NET Core</a> jöhet szóba, ennek is a 3.1-es verziója (LTS).</p>
+<p>A .NET 5 egyesíti majd a .NET Framework-öt és a .NET Core-t, majd a .NET 6 be fogja vezetni a MAUI-t mint multiplatform keretrendszert grafikus felületek készítéséhez, ez azonban ma még <a href="https://devblogs.microsoft.com/dotnet/introducing-net-multi-platform-app-ui/">nem elérhető</a>.</p>
+<p>Mivel a CI környezet Linux alapon futott, szükség volt egy áthidaló megoldásra miután a WPF nem használható Windows-on kívül, erre a <em>3rd party</em> <a href="http://avaloniaui.net/">Avalonia</a> keretrendszert használtuk. Az Avalonia a WPF-hez hasonlóan egy XAML alapú Model-View-ViewModel (MVVM) rendszer.
+Viszont miután már a GitHub Actions ingyenes opció mellett is lehetővé teszi a Windows alapú CI környezetek használatát, a WPF is használható lett.</p>
 <p><img src="images/dotnet_stack.png" alt=".NET stack" /></p>
 <p>Használható fejlesztői környezetek: Visual Studio, VS Code (kizárólag a hivatalos, MS változattal működik együtt a .NET debugger), IntelliJ Rider, stb.</p>
 <p>Hasznos írások az implementációhoz:</p>
