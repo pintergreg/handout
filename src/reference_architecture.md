@@ -26,8 +26,8 @@ A teljes szoftver moduljai [12 user story](sprints.md)-ra vannak bontva. Az egye
 
 ![](images/full_software.png)
 
-A billentyűzet események kezelése értelemszerűen a szoftverban történik, amelyet aztán a szimulált autó kezelőszerveire (gáz- és fékpedál, kormány) kell leképzni.
-A megelenítésnek pedig értelemszerűen a teljes világot, de legalábbis az autó egy környezetét kell, hogy kirajzolnia.
+A billentyűzet események kezelése értelemszerűen a szoftverban történik, amelyet aztán a szimulált autó kezelőszerveire (gáz- és fékpedál, kormány) kell leképezni.
+A megjelenítésnek pedig értelemszerűen a teljes világot, de legalábbis az autó egy környezetét kell, hogy kirajzolnia.
 
 
 ## Virtual Function Bus
@@ -115,12 +115,12 @@ Az elkészítendő szoftver felhasználói felületének az alábbi vázlat fel�
 
 A programablak bal oldalán a virtuális világ egy szeletét látjuk ezért felel a vizualizációs modul. A megjelenítés középpontja az mindenkor vezérelt autó (egocar). A világ minden eleméhez tartozik egy képfájl, ezen elemek megfelelő transzformációk (forgatás, skálázás) végrehajtása után kirajzolásra kerülne a CourseDisplayre.
 
-Továbbá erre a részre kerülnek kirajzolásra a debuggoláshoz és teszteléshez használandó segédobjektumok opionálisan bekapcsolható megjelenítése. Ide tartozik a szenzorok látómezeje, a világobjektumok „poligon váza”, valamint utóbbiak eseményre történő kiemelésének lehetősége.
+Továbbá erre a részre kerülnek kirajzolásra a debuggoláshoz és teszteléshez használandó segédobjektumok opcionálisan bekapcsolható megjelenítése. Ide tartozik a szenzorok látómezeje, a világobjektumok „poligon váza”, valamint utóbbiak eseményre történő kiemelésének lehetősége.
 
 
 A jobb oldalon a műszerfal található. A műszerfalon nincsenek vezérlőelemek, csak megjelenítés. Az összes kapcsoló a billentyűzettel állítható, a grafikus elemeknek nem kell pl. egérrel kapcsolhatónak lenniük.
 
-A fordulatszám és a sebesség legyen egy analóg órával reprezentálva; a kormány elforgazás, a gáz- és fékpedál állása progressbar-okkal szemléltethető. Az irányjelző visszajelzője és a vezetéstámogató funkciók visszajelzői lámpaszerűek, a sebességváltó állása, és a debug értékek pl. kocsi pozíciója (x, y koordináta) lehet szöveges.
+A fordulatszám és a sebesség legyen egy analóg órával reprezentálva; a kormány elforgatás, a gáz- és fékpedál állása progressbar-okkal szemléltethető. Az irányjelző visszajelzője és a vezetéstámogató funkciók visszajelzői lámpaszerűek, a sebességváltó állása, és a debug értékek pl. kocsi pozíciója (x, y koordináta) lehet szöveges.
 A buszon közölt „utoljára látott tábla” képét ki kell tudni rajzolni (a képek rendelkezésre állnak). Legyen elkülönítve a nincs tábla eset is.
 
 Az [*Avalonia* keretrendszer](http://avaloniaui.net/) által is használt [MVVM modell](http://avaloniaui.net/docs/quickstart/mvvm)ben az objektumokhoz tartozik egy definiált a megjelenítés.
@@ -214,7 +214,7 @@ Az utóbbi verziót használva az alábbi ábrán látható a futó alkalmazás:
 
 #### Forgatás
 
-Az autó forgatása is a pozicionáláshoz hasonló elven történik. Az alábbi példában közvetlenül az egyes elem Canvas-ához csatoljuk a transzformációs utasításokat. Ez azzal is jár, hogy egszerre lehet transzformálni a képet és a poligont is. Több transzformáció esetén fontos a `TransformGroup` használata. Például forgatás (szögben) az elem egy változójához kötve. Valamint egy X,Y eltolás az elábbi példában.
+Az autó forgatása is a pozicionáláshoz hasonló elven történik. Az alábbi példában közvetlenül az egyes elem Canvas-ához csatoljuk a transzformációs utasításokat. Ez azzal is jár, hogy egyszerre lehet transzformálni a képet és a poligont is. Több transzformáció esetén fontos a `TransformGroup` használata. Például forgatás (szögben) az elem egy változójához kötve. Valamint egy X,Y eltolás az előbbi példában.
 
 ```xml
 <DataTemplate DataType="{x:Type models:AutomatedCar}">
