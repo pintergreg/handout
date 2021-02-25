@@ -166,9 +166,9 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#3-sprint" id="3-sprint">3. Sprint</a></h1>
+                        <h1 id="3-sprint"><a class="header" href="#3-sprint">3. Sprint</a></h1>
 <!-- toc -->
-<h2><a class="header" href="#parkoló-automatika" id="parkoló-automatika">Parkoló automatika</a></h2>
+<h2 id="parkoló-automatika"><a class="header" href="#parkoló-automatika">Parkoló automatika</a></h2>
 <p>A modul felelőssége az ultrahang szenzorokra épülő <a href="functions.html#parkol%C3%B3-asszisztens-parking-pilot---pp"><em>Parking Pilot</em></a> vezetéstámogató funkció elkészítése.
 Ennek feladata, hogy a megtalálja a parkolóban a megfelelő nagyságú szabad helyet, majd oda -- vezetői beavatkozás nélkül -- beparkolja az autót.</p>
 <p>A parkolóig még a sofőr vezet, megáll az autósor mellett aktiváltja a parkolóhely keresést (bekapcsolja a PP-ot és kiteszi az irányjelzőt abba az irányba ahol a parkolót keresni kell), majd továbbra is &quot;emberi&quot; irányítással el kell haladni a parkolóhelyek mellett. Eközben a funkció kiszámolja a szabad hely méretét. Amikor megvan az alkalmas hely, akkor visszajelzést kell adni a sofőrnek és a hely dimenzióját és az autóhoz viszonyított helyzetét le kell tudni írni (és átadni a buszon, ha a manőver végrehajtását végző komponens el van választva a kereső komponenstől).</p>
@@ -180,7 +180,7 @@ Ennek feladata, hogy a megtalálja a parkolóban a megfelelő nagyságú szabad 
 <p>Ezután, (ha más nem próbálgatásos módszerrel) ki kell tapasztalni, hogy a szükséges &quot;párhuzamos parkolás&quot; manőver hogyan vihető végbe a vezérelt autó irányítószerveivel, majd ezt le kell automatizálni: pl. le kell írni, kormány jobbra teker 100-ra, gáz 25% 1,5s-ig, majd kormány balra 75, gáz 20% 1.25s-ig. Ez hasonló az NPC objektumok szkripteléséhez.</p>
 <p>A programozott vezérlést a buszon keresztül kapott szabad helyet leíró adatok függvényében kell elindítani (amelyhez szükséges lehet tehát egy előzetes tolatás is.</p>
 <p><img src="images/parking_horizontal.png" alt="" /></p>
-<h3><a class="header" href="#definition-of-done" id="definition-of-done">Definition of Done</a></h3>
+<h3 id="definition-of-done"><a class="header" href="#definition-of-done">Definition of Done</a></h3>
 <ul>
 <li>Indexkapcsoló állása alapján parkolóhely keresés jobbra vagy balra</li>
 <li>Autó méretének megfelelő hely beazonosítása</li>
@@ -191,13 +191,13 @@ Ennek feladata, hogy a megtalálja a parkolóban a megfelelő nagyságú szabad 
 <li>Párhuzamos parkolás sikeres (ütközés nélkül megtörténik)</li>
 <li>Sofőr beavatkozására (fék, gáz, kormány) kikapcsolás (megszűnik az automata vezérlés)</li>
 </ul>
-<h2><a class="header" href="#sávtartó-automatika-és-táblafelismerés" id="sávtartó-automatika-és-táblafelismerés">Sávtartó automatika és táblafelismerés</a></h2>
+<h2 id="sávtartó-automatika-és-táblafelismerés"><a class="header" href="#sávtartó-automatika-és-táblafelismerés">Sávtartó automatika és táblafelismerés</a></h2>
 <p>A sávtartó automatika modul felelőssége a kamera szenzorra épülő <a href="functions.html#s%C3%A1vtart%C3%B3-automatika-lane-keeping-assistant---lka"><em>Lane Keeping Assistant</em></a> funkció megvalósítása.</p>
 <p>Ezt két alapvetően kétféleképpen lehet megoldani. Az egyik a sáv széleihez viszonyítva korrigál: ha az autó elérné a sáv szélét, akkor ellenkormányoz. A másik megoldás kiszámolja a sáv közepét és azon tartja az autót.</p>
-<h3><a class="header" href="#1-sáv-széleinek-használata" id="1-sáv-széleinek-használata">1. Sáv széleinek használata</a></h3>
+<h3 id="1-sáv-széleinek-használata"><a class="header" href="#1-sáv-széleinek-használata">1. Sáv széleinek használata</a></h3>
 <p>Itt azt lehet vizsgálni, hogy a vezérelt autó jövőbeli helyzetében metszi-e a sávot.</p>
 <p><img src="images/lka_a.png" alt="" /></p>
-<h3><a class="header" href="#2-sávközép-használata" id="2-sávközép-használata">2. Sávközép használata</a></h3>
+<h3 id="2-sávközép-használata"><a class="header" href="#2-sávközép-használata">2. Sávközép használata</a></h3>
 <p>Itt a vezérelt autó középpontját lehet a sávközéphez igazítani.</p>
 <p><img src="images/lka_b.png" alt="" /></p>
 <p>Csak a 45 foknál enyhébb kanyarodású úton kell működnie, ilyenkor a kocsi a sáv szemmel látható közepét követi. Az LKA működése egy enyhe sávon belüli cikázást eredményez.</p>
@@ -206,7 +206,7 @@ Ennek feladata, hogy a megtalálja a parkolóban a megfelelő nagyságú szabad 
 Ezen kívül természetesen a funkció ki- és bekapcsolható.</p>
 <p>A <strong>Táblafelismerő</strong> modul felelőssége a kamera szenzor látómezejébe kerülő közlekedési táblák közül kiválogatja a relevánsakat (csak az adott irányra/sávra vonatkozó) és a műszerfalnak átadja megjelenítésre az utolsó látott releváns táblát, továbbá beállítja a buszon az aktuális sebességkorlátozást, amelyet az adaptív tempómat modul használ majd. Ez debug információként jelenjen is meg a műszerfalon (szövegesen mint az X,Y koordináták).</p>
 <p><img src="images/tsr.png" alt="" /></p>
-<h3><a class="header" href="#definition-of-done-1" id="definition-of-done-1">Definition of Done</a></h3>
+<h3 id="definition-of-done-1"><a class="header" href="#definition-of-done-1">Definition of Done</a></h3>
 <ul>
 <li>A sávtartó automatika ki- és bekapcsolható
 <ul>
@@ -226,7 +226,7 @@ Ezen kívül természetesen a funkció ki- és bekapcsolható.</p>
 </ul>
 </li>
 </ul>
-<h2><a class="header" href="#adaptív-tempomat" id="adaptív-tempomat">Adaptív tempomat</a></h2>
+<h2 id="adaptív-tempomat"><a class="header" href="#adaptív-tempomat">Adaptív tempomat</a></h2>
 <p>A modul felelőssége a radar szenzorra épülő <a href="functions.html#adapt%C3%ADv-tempomat-adaptive-cruise-control---acc"><em>adaptív tempomat</em></a> vezetéstámogató funkció elkészítése. Ennek a funkciónak három felhasználói esetet kell lefednie.</p>
 <ol>
 <li>Felhasználó által beállított sebesség tartása</li>
@@ -243,7 +243,7 @@ Ezen kívül természetesen a funkció ki- és bekapcsolható.</p>
 Oda kell figyelni, hogy csak a sávban előttünk haladó autót vegye figyelembe, a szembejövőt ne.</p>
 <p>A követési <em>távolság</em> időben történő megadása azt jelenti, hogy a beállított (pl.) 1 másodperces követés esetén akkora távolságot kell hagyni, hogy <strong>az aktuális sebességgel</strong> haladva 1 másodperc alatt megtett út legyen a távolság: 10 m/s (36 km/h) esetében 10 méter. Ezen érték beállítására már az első sprintben készült vezérlő.</p>
 <p><img src="images/acc.png" alt="" /></p>
-<h3><a class="header" href="#definition-of-done-2" id="definition-of-done-2">Definition of Done</a></h3>
+<h3 id="definition-of-done-2"><a class="header" href="#definition-of-done-2">Definition of Done</a></h3>
 <ul>
 <li>Ki- és bekapcsolható</li>
 <li>Bekapcsoláskor a célsebessége az aktuális sebesség, de a minimum célsebesség 30 km/h</li>
@@ -258,7 +258,7 @@ Oda kell figyelni, hogy csak a sávban előttünk haladó autót vegye figyelemb
 <li>AEB beavatkozásra kikapcsol</li>
 <li>Ha sebesség korlétozást talál a buszon, azt alkalmazza új célsebességként, amíg a sofőr felül nem írja</li>
 </ul>
-<h2><a class="header" href="#vészfékező" id="vészfékező">Vészfékező</a></h2>
+<h2 id="vészfékező"><a class="header" href="#vészfékező">Vészfékező</a></h2>
 <p>A modul felelőssége a radar szenzorra épülő <a href="functions.html#auton%C3%B3m-v%C3%A9szf%C3%A9kez%C5%91-rendszer-automatic-emergency-brake---aeb">automata vészfékező rendszer</a> megvalósítása. A vészfékező kritikus biztonsági funkció, így nem kapcsolható ki manuálisan, de maximum 70 km/h sebességig működik. A működése két esetre bontható: ütközés statikus vagy dinamikus objektummal.</p>
 <p>Az előbbi az egyszerűbb eset, mivel a veszélyt jelentő objektum pozíciója változatlan.</p>
 <p><img src="images/aeb_radar_static.png" alt="" /></p>
@@ -271,7 +271,7 @@ A modul olyan triggerekkel vezérli az autót mint amilyenek a billentyűlenyom�
 <p><img src="images/aeb_radar_pedestrian.png" alt="" /></p>
 <p>Másik sávban szembe jövő autóra nem kell vészfékezni, tehát el kell tudni dönteni, hogy abban az esetben nincs ütközési pálya.</p>
 <p><img src="images/radar_lanes_simple.png" alt="" /></p>
-<h3><a class="header" href="#definition-of-done-3" id="definition-of-done-3">Definition of Done</a></h3>
+<h3 id="definition-of-done-3"><a class="header" href="#definition-of-done-3">Definition of Done</a></h3>
 <ul>
 <li>Elkerülhető ütközés esetén vizuális figyelmeztetés a sofőrnek</li>
 <li>Ha a sofőr nem avatkozik közbe, automatikus fékezés (az utolsó pillanatban, ahol az ütközés még elkerülhető)</li>
@@ -280,7 +280,7 @@ A modul olyan triggerekkel vezérli az autót mint amilyenek a billentyűlenyom�
 <li>A vezérelt autó nem üt el gyalogost, nem megy neki fának</li>
 <li>Nem releváns objektumok esetében (fals pozitív) mint a szembejövő autó nem történik vészfékezés</li>
 </ul>
-<h2><a class="header" href="#tolatóradar--tolatókamera" id="tolatóradar--tolatókamera">Tolatóradar / Tolatókamera</a></h2>
+<h2 id="tolatóradar--tolatókamera"><a class="header" href="#tolatóradar--tolatókamera">Tolatóradar / Tolatókamera</a></h2>
 <p>A modul felelőssége a hátsó két ultrahang szenzorra épülő tolatóradar (és kamera) implementálása, amely visszajelzést ad a vezetőnek, arról, hogy tolatás közben veszélyesen közelre került-e valamilyen objektumhoz.
 A távolság számoláshoz itt is lehet használni az objektum referenciákat, az objektum koordinátái közvetlenül elérhetőek, de ne az objektum közepéhez, hanem értelem szerűen annak széléhez képest legyen kiszámolva a távolság.</p>
 <p><img src="images/reverse_radar_system_horizontal.png" alt="" /></p>
@@ -288,7 +288,7 @@ A távolság számoláshoz itt is lehet használni az objektum referenciákat, a
 <p><img src="images/gui_plan_dashboard_with_rr.png" alt="" /></p>
 <p>A tolató radar mellé legyen a tolatókamerák távolságkijelzése is megvalósítva a pályamegjelenítőjén, három lépcsőben 0.5m piros, utána 1m sárga majd az autó hosszáig zöld. Ez hátramenetben kerüljön megjelenítésre, nem debug-funkcióként.</p>
 <p><img src="images/reversing_camera.png" alt="" /></p>
-<h3><a class="header" href="#definition-of-done-4" id="definition-of-done-4">Definition of Done</a></h3>
+<h3 id="definition-of-done-4"><a class="header" href="#definition-of-done-4">Definition of Done</a></h3>
 <ul>
 <li>a tolatóradar csak hátramenetben aktív</li>
 <li>figyelmeztetés megjelenítése a műszerfalon 3 fokozatban

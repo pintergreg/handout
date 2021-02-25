@@ -166,9 +166,9 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#2-sprint" id="2-sprint">2. Sprint</a></h1>
+                        <h1 id="2-sprint"><a class="header" href="#2-sprint">2. Sprint</a></h1>
 <!-- toc -->
-<h2><a class="header" href="#ultrahang-szenzor-implementálása" id="ultrahang-szenzor-implementálása">Ultrahang szenzor implementálása</a></h2>
+<h2 id="ultrahang-szenzor-implementálása"><a class="header" href="#ultrahang-szenzor-implementálása">Ultrahang szenzor implementálása</a></h2>
 <p>Az <em>ultrasonic sensor</em> modul felelőssége a parkoló automata alapjául szolgáló ultrahang szenzorcsomag szimulációjának implementálása. Mint minden szenzor, az ultrahang is érzékeli a világ egy szeletét és eléri a látóterében található objektumokat.</p>
 <p>A valóságos és szimulált szenzorok működését részletesebben a <a href="sensors.html"><em>Szenzorok</em></a> fejezet mutatja be.</p>
 <p>A modul bemenete tehát a világmodell, kimenete olyan ütközhető világ objektumok gyűjteménye képezi, amelyek beleesnek a szenzor látóterébe. A világ objektumainak lekérdezésére már léteznie kell egy publikus metódusnak, mely 3 pontot vár bemenetként és visszaadja a bele eső objektumokat. Ezekből kell még leválogatni a relevánsakat.
@@ -177,7 +177,7 @@ A szenzor látóterét 3 ponttal kel definiálni.</p>
 Minden példány látómezejének 3 pontját folyamatosan frissíteni kell az autó pozíciójának függvényében. Vagyis az autó egyébként folyamatosan frissülő referenciapontjához képest kell definiálni.
 A megjelenítés is felhasználja ezeket a pontokat a háromszög kirajzolására a debuggoláshoz.</p>
 <p><img src="images/ultrasonic.png" alt="Ultrahang szenzorok elhelyezése" /></p>
-<h3><a class="header" href="#definition-of-done" id="definition-of-done">Definition of Done</a></h3>
+<h3 id="definition-of-done"><a class="header" href="#definition-of-done">Definition of Done</a></h3>
 <ul>
 <li>8 db ultrahang szenzor, egyenként 3 méter látótávolsággal, 100° látószöggel</li>
 <li>A 8 darab háromszög koordinátái az autó helyzetétől függően folyamatosan frissülnek</li>
@@ -194,7 +194,7 @@ A megjelenítés is felhasználja ezeket a pontokat a háromszög kirajzolásár
 </li>
 </ul>
 <!-- - debug célra bekapcsolható módon ezek a háromszögek legyen kirajzolhatóak **zöld** színnel -->
-<h2><a class="header" href="#kamera-szenzor-implementálása-Ütközés-detekció-és-mozgásállapot-változás-szimuláció" id="kamera-szenzor-implementálása-Ütközés-detekció-és-mozgásállapot-változás-szimuláció">Kamera szenzor implementálása, Ütközés detekció (és mozgásállapot-változás szimuláció)</a></h2>
+<h2 id="kamera-szenzor-implementálása-Ütközés-detekció-és-mozgásállapot-változás-szimuláció"><a class="header" href="#kamera-szenzor-implementálása-Ütközés-detekció-és-mozgásállapot-változás-szimuláció">Kamera szenzor implementálása, Ütközés detekció (és mozgásállapot-változás szimuláció)</a></h2>
 <p>A kamera modul felelőssége a sávtartó automatika és táblafelismerő alapjául szolgáló kamera szenzor implementációja. Mint minden szenzor, a kamera is érzékeli a világ egy szeletét és eléri a látóterében található objektumokat.</p>
 <p>A valóságos és szimulált szenzorok működését részletesebben a <a href="sensors.html"><em>Szenzorok</em></a> fejezet mutatja be.</p>
 <p>A táblafelismerőnek csak továbbítani kell minden látott táblát, az majd eldönti, hogy melyik miképp releváns a vezérelt autóra nézve.</p>
@@ -204,7 +204,7 @@ A szenzor látóterét 3 ponttal kel definiálni. Miután a szenzor kimenetét k
 <p>A szenzor látómezejének 3 pontját folyamatosan frissíteni kell az autó pozíciójának függvényében. Vagyis az autó egyébként folyamatosan frissülő referenciapontjához képest kell definiálni.
 A megjelenítés is felhasználja ezeket a pontokat a háromszög kirajzolására a debuggoláshoz.</p>
 <p><img src="images/camera.png" alt="" /></p>
-<h3><a class="header" href="#definition-of-done-1" id="definition-of-done-1">Definition of Done</a></h3>
+<h3 id="definition-of-done-1"><a class="header" href="#definition-of-done-1">Definition of Done</a></h3>
 <ul>
 <li>1 db, a szélvédő mögé elhelyezett kamera implementálása</li>
 <li>A látószög és távolság által meghatározott területen kérje el a <strong>releváns</strong> objektumokat
@@ -218,7 +218,7 @@ A megjelenítés is felhasználja ezeket a pontokat a háromszög kirajzolásár
 <!-- - A szenzorok által relevánsnak tartott objektumok vizuálisan kiemelhetők egy debug kapcsolóval (billentyű vagy debug módba váltás) -->
 <!-- - A kamera szenzor a látható sávok összes adatát visszaadja(hány sáv, melyikben vagyunk, azon belül milyen távolságra a szélektől)
 - A kamera szenzor a látott táblák közül a legközelebbi összes adatát visszaadja (milyen tábla, milyen messzire van) -->
-<h3><a class="header" href="#Ütközés-detektálás" id="Ütközés-detektálás">Ütközés-detektálás</a></h3>
+<h3 id="Ütközés-detektálás"><a class="header" href="#Ütközés-detektálás">Ütközés-detektálás</a></h3>
 <p>Folyamatosan vizsgálni kell, hogy a vezérelt autó nekiütközött-e egy ütközhető objektumnak. Ennek vizsgálatához használható a világobjektumok poligon váza. Később majd az automatikus vészfékező modul feladat lesz, hogy ez ne következhessen be.</p>
 <ul>
 <li>A vezérelt autó - tereptárgy ütközésének detektálása és esemény kiváltása</li>
@@ -229,7 +229,7 @@ A megjelenítés is felhasználja ezeket a pontokat a háromszög kirajzolásár
 </ul>
 </li>
 </ul>
-<h3><a class="header" href="#mozgásállapot-változás-szimuláció" id="mozgásállapot-változás-szimuláció">Mozgásállapot-változás szimuláció</a></h3>
+<h3 id="mozgásállapot-változás-szimuláció"><a class="header" href="#mozgásállapot-változás-szimuláció">Mozgásállapot-változás szimuláció</a></h3>
 <p>A modul felelőssége, hogy az ütközésben részt vevő objektumok mozgásállapota az ütközés ereje függvényében megváltozzon. Ehhez egyrészt szükséges az objektumok sebessége, irányvektora és tömege is. Tömeg értékekkel a modell még nem rendelkezik ezek hozzáadása szintén a feladat része. Az autó, gyalogos, biciklis objektumokhoz keresni kell egy átlagos értéket. A statikus objektumok esetében azt is figyelembe kell venni vagy a tömeg értéken keresztül vagy ennél realisztikusabban, hogy rögzítettek. Pl. egy épület tömegét meg lehet választani kvázi végtelen nagyra így az nem tud elmozdulni az ütközés hatására. Egy ha esetében is hasonlóan lehet eljárni, egy táblát viszont könnyen elsodorhat egy autó.</p>
 <ul>
 <li>Az objektumok mozgásállapota az energiamegmaradás törvényeinek megfelelően változik (gyorsul, lassul, irányt vált, megáll)
@@ -256,7 +256,7 @@ A megjelenítés is felhasználja ezeket a pontokat a háromszög kirajzolásár
 </ul>
 </li>
 </ul>
-<h2><a class="header" href="#világ-populálása-mozgó-npc-objektumokkal" id="világ-populálása-mozgó-npc-objektumokkal">Világ populálása mozgó NPC objektumokkal</a></h2>
+<h2 id="világ-populálása-mozgó-npc-objektumokkal"><a class="header" href="#világ-populálása-mozgó-npc-objektumokkal">Világ populálása mozgó NPC objektumokkal</a></h2>
 <p>A modul felelőssége, hogy az előző sprintben felépített világot, amelyben már megjelennek a statikus objektumok és van egy működő, vezethető autó, további dinamikus objektumokkal kell kiegészíteni. Ezek a nem játszható karakterek (NPC, <em>non player character</em>), amelyekre azért van szükség, hogy a 3. sprintes modulok tesztelhetők legyenek. Például a vészfékező rendszer nem üti el a gyalogost, vagy az adaptív tempomat igazítja az autó sebességét az előtte haladó autóéhoz.</p>
 <p>A modul bemenete a világmodell, amely egyrészt elősegíti az implementálást azáltal, hogy a előre definiált helyett az osztályhierarchiában az NPC objektumok számára, másrészt a statikus objektumok, egészen pontosan az út elemek definiálják a pályát amelyen az NPC autónak haladnia kell a KRESZ szabályai szerint: nem tér át az út másik oldalára, nem hajt gyorsan.</p>
 <!-- Alapvetően két megközelítés lehetséges az útvonalak definiálásához. Az egyik, hogy a pályaelemeket (amelyek nem a világban elfoglalt helyzetük alapján sorba rendezve kerülnek eltárolásra) sorba rendezzük, kijelölünk egy  -->
@@ -280,7 +280,7 @@ speed = 30 # px/s
 </code></pre>
 <p>A feladatban az igazi kihívás, hogy az NPC objektumok adaptálódjanak pályához. Az adaptálódást úgy lehet megkerülni, hogy mindkét pályához készül egy-egy útvonal.</p>
 <p>Az NPC autónak nincs hajtáslánc modulja, nem szükséges olyan részletes mozgatás sem mint az vezérelt autónál, de azért a kanyarpontoknál legyen több lépésben megoldva, hogy fokozatosan legyen az autó elforgatva a kanyarodás valósághű leképezése céljából.</p>
-<h3><a class="header" href="#definition-of-done-2" id="definition-of-done-2">Definition of Done:</a></h3>
+<h3 id="definition-of-done-2"><a class="header" href="#definition-of-done-2">Definition of Done:</a></h3>
 <ul>
 <li>Objektumok előre definiált, értelmes helyen jelennek meg (autók úton, gyalogosok út mellett, a járda környékén)</li>
 <li>Objektumok előre szkriptelt útvonalat követnek</li>
@@ -295,7 +295,7 @@ speed = 30 # px/s
 <li>Legalább egy gyalogos mozog és átkel egy zebrán</li>
 <li>Új (a másik) pálya esetén az NPC objektumok adaptálódnak az új környezethez</li>
 </ul>
-<h2><a class="header" href="#radar-szenzor" id="radar-szenzor">Radar szenzor</a></h2>
+<h2 id="radar-szenzor"><a class="header" href="#radar-szenzor">Radar szenzor</a></h2>
 <p>A <em>radar sensor</em> modul felelőssége az adaptív tempomat és az automata vészfékező alapjául szolgáló radar szenzor szimulációjának implementálása. Mint minden szenzor, az radar is érzékeli a világ egy szeletét és eléri a látóterében található objektumokat.</p>
 <p>A valóságos és szimulált szenzorok működését részletesebben a <a href="sensors.html"><em>Szenzorok</em></a> fejezet mutatja be.</p>
 <p>A modul bemenete tehát a világmodell, kimenetét olyan ütközhető világ objektumok gyűjteménye képezi, amelyek beleesnek a szenzor látóterébe. A világ objektumainak lekérdezésére már léteznie kell egy publikus metódusnak, mely 3 pontot vár bemenetként és visszaadja a bele eső objektumokat. Ezekből kell még leválogatni a relevánsakat.
@@ -313,7 +313,7 @@ Nem a radar, hanem majd a ráépülő funkció fogja ezekből meghatázorni, hog
 <!-- ![Oldalirányból érkező jármű](images/radar_aeb_sideward.png) -->
 <p>Mindez értelemszerűen egy statikus objektum pl. fa esetében is működik, csak az nem mozog (mert nem Középföldén vagyunk).</p>
 <!-- Az ACC-hez a radarnak el kell tudni dönteni, hogy pl. egy autó a vezérelt autó előtt halad-e. -->
-<h3><a class="header" href="#definition-of-done-3" id="definition-of-done-3">Definition of Done</a></h3>
+<h3 id="definition-of-done-3"><a class="header" href="#definition-of-done-3">Definition of Done</a></h3>
 <ul>
 <li>Elkészült 1 db, az autó első lökhárítója mögött elhelyezett radar szenzor</li>
 <li>A látószög (60°) és távolság (200m) által meghatározott területen kérjék el a <strong>releváns</strong> objektumokat</li>

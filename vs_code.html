@@ -166,14 +166,14 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#visual-studio-code" id="visual-studio-code">Visual Studio Code</a></h1>
+                        <h1 id="visual-studio-code"><a class="header" href="#visual-studio-code">Visual Studio Code</a></h1>
 <p>Csak a hivatalos Microsoft féle build hajlandó együttműködni a .NET debuggerrel!</p>
-<h2><a class="header" href="#editorconfig-for-vs-code" id="editorconfig-for-vs-code">EditorConfig for VS Code</a></h2>
+<h2 id="editorconfig-for-vs-code"><a class="header" href="#editorconfig-for-vs-code">EditorConfig for VS Code</a></h2>
 <blockquote>
 <p>This plugin attempts to override user/workspace settings with settings found in .editorconfig files.</p>
 </blockquote>
 <p>A formázási beállításokhoz a <a href="https://docs.microsoft.com/en-us/visualstudio/ide/editorconfig-code-style-settings-reference?view=vs-2019">MS ajánlása szerinti</a> .editorconfig fájl hozzáadásra került a projekthez.</p>
-<h2><a class="header" href="#c" id="c">C#</a></h2>
+<h2 id="c"><a class="header" href="#c">C#</a></h2>
 <blockquote>
 <ul>
 <li>Lightweight development tools for .NET Core.</li>
@@ -186,13 +186,13 @@
 <li>Support for project.json and csproj projects on Windows, macOS and Linux.</li>
 </ul>
 </blockquote>
-<h2><a class="header" href="#auto-using-for-c" id="auto-using-for-c">Auto-Using for C#</a></h2>
+<h2 id="auto-using-for-c"><a class="header" href="#auto-using-for-c">Auto-Using for C#</a></h2>
 <blockquote>
 <p>Auto-imports and provides intellisense for references that were not yet imported in a C# file.</p>
 </blockquote>
-<h2><a class="header" href="#automatikus-kódformázás" id="automatikus-kódformázás">Automatikus kódformázás</a></h2>
+<h2 id="automatikus-kódformázás"><a class="header" href="#automatikus-kódformázás">Automatikus kódformázás</a></h2>
 <p><a href="https://stackoverflow.com/questions/49500433/auto-format-c-sharp-code-in-visual-studio-code">StackOverflow://Auto format C# code In Visual Studio Code</a></p>
-<h2><a class="header" href="#net-core-test" id="net-core-test">.NET Core Test</a></h2>
+<h2 id="net-core-test"><a class="header" href="#net-core-test">.NET Core Test</a></h2>
 <p>Unit test támogatás <em>MSTest</em>, <em>xUnit</em> és <em>NUnit</em> keretrendszerekhez.</p>
 <p>Ajánlott beállítások, amiket a <code>.vscode/settings.json</code> fájlban kell elhelyezni:</p>
 <pre><code class="language-json">{
@@ -201,7 +201,7 @@
 }
 </code></pre>
 <!-- C# FixFormat -->
-<h2><a class="header" href="#code-coverage" id="code-coverage">Code Coverage</a></h2>
+<h2 id="code-coverage"><a class="header" href="#code-coverage">Code Coverage</a></h2>
 <p>A tesztlefedettség számítását a <a href="https://www.nuget.org/packages/coverlet.collector/">Coverlet</a> végzi, amit a teszt projekthez adtam hozzá. Ennek riportját használja a Codecov is. 
 A riportot cobertura, lcov fomátumban is legeneráltatom, előbbi a Codcov-nak, utóbbi a <a href="https://marketplace.visualstudio.com/items?itemName=ryanluker.vscode-coverage-gutters">Coverage Gutters</a>-nak kell, amely a VS Code-on belül ad visszajelzéseket. Utóbbi beállításaiban meg kell adni, hogy a report <code>coverage.info</code> néven áll elő, ezt keresse. Illetve be kell kapcsolni a <em>statusbar</em> „Watch” gombjábal.</p>
 <p>Formátumbeállítás <code>runsettings.xml</code> állományon keresztül [<a href="https://github.com/coverlet-coverage/coverlet/blob/master/Documentation/VSTestIntegration.md">forrás</a>]:</p>

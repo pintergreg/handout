@@ -166,15 +166,15 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#vezetéstámogató-funkciók" id="vezetéstámogató-funkciók">Vezetéstámogató funkciók</a></h1>
-<h2><a class="header" href="#adaptív-tempomat-adaptive-cruise-control---acc" id="adaptív-tempomat-adaptive-cruise-control---acc">Adaptív tempomat (Adaptive Cruise Control - ACC)</a></h2>
+                        <h1 id="vezetéstámogató-funkciók"><a class="header" href="#vezetéstámogató-funkciók">Vezetéstámogató funkciók</a></h1>
+<h2 id="adaptív-tempomat-adaptive-cruise-control---acc"><a class="header" href="#adaptív-tempomat-adaptive-cruise-control---acc">Adaptív tempomat (Adaptive Cruise Control - ACC)</a></h2>
 <blockquote>
 <p>Az adaptív sebességtartó automatika a hagyományos tempomat továbbfejlesztett változata. Az ACC egy rendkívül precíz radarral, valamint a gázadás és a fékezés elektronikus vezérlésével tartja az előre beállított követési távolságot. Ha a két jármű között csökken a távolság, az ACC mérsékli a sebességet, sőt szükség esetén fékez is, közben pedig aktiválja a féklámpákat. Ha az elöl haladó jármű gyorsít, vagy átsorol a másik sávba, az Ön autója is fokozatosan felgyorsít, amíg el nem éri az előre beállított sebességet. Az adaptív sebességtartó automatikával a kívánt követési távolságot is beállíthatja (hosszú, közepes vagy rövid).</p>
 <p>forrás: <a href="https://www.toyota.hu/world-of-toyota/safety/adaptive-cruise-control-how-it-works.json">toyota.hu / Adaptív sebességtartó automatika</a></p>
 </blockquote>
-<h3><a class="header" href="#bemutatóvideó-youtube" id="bemutatóvideó-youtube">Bemutatóvideó (YouTube)</a></h3>
+<h3 id="bemutatóvideó-youtube"><a class="header" href="#bemutatóvideó-youtube">Bemutatóvideó (YouTube)</a></h3>
 <p><a href="https://www.youtube.com/watch?v=own_VaRZ9M8"><img src="https://img.youtube.com/vi/own_VaRZ9M8/0.jpg" alt="Bemutatóvideó" /></a></p>
-<h3><a class="header" href="#implementálás" id="implementálás">Implementálás</a></h3>
+<h3 id="implementálás"><a class="header" href="#implementálás">Implementálás</a></h3>
 <p>A kiválasztott célobjektum (autó előtt haladó NPC) sebességéhez igazítja a saját sebességet, vagy tartja a sofőr által kiválasztott sebességhatárt, ha nincs előtte célobjektum.</p>
 <ul>
 <li>ki- és bekapcsolható, reagál az állapotváltás, alapértelmezetten az aktuális sebesség, de min célsebesség 30 km/h</li>
@@ -190,7 +190,7 @@
 <li>ha speed limitet talál a buszon (táblafelismerő), azt alkalmazza új célsebességként, amíg a sofőr felül nem írja</li>
 </ul>
 <p><img src="images/acc.png" alt="" /></p>
-<h3><a class="header" href="#kezelőszervek" id="kezelőszervek">Kezelőszervek</a></h3>
+<h3 id="kezelőszervek"><a class="header" href="#kezelőszervek">Kezelőszervek</a></h3>
 <ul>
 <li>bekapcsoló gomb</li>
 <li>célsebesség kijelölése
@@ -206,14 +206,14 @@
 </ul>
 </li>
 </ul>
-<h2><a class="header" href="#autonóm-vészfékező-rendszer-automatic-emergency-brake---aeb" id="autonóm-vészfékező-rendszer-automatic-emergency-brake---aeb">Autonóm vészfékező rendszer (Automatic Emergency Brake - AEB)</a></h2>
+<h2 id="autonóm-vészfékező-rendszer-automatic-emergency-brake---aeb"><a class="header" href="#autonóm-vészfékező-rendszer-automatic-emergency-brake---aeb">Autonóm vészfékező rendszer (Automatic Emergency Brake - AEB)</a></h2>
 <blockquote>
 <p>Az Autonóm Vészfékező Rendszer (AEB) lényege, hogy egy beépített technológia alkalmazásával (általában radar, kamera, vagy lézer segítségével) folyamatosan méri az elöl haladó jármű mögötti távolságot. Ha a rendszer úgy érzi, hogy a gépkocsik közötti távolság veszélyesen csökken, akkor jelzést ad a járművezetőnek, lehetőséget adva a beavatkozásra (pl. fékezésre). Amennyiben a járművezető reakciója elmarad, vagy annak mértékét a rendszer nem tartja elégségesnek, abban az esetben az AEB beavatkozik, s akár vészfékezés alkalmazásával igyekszik a balesetet elkerülni.</p>
 <p>forrás: <a href="http://www.baleset-megelozes.eu/cikk.php?id=1032">baleset-megelozes.eu / Autonóm Vészfékező Rendszer (AEB)</a></p>
 </blockquote>
-<h3><a class="header" href="#bemutatóvideó-youtube-1" id="bemutatóvideó-youtube-1">Bemutatóvideó (YouTube)</a></h3>
+<h3 id="bemutatóvideó-youtube-1"><a class="header" href="#bemutatóvideó-youtube-1">Bemutatóvideó (YouTube)</a></h3>
 <p><a href="https://www.youtube.com/watch?v=VHR8AeZrlVc"><img src="https://img.youtube.com/vi/VHR8AeZrlVc/0.jpg" alt="Bemutatóvideó" /></a></p>
-<h3><a class="header" href="#implementálás-1" id="implementálás-1">Implementálás</a></h3>
+<h3 id="implementálás-1"><a class="header" href="#implementálás-1">Implementálás</a></h3>
 <p>Nyilvánvalóan nem azt kell vizsgálni, hogy az autó ütközik-e az előtte levő objektummal hanem, hogy <em>ütközni fog-e vele</em>. A vészfékezés maximális lassulása 9 m/s^2 lehet. Ha az autó 36 m/s sebességgel halad akkor 4 másodperc kell a nullára fékezéshez (ha 50 km/h sebességgel halad, akkor 20). Az aktuális sebességből meghatározható, hogy mekkora a fékút, a maximális megengedett lassulás mellett. Az is kiszámolható, hogy ez mennyi időt vesz igénybe, így az is, hogy mikor kell elkezdeni a vészfékezést, hogy a gyalogost ne üssük el.</p>
 <p>A radar szenzor elég messzire ellát, egy nem mozgó objektum (pl. fa) esetében egyszerű meghatározni, hogy lesz-e ütközés és el kell-e kezdeni vészfékezni. Mozgó objektum (gyalogos) esetében azt is figyelembe kell venni, hogy mire odaérünk még az úton lesz-e.</p>
 <ul>
@@ -225,14 +225,14 @@
 <li>nincs nem releváns objektumokra való fékezés (fals pozitív) - pl. szembejövő autó</li>
 </ul>
 <p><img src="images/radar_aeb.png" alt="" /></p>
-<h2><a class="header" href="#parkoló-asszisztens-parking-pilot---pp" id="parkoló-asszisztens-parking-pilot---pp">Parkoló asszisztens (Parking Pilot - PP)</a></h2>
+<h2 id="parkoló-asszisztens-parking-pilot---pp"><a class="header" href="#parkoló-asszisztens-parking-pilot---pp">Parkoló asszisztens (Parking Pilot - PP)</a></h2>
 <p>A rendszert az erre szolgáló vezérlővel aktiválni kell, majd az irányjelzővel kijelölni, hogy jobbra, vagy balra keressük a parkolóhelyet. Ezután ahogy az autó <em>vezetői irányítás mellett</em> végiggurul a parkoló mellett, a rendszer detektálja az üres parkolóhelyet. Ekkor hátramenetbe kapcsolva az PP vezetői beavatkozás nélkül beáll a szabad pozícióba.</p>
-<h3><a class="header" href="#bemutatóvideók-youtube" id="bemutatóvideók-youtube">Bemutatóvideók (YouTube)</a></h3>
+<h3 id="bemutatóvideók-youtube"><a class="header" href="#bemutatóvideók-youtube">Bemutatóvideók (YouTube)</a></h3>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=HWMzP9HYNCQ"><img src="https://img.youtube.com/vi/HWMzP9HYNCQ/0.jpg" alt="Bemutatóvideó" /></a></li>
 <li><a href="https://www.youtube.com/watch?v=rYPby2ALLnE"><img src="https://img.youtube.com/vi/rYPby2ALLnE/0.jpg" alt="Bemutatóvideó" /></a></li>
 </ul>
-<h3><a class="header" href="#implementálás-2" id="implementálás-2">Implementálás</a></h3>
+<h3 id="implementálás-2"><a class="header" href="#implementálás-2">Implementálás</a></h3>
 <ul>
 <li>a parkolás megkezdése külön inputhoz kötött</li>
 <li>a kormány és gáz/fék vezérlésével beparkolás a talált helyre
@@ -285,15 +285,15 @@
 </ul>
 </li>
 </ol>
-<h3><a class="header" href="#kezelőszervek-1" id="kezelőszervek-1">Kezelőszervek</a></h3>
+<h3 id="kezelőszervek-1"><a class="header" href="#kezelőszervek-1">Kezelőszervek</a></h3>
 <ul>
 <li>aktiválás billentyűzettel</li>
 <li>az irányjelzővel jelölhető ki keresési oldal</li>
 </ul>
-<h2><a class="header" href="#sávtartó-automatika-lane-keeping-assistant---lka" id="sávtartó-automatika-lane-keeping-assistant---lka">Sávtartó automatika (Lane Keeping Assistant - LKA)</a></h2>
-<h3><a class="header" href="#bemutatóvideó-youtube-2" id="bemutatóvideó-youtube-2">Bemutatóvideó (YouTube)</a></h3>
+<h2 id="sávtartó-automatika-lane-keeping-assistant---lka"><a class="header" href="#sávtartó-automatika-lane-keeping-assistant---lka">Sávtartó automatika (Lane Keeping Assistant - LKA)</a></h2>
+<h3 id="bemutatóvideó-youtube-2"><a class="header" href="#bemutatóvideó-youtube-2">Bemutatóvideó (YouTube)</a></h3>
 <p><a href="https://www.youtube.com/watch?v=GdtVe1Pnayg"><img src="https://img.youtube.com/vi/GdtVe1Pnayg/0.jpg" alt="Bemutatóvideó" /></a></p>
-<h3><a class="header" href="#implementálás-3" id="implementálás-3">Implementálás</a></h3>
+<h3 id="implementálás-3"><a class="header" href="#implementálás-3">Implementálás</a></h3>
 <p>Két jellemző megvalósítása van. Az egyik a sáv széleihez viszonyítva korrigál: ha az autó elérné a sáv szélét, akkor ellenkormányoz. A másik megoldás kiszámolja a sáv közepét és azon tartja az autót.</p>
 <ul>
 <li>45 foknál enyhébb kanyarodású úton a kocsi a sáv szemmel látható közepén marad</li>
@@ -301,21 +301,21 @@
 Ha újra elérhető a funkció (pl. elhagytuk a kanyart) vizuális indikáció (a műszerfalon)
 Be- és kikapcsolható</li>
 </ul>
-<h4><a class="header" href="#1-sáv-széleinek-használata" id="1-sáv-széleinek-használata">1. Sáv széleinek használata</a></h4>
+<h4 id="1-sáv-széleinek-használata"><a class="header" href="#1-sáv-széleinek-használata">1. Sáv széleinek használata</a></h4>
 <p><img src="images/lka_a.png" alt="" /></p>
-<h4><a class="header" href="#2-sávközép-használata" id="2-sávközép-használata">2. Sávközép használata</a></h4>
+<h4 id="2-sávközép-használata"><a class="header" href="#2-sávközép-használata">2. Sávközép használata</a></h4>
 <p><img src="images/lka_b.png" alt="" /></p>
 <p>Sávon belüli mozgás: a LKA működése egy enyhe sávon belüli cikázást eredményez.</p>
 <p><img src="images/lka_wave.png" alt="" /></p>
-<h3><a class="header" href="#kezelőszervek-2" id="kezelőszervek-2">Kezelőszervek</a></h3>
+<h3 id="kezelőszervek-2"><a class="header" href="#kezelőszervek-2">Kezelőszervek</a></h3>
 <ul>
 <li>aktiválás a műszerfalról (vagy billentyűzettel)</li>
 </ul>
-<h2><a class="header" href="#táblafelismerő-traffic-sign-recognition---tsr" id="táblafelismerő-traffic-sign-recognition---tsr">Táblafelismerő (Traffic Sign Recognition - TSR)</a></h2>
+<h2 id="táblafelismerő-traffic-sign-recognition---tsr"><a class="header" href="#táblafelismerő-traffic-sign-recognition---tsr">Táblafelismerő (Traffic Sign Recognition - TSR)</a></h2>
 <p>A kamera látóterébe eső és az autó számára releváns (ellentétes irányba közlekedők számára szólóakat nem) közlekedési táblákat fel kell ismerni és a legutolsó relevánsat megjeleníteni a műszerfalon. Ha ez sebességkorlátozás, akkor azt a buszra kiírni (az ACC használja).</p>
-<h3><a class="header" href="#bemutatóvideó-youtube-3" id="bemutatóvideó-youtube-3">Bemutatóvideó (YouTube)</a></h3>
+<h3 id="bemutatóvideó-youtube-3"><a class="header" href="#bemutatóvideó-youtube-3">Bemutatóvideó (YouTube)</a></h3>
 <p><a href="https://www.youtube.com/watch?v=RFuUvqxbuSc"><img src="https://img.youtube.com/vi/RFuUvqxbuSc/0.jpg" alt="Bemutatóvideó" /></a></p>
-<h3><a class="header" href="#implementálás-4" id="implementálás-4">Implementálás</a></h3>
+<h3 id="implementálás-4"><a class="header" href="#implementálás-4">Implementálás</a></h3>
 <ul>
 <li>a táblát addig kell megjeleníteni, amíg újabb nem talál a rendszer</li>
 <li>a sebesség limit mindaddig érvényes, míg feloldásra vagy felülbírálásra nem kerül</li>
@@ -327,11 +327,11 @@ Be- és kikapcsolható</li>
 <li>a kamera látótere elég nagy, a kanyaroknál kialakuló helyzetet is kezelni kell</li>
 </ul>
 <p><img src="images/tsr.png" alt="" /></p>
-<h2><a class="header" href="#tolatóradar" id="tolatóradar">Tolatóradar</a></h2>
+<h2 id="tolatóradar"><a class="header" href="#tolatóradar">Tolatóradar</a></h2>
 <p>A hátsó ultrahang szenzorokat használja akadály detektálásra. Kiszámolja az akadály távolságát és annak megfelelően figyelmeztető jelzést ad a vezetőnek, megkönnyítve a manuális parkolást, tolatást.</p>
-<h3><a class="header" href="#bemutatóvideó-youtube-4" id="bemutatóvideó-youtube-4">Bemutatóvideó (YouTube)</a></h3>
+<h3 id="bemutatóvideó-youtube-4"><a class="header" href="#bemutatóvideó-youtube-4">Bemutatóvideó (YouTube)</a></h3>
 <p><a href="https://www.youtube.com/watch?v=qZkCoDChS4A"><img src="https://img.youtube.com/vi/qZkCoDChS4A/0.jpg" alt="Bemutatóvideó" /></a></p>
-<h3><a class="header" href="#implementálás-5" id="implementálás-5">Implementálás</a></h3>
+<h3 id="implementálás-5"><a class="header" href="#implementálás-5">Implementálás</a></h3>
 <ul>
 <li>csak hátramenetben aktív</li>
 <li>figyelmeztetés megjelenítése a műszerfalon</li>
@@ -346,7 +346,7 @@ Be- és kikapcsolható</li>
 </li>
 </ul>
 <p><img src="images/reverse_radar_system_horizontal.png" alt="" /></p>
-<h1><a class="header" href="#fun-kategória" id="fun-kategória">„Fun” kategória</a></h1>
+<h1 id="fun-kategória"><a class="header" href="#fun-kategória">„Fun” kategória</a></h1>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=Xbjdmw8D9-Y">Hyundai - The Empty Car Convoy</a>
 <ul>

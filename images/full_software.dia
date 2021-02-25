@@ -753,15 +753,16 @@ Form#</dia:string>
     </dia:object>
     <dia:object type="Standard - Text" version="1" id="O16">
       <dia:attribute name="obj_pos">
-        <dia:point val="29,-2"/>
+        <dia:point val="28,-2"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="20.25,-2.83829;37.75,-1.78701"/>
+        <dia:rectangle val="17.535,-2.83829;38.465,-0.658123"/>
       </dia:attribute>
       <dia:attribute name="text">
         <dia:composite type="text">
           <dia:attribute name="string">
-            <dia:string>#.Net Core and Avalonia framework#</dia:string>
+            <dia:string>#.Net (Core) and WPF/Avalonia framework
+#</dia:string>
           </dia:attribute>
           <dia:attribute name="font">
             <dia:font family="sans" style="80" name="Helvetica-Bold"/>
@@ -770,7 +771,7 @@ Form#</dia:string>
             <dia:real val="1.1288888454437256"/>
           </dia:attribute>
           <dia:attribute name="pos">
-            <dia:point val="29,-2"/>
+            <dia:point val="28,-2"/>
           </dia:attribute>
           <dia:attribute name="color">
             <dia:color val="#000000"/>

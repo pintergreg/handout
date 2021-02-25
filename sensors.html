@@ -166,7 +166,7 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#szenzorok" id="szenzorok">Szenzorok</a></h1>
+                        <h1 id="szenzorok"><a class="header" href="#szenzorok">Szenzorok</a></h1>
 <!-- toc -->
 <p>A vezetéstámogató rendszerek 3 fő szenzorra épülnek: kamera, radar és ultrahang. A valóságban adott esetben a vezetéstámogató rendszerek több szenzor együttes használatával működnek (a szoftverben ilyet nem kell megvalósítani).</p>
 <p>A jegyzetben szereplő ábrák a szenzorok látóterét nem méretarányosan mutatják mivel a radar és a kamera látótere túl nagy, így az igazán lényeges részletek elvesznének.</p>
@@ -175,18 +175,18 @@
 <li><a href="http://www.eetimes.com/document.asp?doc_id=1272754">Driver Assistance Systems, an introduction to Adaptive Cruise Control</a></li>
 <li><a href="https://autonomous-driving.org/2019/01/25/positioning-sensors-for-autonomous-vehicles/">Sensor Set Design Patterns for Autonomous Vehicles</a></li>
 </ul>
-<h2><a class="header" href="#kamera" id="kamera">Kamera</a></h2>
+<h2 id="kamera"><a class="header" href="#kamera">Kamera</a></h2>
 <p>A kamera a szélvédő mögött található, 60°-os látószöggel 80 méterre lát el. A <a href="functions.html#t%C3%A1blafelismer%C5%91-traffic-sign-recognition---tsr">táblafelismerő rendszer</a> és a <a href="functions.html#s%C3%A1vtart%C3%B3-automatika-lane-keeping-assistant---lka">sávtartó automatika</a> használja.</p>
 <p><img src="images/camera.png" alt="Kamera szenzor látótere, nem méretarányos" title="Kamera szenzor látótere, nem méretarányos" /></p>
-<h2><a class="header" href="#radar" id="radar">Radar</a></h2>
+<h2 id="radar"><a class="header" href="#radar">Radar</a></h2>
 <p>A radar az autó lökhárítóján helyezkedik el, 60°-os látószöggel 200 méterre lát el. Az <a href="functions.html#adapt%C3%ADv-tempomat-adaptive-cruise-control---acc">adaptív tempomat</a> és az <a href="functions.html#auton%C3%B3m-v%C3%A9szf%C3%A9kez%C5%91-rendszer-automatic-emergency-brake---aeb">autonóm vészfékező rendszer</a> épül rá.</p>
 <p><img src="images/radar.png" alt="Radai szenzor látótere, nem méretarányos" title="Radai szenzor látótere, nem méretarányos" /></p>
 <p>A valóságban a radar több járművet is azonosít. A azonos sávban közvetlenül előtte haladót, a szomszédos sávokban haladó autókat és a képes az azonos sávban haladó előttit is azonosítani (az autó alatt átverődő jelekkel). Ennek köszönhetően az olyan potenciálisan veszélyes manőverek mint a szomszéd sávból elénk bevágó autó is felismerhető mivel folyamatosan figyeli ezek helyzetét.</p>
 <p><img src="images/radar_lanes.png" alt="" /></p>
-<h2><a class="header" href="#ultrahang" id="ultrahang">Ultrahang</a></h2>
+<h2 id="ultrahang"><a class="header" href="#ultrahang">Ultrahang</a></h2>
 <p>Az ultrahang szenzorból 8 darab van az autón, látótávolsága 3 méter, látószöge 100°, a <a href="functions.html#parkol%C3%B3-asszisztens-parking-pilot---pp">parkoló asszisztens</a> és a <a href="functions.html#tolat%C3%B3radar">tolatóradar</a> épül rá.</p>
 <p><img src="images/ultrasonic.png" alt="Ultrahang szenzorok látóterei" title="Ultrahang szenzorok látóterei" /></p>
-<h1><a class="header" href="#szenzorimplementáció-működése" id="szenzorimplementáció-működése">Szenzorimplementáció működése</a></h1>
+<h1 id="szenzorimplementáció-működése"><a class="header" href="#szenzorimplementáció-működése">Szenzorimplementáció működése</a></h1>
 <p>A valóságos szenzorokhoz képest az implemtálandó szenzorok jelentősen egyszerűbbek. Értelem szerűen nem kell sem radar, sem ultrahang jeleket szimulálni és a szenzorok látóterét is jelentősen egyszerűsítve reprezentáljuk: egy háromszöggel.</p>
 <p><img src="images/sensor_dataflow.png" alt="" /></p>
 <p>A szenzor látóterét jelképező háromszög a vezérelt autóhoz van rögzítve, vele együtt mozog. Ez az a háromszög amely kijelöli a világ egy szeletét és elérhetővé teszi a szenzornak feldolgozásra. Maga a világ (World osztály) singleton, pontosan egy létezik belőle amelyhez bármely szenzor közvetlenül hozzáfér.</p>

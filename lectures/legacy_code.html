@@ -166,7 +166,7 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#legacy-code" id="legacy-code">Legacy code</a></h1>
+                        <h1 id="legacy-code"><a class="header" href="#legacy-code">Legacy code</a></h1>
 <p>Ez a fejezet gyakorlatilag teljes egészében Michael Feathers <em>Working Efficiently with Legacy Code</em> c. könyvén alapszik. <a href="https://www.slideshare.net/nashjain/working-effectively-with-legacy-code-presentation">Itt elérhető</a> egy prezentáció a szerzőtől.</p>
 <!-- toc -->
 <!--
@@ -174,7 +174,7 @@
     - Ez egy `reveal.js` prezentáció, a fejezetek között a jobbra/balra nyilakkal, a fejezeteken belül a fel/le nyilakkal lehet lépkedni, vagy simán space-el végig lehet nyomogatni mint egy PowerPoint prezit.
     - Mivel egy Python konferencián hangzott el, ami pár sornyi kód szerepel benne, az Python-ul van.
 -->
-<h2><a class="header" href="#mi-a-legacy-code" id="mi-a-legacy-code">Mi a Legacy Code?</a></h2>
+<h2 id="mi-a-legacy-code"><a class="header" href="#mi-a-legacy-code">Mi a Legacy Code?</a></h2>
 <blockquote>
 <p>Code without tests is bad code. It doesn’t matter how well written it is; it doesn’t matter how pretty or object-oriented or well-encapsulated it is. With tests, we can change the behavior of our code quickly and verifiably. Without them, we really don’t know if our code is getting better or worse.</p>
 <p>-- Feathers, M. (2004). Working Effectively with Legacy Code: Preface</p>
@@ -192,16 +192,16 @@
 </ul>
 </li>
 </ul>
-<h3><a class="header" href="#the-legacy-code-dilemma" id="the-legacy-code-dilemma">The Legacy Code Dilemma</a></h3>
+<h3 id="the-legacy-code-dilemma"><a class="header" href="#the-legacy-code-dilemma">The Legacy Code Dilemma</a></h3>
 <blockquote>
 <p>When we change code, we should have tests in place. To put tests in place, we often have to change code.</p>
 <p>-- Feathers, M. (2004). Working Effectively with Legacy Code: Part I / Chapter 2</p>
 </blockquote>
-<h3><a class="header" href="#code-smells" id="code-smells">Code Smells</a></h3>
+<h3 id="code-smells"><a class="header" href="#code-smells">Code Smells</a></h3>
 <ul>
 <li><a href="https://blog.codinghorror.com/code-smells/">Code Smells</a></li>
 </ul>
-<h2><a class="header" href="#changing-software" id="changing-software">Changing Software</a></h2>
+<h2 id="changing-software"><a class="header" href="#changing-software">Changing Software</a></h2>
 <blockquote>
 <table><thead><tr><th></th><th>adding a feature</th><th>fix a bug</th><th>refactor</th><th>optimizing</th></tr></thead><tbody>
 <tr><td>structure</td><td>changes</td><td>changes</td><td>changes</td><td></td></tr>
@@ -211,13 +211,13 @@
 </tbody></table>
 <p>-- Feathers, M. (2004). Working Effectively with Legacy Code: WORK EFFECT LEG CODE p1. pp 6. Prentice Hall Professional.</p>
 </blockquote>
-<h2><a class="header" href="#the-legacy-code-algorithm" id="the-legacy-code-algorithm">The legacy code algorithm</a></h2>
+<h2 id="the-legacy-code-algorithm"><a class="header" href="#the-legacy-code-algorithm">The legacy code algorithm</a></h2>
 <ul>
 <li><a href="https://bssw.io/items/working-effectively-with-legacy-code">Working Effectively with Legacy Code</a></li>
 <li><a href="https://wikimatze.de/books/working-effectively-with-legacy-code/">Matthias Günther jegyzetei a „Working Effectively with Legacy Code” könyvből</a></li>
 <li><a href="https://gist.github.com/jeremy-w/6774525">Jeremy W. Sherman jegyzetei a „Working Effectively with Legacy Code” könyvből</a></li>
 </ul>
-<h2><a class="header" href="#sensing--separation" id="sensing--separation">Sensing &amp; Separation</a></h2>
+<h2 id="sensing--separation"><a class="header" href="#sensing--separation">Sensing &amp; Separation</a></h2>
 <blockquote>
 <ol>
 <li>Sensing — We break dependencies to sense when we can’t access values our code computes.</li>
@@ -225,7 +225,7 @@
 </ol>
 <p>-- Feathers, M. (2004). Working Effectively with Legacy Code: Part I / Chapter 3</p>
 </blockquote>
-<h2><a class="header" href="#mocking" id="mocking">Mocking</a></h2>
+<h2 id="mocking"><a class="header" href="#mocking">Mocking</a></h2>
 <ul>
 <li><a href="http://blog.tremblay.pro/2017/09/mocks.html">Type of Mocks</a></li>
 <li><a href="https://blog.pragmatists.com/test-doubles-fakes-mocks-and-stubs-1a7491dfa3da">Test Doubles — Fakes, Mocks and Stubs</a>
@@ -240,7 +240,7 @@
 </li>
 <li><a href="https://github.com/mockito/mockito/wiki/How-to-write-good-tests">How to write good tests</a></li>
 </ul>
-<h2><a class="header" href="#seams" id="seams">Seams</a></h2>
+<h2 id="seams"><a class="header" href="#seams">Seams</a></h2>
 <blockquote>
 <p>A seam is a place where you can alter behavior in your program without editing in that place.</p>
 <p>-- Feathers, M. (2004). Working Effectively with Legacy Code: Part I / Chapter 4</p>
@@ -248,7 +248,7 @@
 <ul>
 <li><a href="https://medium.com/@biratkirat/working-effectively-with-legacy-code-changing-software-part-1-chapter-4-b997b78fc0a2">Nagyon rövid kivonata a Working Effectively with Legacy Code 1. rész / 4. fejezetének</a></li>
 </ul>
-<h1><a class="header" href="#solid" id="solid">SOLID</a></h1>
+<h1 id="solid"><a class="header" href="#solid">SOLID</a></h1>
 <p><img src="https://devopedia.org/images/article/177/8101.1558682601.png" alt="" /></p>
 <ul>
 <li><a href="http://www.codemag.com/article/1001061">S.O.L.I.D. Software Development, One Step at a Time</a>

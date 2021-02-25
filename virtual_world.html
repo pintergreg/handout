@@ -166,13 +166,13 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#virtuális-világ" id="virtuális-világ">Virtuális világ</a></h1>
+                        <h1 id="virtuális-világ"><a class="header" href="#virtuális-világ">Virtuális világ</a></h1>
 <p>Az autónak egy virtuális tesztpályán kell végigmennie, amelyhez modellezni a világot. Két teszt pályát biztosítunk, egy egyszerűbbet és egy nagyobbat, bonyolultabbat. Alább látható az egyszerűbb.</p>
 <p><img src="images/test_world.png" alt="" /></p>
 <p>A fenti világ elemekből épül föl, amelyek között vannak egyenes útszakaszok, kanyarok (pl. 45° és 90°), T elágazás, gyalogos átkelő, közúti táblák, parkolók és fák. Mindezt <a href="resources/test_world.xml">egy XML</a>, vagy <a href="resources/test_world.json">egy JSON</a> írja le. A feladat megoldásához bármelyik formátum használható.</p>
 <p>A számítógépes grafikában megszokott módon, a bal felső sarok jelenti az origót (0,0) koordinátát. Az x tengely tehát jobbra haladva, az y tengely lefelé haladva növekszik. Így kell értelmezni az XML-t és ekképpen működik a megjelenítés is, hiszen a form bal felső sarkánál van a (0, 0) pont. Az alábbi kép <a href="http://www.e-cartouche.ch/content_reg/cartouche/graphics/en/html/Screen_learningObject3.html">forrása</a>.</p>
 <p><img src="http://www.e-cartouche.ch/content_reg/cartouche/graphics/en/image/coordinates.jpg" alt="" /></p>
-<h2><a class="header" href="#objektumok-leírása" id="objektumok-leírása">Objektumok leírása</a></h2>
+<h2 id="objektumok-leírása"><a class="header" href="#objektumok-leírása">Objektumok leírása</a></h2>
 <p>Egy-egy objektum leírása a következőképpen néz ki (XML-ben):</p>
 <pre><code class="language-xml">&lt;Object type=&quot;road_2lane_straight&quot;&gt;
       &lt;Position x=&quot;1700&quot; y=&quot;144&quot;/&gt;
@@ -189,7 +189,7 @@
 <li>A <code>roadpainting</code> megadná, hogy milyen felfestések vannak vannak az úton, de ez nem releváns</li>
 <li>Egy ilyen egyenes útelem 350×350px, ekkora a kép is és ennek kell lennie az XML-ben is.</li>
 </ul>
-<h2><a class="header" href="#az-út-elemek-viszonyítási-pontjai" id="az-út-elemek-viszonyítási-pontjai">Az út elemek viszonyítási pontjai</a></h2>
+<h2 id="az-út-elemek-viszonyítási-pontjai"><a class="header" href="#az-út-elemek-viszonyítási-pontjai">Az út elemek viszonyítási pontjai</a></h2>
 <p>A képfájlok amikkel a rajzoló csapat dolgozik elég sajátosan működnek. A transzformációs mátrixban leírt elforgatás pl. nem a bal felső sarokkal van értelmezve, hanem elemenként más és más ponttal. Ezek rögzítése szükséges lehet a modellben, a rajzoló csapat munkáját megkönnyítendő. Egyébként korábbi félévekben ezt már összeszedték <a href="resources/reference_points.xml">egzakt módon is</a>.</p>
 <p><img src="images/90right.png" alt="" /> <img src="images/90left.png" alt="" /></p>
 <p><img src="images/45right.png" alt="" /> <img src="images/45left.png" alt="" /></p>
@@ -204,7 +204,7 @@
 <p>Egy korábbi félév során a referenciapontokat (részben) már összegyűjtötték (@csabalint, @SiposGergo, @markkurucz), ez elérhető <a href="resources/reference_points.xml">XML</a> vagy <a href="resources/reference_points.json">JSON</a> formátumban.</p>
 <p>A mozgatásra szoruló elemek (vezérelt autó és NPC autók) nem képezik részét a világ leírásának, viszonyítási pontjuk nem definiált. A rendelkezésre bocsátott autó képek méretarányosak az összes többi objektummal.</p>
 <p>A világhoz szükséges elemek megtalálhatóak a kiinduló project <code>src/main/resources</code> (Java) vagy <code>src/AutomatedCat/Assets</code> (C#) mappájában.</p>
-<h2><a class="header" href="#objektum-poligonok" id="objektum-poligonok">Objektum poligonok</a></h2>
+<h2 id="objektum-poligonok"><a class="header" href="#objektum-poligonok">Objektum poligonok</a></h2>
 <p>Minden objektumnak kell, hogy legyen egy poligon váza, amely többek között az ütközéshez vagy a kijelüléshez is használható. Különböző objektumoknak azonban kicsit mást jelent ez a poligon „váz”.</p>
 <p>Az autó esetében (pl.) a legfontosabb felhasználása az, hogy nekiment-e valaminek, tehát az autó körvonalát kell megjelölni. Ez leegyszerűsíthető, nem kell a grafikai elemet teljes mértékben követni.</p>
 <p><img src="images/car_simplified_polygon_model.png" alt="" /></p>
@@ -249,7 +249,7 @@
     [10, 10]
 ]
 </code></pre>
-<h2><a class="header" href="#méretarány" id="méretarány">Méretarány</a></h2>
+<h2 id="méretarány"><a class="header" href="#méretarány">Méretarány</a></h2>
 <p>Az XML-ben leírt objektumok koordináta-rendszere nem feltétlenül egyezik meg a megjelenítő koordináta-rendszerével, ezt figyelembe véve skálázás, vagy viewport kezelés válhat szükségessé.</p>
 <p>A feladat megoldás során jellemzően valóságos mértékegységekben specifikáljuk a feladatot (pl. méter, km/h, m/s^2, stb.) míg az XML és a grafikai elemek értelem szerűen pixellel dolgoznak. Ennek feloldására, illetve az átváltásra az <strong>1m=50px</strong> szabályt célszerű használni. Ez egy hozzávetőlegesen arányos érték, amellyel számolni is könnyű.</p>
 <!--## Sávtartó automatika tesztelése

@@ -166,10 +166,10 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#intellij-idea---java" id="intellij-idea---java">IntelliJ IDEA - Java</a></h1>
+                        <h1 id="intellij-idea---java"><a class="header" href="#intellij-idea---java">IntelliJ IDEA - Java</a></h1>
 <!-- toc -->
 <p>A feladat Java nyelvű megoldásához ajánlott és támogatott fejlesztői környezet az <a href="https://www.jetbrains.com/idea/#chooseYourEdition">IntelliJ IDEA</a>. A Community Edition ingyenes, ez tartalmaz mindent amire szükség lehet a félév során.Egyetemi e-mail címmel elvileg ingyen igényelhető Pro verzió.</p>
-<h2><a class="header" href="#kódformázás" id="kódformázás">Kódformázás</a></h2>
+<h2 id="kódformázás"><a class="header" href="#kódformázás">Kódformázás</a></h2>
 <p>IDEA beállításai alapértelmezetten elvileg megfelelnek az elvárásoknak, így egy fájl befejezése után (de értelem szerűen commit előtt) célszerű egy formázást megejteni: Code &gt; Reformat Code (CTRL+ALT+L)</p>
 <ul>
 <li>A behúzás beállítása: File &gt; Settings &gt; Editor &gt; Code Style &gt; Java &gt; Tabs and Indents: nem tab, de 4 karakternyi</li>
@@ -177,32 +177,32 @@
 <li>Emellett default beállításokban a vessző és kettőspont utáni szóközök, illetve az operátorokat körbevevő szóközök is szerepelnek. Továbbá a kapcsos zárójelek használata is az elvártnak megfelelően van beállítva.</li>
 </ul>
 <p><a href="java_style_guide.html">Java kódformázási előírások</a></p>
-<h2><a class="header" href="#save-actions" id="save-actions">Save actions</a></h2>
+<h2 id="save-actions"><a class="header" href="#save-actions">Save actions</a></h2>
 <p>Mivel a <em>Reformat Code</em> nyomogatását az ember hajlamos elfelejteni, létezik egy IDEA bővítmény a probléma automatizálására. Ez nem más mint a <a href="https://plugins.jetbrains.com/plugin/7642-save-actions">Save Actions plugin</a>, mely lehetővé teszi, hogy az amúgy is használt <strong>mentés</strong> (CTRL+S) parancshoz lehessen kötni a kódformázási műveletet.
 A <em>Save Actions</em> plugin konfigurálását az alábbiak szerint kell megejteni.
 <img src="https://user-images.githubusercontent.com/3854784/37599751-c35c06c6-2b85-11e8-8018-a8a07c1c1aa7.png" alt="idea_save_action" /></p>
 <p>Zárójeles megjegyzés, hogy ez akkor fog tisztességesen működni, ha az IDEA kódformázási előírásai megfelelően vannak beállítva, vagy legrosszabb esetben default-on lett hagyva minden (már akkor is képes megszüntetni a Checkstyle-ben rögzített problémák jelentős részét).</p>
 <p><a href="https://stackoverflow.com/a/28748557/4737417"><em>forrás</em></a></p>
-<h2><a class="header" href="#checkstyle-plugin" id="checkstyle-plugin">Checkstyle plugin</a></h2>
+<h2 id="checkstyle-plugin"><a class="header" href="#checkstyle-plugin">Checkstyle plugin</a></h2>
 <p>A Checkstyle egy statikus kódelemző szoftver Java nyelvhez, amely egyrészt a kódformázási előírások betartását, másrészt egyéb programozástechnikai előírások betartását is ellenőrzi.</p>
 <p><a href="https://plugins.jetbrains.com/plugin/1065-checkstyle-idea">Checkstyle plugin</a> beállítása IntelliJ IDEA környezetbe. A plugin telepíthető a plugin managerből majd a következő beállításokra van szükség:</p>
 <p>File &gt; Settings &gt; Other Settings &gt; Checkstyle &gt; Configuration File panelen <em>Add</em> és a projekt gyökérben megtalálható <code>checkstyle.xml</code> fájlt kell neki megadni (és elnevezni valamiként, az alábbi képen <code>szfmv</code>). Innentől a fejlesztői környezeten belül elérhető a kódminőség-ellenőrzés <em>valós időben</em>, warning-okkal jelzi a találatokat.</p>
 <p><img src="images/idea_checkstyle_plugin_settings.png" alt="" />
 <img src="images/idea_checkstyle_findings.png" alt="" /></p>
-<h2><a class="header" href="#tesztlefedettség" id="tesztlefedettség">Tesztlefedettség</a></h2>
+<h2 id="tesztlefedettség"><a class="header" href="#tesztlefedettség">Tesztlefedettség</a></h2>
 <p>A kód „minőség” egy mérőszáma lehet, hogy mekkora része van (unit)tesztekkel lefedve. Ezt a projekt README-ben a <a href="https://coveralls.io/github/SzFMV2017-Tavasz/AutomatedCar?branch=master">Coveralls.io</a> szolgáltatás folyamatosan meg is jeleníti.</p>
 <p>Ehhez a <a href="http://www.eclemma.org/jacoco/">JaCoCo</a>-t használjuk, ami Maven-en keresztül (a <code>pom.xml</code>-ben) lett beállítva. A kód tesztekkel történő lefedettségének megjelenítéséhez a fejlesztői környezetek mindenféle okos eszközöket is rendelkezésre bocsátanak.</p>
 <p>Az IntelliJ IDEA-ban beépített megoldás is van, illetve olyan külső eszközöket is képes használni mint a JaCoCo. Képes arra, hogy színkódokkal megfesse az egyes metódusokat annak megfelelően, hogy van-e hozzá teszt.</p>
 <p>A <a href="https://www.jetbrains.com/help/idea/2016.3/code-coverage.html">beállításához</a> meg kell nyitni a <a href="https://www.jetbrains.com/help/idea/2016.3/creating-and-editing-run-debug-configurations.html">Run/debug configuration</a> ablakot, majd a <em>Code Coverage</em> fülön kiválasztani az IntelliJ IDEA-t vagy a JaCoCo-t, előbbi Tracing típusú vizsgálatot is tud (ami jelenleg mindegy). Ezután a <em>Run</em> menü <em>Run 'Main' with Coverage</em> menüpontjával a kódot úgy futtatja, hogy a számításokat el is végzi és megjeleníti az összesítő panelt.</p>
 <p>Az IDEA-n kívül más IDE-khez is megtalálhatóak hasonló funkciók: <a href="http://wiki.netbeans.org/MavenCodeCoverage">NetBeans</a>, <a href="http://www.eclemma.org/jacoco/">Eclipse</a></p>
-<h3><a class="header" href="#képernyőképek" id="képernyőképek">Képernyőképek</a></h3>
+<h3 id="képernyőképek"><a class="header" href="#képernyőképek">Képernyőképek</a></h3>
 <p><img src="images/idea_run_debug_config_menu.png" alt="" />
 <img src="images/idea_run_debug_config_window.png" alt="" />
 <img src="images/idea_coverage_window.png" alt="" /></p>
-<h2><a class="header" href="#logolás---log4j" id="logolás---log4j">Logolás - Log4J</a></h2>
+<h2 id="logolás---log4j"><a class="header" href="#logolás---log4j">Logolás - Log4J</a></h2>
 <p>Módfelett udvariatlan, káros és így kerülendő hibakeresési céllal a standard kimenetre (<code>System.out.println</code>) írni. Ettől még sokan megteszik mondván addig nincs baj, míg nem kerül pusholásra a közös repóba. Csakhogy a kódolás hevében könnyen ott felejthet az ember egy-két ilyet, így célszerű eleve bele sem tenni!</p>
 <p>Szerencsére több logger is létezik, amik nem csak a <code>System.out.println</code> nem rendeltetés szerű használatát tudják megakadályozni, de bónuszként még egy halom hasznos és kényelmes funkcióval is rendelkeznek. A projektben az <a href="https://logging.apache.org/log4j/2.x/">Apache log4j 2.8</a>-as verziója került bevezetésre.</p>
-<h2><a class="header" href="#konfigurálás" id="konfigurálás">Konfigurálás</a></h2>
+<h2 id="konfigurálás"><a class="header" href="#konfigurálás">Konfigurálás</a></h2>
 <p>A logolási beállítások egyrészt helyzetfüggőek, másrészt a fejlesztő magánügyét képezik, így nem kényszerítjük rá a másikra a kedvenc beállításainkat. Ebből következik, hogy a <code>log4j2.xml</code> konfigurációs állomány nincs a <em>git</em> verziókezelő felügyelete alatt. Példa a tartalmára [<a href="http://stackoverflow.com/a/21206994/4737417">forrás</a>]:</p>
 <pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;Configuration status=&quot;INFO&quot;&gt;
@@ -223,9 +223,9 @@ A <em>Save Actions</em> plugin konfigurálását az alábbiak szerint kell megej
 &lt;/Configuration&gt;
 </code></pre>
 <p>A fenti fájlt a projektmappába pl. a <code>src/main/resources/</code>-be kell elhelyezni. Jelenlegi beállításokkal <strong>DEBUG</strong> szintű, fájlba nem ment, csupán a fejlesztői környezet konzoljára ír. A fenti fájl hiányában <strong>ERROR</strong> beállításokkal fog működni.</p>
-<h3><a class="header" href="#szintek" id="szintek">Szintek</a></h3>
+<h3 id="szintek"><a class="header" href="#szintek">Szintek</a></h3>
 <p>A logolásnak több szintje van attól függően, hogy milyen finomságú részletekre vagyunk kíváncsiak. Ezek a szintek sorban (a legbővebbtől a legszűkebbig): ALL, TRACE, DEBUG, INFO, WARN, ERROR, FATAL, OFF. Ebből következik, hogy egy <em>INFO</em> szintű log üzenet meg fog jelenni <em>DEBUG</em> beállítások mellett, de nem fog megjelenni <em>ERROR</em> beállításokkal.</p>
-<h3><a class="header" href="#példa-a-használatára" id="példa-a-használatára">Példa a használatára</a></h3>
+<h3 id="példa-a-használatára"><a class="header" href="#példa-a-használatára">Példa a használatára</a></h3>
 <pre><code class="language-java">package hu.oe.nik.automatedcar.demo;
 
 import org.apache.logging.log4j.LogManager;
@@ -240,13 +240,13 @@ public class Demo {
   }
 }
 </code></pre>
-<h3><a class="header" href="#további-leírás" id="további-leírás">További leírás</a></h3>
+<h3 id="további-leírás"><a class="header" href="#további-leírás">További leírás</a></h3>
 <ul>
 <li><a href="http://howtodoinjava.com/log4j2/log4j-2-xml-configuration-example/">Log4j2 xml configuration example</a></li>
 </ul>
-<h2><a class="header" href="#maven-és-a-proxy" id="maven-és-a-proxy">Maven és a proxy</a></h2>
+<h2 id="maven-és-a-proxy"><a class="header" href="#maven-és-a-proxy">Maven és a proxy</a></h2>
 <p>Ha valaki céges gépen dolgozik előírt proxy mellett, érdemes figyelni arra, hogy <a href="https://maven.apache.org/guides/mini/guide-proxies.html">a maven-nek külön kell konfigurálni a proxy-t</a>.</p>
-<h2><a class="header" href="#függőségeket-tartalmazó-futtatható-jar-állomány-létrehozása" id="függőségeket-tartalmazó-futtatható-jar-állomány-létrehozása">Függőségeket tartalmazó futtatható <code>.jar</code> állomány létrehozása</a></h2>
+<h2 id="függőségeket-tartalmazó-futtatható-jar-állomány-létrehozása"><a class="header" href="#függőségeket-tartalmazó-futtatható-jar-állomány-létrehozása">Függőségeket tartalmazó futtatható <code>.jar</code> állomány létrehozása</a></h2>
 <pre><code>mvn clean compile assembly:single
 </code></pre>
 <p>Az eredmény a <code>target/AutomatedCar-jar-with-dependencies.jar</code></p>

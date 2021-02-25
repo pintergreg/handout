@@ -166,7 +166,7 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#kódformázás" id="kódformázás">Kódformázás</a></h1>
+                        <h1 id="kódformázás"><a class="header" href="#kódformázás">Kódformázás</a></h1>
 <p><img src="https://www.explainxkcd.com/wiki/images/c/c6/code_quality.png" alt="Code quality" /></p>
 <p>A kód tisztasága, olvashatósága nem csak szemantikai, de szintaktikai értelemben is fontos. Minden nyelvnek megvannak a maga „nyelvtani”, szintaktikai előírásai, amit a fordító be is tartat. Azonban ezen túl megvannak azok az (íratlan) szabályai is, amiket már nem a fordító feladata betartatni. (A Go fordítónál ez kezd egybemosódni, pl. nem fordul a kód ha van deklarált, de fel nem használt változód, a <a href="https://golang.org/cmd/gofmt/">gofmt, Go format</a> pedig kikényszeríti a kódformázási szabályokat.)</p>
 <p>Ezek olyan kódformázási szabályok, amelyek több szinten lehetnek definiálva. Egyrészt (többé-kevésbé) egyezményesen egy-egy nyelv szintjén (pl. <a href="https://www.python.org/dev/peps/pep-0008/">PEP8</a> Python esetében, gofmt), aztán lehetnek vállalati esetleg osztály és projekt szinten is.
@@ -175,7 +175,7 @@ Például a <a href="https://01.org/linuxgraphics/gfx-docs/drm/process/coding-st
 <p>Átfogó ajánlást készített még 2000 környékén a Sun, ám ez mára meglehetősen túlhaladott, vagy ilyen a Google által összeállított <a href="https://google.github.io/styleguide/javaguide.html">Google Java Style Guide</a>.
 Ez viszont helyenként túl specifikus (nagyvállalati környezetre optimalizált) a tárgy kereteihez, így nem egy az egyben ezt használjuk. A <a href="http://checkstyle.sourceforge.net/">Checkstyle</a> statikus kódanalizátor default értékei vagy a Jetbrains által az IntelliJ IDEA-ba beállított default szabályok is felfoghatók egy ilyen ajánlásnak.</p>
 <p>A C#-hoz a Microsoft definiálta a <a href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/inside-a-program/coding-conventions">kódformázási szabályokat</a>, ezeket kell követni a tárgy során is.</p>
-<h1><a class="header" href="#statikus-program-analízis" id="statikus-program-analízis">Statikus program analízis</a></h1>
+<h1 id="statikus-program-analízis"><a class="header" href="#statikus-program-analízis">Statikus program analízis</a></h1>
 <p>A statikus analízis során a programkód végrehajtása nélkül, többnyire a forráskód elemzésével - automatizáltan - történik kód hibáinak feltárása.[<a href="https://en.wikipedia.org/wiki/Static_program_analysis">Wikipédia</a>]
 Ilyen eszköz Java nyelvhez például a nyílt forrású <a href="https://pmd.github.io/">PMD</a>, vagy a <a href="http://checkstyle.sourceforge.net/">Checkstyle</a>.</p>
 <p>A kurzus során az utóbbit használjuk, amely figyeli a fentebb leírt formázási ajánlásokat (<a href="http://checkstyle.sourceforge.net/checks.html">teljes használható szabálylista</a>). Ezen túlmenőleg egyéb hibafaktorokat is figyel: magic number-ek alkalmazása, string literál többszöri előfordulása, <a href="https://en.wikipedia.org/wiki/Cyclomatic_complexity">Ciklomatikus komplexitás</a>, túl sok paraméter a metódusban (5), túl hosszú metódus (20 utasítás), túl hosszú sor (120 karakter) valamint a kódban felejtett <code>TODO</code> és <code>FIXME</code> kommentekre is érzékeny.</p>
