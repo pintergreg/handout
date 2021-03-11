@@ -56,6 +56,7 @@ A megjelenítés is felhasználja ezeket a pontokat a háromszög kirajzolásár
     - külön, a táblafelismerő szempontjából releváns objektumok, a táblák
     - külön, a sávtartó szempontjából releváns objektumok, az utak
 - A háromszög koordinátái az autó helyzetétől függően folyamatosan frissülnek
+- [ ] a legközelebbi objektum legyen kiemelve
 
 <!-- - A szenzorok által relevánsnak tartott objektumok vizuálisan kiemelhetők egy debug kapcsolóval (billentyű vagy debug módba váltás) -->
 
@@ -70,8 +71,11 @@ Folyamatosan vizsgálni kell, hogy a vezérelt autó nekiütközött-e egy ütk�
 - A vezérelt autó - NPC-vel való ütközésének detektálása és esemény kiváltása
 - Két objektum akkor ütközött amikor a poligon reprezentációjuk összeért, nem amikor a képfájlok fedik egymást
     - pl. autó a fa lombkoronája alatt, de még nem érte el a törzset
+- [ ] Legyen valami visszajelzés felhasználói felületen arról, hogy ütközés történt (pl. alert dialog)
 
 ### Mozgásállapot-változás szimuláció
+
+**2021 tavasz: nem feladat**
 
 A modul felelőssége, hogy az ütközésben részt vevő objektumok mozgásállapota az ütközés ereje függvényében megváltozzon. Ehhez egyrészt szükséges az objektumok sebessége, irányvektora és tömege is. Tömeg értékekkel a modell még nem rendelkezik ezek hozzáadása szintén a feladat része. Az autó, gyalogos, biciklis objektumokhoz keresni kell egy átlagos értéket. A statikus objektumok esetében azt is figyelembe kell venni vagy a tömeg értéken keresztül vagy ennél realisztikusabban, hogy rögzítettek. Pl. egy épület tömegét meg lehet választani kvázi végtelen nagyra így az nem tud elmozdulni az ütközés hatására. Egy ha esetében is hasonlóan lehet eljárni, egy táblát viszont könnyen elsodorhat egy autó.
 
