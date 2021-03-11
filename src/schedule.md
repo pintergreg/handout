@@ -69,7 +69,7 @@ Az órák csütörtökönként a ~~BA.F.07-ben vannak~~ ([online, MS Teams-en](h
 A félév során a csapatok három alkalommal prezentálják az elvégzett munkát. A „demók” az _elkészült_ szoftver megrendelőnek való bemutatását szimulálják. Nem a kódra vagyunk kíváncsiak, hanem működés közben szeretnénk látni, hogy a szoftver teljesíti feladatban foglalt követelményeket.
 A bemutatás során, a `master` branchre befogadott kódot vesszük figyelembe, minden egyéb _„nem készült el határidőre”_, azaz értékelhetetlen.
 
-## Ideális eset
+## Ideális eset az első sprint után
 
 A „megrendelő” az aktuális master branchről elindítja a szoftvert, az ablak bal oldalán ott van az autó (középen), az út fölé helyezve, jobb oldalon a műszerfal mutatja az állapotát. Sebességbe teszi az autót, majd gázt ad, elindul, kicsit mászkál a világban, teszteli a gyorsulás, lassulás és kanyarodás „érzetét”, közben megfigyeli a pálya illesztéseit és a „grafika folytonosságát”.
 Még kipróbálja a debug funkciókat és egyéb kapcsolót a rend kedvéért.
