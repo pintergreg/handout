@@ -69,6 +69,13 @@ Az órák csütörtökönként a ~~BA.F.07-ben vannak~~ ([online, MS Teams-en](h
 A félév során a csapatok három alkalommal prezentálják az elvégzett munkát. A „demók” az _elkészült_ szoftver megrendelőnek való bemutatását szimulálják. Nem a kódra vagyunk kíváncsiak, hanem működés közben szeretnénk látni, hogy a szoftver teljesíti feladatban foglalt követelményeket.
 A bemutatás során, a `master` branchre befogadott kódot vesszük figyelembe, minden egyéb _„nem készült el határidőre”_, azaz értékelhetetlen.
 
+## Ideális eset
+
+A „megrendelő” az aktuális master branchről elindítja a szoftvert, az ablak bal oldalán ott van az autó (középen), az út fölé helyezve, jobb oldalon a műszerfal mutatja az állapotát. Sebességbe teszi az autót, majd gázt ad, elindul, kicsit mászkál a világban, teszteli a gyorsulás, lassulás és kanyarodás „érzetét”, közben megfigyeli a pálya illesztéseit és a „grafika folytonosságát”.
+Még kipróbálja a debug funkciókat és egyéb kapcsolót a rend kedvéért.
+
+**konklúzió**: a pálya hibátlanul kirajzolásra került, emögött *vélhetően* van egy modell világ, hiszem a poligonok is rendben a helyükön vannak, az autó mozgása „rendben van”, nem volt cél egy profi autószimulátor szintű fizika, ha a sebesség-változások és a fordulás nem mutat kiugró rendellenességet, az autó pontosan vezethető (érts, végre tudok hajtani pl. egy párhuzamos parkolást), és a műszerfal közvetíti azt amit látunk, akkor mind a 4 csapat kifogástalan munkát végzett, mindenki teljesítménye 5-ös, lehet foglalkozni érdekesebb témákkal.
+
 
 # Zárthelyi
 
