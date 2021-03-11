@@ -37,6 +37,7 @@ Az utoljára látott tábla -csak úgy mint a többi vezetéstámogató funkció
 - Megjelenik a fordulatszám mint „analóg óra”
 - Megjelenik a sebesség mint „analóg óra”
 - Megjelenik a kormányállás
+    - akár elforgatott kormánykerékként, de minimum szövegként
 - Megjelenik a gáz, fék állapota (progressbar)
 - Megjelenik a sebességváltó állása (szövegesen)
 - Irányjelző visszajelző (egy-egy nyíl kirajzolva)
@@ -46,6 +47,7 @@ Az utoljára látott tábla -csak úgy mint a többi vezetéstámogató funkció
     - parking pilot és a lane keeping rendszerek állapot visszajelzése
 - az utolsó látott tábla megjelenítése
     - interfész biztosítása, az utolsó látott tábla beállítására
+- F1 billentyű lenyomására üzenetablak megjelenítése a vezérlőbillentyűket felsoroló súgóval
 
 
 ## Világ(modell) kialakítása
