@@ -214,6 +214,8 @@ A megjelenítés is felhasználja ezeket a pontokat a háromszög kirajzolásár
 </ul>
 </li>
 <li>A háromszög koordinátái az autó helyzetétől függően folyamatosan frissülnek</li>
+<li><input disabled="" type="checkbox"/>
+a legközelebbi objektum legyen kiemelve</li>
 </ul>
 <!-- - A szenzorok által relevánsnak tartott objektumok vizuálisan kiemelhetők egy debug kapcsolóval (billentyű vagy debug módba váltás) -->
 <!-- - A kamera szenzor a látható sávok összes adatát visszaadja(hány sáv, melyikben vagyunk, azon belül milyen távolságra a szélektől)
@@ -228,8 +230,11 @@ A megjelenítés is felhasználja ezeket a pontokat a háromszög kirajzolásár
 <li>pl. autó a fa lombkoronája alatt, de még nem érte el a törzset</li>
 </ul>
 </li>
+<li><input disabled="" type="checkbox"/>
+Legyen valami visszajelzés felhasználói felületen arról, hogy ütközés történt (pl. alert dialog)</li>
 </ul>
 <h3 id="mozgásállapot-változás-szimuláció"><a class="header" href="#mozgásállapot-változás-szimuláció">Mozgásállapot-változás szimuláció</a></h3>
+<p><strong>2021 tavasz: nem feladat</strong></p>
 <p>A modul felelőssége, hogy az ütközésben részt vevő objektumok mozgásállapota az ütközés ereje függvényében megváltozzon. Ehhez egyrészt szükséges az objektumok sebessége, irányvektora és tömege is. Tömeg értékekkel a modell még nem rendelkezik ezek hozzáadása szintén a feladat része. Az autó, gyalogos, biciklis objektumokhoz keresni kell egy átlagos értéket. A statikus objektumok esetében azt is figyelembe kell venni vagy a tömeg értéken keresztül vagy ennél realisztikusabban, hogy rögzítettek. Pl. egy épület tömegét meg lehet választani kvázi végtelen nagyra így az nem tud elmozdulni az ütközés hatására. Egy ha esetében is hasonlóan lehet eljárni, egy táblát viszont könnyen elsodorhat egy autó.</p>
 <ul>
 <li>Az objektumok mozgásállapota az energiamegmaradás törvényeinek megfelelően változik (gyorsul, lassul, irányt vált, megáll)
