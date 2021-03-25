@@ -24,9 +24,9 @@ Az első két cikk inkább technikai, számokkal meg minden, a harmadik (ez két
 ### Sorrendben
 
 1. informal
-    - Ez akár csak annyi, hogy megkérsz egy kollegát, hogy „nézz már rá erre picit, szerinted ez így jó?”, gyorsan tud valami visszejelzést adni, de semmi nyoma nem marad. A pair programming folyamatos informáls review.
+    - Ez akár csak annyi, hogy megkérsz egy kollégát, hogy „nézz már rá erre picit, szerinted ez így jó?”, gyorsan tud valami visszajelzést adni, de semmi nyoma nem marad. A pair programming folyamatos informális review.
 2. [walkthrough](http://tryqa.com/what-is-walkthrough-in-software-testing/)
-    - a GitHub-os review kb. ezen a szinten van, visszakövethető módon dokumentált a GH felületének hála, bár nem egy meeting folyamán történik a review, hanem egyénileg (így nincs is vezetője, bár lehetne úgy is csinálni).
+    - a GitHub-os review kb. ezen a szinten van, visszakövethető módon dokumentált a GitHub felületének hála, bár nem egy meeting folyamán történik a review, hanem egyénileg (így nincs is vezetője, bár lehetne úgy is csinálni).
 3. [technical](http://tryqa.com/what-is-technical-review-in-software-testing/)
 4. [inspection](http://tryqa.com/what-is-inspection-in-software-testing/)
 
@@ -49,3 +49,7 @@ https://www.slideshare.net/philipmjohnson/06softwarereview
 https://stackoverflow.com/questions/3533348/how-does-this-code-generate-the-map-of-india
 https://www.tutorialspoint.com/software_testing_dictionary/code_walkthrough.htm
 -->
+
+---
+
+<!-- https://spectrum.ieee.org/aerospace/aviation/how-the-boeing-737-max-disaster-looks-to-a-software-developer -->
