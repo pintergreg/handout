@@ -26,7 +26,7 @@ Az első két cikk inkább technikai, számokkal meg minden, a harmadik (ez két
 1. informal
     - Ez akár csak annyi, hogy megkérsz egy kollégát, hogy „nézz már rá erre picit, szerinted ez így jó?”, gyorsan tud valami visszajelzést adni, de semmi nyoma nem marad. A pair programming folyamatos informális review.
 2. [walkthrough](http://tryqa.com/what-is-walkthrough-in-software-testing/)
-    - a GitHub-os review kb. ezen a szinten van, visszakövethető módon dokumentált a GitHub felületének hála, bár nem egy meeting folyamán történik a review, hanem egyénileg (így nincs is vezetője, bár lehetne úgy is csinálni).
+    - a GitHub-os review majdnem ezen a szinten van, visszakövethető módon dokumentált a GitHub felületének hála, bár nem egy meeting folyamán történik a review, hanem egyénileg, szigorú protokoll nélkül. (Vezetője sincs, bár lehetne úgy is csinálni.)
 3. [technical](http://tryqa.com/what-is-technical-review-in-software-testing/)
 4. [inspection](http://tryqa.com/what-is-inspection-in-software-testing/)
 
