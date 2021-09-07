@@ -16,7 +16,7 @@ A repó található kezdeti kódot (skeleton) egységes alapot képez a félév 
 - szenzor objektum létrehozása
 - adatcsomag küldése és fogadása a *Virtual Function Bus*-on keresztül
 
-A fejezet további felépítse:
+<!-- A fejezet további felépítse: -->
 
 <!-- toc -->
 
