@@ -254,6 +254,23 @@ Pike's rules 1 and 2 restate Tony Hoare's famous maxim "Premature optimization i
 - [^1] [PEP 20](https://www.python.org/dev/peps/pep-0020/)
 - [^2] [wiki://Zen of Python](https://en.wikipedia.org/wiki/Zen_of_Python)
 
+### Zen of Zyg[^3]
+
+- Communicate intent precisely.
+- Edge cases matter.
+- Favor reading code over writing code.
+- Only one obvious way to do things.
+- Runtime crashes are better than bugs.
+- Compile errors are better than runtime crashes.
+- Incremental improvements.
+- Avoid local maximums.
+- Reduce the amount one must remember.
+- Focus on code rather than style.
+- Resource allocation may fail; resource deallocation must succeed.
+- Memory is a resource.
+- Together we serve the users.
+
+- [^3] https://ziglang.org/documentation/0.8.0/#Zen
 
 ### The 23 Gang of Four Design Patterns
 
