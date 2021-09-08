@@ -1,3 +1,9 @@
+# Célkitűzés
+
+[![Konvoj](https://img.youtube.com/vi/Xbjdmw8D9-Y/0.jpg)](https://www.youtube.com/watch?v=Xbjdmw8D9-Y)
+
+A fenti videó a Hyundai promóciós videója az olyan vezetéstámogató rendszereiről, mint az adaptív sebességtartó automatika, az automata vészfékező vagy a sávtartó automatika. A cél a fenti videón bemutatott tesztet teljesítő funkciók implementálása egy leegyszerűsített, szimulált környezetben.
+
 # Szoftver leírása
 
 The program simulates the behavior of a passenger vehicle on the public road, equipped with driver assistance functions.
