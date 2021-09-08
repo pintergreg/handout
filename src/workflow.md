@@ -18,6 +18,7 @@ A konkrét feladatmegoldáshoz az alábbi folyamat az elvárt:
     * add assignee to issue
     * add Definition of Done list to issue
     * add project (there is one for every team) to issue
+    * [Guide to Splitting User Stories](https://www.humanizingwork.com/the-humanizing-work-guide-to-splitting-user-stories/)
 
 ![](images/proc2.png)
 

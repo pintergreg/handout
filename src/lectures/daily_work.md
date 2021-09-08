@@ -30,8 +30,9 @@ Számítsd bele, hogy a másik nem ugyanazzokkal az előismeretekkel rendelkezik
 
 ---
 
-- [HOW TO SPLIT A USER STORY](http://agileforall.com/wp-content/uploads/2018/02/Story-Splitting-Flowchart.pdf)
+- [HOW TO SPLIT A USER STORY](http://www.agileforall.com/wp-content/uploads/2012/01/Story-Splitting-Flowchart.pdf)
   - PDF, 1 oldal, flowchart
+  - [Bővebben](https://www.humanizingwork.com/the-humanizing-work-guide-to-splitting-user-stories/)
 
 ## Coding
 
@@ -196,7 +197,7 @@ Az ehhez a jegyzethez készített ábrák és azok forrása is verziókezelés a
 A félév során a [GitHubFlow](https://guides.github.com/introduction/flow/)-t használjuk, részletek a [GitHub fejezetben](../github.html#branching-model).
 
 <!-- ![](https://www.rittmanmead.com/blog/content/images/2017/01/gitflow.png) -->
-<!-- 
+<!--
 
 #### További írások a témában
 
