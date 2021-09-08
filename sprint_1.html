@@ -248,20 +248,27 @@ Teljesen járható út, hogy a modell, az input állományban található koordi
 <li>ovális pálya (oval) és elemeinek megfelelő kezelése</li>
 </ul>
 </li>
-<li>Hierarchikus objektummodell implementálása világ leírására, API biztosítása ennek elérésére, lekérdezésére</li>
-<li>A skeleton World objektuma a tartalmazza az így felépített világot, pl. egy heterogén WorldObjects gyűjteményben</li>
-<li>Objektumok kiterjedését biztosító poligonok definiálása</li>
-<li>Minden feldolgozott objektum rendelkezzen pozíció, referencia, orientáció, típusadatokkal</li>
-<li>A modell legyen felkészítve az input fájlból kiolvasott „statikus” objektumokon túl mozgó („dinamikus”) objektumok kezelésére is
+<li>Objektummodell implementálása világ leírására
+<ul>
+<li>A skeleton World objektuma a tartalmazza a felépített világot, pl. egy heterogén WorldObjects gyűjteményben</li>
+</ul>
+</li>
+<li>Objektumok kiterjedését biztosító poligonok beolvasása</li>
+<li>Minden feldolgozott objektum rendelkezzen pozíció, referencia, orientáció, típusadatokkal
+<ul>
+<li>legyen olyan tulajdonság is, amellyel egyszerűen kiválogatható, hogy valaminek neki lehet menni (pl. fa) vagy nem (úttest)</li>
+</ul>
+</li>
+<li>A modell legyen felkészítve az input fájlból kiolvasott „statikus” objektumokon túl mozgó („dinamikus”) objektumok kezelésére is, amelyek kódból lesznek példányosítva
 <ul>
 <li>vezérelt autó, NPC (non-player-character) autó, gyalogos</li>
 </ul>
 </li>
 <li>A modell tegyen különbséget azon objektumok között amelyeknek egy jármű nekimehet és amelyeknek nem (fa vs. útelem)</li>
 <li>A modell kezeljen „z-index”-et, hogy a kirajzolás során biztosítható legyen, hogy mely elemet kell előtt kirajzolni a „kitakarások” végett</li>
-<li>A modell biztosítson egy publikus metódust, amellyel a világ objektumai szűrhetőek. A metódus bemenete 3 pont, amely meghatároz egy háromszög (szenzor látótér), a metódus válogassa ki azokat a világ objektumokat, amelyeket a szenzor „lát”, amelyekkel a háromszög érintkezik.</li>
-<li>A modell tegye elérhetővé a feldolgozott referenciapontokat, és a poligonokat is tulajdonságokon keresztül.</li>
-<li>A modell a beolvasott elforgatási mátrixot dolgozza föl, váltsa át elforgatási szögre és tegye elérhető egy tulajdonságon keresztül.</li>
+<li>A modell biztosítson egy publikus metódust, amellyel a világ objektumai szűrhetőek. A metódus bemenete 3 pont, amely meghatároz egy háromszög (szenzor látótér), a metódus válogassa ki azokat a világ objektumokat, amelyeket a szenzor „lát”, amelyekkel a háromszög érintkezik</li>
+<li>A modell tegye elérhetővé a feldolgozott referenciapontokat, és a poligonokat is tulajdonságokon keresztül</li>
+<li>A modell a beolvasott elforgatási mátrixot dolgozza föl, váltsa át elforgatási szögre és tegye elérhető egy tulajdonságon keresztül</li>
 </ul>
 <h2 id="mozgatás-hajtáslánc-és-kormányzás"><a class="header" href="#mozgatás-hajtáslánc-és-kormányzás">Mozgatás: hajtáslánc és kormányzás</a></h2>
 <p>A <em>mozgatás</em> modul felelőssége a vezérelt autó (egocar) mozgatása, mozgásának számítása. Ez magába foglalja a hajtáslánc és a kormányzás megvalósítását.</p>
