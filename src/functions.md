@@ -182,8 +182,9 @@ A hátsó ultrahang szenzorokat használja akadály detektálásra. Kiszámolja 
 
 ![](images/reverse_radar_system_horizontal.png)
 
+<!--
 # „Fun” kategória
 
 * [Hyundai - The Empty Car Convoy](https://www.youtube.com/watch?v=Xbjdmw8D9-Y)
     - LKA, ACC and AEB marketing
-* [Nissan Parking Pilot inspirálta helyére ”parkoló” papucsa](https://youtu.be/tazFfEP_NcY)
+* [Nissan Parking Pilot inspirálta helyére ”parkoló” papucsa](https://youtu.be/tazFfEP_NcY) -->
