@@ -18,9 +18,16 @@ additional-js = ["context-cards.js", "mermaid-init.js", "mermaid.min.js", "d3.5.
 enable = true
 level = 1
 
-[preprocessor.toc]
-command = "mdbook-toc"
-renderer = ["html"]
+# [preprocessor.toc]
+# command = "mdbook-toc"
+# renderer = ["html"]
+#
+# [preprocessor.plantuml]
+# command = "mdbook-plantuml -l"
 
-[preprocessor.plantuml]
-command = "mdbook-plantuml -l"
+# [output.epub]
+
+# [output.linkcheck]
+# follow-web-links = false
+# traverse-parent-directories = false
+# user-agent = "Mozilla/5.0 (X11; Linux x86_64; rv:81.0) Gecko/20100101 Firefox/81.0"
