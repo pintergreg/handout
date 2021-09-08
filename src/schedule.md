@@ -1,23 +1,23 @@
 # Ütemezés
 
-Az órák csütörtökönként a ~~BA.F.07-ben vannak~~ ([online, MS Teams-en](https://teams.microsoft.com/l/team/19%3ac7cf754b3c92495bb1799aa81597d88a%40thread.tacv2/conversations?groupId=a56552c3-1b48-44d8-af21-7ac594aa9009&tenantId=1d6a56fa-705a-4bbc-8004-67a21d5e9b97)), neptun szerint 08:00-10:35 között előadás és 10:45-11:30 között gyakorlat. (Ezek aránya valamint közte a szünet az aktuális előadásanyag és az igények szerint módosulhat). A „gyakorlat” nem labor, hanem sokkal inkább konzultáció!
+Az órák csütörtökönként a BA.F.07-ben vannak (távoktatásban, MS Teams-en), neptun szerint 08:00-10:35 között előadás és 10:45-11:30 között gyakorlat. (Ezek aránya valamint közte a szünet az aktuális előadásanyag és az igények szerint módosulhat). A „gyakorlat” nem labor, hanem sokkal inkább konzultáció!
 
 |hét    |dátum        |előadás|gyakorlat|
 |------:|:-----------:|:-----:|:-------:|
-| 1.|02.&nbsp;11.| Bevezető, áttekintés, [aSpice&nbsp;alapok](https://www.lhpes.com/blog/what-is-aspice-in-automotive); [Software Architecture](lectures/software_architecture.md) | csapatsorsolás, [első feladat kiadás](sprint_1.md), Sprint Planning, Task Definition Workshop, Team commitment, Scheduling
-| 2.|02.&nbsp;18.| [Napi munka, verziókezelők](lectures/daily_work.md)|Branch review, status review, standup (did, will, blocking)
-| 3.|02.&nbsp;25.| [Agile, SCRUM, Kanban](lectures/agile_scrum_kanban.md) | git, GitHub, IDEA ismertetés
-| 4.|03.&nbsp;04.| [TDD, Unit Testing](lectures/tdd.md) | TDD kata
-| 5.|**03.&nbsp;11.**| **első demo**, retrospektív|[második feladat kiadás](sprint_2.md), Sprint planning, Task Definition Workshop, Team commitment, Scheduling
-| 6.|03.&nbsp;18.| [Legacy Code, SOLID](lectures/legacy_code.md) |Refactoring gyakorlat egy előre előkészített példán
-| 7.|03.&nbsp;25.| [Review](lectures/review.md) |Random code review egy tetszőleges elfogadott pull requestből
-| 8.|04.&nbsp;01.| Rektori/dékáni szünet
-| 9.|**04.&nbsp;08.**| [Continous Integration](lectures/ci.md), **második demo**, retrospektív | [harmadik feladat kiadás](sprint_3.md), Sprint planning, Task Definition Workshop, Team commitment, Scheduling; Set up a CI script running all implemented unit tests
-|10.|04.&nbsp;15.|
-|11.|04.&nbsp;22.| Rektori/dékáni szünet
-|12.|04.&nbsp;29.| konzultáció (előtte nap TDK)
-|13.|**05.&nbsp;06.**| Összefoglalás, **harmadik demo**, retrospektív, tárgy feedback | Pair programming, Coding Dojo
-|14.|**05.&nbsp;13.**| **Zárthelyi dolgozat** Moodle, a teszt 08:00-tól 12:00-ig indítható, 70 perc van a kitöltésre
+| 1.|09.&nbsp;09.| Bevezető, áttekintés, [aSpice&nbsp;alapok](https://www.lhpes.com/blog/what-is-aspice-in-automotive) | feladat és az eszközök átfogó ismertetése
+| 2.|09.&nbsp;16.| [Software Architecture](lectures/software_architecture.md); [Napi munka, verziókezelők](lectures/daily_work.md)|csapatsorsolás, [első feladat kiadás](sprint_1.md), Sprint Planning, Task Definition Workshop, Team commitment, Scheduling, standup (did, will, blocking)
+| 3.|09.&nbsp;23.| [Agile, SCRUM, Kanban](lectures/agile_scrum_kanban.md) | git, GitHub, IDEA ismertetés
+| 4.|09.&nbsp;30.| [TDD, Unit Testing](lectures/tdd.md) | TDD kata
+| 5.|**10.&nbsp;07.**| **első demo**, retrospektív|[második feladat kiadás](sprint_2.md), Sprint planning, Task Definition Workshop, Team commitment, Scheduling
+| 6.|10.&nbsp;14.| [Legacy Code, SOLID](lectures/legacy_code.md) |Refactoring gyakorlat egy előre előkészített példán
+| 7.|10.&nbsp;21.| [Review](lectures/review.md) |Random code review egy tetszőleges elfogadott pull requestből
+| 8.|10.&nbsp;28.| Rektori/dékáni szünet
+| 9.|**11.&nbsp;04.**| [Continous Integration](lectures/ci.md), **második demo**, retrospektív | [harmadik feladat kiadás](sprint_3.md), Sprint planning, Task Definition Workshop, Team commitment, Scheduling; Set up a CI script running all implemented unit tests
+|10.|11.&nbsp;11.|
+|11.|11.&nbsp;18.| Rektori/dékáni szünet
+|12.|11.&nbsp;25.| konzultáció (előtte nap TDK)
+|13.|**12.&nbsp;02.**| Összefoglalás, **harmadik demo**, retrospektív, tárgy feedback | Pair programming, Coding Dojo
+|14.|**12.&nbsp;10.**| **Zárthelyi dolgozat** Moodle, a teszt 08:00-tól 12:00-ig indítható, 70 perc van a kitöltésre
 
 
 ## Gantt diagram
@@ -27,9 +27,9 @@ Az órák csütörtökönként a ~~BA.F.07-ben vannak~~ ([online, MS Teams-en](h
     gantt
     dateFormat  YYYY-MM-DD
     axisFormat  %m-%d
-    title 2020/21 tanév II.félév
+    title 2021/22 tanév I.félév
     section Sprint 1
-        Sprint 1 :active, sprint1, 2021-02-11, 4w
+        Sprint 1 :active, sprint1, 2021-09-09, 4w
     section Sprint 2
         Sprint 2 :active, sprint2, after sprint1, 4w
     section Sprint 3
