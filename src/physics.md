@@ -4,17 +4,18 @@ Az autónak egy leegyszerűsített modellen keresztül ugyan, de mégis valósá
 
 Ezen jelenségeket (és még sok minden mást) egy autós játék fizikájáról Marco Monster szépen összefoglalta [Car Physics for Games](http://www.asawicki.info/Mirror/Car%20Physics%20for%20Games/Car%20Physics%20for%20Games.html) című írásában (angol nyelven).
 
-Szintén hasznos lehet még [ezen írás](http://www.iforce2d.net/b2dtut/top-down-car) is, természetesen továbbra is angol nyelven, vagy tetszőleges egyéb irodalom (hint: Google, Stackoverflow, Wikipedia).
 
 Az autóhoz [automata váltót](https://auto.howstuffworks.com/automatic-transmission.htm) kell megvalósítani, de az automata vátóban is vannak „belső” fokozatok (1, 2, 3, 4 stb. előremenetben), tehát meg kell különböztetni a „külső” fokozatokat (P, R, N, D) és D állapotban a belsőket.
 
+Szintén hasznosak lehetnek még az alábbi írások, természetesen továbbra is angol nyelven, vagy tetszőleges egyéb irodalom (hint: Google, Stackoverflow, Wikipedia).
+
+- [Box2D C++ tutorials - Top-down car physics](http://www.iforce2d.net/b2dtut/top-down-car)
 - [2D Car Physics Tutorial ](https://www.gamedev.net/forums/topic/470497-2d-car-physics-tutorial/)
 - [Simple 2D car steering physics in games](https://engineeringdotnet.blogspot.com/2010/04/simple-2d-car-physics-in-games.html)
 
-## Kanyarodás
+## Fordulókör kiszámítása
 
-* http://gamedev.stackexchange.com/questions/50022/typical-maximum-steering-angle-of-a-real-car
-* http://engineeringdotnet.blogspot.hu/2010/04/simple-2d-car-physics-in-games.html
+[Typical Maximum steering angle of a real car](http://gamedev.stackexchange.com/questions/50022/typical-maximum-steering-angle-of-a-real-car)
 
 ![](https://i.stack.imgur.com/DQsP9.png)
 
