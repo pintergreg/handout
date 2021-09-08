@@ -85,17 +85,18 @@ A tervezés során nem elegendő csupán az első sprint (meglehetősen szűk) k
     - kicsi pálya (test_world) és elemeinek megfelelő kezelése
     - nagy pálya (test_world_1kmx1km) és elemeinek megfelelő kezelése
     - ovális pálya (oval) és elemeinek megfelelő kezelése
-- Hierarchikus objektummodell implementálása világ leírására, API biztosítása ennek elérésére, lekérdezésére
-- A skeleton World objektuma a tartalmazza az így felépített világot, pl. egy heterogén WorldObjects gyűjteményben
-- Objektumok kiterjedését biztosító poligonok definiálása
+- Objektummodell implementálása világ leírására
+    - A skeleton World objektuma a tartalmazza a felépített világot, pl. egy heterogén WorldObjects gyűjteményben
+- Objektumok kiterjedését biztosító poligonok beolvasása
 - Minden feldolgozott objektum rendelkezzen pozíció, referencia, orientáció, típusadatokkal
-- A modell legyen felkészítve az input fájlból kiolvasott „statikus” objektumokon túl mozgó („dinamikus”) objektumok kezelésére is
+    - legyen olyan tulajdonság is, amellyel egyszerűen kiválogatható, hogy valaminek neki lehet menni (pl. fa) vagy nem (úttest)
+- A modell legyen felkészítve az input fájlból kiolvasott „statikus” objektumokon túl mozgó („dinamikus”) objektumok kezelésére is, amelyek kódból lesznek példányosítva
     - vezérelt autó, NPC (non-player-character) autó, gyalogos
 - A modell tegyen különbséget azon objektumok között amelyeknek egy jármű nekimehet és amelyeknek nem (fa vs. útelem)
 - A modell kezeljen „z-index”-et, hogy a kirajzolás során biztosítható legyen, hogy mely elemet kell előtt kirajzolni a „kitakarások” végett
-- A modell biztosítson egy publikus metódust, amellyel a világ objektumai szűrhetőek. A metódus bemenete 3 pont, amely meghatároz egy háromszög (szenzor látótér), a metódus válogassa ki azokat a világ objektumokat, amelyeket a szenzor „lát”, amelyekkel a háromszög érintkezik.
-- A modell tegye elérhetővé a feldolgozott referenciapontokat, és a poligonokat is tulajdonságokon keresztül.
-- A modell a beolvasott elforgatási mátrixot dolgozza föl, váltsa át elforgatási szögre és tegye elérhető egy tulajdonságon keresztül.
+- A modell biztosítson egy publikus metódust, amellyel a világ objektumai szűrhetőek. A metódus bemenete 3 pont, amely meghatároz egy háromszög (szenzor látótér), a metódus válogassa ki azokat a világ objektumokat, amelyeket a szenzor „lát”, amelyekkel a háromszög érintkezik
+- A modell tegye elérhetővé a feldolgozott referenciapontokat, és a poligonokat is tulajdonságokon keresztül
+- A modell a beolvasott elforgatási mátrixot dolgozza föl, váltsa át elforgatási szögre és tegye elérhető egy tulajdonságon keresztül
 
 
 ## Mozgatás: hajtáslánc és kormányzás
