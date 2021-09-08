@@ -18,6 +18,7 @@
         - [Sprint 1](./sprint_1.md)
         - [Sprint 2](./sprint_2.md)
         - [Sprint 3](./sprint_3.md)
+    - [Demók](./demo.md)
 
 - [Munkakörnyezet](working_environment.md)
     - [Git](./git.md)
