@@ -270,7 +270,7 @@ Pike's rules 1 and 2 restate Tony Hoare's famous maxim "Premature optimization i
 - Memory is a resource.
 - Together we serve the users.
 
-- [^3] https://ziglang.org/documentation/0.8.0/#Zen
+[^3] https://ziglang.org/documentation/0.8.0/#Zen
 
 ### The 23 Gang of Four Design Patterns
 
