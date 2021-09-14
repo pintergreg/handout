@@ -1,10 +1,10 @@
-![mdBook](https://github.com/SzFMV2020-Tavasz/handout/workflows/mdBook/badge.svg)
+![mdBook](https://github.com/SzFMV2021-Osz/handout/workflows/mdBook/badge.svg)
 
 # Jegyzet a „Szoftverfejlesztés multinacionális vállalatoknál” c. tárgyhoz
 
-- Félév: 2020-2021/II
+- Félév: 2021-2022/I
 
-A repó markdown fájlokat tartalmaz, amelyekből az [mdbook](https://github.com/rust-lang-nursery/mdBook) nevű statikus oldalgenerátor állítja elő a [weboldalt](https://szfmv2021-tavasz.github.io/handout/).
+A repó markdown fájlokat tartalmaz, amelyekből az [mdbook](https://github.com/rust-lang-nursery/mdBook) nevű statikus oldalgenerátor állítja elő a [weboldalt](https://szfmv2021-osz.github.io/handout/).
 
 További felhasználd modulok:
 
