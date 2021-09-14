@@ -14,11 +14,15 @@
     <!-- - [Irónia](./irony.md) -->
 
 - [A feladat](./software.md)
-    - [Sprintek](./sprints.md)
-        - [Sprint 1](./sprint_1.md)
-        - [Sprint 2](./sprint_2.md)
-        - [Sprint 3](./sprint_3.md)
+    - [Sprintek](sprints/sprints.md)
+        - [Sprint 1](sprints/sprint_1.md)
+        - [Sprint 2](sprints/sprint_2.md)
+    - [Sprintek \[régi\]](sprints_old/sprints.md)
+        - [Sprint 1](sprints_old/sprint_1.md)
+        - [Sprint 2](sprints_old/sprint_2.md)
+        - [Sprint 3](sprints_old/sprint_3.md)
     - [Demók](./demo.md)
+    - [Acceptance test](sprints/convoy.md)
 
 - [Munkakörnyezet](working_environment.md)
     - [Git](./git.md)

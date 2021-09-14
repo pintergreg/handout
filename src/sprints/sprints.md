@@ -4,4 +4,4 @@ A félév során minden csapat 2 sprintet teljesít, minden sprintre egy-egy use
 
 Szintén a csapatok feladat a feladatok közötti függőségek azonosítása és az erőforrások (idő, fejlesztő) oly módon történő beosztása, hogy a határidőre minden elkészüljön. Az egyes user story-k között nem csak sprinteken átívelő függőségek lehetnek, hanem sprinten belüliek is. Ilyen esetben az érintett csapattal egyeztetve kell az egyes (rész)feladatok prioritásait meghatározni.
 
-![](images/team_user_stories_new.png)
+![](../images/team_user_stories_new.png)
