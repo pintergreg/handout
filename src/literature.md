@@ -20,6 +20,7 @@
 - [Review](./lectures/review.md)
 - [Continuous Integration](./lectures/ci.md)
 - [Software Architecture](./lectures/software_architecture.md)
+- [aSpice&nbsp;alapok](https://www.lhpes.com/blog/what-is-aspice-in-automotive)
 
 
 ## Javasolt (fel)készülési módszer
