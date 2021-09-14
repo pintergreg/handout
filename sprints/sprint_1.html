@@ -1,0 +1,413 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Sprint 1 - Jegyzet</title>
+                
+
+        <!-- Custom HTML head -->
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="Szoftverfejlesztés multinacionális vállalatoknál">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+                <link rel="icon" href="../favicon.svg">
+                        <link rel="shortcut icon" href="../favicon.png">
+                <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+                <link rel="stylesheet" href="../css/print.css" media="print">
+        
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+                <link rel="stylesheet" href="../fonts/fonts.css">
+        
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+                <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+            </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../description.html"><strong aria-hidden="true">1.</strong> Tárgyleírás</a></li><li class="chapter-item expanded "><a href="../schedule.html"><strong aria-hidden="true">2.</strong> Ütemezés</a></li><li class="chapter-item expanded "><a href="../literature.html"><strong aria-hidden="true">3.</strong> Felkészülést segítő anyagok</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../lectures/software_architecture.html"><strong aria-hidden="true">3.1.</strong> Software Architecture</a></li><li class="chapter-item "><a href="../lectures/daily_work.html"><strong aria-hidden="true">3.2.</strong> Daily Work, Clean Code, Version Control</a></li><li class="chapter-item "><a href="../lectures/agile_scrum_kanban.html"><strong aria-hidden="true">3.3.</strong> Agile, SCRUM, Kanban</a></li><li class="chapter-item "><a href="../lectures/tdd.html"><strong aria-hidden="true">3.4.</strong> TDD, Unit Testing</a></li><li class="chapter-item "><a href="../lectures/legacy_code.html"><strong aria-hidden="true">3.5.</strong> Legacy Code, SOLID</a></li><li class="chapter-item "><a href="../lectures/review.html"><strong aria-hidden="true">3.6.</strong> Review</a></li><li class="chapter-item "><a href="../lectures/ci.html"><strong aria-hidden="true">3.7.</strong> Continuous Integration</a></li><li class="chapter-item "><a href="../mindmap.html"><strong aria-hidden="true">3.8.</strong> MindMap</a></li></ol></li><li class="chapter-item expanded "><a href="../software.html"><strong aria-hidden="true">4.</strong> A feladat</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../sprints/sprints.html"><strong aria-hidden="true">4.1.</strong> Sprintek</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../sprints/sprint_1.html" class="active"><strong aria-hidden="true">4.1.1.</strong> Sprint 1</a></li><li class="chapter-item "><a href="../sprints/sprint_2.html"><strong aria-hidden="true">4.1.2.</strong> Sprint 2</a></li></ol></li><li class="chapter-item "><a href="../sprints_old/sprints.html"><strong aria-hidden="true">4.2.</strong> Sprintek [régi]</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../sprints_old/sprint_1.html"><strong aria-hidden="true">4.2.1.</strong> Sprint 1</a></li><li class="chapter-item "><a href="../sprints_old/sprint_2.html"><strong aria-hidden="true">4.2.2.</strong> Sprint 2</a></li><li class="chapter-item "><a href="../sprints_old/sprint_3.html"><strong aria-hidden="true">4.2.3.</strong> Sprint 3</a></li></ol></li><li class="chapter-item "><a href="../demo.html"><strong aria-hidden="true">4.3.</strong> Demók</a></li><li class="chapter-item "><a href="../sprints/convoy.html"><strong aria-hidden="true">4.4.</strong> Acceptance test</a></li></ol></li><li class="chapter-item expanded "><a href="../working_environment.html"><strong aria-hidden="true">5.</strong> Munkakörnyezet</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../git.html"><strong aria-hidden="true">5.1.</strong> Git</a></li><li class="chapter-item "><a href="../github.html"><strong aria-hidden="true">5.2.</strong> GitHub</a></li><li class="chapter-item "><a href="../developing_tools.html"><strong aria-hidden="true">5.3.</strong> Fejlesztői eszközök</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../vs_code.html"><strong aria-hidden="true">5.3.1.</strong> Visual Studio Code</a></li><li class="chapter-item "><a href="../intellij_rider.html"><strong aria-hidden="true">5.3.2.</strong> IntelliJ Rider</a></li><li class="chapter-item "><a href="../intellij_idea.html"><strong aria-hidden="true">5.3.3.</strong> IntelliJ IDEA (Java)</a></li><li class="chapter-item "><a href="../code_formatting.html"><strong aria-hidden="true">5.3.4.</strong> Kódformázás</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../csharp_style_guide.html"><strong aria-hidden="true">5.3.4.1.</strong> C#</a></li><li class="chapter-item "><a href="../java_style_guide.html"><strong aria-hidden="true">5.3.4.2.</strong> Java</a></li></ol></li></ol></li><li class="chapter-item "><a href="../workflow.html"><strong aria-hidden="true">5.4.</strong> Munkafolyamat</a></li></ol></li><li class="chapter-item expanded "><a href="../implementation.html"><strong aria-hidden="true">6.</strong> Implementáció</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../virtual_world.html"><strong aria-hidden="true">6.1.</strong> Virtuális világ</a></li><li class="chapter-item "><a href="../physics.html"><strong aria-hidden="true">6.2.</strong> Fizika</a></li><li class="chapter-item "><a href="../sensors.html"><strong aria-hidden="true">6.3.</strong> Szenzorok</a></li><li class="chapter-item "><a href="../functions.html"><strong aria-hidden="true">6.4.</strong> Vezetéstámogató funkciók</a></li><li class="chapter-item "><a href="../reference_architecture.html"><strong aria-hidden="true">6.5.</strong> Referencia architektúra</a></li></ol></li></ol>            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                                                <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                                            </div>
+
+                    <h1 class="menu-title">Jegyzet</h1>
+
+                    <div class="right-buttons">
+                                                <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                                                                        
+                    </div>
+                </div>
+
+                                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="1-sprint"><a class="header" href="#1-sprint">1. Sprint</a></h1>
+<!-- toc -->
+<h2 id="human-machine-interface-hmi-műszerfal-irányítás"><a class="header" href="#human-machine-interface-hmi-műszerfal-irányítás">Human Machine Interface (HMI): Műszerfal, irányítás</a></h2>
+<p>A <em>HMI</em> modul felelőssége a vezérelt autó (egocar) kezelőszerveinek és visszajelzőinek megvalósítása. Bemeneti jelként kezelnie kell tehát a billentyűeseményeket, le kell őket fordítani az autó vezérlőszerveire, valamint a műszerfalon meg kell jeleníteni az egocar állapotát leíró értékeket.</p>
+<p>A modul kihívása a „bináris állapotú” billentyűesemények „fokozatossá tétele”. A gáz- és fékpedál nyomvatartásának idejét kell leképezni a pedál lenyomás mértékére és egy adott idő alatt kell ennek 100%-ra jutnia. A hajtáslánc a pedálok lenyomásának mértékét használja majd a gyorsítás - és úgy általában az elmozdulás mértékének - meghatározásához.
+A pedálokhoz hasonlóan a kormány elfordítása sem bináris, ugyanúgy a billentyűlenyomás idejének felhasználásával kell számolni. Ezek skáláját a hajtásláncért modullal egyeztetve kell meghatározni (pl. pedálállás lenyomás 0-100 között).</p>
+<p>A szimulált autó automata váltóval rendelkezik, így a váltó <em>P</em>, <em>R</em>, <em>N</em>, <em>D</em> állapotait is is közvetíteni kell a hajtáslánc felé.</p>
+<p>A műszerfalnak az alábbi vázlathoz hasonlóan kell felépülnie. A programablak bal oldalán a virtuális világ egy szeletét látjuk ezért felel, a vizualizációs modul. A jobb oldalon a műszerfal található. A műszerfalon nincsenek vezérlőelemek, csak megjelenítés. Az összes kapcsoló a billentyűzettel állítható, a grafikus elemeknek nem kell pl. egérrel kapcsolhatónak lenniük.</p>
+<p><img src="../images/gui_plan_dashboard.png" alt="gui_plan" /></p>
+<h3 id="definition-of-done"><a class="header" href="#definition-of-done">Definition of Done</a></h3>
+<ul>
+<li>ACC: Állítható céltávolság (T jelű gombbal, körkörösen 0.8/1.0/1.2/1.4 másodperc)</li>
+<li>ACC: Állítható célsebesség (+/- gombbal, 30-160, 10-es lépésközzel)</li>
+<li>Lane Keeping bekapcsolás</li>
+<li>Parkig pilot bekapcsolás</li>
+<li>irányjelző (jobb, bal) kapcsolható</li>
+<li>egyszerre több billentyű is használható
+<ul>
+<li>kanyarodni és gázt adni/fékezni minimum kell tudni egyszerre</li>
+</ul>
+</li>
+<li>Megjelenik a kormányállás
+<ul>
+<li>akár elforgatott kormánykerékként, de minimum szövegként</li>
+</ul>
+</li>
+<li>Megjelenik a gáz, fék állapota (progressbar)</li>
+<li>Megjelenik a sebességváltó állása (szövegesen)</li>
+<li>Irányjelző visszajelző (egy-egy nyíl kirajzolva)</li>
+<li>Kocsi pozíció megjelenítése (x, y koordináta debug céllal, szövegesen)</li>
+<li>Vezetéstámogató funkciók visszajelzései
+<ul>
+<li>ACC idő és sebesség limit</li>
+<li>parking pilot és a lane keeping rendszerek állapot visszajelzése</li>
+</ul>
+</li>
+<li>az utolsó látott tábla megjelenítése
+<ul>
+<li>interfész biztosítása, az utolsó látott tábla beállítására</li>
+</ul>
+</li>
+</ul>
+<h2 id="mozgatás-hajtáslánc-és-kormányzás"><a class="header" href="#mozgatás-hajtáslánc-és-kormányzás">Mozgatás: hajtáslánc és kormányzás</a></h2>
+<p>A <em>mozgatás</em> modul felelőssége a vezérelt autó (egocar) mozgatása, mozgásának számítása. Ez magába foglalja a hajtáslánc és a kormányzás megvalósítását.</p>
+<p>A modul a HMI-től kap bemenetet, mindenek előtt váltóállás, gáz- és fékpedálállás valamint kormányelfordulás. A váltó automata, ami azzal jár, hogy a HMI a négy állapot (P, R, N, D) egyikét közli.</p>
+<ul>
+<li><strong>P</strong>ark: Ez az egyik olyan állapot amiben a motor beindítható (a másik az N), ez a váltó alapállása, mechanikusan megszünteti az erőátvitelt. A valóságban nem helyettesíti kéziféket, de mivel azt nem kell implementálni a feladat során, lehet úgy tekinteni, hogy P-ben a kézifék is be van húzva. Az autó nem mozdul ebben az állásban.</li>
+<li><strong>R</strong>everse: hátramenet</li>
+<li><strong>N</strong>eutral: üres, ebben az állásban sem jut a motorerő tengelyekre, a motor nem gyorsíthatja az autót. Ha üresben gázt adunk, a motor felpörög, méghozzá jelentősen, mivel nincs ami ellene dolgozna. Ha az autónak volt lendülete, az még hajtja tovább.</li>
+<li><strong>D</strong>rive: előremenet. A D-m belül definiálni kell 4-5 belső fokozatot (mint ahogy manuális váltónál is lenne), le kell programozni, hogy valamilyen fordulatszám értékeknél a váltó váltson. Ezen értékek meghatározásához lehet találni motorkarakterisztikákat (lehetőség szerint utcai autó kerüljön kiválasztásra, ne valami sportautó). A belső fokozatok a felhasználó interfész szempontjából transzparensek.</li>
+</ul>
+<p>A pedál állások [0-100] skálán érkeznek. 0: nincs lenyomva, 1: 1%-ig van lenyomva, 100: tövig (100%-ig) le van nyomva. Minél jobban le van nyomva a gázpedál, annál több teljesítményt kell a motornak kiadnia. A motor belső működését nem kell részletekbe menően implementálni, pláne nem egy belső égésű motorét, egy elektromos hajtáslánc egyszerűbb.
+A szoftverben üzemanyag-fogyasztást (vagy akkumulátor töltöttséget) és hatótávokat nem kell kezelni.</p>
+<p>A kormány jellemzően valamilyen áttétel segítségévél befolyásolja a kormányzott kerekek helyzetét. Ez ebben a szoftverben sokkal egyszerűbb is lehet. Ha 60°-ot tengelyelfordulást feltételezünk és a kormány „nulla” állásból +/- 60-at mozdulhat el, akkor lényegében 1:1-es „áttételünk” van.
+Ha az input +/- 100-as skálán adja meg a kormányelfordulás mértékét, akkor azt kell a tengelyelfordulásra képzeni. A bemeneti skálával kapcsolatban a HMI csapattal kell egyeztetni.</p>
+<p>A úgymond kimenete egy mozgásvektor, vagyis az, hogy a következő ciklusban az autó (referenciapontjának) X, Y koordinátáit mennyivel kell módosítani.
+A pedálállás és a motor korábbi állapotának függvényében meghatározásra kerül a sebesség, a kormányállás valamint az egocar korábbi orientációjának függvényében meghatározásra kerül, hogy módosul-e az autó iránya, a kettő eredőjeként a teljes vektor.</p>
+<p>A modullal kapcsolatban kihívás a hajtáslánc működésének és a mozgás és kanyarodás fizikájának megértése, implementálása. A fizika tekintetében sem kell elaprózni a dolgokat. Két erő elégséges: a motorerő mint gyorsítja a járművet (ez a gázpedállal szabályozható) és egy fékező erő, amelyet a fékpedállal lehet szabályozni, valamint ezen felül egy konstans fékező erőnek is lennie kell, tehát a fékező erő akkor sem nulla, ha a fékpedál állása nulla. Ez utóbbit mindegy minek nevezzük (légellenállás, csúszási-súrlódási erő, a kettő eredője, stb.), nem kell cicomázni, de legyen.</p>
+<p>Külön feladat észben tartatni és célszerűen előre felkészülni arra, hogy a 3. sprintes vezetéstámogató modulok (LKA, AAC, AEB, PP) közvetlenül az egocar hajtásláncára és a kormányra hatnak. Fel kell készíteni a modult ilyen, „nem a HMI-ről” érkező inputok kezelésére is, amelyek ráadásul magasabb prioritásúak. Pl. ha a vészfékező rendszer „lenyomja” a fékpedált, akkor magasabb prioritással kell kezelni mint a HMI-ről érkező pedálállást.</p>
+<h3 id="definition-of-done-1"><a class="header" href="#definition-of-done-1">Definition of Done</a></h3>
+<ul>
+<li>Az autó gázpedál állásától függően gyorsul</li>
+<li>a fék- és gázpedál állapota a billentyű nyomva tartásának idejével szabályozható
+<ul>
+<li>fék- és gázpedál valamint a kormány sem binárisan működik, a billentyű nyomva tartás idejétől függ az input intenzitása
+<ul>
+<li>a fék- és gázpedál [0, 100] skálán (ℕ), a kormányelforgatás [-100, 100] skálán (ℤ) kerül meghatározásra</li>
+</ul>
+</li>
+<li>fék- és gázpedál valamint a kormány is fokozatosan (1 másodperc) áll vissza alaphelyzetbe a billentyű felengedésével</li>
+</ul>
+</li>
+<li>az automata váltó 4 állapota szabályozható
+<ul>
+<li>szekvenciális váltóról lévén szó, sorban állíthatók a fokozatok: P(ark), R(everse), N(eutral), D(rive)</li>
+<li>alaphelyzet: P, „felváltás” után R, majd N, majd D. „Leváltás” ugyanez visszafele.</li>
+</ul>
+</li>
+<li>A gyorsulás a „belső fokozatok” szerint kerül meghatározásra</li>
+<li>Az autó a gázpedál felengedésével fokozatosan lassul, majd megáll</li>
+<li>Az autó R válóállásban tolat</li>
+<li>Felkészíteni a modult, hogy a vészfékező, az adaptív tempomat vagy a sávtartó automatika is küldhet inputot, melyek magasabb prioritásúak
+<ul>
+<li>vészfékező értelemszerűen fékezés inputot</li>
+<li>az adaptív tempomat és a parkoló asszisztens gáz és fék inputot is</li>
+<li>a sávtartó automatika a kormányállást módosítja</li>
+</ul>
+</li>
+<li>Autó kanyarodásának biztosítása valóságos fordulókör szerint
+<ul>
+<li>ehhez szükséges extra tulajdonságot meghatározása</li>
+</ul>
+</li>
+<li>A meghatározott mozgásvektor alapján az autó pozíciójának frissítése
+<ul>
+<li>ez az AutomatedCar osztály x,y koordinátáinak frissítését jelenti</li>
+</ul>
+</li>
+<li>Tolatás során is valósághű kanyarodás történik</li>
+</ul>
+<h2 id="szenzorok-kamera-radar-ütközés-detektálás"><a class="header" href="#szenzorok-kamera-radar-ütközés-detektálás">Szenzorok (kamera, radar), ütközés detektálás</a></h2>
+<p>A kamera modul felelőssége a sávtartó automatika <del>és táblafelismerő alapjául</del> szolgáló kamera szenzor implementációja. Mint minden szenzor, a kamera is érzékeli a világ egy szeletét és eléri a látóterében található objektumokat.
+A valóságos és szimulált szenzorok működését részletesebben a <a href="../sensors.html"><em>Szenzorok</em></a> fejezet mutatja be.</p>
+<p><img src="../images/camera.png" alt="" /></p>
+<p>A <em>radar sensor</em> modul felelőssége az adaptív tempomat és az automata vészfékező alapjául szolgáló radar szenzor szimulációjának implementálása. Mint minden szenzor, az radar is érzékeli a világ egy szeletét és eléri a látóterében található objektumokat.
+A valóságos és szimulált szenzorok működését részletesebben a <a href="../sensors.html"><em>Szenzorok</em></a> fejezet mutatja be.</p>
+<p><img src="../images/radar.png" alt="Radar szenzor elhelyezése" /></p>
+<!-- Az *ultrasonic sensor* modul felelőssége a parkoló automata alapjául szolgáló ultrahang szenzorcsomag szimulációjának implementálása. Mint minden szenzor, az ultrahang is érzékeli a világ egy szeletét és eléri a látóterében található objektumokat.
+A valóságos és szimulált szenzorok működését részletesebben a [*Szenzorok*](../sensors.md) fejezet mutatja be.
+
+A kamera és a radar szenzorhoz képest a legfőbb különbség, hogy ultrahang szenzorból 8 példány kerül az autóra.
+
+![Ultrahang szenzorok elhelyezése](../images/ultrasonic.png) -->
+<p>Mindkét modul bemenete a világmodell (<code>World</code> objektum), kimeneteit olyan világ objektumok gyűjteménye képezi, amelyek beleesnek a szenzor látóterébe. A világ objektumainak lekérdezésére létre kell hozni egy publikus metódust, amely 3 pontot vár (A szenzor látóterét 3 ponttal kel definiálni.) bemenetként és visszaadja a bele eső objektumokat. Ezekből kell még leválogatni szenzoronként a relevánsakat.
+Minden szenzor látóterét 3 ponttal kell definiálni. A szenzor látómezejének 3 pontját folyamatosan frissíteni kell az autó pozíciójának függvényében. Vagyis az autó egyébként folyamatosan frissülő referenciapontjához képest kell definiálni.
+A megjelenítés is felhasználja ezeket a pontokat a háromszög kirajzolására a debuggoláshoz.</p>
+<!-- A táblafelismerőnek csak továbbítani kell minden látott táblát, az majd eldönti, hogy melyik miképp releváns a vezérelt autóra nézve. -->
+<h3 id="alkalmazás"><a class="header" href="#alkalmazás">Alkalmazás</a></h3>
+<p>A sávtartó automatikának meg kell tudni határozni a sávot (ebben segítenek az útelemek részét képező sávokat reprezentáló geometria objektumok). Tehát a világmodell már jól definiált módon rendelkezésre bocsátja a sávinformációkat, de ezeket olyan adatstruktúrába kell rendezni, amely megkönnyíti a sávtartó automata implementálását: a sávtartó automatikának arra lesz majd szüksége, hogy az autó közelít-e a sávját meghatározó felfestésekhez, a sáv határait. Alternatív megközelítésben, hogy mennyire távolodik el a sávközéptől.</p>
+<p>A kihívás a radar komponenssel kapcsolatban, hogy nem elég egyszerűen csak visszaadni a látótérben található releváns objektumokat, hanem el kell tudni dönteni, hogy a jelenlegi haladási irányunkat tartva veszélyesek-e. Pl. pontosan előttünk halad (a sávban), vagy oldalról érkezik és keresztezi az utunkat. A legközelebbi releváns objektum az alábbi ábrán az 1-es, a 2-es nem.</p>
+<p><img src="../images/radar_lanes_simple.png" alt="Azonos sávban haladó jármű" /></p>
+<p>Itt arról van szó, hogy a a szenzor egy iterációjában megkapjuk a látótérbe került ütközhető objektumokat. Egy fa pl. jellegénél fogva statikus, tehát túlzottan sok figyelmet nem igényel, de ugyanúgy továbbítani kell mint egy autót. Az NPC autó esetében az adott iterációban ismert az autó helyzete, majd ezt össze kell vetni az előző iterációban ismert helyzetével. A kettőből meghatározható egy irányvektor és el lehet dönteni, hogy merre halad (ha halad egyáltalán), előttünk halad, vagy mellettünk (pl. másik sávban), stb. Az ACC az azonos sávban előttünk haladó autó sebességét veszi fel, ezért az autó haladási iránya fontos szempont.</p>
+<p>Mindez értelemszerűen egy statikus objektum pl. fa esetében is működik, csak az nem mozog (mert nem Középföldén vagyunk).</p>
+<h3 id="Ütközés-detektálás"><a class="header" href="#Ütközés-detektálás">Ütközés-detektálás</a></h3>
+<p>Folyamatosan vizsgálni kell, hogy a vezérelt autó nekiütközött-e egy ütközhető objektumnak. Ennek vizsgálatához használható a világobjektumok poligon váza. Később majd az automatikus vészfékező modul feladat lesz, hogy ez ne következhessen be. Egy visszajelzést kell adni, amely debuggoláshoz szükséges.</p>
+<h3 id="definition-of-done-2"><a class="header" href="#definition-of-done-2">Definition of Done</a></h3>
+<p><strong>kamera</strong></p>
+<ul>
+<li>1 db, a szélvédő mögé elhelyezett kamera implementálása</li>
+<li>A látószög és távolság által meghatározott területen kérje el a <strong>releváns</strong> objektumokat
+<ul>
+<li>külön, a táblafelismerő szempontjából releváns objektumok, a táblák</li>
+<li>külön, a sávtartó szempontjából releváns objektumok, az utak</li>
+</ul>
+</li>
+<li>A háromszög koordinátái az autó helyzetétől függően folyamatosan frissülnek</li>
+<li>a legközelebbi objektum legyen kiemelve (legyen beállítva a „highlighted” tulajdonság)</li>
+</ul>
+<p><strong>radar</strong></p>
+<ul>
+<li>Elkészült 1 db, az autó első lökhárítója mögött elhelyezett radar szenzor</li>
+<li>A látószög (60°) és távolság (200m) által meghatározott területen kérjék el a <strong>releváns</strong> objektumokat</li>
+<li>A háromszög koordinátái az autó helyzetétől függően folyamatosan frissülnek</li>
+<li>Határozzák meg a legközelebbi, sávon belüli (lateral offset alapján) objektum helyzetét</li>
+<li>Az automata vészfékező számára releváns objektumok (az autó középvonala felé halad, látjuk) kiválogatása és visszaadása</li>
+<li>a legközelebbi objektum legyen kiemelve (legyen beállítva a „highlighted” tulajdonság)</li>
+</ul>
+<!-- **ultrahang**
+
+- 8 db ultrahang szenzor, egyenként 3 méter látótávolsággal, 100° látószöggel
+- A 8 darab háromszög koordinátái az autó helyzetétől függően folyamatosan frissülnek
+- A látószög és távolság által meghatározott területen kérjék el a **releváns** objektumokat
+- Határozzák meg a legközelebbi (ütközés szempontjából) objektum pozícióját, kiterjedését, távolságát
+    - külön-külön minden egyes szenzor, majd a rá épülő funkcionalitás fog ezekkel tovább dolgozni, tehát célszerű biztosítani a példányonként legközelebbi objektum továbbadását -->
+<p><strong>ütközés-detektálás</strong></p>
+<ul>
+<li>A vezérelt autó - tereptárgy ütközésének detektálása és esemény kiváltása</li>
+<li>A vezérelt autó - NPC-vel való ütközésének detektálása és esemény kiváltása</li>
+<li>Két objektum akkor ütközött amikor a poligon reprezentációjuk összeért, nem amikor a képfájlok fedik egymást
+<ul>
+<li>pl. autó a fa lombkoronája alatt, de még nem érte el a törzset</li>
+</ul>
+</li>
+<li>Legyen valami visszajelzés felhasználói felületen arról, hogy ütközés történt (pl. alert dialog)</li>
+</ul>
+<h2 id="világ-populálása-mozgó-npc-objektumokkal"><a class="header" href="#világ-populálása-mozgó-npc-objektumokkal">Világ populálása mozgó NPC objektumokkal</a></h2>
+<p>A modul felelőssége, hogy a kiinduló kódban rendelkezésre álló világot, amelyben már megjelennek a statikus objektumok, további dinamikus objektumokkal kell kiegészíteni. Ezek a nem játszható karakterek (NPC, <em>non player character</em>), amelyekre azért van szükség, hogy a 2. sprintes modulok tesztelhetők legyenek. Például a vészfékező rendszer nem üti el a gyalogost, vagy az adaptív tempomat igazítja az autó sebességét az előtte haladó autóéhoz.</p>
+<p>A modul bemenete a világmodell, amely egyrészt elősegíti az implementálást azáltal, hogy a előre definiált helyett az osztályhierarchiában az NPC objektumok számára, másrészt a statikus objektumok, egészen pontosan az út elemek definiálják a pályát amelyen az NPC autónak haladnia kell a KRESZ szabályai szerint: nem tér át az út másik oldalára, nem hajt gyorsan.</p>
+<p>A legkézenfekvőbb megoldás, hogy a világban, a világ koordinátáira építve felveszünk vezérpontokat, amelyek kijelölnek egy utat. Ezeket célszerű lehet nem a kódban, hanem valamilyen külső fájlban tárolni. Az NPC objektum pedig ezt az utat követni. Például a parkoló mellől indul az úton megy fölfele (csökken az y koordinátája) a kanyar előtt (x,y) világkoordinátákat elérve lelassul, (x,y)' koordináták elérése esetén elkezd kanyarodni, a sávból nem tér ki, majd (x,y)&quot; koordinátáig halad a fönti egyenesen. És így tovább.</p>
+<p><img src="../images/npc_route.png" alt="" /></p>
+<p><img src="../images/npc_route_pedestrian.png" alt="" /></p>
+<p>A mozgáshoz sebességet is kell társítani. Két vezérlőpont közötti egyenesen adott idő alatt kell az NPC-nek végighaladnia. Továbbá az egyes vezérlőpontokhoz forgatási műveletet is társítani kell. Ehhez egy mozgás leíró struktúra lesz szükséges, pl. az alábbi elnagyolt példa <a href="https://toml.io/en/">TOML</a> nyelven, de bármilyen megoldás választható (JSON, XML, YAML vagy teljesen egyedi formátum):</p>
+<pre><code class="language-toml">[points]
+
+[points.1]
+x = 100
+y = 200
+rotation = 0
+speed = 50 # px/s
+
+[points.2]
+x = 100
+y = 100
+rotation = 15
+speed = 30 # px/s
+</code></pre>
+<p>A feladatban az igazi kihívás, hogy az NPC objektumok adaptálódjanak pályához. Az adaptálódást úgy lehet megkerülni, hogy mindkét pályához készül egy-egy útvonal. A <code>test_world</code> pályán egy gyalogos és minimum egy autó, az <code>oval</code> pályán pontosan egy, az óramutató járásával megegyező irányban haladó NPC kell, amely legyen a <code>car_3_black</code> azonosítójú.</p>
+<p>Az NPC autónak nincs hajtáslánc modulja, nem szükséges olyan részletes mozgatás sem mint az vezérelt autónál, de azért a kanyarodás legyen több pontból/lépésben megoldva, hogy fokozatosan legyen az autó elforgatva a kanyarodás valósághű leképezése céljából.</p>
+<p>Az <code>oval</code> pálya nagy, elnyújtott kanyarokat tartalmaz, hogy ne kelljen különösebben lassítani. A <code>test_world</code> jóval élesebb kanyarokból áll, ehhez igazítani kell az autó sebességét. Az <code>oval</code> pályán körbeérve a furgon erőteljesen, de valóságosan fékez. Nem 0 idő alatt áll meg. Legyen a lassulása 9m/s^2.</p>
+<h3 id="definition-of-done-3"><a class="header" href="#definition-of-done-3">Definition of Done:</a></h3>
+<ul>
+<li>Objektumok előre definiált, értelmes helyen jelennek meg (autók úton, gyalogosok út mellett, a zebra környékén)</li>
+<li>Objektumok előre szkriptelt útvonalat követnek</li>
+<li>Gyalogosok az út mentén haladnak, zebrán áthaladnak, megfordulnak majd újra átkelnek az úton</li>
+<li>Autók az utat - sávot - pontosan követik</li>
+<li>NPC objektumok egymás mozgásállapotát nem változtatják meg
+<ul>
+<li>Egy NPC autó gyalogoson akár átmehet, nem kell ütközésnek minősíteni</li>
+</ul>
+</li>
+<li>Legalább egy autó végigmegy a pályán a <code>test_world</code> pályán</li>
+<li>Legalább egy gyalogos mozog és átkel egy zebrán a <code>test_world</code> pályán, a fenti ábrának megfelelően</li>
+<li>Az <code>oval</code> pálya esetén az NPC objektum az óramutató járásával megegyező irányban megtesz egy kört, majd a STOP táblánál hirtelen megáll
+<ul>
+<li>nem szükséges folytatnia az útját, a másik pályán viszont folyamatosan köröz</li>
+</ul>
+</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                                                    <a rel="prev" href="../sprints/sprints.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+                                                    <a rel="next" href="../sprints/sprint_2.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                                    <a rel="prev" href="../sprints/sprints.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+                                    <a rel="next" href="../sprints/sprint_2.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                            </nav>
+
+        </div>
+
+        
+        
+        
+                <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+        
+                <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+                <script type="text/javascript" src="../context-cards.js"></script>
+                <script type="text/javascript" src="../mermaid-init.js"></script>
+                <script type="text/javascript" src="../mermaid.min.js"></script>
+                <script type="text/javascript" src="../d3.5.16.0.js"></script>
+                <script type="text/javascript" src="../markmap-lib.transform.min.js"></script>
+                <script type="text/javascript" src="../markmap-lib.view.min.js"></script>
+                <script type="text/javascript" src="../markmap-init.js"></script>
+        
+        
+    </body>
+</html>
