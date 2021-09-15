@@ -162,14 +162,21 @@
 Ezen kívül természetesen a funkció ki- és bekapcsolható.</p>
 <h3 id="definition-of-done"><a class="header" href="#definition-of-done">Definition of Done</a></h3>
 <ul>
-<li>A sávtartó automatika ki- és bekapcsolható
+<li><input disabled="" type="checkbox"/>
+A sávtartó automatika ki- és bekapcsolható
 <ul>
-<li>emberi beavatkozásra kikapcsol</li>
+<li><input disabled="" type="checkbox"/>
+állapota a műszerfalon látható</li>
 </ul>
 </li>
-<li>45 foknál enyhébb kanyarodású úton a kocsi a sáv szemmel láthatóan a sáv közepén marad</li>
-<li>Ha el kell engednie a kontrollt (az automatika számára kezelhetetlen forgalmi szituáció következik, pl. éles kanyar, kereszteződés), vizuális figyelmeztetést ad</li>
-<li>Ha újra elérhető a funkció (pl. elhagytuk a kanyart) vizuális indikáció (a műszerfalon)</li>
+<li><input disabled="" type="checkbox"/>
+Vezetői beavatkozásra kikapcsol</li>
+<li><input disabled="" type="checkbox"/>
+45 foknál enyhébb kanyarodású úton a kocsi a sáv szemmel láthatóan a sáv közepén marad</li>
+<li><input disabled="" type="checkbox"/>
+Ha el kell engednie a kontrollt (az automatika számára kezelhetetlen forgalmi szituáció következik, pl. éles kanyar, kereszteződés), vizuális figyelmeztetést ad</li>
+<li><input disabled="" type="checkbox"/>
+Ha újra elérhető a funkció (pl. elhagytuk a kanyart) vizuális indikáció (a műszerfalon)</li>
 </ul>
 <h2 id="adaptív-tempomat"><a class="header" href="#adaptív-tempomat">Adaptív tempomat</a></h2>
 <p>A modul felelőssége a radar szenzorra épülő <a href="../functions.html#adapt%C3%ADv-tempomat-adaptive-cruise-control---acc"><em>adaptív tempomat</em></a> vezetéstámogató funkció elkészítése. Ennek a funkciónak három felhasználói esetet kell lefednie.</p>
@@ -190,19 +197,30 @@ Oda kell figyelni, hogy csak a sávban előttünk haladó autót vegye figyelemb
 <p><img src="../images/acc.png" alt="" /></p>
 <h3 id="definition-of-done-1"><a class="header" href="#definition-of-done-1">Definition of Done</a></h3>
 <ul>
-<li>Ki- és bekapcsolható</li>
-<li>Bekapcsoláskor a célsebessége az aktuális sebesség, de a minimum célsebesség 30 km/h</li>
-<li>Ha nincs saját sávban előttünk autó, akkor a vezérelt autó tartja a kiválasztott célsebességet</li>
+<li><input disabled="" type="checkbox"/>
+Ki- és bekapcsolható</li>
+<li><input disabled="" type="checkbox"/>
+ACC: Állítható céltávolság (T jelű gombbal, körkörösen 0.8/1.0/1.2/1.4 másodperc)</li>
+<li><input disabled="" type="checkbox"/>
+ACC: Állítható célsebesség (+/- gombbal, 30-160, 10-es lépésközzel)</li>
+<li><input disabled="" type="checkbox"/>
+Bekapcsoláskor a célsebessége az aktuális sebesség, de a minimum célsebesség 30 km/h</li>
+<li><input disabled="" type="checkbox"/>
+Ha nincs saját sávban előttünk autó, akkor a vezérelt autó tartja a kiválasztott célsebességet</li>
 <li>Ha a saját sávban található autó:
 <ul>
-<li>Ha az előttünk levő autó lassabb, akkor fel kell venni a sebességét</li>
-<li>Ha gyorsabb, akkor tartja a kiválasztott sebességet</li>
+<li><input disabled="" type="checkbox"/>
+Ha az előttünk levő autó lassabb, akkor fel kell venni a sebességét</li>
+<li><input disabled="" type="checkbox"/>
+Ha gyorsabb, akkor tartja a kiválasztott sebességet</li>
 </ul>
 </li>
-<li>Fékezésre kikapcsol</li>
-<li>AEB beavatkozásra kikapcsol</li>
-<li>Ha sebesség korlétozást talál a buszon, azt alkalmazza új célsebességként, amíg a sofőr felül nem írja</li>
+<li><input disabled="" type="checkbox"/>
+Fékezésre kikapcsol</li>
+<li><input disabled="" type="checkbox"/>
+AEB beavatkozásra kikapcsol</li>
 </ul>
+<!-- - [ ] Ha sebesség korlátozást talál a buszon, azt alkalmazza új célsebességként, amíg a sofőr felül nem írja -->
 <h2 id="vészfékező"><a class="header" href="#vészfékező">Vészfékező</a></h2>
 <p>A modul felelőssége a radar szenzorra épülő <a href="../functions.html#auton%C3%B3m-v%C3%A9szf%C3%A9kez%C5%91-rendszer-automatic-emergency-brake---aeb">automata vészfékező rendszer</a> megvalósítása. A vészfékező kritikus biztonsági funkció, így nem kapcsolható ki manuálisan, de maximum 70 km/h sebességig működik. A működése két esetre bontható: ütközés statikus vagy dinamikus objektummal.</p>
 <p>Az előbbi az egyszerűbb eset, mivel a veszélyt jelentő objektum pozíciója változatlan.</p>
@@ -214,16 +232,22 @@ Oda kell figyelni, hogy csak a sávban előttünk haladó autót vegye figyelemb
 A modul olyan triggerekkel vezérli az autót mint amilyenek a billentyűlenyomás kezelőtől jönnek (fékpedál állás).</p>
 <p>Dinamikus objektumok esetében a vészfékezés elve azonos, de az ütközési pálya meghatározása összetettebb.</p>
 <p><img src="../images/aeb_radar_pedestrian.png" alt="" /></p>
-<p>Másik sávban szembe jövő autóra nem kell vészfékezni, tehát el kell tudni dönteni, hogy abban az esetben nincs ütközési pálya.</p>
+<p>Másik sávban szembe jövő autóra nem kell vészfékezést kiváltani, tehát el kell tudni dönteni, hogy abban az esetben nincs ütközési pálya.</p>
 <p><img src="../images/radar_lanes_simple.png" alt="" /></p>
 <h3 id="definition-of-done-2"><a class="header" href="#definition-of-done-2">Definition of Done</a></h3>
 <ul>
-<li>Elkerülhető ütközés esetén vizuális figyelmeztetés a sofőrnek</li>
-<li>Ha a sofőr nem avatkozik közbe, automatikus fékezés (az utolsó pillanatban, ahol az ütközés még elkerülhető)</li>
-<li>Az automatikus fékezés mértéke a sebességgel arányos, de nem lehet \( 9 m/s^2 \)-nél nagyobb</li>
-<li>70 km/h felett figyelmeztetés, hogy az AEB nem tud minden helyzetet kezelni</li>
-<li>A vezérelt autó nem üt el gyalogost, nem megy neki fának</li>
-<li>Nem releváns objektumok esetében (fals pozitív) mint a szembejövő autó nem történik vészfékezés</li>
+<li><input disabled="" type="checkbox"/>
+Elkerülhető ütközés esetén vizuális figyelmeztetés a sofőrnek</li>
+<li><input disabled="" type="checkbox"/>
+Ha a sofőr nem avatkozik közbe, automatikus fékezés (az utolsó pillanatban, ahol az ütközés még elkerülhető)</li>
+<li><input disabled="" type="checkbox"/>
+Az automatikus fékezés mértéke a sebességgel arányos, de nem lehet \( 9 m/s^2 \)-nél nagyobb</li>
+<li><input disabled="" type="checkbox"/>
+70 km/h felett figyelmeztetés, hogy az AEB nem tud minden helyzetet kezelni</li>
+<li><input disabled="" type="checkbox"/>
+A vezérelt autó nem üt el gyalogost, nem megy neki fának</li>
+<li><input disabled="" type="checkbox"/>
+Nem releváns objektumok esetében (fals pozitív) mint a szembejövő autó nem történik vészfékezés</li>
 </ul>
 
                     </main>

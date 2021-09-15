@@ -147,46 +147,6 @@
                     <main>
                         <h1 id="1-sprint"><a class="header" href="#1-sprint">1. Sprint</a></h1>
 <!-- toc -->
-<h2 id="human-machine-interface-hmi-műszerfal-irányítás"><a class="header" href="#human-machine-interface-hmi-műszerfal-irányítás">Human Machine Interface (HMI): Műszerfal, irányítás</a></h2>
-<p>A <em>HMI</em> modul felelőssége a vezérelt autó (egocar) kezelőszerveinek és visszajelzőinek megvalósítása. Bemeneti jelként kezelnie kell tehát a billentyűeseményeket, le kell őket fordítani az autó vezérlőszerveire, valamint a műszerfalon meg kell jeleníteni az egocar állapotát leíró értékeket.</p>
-<p>A modul kihívása a „bináris állapotú” billentyűesemények „fokozatossá tétele”. A gáz- és fékpedál nyomvatartásának idejét kell leképezni a pedál lenyomás mértékére és egy adott idő alatt kell ennek 100%-ra jutnia. A hajtáslánc a pedálok lenyomásának mértékét használja majd a gyorsítás - és úgy általában az elmozdulás mértékének - meghatározásához.
-A pedálokhoz hasonlóan a kormány elfordítása sem bináris, ugyanúgy a billentyűlenyomás idejének felhasználásával kell számolni. Ezek skáláját a hajtásláncért modullal egyeztetve kell meghatározni (pl. pedálállás lenyomás 0-100 között).</p>
-<p>A szimulált autó automata váltóval rendelkezik, így a váltó <em>P</em>, <em>R</em>, <em>N</em>, <em>D</em> állapotait is is közvetíteni kell a hajtáslánc felé.</p>
-<p>A műszerfalnak az alábbi vázlathoz hasonlóan kell felépülnie. A programablak bal oldalán a virtuális világ egy szeletét látjuk ezért felel, a vizualizációs modul. A jobb oldalon a műszerfal található. A műszerfalon nincsenek vezérlőelemek, csak megjelenítés. Az összes kapcsoló a billentyűzettel állítható, a grafikus elemeknek nem kell pl. egérrel kapcsolhatónak lenniük.</p>
-<p><img src="../images/gui_plan_dashboard.png" alt="gui_plan" /></p>
-<h3 id="definition-of-done"><a class="header" href="#definition-of-done">Definition of Done</a></h3>
-<ul>
-<li>ACC: Állítható céltávolság (T jelű gombbal, körkörösen 0.8/1.0/1.2/1.4 másodperc)</li>
-<li>ACC: Állítható célsebesség (+/- gombbal, 30-160, 10-es lépésközzel)</li>
-<li>Lane Keeping bekapcsolás</li>
-<li>Parkig pilot bekapcsolás</li>
-<li>irányjelző (jobb, bal) kapcsolható</li>
-<li>egyszerre több billentyű is használható
-<ul>
-<li>kanyarodni és gázt adni/fékezni minimum kell tudni egyszerre</li>
-</ul>
-</li>
-<li>Megjelenik a kormányállás
-<ul>
-<li>akár elforgatott kormánykerékként, de minimum szövegként</li>
-</ul>
-</li>
-<li>Megjelenik a gáz, fék állapota (progressbar)</li>
-<li>Megjelenik a sebességváltó állása (szövegesen)</li>
-<li>Irányjelző visszajelző (egy-egy nyíl kirajzolva)</li>
-<li>Kocsi pozíció megjelenítése (x, y koordináta debug céllal, szövegesen)</li>
-<li>Vezetéstámogató funkciók visszajelzései
-<ul>
-<li>ACC idő és sebesség limit</li>
-<li>parking pilot és a lane keeping rendszerek állapot visszajelzése</li>
-</ul>
-</li>
-<li>az utolsó látott tábla megjelenítése
-<ul>
-<li>interfész biztosítása, az utolsó látott tábla beállítására</li>
-</ul>
-</li>
-</ul>
 <h2 id="mozgatás-hajtáslánc-és-kormányzás"><a class="header" href="#mozgatás-hajtáslánc-és-kormányzás">Mozgatás: hajtáslánc és kormányzás</a></h2>
 <p>A <em>mozgatás</em> modul felelőssége a vezérelt autó (egocar) mozgatása, mozgásának számítása. Ez magába foglalja a hajtáslánc és a kormányzás megvalósítását.</p>
 <p>A modul a HMI-től kap bemenetet, mindenek előtt váltóállás, gáz- és fékpedálállás valamint kormányelfordulás. A váltó automata, ami azzal jár, hogy a HMI a négy állapot (P, R, N, D) egyikét közli.</p>
@@ -204,46 +164,54 @@ Ha az input +/- 100-as skálán adja meg a kormányelfordulás mértékét, akko
 A pedálállás és a motor korábbi állapotának függvényében meghatározásra kerül a sebesség, a kormányállás valamint az egocar korábbi orientációjának függvényében meghatározásra kerül, hogy módosul-e az autó iránya, a kettő eredőjeként a teljes vektor.</p>
 <p>A modullal kapcsolatban kihívás a hajtáslánc működésének és a mozgás és kanyarodás fizikájának megértése, implementálása. A fizika tekintetében sem kell elaprózni a dolgokat. Két erő elégséges: a motorerő mint gyorsítja a járművet (ez a gázpedállal szabályozható) és egy fékező erő, amelyet a fékpedállal lehet szabályozni, valamint ezen felül egy konstans fékező erőnek is lennie kell, tehát a fékező erő akkor sem nulla, ha a fékpedál állása nulla. Ez utóbbit mindegy minek nevezzük (légellenállás, csúszási-súrlódási erő, a kettő eredője, stb.), nem kell cicomázni, de legyen.</p>
 <p>Külön feladat észben tartatni és célszerűen előre felkészülni arra, hogy a 3. sprintes vezetéstámogató modulok (LKA, AAC, AEB, PP) közvetlenül az egocar hajtásláncára és a kormányra hatnak. Fel kell készíteni a modult ilyen, „nem a HMI-ről” érkező inputok kezelésére is, amelyek ráadásul magasabb prioritásúak. Pl. ha a vészfékező rendszer „lenyomja” a fékpedált, akkor magasabb prioritással kell kezelni mint a HMI-ről érkező pedálállást.</p>
-<h3 id="definition-of-done-1"><a class="header" href="#definition-of-done-1">Definition of Done</a></h3>
+<h3 id="definition-of-done"><a class="header" href="#definition-of-done">Definition of Done</a></h3>
 <ul>
-<li>Az autó gázpedál állásától függően gyorsul</li>
-<li>a fék- és gázpedál állapota a billentyű nyomva tartásának idejével szabályozható
+<li><input disabled="" type="checkbox"/>
+Az autó gázpedál állásától függően gyorsul</li>
+<li><input disabled="" type="checkbox"/>
+a fék- és gázpedál állapota a billentyű nyomva tartásának idejével szabályozható
 <ul>
-<li>fék- és gázpedál valamint a kormány sem binárisan működik, a billentyű nyomva tartás idejétől függ az input intenzitása
+<li><input disabled="" type="checkbox"/>
+fék- és gázpedál valamint a kormány sem binárisan működik, a billentyű nyomva tartás idejétől függ az input intenzitása
 <ul>
 <li>a fék- és gázpedál [0, 100] skálán (ℕ), a kormányelforgatás [-100, 100] skálán (ℤ) kerül meghatározásra</li>
 </ul>
 </li>
-<li>fék- és gázpedál valamint a kormány is fokozatosan (1 másodperc) áll vissza alaphelyzetbe a billentyű felengedésével</li>
+<li><input disabled="" type="checkbox"/>
+fék- és gázpedál valamint a kormány is fokozatosan (1 másodperc) áll vissza alaphelyzetbe a billentyű felengedésével</li>
 </ul>
 </li>
-<li>az automata váltó 4 állapota szabályozható
+<li><input disabled="" type="checkbox"/>
+az automata váltó 4 állapota szabályozható
 <ul>
 <li>szekvenciális váltóról lévén szó, sorban állíthatók a fokozatok: P(ark), R(everse), N(eutral), D(rive)</li>
 <li>alaphelyzet: P, „felváltás” után R, majd N, majd D. „Leváltás” ugyanez visszafele.</li>
 </ul>
 </li>
-<li>A gyorsulás a „belső fokozatok” szerint kerül meghatározásra</li>
-<li>Az autó a gázpedál felengedésével fokozatosan lassul, majd megáll</li>
-<li>Az autó R válóállásban tolat</li>
-<li>Felkészíteni a modult, hogy a vészfékező, az adaptív tempomat vagy a sávtartó automatika is küldhet inputot, melyek magasabb prioritásúak
+<li><input disabled="" type="checkbox"/>
+A gyorsulás a „belső fokozatok” szerint kerül meghatározásra</li>
+<li><input disabled="" type="checkbox"/>
+Az autó a gázpedál felengedésével fokozatosan lassul, majd megáll</li>
+<li><input disabled="" type="checkbox"/>
+Az autó R válóállásban tolat</li>
+<li><input disabled="" type="checkbox"/>
+Felkészíteni a modult, hogy a vészfékező, az adaptív tempomat vagy a sávtartó automatika is küldhet inputot, melyek magasabb prioritásúak
 <ul>
 <li>vészfékező értelemszerűen fékezés inputot</li>
 <li>az adaptív tempomat és a parkoló asszisztens gáz és fék inputot is</li>
-<li>a sávtartó automatika a kormányállást módosítja</li>
+<li>a sávtartó automatika a kormányállást módosítja
+-[ ]  Autó kanyarodásának biztosítása valóságos fordulókör szerint</li>
+<li>ehhez szükséges extra tulajdonságok meghatározása</li>
 </ul>
 </li>
-<li>Autó kanyarodásának biztosítása valóságos fordulókör szerint
-<ul>
-<li>ehhez szükséges extra tulajdonságot meghatározása</li>
-</ul>
-</li>
-<li>A meghatározott mozgásvektor alapján az autó pozíciójának frissítése
+<li><input disabled="" type="checkbox"/>
+A meghatározott mozgásvektor alapján az autó pozíciójának frissítése
 <ul>
 <li>ez az AutomatedCar osztály x,y koordinátáinak frissítését jelenti</li>
 </ul>
 </li>
-<li>Tolatás során is valósághű kanyarodás történik</li>
+<li><input disabled="" type="checkbox"/>
+Tolatás során is valósághű kanyarodás történik</li>
 </ul>
 <h2 id="szenzorok-kamera-radar-ütközés-detektálás"><a class="header" href="#szenzorok-kamera-radar-ütközés-detektálás">Szenzorok (kamera, radar), ütközés detektálás</a></h2>
 <p>A kamera modul felelőssége a sávtartó automatika <del>és táblafelismerő alapjául</del> szolgáló kamera szenzor implementációja. Mint minden szenzor, a kamera is érzékeli a világ egy szeletét és eléri a látóterében található objektumokat.
@@ -270,27 +238,36 @@ A megjelenítés is felhasználja ezeket a pontokat a háromszög kirajzolásár
 <p>Mindez értelemszerűen egy statikus objektum pl. fa esetében is működik, csak az nem mozog (mert nem Középföldén vagyunk).</p>
 <h3 id="Ütközés-detektálás"><a class="header" href="#Ütközés-detektálás">Ütközés-detektálás</a></h3>
 <p>Folyamatosan vizsgálni kell, hogy a vezérelt autó nekiütközött-e egy ütközhető objektumnak. Ennek vizsgálatához használható a világobjektumok poligon váza. Később majd az automatikus vészfékező modul feladat lesz, hogy ez ne következhessen be. Egy visszajelzést kell adni, amely debuggoláshoz szükséges.</p>
-<h3 id="definition-of-done-2"><a class="header" href="#definition-of-done-2">Definition of Done</a></h3>
+<h3 id="definition-of-done-1"><a class="header" href="#definition-of-done-1">Definition of Done</a></h3>
 <p><strong>kamera</strong></p>
 <ul>
-<li>1 db, a szélvédő mögé elhelyezett kamera implementálása</li>
-<li>A látószög és távolság által meghatározott területen kérje el a <strong>releváns</strong> objektumokat
+<li><input disabled="" type="checkbox"/>
+Elkészült 1 db, a szélvédő mögé elhelyezett kamera implementálása</li>
+<li><input disabled="" type="checkbox"/>
+A látószög és távolság által meghatározott területen kérje el a <strong>releváns</strong> objektumokat
 <ul>
-<li>külön, a táblafelismerő szempontjából releváns objektumok, a táblák</li>
 <li>külön, a sávtartó szempontjából releváns objektumok, az utak</li>
 </ul>
 </li>
-<li>A háromszög koordinátái az autó helyzetétől függően folyamatosan frissülnek</li>
-<li>a legközelebbi objektum legyen kiemelve (legyen beállítva a „highlighted” tulajdonság)</li>
+<li><input disabled="" type="checkbox"/>
+A háromszög koordinátái az autó helyzetétől függően folyamatosan frissülnek</li>
+<li><input disabled="" type="checkbox"/>
+A legközelebbi objektum legyen kiemelve (legyen beállítva a „highlighted” tulajdonság)</li>
 </ul>
 <p><strong>radar</strong></p>
 <ul>
-<li>Elkészült 1 db, az autó első lökhárítója mögött elhelyezett radar szenzor</li>
-<li>A látószög (60°) és távolság (200m) által meghatározott területen kérjék el a <strong>releváns</strong> objektumokat</li>
-<li>A háromszög koordinátái az autó helyzetétől függően folyamatosan frissülnek</li>
-<li>Határozzák meg a legközelebbi, sávon belüli (lateral offset alapján) objektum helyzetét</li>
-<li>Az automata vészfékező számára releváns objektumok (az autó középvonala felé halad, látjuk) kiválogatása és visszaadása</li>
-<li>a legközelebbi objektum legyen kiemelve (legyen beállítva a „highlighted” tulajdonság)</li>
+<li><input disabled="" type="checkbox"/>
+Elkészült 1 db, az autó első lökhárítója mögött elhelyezett radar szenzor</li>
+<li><input disabled="" type="checkbox"/>
+A látószög (60°) és távolság (200m) által meghatározott területen kérjék el a <strong>releváns</strong> objektumokat</li>
+<li><input disabled="" type="checkbox"/>
+A háromszög koordinátái az autó helyzetétől függően folyamatosan frissülnek</li>
+<li><input disabled="" type="checkbox"/>
+Határozzák meg a legközelebbi, sávon belüli (lateral offset alapján) objektum helyzetét</li>
+<li><input disabled="" type="checkbox"/>
+Az automata vészfékező számára releváns objektumok (az autó középvonala felé halad, látjuk) kiválogatása és visszaadása</li>
+<li><input disabled="" type="checkbox"/>
+A legközelebbi objektum legyen kiemelve (legyen beállítva a „highlighted” tulajdonság)</li>
 </ul>
 <!-- **ultrahang**
 
@@ -301,16 +278,20 @@ A megjelenítés is felhasználja ezeket a pontokat a háromszög kirajzolásár
     - külön-külön minden egyes szenzor, majd a rá épülő funkcionalitás fog ezekkel tovább dolgozni, tehát célszerű biztosítani a példányonként legközelebbi objektum továbbadását -->
 <p><strong>ütközés-detektálás</strong></p>
 <ul>
-<li>A vezérelt autó - tereptárgy ütközésének detektálása és esemény kiváltása</li>
-<li>A vezérelt autó - NPC-vel való ütközésének detektálása és esemény kiváltása</li>
-<li>Két objektum akkor ütközött amikor a poligon reprezentációjuk összeért, nem amikor a képfájlok fedik egymást
+<li><input disabled="" type="checkbox"/>
+A vezérelt autó - tereptárgy ütközésének detektálása és esemény kiváltása</li>
+<li><input disabled="" type="checkbox"/>
+A vezérelt autó - NPC-vel való ütközésének detektálása és esemény kiváltása</li>
+<li><input disabled="" type="checkbox"/>
+Két objektum akkor ütközött amikor a poligon reprezentációjuk összeért, nem amikor a képfájlok fedik egymást
 <ul>
 <li>pl. autó a fa lombkoronája alatt, de még nem érte el a törzset</li>
 </ul>
 </li>
-<li>Legyen valami visszajelzés felhasználói felületen arról, hogy ütközés történt (pl. alert dialog)</li>
+<li><input disabled="" type="checkbox"/>
+Legyen valami visszajelzés felhasználói felületen arról, hogy ütközés történt (pl. alert dialog)</li>
 </ul>
-<h2 id="világ-populálása-mozgó-npc-objektumokkal"><a class="header" href="#világ-populálása-mozgó-npc-objektumokkal">Világ populálása mozgó NPC objektumokkal</a></h2>
+<h2 id="világ-benépesítése-mozgó-npc-objektumokkal"><a class="header" href="#világ-benépesítése-mozgó-npc-objektumokkal">Világ benépesítése mozgó NPC objektumokkal</a></h2>
 <p>A modul felelőssége, hogy a kiinduló kódban rendelkezésre álló világot, amelyben már megjelennek a statikus objektumok, további dinamikus objektumokkal kell kiegészíteni. Ezek a nem játszható karakterek (NPC, <em>non player character</em>), amelyekre azért van szükség, hogy a 2. sprintes modulok tesztelhetők legyenek. Például a vészfékező rendszer nem üti el a gyalogost, vagy az adaptív tempomat igazítja az autó sebességét az előtte haladó autóéhoz.</p>
 <p>A modul bemenete a világmodell, amely egyrészt elősegíti az implementálást azáltal, hogy a előre definiált helyett az osztályhierarchiában az NPC objektumok számára, másrészt a statikus objektumok, egészen pontosan az út elemek definiálják a pályát amelyen az NPC autónak haladnia kell a KRESZ szabályai szerint: nem tér át az út másik oldalára, nem hajt gyorsan.</p>
 <p>A legkézenfekvőbb megoldás, hogy a világban, a világ koordinátáira építve felveszünk vezérpontokat, amelyek kijelölnek egy utat. Ezeket célszerű lehet nem a kódban, hanem valamilyen külső fájlban tárolni. Az NPC objektum pedig ezt az utat követni. Például a parkoló mellől indul az úton megy fölfele (csökken az y koordinátája) a kanyar előtt (x,y) világkoordinátákat elérve lelassul, (x,y)' koordináták elérése esetén elkezd kanyarodni, a sávból nem tér ki, majd (x,y)&quot; koordinátáig halad a fönti egyenesen. És így tovább.</p>
@@ -334,22 +315,31 @@ speed = 30 # px/s
 <p>A feladatban az igazi kihívás, hogy az NPC objektumok adaptálódjanak pályához. Az adaptálódást úgy lehet megkerülni, hogy mindkét pályához készül egy-egy útvonal. A <code>test_world</code> pályán egy gyalogos és minimum egy autó, az <code>oval</code> pályán pontosan egy, az óramutató járásával megegyező irányban haladó NPC kell, amely legyen a <code>car_3_black</code> azonosítójú.</p>
 <p>Az NPC autónak nincs hajtáslánc modulja, nem szükséges olyan részletes mozgatás sem mint az vezérelt autónál, de azért a kanyarodás legyen több pontból/lépésben megoldva, hogy fokozatosan legyen az autó elforgatva a kanyarodás valósághű leképezése céljából.</p>
 <p>Az <code>oval</code> pálya nagy, elnyújtott kanyarokat tartalmaz, hogy ne kelljen különösebben lassítani. A <code>test_world</code> jóval élesebb kanyarokból áll, ehhez igazítani kell az autó sebességét. Az <code>oval</code> pályán körbeérve a furgon erőteljesen, de valóságosan fékez. Nem 0 idő alatt áll meg. Legyen a lassulása 9m/s^2.</p>
-<h3 id="definition-of-done-3"><a class="header" href="#definition-of-done-3">Definition of Done:</a></h3>
+<h3 id="definition-of-done-2"><a class="header" href="#definition-of-done-2">Definition of Done:</a></h3>
 <ul>
-<li>Objektumok előre definiált, értelmes helyen jelennek meg (autók úton, gyalogosok út mellett, a zebra környékén)</li>
-<li>Objektumok előre szkriptelt útvonalat követnek</li>
-<li>Gyalogosok az út mentén haladnak, zebrán áthaladnak, megfordulnak majd újra átkelnek az úton</li>
-<li>Autók az utat - sávot - pontosan követik</li>
-<li>NPC objektumok egymás mozgásállapotát nem változtatják meg
+<li><input disabled="" type="checkbox"/>
+Objektumok előre definiált, értelmes helyen jelennek meg (autók úton, gyalogosok út mellett, a zebra környékén)</li>
+<li><input disabled="" type="checkbox"/>
+Objektumok előre szkriptelt útvonalat követnek</li>
+<li><input disabled="" type="checkbox"/>
+Gyalogosok az út mentén haladnak, zebrán áthaladnak, megfordulnak majd újra átkelnek az úton</li>
+<li><input disabled="" type="checkbox"/>
+Autók az utat - sávot - pontosan követik</li>
+<li><input disabled="" type="checkbox"/>
+NPC objektumok egymás mozgásállapotát nem változtatják meg
 <ul>
 <li>Egy NPC autó gyalogoson akár átmehet, nem kell ütközésnek minősíteni</li>
 </ul>
 </li>
-<li>Legalább egy autó végigmegy a pályán a <code>test_world</code> pályán</li>
-<li>Legalább egy gyalogos mozog és átkel egy zebrán a <code>test_world</code> pályán, a fenti ábrának megfelelően</li>
-<li>Az <code>oval</code> pálya esetén az NPC objektum az óramutató járásával megegyező irányban megtesz egy kört, majd a STOP táblánál hirtelen megáll
+<li><input disabled="" type="checkbox"/>
+Legalább egy autó végigmegy a pályán a <code>test_world</code> pályán</li>
+<li><input disabled="" type="checkbox"/>
+Legalább egy gyalogos mozog és átkel egy zebrán a <code>test_world</code> pályán, a fenti ábrának megfelelően</li>
+<li><input disabled="" type="checkbox"/>
+Az <code>oval</code> pálya esetén az NPC objektum az óramutató járásával megegyező irányban megtesz egy kört, majd a STOP táblánál hirtelen megáll
 <ul>
-<li>nem szükséges folytatnia az útját, a másik pályán viszont folyamatosan köröz</li>
+<li><input disabled="" type="checkbox"/>
+nem szükséges folytatnia az útját, a másik pályán viszont folyamatosan köröz</li>
 </ul>
 </li>
 </ul>
