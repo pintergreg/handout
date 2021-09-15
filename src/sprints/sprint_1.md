@@ -66,26 +66,26 @@ Külön feladat észben tartatni és célszerűen előre felkészülni arra, hog
 
 ### Definition of Done
 
-- Az autó gázpedál állásától függően gyorsul
-- a fék- és gázpedál állapota a billentyű nyomva tartásának idejével szabályozható
-    - fék- és gázpedál valamint a kormány sem binárisan működik, a billentyű nyomva tartás idejétől függ az input intenzitása
+- [ ] Az autó gázpedál állásától függően gyorsul
+- [ ] a fék- és gázpedál állapota a billentyű nyomva tartásának idejével szabályozható
+    - [ ] fék- és gázpedál valamint a kormány sem binárisan működik, a billentyű nyomva tartás idejétől függ az input intenzitása
         - a fék- és gázpedál \[0, 100\] skálán (&#x2115;), a kormányelforgatás \[-100, 100\] skálán (&#x2124;) kerül meghatározásra
-    - fék- és gázpedál valamint a kormány is fokozatosan (1 másodperc) áll vissza alaphelyzetbe a billentyű felengedésével
-- az automata váltó 4 állapota szabályozható
+    - [ ] fék- és gázpedál valamint a kormány is fokozatosan (1 másodperc) áll vissza alaphelyzetbe a billentyű felengedésével
+- [ ] az automata váltó 4 állapota szabályozható
     - szekvenciális váltóról lévén szó, sorban állíthatók a fokozatok: P(ark), R(everse), N(eutral), D(rive)
     - alaphelyzet: P, „felváltás” után R, majd N, majd D. „Leváltás” ugyanez visszafele.
-- A gyorsulás a „belső fokozatok” szerint kerül meghatározásra
-- Az autó a gázpedál felengedésével fokozatosan lassul, majd megáll
-- Az autó R válóállásban tolat
-- Felkészíteni a modult, hogy a vészfékező, az adaptív tempomat vagy a sávtartó automatika is küldhet inputot, melyek magasabb prioritásúak
+- [ ] A gyorsulás a „belső fokozatok” szerint kerül meghatározásra
+- [ ] Az autó a gázpedál felengedésével fokozatosan lassul, majd megáll
+- [ ] Az autó R válóállásban tolat
+- [ ] Felkészíteni a modult, hogy a vészfékező, az adaptív tempomat vagy a sávtartó automatika is küldhet inputot, melyek magasabb prioritásúak
     - vészfékező értelemszerűen fékezés inputot
     - az adaptív tempomat és a parkoló asszisztens gáz és fék inputot is
     - a sávtartó automatika a kormányállást módosítja
-- Autó kanyarodásának biztosítása valóságos fordulókör szerint
-    - ehhez szükséges extra tulajdonságot meghatározása
-- A meghatározott mozgásvektor alapján az autó pozíciójának frissítése
+-[ ]  Autó kanyarodásának biztosítása valóságos fordulókör szerint
+    - ehhez szükséges extra tulajdonságok meghatározása
+- [ ] A meghatározott mozgásvektor alapján az autó pozíciójának frissítése
     - ez az AutomatedCar osztály x,y koordinátáinak frissítését jelenti
-- Tolatás során is valósághű kanyarodás történik
+- [ ] Tolatás során is valósághű kanyarodás történik
 
 
 ## Szenzorok (kamera, radar), ütközés detektálás
@@ -133,21 +133,20 @@ Folyamatosan vizsgálni kell, hogy a vezérelt autó nekiütközött-e egy ütk�
 
 **kamera**
 
-- 1 db, a szélvédő mögé elhelyezett kamera implementálása
-- A látószög és távolság által meghatározott területen kérje el a **releváns** objektumokat
-    - külön, a táblafelismerő szempontjából releváns objektumok, a táblák
+- [ ] Elkészült 1 db, a szélvédő mögé elhelyezett kamera implementálása
+- [ ] A látószög és távolság által meghatározott területen kérje el a **releváns** objektumokat
     - külön, a sávtartó szempontjából releváns objektumok, az utak
-- A háromszög koordinátái az autó helyzetétől függően folyamatosan frissülnek
-- a legközelebbi objektum legyen kiemelve (legyen beállítva a „highlighted” tulajdonság)
+- [ ] A háromszög koordinátái az autó helyzetétől függően folyamatosan frissülnek
+- [ ] A legközelebbi objektum legyen kiemelve (legyen beállítva a „highlighted” tulajdonság)
 
 **radar**
 
-- Elkészült 1 db, az autó első lökhárítója mögött elhelyezett radar szenzor
-- A látószög (60°) és távolság (200m) által meghatározott területen kérjék el a **releváns** objektumokat
-- A háromszög koordinátái az autó helyzetétől függően folyamatosan frissülnek
-- Határozzák meg a legközelebbi, sávon belüli (lateral offset alapján) objektum helyzetét
-- Az automata vészfékező számára releváns objektumok (az autó középvonala felé halad, látjuk) kiválogatása és visszaadása
-- a legközelebbi objektum legyen kiemelve (legyen beállítva a „highlighted” tulajdonság)
+- [ ] Elkészült 1 db, az autó első lökhárítója mögött elhelyezett radar szenzor
+- [ ] A látószög (60°) és távolság (200m) által meghatározott területen kérjék el a **releváns** objektumokat
+- [ ] A háromszög koordinátái az autó helyzetétől függően folyamatosan frissülnek
+- [ ] Határozzák meg a legközelebbi, sávon belüli (lateral offset alapján) objektum helyzetét
+- [ ] Az automata vészfékező számára releváns objektumok (az autó középvonala felé halad, látjuk) kiválogatása és visszaadása
+- [ ] A legközelebbi objektum legyen kiemelve (legyen beállítva a „highlighted” tulajdonság)
 
 <!-- **ultrahang**
 
@@ -159,14 +158,14 @@ Folyamatosan vizsgálni kell, hogy a vezérelt autó nekiütközött-e egy ütk�
 
 **ütközés-detektálás**
 
-- A vezérelt autó - tereptárgy ütközésének detektálása és esemény kiváltása
-- A vezérelt autó - NPC-vel való ütközésének detektálása és esemény kiváltása
-- Két objektum akkor ütközött amikor a poligon reprezentációjuk összeért, nem amikor a képfájlok fedik egymást
+- [ ] A vezérelt autó - tereptárgy ütközésének detektálása és esemény kiváltása
+- [ ] A vezérelt autó - NPC-vel való ütközésének detektálása és esemény kiváltása
+- [ ] Két objektum akkor ütközött amikor a poligon reprezentációjuk összeért, nem amikor a képfájlok fedik egymást
     - pl. autó a fa lombkoronája alatt, de még nem érte el a törzset
-- Legyen valami visszajelzés felhasználói felületen arról, hogy ütközés történt (pl. alert dialog)
+- [ ] Legyen valami visszajelzés felhasználói felületen arról, hogy ütközés történt (pl. alert dialog)
 
 
-## Világ populálása mozgó NPC objektumokkal
+## Világ benépesítése mozgó NPC objektumokkal
 
 A modul felelőssége, hogy a kiinduló kódban rendelkezésre álló világot, amelyben már megjelennek a statikus objektumok, további dinamikus objektumokkal kell kiegészíteni. Ezek a nem játszható karakterek (NPC, _non player character_), amelyekre azért van szükség, hogy a 2. sprintes modulok tesztelhetők legyenek. Például a vészfékező rendszer nem üti el a gyalogost, vagy az adaptív tempomat igazítja az autó sebességét az előtte haladó autóéhoz.
 
@@ -204,13 +203,13 @@ Az `oval` pálya nagy, elnyújtott kanyarokat tartalmaz, hogy ne kelljen külön
 
 ### Definition of Done:
 
-- Objektumok előre definiált, értelmes helyen jelennek meg (autók úton, gyalogosok út mellett, a zebra környékén)
-- Objektumok előre szkriptelt útvonalat követnek
-- Gyalogosok az út mentén haladnak, zebrán áthaladnak, megfordulnak majd újra átkelnek az úton
-- Autók az utat - sávot - pontosan követik
-- NPC objektumok egymás mozgásállapotát nem változtatják meg
+- [ ] Objektumok előre definiált, értelmes helyen jelennek meg (autók úton, gyalogosok út mellett, a zebra környékén)
+- [ ] Objektumok előre szkriptelt útvonalat követnek
+- [ ] Gyalogosok az út mentén haladnak, zebrán áthaladnak, megfordulnak majd újra átkelnek az úton
+- [ ] Autók az utat - sávot - pontosan követik
+- [ ] NPC objektumok egymás mozgásállapotát nem változtatják meg
     - Egy NPC autó gyalogoson akár átmehet, nem kell ütközésnek minősíteni
-- Legalább egy autó végigmegy a pályán a `test_world` pályán
-- Legalább egy gyalogos mozog és átkel egy zebrán a `test_world` pályán, a fenti ábrának megfelelően
-- Az `oval` pálya esetén az NPC objektum az óramutató járásával megegyező irányban megtesz egy kört, majd a STOP táblánál hirtelen megáll
-    - nem szükséges folytatnia az útját, a másik pályán viszont folyamatosan köröz
+- [ ] Legalább egy autó végigmegy a pályán a `test_world` pályán
+- [ ] Legalább egy gyalogos mozog és átkel egy zebrán a `test_world` pályán, a fenti ábrának megfelelően
+- [ ] Az `oval` pálya esetén az NPC objektum az óramutató járásával megegyező irányban megtesz egy kört, majd a STOP táblánál hirtelen megáll
+    - [ ] nem szükséges folytatnia az útját, a másik pályán viszont folyamatosan köröz

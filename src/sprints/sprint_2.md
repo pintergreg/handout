@@ -30,11 +30,11 @@ Ezen kívül természetesen a funkció ki- és bekapcsolható.
 
 ### Definition of Done
 
-- A sávtartó automatika ki- és bekapcsolható
-  - emberi beavatkozásra kikapcsol
-- 45 foknál enyhébb kanyarodású úton a kocsi a sáv szemmel láthatóan a sáv közepén marad
-- Ha el kell engednie a kontrollt (az automatika számára kezelhetetlen forgalmi szituáció következik, pl. éles kanyar, kereszteződés), vizuális figyelmeztetést ad
-- Ha újra elérhető a funkció (pl. elhagytuk a kanyart) vizuális indikáció (a műszerfalon)
+- [ ] A sávtartó automatika ki- és bekapcsolható
+- [ ] Vezetői beavatkozásra kikapcsol
+- [ ] 45 foknál enyhébb kanyarodású úton a kocsi a sáv szemmel láthatóan a sáv közepén marad
+- [ ] Ha el kell engednie a kontrollt (az automatika számára kezelhetetlen forgalmi szituáció következik, pl. éles kanyar, kereszteződés), vizuális figyelmeztetést ad
+- [ ] Ha újra elérhető a funkció (pl. elhagytuk a kanyart) vizuális indikáció (a műszerfalon)
 
 
 ## Adaptív tempomat
@@ -59,15 +59,15 @@ A követési _távolság_ időben történő megadása azt jelenti, hogy a beál
 
 ### Definition of Done
 
-- Ki- és bekapcsolható
-- Bekapcsoláskor a célsebessége az aktuális sebesség, de a minimum célsebesség 30 km/h
-- Ha nincs saját sávban előttünk autó, akkor a vezérelt autó tartja a kiválasztott célsebességet
+- [ ] Ki- és bekapcsolható
+- [ ] Bekapcsoláskor a célsebessége az aktuális sebesség, de a minimum célsebesség 30 km/h
+- [ ] Ha nincs saját sávban előttünk autó, akkor a vezérelt autó tartja a kiválasztott célsebességet
 - Ha a saját sávban található autó:
-  - Ha az előttünk levő autó lassabb, akkor fel kell venni a sebességét
-  - Ha gyorsabb, akkor tartja a kiválasztott sebességet
-- Fékezésre kikapcsol
-- AEB beavatkozásra kikapcsol
-- Ha sebesség korlétozást talál a buszon, azt alkalmazza új célsebességként, amíg a sofőr felül nem írja
+  - [ ] Ha az előttünk levő autó lassabb, akkor fel kell venni a sebességét
+  - [ ] Ha gyorsabb, akkor tartja a kiválasztott sebességet
+- [ ] Fékezésre kikapcsol
+- [ ] AEB beavatkozásra kikapcsol
+<!-- - [ ] Ha sebesség korlátozást talál a buszon, azt alkalmazza új célsebességként, amíg a sofőr felül nem írja -->
 
 ## Vészfékező
 
@@ -90,15 +90,15 @@ Dinamikus objektumok esetében a vészfékezés elve azonos, de az ütközési p
 
 ![](../images/aeb_radar_pedestrian.png)
 
-Másik sávban szembe jövő autóra nem kell vészfékezni, tehát el kell tudni dönteni, hogy abban az esetben nincs ütközési pálya.
+Másik sávban szembe jövő autóra nem kell vészfékezést kiváltani, tehát el kell tudni dönteni, hogy abban az esetben nincs ütközési pálya.
 
 ![](../images/radar_lanes_simple.png)
 
 ### Definition of Done
 
-- Elkerülhető ütközés esetén vizuális figyelmeztetés a sofőrnek
-- Ha a sofőr nem avatkozik közbe, automatikus fékezés (az utolsó pillanatban, ahol az ütközés még elkerülhető)
-- Az automatikus fékezés mértéke a sebességgel arányos, de nem lehet \\( 9 m/s^2 \\)-nél nagyobb
-- 70 km/h felett figyelmeztetés, hogy az AEB nem tud minden helyzetet kezelni
-- A vezérelt autó nem üt el gyalogost, nem megy neki fának
-- Nem releváns objektumok esetében (fals pozitív) mint a szembejövő autó nem történik vészfékezés
+- [ ] Elkerülhető ütközés esetén vizuális figyelmeztetés a sofőrnek
+- [ ] Ha a sofőr nem avatkozik közbe, automatikus fékezés (az utolsó pillanatban, ahol az ütközés még elkerülhető)
+- [ ] Az automatikus fékezés mértéke a sebességgel arányos, de nem lehet \\( 9 m/s^2 \\)-nél nagyobb
+- [ ] 70 km/h felett figyelmeztetés, hogy az AEB nem tud minden helyzetet kezelni
+- [ ] A vezérelt autó nem üt el gyalogost, nem megy neki fának
+- [ ] Nem releváns objektumok esetében (fals pozitív) mint a szembejövő autó nem történik vészfékezés
