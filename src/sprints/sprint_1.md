@@ -2,43 +2,6 @@
 
 <!-- toc -->
 
-## Human Machine Interface (HMI): Műszerfal, irányítás
-
-A *HMI* modul felelőssége a vezérelt autó (egocar) kezelőszerveinek és visszajelzőinek megvalósítása. Bemeneti jelként kezelnie kell tehát a billentyűeseményeket, le kell őket fordítani az autó vezérlőszerveire, valamint a műszerfalon meg kell jeleníteni az egocar állapotát leíró értékeket.
-
-A modul kihívása a „bináris állapotú” billentyűesemények „fokozatossá tétele”. A gáz- és fékpedál nyomvatartásának idejét kell leképezni a pedál lenyomás mértékére és egy adott idő alatt kell ennek 100%-ra jutnia. A hajtáslánc a pedálok lenyomásának mértékét használja majd a gyorsítás - és úgy általában az elmozdulás mértékének - meghatározásához.
-A pedálokhoz hasonlóan a kormány elfordítása sem bináris, ugyanúgy a billentyűlenyomás idejének felhasználásával kell számolni. Ezek skáláját a hajtásláncért modullal egyeztetve kell meghatározni (pl. pedálállás lenyomás 0-100 között).
-
-A szimulált autó automata váltóval rendelkezik, így a váltó *P*, *R*, *N*, *D* állapotait is is közvetíteni kell a hajtáslánc felé.
-
-A műszerfalnak az alábbi vázlathoz hasonlóan kell felépülnie. A programablak bal oldalán a virtuális világ egy szeletét látjuk ezért felel, a vizualizációs modul. A jobb oldalon a műszerfal található. A műszerfalon nincsenek vezérlőelemek, csak megjelenítés. Az összes kapcsoló a billentyűzettel állítható, a grafikus elemeknek nem kell pl. egérrel kapcsolhatónak lenniük.
-
-![gui_plan](../images/gui_plan_dashboard.png)
-
-
-### Definition of Done
-
-
-- ACC: Állítható céltávolság (T jelű gombbal, körkörösen 0.8/1.0/1.2/1.4 másodperc)
-- ACC: Állítható célsebesség (+/- gombbal, 30-160, 10-es lépésközzel)
-- Lane Keeping bekapcsolás
-- Parkig pilot bekapcsolás
-- irányjelző (jobb, bal) kapcsolható
-- egyszerre több billentyű is használható
-    - kanyarodni és gázt adni/fékezni minimum kell tudni egyszerre
-- Megjelenik a kormányállás
-    - akár elforgatott kormánykerékként, de minimum szövegként
-- Megjelenik a gáz, fék állapota (progressbar)
-- Megjelenik a sebességváltó állása (szövegesen)
-- Irányjelző visszajelző (egy-egy nyíl kirajzolva)
-- Kocsi pozíció megjelenítése (x, y koordináta debug céllal, szövegesen)
-- Vezetéstámogató funkciók visszajelzései
-    - ACC idő és sebesség limit
-    - parking pilot és a lane keeping rendszerek állapot visszajelzése
-- az utolsó látott tábla megjelenítése
-    - interfész biztosítása, az utolsó látott tábla beállítására
-
-
 ## Mozgatás: hajtáslánc és kormányzás
 
 A *mozgatás* modul felelőssége a vezérelt autó (egocar) mozgatása, mozgásának számítása. Ez magába foglalja a hajtáslánc és a kormányzás megvalósítását.

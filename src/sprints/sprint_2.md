@@ -31,6 +31,7 @@ Ezen kívül természetesen a funkció ki- és bekapcsolható.
 ### Definition of Done
 
 - [ ] A sávtartó automatika ki- és bekapcsolható
+    - [ ] állapota a műszerfalon látható
 - [ ] Vezetői beavatkozásra kikapcsol
 - [ ] 45 foknál enyhébb kanyarodású úton a kocsi a sáv szemmel láthatóan a sáv közepén marad
 - [ ] Ha el kell engednie a kontrollt (az automatika számára kezelhetetlen forgalmi szituáció következik, pl. éles kanyar, kereszteződés), vizuális figyelmeztetést ad
@@ -60,6 +61,8 @@ A követési _távolság_ időben történő megadása azt jelenti, hogy a beál
 ### Definition of Done
 
 - [ ] Ki- és bekapcsolható
+- [ ] ACC: Állítható céltávolság (T jelű gombbal, körkörösen 0.8/1.0/1.2/1.4 másodperc)
+- [ ] ACC: Állítható célsebesség (+/- gombbal, 30-160, 10-es lépésközzel)
 - [ ] Bekapcsoláskor a célsebessége az aktuális sebesség, de a minimum célsebesség 30 km/h
 - [ ] Ha nincs saját sávban előttünk autó, akkor a vezérelt autó tartja a kiválasztott célsebességet
 - Ha a saját sávban található autó:
