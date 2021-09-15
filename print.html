@@ -1911,8 +1911,12 @@ Felkészíteni a modult, hogy a vészfékező, az adaptív tempomat vagy a sávt
 <ul>
 <li>vészfékező értelemszerűen fékezés inputot</li>
 <li>az adaptív tempomat és a parkoló asszisztens gáz és fék inputot is</li>
-<li>a sávtartó automatika a kormányállást módosítja
--[ ]  Autó kanyarodásának biztosítása valóságos fordulókör szerint</li>
+<li>a sávtartó automatika a kormányállást módosítja</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"/>
+Autó kanyarodásának biztosítása valóságos fordulókör szerint
+<ul>
 <li>ehhez szükséges extra tulajdonságok meghatározása</li>
 </ul>
 </li>
@@ -2057,6 +2061,34 @@ nem szükséges folytatnia az útját, a másik pályán viszont folyamatosan k�
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="2-sprint"><a class="header" href="#2-sprint">2. Sprint</a></h1>
 <!-- toc -->
+<h2 id="vészfékező"><a class="header" href="#vészfékező">Vészfékező</a></h2>
+<p>A modul felelőssége a radar szenzorra épülő <a href="sprints/../functions.html#auton%C3%B3m-v%C3%A9szf%C3%A9kez%C5%91-rendszer-automatic-emergency-brake---aeb">automata vészfékező rendszer</a> megvalósítása. A vészfékező kritikus biztonsági funkció, így nem kapcsolható ki manuálisan, de maximum 70 km/h sebességig működik. A működése két esetre bontható: ütközés statikus vagy dinamikus objektummal.</p>
+<p>Az előbbi az egyszerűbb eset, mivel a veszélyt jelentő objektum pozíciója változatlan.</p>
+<p><img src="sprints/../images/aeb_radar_static.png" alt="" /></p>
+<p>El kell dönteni, hogy az autó az aktuális irányvektort figyelembe véve ütközni fog-e az objektummal. Ha igen, az autó ismert sebességét figyelembe véve kiszámolható, hogy ehhez mennyi időre van szükség és, hogy mekkora mértékű lassulás kell ehhez.</p>
+<p>A radar visszaadja az autó előtt levő legközelebbi releváns objektum adatait (táv, sebesség), ezekkel lehet számolni. A távolságból és az autó sebességéből meghatározható, hogy milyen lassulást kell adni az autónak, hogy még megálljon, de ne lépje túl a \( 9 m/s^2 \)-et.</p>
+<p>Ha az ütközés elkerülhető, vizuális figyelmeztetést kell elhelyezni a vezetőnek, hogy fékezzen. Ha nem reagál, azaz továbbra is ütközési pályán vagyunk és már csak vészfékezéssel kerülhető el az ütközés, akkor a hajtásláncnak vészfékezési inputot kell adni. Ez a maximálisan megengedett, \( 9 m/s^2 \)-es lassulást (ennél nagyobb lassulás veszélyes az utasokra), akkor</p>
+<p>Ha más nem próbálgatással meg kell határozni, hogy adott sebességről egy maximális fékezési input (100% pedál állás) mennyi idő alatt fékezi állóra az autót.
+A modul olyan triggerekkel vezérli az autót mint amilyenek a billentyűlenyomás kezelőtől jönnek (fékpedál állás).</p>
+<p>Dinamikus objektumok esetében a vészfékezés elve azonos, de az ütközési pálya meghatározása összetettebb.</p>
+<p><img src="sprints/../images/aeb_radar_pedestrian.png" alt="" /></p>
+<p>Másik sávban szembe jövő autóra nem kell vészfékezést kiváltani, tehát el kell tudni dönteni, hogy abban az esetben nincs ütközési pálya.</p>
+<p><img src="sprints/../images/radar_lanes_simple.png" alt="" /></p>
+<h3 id="definition-of-done-3"><a class="header" href="#definition-of-done-3">Definition of Done</a></h3>
+<ul>
+<li><input disabled="" type="checkbox"/>
+Elkerülhető ütközés esetén vizuális figyelmeztetés a sofőrnek</li>
+<li><input disabled="" type="checkbox"/>
+Ha a sofőr nem avatkozik közbe, automatikus fékezés (az utolsó pillanatban, ahol az ütközés még elkerülhető)</li>
+<li><input disabled="" type="checkbox"/>
+Az automatikus fékezés mértéke a sebességgel arányos, de nem lehet \( 9 m/s^2 \)-nél nagyobb</li>
+<li><input disabled="" type="checkbox"/>
+70 km/h felett figyelmeztetés, hogy az AEB nem tud minden helyzetet kezelni</li>
+<li><input disabled="" type="checkbox"/>
+A vezérelt autó nem üt el gyalogost, nem megy neki fának</li>
+<li><input disabled="" type="checkbox"/>
+Nem releváns objektumok esetében (fals pozitív) mint a szembejövő autó nem történik vészfékezés</li>
+</ul>
 <h2 id="sávtartó-automatika"><a class="header" href="#sávtartó-automatika">Sávtartó automatika</a></h2>
 <p>A sávtartó automatika modul felelőssége a kamera szenzorra épülő <a href="sprints/../functions.html#s%C3%A1vtart%C3%B3-automatika-lane-keeping-assistant---lka"><em>Lane Keeping Assistant</em></a> funkció megvalósítása.</p>
 <p>Ezt két alapvetően kétféleképpen lehet megoldani. Az egyik a sáv széleihez viszonyítva korrigál: ha az autó elérné a sáv szélét, akkor ellenkormányoz. A másik megoldás kiszámolja a sáv közepét és azon tartja az autót.</p>
@@ -2070,7 +2102,7 @@ nem szükséges folytatnia az útját, a másik pályán viszont folyamatosan k�
 <p><img src="sprints/../images/lka_wave.png" alt="" /></p>
 <p>Az automatika számára kezelhetetlen forgalmi szituációkban (pl. éles kanyar, kereszteződés) el kell engednie a vezérlést és ezt a vezető tudtára kell hoznia. Legyen hozzá vizuális figyelmeztetés a műszerfalon (pl. LKA visszajelző sárga). Ha újra olyan útszakasz következik, ahol a funkció használható, akkor arról szintén legyen tájékoztatás.
 Ezen kívül természetesen a funkció ki- és bekapcsolható.</p>
-<h3 id="definition-of-done-3"><a class="header" href="#definition-of-done-3">Definition of Done</a></h3>
+<h3 id="definition-of-done-4"><a class="header" href="#definition-of-done-4">Definition of Done</a></h3>
 <ul>
 <li><input disabled="" type="checkbox"/>
 A sávtartó automatika ki- és bekapcsolható
@@ -2105,7 +2137,7 @@ Ha újra elérhető a funkció (pl. elhagytuk a kanyart) vizuális indikáció (
 Oda kell figyelni, hogy csak a sávban előttünk haladó autót vegye figyelembe, a szembejövőt ne.</p>
 <p>A követési <em>távolság</em> időben történő megadása azt jelenti, hogy a beállított (pl.) 1 másodperces követés esetén akkora távolságot kell hagyni, hogy <strong>az aktuális sebességgel</strong> haladva 1 másodperc alatt megtett út legyen a távolság: 10 m/s (36 km/h) esetében 10 méter. Ezen érték beállítására már az első sprintben készült vezérlő.</p>
 <p><img src="sprints/../images/acc.png" alt="" /></p>
-<h3 id="definition-of-done-4"><a class="header" href="#definition-of-done-4">Definition of Done</a></h3>
+<h3 id="definition-of-done-5"><a class="header" href="#definition-of-done-5">Definition of Done</a></h3>
 <ul>
 <li><input disabled="" type="checkbox"/>
 Ki- és bekapcsolható</li>
@@ -2131,34 +2163,6 @@ Fékezésre kikapcsol</li>
 AEB beavatkozásra kikapcsol</li>
 </ul>
 <!-- - [ ] Ha sebesség korlátozást talál a buszon, azt alkalmazza új célsebességként, amíg a sofőr felül nem írja -->
-<h2 id="vészfékező"><a class="header" href="#vészfékező">Vészfékező</a></h2>
-<p>A modul felelőssége a radar szenzorra épülő <a href="sprints/../functions.html#auton%C3%B3m-v%C3%A9szf%C3%A9kez%C5%91-rendszer-automatic-emergency-brake---aeb">automata vészfékező rendszer</a> megvalósítása. A vészfékező kritikus biztonsági funkció, így nem kapcsolható ki manuálisan, de maximum 70 km/h sebességig működik. A működése két esetre bontható: ütközés statikus vagy dinamikus objektummal.</p>
-<p>Az előbbi az egyszerűbb eset, mivel a veszélyt jelentő objektum pozíciója változatlan.</p>
-<p><img src="sprints/../images/aeb_radar_static.png" alt="" /></p>
-<p>El kell dönteni, hogy az autó az aktuális irányvektort figyelembe véve ütközni fog-e az objektummal. Ha igen, az autó ismert sebességét figyelembe véve kiszámolható, hogy ehhez mennyi időre van szükség és, hogy mekkora mértékű lassulás kell ehhez.</p>
-<p>A radar visszaadja az autó előtt levő legközelebbi releváns objektum adatait (táv, sebesség), ezekkel lehet számolni. A távolságból és az autó sebességéből meghatározható, hogy milyen lassulást kell adni az autónak, hogy még megálljon, de ne lépje túl a \( 9 m/s^2 \)-et.</p>
-<p>Ha az ütközés elkerülhető, vizuális figyelmeztetést kell elhelyezni a vezetőnek, hogy fékezzen. Ha nem reagál, azaz továbbra is ütközési pályán vagyunk és már csak vészfékezéssel kerülhető el az ütközés, akkor a hajtásláncnak vészfékezési inputot kell adni. Ez a maximálisan megengedett, \( 9 m/s^2 \)-es lassulást (ennél nagyobb lassulás veszélyes az utasokra), akkor</p>
-<p>Ha más nem próbálgatással meg kell határozni, hogy adott sebességről egy maximális fékezési input (100% pedál állás) mennyi idő alatt fékezi állóra az autót.
-A modul olyan triggerekkel vezérli az autót mint amilyenek a billentyűlenyomás kezelőtől jönnek (fékpedál állás).</p>
-<p>Dinamikus objektumok esetében a vészfékezés elve azonos, de az ütközési pálya meghatározása összetettebb.</p>
-<p><img src="sprints/../images/aeb_radar_pedestrian.png" alt="" /></p>
-<p>Másik sávban szembe jövő autóra nem kell vészfékezést kiváltani, tehát el kell tudni dönteni, hogy abban az esetben nincs ütközési pálya.</p>
-<p><img src="sprints/../images/radar_lanes_simple.png" alt="" /></p>
-<h3 id="definition-of-done-5"><a class="header" href="#definition-of-done-5">Definition of Done</a></h3>
-<ul>
-<li><input disabled="" type="checkbox"/>
-Elkerülhető ütközés esetén vizuális figyelmeztetés a sofőrnek</li>
-<li><input disabled="" type="checkbox"/>
-Ha a sofőr nem avatkozik közbe, automatikus fékezés (az utolsó pillanatban, ahol az ütközés még elkerülhető)</li>
-<li><input disabled="" type="checkbox"/>
-Az automatikus fékezés mértéke a sebességgel arányos, de nem lehet \( 9 m/s^2 \)-nél nagyobb</li>
-<li><input disabled="" type="checkbox"/>
-70 km/h felett figyelmeztetés, hogy az AEB nem tud minden helyzetet kezelni</li>
-<li><input disabled="" type="checkbox"/>
-A vezérelt autó nem üt el gyalogost, nem megy neki fának</li>
-<li><input disabled="" type="checkbox"/>
-Nem releváns objektumok esetében (fals pozitív) mint a szembejövő autó nem történik vészfékezés</li>
-</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="sprintek-1"><a class="header" href="#sprintek-1">Sprintek</a></h1>
 <p>A félév során minden csapat 3 sprintet teljesít, minden sprintre egy-egy user story-t kap. 4 csapat esetén így a teljes elkészítendő szoftver 12 részre van bontva. A csapatok feladata a user story-k megértése, felbontása egyhuzamban elvégezhető feladatokra (task), ezekhez felelőst és határidőt rendelve.</p>
 <p>Szintén a csapatok feladat a feladatok közötti függőségek azonosítása és az erőforrások (idő, fejlesztő) oly módon történő beosztása, hogy a határidőre minden elkészüljön. Az egyes user story-k között nem csak sprinteken átívelő függőségek lehetnek, hanem sprinten belüliek is. Ilyen esetben az érintett csapattal egyeztetve kell az egyes (rész)feladatok prioritásait meghatározni.</p>
