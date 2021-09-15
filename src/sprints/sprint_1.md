@@ -44,7 +44,7 @@ Külön feladat észben tartatni és célszerűen előre felkészülni arra, hog
     - vészfékező értelemszerűen fékezés inputot
     - az adaptív tempomat és a parkoló asszisztens gáz és fék inputot is
     - a sávtartó automatika a kormányállást módosítja
--[ ]  Autó kanyarodásának biztosítása valóságos fordulókör szerint
+- [ ]  Autó kanyarodásának biztosítása valóságos fordulókör szerint
     - ehhez szükséges extra tulajdonságok meghatározása
 - [ ] A meghatározott mozgásvektor alapján az autó pozíciójának frissítése
     - ez az AutomatedCar osztály x,y koordinátáinak frissítését jelenti
