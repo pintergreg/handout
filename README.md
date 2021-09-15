@@ -8,5 +8,6 @@ További felhasználd modulok:
 
 - Wikipédia előnézet: [Wikipedia Context Cards](https://github.com/joakin/context-cards)
 - Interaktív MindMap: [MarkMap](https://github.com/gera2ld/markmap-lib)
+- Interaktív diagram(ok), pl. Gantt: [mermaid](https://github.com/mermaid-js/mermaid)
 
 Ha hibát vagy ellentmondást találsz vegyél fel issue-t, vagy küldj Pull Requestet a javítással (előtte forkolni kell).
