@@ -6,21 +6,23 @@ Az órák csütörtökönként a BA.F.07-ben vannak (távoktatásban, MS Teams-e
 |---:|:---------:|:-------------------------:|:----------------------------------------------------------------------:|:-----------|
 |  1.|  09. 09.  | Bevezető, áttekintés      | feladat és a munkafolyamat átfogó ismertetése                          | PG         |
 |  2.|  09. 16.  | Napi munka, verziókezelők | git, GitHub, IDE ismertetés                                            | PI, PG     |
-|  3.|  09. 23.  | Software Architecture     | csapatsorsolás, első sprint: Sprint Planning, Task Definition Workshop | RL, PI, PG |
+|  3.|  09. 23.  | Software Architecture     | csapatsorsolás, 1 sprint[^2] Sprint Planning, Task Definition Workshop | RL, PI, PG |
 |  4.|  09. 30.  | TDD, Unit Testing         | TDD kata, konzultáció                                                  | PI, PG     |
 |  5.|  10. 07.  | Agile, SCRUM, Kanban      | konzultáció                                                            | PI, PG     |
 |  6.|  10. 14.  | TBD                       | konzultáció                                                            | RL, PI, PG |
 |  7.|  10. 21.  | Legacy Code, SOLID,       | Random code review egy tetszőleges elfogadott pull requestből          | RL, PI, PG |
-|  8.|**10. 28.**| Review, **1. demo**       | retrospektív, második sprint: Sprint Planning, Task Definition Workshop| PI, PG     |
+|  8.|**10. 28.**| Review, **1. demo**       | retrospektív, 2. sprint[^3] Sprint Planning, Task Definition Workshop  | PI, PG     |
 |  9.|  11. 04.  | Continous Integration     | konzultáció                                                            | RL, PI, PG |
 | 10.|  11. 11.  | TBD                       | konzultáció                                                            | RL, PI, PG |
 | 11.|  11. 18.  | Rektori/dékáni szünet     | opcionális online konzultáció                                          | ?PG        |
 | 12.|**11. 25.**| Összefoglalás, **2. demo**| retrospektív, tárgy feedback                                           | PI, PG     |
-| 13.|**12. 02.**| **Zárthelyi dolgozat**[^2]|                                                                        |            |
+| 13.|**12. 02.**| **Zárthelyi dolgozat**[^4]|                                                                        |            |
 | 14.|  12. 10.  |                           |                                                                        |            |
 
-- [^1] Előadók: Ravasz László (RL), Petrovics István (PI), Pintér Gergő (PG)
-- [^2] ZH: Moodle, a teszt 08:00-tól 12:00-ig indítható, 70 perc van a kitöltésre
+* [^1]: Előadók: Ravasz László (RL), Petrovics István (PI), Pintér Gergő (PG)
+* [^2]: [1. sprint](sprints/sprint_1.md)
+* [^3]: [2. sprint](sprints/sprint_2.md)
+* [^4]: ZH: Moodle, a teszt 08:00-tól 12:00-ig indítható, 70 perc van a kitöltésre
 
 ## Gantt diagram
 
