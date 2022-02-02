@@ -19,7 +19,7 @@ jobs:
         mdbook-version: 'latest'
 
     - run: mdbook build
-    - run: for i in src/lectures/*.md; do cp $i book/lecture/"${i##*/}"; done
+    - run: for i in src/lectures/*.md; do cp $i book/lectures/"${i##*/}"; done
 
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
