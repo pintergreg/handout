@@ -10,7 +10,8 @@ edition = "2018"
 
 [output.html]
 mathjax-support = true
-additional-js = ["context-cards.js", "mermaid-init.js", "mermaid.min.js", "d3.5.16.0.js", "markmap-lib.transform.min.js", "markmap-lib.view.min.js", "markmap-init.js"]
+additional-js = ["context-cards.js", "mermaid-init.js", "mermaid.min.js", "d3.5.16.0.js", "markmap-lib.transform.min.js", "markmap-lib.view.min.js", "markmap-init.js", "quizdown/quizdown.js", "quizdown/quizdown-init.js"]
+# additional-css = ["quizdown/fix.css"]
 # additional-css = ["jsmind.css"]
 # git-repository-url = "https://github.com/SzFMV2020-Tavasz/handout"
 
