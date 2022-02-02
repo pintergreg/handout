@@ -402,3 +402,122 @@ Akkor tud egy csapat „cross-functional” lenni, ha minden tagja kellőképpen
 UNUSED
 https://agilepearls.wordpress.com/category/agile-sw-methodology/
 -->
+
+<!-- slide -->
+<!-- .slide: data-visibility="hidden" -->
+## Quiz
+
+<pre>
+<div class="quizdown">
+    ---
+    shuffleQuestions: true
+    shuffleAnswers: true
+    ---
+
+    ### Scrum does not have a role called "project manager".
+
+    1. [x] True
+    1. [ ] False
+
+    ### Which statement best describes a Product Owner's responsibility?
+
+    1. [x] Optimizing the value of the work the Development Team does.
+    1. [ ] Directing the Development Team.
+    1. [ ] Managing the project and ensuring that the work meets the commitments to the stakeholders.
+    1. [ ] Keeping stakeholders at bay. 
+
+    ### The Development Team should have all the skills needed to?
+
+    1. [ ] Complete the project as estimated when the date and cost are committed to the Product Owner.
+    1. [ ] Do all of the development work, except for specialized testing that requires additional tools and environments.
+    1. [x] Turn the Product Backlog items it selects into an increment of potentially releasable product functionality.
+
+    ### What are the two primary ways a Scrum Master keeps a Development Team working at its highest level of productivity?
+
+    - [x] By facilitating Development Team decisions.
+    - [x] By removing impediments that hinder the Development Team.
+    - [ ] By starting and ending the meetings at the proper time.
+    - [ ] By keeping high value features high in the Product Backlog.
+
+    ### What is the main reason for the Scrum Master to be at the Daily Scrum?
+
+    1. [ ] To make sure every team member answers the three questions.
+    1. [x] He or she does not have to be there; he or she only has to ensure the Development Team has a Daily Scrum.
+    1. [ ] To write down any changes to the Sprint Backlog, including adding new items, and tracking  progress on the burn-down.
+    1. [ ]  To gather status and progress information to report to management.
+
+    ### The purpose of a Sprint is to produce a done increment of working product.
+
+    1. [x] True
+    1. [ ] False
+
+    ### The length of a Sprint should be:
+
+    1. [ ] Short enough to keep the business risk acceptable to the Product Owner.
+    1. [ ] Short enough to be able to synchronize the development work with other business events.
+    1. [ ] No more than one calendar month.
+    1. [x] All of these answers are correct.
+
+    ### The time-box for a Daily Scrum is?
+
+    1. [ ] The same time of day every day.
+    1. [ ] Two minutes per person.
+    1. [ ] 4 hours.
+    1. [x] 15 minutes.
+    1. [ ] 15 minutes for a 4 week sprint. For shorter Sprints it is usually shorter.
+
+    ### Who is required to attend the Daily Scrum?
+
+    1. [x] The Development Team.
+    1. [ ] The Scrum team.
+    1. [ ] The Development Team and Scrum Master.
+    1. [ ] The Development Team and Product Owner.
+    1. [ ] The Scrum Master and Product Owner.
+
+    ### Which statement best describes Scrum?
+
+    1. [ ] A complete methodology that defines how to develop software.
+    1. [ ] A cookbook that defines best practices for software development.
+    1. [x] A framework within which complex products in complex environments are developed.
+    1. [ ] A defined and predictive process that conforms to the principles of Scientific Management.
+
+    ### Which of the below are roles on a Scrum Team?
+
+    - [x] Development Team
+    - [ ] Users
+    - [ ] Customers
+    - [x] Product Owner
+    - [x] Scrum Master
+
+    ### The Product Backlog is ordered by:
+
+    1. [ ] Size, where small items are at the top and large items are at the bottom.
+    1. [ ] Risk, where safer items are at the top, and riskier items are at the bottom
+    1. [ ] Least valuable items at the top to most valuable at the bottom.
+    1. [ ] Items are randomly arranged.
+    1. [x] Whatever is deemed most appropriate by the Product Owner.
+
+    ### When might a Sprint be abnormally terminated?
+
+    1. [ ] When it becomes clear that not everything will be finished by the end of the Sprint.
+    1. [ ] When the Development Team feels that the work is too hard.
+    1. [ ] When the sales department has an important new opportunity.
+    1. [x] When the Sprint Goal becomes obsolete.
+
+    ### Who has the final say on the order of the Product Backlog?
+
+    1. [ ] The Stakeholders
+    1. [ ] The Development Team
+    1. [ ] The Scrum Master
+    1. [x] The Product Owner
+    1. [ ] The CEO
+
+    ### The CEO asks the Development Team to add a "very important" item to a Sprint that is in progress. What should the Development Team do?
+
+    1. [ ] Add the item to the current Sprint without any adjustments.
+    1. [ ] Add the item to the current Sprint and drop an item of equal size.
+    1. [ ] Add the item to the next Sprint.
+    1. [x] Inform the Product Owner so he/she can work with the CEO.
+
+</div>
+</pre>
