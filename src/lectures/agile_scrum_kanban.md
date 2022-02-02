@@ -1,9 +1,58 @@
-# Agile, SCRUM, Kanban
+## Waterfall
 
-<!-- toc -->
+<img src="../images/waterfall.png" class="img-right">
 
+- Sequential design process
+- Next stage can be started after finishing the previous
+- After finishing a step, cannot go back to previous
+
+<!-- vertical -->
+
+## Waterfall: pros
+
+- Customer can have clear expectation about the final product
+- Employee turnover does not influence project due to strong documentation
+- Simple, easy to use model
+
+<!-- vertical -->
+
+## Waterfall: cons
+
+- Customer can have clear expectation about the final product
+- Employee turnover does not influence project due to strong documentation
+- Simple, easy to use model
+
+<!-- vertical -->
+<!-- .slide: data-visibility="hidden" -->
+
+## Waterfall Vs. Agile
+
+- [Waterfall Vs. Agile: Must Know Differences](https://www.guru99.com/waterfall-vs-agile.html)
+    - A többi fejezet is ajánlott
+- [Waterfall vs. Agile: Which is the Right Development Methodology for Your Project?](https://www.seguetech.com/waterfall-vs-agile-methodology/)
+
+<!-- slide -->
+
+## V-Model
+
+<img src="../lectures/images/v_model.drawio.png" class="img-right">
+
+- [V-Model in Software Testing](https://www.guru99.com/v-model-software-testing.html)
+
+<!-- slide -->
+
+## Complex Project
+
+<img src="../lectures/images/complex_project.drawio.png" class="img-right">
+
+- **Complex projects** are where requirements and technology are not agreed.
+- Flexibility and frequent feedback loops are needed here.
+
+<!-- slide -->
 
 ## The Agile Manifesto
+
+<!-- .slide: class="slide-quote" -->
 
 > We are uncovering better ways of developing software by doing it and helping others do it. Through this work we have come to value:
 >
@@ -14,100 +63,339 @@
 >
 > That is, while there is value in the items on the right, we value the items on the left more.
 >
-> -- [forrás](https://www.agilealliance.org/agile101/the-agile-manifesto/)
+> <cite>[forrás](https://www.agilealliance.org/agile101/the-agile-manifesto/)</cite>
+
+
+
+<!-- vertical -->
+<!-- .slide: data-visibility="hidden" -->
 
 - [The following 12 Principles are based on the Agile Manifesto.](https://www.agilealliance.org/agile101/12-principles-behind-the-agile-manifesto/)
 - [Külön érdekes a szoftverfejlesztési metodológiákat metrótérképszerűen összefoglaló ábra](https://www.agilealliance.org/agile101/subway-map-to-agile-practices/)
 
-### Waterfall Vs. Agile
+<!-- vertical -->
 
-![](../images/waterfall.png)
+## Agile Principles
 
-- [Waterfall Vs. Agile: Must Know Differences](https://www.guru99.com/waterfall-vs-agile.html)
-    - A többi fejezet is ajánlott
-- [Waterfall vs. Agile: Which is the Right Development Methodology for Your Project?](https://www.seguetech.com/waterfall-vs-agile-methodology/)
+- Frequent delivery
+- Test early, test often
+- Small, incremental releases
+- Development team makes their own decisions
+- Direct communication between customer and development team
 
+<!-- vertical -->
 
-#### V-Model
+## Best Practices for Agile
 
-- [V-Model in Software Testing](https://www.guru99.com/v-model-software-testing.html)
+- Test-Driven Development (TDD)
+- Regular refactoring
+- Continuous integration
+- Simple design
+- Pair programming
 
-![](https://www.guru99.com/images/6-2015/052715_0904_GuidetoSDLC3.png)
-
-## Manifesto for Software Craftsmanship
-
-> As aspiring Software Craftsmen we are raising the bar of professional software development by practicing it and helping others learn the craft. Through this work we have come to value:
->
-> - Not only working software,
->     - but also **well-crafted software**
-> - Not only responding to change,
->     - but also **steadily adding value**
-> - Not only individuals and interactions,
->     - but also **a community of professionals**
-> - Not only customer collaboration,
->     - but also **productive partnerships**
->
-> That is, in pursuit of the items on the left we have found the items on the right to be indispensable.
->
-> -- [forrás](https://manifesto.softwarecraftsmanship.org/)
-
-
+<!-- slide -->
 
 ## SCRUM
 
-![](http://2.bp.blogspot.com/-T9nVdkSCQMo/TrvwKPtRBDI/AAAAAAAAANQ/mWGv4EsmshY/s1600/scrum_process_big.jpg)
+> A framework within which people can address complex adaptive problems, while productively and creatively delivering products of the highest possible value.
 
-- [Scrum Guide](https://www.scrumhub.com/scrum-guide/)
-    - Ez egy igen kiváló összefoglaló, de a webhely elég tré módon oldotta meg a http/https átirányítást, így minden aloldal megnyitása a főoldalra dob.
-        - Az aloldalak alján a tartalomjegyzék már jó.
-    - Az alábbi alfejezetek ajánlottak:
-        - [Team Roles](https://www.scrumhub.com/scrum-guide/team-roles/)
-        - [Product Backlog](https://www.scrumhub.com/scrum-guide/product-backlog/)
-        - [Release Backlog](https://www.scrumhub.com/scrum-guide/release-backlog/)
-        - [Estimations](https://www.scrumhub.com/scrum-guide/estimations/)
-        - [Sprints](https://www.scrumhub.com/scrum-guide/sprints/)
-        - [Burndowns](https://www.scrumhub.com/scrum-guide/burndowns/)
-        - [Expectation Charts](https://www.scrumhub.com/scrum-guide/expectation-charts/)
-        - [Daily Standups](https://www.scrumhub.com/scrum-guide/daily-standups/)
-        - [Retrospectives](https://www.scrumhub.com/scrum-guide/retrospectives/)
-- [The Scrum Guide](https://www.scrumguides.org/docs/scrumguide/v2016/2016-Scrum-Guide-US.pdf)
-    - PDF, 17 oldal
+- Not a process or technique, rather a framework
+- Based on empirical process theory
+- Empiricism assumes that knowledge comes from experience
+- Iterative, incremental approach
+- Consists of
+    - Scrum Team/Roles
+    - Events
+    - Artifacts
+    - Rules
+
+<!-- -->
+- [The Scrum Guide (PDF, 17 pages)](https://www.scrumguides.org/docs/scrumguide/v2016/2016-Scrum-Guide-US.pdf)
 - [Scrum in practice: the daily Scrum](https://manifesto.co.uk/scrum-practice-daily-scrum/)
-- [Scrum of Scrums](https://www.agilealliance.org/glossary/scrum-of-scrums/)
-- [How to Succeed at a Sprint Demo](https://reqtest.com/development/how-to-succeed-at-a-sprint-demo/)
-- [Scrum Master - Funny movie about The Power of Scrum](https://www.youtube.com/watch?v=P6v-I9VvTq4)
 
-### Az Egyetem más tárgyhoz fejlesztett e-tananyaga SCRUM-hoz
+<!-- slide -->
 
-- Elérhető [innen](http://innovacio.uni-obuda.hu/p/elearning/)
-- Ebből az első két blokk (a „[Product owner](http://innovacio.uni-obuda.hu/p/elearning/course/77)” és a „[Scrum Master](http://innovacio.uni-obuda.hu/p/elearning/course/89)”) releváns, mindkettő 5-5 modul, modulonként egy ~50 oldalas prezentációval.
-- Teljes más a sztuktúrája mint az SzFMV tárgynak, de kifejezetten hasznos részeket is tartalmaz mint pl. a Product owner / 4. modul: user story szétbontása
-- A modulokhoz ellenőrző kérdések is vannak, ezek bár független a ZH kérdéseinkről, de a releváns fejezetek önellenőrzésére jók lehetnek
+## Scrum Team & Roles
 
-### Cross-functional team
+<img src="../lectures/images/scrum_communication_modell.drawio.png" class="img-right">
+
+- Self-organizing
+- Cross-functional
+- Maximizes opportunities for feedback
+
+<!-- -->
+
+- Roles:
+    - Product Owner (PO)
+    - Development Team
+    - Scrum Master
+
+<!-- vertical -->
+
+## Product Owner
+
+- Responsible for optimizing the value of the work the Development Team does
+- Clarifies product backlog items
+- Product backlog items can only be prioritized by PO
+- Decisions made by PO is respected by everyone in the entire organization
+
+<!-- vertical -->
+<!-- .slide: data-visibility="hidden" -->
+
+- [The Agile Product Owner Responsibilities](https://www.romanpichler.com/blog/the-product-owner-responsibilities/)
+
+<!-- vertical -->
+
+## Development Team
+
+- Self-organizing team – makes its own decisions how to turn Product Backlog into potentially releasable functionalities
+- Cross-functional team – team has all skills needed turn Product Backlog into potentially releasable functionalities
+- No titles inside team
+- No subteams inside team
+- Size can be between 3 and 9
+
+<!-- vertical -->
+
+## Cross-functional team
 
 ![](../images/cross_functional.png)
 
 Akkor tud egy csapat „cross-functional” lenni, ha minden tagja kellőképpen érti a csapat feladatát, így a tagok képesek egymást helyettesíteni. A fenti ábra a csapattagok tudását szemlélteti. Az első esetben csupán elenyésző általános tudással rendelkező emberekről van szó, akik egy nagyon szűk területet ismernek. A *cross-functional team* esetében is megvan az egyes tagok specifikus tudása ám az kevésbé nyúlik túl a csapat általános ismeretein és kevésbé specifikusabb is.
 
+<!-- vertical -->
+
+## Scrum Master
+
+<img src="https://vectorified.com/images/scrum-master-icon-32.png" class="img-right">
+
+- Responsible for Scrum to be understood in scrum team
+- Facilitates scrum events
+- Removes impediments from development team
+- Coaches development team for self-organization
+- Coaches organization in Scrum adaptation
+- Not the „boss” of development team
+- Servant leader of the team
+- Can be one team member or common Scrum Master for several teams
+
+[Scrum Master - Funny movie about The Power of Scrum](https://www.youtube.com/watch?v=P6v-I9VvTq4)
+
+<!-- slide -->
+
+## Scrum Events
+
+<img src="../lectures/images/scrum_sprint.drawio.png" height="320">
+
+- Time boxed events
+    - there is a maximal time allowed to keep
+- Regular meetings
+    - minimizes the need for other not defined meetings
+
+<!-- vertical -->
+
+## Sprint
+
+- Time-boxed for one month or less
+- During the sprint a potentially releasable product increment shall be created
+- Consists of
+    - Sprint Planning
+    - Daily Scrums (Standup)
+    - Development work
+    - Sprint Review
+    - Sprint Retrospective
+- Each Sprint has a definition what has to be done
+- During Sprint no change can be made that influences the Sprint Goal
+- Can be terminated when Sprint Goal became obsolete
+
+<!-- vertical -->
+
+## Sprint Planning
+
+- The work that should be done in Sprint is planned in Sprint Planning
+- Eight hours for a one-month Sprint, for shorter Sprint it is less
+- Answers for two questions:
+    - What will be delivered for the next Sprint?
+    - How it will be done?
+- Product Backlog is used as an input, Sprint Backlog (SB) is filled with items from Product Backlog (PB)
+- The number of selected items has to be decided only by development team
+- Product Owner helps to clarify Product Backlog items
+- Scrum Master facilitates the meeting when needed
+
+<!-- vertical -->
+
+## Daily Scrum
+
+- Time-boxed to 15 minutes
+- Main goal is to synchronize activities between team members
+- Kept each day at the same time and same place to reduce complexity
+- Every team member participates and answers three questions:
+    - What was done by himself/herself by last Daily Scrum?
+    - What will be done by himself/herself till next Daily Scrum?
+    - Are there any impediments that prevent the work?
+- Scrum Master does not need to participate always, but
+    - Ensures that all team members take part
+    - Teaches development team to keep the time-box
+
+<!-- vertical -->
+
+## Sprint Review
+
+- Kept at the end of the sprint
+- Time-boxed to four hour for one month sprint
+- Scrum Team and stakeholders attend
+- PO explains the PB items, that are „Done” or not „Done” to stakeholders
+- Development Team demonstrates the work and answers questions
+- Scrum Team gather feedback from stakeholders
+- All participants collaborates on what to do next
+<!-- -->
+- [Further reading: How to Succeed at a Sprint Demo](https://reqtest.com/development/how-to-succeed-at-a-sprint-demo/)
+
+<!-- vertical -->
+
+## Sprint Retrospective
+
+<img src="../lectures/images/retro.drawio.png" class="img-right" width="400">
+
+- For the Scrum Team to inspect and improve itself
+- Three hour time-box after sprint review for one-month Sprint
+- Plan shall be created for implementing improvements of the way of working
+
+<!-- slide -->
+
+## Sprint Artifacts: Product Backlog
+
+- Ordered list of items needed for the product
+- Dynamically evolves
+- Property of Product Owner
+- PO is responsible for its content and prioritization
+
+<!-- vertical -->
+
+## Sprint Artifacts: Sprint Backlog
+
+- Selected PB items for a certain Sprint in Sprint Planning
+- Development Team is the owner
+- Estimates are made by Development Team
+
+<!-- vertical -->
+
+## Sprint Artifacts: Product Increment
+
+- Sum of all PB items completed
+- Has to meet the Definition of "Done"
+- A new increment is delivered after each Sprint
+
+<!-- vertical -->
+
+## Burndown Chart
+
+- Expresses the remaining effort for a time period
+- X axis: time left in the Sprint
+- Y axis: remaining effort for the Sprint measured in story points
+- Story points measures how "difficult" a user story is
+- Story points are estimated by Development Team
+
+<!-- vertical -->
+<!-- .slide: data-visibility="hidden" -->
+
+[AgileMe - Sprint Burndown Chart](http://www.agileme.com.au/wiki/Sprint_Burndown_Chart)
+
+<!-- vertical -->
+
+## Artifact Transparency: Definition of Done
+
+<img src="../lectures/images/checklist.drawio.png" class="img-right" height="350">
+
+- Checklist of activities needed for a product increment
+- List of activities such coding, unit testing, documentation, integration test, etc.
+- Has to be understood and followed by all team members
+
+<!-- slide -->
+
+## Scaling Scrum: Scrum of Scrums
+
+
+- Each Scrum Team delegates an "ambassador" who attends the Scrum of Scrums meeting
+- Ambassadors coordinate the work of multiple Scrum Teams
+- Meetings are not as frequent as Daily Scrum
+- [Further reading](https://www.agilealliance.org/glossary/scrum-of-scrums/)
+
+<img src="../lectures/images/scrum_of_scrums.drawio.png" class="fragment" height="300">
+
+<!-- slide -->
 
 ## Kanban
 
-- [Kanban](https://www.scrumhub.com/kanban-fundamentals/)
+<img src="../lectures/images/kanban.drawio.png" class="img-right">
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Simple-kanban-board-.jpg/800px-Simple-kanban-board-.jpg" width="60%" />
+- Pull system
+- Eliminate waste
+- Decrease cycle time
+- Should be applied to current processes
+- Rules:
+    - Visualize Workflow
+    - Limit Work in Process
+    - Measure and Improve Flow
 
-- a cetlik (taszkok) balról jobbra haladnak,
-- mindig a leginkább jobbra és felül lévővel kell fogllakozni, hogy a lehető leghamarabb be legyen fejezve
-- az adott oszlopon belül minél följebb van egy tasz annál magasabb a prioritása
-- már eszköz függő, de a cetlin célszerű jelezni, hogy
-  - ki fogllakozik vele
-  - milyen nehézségű (időigényű)
-  - stb.
+<!-- vertical -->
+
+## Kanban cont.
+
+<img src="../lectures/images/kanban.drawio.png" class="img-right">
+
+- Tasks move left to right
+- Choose the rightest top task to work with
+    - to finish it as soon as possible
+- within a column, the task at the top has the highest priority
+- task may contain
+    - assignee
+    - effort
+    - etc.
+- Further reading
+    - [Kanban Fundamentals](https://www.scrumhub.com/kanban-fundamentals/)
+
+<!-- vertical -->
+
+## Scrum vs. Kanban
+
+|                     | SCRUM                        | Kanban          |
+|---------------------|------------------------------|-----------------|
+| Cadence             | Regular fixed length sprints | Continuous flow |
+| Release methodology | At the end of each sprint if approved by the product owner | Continuous delivery or at the team's discretion |
+| Roles               | Product owner, scrum master, development team | No existing roles. Some teams enlist the help of an agile coach.|
+| Change philosophy   | Teams should strive to not make changes to the sprint forecast during the sprint. Doing so compromises learnings around estimation.| Change can happen at any time |
+
+<!-- slide -->
+<!-- .slide: data-visibility="hidden" -->
 
 ## Scrumban
 
 - [What is Scrumban?](https://www.agilealliance.org/what-is-scrumban/)
+
+<!-- slide -->
+
+## Further reading about SCRUM
+
+<!-- ![](http://2.bp.blogspot.com/-T9nVdkSCQMo/TrvwKPtRBDI/AAAAAAAAANQ/mWGv4EsmshY/s1600/scrum_process_big.jpg) -->
+
+- [Team Roles](https://www.scrumhub.com/scrum-guide/team-roles/)
+- [Product Backlog](https://www.scrumhub.com/scrum-guide/product-backlog/)
+- [Release Backlog](https://www.scrumhub.com/scrum-guide/release-backlog/)
+- [Estimations](https://www.scrumhub.com/scrum-guide/estimations/)
+- [Sprints](https://www.scrumhub.com/scrum-guide/sprints/)
+- [Burndowns](https://www.scrumhub.com/scrum-guide/burndowns/)
+- [Expectation Charts](https://www.scrumhub.com/scrum-guide/expectation-charts/)
+- [Daily Standups](https://www.scrumhub.com/scrum-guide/daily-standups/)
+- [Retrospectives](https://www.scrumhub.com/scrum-guide/retrospectives/)
+
+
+<!-- nem működik -->
+
+<!-- ## Az Egyetem más tárgyhoz fejlesztett e-tananyaga SCRUM-hoz
+
+- Elérhető [innen](http://innovacio.uni-obuda.hu/p/elearning/)
+- Ebből az első két blokk (a „[Product owner](http://innovacio.uni-obuda.hu/p/elearning/course/77)” és a „[Scrum Master](http://innovacio.uni-obuda.hu/p/elearning/course/89)”) releváns, mindkettő 5-5 modul, modulonként egy ~50 oldalas prezentációval.
+- Teljes más a struktúrája mint az SzFMV tárgynak, de kifejezetten hasznos részeket is tartalmaz mint pl. a Product owner / 4. modul: user story szétbontása
+- A modulokhoz ellenőrző kérdések is vannak, ezek bár független a ZH kérdéseinkről, de a releváns fejezetek önellenőrzésére jók lehetnek -->
 
 
 <!--
