@@ -1,0 +1,30 @@
+.quizdown .container {
+    width: 100%;
+    background: blue !important;
+}
+.quizdown .quizdown-content .card .container {
+    width: 100%;
+    background: red;
+}
+
+.container .svelte-1s4z0g{
+  background: red !important;
+}
+
+.container.svelte-1s4z0g {
+    display: block !important;
+}
+
+.quizdown-content .container label span {
+    white-space: break-spaces;
+    line-height: 1.5em;
+}
+
+span.svelte-1m16lsk{
+    white-space: break-spaces;
+    line-height: 1.5em;
+}
+
+#daily-work-quiz .container.svelte-1s4z0g {
+    display: block !important;
+}
