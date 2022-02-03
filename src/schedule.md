@@ -87,3 +87,21 @@ A bemutatás során, a `master` branchre befogadott kódot vesszük figyelembe, 
 # Zárthelyi
 
 Ismert, Moodle-ös teszt, 50 kérdéssel, erre 70 perc áll majd a rendelkezésre. Minden kérdéshez 4 válaszlehetőség, amelyek közül pontosan egy a helyes. (Vannak „az alábbiak közül melyik NEM helyes” felépítésű kérdések is.) A rendelkezésre álló idő alatt kérdéseket tetszőleges alkalommal felül lehet vizsgálni, módosítani a teszt „lezárása” után azonnal kiértékelésre is kerül.
+
+
+# Jegy kialakítása
+
+1. gyakorlati jegy (sprintek átlaga) × 0.7 + ZH jegy × 0.3
+
+2. Ha nincs gyakorlati teljesítmény, akkor a félév elégtelen, függetlenül attól, hogy a ZH hogy sikerült.
+3. Mivel a sprintekre csapatok kapnak jegyet, mindenki kitölt egy csapattárs értékelő kérdőívet arról, hogy a csapaton belüli munka miképpen oszlott meg.
+
+A ZH százalék jegyre számítását az alábbi intervallumokkal végezzük:
+
+tól | ig | jegy
+-- | --- | --
+ 0 |  50 | 1
+51 |  60 | 2
+61 |  70 | 3
+71 |  80 | 4
+81 | 100 | 5
