@@ -100,8 +100,8 @@ A ZH százalék jegyre számítását az alábbi intervallumokkal végezzük:
 
 tól | ig | jegy
 -- | --- | --
- 0 |  50 | 1
-51 |  60 | 2
-61 |  70 | 3
-71 |  80 | 4
-81 | 100 | 5
+ 0 |  49 | 1
+50 |  59 | 2
+60 |  69 | 3
+70 |  79 | 4
+80 | 100 | 5
