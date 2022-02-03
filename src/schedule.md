@@ -2,39 +2,43 @@
 
 Az órák csütörtökönként a BA.F.07-ben vannak (távoktatásban, MS Teams-en), neptun szerint 08:00-10:35 között előadás és 10:45-11:30 között gyakorlat. (Ezek aránya valamint közte a szünet az aktuális előadásanyag és az igények szerint módosulhat). A „gyakorlat” nem labor, hanem sokkal inkább konzultáció!
 
-|hét |dátum      |előadás                    |gyakorlat                                                               |előadó[^1]  |
-|---:|:---------:|:-------------------------:|:----------------------------------------------------------------------:|:-----------|
-|  1.|  09. 09.  | Bevezető, áttekintés      | feladat és a munkafolyamat átfogó ismertetése                          | PG         |
-|  2.|  09. 16.  | Napi munka, verziókezelők | git, GitHub, IDE ismertetés                                            | PI, PG     |
-|  3.|  09. 23.  | Software Architecture     | csapatsorsolás, 1 sprint[^2] Sprint Planning, Task Definition Workshop | RL, PI, PG |
-|  4.|  09. 30.  | TDD, Unit Testing         | TDD kata, konzultáció                                                  | PI, PG     |
-|  5.|  10. 07.  | Agile, SCRUM, Kanban      | konzultáció                                                            | PI, PG     |
-|  6.|  10. 14.  | TBD                       | konzultáció                                                            | RL, PI, PG |
-|  7.|  10. 21.  | Legacy Code, SOLID,       | Random code review egy tetszőleges elfogadott pull requestből          | RL, PI, PG |
-|  8.|**10. 28.**| Review, **1. demo**       | retrospektív, 2. sprint[^3] Sprint Planning, Task Definition Workshop  | PI, PG     |
-|  9.|  11. 04.  | Continous Integration     | konzultáció                                                            | RL, PI, PG |
-| 10.|  11. 11.  | TBD                       | konzultáció                                                            | RL, PI, PG |
-| 11.|  11. 18.  | Rektori/dékáni szünet     | opcionális online konzultáció                                          | ?PG        |
-| 12.|**11. 25.**| Összefoglalás, **2. demo**| retrospektív, tárgy feedback                                           | PI, PG     |
-| 13.|**12. 02.**| **Zárthelyi dolgozat**[^4]|                                                                        |            |
-| 14.|  12. 10.  |                           |                                                                        |            |
+|hét |dátum      |előadás                    |gyakorlat                                                               |
+|---:|:---------:|:-------------------------:|:----------------------------------------------------------------------:|
+|  1.|  02. 10.  | Bevezető, áttekintés      | feladat és a munkafolyamat átfogó ismertetése                          |
+|  2.|  02. 17.  | Napi munka, verziókezelők | git, GitHub, IDE ismertetés                                            |
+|  3.|  02. 24.  | Software Architecture I.  | csapatsorsolás, warmup                                                 |
+|  4.|  03. 03.  | Software Architecture II. | Sprint Planning, Task Definition Workshop                              |
+|  5.|  03. 10.  | Agile, SCRUM, Kanban      | konzultáció (hozott UML-k megbeszélése)                                |
+|  6.|  03. 17.  | Verification & validation | konzultáció                                                            |
+|  7.|  03. 24.  | Continuous Integration    | nálunk hogy működik (handout, AutomatedCar), konzultáció               |
+|  8.|**03. 31.**| Review, **1. demo**       | PR review, retrospektív, Sprint Planning, Task Definition Workshop     |
+|  9.|  04. 07.  | Legacy Code               | konzultáció                                                            |
+| 10.|  04. 14.  | Rektori/dékáni szünet     | konzultáció                                                            |
+| 11.|  04. 21.  | TBD                       | opcionális online konzultáció                                          |
+| 12.|**04. 28.**| Összefoglalás, **2. demo**| retrospektív, tárgy feedback                                           |
+| 13.|  05. 05.  |                           |                                                                        |
+| 14.|**05. 12.**| **Zárthelyi dolgozat**    |                                                                        |
 
-* [^1]: Előadók: Ravasz László (RL), Petrovics István (PI), Pintér Gergő (PG)
-* [^2]: [1. sprint](sprints/sprint_1.md)
-* [^3]: [2. sprint](sprints/sprint_2.md)
-* [^4]: ZH: Moodle, a teszt 08:00-tól 12:00-ig indítható, 70 perc van a kitöltésre
+
+## Házi feladatok
+
+hét| feladat
+---|--------
+1  | [Avalonia Tutorial teljesítése](https://docs.avaloniaui.net/tutorials/todo-list-app)
+3  | Warmup feladat
+4  | modul tervezése, UML (statikus és dinamikus) készítése és feltöltése GitHubra
+
 
 ## Gantt diagram
-
 
 <div class="mermaid">
     gantt
     dateFormat  YYYY-MM-DD
     axisFormat  %m-%d
-    title 2021/22 tanév I.félév
-    Introduction :milestone, 2021-09-09, 1d
+    title 2021/22 tanév II.félév
+    Introduction :milestone, 2022-02-10, 1d
     section Warm-up
-        Warm-up :active, warmup, 2021-09-16, 1w
+        Warm-up :active, warmup, 2022-02-24, 1w
     Team draw :milestone, after warmup, 1d
     section Sprint 1
         Sprint 1 :active, sprint1, after warmup, 4w
@@ -42,7 +46,7 @@ Az órák csütörtökönként a BA.F.07-ben vannak (távoktatásban, MS Teams-e
     section Sprint 2
         Sprint 2 :active, sprint2, after sprint1, 4w
     Demo 2 :milestone, after sprint2, 1d
-    Midterm :milestone, 2021-12-02, 1d
+    Midterm :milestone, 2022-05-12, 1d
     click sprint1 href "./sprint_1.html"
     click sprint2 href "./sprint_2.html"
 </div>
