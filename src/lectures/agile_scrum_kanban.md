@@ -129,6 +129,7 @@
     - Product Owner (PO)
     - Development Team
     - Scrum Master
+- [Further reading](https://www.scrumhub.com/scrum-guide/team-roles/)
 
 <!-- vertical -->
 
@@ -205,6 +206,7 @@ Akkor tud egy csapat „cross-functional” lenni, ha minden tagja kellőképpen
 - Each Sprint has a definition what has to be done
 - During Sprint no change can be made that influences the Sprint Goal
 - Can be terminated when Sprint Goal became obsolete
+- [Further reading](https://www.scrumhub.com/scrum-guide/sprints/)
 
 <!-- vertical -->
 
@@ -219,6 +221,7 @@ Akkor tud egy csapat „cross-functional” lenni, ha minden tagja kellőképpen
 - The number of selected items has to be decided only by development team
 - Product Owner helps to clarify Product Backlog items
 - Scrum Master facilitates the meeting when needed
+- [Further reading: Estimations](https://www.scrumhub.com/scrum-guide/estimations/)
 
 <!-- vertical -->
 
@@ -234,6 +237,7 @@ Akkor tud egy csapat „cross-functional” lenni, ha minden tagja kellőképpen
 - Scrum Master does not need to participate always, but
     - Ensures that all team members take part
     - Teaches development team to keep the time-box
+- [Further reading](https://www.scrumhub.com/scrum-guide/daily-standups/)
 
 <!-- vertical -->
 
@@ -258,6 +262,7 @@ Akkor tud egy csapat „cross-functional” lenni, ha minden tagja kellőképpen
 - For the Scrum Team to inspect and improve itself
 - Three hour time-box after sprint review for one-month Sprint
 - Plan shall be created for implementing improvements of the way of working
+- [Further reading](https://www.scrumhub.com/scrum-guide/retrospectives/)
 
 <!-- slide -->
 
@@ -267,6 +272,7 @@ Akkor tud egy csapat „cross-functional” lenni, ha minden tagja kellőképpen
 - Dynamically evolves
 - Property of Product Owner
 - PO is responsible for its content and prioritization
+- [Further reading](https://www.scrumhub.com/scrum-guide/product-backlog/)
 
 <!-- vertical -->
 
@@ -293,6 +299,7 @@ Akkor tud egy csapat „cross-functional” lenni, ha minden tagja kellőképpen
 - Y axis: remaining effort for the Sprint measured in story points
 - Story points measures how "difficult" a user story is
 - Story points are estimated by Development Team
+- [Further reading](https://www.scrumhub.com/scrum-guide/burndowns/)
 
 <!-- vertical -->
 <!-- .slide: data-visibility="hidden" -->
@@ -372,6 +379,7 @@ Akkor tud egy csapat „cross-functional” lenni, ha minden tagja kellőképpen
 - [What is Scrumban?](https://www.agilealliance.org/what-is-scrumban/)
 
 <!-- slide -->
+<!-- .slide: data-visibility="hidden" -->
 
 ## Further reading about SCRUM
 
