@@ -119,15 +119,15 @@
 
 ## Company B
 
-[![forum](https://img.shields.io/badge/forum-Team%20A1-65C1A2.svg)](https://github.com/orgs/szfmv2022-Tavasz/teams/team-b1)
+[![forum](https://img.shields.io/badge/forum-Team%20B1-65C1A2.svg)](https://github.com/orgs/szfmv2022-Tavasz/teams/team-b1)
 [![sprint1](https://img.shields.io/badge/sprint1-Powertrain-BBE9FA.svg)](https://github.com/szfmv2022-Tavasz/AutomatedCar-B/issues/1)
 [![sprint2](https://img.shields.io/badge/sprint2-AEB-FFC0CB.svg)](https://github.com/szfmv2022-Tavasz/AutomatedCar-B/issues/4)
 
-[![forum](https://img.shields.io/badge/forum-Team%20A2-F98B60.svg)](https://github.com/orgs/szfmv2022-Tavasz/teams/team-b2)
+[![forum](https://img.shields.io/badge/forum-Team%20B2-F98B60.svg)](https://github.com/orgs/szfmv2022-Tavasz/teams/team-b2)
 [![sprint1](https://img.shields.io/badge/sprint1-Sensor-BBE9FA.svg)](https://github.com/szfmv2022-Tavasz/AutomatedCar-B/issues/2)
 [![sprint2](https://img.shields.io/badge/sprint2-LKA-FFC0CB.svg)](https://github.com/szfmv2022-Tavasz/AutomatedCar-B/issues/5)
 
-[![forum](https://img.shields.io/badge/forum-Team%20A3-8B9DC9.svg)](https://github.com/orgs/szfmv2022-Tavasz/teams/team-b3)
+[![forum](https://img.shields.io/badge/forum-Team%20B3-8B9DC9.svg)](https://github.com/orgs/szfmv2022-Tavasz/teams/team-b3)
 [![sprint1](https://img.shields.io/badge/sprint1-NPC-BBE9FA.svg)](https://github.com/szfmv2022-Tavasz/AutomatedCar-B/issues/3)
 [![sprint2](https://img.shields.io/badge/sprint2-ACC-FFC0CB.svg)](https://github.com/szfmv2022-Tavasz/AutomatedCar-B/issues/6)
 
