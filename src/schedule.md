@@ -11,12 +11,12 @@ Az órák csütörtökönként a BA.F.07-ben vannak (távoktatásban, MS Teams-e
 |  5.|  03. 10.  | Agile, SCRUM, Kanban      | konzultáció (hozott UML-k megbeszélése)                                |
 |  6.|  03. 17.  | Verification & validation | konzultáció                                                            |
 |  7.|  03. 24.  | Continuous Integration    | nálunk hogy működik (handout, AutomatedCar), konzultáció               |
-|  8.|**03. 31.**| Review, **1. demo**       | PR review, retrospektív, Sprint Planning, Task Definition Workshop     |
-|  9.|  04. 07.  | Legacy Code               | konzultáció                                                            |
-| 10.|  04. 14.  | Rektori/dékáni szünet     | konzultáció                                                            |
-| 11.|  04. 21.  | TBD                       | opcionális online konzultáció                                          |
-| 12.|**04. 28.**| Összefoglalás, **2. demo**| retrospektív, tárgy feedback                                           |
-| 13.|  05. 05.  |                           |                                                                        |
+|  8.|**03. 31.**| **1. demo**               | retrospektív, Sprint Planning, Task Definition Workshop                |
+|  9.|  04. 07.  | Review                    | PR review, konzultáció                                                 |
+| 10.|  04. 14.  | Rektori/dékáni szünet     |                                                                        |
+| 11.|  04. 21.  | Legacy Code               | konzultáció                                                            |
+| 13.|  04. 28.  | TBD                       |                                                                        |
+| 12.|**05. 05.**| Összefoglalás, **2. demo**| retrospektív, tárgy feedback                                           |
 | 14.|**05. 12.**| **Zárthelyi dolgozat**    |                                                                        |
 
 
